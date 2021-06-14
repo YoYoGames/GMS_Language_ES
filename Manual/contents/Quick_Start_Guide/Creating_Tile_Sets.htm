@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Creación de conjuntos de baldosas</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what a tile set is and how to make one." />
+  <meta name="rh-index-keywords" content="Quick Start - Tile Sets" />
+  <meta name="search-keywords" content="tiles,tilesets,tileset,tile set,tile sets" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Creación de conjuntos de baldosas</h1>
+  <p><strong>Los</strong> conjuntos de mosaicos se crean a partir de los sprites, pero también se clasifican como un tipo de activo separado, ya que la forma en que <span class="notranslate">GameMaker Studio 2</span> los maneja es un poco diferente a la de los sprites y los objetos. Así, un conjunto de azulejos es una colección de azulejos creados
+    juntos en un sprite, y un azulejo es simplemente un recurso gráfico que se añade a una sala de <span class="notranslate">GameMaker Studio 2</span> como parte de un <strong> <a class="glossterm" data-glossterm="tile map" href="#">mapa de azulejos</a></strong>. Estos mapas de azulejos se dibujan en la pantalla
+    pantalla con muy poco procesamiento de la CPU/GPU, lo que los hace ideales para diseñar cualquier elemento estático en los niveles.</p>
+  <p>Para que el procesamiento de las baldosas sea tan rápido, tienen ciertas restricciones, siendo la más básica que <strong>sólo</strong> pueden <strong>ser rectangulares o cuadradas</strong> (si quieres algo distinto a esto, entonces tendrás que crear un sprite normal
+    y utilizar la <em>Capa de Activos</em> en el editor de salas, pero eso lo discutiremos en la sección posterior sobre <a href="Rooms.htm">salas).</a> Otras restricciones incluyen el hecho de que sólo pueden ser girados 90°, o reflejados o volteados, y sólo pueden
+    sólo pueden ser animados con marcos que numeran una <strong>potencia de 2</strong> (es decir: 2, 4, 8, 16, etc...).</p>
+  <p>Veamos un ejemplo sencillo de un juego de fichas: unas fichas de pared cuadradas para un juego de arriba abajo:</p>
+  <p><img alt="Example Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_ExampleTileset.png" /></p>
+  <p>Para empezar, necesitamos convertir esto en un <strong>sprite</strong> de conjunto de azulejos, lo que se haría en el <a href="../The_Asset_Editors/Sprites.htm">Editor de</a><a href="../The_Asset_Editors/Image_Editor.htm">Sprite/Editor de</a> <a href="../The_Asset_Editors/Sprites.htm">Imágenes</a>(o un editor de imágenes externo
+    y luego importado como un sprite). El sprite final debería ser algo así:</p>
+  <p><img alt="Tile Set Sprite" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Sprite.png"> <strong>Observe que la primera baldosa está en blanco en esa imagen</strong>. La forma en que el mapa de azulejos para la habitación se almacena en <span class="notranslate">GameMaker Studio 2</span> significa
+    que el primer azulejo siempre tendrá que ser en blanco, ya que es esencialmente el &quot;borrar&quot; azulejo o el &quot;espacio vacío&quot; azulejo (este azulejo &quot;en blanco&quot; tendrá un valor de índice de 0 - azulejos están indexados con un valor que
+    se indexan con un valor que comienza en 0 y se cuenta de izquierda a derecha, de arriba a abajo). Por lo tanto, al crear tus conjuntos de baldosas, la baldosa de la esquina superior izquierda siempre tendrá que estar vacía de esta manera. Tenga en cuenta también que, aunque la imagen anterior muestra un conjunto de azulejos de pared completo con 47 azulejos, es posible que
+    puede que no necesites tantos, ya que puedes girar y voltear los azulejos cuando los coloques en el editor de habitaciones más tarde.</p>
+  <p>Con el sprite creado, podemos seguir adelante y definir el conjunto de azulejos en sí, lo que significa que usted tiene que crear primero un nuevo recurso conjunto de azulejos haciendo clic derecho <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> el activo Conjunto de Azulejos
+    y seleccionando <em>Crear</em>. Esto abrirá el <a href="../The_Asset_Editors/Tile_Sets.htm">editor de</a> conjuntos de baldosas, donde podrás añadir el sprite y establecer sus propiedades:</p>
+  <p><img alt="Tile set Editor" class="center" src="../assets/Images/QS_Guide/QS_Tileset_Editor.png" /></p>
+  <p>Hemos establecido el tamaño del conjunto de azulejos a 64px, y hemos dejado el resto de las opciones en sus valores por defecto, ya que no tenemos necesidad de offsets ni nada parecido (los valores de offset son útiles para cualquier sprite de conjunto de azulejos que tenga espacios alrededor de cada uno de los
+    azulejos). Querrás nombrar el activo del conjunto de azulejos usando un prefijo apropiado como &quot; <span class="inline">ts_</span>&quot; para que puedas identificarlo fácilmente más tarde, y ten en cuenta que se aplican las mismas restricciones que para los sprites, es decir: el nombre no puede empezar
+    con un número, y sólo puede utilizar el guión bajo &quot;_&quot; y caracteres alfanuméricos.</p>
+  <p>Ahora puede cerrar el editor de conjuntos de azulejos, ya que puede utilizar el conjunto de azulejos &quot;tal cual&quot; para crear capas de mapas de azulejos en el editor de habitaciones, sin embargo, si quiere saber más sobre las funciones avanzadas del editor de conjuntos de azulejos, entonces consulte la siguiente sección del
+    el manual:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Tile_Sets.htm">Editores: El editor de conjuntos de azulejos</a></li>
+  </ul>
+  <p>Ahora pasamos a hablar de cómo añadir <strong>efectos de sonido</strong> a tu proyecto...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="Creating_Sound_Effects.htm">Creación de efectos de sonido</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Tilesets
+Quick Start: Creating Tilesets
+-->
+  <!-- TAGS
+qs_tilesets
+-->
+
+</body></html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Secuencias</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of Sequences in games." />
+  <meta name="rh-index-keywords" content="Quick Start - Sequences" />
+  <meta name="search-keywords" content="sequences,dope sheet,track panel,tracks,parameters" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Secuencias</h1>
+  <p>El último recurso que discutiremos en esta guía antes de pasar a discutir cómo todo se une en el <strong>Editor de</strong> Salas <strong>, es</strong> el recurso Secuencias. Una secuencia es esencialmente una colección de otros activos que se reúnen
+    en un lugar y luego animados juntos. La animación final (secuencia) puede ser añadida a las habitaciones en su juego como las instancias.</p>
+  <p>Las secuencias se crean a través del editor <a href="../The_Asset_Editors/Sequences.htm"><strong>Editor de secuencias</strong></a> que se abre cada vez que se crea un nuevo activo de secuencia en el <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>:</p>
+  <p><img alt="The Sequences Editor" class="center" src="../assets/Images/QS_Guide/QS_Sequences_Editor.png">Para crear una secuencia básica se añade un sonido, un sprite o una instancia en el <em>lienzo de</em> la secuencia y luego se posiciona en el lugar donde se quiere
+    al inicio de la secuencia. Esto crea una <strong><a class="glossterm" data-glossterm="Asset Track" href="#">Pista de activos</a></strong> en el <a class="glossterm" data-glossterm="Track Panel" href="#">panel de pistas</a> <em></em> y también
+    añade <strong></strong>a <strong><a class="glossterm" data-glossterm="keyframe" href="#"><span class="notranslate">fotogramas clave</span></a></strong> en el panel <a class="glossterm" data-glossterm="Dope Sheet" href="#"><span class="notranslate">Hoja de ruta</span></a> para mostrar la duración en la que el activo será visible.</p>
+  <p>El tiempo de la secuencia está en fotogramas (que es lo mismo que los pasos para las instancias, es decir, un fotograma es lo mismo que un paso del juego), y puedes ver lo que ocurrirá en cualquier fotograma moviendo la secuencia <strong><a class="glossterm" data-glossterm="playhead" href="#">cabezal de reproducción</a></strong> en
+    en la <span class="notranslate">hoja de cálculo</span>. La posición de la cabeza de juego también se utiliza para añadir <strong><span class="notranslate">fotogramas clave</span> </strong>que son los fotogramas en los que quieres que empiece o termine algún estado. Las claves de los parámetros se almacenan en <strong><a class="glossterm" data-glossterm="parameter tracks" href="#">pistas de parámetros</a></strong> para
+    el activo dado.</p>
+  <p>Así, usted posicionaría el activo y establecería su escala y color y otras propiedades en el fotograma 0 de la secuencia. A continuación, grabaría las claves de los parámetros del activo y movería el cabezal de reproducción al fotograma en el que desea establecer el siguiente estado del activo (posición,
+    color, etc. ....). En este fotograma se cambian de nuevo los diferentes parámetros y se graban las claves para ellos, luego se repite este proceso según sea necesario para la longitud de la secuencia. Cuando pulse el botón de reproducción de la secuencia, el activo se animará, con la
+    secuencia <a class="glossterm" data-glossterm="linear interpolation" href="#">interpolando</a> entre los diferentes estados de los parámetros, dando un resultado final algo así: </p>
+  <p><img alt="Sequence Example Image" class="center" src="../assets/Images/QS_Guide/QS_Sequence_Example.gif">No vamos a entrar en más detalles sobre el funcionamiento de las secuencias, pero basta con decir que son una herramienta increíblemente poderosa para hacer cualquier cosa
+    desde escenas de corte, hasta menús, estados de los personajes y mucho más.</p>
+  <p>La página enlazada a continuación le ofrece todos los detalles sobre cómo utilizar las secuencias en sus juegos:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sequences.htm">El editor de secuencias</a></li>
+  </ul>
+  <p>Ahora podemos pasar a hablar del <strong>Room Editor</strong>, que es donde se unen todas estas partes de tu juego...</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="Rooms.htm">Habitaciones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Quick Start: Sequences
+Sequences
+-->
+  <!-- TAGS
+qs_sequences
+-->
+
+</body></html>

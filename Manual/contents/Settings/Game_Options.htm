@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Opciones de juego</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to setup the different Game options" />
+  <meta name="rh-index-keywords" content="Game Options" />
+  <meta name="search-keywords" content="Game Options,Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opciones de juego</h1>
+  <p>Las opciones del juego se dividen en dos secciones, las opciones principales y la configuración de la plataforma. Las opciones principales comienzan con las opciones <strong>generales</strong>, que es donde se pueden establecer ciertas cosas que afectarán al juego independientemente de la plataforma que
+    que está diseñado para ejecutarse.</p>
+  <p><img alt="General Game Options" class="center" src="../assets/Images/Settings/Game_Options/General_Options.png">La ventana tiene las siguientes secciones:</p>
+  <ul class="colour">
+    <li><strong>Usar <span class="notranslate">DnD™</span></strong> como tipo de script por defecto: Cuando esta opción está marcada, todos los nuevos scripts y eventos de objetos se abrirán utilizando el editor <span class="notranslate">DnD™</span>en lugar del editor de código.</li>
+    <li><strong>Fotogramas por segundo del juego</strong>: Este valor establece el límite del número de fotogramas por segundo que <span class="notranslate">GameMaker Studio 2</span> debe tratar de mantener en sus juegos cuando se ejecuta. Este valor representa el número de veces que el bucle de juego se ejecutará en
+      un segundo (un solo bucle de juego se considera un solo &quot;fotograma&quot;) y se establece en un valor predeterminado de 60, aunque 30 se utiliza a menudo también. Hay muchos argumentos sobre qué velocidad de sala es la ideal, pero la respuesta real depende de qué tipo
+      de juego que estés haciendo, el tamaño de la sala, el número de instancias y lo intensivo que sea el código. Por ejemplo, si tienes una sala grande y una velocidad de sala de 30, el juego puede parecer &quot;entrecortado&quot;, ya que cuanto más grande sea el área que estás viendo
+      pero si el juego es intensivo, establecer la velocidad de la sala a 120 puede hacer que el juego se &quot;retarde&quot;, ya que los fps caen debido a la cantidad de procesamiento que se realiza. Así que tenga cuidado con este valor
+      y trata de ajustarlo siempre a lo que tu juego necesita.</li>
+    <li><strong>Color de dibujo por defecto</strong>: El color por defecto para dibujar texto o foros (y otras cosas) cuando no se ha establecido ningún color mediante código.</li>
+    <li><strong>Color de dibujo por defecto fuera de la región</strong> de la sala: El color por defecto que se utilizará para aclarar el fondo de cualquier área fuera de la sala de juego.</li>
+    <li><strong>Generar</strong> imágenes del proyecto: Al hacer clic en esta opción se abrirá la herramienta de generación de imágenes del proyecto.</li>
+    <li><strong>Fecha de inicio</strong> del proyecto: La fecha en que se inició el proyecto.</li>
+    <li><strong>Tiempo de uso del proyecto</strong>: El tiempo que ha pasado desde que inició el proyecto.</li>
+    <li><strong>GUID del proyecto</strong>: Este es el identificador único que se crea para cada proyecto dentro de <span class="notranslate">GameMaker Studio 2</span>. Si desea cambiarlo, puede hacer clic en el botón Crear nuevo GUID para generar uno nuevo.</li>
+    <li><strong>Generar mipmaps para</strong> páginas de textura separadas: Esta opción hará que <span class="notranslate">GameMaker Studio 2</span> cree mipmaps para aquellos sprites que tengan marcada la opción de Página de Textura Separada en la configuración de Textura del Editor de Sprites. Activar el mipmapping
+      significa que la página de textura original para el sprite debe ser escalada y filtrada en múltiples resoluciones dentro del archivo de textura. Esto está normalmente desactivado, pero si usted está usando vistas para acercarse o alejarse en grandes áreas de la sala de juegos, o está trabajando
+      con un juego 3D, entonces usted puede querer habilitar esto y luego usar las Funciones de Mipmapping para ajustar cómo el juego trata con los diferentes niveles de mipmap. Tenga en cuenta que si usted no está marcando los sprites como el uso de las páginas de textura individual, todavía puede activar
+      mipmapping en una base de grupo de texturas desde el Gestor de Grupos de Texturas. Esta opción está desactivada por defecto.</li>
+    <li>ID de<strong><span class="notranslate">Steam</span></strong>: Si estás creando un juego que va a ser distribuido a través de <span class="notranslate">Steam</span>, entonces necesitas suministrar el ID de la aplicación de <span class="notranslate">Steam</span> aquí. Asegúrate de haber añadido la ruta al SDK de <span class="notranslate">Steamworks</span>en las Preferencias de la Plataforma cuando utilices esta opción,
+      y asegúrate de que tienes todo configurado correctamente en el panel de <span class="notranslate">Steamworks</span>.</li>
+    <li><strong>Habilitar</strong> el control de fuentes: Si desea que el proyecto esté bajo SCM (Source Control Management) entonces necesita marcar esto. Está desactivado por defecto (ver aquí para más información sobre el control de fuentes).</li>
+    <li><strong>Autor</strong>: El nombre del autor del juego (o del editor o del estudio).</li>
+    <li><strong>Última modificación del proyecto</strong>: Esta sección simplemente muestra la fecha/hora de la última vez que se modificó el proyecto (no es editable).</li>
+    <li><strong>Aceptar</strong> la licencia de Spine: Aquí puedes marcar la casilla para que se te muestre la licencia de Spine <span class="notranslate">Runtime</span> y aceptarla. Esto le permitirá utilizar sprites de Spine en su juego (esta licencia también se mostrará la primera vez que intente añadir un sprite de Spine
+      a tu proyecto y no hayas comprobado la licencia aquí de antemano).</li>
+  </ul>
+  <p>El <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> también tendrá otras Opciones de Juego disponibles para usted dependiendo de las plataformas de destino que están disponibles para la <a href="../Setting_Up_And_Version_Information/GMS2_Version_Information.htm">licencia</a> que usted tiene y no todos ellos pueden estar disponibles o visibles.</p>
+  <p>Existen las siguientes opciones de juego específicas para cada plataforma:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Windows.htm"><span class="notranslate">Windows</span></a></li>
+    <li><a href="Game_Options/macOS.htm"><span class="notranslate">macOS</span></a></li>
+    <li><a href="Game_Options/Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></li>
+    <li><a href="Game_Options/Windows_UWP.htm"><span class="notranslate">Windows UWP</span></a></li>
+    <li><a href="Game_Options/HTML5.htm">HTML5</a></li>
+    <li><a href="Game_Options/Android.htm"><span class="notranslate">Android</span></a></li>
+    <li><a href="Game_Options/iOS.htm"><span class="notranslate">iOS</span></a></li>
+    <li><a href="Game_Options/tvOS.htm"><span class="notranslate">tvOS</span></a></li>
+  </ul>
+  <p class="note"><strong>NOTA</strong>: Las diferentes <strong>opciones de juegos para consola</strong> no aparecen aquí debido a las diferentes restricciones legales que mantienen las diferentes compañías. Si tienes una licencia de consola, puedes obtener esta información en el <a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support">servicio de asistencia de</a> <a href="https://help.yoyogames.com/hc/en-us/categories/202590248-Console-Support"><span class="notranslate">YoYo</span></a> Games,
+    pero primero debes ponerte en contacto con <span class="notranslate">YoYo Games</span> con tu correo electrónico de identificación de la consola y solicitar permiso para ver las diferentes secciones.</p>
+  <p>Algunas licencias de <span class="notranslate">GameMaker Studio 2</span> también pueden mostrar opciones de Juego para el <strong><span class="notranslate">Amazon Fire</span></strong> objetivo. Se trata de opciones heredadas, ya que las licencias más recientes admiten la plataforma Fire directamente utilizando las <strong><span class="notranslate">Android</span></strong> opciones de juego. Si su licencia sigue mostrando
+    muestra Amazon <span class="notranslate">Fire</span>, puedes encontrar información sobre las opciones en la siguiente página:</p>
+  <ul class="colour">
+    <li><a href="Game_Options/Amazon_Fire.htm"><span class="notranslate">Amazon Fire</span> (Legacy)</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Settings.htm">Configuración del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Configurations.htm">Configuraciones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Game Settings
+-->
+  <!-- TAGS
+game_settings
+-->
+</body>
+</html>

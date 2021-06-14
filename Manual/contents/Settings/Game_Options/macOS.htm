@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>macOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the macOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - macOS" />
+  <meta name="search-keywords" content="macOS Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opciones de juego<span class="notranslate">en macOS</span> </h1>
+  <p>Esta sección describe las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos <span class="notranslate">para macOS</span>. Las diferentes secciones son:</p>
+  <p> </p>
+  <h2>General</h2>
+  <p><img alt="Mac General Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_General_Options.png">En la sección de <strong>información del producto </strong>, lo primero que hay que hacer es rellenar el <strong>nombre para mostrar </strong>de su juego
+    y luego rellenar el <strong>número de versión</strong>, el <strong>ID de la aplicación</strong>, el <strong>archivo de salida de la aplicación</strong> y los detalles <strong>del copyright</strong>. El archivo de salida de la aplicación es la ubicación a la que van los archivos de instalación de su juego en su máquina de desarrollo Mac.
+    de desarrollo de Mac. Cuando creas tu <span class="inline">.app.zip</span>, ese archivo puede ir a cualquier parte (la ubicación que especifiques al hacer el diálogo de guardado no es la única copia que se hace de ese <span class="inline">.app.zip</span>), pero el <span class="inline">.pkg</span> y otros archivos se dejan en esta carpeta, permitiéndote probar instalaciones locales a través de la Terminal de forma que se simule la compra en la Mac Store, etc.</p>
+  <p>Aquí también debe indicar el <strong>identificador</strong> de equipo que desea utilizar para firmar la aplicación final que <span class="notranslate">GameMaker Studio 2</span> crea para usted. Si lo estableces aquí, anularás el identificador de equipo que hayas proporcionado en <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm">las Preferencias de<span class="notranslate">macOS</span></a>.
+    Después del Identificador de Equipo también tienes la opción de proporcionar el <strong>Identificador de Firma</strong>, que es requerido por Apple para todas las aplicaciones que no son de la tienda de aplicaciones (como los juegos de <span class="notranslate">Steam</span>, por ejemplo).</p>
+  <p>La siguiente opción es para habilitar <strong><span class="notranslate">Vapor</span> </strong>en tu juego. Si activas esta opción, asegúrate de que tienes el SDK <span class="notranslate">de Steamworks</span>instalado (ver <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">aquí</a>), y que
+    has añadido el <strong>ID de la aplicación</strong> de <strong><span class="notranslate">Steam</span></strong> en las <a href="../Game_Options.htm">Opciones Generales</a> del juego.</p>
+  <p>Por último, tienes la opción de <strong>Desactivar la caja de arena del sistema de archivos</strong>. Marcando esta opción se deshabilitará la caja de arena de <span class="notranslate">GameMaker</span> Studio 2 para guardar y cargar archivos, permitiendo que sus juegos accedan a los archivos desde cualquier parte del sistema que ejecuta el juego.
+    Esta opción está desmarcada por defecto, ya que recomendamos mantener el sandbox de <span class="notranslate">GameMaker</span> Studio 2 para los archivos en todos los sistemas y cuando se marca, algunas áreas de guardado/carga pueden seguir sin estar disponibles dependiendo de los permisos a nivel de sistema operativo. Para obtener más información
+    sobre la caja de arena, consulte las páginas sobre el <a href="../../Additional_Information/The_File_System.htm">sistema de archivos</a> de <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p> </p>
+  <h2>Gráficos</h2>
+  <p><img alt="Mac Graphics Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Graphics_Options.png">Las opciones gráficas son las que debes configurar para determinar cómo tu juego utilizará la tarjeta gráfica de tu Mac de destino.
+    Se incluyen las siguientes opciones para que las modifiques:</p>
+  <ul class="colour">
+    <li><strong>Permitir Menú y Dock en</strong> Pantalla Completa: Cuando está marcada, esta opción mostrará el menú del sistema operativo y el dock si el juego está en modo de pantalla completa. Esta opción está desactivada por defecto.</li>
+    <li><strong>Mostrar Cursor</strong>: Cuando esto está marcado se mostrará el cursor normal <span class="notranslate">de macOS</span>, y desmarcarlo significará que no se mostrará ningún cursor a menos que hayas creado uno en tu código de juego. Esta opción está desactivada por defecto.</li>
+    <li><strong>Iniciar</strong> en pantalla completa: Si esta opción está marcada, el juego se iniciará en modo de pantalla completa, de lo contrario, se iniciará en modo de ventana. Esta opción está desactivada por defecto.</li>
+    <li><strong>Permitir</strong> el<strong> <span class="notranslate">cambio de</span></strong> pantalla completa: Con esta opción marcada, el usuario puede cambiar de pantalla completa a ventana y viceversa utilizando los atajos estándar de <span class="notranslate">macOS</span>. Esta opción está desactivada por defecto.</li>
+    <li><strong>Interpolar los colores entre píxeles</strong>: Activa la <a class="glossterm" data-glossterm="linear interpolation" href="#">interpolación lineal</a>, que básicamente &quot;suaviza&quot; los píxeles. Para gráficos de píxeles nítidos, debería estar desactivado, pero
+      pero si tiene bonitas mezclas alfa y gráficos con bordes suavizados es mejor dejarlo activado. Está desactivado por defecto.</li>
+    <li><strong>Utiliza la sincronización para evitar el tearing</strong>: Esto activa o desactiva la sincronización <a class="glossterm" data-glossterm="v-sync" href="#">v</a>. Ten en cuenta que si tienes un juego con una velocidad de sala de 120 y el jugador tiene un monitor con una tasa de refresco
+      de 60, al activar esta opción también se bloqueará la velocidad del juego a 60. Esta opción está desactivada por defecto.</li>
+    <li><strong>Permitir el cambio de tamaño de la</strong> ventana: Marcar esta opción permite al usuario cambiar el tamaño de la ventana del juego (la opción Ventana sin bordes debe estar desactivada para que esto funcione). Esta opción está desactivada por defecto.</li>
+    <li><strong>Habilitar Retina</strong>: Si se marca esta opción, el búfer trasero estará a la resolución más alta (real) cuando el juego se ejecute en un monitor con retina, mientras que si se desmarca, el búfer trasero estará a la resolución aparente (más baja).
+      Lo que esto significa es que la ventana inicial del juego se ajustará al doble de la anchura y la altura que el puerto de la sala/vista a la que se ajusta la primera sala. Sin embargo, esto NO escala la superficie de la aplicación para adaptarse, y por lo tanto si usted quiere que su juego para hacer la
+      Si quieres que tu juego aproveche al máximo la pantalla retina, también debes configurar la superficie de la aplicación para que sea igual al tamaño de la ventana (ten en cuenta que esto duplicará los píxeles a lo largo de la anchura y la altura, así que sólo activa esto y escala la superficie de la aplicación si tu juego se beneficiará
+      de la resolución aumentada).<br>
+      <br> Esta opción está desactivada por defecto, y al activarla no se verá ninguna diferencia cuando ejecutes o depures el juego usando VM, ya que el corredor está pre-construido en ese caso. Sólo funcionará si construyes un ejecutable a través de VM, o utilizas YYC para probar o
+      construir el juego, ya que eso reconstruirá el corredor con sus Opciones de Juego personalizadas.</li>
+    <li><strong>Escala</strong>: Aquí puede elegir entre mantener la relación de aspecto (de modo que una habitación 4:3 se verá en &quot;caja de letras&quot; en una 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).<br>
+      <br>
+      <span style="font-size:16px;"><strong>ATENCIÓN!</strong> <em><span class="notranslate">Al</span>apagar la superficie de la aplicación se deshabilitarán todas las opciones de escala establecidas en las Opciones de Juego de <span class="notranslate">Windows</span> hasta que se vuelva a encender. Consulte la sección La superficie de la aplicación para obtener más detalles.</em></span></li>
+  </ul>
+  <p>Por último, existe la opción de establecer el tamaño de la <a class="glossterm" data-glossterm="texture page" href="#">página de la textura</a>. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
+    también hay un botón marcado <strong><strong>Vista previa </strong></strong>que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo quedan. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura
+    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para obtener más información sobre las páginas de textura, consulte <a href="../Texture_Information/Texture_Pages.htm">aquí</a>.</p>
+  <p class="note"><strong>NOTA</strong>: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego en los PC con especificaciones inferiores.</p>
+  <p> </p>
+  <h2>Imágenes</h2>
+  <p><img alt="Mac Images Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Images_Options.png">En la sección de imágenes es donde se suministran las imágenes que requiere el juego. En el caso de Mac, debe suministrar un archivo de <strong>iconos </strong>
+    (que debe estar en formato <span class="inline">.png</span> y 1024x1024px) y una pantalla de <strong>bienvenida</strong> (que puede estar en formato <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> o <span class="inline">.gif</span> ). La pantalla de bienvenida se mostrará mientras se carga el juego.</p>
+  <p>En el caso de los paquetes DMG, puede proporcionar una imagen de <strong>fondo del</strong> instalador que aparecerá como fondo del instalador DMG.</p>
+  <p>Vale la pena señalar que <span class="notranslate">GameMaker Studio 2</span> tiene una herramienta <a href="../../IDE_Tools/Project_Image_Generator.htm">generadora de imágenes del proyecto</a> que se puede utilizar para crear automáticamente todas las imágenes necesarias para todas las diferentes plataformas de destino de su juego
+    para las que se compila el juego. Si utilizas esta herramienta, debes revisar las imágenes creadas para asegurarte de que son las que necesitas.</p>
+  <p> </p>
+  <h2>Embalaje</h2>
+  <p><img alt="Mac Packaging Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Packaging_Options.png">Si desea que el juego terminado esté listo para la App Store, debe marcar la opción <strong>Build for Mac App Store</strong>,
+    pero ten en cuenta que esto sólo funcionará si eres un desarrollador registrado y tienes los certificados necesarios. Debajo de eso están los <strong>permisos de </strong>la aplicación que sólo debe comprobar si son verdaderos ya que Apple puede rechazar su aplicación si
+    si están marcados cuando no son necesarios o viceversa. Estas opciones simplemente permiten que tu juego utilice las funciones <span class="inline">http_</span> y <span class="inline">url_</span>. Vale la pena señalar que si usted desea apoyar GamePads en su
+    entonces la opción de crear un paquete listo para la App Store debe estar <em>desactivada</em>.</p>
+  <p>Por último, debe seleccionar su <strong>categoría de aplicación</strong> (para más información, consulte <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">aquí</a>).</p>
+  <p> </p>
+  <h2>Social</h2>
+  <p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png">Esta opción es para usar la <strong>extensión de inicio de sesión de Apple</strong> en Mac. Puedes obtener esta extensión desde la página <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">Juegos YoYo</span> <span class="notranslate">Mercado</span></a>,
+    y la propia extensión contiene instrucciones completas de uso. Si no utiliza esta extensión, no debe marcar esta opción.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Game_Options.htm">Opciones de juego</a></div>
+        <div style="float:right">Siguiente: <a href="Ubuntu.htm"><span class="notranslate">Ubuntu</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">macOS</span> Game Options
+Enable Retina
+-->
+  <!-- TAGS
+game_settings
+macos_options
+-->
+
+</body></html>

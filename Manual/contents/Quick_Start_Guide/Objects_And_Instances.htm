@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objetos e instancias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what objects and instances are and the role they play in making a game." />
+  <meta name="rh-index-keywords" content="Quick Start - Objects And Instances" />
+  <meta name="search-keywords" content="objects,instances" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Objetos e instancias</h1>
+  <p>Con los activos que has visto hasta ahora puedes añadir algunas imágenes y sonidos bonitos al navegador de activos del juego, ¡pero todavía no hacen nada en el juego en sí! Para ello necesitamos el activo más importante de todos en <span class="notranslate">GameMaker Studio 2</span>, el activo <strong>Objeto </strong>.
+    Los objetos son un activo especial que utilizamos para controlar aspectos de un juego y para hacer cosas específicas. La mayoría de las veces tienen un sprite asociado con ellos para que pueda verlos en las salas de juego, pero a veces se utilizan como un &quot;detrás de las
+    detrás de las escenas&quot; <strong>para </strong>hacer cosas como el seguimiento de las estadísticas, o establecer los tiempos para las escenas de corte, etc ... Los objetos pueden tener comportamientos y pueden reaccionar a ciertos eventos, así como entre sí, y la mayoría de las cosas que se ven en
+    un juego se basan en objetos y sus interacciones con el usuario y entre sí.</p>
+  <p>Ahora, no podemos hablar de Objetos sin hablar de Instancias <strong>.</strong> En un juego hecho con <span class="notranslate">GameMaker Studio 2</span>, los personajes, los monstruos, las bolas, las paredes, etc... que usted ve en el juego son en realidad todos considerados como <strong>instancias</strong>.
+    Una instancia es esencialmente una &quot;copia&quot; de un objeto que se encuentra en el Navegador de Activos y luego se coloca en una habitación (piense en los objetos como plantillas <strong>para las instancias </strong>). Así que cuando hablamos de que algo afecta o cambia una instancia
+    nos referimos a que una copia particular de un objeto en una sala se ve afectada mientras que el resto no, pero cuando hablamos de afectar o cambiar un objeto nos referimos a que cualquier cosa que hagamos en él se reflejará en todas las instancias creadas a partir de ese punto también.
+    punto en adelante. Así, <strong>el objeto es la plantilla de la instancia, y la instancia es lo que colocamos en una habitación para hacer nuestro juego</strong>.</p>
+  <p>Para crear un nuevo activo objeto, es lo mismo que para cualquier otro activo y simplemente haga clic con el botón derecho del ratón <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en la carpeta de activos Objetos y seleccione <em>Crear (o</em> haga clic con el botón derecho del ratón
+    en cualquier lugar del <a href="../Introduction/The_Asset_Browser.htm">Navegador de Ac</a> tivos y seleccionar Crear <em>Objeto</em>).</p>
+  <p><img alt="The Object Editor" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor.png" /></p>
+  <p>Esta es la ventana <a href="../The_Asset_Editors/Objects.htm">del Editor de Objetos</a> y muestra las propiedades actuales del objeto, y lo primero que debe hacer es nombrar el objeto, de nuevo usando un prefijo como &quot; <span class="inline">obj_</span>&quot; o
+    algún otro identificador. En general, para que un objeto dibuje algo y registre colisiones con instancias de otros objetos necesita tener un sprite asignado, que se añade usando el botón <img alt="Add Sprite Icon " class="icon" height="24" src="../assets/Images/Icons/Icon_AddSound.png" width="31">. Esto abrirá el <strong>Explorador</strong> de Activos donde puedes seleccionar el sprite a utilizar (también puedes arrastrar sprites desde el Navegador de Activos y soltarlos en el Editor de Objetos para asignarlos):</p>
+  <p><img alt="The Asset Explorer" class="center" src="../assets/Images/QS_Guide/QS_AssetExplorer.png" /></p>
+  <p>Si todavía no tiene un sprite apropiado, puede hacer clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el botón <em>Nuevo Sprite</em> <img alt="New Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_NewSprite.png"> para crear un nuevo activo de sprite y editarlo como desee, igual que si hubiera creado el activo a través de las opciones estándar de creación de sprites, sólo que ahora se asignará automáticamente al objeto que tenía abierto cuando empezó a crearlo. Una vez que
+    seleccione un sprite también puede hacer clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en los botones <em>Editar Sprite</em> <img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png"> o <em>Editar Imagen</em> <img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png"> para editar las imágenes del propio sprite o el activo de sprite. Esto puede ser más rápido que encontrar primero el sprite en el Navegador de Activos y luego indicar
+    que quieres editarlo.</p>
+  <p>Una vez que hayas añadido o creado el sprite, puedes cambiar algunas otras propiedades del objeto como si debe ser <strong>visible </strong>o no - por ejemplo - o qué tipo de <strong>máscara de colisión</strong> debe tener. Para juegos sencillos, probablemente
+    no necesitas cambiar nada aquí y ahora puedes pasar a añadir <strong>Eventos </strong>al objeto.</p>
+  <p>Los eventos son momentos discretos en el bucle del juego en los que se hace que las cosas sucedan en función de lo que hayas programado para ellos. <span class="notranslate">GameMaker Studio 2</span> trabaja con ciclos de estos eventos - desde el momento en que se inicia una habitación hasta el momento en que se termina hay un
+    Desde el momento en que una habitación se inicia hasta el momento en que se termina hay un bucle de juego que se ejecuta donde cada paso una serie de eventos se ejecutan, y usted puede optar por colocar el código <span class="notranslate">GML</span> o acciones <span class="notranslate">DnD ™</span>en sus instancias que responden a estos eventos (un <strong>paso </strong>es un momento en el tiempo de juego, que se rige por la configuración de la velocidad del juego
+    - también llamado &quot;frame&quot;).</p>
+  <p>Para añadir un evento, haga clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el botón Añadir evento:</p>
+  <p><img alt="The Object Editor Events" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Events.png" /></p>
+  <p>Arriba puede ver todas las diferentes <strong>categorías de</strong> eventos, algunas de las cuales contienen otras subcategorías. No vamos a repasar aquí todos los eventos, pero sí cubriremos brevemente los cinco más importantes:</p>
+  <table class="icons">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Icon Create Event" src="../assets/Images/Icons/Icon_Event_Create.png" /></td>
+        <td class="icons"><strong>Crear evento</strong></td>
+        <td class="text">Este evento ocurre cuando se crea por primera vez una instancia del objeto, y es lo primero que ocurre dentro de una instancia que ha sido colocada en la sala a través del editor de salas cuando se entra en una sala. Esto significa que este evento es el
+          lugar ideal para inicializar variables, iniciar líneas de tiempo, establecer rutas, etc... y hacer cualquier otra cosa que generalmente sólo necesita hacerse una vez o sólo cuando una instancia aparece por primera vez en la sala.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Step Event" src="../assets/Images/Icons/Icon_Event_Step.png" /></td>
+        <td class="icons"><strong>Paso Evento</strong></td>
+        <td class="text"><span class="notranslate">GameMaker Studio 2</span> divide el tiempo de juego en pasos con la velocidad del juego definiendo cuántos de estos pasos se supone que hay por segundo. Un paso, es básicamente el bucle que se ejecuta constantemente con todos los eventos que se comprueban y se activan según sea necesario
+          mientras el juego se ejecuta, así que como puedes imaginar, el Evento de Paso es un evento que se comprueba en cada paso del juego mientras la instancia existe. Tenga en cuenta que la categoría de Evento de Paso tiene tres subcategorías para &quot;afinar&quot; el tiempo dentro de
+          dentro de la instancia, pero en general usted usará el Evento de Paso principal más.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Collision Event" src="../assets/Images/Icons/Icon_Event_Collision.png" /></td>
+        <td class="icons"><strong>Evento de colisión</strong></td>
+        <td class="text">Obviamente, al hacer un juego, es muy importante que sepas cuándo dos (o más) instancias de un objeto han colisionado, y para ello tenemos el evento de colisión. Este es un evento que se coloca en un objeto y luego se especifica contra qué otro
+          objeto debe comprobar las colisiones. Una vez que hayas añadido el evento y elegido el objeto a comprobar puedes añadir código <span class="notranslate">GML</span> o <span class="notranslate">DnD™</span>para resolver la colisión.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Draw Event" src="../assets/Images/Icons/Icon_Event_Draw.png" /></td>
+        <td class="icons"><strong>Evento de sorteo</strong></td>
+        <td class="text">Hay varios eventos de desenfundado dentro de la categoría de eventos de desenfundado, pero el que más se utiliza es el que está en la parte superior llamado simplemente &quot;Desenfundado&quot;. Este evento general de sorteo será llamado, al igual que el evento de paso, cada cuadro de juego, pero funciona
+          de dos maneras diferentes. La primera es cuando no añades este evento al objeto... Cuando no hay <em>un evento de dibujo especificado </em>, entonces <span class="notranslate">GameMaker Studio 2</span> dibujará por defecto el sprite asignado al objeto, utilizando cualquier transformación que
+          han sido aplicadas en otra parte del objeto (como para cambiar su tamaño o la mezcla alfa), por lo que incluso cuando no hay un Evento de Dibujo en la lista de Eventos, todavía se está ejecutando y seguirá dibujando en la pantalla cuando una instancia se coloca en una habitación. La
+          segunda forma en que funciona es cuando usted agrega el evento mismo e incluye cualquier <span class="notranslate">GML</span> o <span class="notranslate">DnD™</span>en él. Agregar algo al evento le dice a <span class="notranslate">GameMaker Studio 2</span> <em>&quot;Quiero controlar lo que se dibuja para las instancias de este objeto&quot; y</em> anula completamente
+          anula el dibujo por defecto. Esto significa que usted puede tener un objeto con un sprite asignado, a continuación, establecer el evento de dibujo para dibujar el texto y el sprite no se dibuja como usted no ha dicho <span class="notranslate">GameMaker</span> Studio 2 para dibujar, aunque el texto será.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Icon Destroy Event" src="../assets/Images/Icons/Icon_Event_Destroy.png" /></td>
+        <td class="icons"><strong>Destrucción del evento</strong></td>
+        <td class="text">Este evento es el último que se ejecuta cuando se destruye una instancia. A menudo se pasa por alto cuando se añaden comportamientos a los objetos, pero puede ser muy útil - por ejemplo, para crear efectos de explosión o partículas cuando se mata a un enemigo,
+          o para reaparecer una nueva instancia del objeto en otra parte de la sala, o incluso para añadir puntos a una puntuación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <!--</div>-->
+  </p>
+  <p>Para más información sobre los diferentes eventos, consulte <a href="../The_Asset_Editors/Object_Properties/Object_Events.htm">aquí</a>.</p>
+  <p>Al añadir un evento se abrirá el editor de código o el editor <span class="notranslate">Drag and Drop™</span>, dependiendo del tipo de proyecto que estés creando. En esta ventana puedes ahora añadir las acciones <span class="notranslate">GML</span> o <span class="notranslate">DnD™</span>que deseas que se realicen cada vez que ese evento se dispare dentro de
+    el bucle del juego. Un objeto típico con eventos y código tendrá este aspecto:</p>
+  <p><img alt="Object Editor Chained Windows" class="center" src="../assets/Images/QS_Guide/QS_ObjectEditor_Chain.png" /></p>
+  <p>Puede encontrar más información sobre el uso de <span class="notranslate">GML</span> y <span class="notranslate">DnD™</span>en sus eventos de objetos en las dos páginas que se indican a continuación:</p>
+  <ul class="colour">
+    <li><a href="../Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm">Visión general de<span class="notranslate">Drag and Drop™</span>.</a></li>
+    <li><a href="../GameMaker_Language/GML_Overview/GML_Overview.htm">Visión general<span class="notranslate">del lenguaje GameMaker</span> </a></li>
+  </ul>
+  <p>Y puedes encontrar una explicación completa de todas las partes del Editor de Objetos aquí:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Objects.htm">Editores: El editor de objetos</a></li>
+  </ul>
+  <p>En la siguiente parte de esta guía veremos otro tipo de recurso, <strong>las secuencias</strong>...</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="Sequences.htm">Secuencias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Objects And Instances
+Quick Start: Objects and Instances
+-->
+  <!-- TAGS
+qs_objects_instances
+-->
+</body>
+</html>

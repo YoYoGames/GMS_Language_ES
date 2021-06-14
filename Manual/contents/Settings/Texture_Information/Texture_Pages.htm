@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Páginas de texturas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how texture pages work" />
+  <meta name="rh-index-keywords" content="Texture Groups - Texture Pages,Texture Pages" />
+  <meta name="search-keywords" content="textures,texture pages,texture page,texture atlas,atlas" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Páginas de texturas</h1>
+  <p>Cuando creas un juego con <span class="notranslate">GameMaker Studio 2</span>, seguramente habrás creado gráficos - sprites, tilesets y fuentes - para acompañarlo. Estos gráficos se almacenan en <strong>páginas de texturas</strong> que <span class="notranslate">GameMaker Studio 2</span> construye para usted a partir de todos los
+    recursos de imagen que contiene tu juego. A continuación se muestra un ejemplo de una página de texturas completada:</p>
+  <p><img alt="Texture Page Example" class="center" src="../../assets/Images/Settings/Texture_Page_Example.png">Como puede ver, los gráficos del juego están mezclados de tal manera que todos caben en una página de tamaño de potencia 2, por ejemplo 512x512, 1024x512
+    etc... hasta un tamaño máximo de página de 4096x4096 píxeles. Tenga en cuenta que el tamaño máximo de una página de textura dependerá de la plataforma de exportación elegida, ya que algunos objetivos no permitirán páginas mayores de 2048x2048px, e incluso entonces, el tamaño máximo disponible
+    puede no ser óptimo para todos los dispositivos que utilizan el sistema operativo de la plataforma de destino.</p>
+  <p>Ten en cuenta también que si tus imágenes tienen mucho espacio vacío (es decir, píxeles transparentes) a su alrededor, se recortarán por defecto para eliminar cualquiera de estos píxeles &quot;invisibles&quot; y empaquetar el mayor número de imágenes posible en una sola página de textura. Si
+    esto no es lo que quieres que ocurra, entonces tienes que desactivarlo desde la ventana de <a href="../Texture_Groups.htm">Grupos de Texturas</a>.</p>
+  <p>Es importante entender cómo los diferentes ajustes de textura disponibles afectarán a una imagen, así que vamos a ver la sección <a href="../../The_Asset_Editors/Sprites.htm">del Editor de Sprite</a> titulada <strong>Ajustes de Textura</strong>, que se muestra a continuación:</p>
+  <p><img alt="Texture Page Options" class="center" src="../../assets/Images/Settings/Texture_Page_Options.png">Aquí puede definir cómo se almacenará la imagen en la página de la textura, así como si es una imagen específicamente para su uso con 3D y tiene que
+    y a qué página de textura (si la hay) debe asignarse, así como algunas otras opciones (explicadas en detalle en la página <a href="../../The_Asset_Editors/Sprites.htm">del Editor de Sprite</a> ). Las opciones que nos interesan son las siguientes
+    dos primeras: Mosaico Horizontal y Mosaico Vertical. Éstas se refieren a cómo se crearán los bordes de la imagen cuando se coloque en la página de la textura.</p>
+  <p>Una imagen que va a ser embaldosada tendrá los bordes (horizontales o verticales) añadidos por los bordes del lado opuesto, mientras que si no se selecciona el embaldosado el sprite se <em>sujetará </em>y los píxeles de los bordes se repetirán (tenga en cuenta que los tilesets también
+    tienen un ajuste para la anchura del borde de salida, que se encuentra en las <a href="../../The_Asset_Editors/Tile_Sets.htm">Propiedades</a> del conjunto de azulejos que hace lo mismo, sólo para cada azulejo en el conjunto). La siguiente imagen ilustra esto:</p>
+  <p><img alt="Texture Page Results" class="center" src="../../assets/Images/Settings/Texture_Page_Results.png">Debajo de estos ajustes se encuentra la opción <strong>Separate Texture Page </strong>. Esta opción obligará a <span class="notranslate">GameMaker Studio 2</span> para colocar esta imagen
+    en su propia página de textura única y no hay opciones asociadas con esto como el mosaico o la sujeción se controla directamente a través del código. Esto es más comúnmente utilizado para texturizar modelos 3D (en cuyo caso la textura debe ser una potencia de 2, por ejemplo: 128x128,
+    512x512, 256x1024, etc...), pero se puede utilizar para forzar que cualquier imagen se dibuje en su propia página única.</p>
+  <p class="note"><strong>NOTA</strong>: Ten cuidado al utilizar esta opción, ya que puedes agotar rápidamente toda la memoria de texturas disponible, especialmente en dispositivos móviles, si tienes demasiadas páginas de texturas.</p>
+  <p>Ahora bien, cuando tu juego es grande y con muchos recursos artísticos, puede ser que la forma en que <span class="notranslate">GameMaker Studio 2</span> crea automáticamente estas páginas no sea la óptima para sacar el máximo partido al dispositivo de destino, debido a que si una habitación de tu juego
+    necesita recursos de 4 páginas de textura diferentes, el dispositivo tendrá que intercambiar estas páginas en la memoria (y fuera de ella) constantemente, lo que puede causar una pérdida de rendimiento. Para ello, tienes la opción de indicar a <span class="notranslate">GameMaker Studio</span> 2 qué imágenes deben colocarse
+    colocadas en cualquier página de textura específica asignándolas a <strong>Grupos de Textura</strong> específicos. El objetivo final de esto es minimizar el número de intercambios que se realizan en un juego en cualquier momento (las páginas de textura se pueden añadir desde la ventana de Grupos de <a href="../Texture_Groups.htm">Textura</a> ).</p>
+  <p>Hay que tener en cuenta que en las pestañas de cada plataforma que se encuentran en las <a href="../Game_Options.htm">Opciones de Juego</a> hay un botón que permite ver las páginas de texturas que se han definido, tal y como se crearían para cada
+    objetivo. Esto es muy útil para saber cuántas páginas se están creando y qué hay en ellas.</p>
+  <p>Si tienes una textura en tu juego que es más grande que el tamaño máximo de la página de texturas seleccionada, entonces esta se <em>reducirá a la mitad </em>(y a la mitad de nuevo si es necesario) hasta que encaje en el tamaño máximo de la página. <em>No </em>se dividirá en
+    secciones en varias páginas de texturas. Esto significa que cuando pruebes tu juego en <span class="notranslate">Windows</span>, <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) o MacOS el juego puede verse bien ya que estás utilizando páginas de textura más grandes, pero en <span class="notranslate">iOS</span> (o cualquiera de los otros objetivos que requieren una página de textura más pequeña
+    para un rendimiento óptimo) la textura puede verse borrosa o tener artefactos. Es esencial que te asegures de que todas tus imágenes caben en el tamaño más pequeño de la página de textura que utilizará tu juego, y si no es así, deberías dividirlas
+    en imágenes más pequeñas y luego dibujarlas juntas en tu juego para dar la ilusión de una imagen grande y completa.</p>
+  <p class="note"><strong>NOTA</strong>: Antes de que empieces a dividir tus gráficos en varias páginas de texturas, debes tener en cuenta que esto no siempre es necesario, ni es siempre la forma más eficiente de trabajar. Algunos juegos pueden estar más ligados a la CPU que a la GPU (ver
+    la sección sobre <a href="../../Introduction/Debugging.htm">depuración</a> para más información) y esos juegos no se beneficiarán mucho de esta optimización, y también deberías considerar si no sería mejor tener todas tus imágenes en dos
+    páginas de texturas e intercambiarlas entre ellas en lugar de repartirlas entre varias, lo que supone un desperdicio de memoria.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Texture_Groups.htm">Grupos de texturas</a></div>
+        <div style="float:right">Siguiente: <a href="Non-Bitmap_Sprites.htm">Sprites sin mapa de bits</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Texture Pages
+Texture Atlas
+Atlas
+Textures
+-->
+  <!-- TAGS
+texture_pages
+-->
+</body>
+</html>

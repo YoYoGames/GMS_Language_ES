@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crear un juego con GameMaker Studio</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Introduction to making games and the Quick Start Guide" />
+  <meta name="rh-index-keywords" content="Quick Start" />
+  <meta name="search-keywords" content="" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Guía de inicio rápido</h1>
+  <p>Bienvenido a la <strong>Guía de inicio rápido</strong>! Esta sección del manual está diseñada para que te familiarices con los aspectos más importantes de <span class="notranslate">GameMaker Studio 2</span> y te mostrará los aspectos básicos para que puedas crear juegos lo más rápido posible. La guía cubre
+    la funcionalidad esencial del IDE y también proporciona una breve introducción a la programación, para que puedas sacar el máximo partido al producto lo más rápido posible, tanto si utilizas el <span class="notranslate">Lenguaje GameMaker</span><span class="notranslate">(GML</span>) como el lenguaje visual de scripts <span class="notranslate">Drag and Drop™</span>.</p>
+  <p>Para ilustrar el flujo de trabajo de <span class="notranslate">GameMaker Studio 2</span> y ponerte directamente a hacer algo, hemos preparado esta guía para llevarte desde lo más básico de lo que es GameMaker <span class="notranslate">Studio 2 y</span> lo que es un programa, pasando por la creación de activos generales y hasta
+    hasta cómo codificar cosas básicas como el movimiento y la puntuación.</p>
+  <p>Crear juegos con <span class="notranslate">GameMaker Studio 2</span> es, conceptualmente, un asunto bastante sencillo y directo, siguiendo estos pasos generales:</p>
+  <ul class="colour">
+    <li>Cree activos de <strong>imagen </strong>( <a class="glossterm" data-glossterm="sprites" href="#">sprites</a>, <a class="glossterm" data-glossterm="tile sets" href="#">conjuntos de azulejos</a>, <a class="glossterm" data-glossterm="font" href="#">fuentes</a>)
+      y añádelos al Navegador de Activos.</li>
+    <li>Cree activos de <strong>objetos </strong>para representar las cosas que desea utilizar en su juego y asígneles los activos de imagen necesarios.</li>
+    <li>Programar estos objetos para que hagan cosas en respuesta a <strong>eventos</strong> específicos.</li>
+    <li>Añade <strong>instancias </strong>de estos objetos en una <strong>sala </strong>donde realizarán sus programas.</li>
+  </ul>
+  <p>En las siguientes páginas entraremos en los detalles de cada uno de los elementos mencionados, pero este es el flujo general de acciones necesarias para crear un juego. Lo importante es tener en cuenta que tus principales &quot;bloques de construcción&quot; para el juego
+    siempre serán los sprites, los objetos y las habitaciones, aunque hay una serie de activos subsidiarios que también se pueden utilizar para añadir funcionalidad o comportamientos adicionales a estos elementos (como <strong> <a class="glossterm" data-glossterm="shaders" href="#"><span class="notranslate">sombreadores</span></a></strong>,
+    o <strong> <a class="glossterm" data-glossterm="timelines" href="#">líneas de tiempo</a></strong>).</p>
+  <p>Ahora, antes de pasar a explicar cada una de estas cosas con más detalle, vamos a resumir rápidamente cómo GameMaker <span class="notranslate">Studio</span> 2 convertirá los bloques de construcción anteriores en su juego. Básicamente, todo sucede en lo que se llama el <strong>Bucle de Juego</strong>,
+    que tiene una velocidad medida en <strong> Fotogramas por Segundo</strong>, y un &quot;fotograma&quot; se llama un Paso en <strong>GameMaker </strong>. Los cuadros por segundo (o <strong>FPS</strong>) por defecto es de 60, lo que significa que por cada segundo que pasa <span class="notranslate">GameMaker</span>
+    Studio 2 ejecutará el bucle del juego 60 veces, y en cada paso (bucle, fotograma) se producirá un número de eventos y el juego progresará.</p>
+  <p>Para ayudar a entender esto, imaginemos que tienes un personaje que quieres mover por la sala de juego. Crearías un <em>sprite </em>para ese personaje, luego crearías un <em>objeto </em>y le asignarías el sprite, y en el objeto añadirías
+    un <em>evento </em>llamado " <strong>Step Event</strong>". En este evento le dirías que se mueva a la derecha 2 píxeles. A continuación, se coloca una <strong>instancia </strong>de ese objeto en la sala de juego, y cuando se ejecuta el juego, la instancia se
+    comenzará a moverse 2 píxeles a la izquierda en cada paso (el evento Step se ejecuta una vez en cada paso del juego), de modo que en 1 segundo la instancia se ha movido 120 píxeles a la derecha.</p>
+  <p>En el ejemplo anterior, hablamos de decirle al objeto que se mueva hacia la izquierda, pero ¿cómo lo hacemos? Bueno, eso se hace con un <strong>programa </strong>que escribimos usando <a href="../Drag_And_Drop/Drag_And_Drop_Index.htm"><strong><span class="notranslate">Drag and Drop™ (Arrastrar y soltar)</span></strong></a>    (el lenguaje de scripting visual) o <strong><a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">GML</span></a> </strong>(el lenguaje Game <strong>Maker</strong>). El que utilices depende de ti y de la forma en que quieras
+    trabajar, pero al usarlos estás <em>programando </em>tu juego. La siguiente sección trata de esto con más detalle, pero antes de continuar, es posible que desee echar un vistazo al siguiente video tutorial que ilustra algunas de las cosas que hemos
+    discutido anteriormente y te prepara para las siguientes secciones:</p>
+  <p><iframe src="https://www.youtube.com/embed/ubvrKQlI_1A" allowfullscreen="" class="center"></iframe></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="What_Is_Programming_.htm">¿Qué es la programación?</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Quick Start Guide
+-->
+  <!-- TAGS
+quick_start
+-->
+
+</body></html>

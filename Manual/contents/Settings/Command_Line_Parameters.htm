@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Parámetros de la línea de comandos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Command Line Parameters when running your game" />
+  <meta name="rh-index-keywords" content="Command Line Parameters" />
+  <meta name="search-keywords" content="command line,AB testing,command line parameters" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Parámetros de la línea de comandos</h1>
+  <p>Cuando creas juegos es importante que pruebes el archivo ejecutable para asegurarte de que la compilación final es correcta y no tiene errores o diferencias imprevistas. Sin embargo, crear un ejecutable significa que, al no tener acceso a la consola de depuración ni
+    a la ventana del compilador, puede ser difícil localizar y depurar cualquier problema que pueda encontrar. Sin embargo, hay una solución para esto, y es utilizar <strong>parámetros de línea de comandos</strong> para establecer ciertas propiedades cuando se ejecuta la versión ejecutable de
+    del juego, lo que a su vez le permite crear archivos de registro de salida y probar otras situaciones especiales.</p>
+  <p class="note"><strong>NOTA</strong>: Esto está disponible en el módulo de destino estándar <strong><span class="notranslate">Windows</span> </strong> <strong>sólo</strong> en el módulo de destino estándar.</p>
+  <p>Para que esto funcione, primero debes crear un ejecutable <span class="notranslate">para Windows</span> de tu juego y tenerlo instalado en tu máquina de pruebas. Una vez hecho esto, necesitas crear un <em>acceso directo </em>al juego en el escritorio. Aquí es donde añadiremos los parámetros
+    que se pasarán a la <span class="inline">*.exe</span> (para crear un acceso directo, haga clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> el ejecutable del juego y luego seleccione <em>Enviar a</em> &gt;
+   <em>Escritorio (crear acceso directo)</em>) .</p>
+  <p>Una vez que haya hecho su acceso directo, puede utilizar cualquiera de los siguientes parámetros en la ruta de destino:</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-noaudio</span>: Apaga todo el audio del juego.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-inawindow</span>: Hace que el juego se inicie en una ventana, incluso cuando está configurado para ejecutarse en modo de pantalla completa.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-output &lt;<em>filename</em>&gt;</span>: Envía la salida de la consola al nombre del archivo, incluyendo cualquier mensaje de depuración que tenga en su base de código.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-debugoutput &lt;<em>filename</em>&gt;</span>: Envía la salida de la consola al nombre del archivo, excluyendo cualquier mensaje de depuración personalizado, pero incluyendo información extra del corredor para el reporte de errores.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-software</span>: Forzará al juego a utilizar el Procesamiento de Vértices por Software en lugar del hardware para renderizar los gráficos del juego. Esto es especialmente útil para aquellos PCs que utilizan un chipset Intel GFX integrado o que muestran problemas de visualización
+    en máquinas antiguas.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-intel</span>: Esto activará una solución para los malos controladores de Intel, independientemente de la GPU que se utilice. Esta solución para esos malos controladores ralentizará las cosas, dando un golpe de rendimiento notable para su juego, por lo que si usted no necesita
+    no necesitas la corrección, no la uses.</p>
+  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-vanillaGFX</span>: Esta opción desactiva la comprobación del fabricante del controlador y puede ser muy útil para probar el juego &quot;tal cual&quot;.</p>
+  <p>Cabe destacar que el <span class="inline">&lt;<em>filename</em>&gt;</span> en <span class="inline">-output</span> y <span class="inline">-debugoutput</span> puede ser el mismo si se desea, ya que el archivo se abre y se cierra en cada escritura.</p>
+  <p>Ahora debes ir al lugar donde creaste el acceso directo al ejecutable del juego, y luego hacer clic con el botón derecho sobre él y seleccionar Propiedades.</p>
+  <p><img alt="Command Line Shortcut" class="center" src="../assets/Images/Settings/CommandLine_Shortcut.png">Esto abrirá una ventana similar a la anterior. Aquí puede añadir en la ruta de <strong>destino</strong> su línea de comandos. Simplemente desplácese
+    hasta el final de la ruta dada, añada un espacio, y luego la cadena de parámetros. Así, por ejemplo, para crear una salida de archivo de depuración tendrías algo como</p>
+  <p class="code">D:\N-UniversalGameMaker\N-Personalización de la Barra de Carga-Defecto-1.0.0\N-Personalización de la Barra de Carga.exe -debugoutput debug.txt</p>
+  <p>Esto creará un archivo llamado &quot;<span class="inline">debug.txt</span>&quot; en la misma ubicación que el ejecutable (no la ubicación del acceso directo, sino donde el juego está instalado) con información de depuración y compilación de su juego terminado. Haga clic en
+    en &quot;OK&quot; y luego usa el acceso directo para ejecutar tu juego para que use estos parámetros y te ayude con la depuración.</p>
+  <p>Para más información sobre cómo depurar tu juego, consulta la sección del manual sobre <a href="../Introduction/Debugging.htm">Depuración</a>.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Pruebas A/B con la línea de comandos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">El corredor <span class="notranslate">YoYo</span> también se beneficia de un parámetro especial en la línea de comandos:</p>
+    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: carga el archivo de juego dado<br></p>
+    <p class="dropspot">¿Por qué usar esto? Bueno, normalmente no lo harías, pero si deseas tener más de una versión de tu juego funcionando a la vez puedes hacerlo utilizando esto, haciendo que las pruebas comparativas A/B sean mucho más fáciles. Con este método puedes centrarte en las pruebas con otra persona
+      o, como diseñador, obtener una mejor sensación de las cosas haciendo pruebas lado a lado.</p>
+    <p class="dropspot">Para configurar esto, necesitarás saber un par de cosas de antemano. Para empezar, necesitarás la ruta del propio Runner. Se encuentra en la carpeta de <strong>datos de programa</strong> de su sistema operativo <span class="notranslate">Windows</span> (puede estar oculta por defecto, por lo que tendrá que cambiar las propiedades de visualización para verla).
+      por lo que tendrá que cambiar las propiedades de visualización para verlo), con un formato típico como este:<br><br></p>
+    <p class="code">C:<span class="notranslate">\ProgramData\GameMakerStudio2\Cache\runtimes\&lt;versión_de_ejecución&gt;\windows\Runner</span>.exe<br></p>
+    <p class="dropspot">Ten en cuenta que la carpeta <span class="notranslate">runtime_version</span> dependerá de los <span class="notranslate">runtimes</span> que tengas instalados actualmente. También necesitarás la ruta de acceso al archivo <span class="inline">&lt;<em>yourgame</em>&gt;.win</span>, ya que es a éste al que vamos a apuntar el corredor.
+      La forma más fácil de encontrarlo es ir a la carpeta <strong>Temp </strong>(normalmente ubicada en <span class="inline">%localappdata%\Temp\<span class="notranslate">GameMaker</span>Studio\&lt;nombre_del_juego&gt;\) y buscar <span class="inline">*.win</span>, ya que eso le mostrará todos los disponibles y podrá
+      te mostrará todos los disponibles y puedes simplemente elegir el que necesitas para obtener la ruta completa.</p>
+    <p class="dropspot">Ahora, podríamos crear un acceso directo al corredor como lo hicimos para el ejecutable, y luego cambiar los parámetros según sea necesario, pero eso significa tener que abrir y editar entre las pruebas, lo que anula el propósito de nuestro uso de esta funcionalidad para el lado a lado
+      lado a lado. En su lugar vamos a crear un par de pequeños archivos &quot;batch&quot; para manejar esto.</p>
+    <p class="dropspot">Para ello, cree primero un nuevo documento de texto en su escritorio y ábralo en el Bloc de notas (o en cualquier otro editor de texto). Añade lo siguiente:<br><br></p>
+    <p class="code">START C:<span class="notranslate">\ProgramData\GameMakerStudio2\Cache\runtimes\&lt;versión_de_ejecución&gt;\windows\Runner</span>.exe -game &lt;patrón TEMP LOCAL&gt;\&lt;GAMENAME&gt;.win<br></p>
+    <p class="dropspot">Tienes que establecer la ruta temporal para que apunte a tu archivo de juego <span class="inline">*.win</span>, y luego guardarlo como &quot;<span class="inline">GM_Test_1.bat</span>&quot; en tu escritorio (ten en cuenta que el Bloc de notas guardará automáticamente como un archivo <span class="inline">*.txt</span> a menos que elijas &quot;todos los archivos&quot; en las opciones del diálogo de guardado). Un ejemplo de cómo debería ser su comando final sería:<br></p>
+    <p class="code">START C:\gramData\GameMakerStudio2\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\sers\Mark\AppData\Local\Temp\GameMakerStudio2\AlphaDog_Reboot\AlphaDog_Reboot.win<br></p>
+    <p class="dropspot">Ahora, crea otro archivo de texto y añade la misma línea, sólo que esta vez apuntas a la ruta de la segunda versión del juego con la que quieres hacer pruebas paralelas, y lo guardarías como &quot;<span class="inline">GM_Test_2.bat</span>&quot;.
+      Puedes hacer doble clic en <img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquiera de los dos casos para que aparezcan las diferentes versiones de tu juego, y
+      tenerlos como archivos por lotes significa que puedes abrirlos fácilmente de nuevo para editarlos y cambiar el juego que se está probando.</p>
+    <p class="dropspot"><br /></p>
+    <p class="dropspot"></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Settings.htm">Configuración del juego</a></div>
+        <div style="float:right">Siguiente: <a href="The_Room_Manager.htm">El jefe de sala</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Command Line Pararmeters
+A/B Testing
+-->
+  <!-- TAGS
+command_line_params
+-->
+</body>
+</html>

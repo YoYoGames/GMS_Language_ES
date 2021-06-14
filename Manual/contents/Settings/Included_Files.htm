@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Archivos incluidos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Included Files
+" />
+  <meta name="rh-index-keywords" content="Included Files" />
+  <meta name="search-keywords" content="included files" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Archivos incluidos</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> no se limita a los activos que creas dentro del programa, ya que puedes añadir archivos al proyecto como <strong>Archivos Incluidos</strong> para que se pueda acceder a ellos mientras se ejecuta el juego. Los archivos que añadas dependerán
+    de lo que quieras hacer, pero cosas como los archivos predeterminados de <span class="inline">*.ini</span>, sprites e imágenes de fondo, o archivos de texto de idiomas se utilizan comúnmente como archivos incluidos.</p>
+  <p>Para añadir estas cosas a su proyecto hay una ventana de edición que se puede abrir desde el menú <b>Extras</b> del Navegador de Activos <img alt="Extras Menu Icon" class="icon" src="../assets/Images/Icons/Icon_AssetMenu.png">:</p>
+  <p><img alt="Open The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files_Editor_Open.png">Seleccionando esto se abrirá el Editor de Archivos Incluidos:</p>
+  <p><img alt="The Included Files Editor" class="center" src="../assets/Images/Settings/Included_Files.png">Para añadir un archivo a sus recursos simplemente utilice el botón <strong>Abrir en el explorador</strong>, que abrirá un explorador de archivos en la carpeta datafiles
+    de su proyecto. A continuación, puede añadir directorios y archivos según sea necesario y <span class="notranslate">GameMaker Studio 2</span> actualizará el editor de archivos incluidos con estos automáticamente.</p>
+  <p><img alt="Included Files Example" class="center" src="../assets/Images/Settings/Included_Files_Example.png">Tenga en cuenta que toda la edición (renombrar, organizar, etc...) <em>debe hacerse desde el explorador de archivos por defecto</em>.</p>
+  <p>Una vez que haya añadido archivos al editor, puede hacer doble clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> para abrir las <strong>propiedades del archivo</strong>:</p>
+  <p><img alt="Included Files Properties" class="center" src="../assets/Images/Settings/Included_Files_Properties.png">Esta ventana muestra el nombre del archivo, su tamaño en el disco, y también las plataformas a las que debe ser exportado cuando compila/prueba
+    su juego. Tienes botones para seleccionar &quot;Todos&quot; o &quot;Ninguno&quot;, o puedes bajar por la lista y marcar/desmarcar los tragets a los que quieres que se exporte el archivo, según sea necesario.</p>
+  <p>Para más información sobre cómo se almacenan los archivos incluidos con su juego y cómo se accede a ellos, consulte la sección del manual dedicada al <a href="../Additional_Information/The_File_System.htm">Sistema de Archivos</a>.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Cuando incluya archivos de sonido, debe asegurarse de que los archivos no tengan nombres que choquen con los activos de sonido de streaming. Por ejemplo, un activo de sonido llamado &quot;main_music&quot; y un archivo incluido llamado &quot;main_music.ogg&quot;
+    va a ser indefinido cuando el proyecto se ejecute. Esto se debe a que los archivos de streaming también se almacenan fuera del paquete principal del proyecto, por lo que hay que tener cuidado en estas situaciones.</p>
+  <p>Vale la pena señalar que puede incluir los archivos <span class="inline">DLL</span> (en <span class="notranslate">Windows</span>) o <span class="inline">DyLib</span> (en <span class="notranslate">macOS</span>) como archivos incluidos y luego crear sus propias funciones personalizadas para tratarlos utilizando <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_define.htm"><span class="inline">external_define()</span></a>.
+    Éstas se pueden utilizar llamando a la función <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/external_call.htm"><span class="inline">external_call()</span></a> función.</p>
+  <p class="note"><strong>ATENCIÓN!</strong> El uso de archivos incluidos para crear una funcionalidad extra de esta manera es incompatible con el sistema de <a href="../The_Asset_Editors/Extensions.htm">extensiones</a>, en la medida en que no puede utilizar las <span style="font-size:1px;"><span class="inline" style="font-size: 14px">external_*()</span></span> funciones
+    con archivos añadidos en una extensión, ya que las extensiones ya tienen un método para añadir constantes y funciones.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Settings.htm">Configuración del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Audio_Groups.htm">Grupos de audio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Included Files
+-->
+  <!-- TAGS
+included_files
+-->
+</body>
+</html>

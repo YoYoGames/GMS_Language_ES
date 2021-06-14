@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Creación de Sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of what a sprite is and how to make one." />
+  <meta name="rh-index-keywords" content="Quick Start - Sprites" />
+  <meta name="search-keywords" content="sprites" />
+  <meta name="robots" content="NOODP" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Creación de Sprites</h1>
+  <p>Ahora que <a href="What_Is_Programming_.htm">sabes lo que es un programa</a>, es hora de ver algunos de los diferentes <strong>activos que </strong>se pueden utilizar en GameMaker <span class="notranslate">Studio 2 para</span> hacer tu juego. Para empezar, veremos los sprites <strong>,</strong>
+    que son generalmente una de las primeras cosas que necesitarás al hacer cualquier proyecto. Como se explica en la sección sobre <a href="../Introduction/The_Asset_Browser.htm">el Navegador de Activos</a>, un sprite es una imagen que puede ser animada (aunque no
+    tiene que serlo) y luego dibujada en la pantalla. En general un sprite estará asociado a un objeto, pero puedes dibujar sprites por su cuenta, ya sea desde el código o en el editor de salas <strong>Asset Layer</strong> (hablaremos de esto con más detalle más adelante
+    en la sección de <a href="Rooms.htm">salas</a>). También puedes crear un sprite para utilizarlo como <a class="glossterm" data-glossterm="tile sets" href="#">conjunto de baldosas</a>, pero también exploraremos esa opción en una sección posterior.</p>
+  <p>Cuando se crea un nuevo proyecto desde la <a href="../Introduction/The_Start_Page.htm">página de inicio</a>, el navegador de activos sólo contendrá carpetas vacías para los recursos que pueda necesitar, por lo que debe hacer clic con el botón derecho del ratón <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en la carpeta de activos de sprites y luego seleccionar la opción <strong>Crear</strong> (si no tiene una carpeta de activos de sprites puede hacer una desde el menú del botón derecho del ratón y luego crear el sprite, o simplemente puede hacer clic con el botón derecho del ratón en cualquier lugar del navegador de activos
+    y crearlo). Esto creará un nuevo activo de sprite y abrirá el <a href="../The_Asset_Editors/Sprites.htm"><strong>editor de sprites</strong></a> (si el editor de sprites no se abre, simplemente haz doble clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el nuevo activo):</p>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteEditor.png">Como puede ver, la parte superior izquierda de la ventana tiene un campo para el <strong>nombre </strong>del sprite. Todos los sprites (y todos los demás activos) deben tener
+    un nombre para que usted (y <span class="notranslate">GameMaker Studio 2</span>) pueda identificarlos fácilmente, aunque debe tener en cuenta que este nombre es realmente sólo un <strong> <a class="glossterm" data-glossterm="variable" href="#">variable</a></strong> que contiene un valor de ID
+    que &quot;apunta&quot; al recurso, en este caso un sprite. Lo mejor es dar a cada sprite un nombre descriptivo para poder identificar de un vistazo si un activo concreto es un sprite o un objeto o algo más, y mucha gente lo hace
+    prefijando o sufijando el recurso con las letras &quot; <span class="inline">spr</span>&quot; - por ejemplo, &quot; <span class="inline">spr_Ball</span>&quot;. Tenga en cuenta que los nombres de los recursos están limitados a usar sólo letras, dígitos y el símbolo de subrayado
+    y el nombre de todos los recursos debe empezar por una letra, no por un número.</p>
+  <p>Las otras características del editor de sprites las discutiremos al final de esta sección, pero primero tenemos que explicar cómo dibujar un sprite. Esto se hace en el archivo <a href="../The_Asset_Editors/Image_Editor.htm"><strong>Editor de imágenes</strong></a>. El editor de imágenes
+    es una herramienta muy potente para crear los gráficos de tu juego y se abre haciendo clic en el botón <em>Editar imagen </em>.</p>
+  <p><img alt="The Image Editor" class="center" src="../assets/Images/QS_Guide/QS_Sprites_ImageEditor.png" /></p>
+  <p>No vamos a profundizar demasiado en las herramientas disponibles aquí -para eso tenemos la sección de Editor de imágenes del manual- pero brevemente tienes:</p>
+  <ul class="colour">
+    <li>En la parte superior izquierda, la <strong>vista de fotogramas</strong> - muestra los fotogramas de tu sprite y se puede cambiar su tamaño utilizando los iconos de la lupa.</li>
+    <li>En el centro tenemos el <strong>lienzo de</strong> dibujo - este muestra el marco actualmente seleccionado listo para dibujar y puedes usar el botón central del ratón <img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21"> para desplazarte y la rueda del ratón <img alt="MMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_MMB.png" width="21"> para acercarte y alejarte.</li>
+    <li>En la parte superior derecha tenemos los <strong>pinceles</strong> básicos - aquí puedes elegir el pincel para dibujar, y cualquier pincel personalizado también se añadirá aquí.</li>
+    <li>En el centro a la derecha tenemos el <strong>selector de color</strong> - aquí podemos elegir el color a utilizar para el botón izquierdo y/o derecho del ratón, ya que puedes dibujar en el lienzo con uno u otro botón al mismo tiempo.</li>
+    <li>Justo debajo del selector de color tenemos nuestras <strong>herramientas </strong>- estas son las diferentes herramientas de dibujo, incluyendo el pincel, el relleno, la máscara y las herramientas de forma. Observe que algunas de las herramientas están divididas en diagonal y dibujarán formas con contorno o con relleno, dependiendo del lado en el que haga clic para seleccionarlas.
+      dependiendo del lado de la línea en el que hagas clic para seleccionarlas.</li>
+    <li>En la parte inferior derecha tenemos la <strong>vista de capas</strong>: al igual que muchas otras herramientas de dibujo, puedes crear diferentes capas para dibujar, lo que te permite experimentar con la posición y el color, etc., sin tener que preocuparte por destruir
+      lo que hay debajo.</li>
+  </ul>
+  <p>Dibuja algo en el editor de imágenes y tómate un tiempo para jugar con las opciones, luego cuando estés listo cierra el espacio de trabajo del editor de imágenes (que guardará la imagen) para llevarte de vuelta al espacio de trabajo principal con el editor de sprites en él. Hablaremos de
+    algunas otras características del editor de sprites que es importante conocer cuando se empieza...</p>
+  <p>Lo primero que debes saber es cómo establecer el <strong>origen </strong>del sprite. El origen es simplemente el punto que se utilizará para &quot;anclar&quot; nuestro sprite dentro de la habitación, y en este caso queremos fijarlo en el centro.</p>
+  <p>Así que hacemos clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el menú desplegable para establecer el origen y seleccionamos &quot;centro medio&quot;:</p>
+  <p><img alt="Example Showing The Sprite Origin" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteOrigin.png" /></p>
+  <p>Verás que el marcador de origen azul en la imagen de vista previa se mueve al centro del sprite. Tenga en cuenta que puede colocar el origen en cualquier lugar que desee simplemente haciendo clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en la imagen de
+    y también puedes introducir manualmente la posición de origen añadiendo valores en los campos x/y de la parte superior.</p>
+  <p>Otra cosa importante que hay que saber es cómo establecer la <strong>máscara</strong> de colisión para el sprite. La máscara de colisión es el área que <span class="notranslate">GameMaker Studio 2</span> comprobará para ver si ha habido una colisión con cualquier otra instancia de un objeto en el juego,
+    y por defecto se establece como rectángulo (que es también el más rápido de resolver). Tenga en cuenta que puede establecer el modo de detección para el <strong> <a class="glossterm" data-glossterm="bounding box" href="#">cuadro delimitador</a></strong> para que sea automático
+    (el valor por defecto) o manual. Si eliges manual podrás establecer los valores del cuadro delimitador a la izquierda, a la derecha, arriba y abajo.</p>
+  <p><img alt="Example Showing The Sprite Mask" class="center" src="../assets/Images/QS_Guide/QS_Sprites_SpriteMask.png" /></p>
+  <p>Cualquier tipo de máscara de colisión que no sea rectángulo será más lenta de resolver, pero al hacer un juego pequeño y sencillo no suele ser un problema. Tenga en cuenta que también puede importar sprites hechos en otro software haciendo clic en el botón <em>Importar </em>en el
+    editor de sprites, y también puede arrastrar archivos de imagen al IDE de <span class="notranslate">GameMaker Studio 2</span> para añadirlos como sprites al Navegador de Activos. También puede arrastrar sprites desde el Navegador de Activos para añadirlos directamente, en cuyo caso el IDE resaltará los
+    lugares a los que puedes añadir el sprite:</p>
+  <p><img alt="Where To Drop A Sprite On An Object" class="center" src="../assets/Images/QS_Guide/QS_DropSprite.png">Si quieres información más detallada sobre el Editor de Sprite y el Editor de Imágenes, consulta las siguientes secciones del manual:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/Sprites.htm">Editores: El editor de sprites</a></li>
+    <li><a href="../The_Asset_Editors/Image_Editor.htm">Editores: El editor de imágenes</a></li>
+  </ul>
+  <p>Ahora puedes cerrar el editor de sprites, ya que vamos a pasar a hablar de los <strong> Tile Sets</strong>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="Creating_Tile_Sets.htm">Creación de Tilesets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Creating Sprites
+Quick Start: Creating Sprites
+-->
+  <!-- TAGS
+qs_sprites
+-->
+
+</body></html>

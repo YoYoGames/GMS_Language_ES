@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Grupos de audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how to use Audio Groups" />
+  <meta name="rh-index-keywords" content="Audio Groups" />
+  <meta name="search-keywords" content="audio groups" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Grupos de audio</h1>
+  <p><img alt="Audio Group Editor" class="center" src="../assets/Images/Settings/Audio_Groups.png">El <strong>administrador de grupos de audio</strong> está disponible en el <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">menú de herramientas</a> del IDE. Aquí puede
+   <em>añadir</em>, <em>eliminar </em>y <em>renombrar </em><strong>Grupos</strong> de Audio, así como establecer sus opciones de exportación a la plataforma. <span class="notranslate">GameMaker Studio 2</span> permite asignar cada uno de los recursos de audio (efectos de sonido y música) a diferentes grupos de audio
+    para tratar de optimizar el número de sonidos que se reproducen en un momento dado, así como darle un mayor control sobre las plataformas a las que se exportan.</p>
+  <p>Para definir un grupo de audio, debe hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en el botón <strong>Añadir nuevo</strong>, que creará un nuevo grupo al que podrá asignar un nombre. Para cambiar de grupo
+    haga clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en el menú desplegable y seleccione el que desea editar.</p>
+  <p class="note"><strong>NOTA</strong>: Si selecciona audio en streaming para un sonido en el <a href="../The_Asset_Editors/Sounds.htm">Editor de sonido</a>, no podrá asignar el sonido a un Grupo de audio, ya que los sonidos en streaming no se empaquetan de la misma manera que otros
+    sonidos y usted tiene el control total sobre cuándo se cargan, se reproducen y se descargan utilizando el código.</p>
+  <p>Para añadir un sonido a un grupo de audio, tiene que abrir el <a href="../The_Asset_Editors/Sounds.htm">Editor de sonido</a> para ese sonido y luego seleccionar el grupo desde la opción que encontrará allí, o alternativamente puede añadir activos a un grupo de audio a través de
+    el menú del botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> en el <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>. Puede seleccionar uno o más activos de sonido (o
+    una carpeta de grupo de activos completa) y luego utilizar el menú RMB para añadir los sonidos a cualquier grupo. También puede hacer clic en el botón <strong>Añadir recurso</strong> en la parte inferior del Editor de grupos de audio para añadir activos de esa manera.</p>
+  <p>Una vez que tengas un sonido añadido a un grupo de audio personalizado, puedes utilizar esta ventana para elegir selectivamente a qué plataforma exportar ese sonido. Puede ser que por defecto tengas todos tus sonidos a la máxima calidad, pero que para HTML5 (por ejemplo)
+    quieras utilizar un archivo de sonido de menor calidad para utilizar menos memoria. En ese caso, añades los archivos de menor calidad a <span class="notranslate">GameMaker Studio 2</span> y los asignas a un nuevo grupo de audio. A continuación, seleccione ese grupo de audio en el menú desplegable y establecer
+    para exportar <em>sólo </em>a HTML5, y eliminar la exportación a HTML5 de las opciones de exportación del grupo de audio de mayor calidad. Es importante tener en cuenta que no se pueden cambiar las opciones de exportación del grupo de audio &quot;por defecto&quot; y que siempre
+    se exportará a todas las plataformas disponibles cuando construyas un paquete de juego final.</p>
+  <p>Una vez que haya definido los grupos de audio y les haya asignado sonidos, podrá verlos en la lista de la izquierda cuando seleccione el grupo. Siempre habrá un grupo de audio &quot;por defecto&quot; disponible y todos los sonidos que están dentro de este grupo siempre
+    se incluirán en el paquete del juego para todas las plataformas y se cargarán en la memoria al iniciarse (a menos que se marquen como &quot;transmitidos&quot; en las propiedades del Editor de sonido), pero cuando se crea un grupo de audio personalizado, los archivos que se añaden a él
+   <em>no</em> se cargarán en la memoria hasta que llame a la función <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/audio_group_load.htm"><span class="inline">audio_group_load()</span></a>. De este modo, puede controlar
+    qué audio reside en la memoria en cualquier momento. Tenga en cuenta también que para todas las <a href="../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Groups/Audio_Groups.htm">funciones</a> de grupo de audio, tendrá que suministrar el valor del ID del grupo de audio.
+    Este es simplemente el nombre que le has dado al grupo de audio.</p>
+  <p>Los Grupos de Audio también están vinculados a los ajustes de <a href="Configurations.htm">las Configuraciones</a>. Cuando se selecciona una configuración, se puede abrir la ventana de Audio Groups y seleccionar los objetivos de exportación en la parte derecha para esa configuración, y
+    luego cambiar las configuraciones cambiará estos objetivos de salida. Tenga en cuenta que no puede establecer recursos de sonido a diferentes grupos por configuración, sólo el objetivo de exportación para el grupo dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Settings.htm">Configuración del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Texture_Groups.htm">Grupos de texturas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Audio Groups
+-->
+  <!-- TAGS
+audio_groups
+-->
+</body>
+</html>
