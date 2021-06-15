@@ -42,7 +42,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">Cambio de mezcla de colores (tintado)</a></p>
   <div class="droptext" data-targetname="drop_down1">
-    <p class="dropspot">Cuando tu objeto está dibujando por defecto un sprite, este sprite está siendo dibujado <strong>mezclado </strong>(o <strong>teñido</strong>) con un color, y este valor de color se almacena en la variable incorporada <span class="inline">image_blend</span>.
+    <p class="dropspot">Cuando tu objeto dibuja por defecto un sprite, este sprite se está dibujando <strong>mezclado </strong>(o <strong>teñido</strong>) con un color, y este valor de color se almacena en la variable incorporada <span class="inline">image_blend</span>.
       Por defecto este color es blanco, lo que significa esencialmente que no se añadirá ningún color al sprite cuando se muestre en la pantalla. Sin embargo, puedes utilizar otros colores para conseguir efectos especiales, por ejemplo, utilizar el rojo para mostrar que la instancia ha recibido
       ha recibido algún daño.</p>
     <p class="dropspot">En este ejemplo, vamos a mezclar diferentes colores con el sprite mientras se mantiene pulsada una tecla, por lo que tendrás que abrir (o crear) un objeto, asignarle un sprite, y luego darle al objeto un <strong>Evento</strong> Tecla Abajo <strong>&lt;Espacio&gt;.</strong></p>
@@ -86,7 +86,7 @@
     <p class="code">ángulo_de_dibujo = 0;</p>
     <p class="dropspot">Vamos a utilizar esta variable para rotar &quot; <span class="inline">spr_Two</span>&quot; en el tiempo, y dibujarla superpuesta sobre el sprite asignado al objeto (&quot; <span class="inline">spr_One</span>&quot;). Para ello necesitamos añadir un <strong>evento </strong>de dibujo al objeto
       el objeto. Al hacer esto le estamos diciendo a <span class="notranslate">GameMaker Studio 2</span> que queremos hacernos cargo de lo que la instancia dibuja, lo que significa que nuestro código incluirá una llamada a la función <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_self.htm"><span class="inline">draw_self()</span></a> función
-      o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>Draw Self</strong></a> acción. Esta acción simplemente replica lo que el objeto hace cuando no hay un evento de dibujo presente y está dibujando por defecto el sprite asignado. Nosotros
+      o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>Dibujar a sí mismo</strong></a> acción. Esta acción simplemente replica lo que el objeto hace cuando no hay un evento de dibujo presente y está dibujando por defecto el sprite asignado. Nosotros
       entonces dibujar el segundo sprite que queremos usar como sprite superpuesto que está girando. El <span class="notranslate">DnD™</span>y el <span class="notranslate">GML</span> se ven así:</p>
     <p class="dropspot"><img alt="Draw Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_2.png" /></p>
     <p class="code">draw_self();<br> draw_angle = draw_angle + 0.5;<br> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);</p>
@@ -144,7 +144,7 @@
     todos los ejemplos, por lo que te recomendamos que los repases uno tras otro (aunque no es estrictamente necesario).</p>
   <p><img alt="Draw GUI Event In An Object" class="center" src="../assets/Images/QS_Guide/QS_DrawGUIObject.png"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">Texto para dibujar</a></p>
   <div class="droptext" data-targetname="drop_down5">
-    <p class="dropspot">Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que posicionar el texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
+    <p class="dropspot">Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que el posicionamiento del texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
       que representa la puntuación del jugador, por lo que en nuestro objeto tendremos que añadir un <strong>evento Create para </strong>inicializar una variable que contenga este valor, así:</p>
     <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_1.png" /></p>
     <p class="code">puntuación_del_jugador = 0;</p>
@@ -194,7 +194,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">Dibujar una barra de salud</a></p>
   <div class="droptext" data-targetname="drop_down7">
-    <p class="dropspot">Este ejemplo final cubre el dibujo de una barra de salud a la capa GUI. Hay un número de maneras que esto se puede hacer, pero <span class="notranslate">GameMaker Studio 2</span> tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
+    <p class="dropspot">Este ejemplo final cubre el dibujo de una barra de salud a la capa de la GUI. Hay un número de maneras que esto se puede hacer, pero <span class="notranslate">GameMaker Studio 2</span> tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
       puede crear su propio uso de sprites o formas también. Para empezar, como antes, necesitamos inicializar un varaible para mantener el valor de la salud, así que añade el siguiente <span class="notranslate">DnD™</span>o <span class="notranslate">GML</span> en el <strong>evento Create</strong> del objeto (después de cualquier otro código
       que ya pueda estar ahí):</p>
     <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_1.png" /></p>

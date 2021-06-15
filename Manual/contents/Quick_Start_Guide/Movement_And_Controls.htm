@@ -115,7 +115,7 @@
     <p class="dropspot">Para que quede más claro lo que ocurre, eliminemos todo el texto y los sprites y mostremos simplemente la misma línea de movimiento girada 45º para que sea horizontal:</p>
     <p class="dropspot"><img alt="Simplified Image SHowing Diaginal Movement Is Faster" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_2.png" /></p>
     <p class="dropspot">Como puedes ver, la diferencia es bastante obvia, y si la instancia se mueve más de 1 o 2 píxeles por paso, entonces se hace muy notorio que el movimiento diagonal es <em>mucho </em>más rápido. Entonces, ¿cómo limitamos esto? Hay varias maneras de hacerlo, pero vamos a
-      de hacerlo, pero vamos a concentrarnos en una de ellas, porque introduce un par de funciones y conceptos que te serán útiles más adelante en tus juegos.</p>
+      pero vamos a concentrarnos en una de ellas, porque introduce un par de funciones y conceptos que te serán útiles más adelante en tus juegos.</p>
     <p class="dropspot">Para ello, vamos a tener que almacenar los valores de entrada de las teclas pulsadas de forma independiente en<span class="glossextra">variables</span>, para luego comprobarlos y desplazarnos según
       la combinación de teclas que se han pulsado. Así que, para esto necesitarás un objeto con un sprite asignado, y tendrás que darle un <strong>Evento</strong> de Paso <strong>con</strong> el siguiente DnD™ <span class="notranslate">o GML</span>:</p>
     <p class="dropspot"><img alt="DnD Step Event Actions To Define Movement Variables" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_DnD_4_1.png" /></p>
@@ -134,7 +134,7 @@
       <span class="inline">if</span> &quot; utiliza el símbolo &quot; <span class="inline">||</span>&quot;. Esto significa &quot; <span class="inline">or</span>&quot; en programación, por lo que - en lenguaje llano - se está comprobando</p>
     <p class="code">si la variable _hspd no es igual a cero <strong>o </strong>si la variable _vspd no es igual a cero</p>
     <p class="dropspot">De este modo, se pueden encadenar varias expresiones en las comprobaciones &quot; <span class="inline">if</span>&quot;, y existen múltiples formas diferentes de evaluar esas expresiones (para más información, consulte la sección sobre Expresiones <strong>aquí</strong> ).</p>
-    <p class="dropspot">La siguiente sección de código almacena un valor para la velocidad de movimiento real en una variable y luego obtiene una dirección usando los valores <span class="inline">_hspd </span>y <span class="inline">_vspd </span>, que pueden ser -1, 0 o 1. La función de dirección
+    <p class="dropspot">La siguiente sección de código almacena un valor para la velocidad de movimiento real en una variable y luego obtiene una dirección utilizando los valores <span class="inline">_hspd </span>y <span class="inline">_vspd </span>, que pueden ser -1, 0 o 1. La función de dirección
       comprueba desde (0, 0) ya que no estamos utilizando coordenadas de la habitación, y en su lugar queremos que se evalúe como una dirección de 0° a 360° basada en los valores de las variables. El siguiente diagrama ilustra mejor lo que ocurre que intentar explicarlo con
       palabras:</p>
     <p class="dropspot"><img alt="Example Image Showing Direction Around (0,0) Origin" class="center" src="../assets/Images/QS_Guide/QS_MovementExample_4_3.png" /></p>
