@@ -16,19 +16,19 @@
   <h1>Guía de inicio rápido</h1>
   <p>Bienvenido a la <strong>Guía de inicio rápido</strong>! Esta sección del manual está diseñada para que te familiarices con los aspectos más importantes de <span class="notranslate">GameMaker Studio 2</span> y te mostrará los aspectos básicos para que puedas crear juegos lo más rápido posible. La guía cubre
     la funcionalidad esencial del IDE y también proporciona una breve introducción a la programación, para que puedas sacar el máximo partido al producto lo más rápido posible, tanto si utilizas el <span class="notranslate">Lenguaje GameMaker</span><span class="notranslate">(GML</span>) como el lenguaje visual de scripts <span class="notranslate">Drag and Drop™</span>.</p>
-  <p>Para ilustrar el flujo de trabajo de <span class="notranslate">GameMaker Studio 2</span> y ponerte directamente a crear algo, hemos preparado esta guía para llevarte desde lo más básico de lo que es GameMaker <span class="notranslate">Studio 2 y</span> lo que es un programa, pasando por la creación de activos generales y hasta
+  <p>Para ilustrar el flujo de trabajo de <span class="notranslate">GameMaker Studio 2</span> y ponerte directamente a hacer algo, hemos preparado esta guía para llevarte desde lo más básico de lo que es GameMaker <span class="notranslate">Studio 2 y</span> lo que es un programa, pasando por la creación de activos generales y hasta
     hasta cómo codificar cosas básicas como el movimiento y la puntuación.</p>
   <p>Crear juegos con <span class="notranslate">GameMaker Studio 2</span> es, conceptualmente, un asunto bastante sencillo y directo, siguiendo estos pasos generales:</p>
   <ul class="colour">
-    <li>Cree activos de <strong>imagen </strong>( <a class="glossterm" data-glossterm="sprites" href="#">sprites</a>, <a class="glossterm" data-glossterm="tile sets" href="#">conjuntos de azulejos</a>, <a class="glossterm" data-glossterm="font" href="#">fuentes</a>)
+    <li>Cree activos de <strong>imagen </strong>( <a class="glossterm" data-glossterm="sprites" href="#">sprites</a>, <a class="glossterm" data-glossterm="juegos de baldosas" href="#">conjuntos de azulejos</a>, <a class="glossterm" data-glossterm="fuente" href="#">fuentes</a>)
       y añádelos al Navegador de Activos.</li>
     <li>Cree activos de <strong>objetos </strong>para representar las cosas que desea utilizar en su juego y asígneles los activos de imagen necesarios.</li>
     <li>Programar estos objetos para que hagan cosas en respuesta a <strong>eventos</strong> específicos.</li>
     <li>Añade <strong>instancias </strong>de estos objetos en una <strong>sala </strong>donde realizarán sus programas.</li>
   </ul>
-  <p>En las siguientes páginas entraremos en los detalles de cada uno de los elementos mencionados, pero este es el flujo general de acciones necesarias para crear un juego. Lo importante es tener en cuenta que tus principales &quot;bloques de construcción&quot; para el juego
-    siempre serán los sprites, los objetos y las habitaciones, aunque hay una serie de activos subsidiarios que también se pueden utilizar para añadir funcionalidad o comportamientos adicionales a estos elementos (como <strong> <a class="glossterm" data-glossterm="shaders" href="#"><span class="notranslate">sombreadores</span></a></strong>,
-    o <strong> <a class="glossterm" data-glossterm="timelines" href="#">líneas de tiempo</a></strong>).</p>
+  <p>En las siguientes páginas entraremos en los detalles de cada uno de los elementos mencionados, pero ese es el flujo general de acciones necesarias para crear un juego. Lo importante es que tus principales &quot;bloques de construcción&quot; para el juego
+    siempre serán los sprites, los objetos y las habitaciones, aunque hay una serie de activos subsidiarios que también se pueden utilizar para añadir funcionalidad o comportamientos adicionales a estos elementos (como <strong> <a class="glossterm" data-glossterm="sombreadores" href="#"><span class="notranslate">shaders</span></a></strong>,
+    o <strong> <a class="glossterm" data-glossterm="líneas de tiempo" href="#">líneas de tiempo</a></strong>).</p>
   <p>Ahora, antes de pasar a explicar cada una de estas cosas con más detalle, vamos a resumir rápidamente cómo GameMaker <span class="notranslate">Studio</span> 2 convertirá los bloques de construcción anteriores en su juego. Básicamente, todo sucede en lo que se llama el <strong>Bucle de Juego</strong>,
     que tiene una velocidad medida en <strong> Fotogramas por Segundo</strong>, y un &quot;fotograma&quot; se llama un Paso en <strong>GameMaker </strong>. Los cuadros por segundo (o <strong>FPS</strong>) por defecto es de 60, lo que significa que por cada segundo que pasa <span class="notranslate">GameMaker</span>
     Studio 2 ejecutará el bucle del juego 60 veces, y en cada paso (bucle, fotograma) se producirá un número de eventos y el juego progresará.</p>

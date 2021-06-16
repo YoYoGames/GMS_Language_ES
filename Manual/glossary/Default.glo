@@ -13,7 +13,7 @@
 <glossdef>Se trata de una técnica utilizada para suavizar líneas o texturas que de otro modo serían irregulares, mezclando el color de un borde con el color de los píxeles que lo rodean. El resultado debería ser un aspecto más agradable y realista, dependiendo de la intensidad del efecto.</glossdef></glossentry>
 <glossentry id="Default_API">
 <glossterm>API</glossterm>
-<glossdef>El acrónimo "API" significa interfaz de programación de aplicaciones, y se refiere a conjuntos de reglas, rutinas y protocolos utilizados para crear aplicaciones de software. Las APIs ayudan a la comunicación con programas o servicios de terceros, que pueden utilizarse para construir diferentes programas informáticos. Compañías como Facebook y Twitter utilizan activamente las API para ayudar a los desarrolladores a acceder más fácilmente a sus servicios, y en GameMaker Studio 2 verás que se utiliza el acrónimo API cuando se habla de extensiones, por ejemplo, la API de servicios de Google Play o la API de Amazon Game On.</glossdef></glossentry>
+<glossdef>El acrónimo "API" significa Interfaz de Programación de Aplicaciones, y se refiere a conjuntos de reglas, rutinas y protocolos utilizados para construir aplicaciones de software. Las API ayudan a la comunicación con programas o servicios de terceros, que pueden utilizarse para construir diferentes programas informáticos. Compañías como Facebook y Twitter utilizan activamente las API para ayudar a los desarrolladores a acceder más fácilmente a sus servicios, y en GameMaker Studio 2 verás que se utiliza el acrónimo API cuando se habla de extensiones, por ejemplo, la API de servicios de Google Play o la API de Amazon Game On.</glossdef></glossentry>
 <glossentry id="Default_application_surface">
 <glossterm>superficie de aplicación</glossterm>
 <glossdef>La superficie de aplicación es una superficie especial incorporada a la que GameMaker Studio 2 dibujará todo en los Eventos de Dibujo de un juego (una superficie es esencialmente un área de memoria reservada para los gráficos). Esta superficie se dibuja en el búfer de visualización al final de cada fotograma del juego, mostrando su contenido al jugador.</glossdef></glossentry>
@@ -229,7 +229,7 @@
 <glossdef>Un sprite es un gráfico de mapa de bits diseñado para formar parte de una escena mayor. Puede ser una imagen estática o un gráfico animado.</glossdef></glossentry>
 <glossentry id="Default_statement">
 <glossterm>declaración</glossterm>
-<glossdef>En programación, una sentencia es una única línea de código escrita legalmente en un lenguaje de programación que expresa una acción a realizar. Una sentencia puede tener componentes internos propios, como expresiones, operadores y funciones. Un ejemplo de sentencia es A = B 5. Un programa de GameMaker Studio 2 no es más que una secuencia de una o más sentencias que, en conjunto, realizan una tarea (como mover al jugador).</glossdef></glossentry>
+<glossdef>En programación, una sentencia es una única línea de código escrita legalmente en un lenguaje de programación que expresa una acción a realizar. Una sentencia puede tener componentes internos propios, como expresiones, operadores y funciones. Un ejemplo de sentencia es A = B 5. Un programa de GameMaker Studio 2 no es más que una secuencia de una o varias sentencias que, en conjunto, realizan una tarea (como mover al jugador).</glossdef></glossentry>
 <glossentry id="Default_swatches">
 <glossterm>muestras</glossterm>
 <glossdef>Un muestrario es simplemente una pequeña muestra cuadrada de un color o un material que se utiliza para ilustrar su aspecto.</glossdef></glossentry>
@@ -247,7 +247,7 @@
 <glossdef>Una página de texturas (también llamada atlas de texturas) es una colección de imágenes (sprites, tilesets, caracteres de fuentes, etc...) que se agrupan de forma óptima para que ocupen la menor cantidad de memoria de texturas cuando se ejecute el juego.</glossdef></glossentry>
 <glossentry id="Default_tile_map">
 <glossterm>mapa de azulejos</glossterm>
-<glossdef>El mapa de azulejos es el nombre que recibe una colección de azulejos tomados de un conjunto de azulejos y utilizados para crear niveles en un juego.</glossdef></glossentry>
+<glossdef>El mapa de baldosas es el nombre que recibe una colección de baldosas tomadas de un conjunto de baldosas y utilizadas para crear niveles en un juego.</glossdef></glossentry>
 <glossentry id="Default_tile-sets">
 <glossterm>juegos de baldosas</glossterm>
 <glossdef>Un conjunto de baldosas es una colección de activos gráficos cuadrados o rectangulares dispuestos en una cuadrícula como una sola imagen. Cada elemento de la cuadrícula puede colocarse varias veces en una habitación para crear una escena más amplia denominada "mapa de baldosas".</glossdef></glossentry>

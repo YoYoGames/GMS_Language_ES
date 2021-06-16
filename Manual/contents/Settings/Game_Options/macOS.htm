@@ -13,7 +13,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Opciones de juego<span class="notranslate">en macOS</span> </h1>
-  <p>Esta sección describe las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos <span class="notranslate">para macOS</span>. Las diferentes secciones son:</p>
+  <p>En esta sección se describen las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos <span class="notranslate">para macOS</span>. Las diferentes secciones son:</p>
   <p> </p>
   <h2>General</h2>
   <p><img alt="Mac General Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_General_Options.png">En la sección de <strong>información del producto </strong>, lo primero que hay que hacer es rellenar el <strong>nombre para mostrar </strong>de su juego
@@ -21,7 +21,7 @@
     de desarrollo de Mac. Cuando creas tu <span class="inline">.app.zip</span>, ese archivo puede ir a cualquier parte (la ubicación que especifiques al hacer el diálogo de guardado no es la única copia que se hace de ese <span class="inline">.app.zip</span>), pero el <span class="inline">.pkg</span> y otros archivos se dejan en esta carpeta, permitiéndote probar instalaciones locales a través de la Terminal de forma que se simule la compra en la Mac Store, etc.</p>
   <p>Aquí también debe indicar el <strong>identificador</strong> de equipo que desea utilizar para firmar la aplicación final que <span class="notranslate">GameMaker Studio 2</span> crea para usted. Si lo estableces aquí, anularás el identificador de equipo que hayas proporcionado en <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm">las Preferencias de<span class="notranslate">macOS</span></a>.
     Después del Identificador de Equipo también tienes la opción de proporcionar el <strong>Identificador de Firma</strong>, que es requerido por Apple para todas las aplicaciones que no son de la tienda de aplicaciones (como los juegos de <span class="notranslate">Steam</span>, por ejemplo).</p>
-  <p>La siguiente opción es para habilitar <strong><span class="notranslate">Vapor</span> </strong>en tu juego. Si activas esta opción, asegúrate de que tienes el SDK <span class="notranslate">de Steamworks</span>instalado (ver <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">aquí</a>), y que
+  <p>La siguiente opción es para habilitar <strong><span class="notranslate">Steam</span> </strong>en tu juego. Si activas esta opción, asegúrate de que tienes el SDK <span class="notranslate">de Steamworks</span>instalado (ver <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">aquí</a>), y que
     has añadido el <strong>ID de la aplicación</strong> de <strong><span class="notranslate">Steam</span></strong> en las <a href="../Game_Options.htm">Opciones Generales</a> del juego.</p>
   <p>Por último, tienes la opción de <strong>Desactivar la caja de arena del sistema de archivos</strong>. Marcando esta opción se deshabilitará la caja de arena de <span class="notranslate">GameMaker</span> Studio 2 para guardar y cargar archivos, permitiendo que sus juegos accedan a los archivos desde cualquier parte del sistema que ejecuta el juego.
     Esta opción está desmarcada por defecto, ya que recomendamos mantener el sandbox de <span class="notranslate">GameMaker</span> Studio 2 para los archivos en todos los sistemas y cuando se marca, algunas áreas de guardado/carga pueden seguir sin estar disponibles dependiendo de los permisos a nivel de sistema operativo. Para obtener más información
@@ -35,7 +35,7 @@
     <li><strong>Mostrar Cursor</strong>: Cuando esto está marcado se mostrará el cursor normal <span class="notranslate">de macOS</span>, y desmarcarlo significará que no se mostrará ningún cursor a menos que hayas creado uno en tu código de juego. Esta opción está desactivada por defecto.</li>
     <li><strong>Iniciar</strong> en pantalla completa: Si esta opción está marcada, el juego se iniciará en modo de pantalla completa, de lo contrario, se iniciará en modo de ventana. Esta opción está desactivada por defecto.</li>
     <li><strong>Permitir</strong> el<strong> <span class="notranslate">cambio de</span></strong> pantalla completa: Con esta opción marcada, el usuario puede cambiar de pantalla completa a ventana y viceversa utilizando los atajos estándar de <span class="notranslate">macOS</span>. Esta opción está desactivada por defecto.</li>
-    <li><strong>Interpolar los colores entre píxeles</strong>: Activa la <a class="glossterm" data-glossterm="linear interpolation" href="#">interpolación lineal</a>, que básicamente &quot;suaviza&quot; los píxeles. Para gráficos de píxeles nítidos, debería estar desactivado, pero
+    <li><strong>Interpolar los colores entre píxeles</strong>: Activa la <a class="glossterm" data-glossterm="interpolación lineal" href="#">interpolación lineal</a>, que básicamente &quot;suaviza&quot; los píxeles. Para gráficos de píxeles nítidos, debería estar desactivado, pero
       pero si tiene bonitas mezclas alfa y gráficos con bordes suavizados es mejor dejarlo activado. Está desactivado por defecto.</li>
     <li><strong>Utiliza la sincronización para evitar el tearing</strong>: Esto activa o desactiva la sincronización <a class="glossterm" data-glossterm="v-sync" href="#">v</a>. Ten en cuenta que si tienes un juego con una velocidad de sala de 120 y el jugador tiene un monitor con una tasa de refresco
       de 60, al activar esta opción también se bloqueará la velocidad del juego a 60. Esta opción está desactivada por defecto.</li>
@@ -46,13 +46,13 @@
       de la resolución aumentada).<br>
       <br> Esta opción está desactivada por defecto, y al activarla no se verá ninguna diferencia cuando ejecutes o depures el juego usando VM, ya que el corredor está pre-construido en ese caso. Sólo funcionará si construyes un ejecutable a través de VM, o utilizas YYC para probar o
       construir el juego, ya que eso reconstruirá el corredor con sus Opciones de Juego personalizadas.</li>
-    <li><strong>Escala</strong>: Aquí puede elegir mantener la relación de aspecto (de modo que una habitación de 4:3 se verá en &quot;buzón&quot; en una de 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).<br>
+    <li><strong>Escala</strong>: Aquí puede elegir entre mantener la relación de aspecto (de modo que una habitación 4:3 se verá en &quot;caja de letras&quot; en una 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).<br>
       <br>
-      <span style="font-size:16px;"><strong>ADVERTENCIA</strong> <em>La<span class="notranslate">desactivación</span>de la superficie de aplicación deshabilitará todas las opciones de escalado establecidas en las Opciones de Juego de <span class="notranslate">Windows</span> hasta que se vuelva a activar. Consulte la sección La superficie de aplicación para obtener más detalles.</em></span></li>
+      <span style="font-size:16px;"><strong>ATENCIÓN!</strong> <em><span class="notranslate">Al</span>apagar la superficie de la aplicación se deshabilitarán todas las opciones de escala establecidas en las Opciones de Juego de <span class="notranslate">Windows</span> hasta que se vuelva a encender. Vea La superficie de aplicación para más detalles.</em></span></li>
   </ul>
-  <p>Por último, existe la opción de establecer el tamaño de la <a class="glossterm" data-glossterm="texture page" href="#">página de la textura</a>. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
+  <p>Por último, existe la opción de establecer el tamaño de la <a class="glossterm" data-glossterm="página de texturas" href="#">página de la textura</a>. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
     también hay un botón marcado <strong><strong>Vista previa </strong></strong>que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo quedan. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura
-    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para obtener más información sobre las páginas de textura, consulte <a href="../Texture_Information/Texture_Pages.htm">aquí</a>.</p>
+    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para más información sobre las páginas de texturas, consulta <a href="../Texture_Information/Texture_Pages.htm">aquí</a>.</p>
   <p class="note"><strong>NOTA</strong>: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego en los PC con especificaciones inferiores.</p>
   <p> </p>
   <h2>Imágenes</h2>
@@ -70,8 +70,8 @@
   <p>Por último, debe seleccionar su <strong>categoría de aplicación</strong> (para más información, consulte <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">aquí</a>).</p>
   <p> </p>
   <h2>Social</h2>
-  <p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png">Esta opción es para usar la <strong>extensión de inicio de sesión de Apple</strong> en Mac. Puedes obtener esta extensión desde la página <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">Juegos YoYo</span> <span class="notranslate">Mercado</span></a>,
-    y la propia extensión contiene instrucciones completas de uso. Si no utiliza esta extensión, no debe marcar esta opción.</p>
+  <p><img alt="Mac Social Options" class="center" src="../../assets/Images/Settings/Game_Options/Mac_Social_Options.png">Esta opción es para utilizar la <strong>extensión de inicio de sesión de Apple</strong> en Mac. Puede obtener esta extensión desde la página <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games"><span class="notranslate">Juegos YoYo</span> <span class="notranslate">Mercado</span></a>,
+    y la propia extensión contiene instrucciones completas de uso. Si no utilizas esta extensión, no debes marcar esta opción.</p>
   <p> </p>
   <p> </p>
   <p> </p>

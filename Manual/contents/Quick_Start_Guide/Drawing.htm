@@ -51,7 +51,7 @@
     <p class="dropspot"><img alt="DnD Example Using Key Down Event" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_2.png" /></p>
     <p class="code">var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange);<br> image_blend = _col;</p>
     <p class="dropspot">Coloque unas cuantas instancias de este objeto en una habitación y, a continuación, haga clic en el botón de reproducción <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> en la parte superior del IDE, y pruebe a mantener pulsada y soltar la tecla <em>Espacio </em>. Usted
-      Debería ver que cada instancia cambiará su color rápidamente mientras se mantiene pulsada la tecla, y dejará de cambiar cuando se suelte:</p>
+      Debería ver que cada instancia cambiará su color rápidamente mientras se mantiene la tecla pulsada, y dejará de cambiar cuando se suelte:</p>
     <p class="dropspot"><img alt="Example Showing Colour Blending" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_2.png" /></p>
     <p class="dropspot"> </p>
   </div>
@@ -112,8 +112,8 @@
     <p class="dropspot"><img alt="Drawing Text Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_5_1.png" /></p>
     <p class="code">draw_self();<br> draw_set_halign(fa_center);
       <br> draw_text(x, y + 32, &quot;Mi nombre es &quot; + nombre);<br> draw_text(x, y + 48, &quot;Mi número es &quot; + string(número));</p>
-    <p class="dropspot">Notarás que en el código anterior utilizamos la función <a href="../GameMaker_Language/GML_Reference/Strings/string.htm"><span class="inline">string()</span></a> función o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Data_Types/Number_To_String.htm"><strong>Número a Cadena</strong></a> acción
-      en la variable &quot;número&quot; que queremos dibujar. Esto se debe a que todo el texto debe estar compuesto por <em>caracteres</em>, no por valores, y por lo tanto necesitamos usar esta función/acción para convertir el valor del número en los caracteres que queremos
+    <p class="dropspot">Notarás que en el código anterior utilizamos la función <a href="../GameMaker_Language/GML_Reference/Strings/string.htm"><span class="inline">string()</span></a> función o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Data_Types/Number_To_String.htm"><strong>Número a cadena</strong></a> acción
+      en la variable &quot;número&quot; que queremos dibujar. Esto se debe a que todo el texto debe estar formado por <em>caracteres</em>, no por valores, y por lo tanto necesitamos usar esta función/acción para convertir el valor del número en los caracteres que queremos
       dibujar. En este caso estamos tomando el número aleatorio que generamos y convirtiéndolo en una &quot;cadena&quot; de caracteres que puede ser dibujada. También hay que tener en cuenta que establecemos la <strong>alineación</strong> del texto. Esto simplemente le dice a <span class="notranslate">GameMaker Studio</span> 2 dónde empezar a
       dibujar el texto en relación con la posición dada, y en este caso queremos que el texto se centra a lo largo del eje x.</p>
     <p class="dropspot">Añade un número de instancias del objeto en el editor de salas y luego pulsa el botón de reproducción <img alt="Play Icon" class="icon" src="../assets/Images/Icons/Icon_PlayGame.png"> en la parte superior del IDE. Deberías ver algo así:</p>
@@ -144,7 +144,7 @@
     todos los ejemplos, por lo que te recomendamos que los repases uno tras otro (aunque no es estrictamente necesario).</p>
   <p><img alt="Draw GUI Event In An Object" class="center" src="../assets/Images/QS_Guide/QS_DrawGUIObject.png"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">Texto para dibujar</a></p>
   <div class="droptext" data-targetname="drop_down5">
-    <p class="dropspot">Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que el posicionamiento del texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
+    <p class="dropspot">Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que posicionar el texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
       que representa la puntuación del jugador, por lo que en nuestro objeto tendremos que añadir un <strong>evento Create para </strong>inicializar una variable que contenga este valor, así:</p>
     <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_6_1.png" /></p>
     <p class="code">puntuación_del_jugador = 0;</p>
@@ -194,7 +194,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">Dibujar una barra de salud</a></p>
   <div class="droptext" data-targetname="drop_down7">
-    <p class="dropspot">Este ejemplo final cubre el dibujo de una barra de salud a la capa de la GUI. Hay un número de maneras que esto se puede hacer, pero <span class="notranslate">GameMaker Studio 2</span> tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
+    <p class="dropspot">Este ejemplo final cubre el dibujo de una barra de salud a la capa GUI. Hay un número de maneras que esto se puede hacer, pero <span class="notranslate">GameMaker Studio 2</span> tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
       puede crear su propio uso de sprites o formas también. Para empezar, como antes, necesitamos inicializar un varaible para mantener el valor de la salud, así que añade el siguiente <span class="notranslate">DnD™</span>o <span class="notranslate">GML</span> en el <strong>evento Create</strong> del objeto (después de cualquier otro código
       que ya pueda estar ahí):</p>
     <p class="dropspot"><img alt="Defining A Variable Using DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_8_1.png" /></p>
