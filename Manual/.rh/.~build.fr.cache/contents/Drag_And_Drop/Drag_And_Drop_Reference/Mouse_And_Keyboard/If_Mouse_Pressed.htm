@@ -1,0 +1,50 @@
+
+  
+   Si se pulsa el ratón
+  Esta acción comprueba la pulsación inicial de un botón del ratón. Devolverá true en el único paso del juego (fotograma) en el que el botón es pulsado inicialmente y false en todos los demás momentos. Si habilitas el modificador not, esta acción
+    se invertirá, y comprobará si el botón no ha sido pulsado, devolviendo falso en el paso de juego (frame) que ha sido pulsado y verdadero en el resto de los momentos.. Si necesitas comprobar si un botón se mantiene pulsado y
+    no sólo el evento de pulsación inicial, entonces utiliza la acción If Mouse Down.
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero,
+    mientras que cualquier acción lanzada en otra parte se ejecutará después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Botón del ratón
+        El nombre del botón del ratón a comprobar (izquierdo, medio, derecho).
+      
+      
+        No
+        Negar la comprobación (verdadero se convierte en falso y viceversa)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior sondea el estado del botón del ratón a cada paso y si está
+    se mantiene pulsado, comprueba la pulsación inicial del ratón. Si la comprobación es verdadera en la pulsación inicial, la velocidad de la instancia se establece, entonces, mientras el botón está abajo, la mezcla del sprite se cambia a rojo. Si el ratón no se mantiene pulsado,
+    se realiza una comprobación al soltar el ratón para restablecer el color de la mezcla a blanco y establecer la velocidad a 0.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones con el ratón y el teclado
+        Siguiente: Si el ratón baja 
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

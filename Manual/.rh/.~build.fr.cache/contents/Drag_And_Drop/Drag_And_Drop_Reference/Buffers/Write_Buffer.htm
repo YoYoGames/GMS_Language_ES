@@ -1,0 +1,46 @@
+
+  
+   Buffer de escritura
+  Esta acción puede utilizarse para escribir datos en un búfer. Se suministra el ID único del búfer en el que se va a escribir (devuelto por la acción Crear Búfer) y luego el valor a escribir, que puede ser un real o una cadena, pero tenga en cuenta que
+    pero tenga en cuenta que todos los valores se almacenan como cadenas, así que cuando lea del búfer (usando Leer Búfer) puede que tenga que usar una de las Acciones de Tipo de Datos para convertirlo de una cadena
+    al valor original. Ten en cuenta también que los búferes se leen y escriben secuencialmente, por lo que escribir en un búfer moverá la posición de "búsqueda" a lo largo de uno, lo que significa que para escribir varias piezas de datos sólo tienes que llamar a esta acción
+    el número de veces necesario.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+      
+        Valor
+        El valor a añadir en el buffer
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una variable global y luego un búfer, asignando el
+    ID del búfer a la variable. Este búfer tiene entonces dos piezas de datos escritas en él.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Buffer de búsqueda
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

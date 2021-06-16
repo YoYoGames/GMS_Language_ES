@@ -1,0 +1,48 @@
+
+  
+   Si cualquier objeto en el lugar
+  Esta acción se utiliza para comprobar y ver si hay una instancia de cualquier objeto situada en una posición basada en la máscara de colisión de la instancia que llama. Se da la posición, que puede ser una posición absoluta o una posición relativa a la instancia
+    y la acción devolverá true si hay colisión o false si no la hay. También se puede marcar la bandera "No" para comprobar si no hay una colisión en la posición dada, y la acción devolverá entonces true si no se encuentran colisiones y false en caso contrario. Las colisiones se calculan en base a la máscara de colisión de la instancia que llama y que se superpone a la máscara de colisión de cualquier instancia en la posición (como si se estuviera "colocando" en la posición).
+  IMPORTANTE! Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al sprite_index, o un sprite asignado al mask_index. Si cualquiera de las instancias en
+    la colisión no tiene máscara de colisión, entonces la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.
+  Tenga en cuenta que para añadir acciones dentro de un bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        x
+        La posición x a comprobar
+      
+      
+        y
+        La posición y a comprobar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una colisión en la posición donde se coloca la instancia
+    y si se encuentra una, mezcla la instancia con rojo, de lo contrario deja la mezcla como normal (blanco).
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de colisión
+        Siguiente: Si el objeto está en el lugar
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

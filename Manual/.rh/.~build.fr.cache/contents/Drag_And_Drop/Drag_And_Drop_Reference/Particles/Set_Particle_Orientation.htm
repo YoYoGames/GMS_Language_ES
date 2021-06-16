@@ -1,0 +1,69 @@
+
+  
+   Establecer la orientación de las partículas
+  Esta acción se utiliza para establecer la orientación de las partículas -el ángulo en el que se dibujarán las imágenes de las partículas-, que puede ser estática o configurada para aumentar/disminuir con el tiempo. Se suministra el valor de ID único para el tipo a establecer el tamaño (como se devuelve cuando
+    (tal y como se devuelve cuando se crea el tipo con la acción Crear tipo de partícula) y, a continuación, se da un rango de orientaciones iniciales de partida, luego la cantidad de aumento y, finalmente, el "meneo". La orientación con la que se crea una partícula
+    se calcula de tal manera que 0 es la derecha, 90 es arriba, 180 es la izquierda y 270 es abajo, por lo que un ajuste mínimo de 0 y un ajuste máximo de 360 emitirá partículas en las que cada una girará una cantidad aleatoria alrededor de 360° (tenga en cuenta que esto no afecta a la dirección de las partículas).
+  La opción de aumentar la orientación de una partícula te permite introducir un valor que se añadirá al ángulo de orientación base en cada fotograma de la vida de la partícula. Por lo tanto, si se establece este valor a, por ejemplo, 0,1, se añadirá 0,1 al ángulo de la imagen cada
+    cuadro de juego. Tenga en cuenta que puede utilizar valores negativos aquí también para hacer que la partícula gire en la dirección opuesta, por lo que los valores positivos harán que la partícula gire en sentido contrario a las agujas del reloj, y los negativos en sentido de las agujas del reloj. Tenga en cuenta que la orientación mínima
+    que se acepta es -0.01 y el incremento mínimo es 0.01.
+  También puede establecer la opción "wiggle" para la orientación de las partículas. Este es un valor que se generará aleatoriamente entre 0 y el valor que le des y que luego se sumará o restará al ángulo de la imagen de la partícula en cada paso de la vida de las partículas,
+    causando que la imagen dibujada fluctúe en su rotación. Obviamente, los valores más grandes son más pronunciados que los más pequeños, y este valor puede ser incluso negativo, estando el rango máximo entre -20 y 20.
+  Finalmente, puede elegir que la orientación sea relativa o no a la dirección de la partícula. Esto significa que mientras la partícula tenga una dirección (y velocidad) establecida, la imagen de la partícula se orientará en base a ese vector. Tenga en cuenta que si
+    la velocidad de la partícula se reduce y llega a 0 durante el tiempo de vida de la partícula, la falta de velocidad establece la dirección en el valor por defecto de 0°, por lo que una orientación relativa hará que la imagen de la partícula "salte" a un ángulo de orientación diferente.
+    ángulo de orientación.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El valor de identificación único para el tipo de partícula para establecer la orientación de
+      
+      
+        Ángulo mínimo
+        La orientación mínima para el tipo de partícula (de -360 a +360, por defecto 0)
+      
+      
+        Ángulo máximo
+        La orientación máxima para el tipo de partícula (de -360 a +360, por defecto 360)
+      
+      
+        Aumentar
+        El valor a añadir a la orientación del tipo de partícula en cada fotograma del juego (puede ser negativo, mínimo +/-0,01)
+      
+      
+        Wiggle
+        El valor máximo a sumar o restar aleatoriamente de la orientación de las partículas por paso (+/-20).
+      
+      
+        Relativo a la dirección
+        Si se establece el ángulo de la imagen de la partícula en relación con la dirección del movimiento de la partícula (activado) o no (desactivado).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer la gravedad de las partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

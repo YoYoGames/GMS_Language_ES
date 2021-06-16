@@ -1,0 +1,61 @@
+
+  
+   Si vive
+  Esta acción se utiliza para comprobar el valor de la variable de instancia vidas utilizando una expresión específica. Se da el tipo de expresión a comprobar y el valor a comprobar de las vidas actuales, y la sentencia "if" siempre devolverá
+    siempre devolverá verdadero o falso dependiendo de las expresiones y valores utilizados. Las expresiones disponibles son:
+  
+    Igual a - La variable y el valor son exactamente iguales
+    Menor que - La variable es menor que el valor
+    Mayor que - La variable es mayor que el valor
+    Menor o igual que - La variable es menor o igual que el valor
+    Mayor o igual que - La variable es mayor o igual que el valor
+  
+  Si se marca el argumento Not, entonces las expresiones anteriores serán negadas, por ejemplo "es igual a" se convierte en "no es igual a", porlo que se estaría comprobando si el valor de lives no es igual al valor dado.
+  NOTA IMPORTANTE: Debido a problemas de precisión en coma flotante, comprobar si dos valores son exactamente iguales puede devolver falso, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción Decimal a Entero antes de la comprobación o utilizando las expresiones "mayor que" o "menor que".
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero, mientras que cualquier
+    acciones lanzadas en otra parte se ejecutarán después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        No
+        Se establece para comprobar si la expresión no se evalúa como verdadera.
+      
+      
+        Expresión
+        El tipo de expresión a utilizar para la comprobación.
+      
+      
+        Valor
+        El valor para comprobar las vidas.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará el valor de las vidas para ver si es menor o igual que
+    a 0 y si lo es entonces la sala se reiniciará.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de las variables de instancia
+        Siguiente: Si la salud
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

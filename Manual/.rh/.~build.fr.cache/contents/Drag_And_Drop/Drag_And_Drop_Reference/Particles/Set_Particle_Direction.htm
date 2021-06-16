@@ -1,0 +1,61 @@
+
+  
+   Establecer la dirección de las partículas
+  Esta acción se utiliza para establecer la dirección de la partícula, que puede ser estática o configurada para aumentar/disminuir con el tiempo. Se suministra el valor de ID único para el tipo a establecer el tamaño de (como se devuelve cuando se crea el tipo con la acción Crear Tipo de Partícula)
+    y luego dar un rango de direcciones iniciales de partida, a continuación, la cantidad de aumento y, finalmente, el "meneo". La dirección en la que se crea una partícula se calcula de forma que 0 es la derecha, 90 es la izquierda y 270 es la abajo, por lo que un ajuste mínimo
+    de -45 y un ajuste máximo de 45 emitirá partículas que sólo se mueven hacia la derecha, por ejemplo.
+  La opción de aumentar la dirección de una partícula te permite introducir un valor que se añadirá al valor de la dirección base en cada fotograma de la vida de la partícula. Por lo tanto, si se establece este valor a, por ejemplo, 0,1, se añadirá 0,1 a la dirección en cada fotograma del juego.
+    juego. Ten en cuenta que puedes usar valores negativos aquí también para hacer que la partícula se mueva en la dirección opuesta hacia abajo también, así que los valores positivos harán que la partícula gire en sentido contrario a las agujas del reloj, y los negativos en sentido de las agujas del reloj. Ten en cuenta que el mínimo decremento de dirección que se acepta es -0.01 y el mínimo incremento es 0.01.
+  Por último, puedes establecer la opción "wiggle". Se trata de un valor que se generará aleatoriamente entre 0 y el valor que usted dé y que luego se sumará o restará a la dirección en cada paso de la vida de las partículas, haciendo que la imagen dibujada fluctúe
+    en la dirección. Obviamente, los valores más grandes son más pronunciados que los más pequeños, y este valor puede ser incluso negativo, estando el rango máximo entre -20 y 20.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El valor de identificación único para el tipo de partícula para establecer la dirección de
+      
+      
+        Dir. Mín.
+        La dirección mínima para el tipo de partícula (de -360 a +360, por defecto 0)
+      
+      
+        Max Dir
+        La dirección máxima para el tipo de partícula (de -360 a +360, por defecto 360)
+      
+      
+        Aumentar
+        El valor a añadir a la dirección del tipo de partícula en cada fotograma del juego (puede ser negativo, mínimo +/-0,01)
+      
+      
+        Wiggle
+        El valor máximo a sumar o restar aleatoriamente de la dirección de las partículas por paso (+/-20).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer la orientación de las partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

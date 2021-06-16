@@ -1,0 +1,69 @@
+
+  
+   Dibujar el valor transformado
+  Con esta acción se puede dibujar un título de cadena y/o una variable o valor en la pantalla. El argumento "caption" es una cadena que se desea añadir antes del valor, y puede dejarse en blanco si es necesario, y el valor puede ser una variable, un valor fijo o
+    otra cadena - en cuyo caso debe ir entre comillas, y también puede dejarse en blanco si es necesario. A continuación, se indica la posición en la que debe dibujarse la cadena, ya sea como posición absoluta o como posición relativa a la instancia que dibuja el
+    texto. Además, puede establecer la escala del texto, estirándolo a lo largo del eje horizontal o vertical, así como la rotación (los ángulos para rotar el texto son en sentido contrario a las agujas del reloj, por lo que establecerlo a 90° lo rotará a la izquierda y -90° a la
+    derecha). La escala se realiza por el factor dado, por lo que una escala de 0,5 reducirá el ancho del texto a la mitad y una escala de 2 duplicará el ancho, siendo 1 el valor por defecto para no escalar. Tenga en cuenta que el aspecto del texto dependerá de
+    la fuente utilizada, el color utilizado y la alineación. Todas estas cosas pueden cambiarse antes de dibujar, como se muestra en el ejemplo siguiente.
+  NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
+   
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Título
+        El título a dibujar (una cadena), puede dejarse en blanco
+      
+      
+        Valor
+        El valor a dibujar (real, variable o cadena)
+      
+      
+        x
+        La posición x a dibujar
+      
+      
+        y
+        La posición y para dibujar
+      
+      
+        xscale
+        El factor de escala x (horizontal), por defecto es 1
+      
+      
+        yscale
+        El factor de escala y (vertical), por defecto es 1
+      
+      
+        Rotación
+        El ángulo de rotación para dibujar el texto
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece un color, una fuente y luego alinea el texto
+    para dibujar desde el centro antes de dibujar realmente el valor de "current_time" junto con la leyenda "TIME: ", escalada para ser el doble de tamaño y "vibrando" ligeramente debido al cambio de ángulo aleatorio.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de dibujo
+        Siguiente: Dibujar Sprite
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

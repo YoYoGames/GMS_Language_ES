@@ -1,0 +1,53 @@
+
+  
+   Establecer alfa de partículas
+  Esta acción establecerá el alfa para cuando se cree la partícula, así como el alfa durante su vida útil. Primero se especifica el valor del ID del tipo de partícula (que debe ser el mismo que el valor devuelto cuando se creó la partícula utilizando la acción Crear tipo de partícula ) y luego se pueden establecer los valores de alfa a utilizar.
+  Puedes elegir tres valores alfa para usar, y la partícula se mezclará entre ellos durante el tiempo de vida de la partícula. Por ejemplo, si una partícula tiene 0.5, 1 y 0 como valores alfa, y un tiempo de vida de 60 cuadros de juego, entonces cuando se crea (cuadro 0)
+    tendrá un alfa de 0,5, luego se desvanecerá hacia un alfa completo de 1 (fotograma 30), antes de desvanecerse para ser invisible con un alfa de 0 (fotograma 60).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El valor de identificación único para el tipo de partícula para establecer el color de
+      
+      
+        Inicie
+        El alfa inicial a utilizar
+      
+      
+        Medio
+        El alfa intermedio para usar
+      
+      
+        Finalizar
+        El alfa final a utilizar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer la vida de las partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

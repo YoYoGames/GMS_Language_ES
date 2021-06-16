@@ -1,0 +1,46 @@
+
+  
+   Crear lista
+  Esta acción creará una nueva estructura de datos de lista y devolverá el valor del índice para que pueda acceder posteriormente a la lista a través de las otras acciones de estructura de datos. El índice de la lista será devuelto a la Variable de Destino que usted suministre, la cual puede haber sido
+    creado anteriormente utilizando Assign Variable o Declare Temp, o puede marcar la casilla "Temp" para nombrar y crear una variable local temporal
+    para almacenar el valor hasta el final del script o evento. Una estructura de datos de lista recién creada se considera "vacía", es decir, no contiene entradas de lista. Tenga en cuenta que puede crear listas DS adicionales haciendo clic en el icono más 
+    al lado de la acción, y seleccionando otra variable para mantener el ID de la lista.
+  IMPORTANTE! La creación de cualquier estructura de datos consume memoria en la plataforma de destino, y como tal todas las estructuras de datos deben ser liberadas cuando ya no se necesitan utilizando la acción Liberar Estructura de Datos, de lo contrario se obtiene una
+    de lo contrario se produce una fuga de memoria que puede perjudicar el rendimiento del juego o incluso hacer que se bloquee. Esto es particularmente relevante cuando se utilizan variables locales temporales para almacenar índices de estructuras de datos, ya que estas variables se eliminan al final del código o del evento, pero
+    pero eso no significa que la estructura de datos se elimine también. La estructura de datos seguirá existiendo, sólo que no tendrás forma de referenciarla, así que o bien utilizas una variable de instancia y liberas la estructura más adelante, o liberas la estructura antes de que finalice
+    el evento o la función si su índice está almacenado en una variable temporal.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objetivo
+        La variable de destino para almacenar el índice de la lista en
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una variable de ámbito global y luego crea una nueva estructura de datos de lista
+    asignando su valor de índice a la variable global. El ámbito se cambia entonces para que todas las instancias del objeto "obj_Enemy_Parent" añadan su valor de ID de instancia único en la lista.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de la estructura de datos
+        Siguiente: Crear mapa
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

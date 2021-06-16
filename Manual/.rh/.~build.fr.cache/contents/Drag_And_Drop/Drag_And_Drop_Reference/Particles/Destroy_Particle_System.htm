@@ -1,0 +1,42 @@
+
+  
+   Destruye el sistema de partículas
+  Esta acción "destruirá" el sistema de partículas dado (es decir, liberará la memoria utilizada por el sistema de partículas). Usted suministra el valor de ID único para el sistema a destruir, tal como fue devuelto cuando creó el sistema con la acción Crear Sistema de Partículas.
+    Esta acción debe ser llamada siempre que ya no necesites un sistema de partículas en tu juego, o siempre que desees recrear el sistema de partículas (por ejemplo, justo antes de llamar a Reiniciar Juego). Tenga en cuenta que si el
+    sistema de partículas no ha sido marcado como Persistente, entonces no necesita llamar a esta acción, ya que el sistema de partículas (y cualquier emisor asociado a él) se limpiará automáticamente en la sala.
+  IMPORTANTE! Esta función también destruirá y eliminará cualquier emisor que haya sido creado y asociado con el sistema que se está destruyendo (ver Crear emisor de partículas para más información).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El valor de identificación único para el sistema que se va a destruir
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si se ha pulsado la tecla "Espacio
+    y si se detecta entonces elimina el sistema de partículas y los diferentes tipos de partículas definidos en las variables globales dadas y luego reinicia el juego.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Sistema de partículas transparentes
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

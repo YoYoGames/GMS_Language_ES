@@ -1,0 +1,43 @@
+
+  
+   Abrir archivo Ini
+  Con esta acción puede abrir un archivo Ini para leer y/o escribir. Si el archivo Ini no existe en la ubicación que está comprobando, GameMaker Studio 2 puede crear uno, pero sólo si escribe datos en él. Si sólo ha leído información de
+    el archivo Ini, se devolverán los valores por defecto de la función de lectura, pero el archivo Ini no se creará realmente.
+  Tenga en cuenta que sólo puede tener un archivo Ini abierto al mismo tiempo y recuerde utilizar Cerrar archivo Ini una vez que haya terminado de leer/escribir desde el archivo Ini, ya que la información no se almacena realmente en el disco
+    hasta entonces (se almacena en la memoria hasta que se cierra el archivo).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Archivo
+        El nombre - como una cadena y con la extensión .ini - del archivo a abrir
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior abrirá un archivo ini para su uso, luego obtendrá el valor asociado con
+    la clave "nombre" bajo la cabecera "reproductor". Si el nombre devuelto coincide con el valor del nombre por defecto (es decir, el archivo, la sección o la clave no existen) entonces el archivo tiene una variable global escrita en él antes de ser cerrado (y escribir
+    los nuevos datos en el disco).
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Cerrar archivo Ini
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

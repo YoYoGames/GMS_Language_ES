@@ -134,7 +134,7 @@
   <p> </p>
   <p>Así que, digamos que has creado un buffer y quieres escribir información en él, entonces usarías algo como el siguiente código:</p>
   <p class="code">buffer_write(buff, buffer_bool, global.Sound);<br> buffer_write(buff, buffer_bool, global.Music);<br> buffer_write(buff, buffer_s16, obj_Player.x);<br> buffer_write(buff, buffer_s16, obj_Player.y);<br> buffer_write(buff, buffer_string, global.Player_Name);</p>
-  <p>Mirando el ejemplo anterior, puedes ver que puedes escribir diferentes tipos de datos en un buffer al mismo tiempo (sólo estás limitado a un tipo de datos específico cuando usas el tipo de buffer <em>rápido </em>), y estos datos se añadirán al buffer secuencialmente
+  <p>Mirando el ejemplo de arriba puedes ver que puedes escribir diferentes tipos de datos en un buffer al mismo tiempo (sólo estás limitado a un tipo de datos específico cuando usas el tipo de buffer <em>rápido </em>), y estos datos se añadirán al buffer secuencialmente
     (aunque su posición real en el búfer dependerá de su alineación de bytes, que se explica más adelante). Lo mismo ocurre con la lectura de información del búfer, y en el caso del ejemplo anterior, se leería del búfer en el mismo orden
     que escribió los datos, comprobando el mismo tipo de datos, por ejemplo</p>
   <p class="code">global.Sound = buffer_read(buff, buffer_bool);<br> global.Music = buffer_read(buff, buffer_bool);<br> obj_Player.x = buffer_read(buff, buffer_s16);<br> obj_Player.y = buffer_read(buff, buffer_s16);<br> global.Player_Name = buffer_read(buff, buffer_string);</p>

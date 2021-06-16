@@ -1,0 +1,73 @@
+
+  
+   Dibujar Sprite Transformado
+  Esta función dibujará el sprite dado de forma similar a la acción Dibujar Sprite pero con opciones adicionales para cambiar la escala, la mezcla, la rotación y el marco del sprite que se está dibujando. El cambio de estos valores no modifica
+    el recurso (sólo la forma en que se dibuja), y puede utilizar cualquiera de las variables de propiedades del sprite disponibles en lugar de valores directos para todos los argumentos de la función. La imagen siguiente ilustra
+    cómo los diferentes valores afectan al dibujo del sprite:
+  
+  NOTA: La mezcla de colores sólo se recomienda para el objetivo HTML5 cuando WebGL está habilitado, aunque se puede establecer el color de mezcla si no está habilitado y se mezclará el sprite de forma normal. Sin embargo, toda mezcla de este modo crea un sprite duplicado
+    sprite que se almacena en la caché y se utiliza cuando se requiere. Esto está lejos de ser óptimo y si se utilizan múltiples cambios de color, se ralentizará el rendimiento de los juegos a menos que se active WebGL.
+    el tamaño de la caché de la fuente para tratar de limitar esto si es necesario utilizando la función sprite_set_cache_size().
+  NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sprite
+        El sprite a dibujar
+      
+      
+        Marco
+        El fotograma del sprite que se va a dibujar (utiliza la variable incorporada image_index para el fotograma actual)
+      
+      
+        X
+        La posición x para dibujar dentro de la habitación
+      
+      
+        Y
+        La posición y para dibujar dentro de la habitación
+      
+      
+        Escala X
+        El factor de escala para el eje X (utilice la variable incorporada image_xscale para la escala X actual)
+      
+      
+        Escala Y
+        El factor de escala para el eje Y (utilice la variable incorporada image_yscale para la escala Y actual)
+      
+      
+        Rotación
+        El ángulo de dibujo para el sprite (de 0 a 360, girando en sentido contrario a las agujas del reloj, donde 0 es a la derecha - utilice la variable incorporada image_angle para la rotación actual)
+      
+      
+        Color
+        El color a mezclar con el sprite (por defecto es el blanco, y puedes usar la variable incorporada image_blend para el color actual)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba una variable y, si es verdadera, el sprite se dibuja con una escala aleatoria a lo largo de los ejes x e y y se mezcla con el color rojo, de lo contrario el sprite se dibuja utilizando las transformaciones por defecto.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de dibujo
+        Siguiente: Dibujar sprites apilados
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

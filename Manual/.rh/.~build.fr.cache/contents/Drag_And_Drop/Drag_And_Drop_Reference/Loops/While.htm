@@ -1,0 +1,54 @@
+
+  
+   Mientras
+  La acción While se utiliza para realizar bucles que sólo terminan cuando una condición específica vuelve a ser verdadera. Por ejemplo, puede utilizar una variable y establecerla como falsa, luego ejecutar el bucle While y hacer que compruebe esta variable, luego en
+    en algún momento del bucle se establece la variable a true y el bucle terminará. Tenga en cuenta que no importa dónde establezca la condición dentro del bucle while, todas las acciones dentro del bucle se ejecutarán hasta el final antes de que el resto del script
+    o evento continúe, el cambio de la condición no rompe instantáneamente el bucle.
+  Cuando añada una acción While en su código, necesita suministrar la variable a comprobar, el tipo de comprobación a realizar (menor que, mayor que, igual, etc...), y el valor a comprobar de la variable (también puede marcar que el bucle While 
+    compruebe si la condición no es verdadera). A continuación, añada las acciones a realizar dentro del bucle While, de la misma forma que añadiría una acción a un "if", es decir, colocándola al lado de la acción en lugar de debajo de ella:
+  Todas las acciones añadidas al lado se incluirán en el While y se realizarán antes de que el evento o script
+    continúe con las acciones añadidas debajo (como se muestra en el ejemplo siguiente). Tenga en cuenta que puede terminar cualquier bucle prematuramente si llama a la acción Break.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Variable
+        La variable a utilizar en la comprobación
+      
+      
+        Es
+        El tipo de evaluación a realizar (menor que, mayor que, igual que, mayor o igual que y menor o igual que)
+      
+      
+        Valor
+        El valor con el que se comprueba la variable
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una variable local temporal y la establece en false. Esta variable es
+    Esta variable se comprueba en la acción del bucle While y mientras devuelva false se ejecutará el bucle. En el bucle obtenemos dos variables locales temporales para una posición aleatoria x/y en la habitación y luego comprobamos esa posición para una colisión. Si no se encuentra ninguna colisión, la variable inicial
+    se pone en verdadero, terminando el bucle. Después de que el bucle haya terminado se crea una nueva instancia en la posición aleatoria que descubrimos que no tiene colisiones.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones en bucle
+        Siguiente: Para
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

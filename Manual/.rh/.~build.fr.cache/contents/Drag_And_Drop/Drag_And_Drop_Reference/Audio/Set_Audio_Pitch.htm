@@ -1,0 +1,50 @@
+
+  
+   Establecer el tono de audio
+  Esta acción puede utilizarse para ajustar el tono de un sonido. Usted suministra el activo de sonido desde el Navegador de Activos, y luego da el tono deseado para cambiarlo, y todas las instancias posteriores de ese sonido que usted reproduzca tendrán su tono cambiado. Esta acción
+    no cambiará el tono de ningún sonido que se esté reproduciendo, sin embargo, y debe utilizarse antes de usar la acción Reproducir audio para el sonido.
+  El valor de afinación es un multiplicador de afinación, en el sentido de que el valor de entrada multiplica la afinación actual por esa cantidad, por lo que el valor por defecto de 1 no supone ningún cambio de afinación, mientras que un valor menor que 1 bajará la afinación y mayor que 1 la subirá.
+    Es mejor utilizar incrementos pequeños para esta función, ya que cualquier valor inferior a 0 o superior a 5 puede no ser audible de todos modos. Hay que tener en cuenta que el cambio total de tono permitido está fijado en (1/256) - 256 octavas, por lo que cualquier valor por encima o por debajo de éste no será registrado.
+    registrado.
+  NOTA: El valor indicado arriba es lo que GameMaker Studio 2 intenta fijar el rango, pero este valor no está garantizado en todas las plataformas de destino. iOS, por ejemplo, se fija en (1/256) - 8, por lo que puede ser necesario experimentar en cada plataforma de destino
+    y tener diferentes versiones de un recurso de sonido, cada uno pre-cambiado, en caso de requerir valores de octava más altos o más bajos.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sonido
+        El recurso sonoro para ajustar el tono de
+      
+      
+        paso
+        El tono al que se ajusta el sonido (por defecto es 1)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene primero el tono del sonido dado y lo almacena en una variable local temporal
+    temporal. A continuación, comprueba si se ha pulsado una tecla, y si se detecta una, se comprueba el valor del tono para ver si es menor que 2. Si lo es, el sonido se detiene, se añade 0,1 a la variable de tono, y luego se utiliza esta variable para establecer
+    el tono del sonido antes de que se reproduzca.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de audio
+        Siguiente: Obtener el tono de audio
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

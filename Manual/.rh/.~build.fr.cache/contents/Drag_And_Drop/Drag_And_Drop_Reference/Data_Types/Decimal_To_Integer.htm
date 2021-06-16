@@ -1,0 +1,59 @@
+
+  
+   Decimal a entero
+  Esta acción tomará un número decimal y lo convertirá en un número entero. Usted da el valor a convertir y luego selecciona el tipo de redondeo que debe hacerse para convertirlo en un valor entero. Los tipos de redondeo disponibles son:
+  
+    Redondear: Toma un número decimal y lo redondea hacia arriba o hacia abajo al número entero más cercano. En el caso especial de que el número suministrado sea exactamente la mitad de un entero (por ejemplo, 1,5, 17,5, -2,5, etc...) el número se redondeará al valor par más cercano, por ejemplo, 2,5 se redondeará a 2, mientras que 3,5 se redondeará a 4.
+      el valor par más cercano, por ejemplo, 2,5 se redondeará a 2, mientras que 3,5 se redondeará a 4. Este tipo de redondeo se denomina redondeo bancario y, en un gran número de iteraciones o cuando se utilizan matemáticas en coma flotante, da un redondeo estadísticamente
+      mejor redondeo que el enfoque más tradicional de "redondear hacia arriba si es más de 0,5 y redondear hacia abajo en caso contrario".
+    Ceil: Esto tomará un valor decimal y lo redondeará al entero más cercano. A diferencia del redondeo (arriba), esto no tiene en cuenta la parte decimal del valor, por lo que un número como 5.0000001 se redondeará a 6. Vale la pena
+      Cabe destacar que si se utiliza la acción Aleatoria Obtener Número Aleatorio para generar un valor decimal aleatorio y luego se llama a esta acción para redondearlo, se pueden obtener resultados inesperados. La acción aleatoria
+      podría devolver 0, y al usar "Ceil" no dará 1 sino 0, así que si obtiene un decimal aleatorio de 0 a 9 y usa esta función puede esperar obtener enteros de 1 a 10, pero en realidad podría obtener enteros de
+      0 a 10. Esta es una posibilidad remota, pero debe tenerse en cuenta al utilizar esta acción.
+    Piso: Esto tomará un valor decimal y lo redondeará hacia abajo al valor entero más cercano. A diferencia del redondeo (arriba), esto no tiene en cuenta la parte decimal del valor, por lo que un número como 5.9999999 se redondeará a
+      5.
+  
+  Una vez seleccionado el tipo de redondeo, debe suministrar el número a redondear (puede ser una variable), y luego dar una variable de destino a la que devolver el nuevo valor entero (que puede ser marcada como una variable local temporal).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Redondeo
+        El tipo de redondeo a utilizar para obtener el entero (ver descripción anterior)
+      
+      
+        Número
+        El número decimal a redondear a un entero
+      
+      
+        Objetivo
+        La variable de destino para almacenar el entero devuelto
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior toma un valor decimal y lo convierte en un entero,
+    almacenando el valor devuelto en una variable local temporal. Este valor se convierte entonces en una cadena y se dibuja en la pantalla.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del tipo de datos
+        Siguiente: Cadena a número
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

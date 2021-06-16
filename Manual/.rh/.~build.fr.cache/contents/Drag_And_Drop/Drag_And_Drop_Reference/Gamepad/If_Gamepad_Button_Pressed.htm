@@ -1,0 +1,54 @@
+
+  
+   Si se pulsa el botón del Gamepad
+  Con esta acción puedes sondear el gamepad para ver si se está pulsando algún botón. La acción devolverá true cada vez que el botón del gamepad sea pulsado (y mantenido), o false en caso contrario, aunque si haces clic en el modificador
+    modificador not puedes comprobar si el botón no está pulsado, es decir, la acción devolverá true mientras no haya ningún botón pulsado y false si lo hay. Si sólo necesitas comprobar la pulsación de un solo botón, entonces
+    utilice la acción si el botón del gamepad está presionado.
+  Si el botón que se comprueba es un botón analógico, no se detectará la pulsación hasta que el valor del botón haya superado el umbral establecido mediante la acción Establecer umbral de botones del Gamepad.
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el bloque
+    "evalúa como verdadero, mientras que cualquier acción lanzada en otro lugar se ejecutará después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Gamepad
+        El índice del gamepad.
+      
+      
+        Botón
+        El nombre del botón a comprobar.
+      
+      
+        No
+        Negar la comprobación (verdadero se convierte en falso y viceversa)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior sondea el estado del botón del gamepad 0 a cada paso y
+    si se mantiene un botón pulsado, comprueba la pulsación inicial del botón. Si la comprobación es verdadera en la pulsación inicial, se reproduce un sonido, entonces, mientras el botón se mantiene pulsado, la velocidad de la instancia se establece en 10. Si el botón no se mantiene
+    Si el botón no se mantiene pulsado, se realiza una comprobación al soltar el botón para volver a poner la velocidad a 0.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del Gamepad
+        Siguiente: Si el botón del Gamepad está abajo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,453 @@
+
+  
+  Errores de compilación
+  El segundo tipo de error que puede ser reportado para su juego es el error del compilador. Un error del compilador ocurre cuando su juego encuentra algún tipo de error que el verificador de sintaxis no ha podido detectar - es muy fácil
+    olvidar declarar una variable o escribir por error una cadena como un real, por ejemplo - o cuando un error está relacionado con la forma en que ha configurado las herramientas de compilación de las Preferencias de Plataforma para la plataforma de destino. Estos errores serán detectados por GameMaker Studio 2 mientras se compila el juego y esta información también se mostrará en la salida de errores del compilador, como se muestra a continuación:
+  
+  NOTA: Estos errores no suelen mostrar una ventana y simplemente mostrarán "BuildFailed" en la salida del compilador. Si aparece una ventana, normalmente se trata de un error de ejecución, que
+    se explica aquí.
+  Los mensajes de error del compilador seguirán todos el mismo formato:
+  [objeto] - [evento] - [Número de línea]: [cadena de error]
+  Si el error se encuentra en una secuencia de comandos, será simplemente:
+  [script] - [Número de línea]: [cadena de error]
+  A continuación, puede hacer doble clic en  en cualquiera de las entradas de error del compilador para abrir el activo en cuestión en la posición marcada como error, y luego
+    puede utilizar la información contenida en el mensaje para señalar exactamente en qué parte del objeto o del script se ha producido el error. Sin embargo, a veces estos errores pueden parecer un poco crípticos, por lo que a continuación puede encontrar una lista completa de todos los errores y una breve
+    explicación de lo que significan:
+   
+  
+    
+      
+        Error
+        Descripción
+      
+      
+        
+          Varios
+        
+      
+      
+        No hay programa para compilar
+        Un error de compilación anterior ha provocado que el árbol de análisis del compilador no se haya creado y, por lo tanto, el compilador no tiene datos del programa para compilar
+      
+      
+        Error fatal durante la compilación de [nombre] - detalles de la fuga a continuación
+        Este mensaje significa simplemente que se ha detectado algún error pero el compilador no puede situar qué o dónde (si esto ocurre de forma constante puedes ponerte en contacto con el soporte deYoYo Games y proporcionar los detalles que muestra la ventana de salida del compilador)
+      
+      
+        No se admite la expansión recursiva de macros
+        Ha utilizado macros recursivas que se remiten unas a otras y se expanden constantemente
+      
+      
+        No se puede encontrar el TextureGroup [group]
+        Este error suele producirse cuando se intenta ejecutar un archivo de proyecto mal formado (si esto ocurre constantemente, puedes ponerte en contacto con el servicio de asistencia deYoYo Games y proporcionar los detalles que muestra la ventana de salida del compilador).
+          detalles que muestra la ventana de salida del compilador)
+      
+      
+        Error al convertir [value] en número
+        Ha intentado convertir el valor dado, por ejemplo una cadena, en un número
+      
+      
+        División por 0
+        Has intentado dividir un valor entre 0
+      
+      
+        Id. de objeto inválido [object ID] utilizado
+        Ha intentado acceder a un objeto utilizando un valor de identificación que es incorrecto
+      
+      
+        Comentario no cerrado (/*) al final del script
+        Ha creado un comentario de script utilizando
+          /* [comment] */ pero no ha suministrado la etiqueta de cierre de comentario
+      
+      
+        Ficha inválida
+        Tienes un carácter inválido en tu código de juego, lo que puede ocurrir con caracteres de idiomas extranjeros o Unicode
+      
+      
+        Número [num] en formato incorrecto
+        El número dado - mostrado en el error - no es el formato correcto para la función u operación que se está realizando, por ejemplo, se suministra un número entero cuando se requiere un puntero
+      
+      
+        Se ha encontrado un EOF inesperado
+        Ha llegado al final del archivo de forma inesperada mientras utilizaba las funciones de archivo
+      
+      
+        
+          Cuerdas
+        
+      
+      
+        No se puede No una cadena
+        Ha intentado utilizar "!" (no) en una cadena
+      
+      
+        No se puede negar una cadena
+        Has intentado negar una cadena, por ejemplo
+          string = -string
+      
+      
+        
+          Guiones, Funciones y argumentos
+        
+      
+      
+        Número incorrecto de argumentos para la función [function]
+        Ha suministrado demasiados o muy pocos argumentos para la función dada
+      
+      
+        Fallo al analizar action_execute_script() - número incorrecto de argumentos recibidos
+        La acción de DnD™Ejecutar Script tiene demasiados o muy pocos argumentos para el script dado que se llama
+      
+      
+        Función desconocida [function] comprobar si el script está vacío
+        Se ha llamado a una secuencia de comandos o función que el compilador no reconoce (este error suele producirse por referencias a activos de secuencias de comandos vacíos, ya que el compilador eliminará estos activos al compilar)
+      
+      
+        La función [function] espera argumentos de n, a proporcionado
+        A una función se le ha dado un número incorrecto de argumentos (n) cuando se esperaba un número determinado (a)
+        
+      
+      
+        Asignación de un valor vacío (la función no devuelve nada?)
+        Has intentado asignar un valor de retorno de una función cuando esa función no devuelve nada
+      
+      
+        No se puede encontrar la función [function] 
+        Has llamado a una función desconocida
+      
+      
+        Llamar a una función que necesita una instancia y no hay ninguna disponible
+        La función o el script que se llama es para actuar sobre una instancia, pero en el momento de la ejecución no existe ninguna instancia
+      
+      
+        Llamar a una función que necesita una otra y no hay otra disponible
+        Ha utilizado la palabra clave other fuera del evento de colisión o fuera de una declaración with 
+      
+      
+        Error en la denominación de los argumentos, n argumentos pero no se ha encontrado ninguna referencia a a
+        Ha dado varios argumentos a un script, pero no hace referencia a uno de ellos en el script, por ejemplo, su script toma tres argumentos pero sólo utiliza los argumentos n y a
+      
+      
+        No se pueden comparar los argumentos
+        Has intentado comparar dos tipos de argumentos diferentes, como una cadena y un número real
+      
+      
+        Función o script desconocido [functions/script] 
+        El compilador no reconoce la función o el script al que se llama
+      
+      
+        No se puede utilizar el nombre del recurso [resource] porque no se está exportando
+        Ha intentado acceder a un recurso que no ha sido marcado como parte del proyecto para la plataforma en la que se está compilando
+      
+      
+        No se puede utilizar un nombre de función/script para una variable, utilizando [functions/script]
+        Ha intentado utilizar un nombre de función o un nombre de script como variable, por ejemplo:
+          string = "Hello World"
+      
+      
+        No se puede utilizar un argumento fuera de un script 
+        Las variables argumentales incorporadas sólo pueden utilizarse dentro de un script, pero has intentado utilizarlas en otro lugar
+      
+      
+        No hay referencias a argument[num] pero sí a argument[num]
+        Está utilizando una referencia a un argumento que no existe pero que podría asignarse a otro argumento
+      
+      
+        Número incorrecto de argumentos para el accesor
+        Ha suministrado un número incorrecto de argumentos al utilizar un accesorio
+      
+      
+        Tipo de argumentos incorrecto para (uno de los siguientes): /, div, mod, +, -, &&, ||, &, |, ^, <<, >>
+        Ha suministrado un tipo de argumento incorrecto para la expresión que se está evaluando
+      
+      
+        
+          Variables
+        
+      
+      
+        Uso de la variable no inicializada [var]
+        Has intentado utilizar la variable nombrada antes de que se haya inicializado
+      
+      
+        La variable [var ] es de sólo lectura
+        Has intentado cambiar la variable nombrada cuando no se puede cambiar
+      
+      
+        No se puede encontrar la variable llamada [var]
+        La variable nombrada no se encuentra en la compilación actual
+      
+      
+        Referencia a una variable malformada
+        Has intentado referenciar una variable de forma incorrecta
+      
+      
+        Intentando establecer una variable de sólo lectura [var]
+        Has intentado establecer una variable que es de sólo lectura
+      
+      
+        No se puede volver a declarar una variable incorporada
+        Ha intentado declarar una variable local con el mismo nombre que una de las variables incorporadas
+      
+      
+        No se puede utilizar el nombre del recurso para una variable
+        Se ha utilizado el mismo nombre de un recurso del árbol de recursos como variable local
+      
+      
+        La[Variable] es de sólo lectura
+        Ha intentado utilizar una variable que ha sido marcada como de sólo lectura
+      
+      
+        
+          Constantes
+        
+      
+      
+        No se puede establecer una constante [constante] a un valor
+        Has intentado establecer una constante con un valor diferente
+      
+      
+        La constante no es válida aquí
+        Has intentado utilizar una constante en algún lugar que no es válida para el código que se está ejecutando
+      
+      
+        No se puede asignar a [var] - es una constante
+        Has intentado asignar un nuevo valor a la constante nombrada
+      
+      
+        
+          Arrays
+        
+      
+      
+        El índice de la matriz no debe ser negativo
+        Has intentado acceder, crear o establecer un valor de matriz utilizando un índice de matriz negativo
+      
+      
+        
+          Malformado...
+        
+      
+      
+        Operador condicional malformado
+        Ha utilizado un operador condicional (ternario) erróneo o una sentencia if, y no el formato:
+          [condition] ? [expression1] : [expression2];
+      
+      
+        If requiere una declaración then
+        Has escrito una sentencia if y una expresión para evaluar, pero no has dado ninguna parte then para ejecutar
+      
+      
+        declaración de asignación malformada
+        En el código estás utilizando un operador de asignación erróneo
+      
+      
+        Malformado if / repeat / while / do / for / with / switch / break / continue / exit statement
+        
+        La estructura del enunciado dado es incorrecta.
+      
+      
+        Declaración post inc o dec malformada
+        Has intentado utilizar [var]++ o [var]-- de forma ilegal
+      
+      
+        Declaración pre inc o dec malformada
+        Has intentado utilizar ++[var] o --[var] de forma ilegal
+      
+      
+        Global gml_pragma malformado
+        Has creado una cadena global errónea al utilizar gml_pragma
+      
+      
+        PNGCrush malformado gml_pragma
+        Ha creado un comando de cadena incorrecto para PNGCrush cuando utiliza gml_pragma
+      
+      
+        Texgroup.Scale malformado gml_pragma
+        Has creado una cadena global errónea al utilizar gml_pragma
+      
+      
+        
+          Interruptor / Caja
+        
+      
+      
+        El valor predeterminado no se puede utilizar varias veces en un interruptor
+        En su sentencia switch ha definido por defecto: más de una vez
+      
+      
+        Error de tipo en la expresión de la cláusula (las expresiones de la cláusula deben ser todas del mismo tipo)
+        En su conmutador está comprobando dos tipos de casos constantes diferentes, por ejemplo una cadena en un caso y un entero en otro
+      
+      
+        El argumento del caso debe ser una constante
+        Ha intentado utilizar un valor que no se evalúa como una constante dentro de uno de sus casos de conmutación
+      
+      
+        La declaración en un interruptor DEBE aparecer después de case o default
+        Ha añadido una sentencia a un interruptor fuera de una llamada a case: o default: 
+      
+      
+        Declaración de caso duplicado encontrada / original aquí
+        Ha utilizado la misma constante de caso en dos lugares diferentes dentro de un interruptor (tenga en cuenta que el comentario "original aquí" estará en otra línea y se puede hacer clic para mostrar el caso original)
+      
+      
+        
+          Expresiones
+        
+      
+      
+        No hay valor de retorno de la expresión (¿tiene la expresión un valor de retorno?)
+        Has intentado asignar un valor de retorno de una expresión a una variable cuando la expresión no devuelve nada
+      
+      
+        Esperando la expresión después del '.'
+        Ha utilizado la notación de punto "." de forma errónea y no ha añadido correctamente una expresión a continuación
+      
+      
+        Símbolo inesperado [símbolo] en la expresión
+        La expresión utiliza un símbolo que no forma parte del conjunto de símbolos de expresión aceptados: el símbolo en cuestión se mostrará
+      
+      
+        
+          Operadores desconocidos
+        
+      
+      
+        Desconocido Pre operador
+        Ha intentado utilizar un símbolo como preoperador cuando ese símbolo no está permitido, por ejemplo **[var] o >>[var] - sólo son aceptables ++ y -- 
+      
+      
+        Operador de correo desconocido
+        Ha intentado utilizar un símbolo como post-operador cuando ese símbolo no está permitido, por ejemplo [var]** o [var]>> - sólo son aceptables ++ y -- 
+      
+      
+        Pragma desconocido [gml_pragma string]
+        Ha utilizado una cadena de pragma que es desconocida para el compilador
+      
+      
+        Operador unario desconocido
+        Has intentado utilizar un símbolo desconocido como operador unario
+      
+      
+        Operador binario desconocido
+        Has intentado utilizar un símbolo desconocido como operador binario
+      
+      
+        Operador desconocido [operador]
+        Ha intentado utilizar un símbolo desconocido como operador (el símbolo se mostrará en el error)
+      
+      
+        
+          Pausa / Continuación
+        
+      
+      
+        Pausa utilizada sin contexto
+        No ha utilizado la ruptura dentro de un interruptor o un bucle o cualquier otra estructura permitida
+      
+      
+        Seguir utilizando sin contexto
+        No ha utilizado continue en el contexto correcto
+      
+      
+        la declaración de continuar no está permitida en este punto
+        Ha utilizado continue dentro de un apartado de su código donde no está permitido
+      
+      
+        
+          Enums
+        
+      
+      
+        enum num no es válido
+        El número del enum no es válido para el enum
+      
+      
+        enum malformado
+        No ha creado el enum correctamente
+      
+      
+        enum [enum] ya ha sido definido
+        Ha intentado definir un enum con el mismo nombre que otro definido previamente
+      
+      
+        entrada de enum malformada
+        El enum tiene una entrada no válida
+      
+      
+        la expresión enum debe ser una constante entera
+        La entrada del enum no se evalúa como una constante entera
+      
+      
+        la referencia al enum [key] no existe en [enum]
+        Ha intentado hacer referencia a una entrada de enum utilizando una clave que no ha sido definida previamente para ese enum
+      
+      
+        
+          Símbolos / Valores esperados
+        
+      
+      
+        Símbolo ( esperado Símbolo ) esperado Símbolo , o ) esperado Símbolo { esperado Símbolo } esperado Símbolo , o } esperado Símbolo : esperado Símbolo ; esperado Símbolo [ esperado símbolo ] esperado Símbolo
+          , o ] esperado
+        No ha utilizado un símbolo requerido al escribir su código
+      
+      
+        Id o cadena esperada
+        Ha utilizado un valor que no es ni un ID de capa ni un nombre de capa -como una cadena- en una de las funciones de capa
+      
+      
+        palabra clave Hasta que se espere
+        Has creado un bucle do... until pero has olvidado proporcionar una expresión until
+      
+      
+        Nombre de la función esperada
+        Has utilizado algo que no es un nombre de función en tu código donde debería ir una función
+      
+      
+        nombre de la variable esperada
+        Ha proporcionado un nombre que no es un nombre de variable donde se espera uno
+      
+      
+        Operador de asignación esperado
+        Ha creado una asignación que espera un operador pero no se ha suministrado ninguno
+      
+      
+        
+          Exclusivo paraAndroid 
+        
+      
+      
+        El directorio [dir] deAndroid ARM ToolChain no existe
+        El enlace dado en las Preferencias de Android para la cadena de herramientas ARM es incorrecto y no existe.
+      
+      
+        El directorio [dir] deAndroid MIPS ToolChain no existe
+        El enlace dado en las Preferencias de Android para la cadena de herramientas MIPS es incorrecto y no existe.
+      
+      
+        El directorio [dir] deAndroid x86 ToolChain no existe
+        El enlace que se da en las Preferencias de Android para la cadena de herramientas x86 es incorrecto y no existe.
+      
+      
+        El directorio deAndroid NDK [dir] no existe
+        El enlace dado en las Preferencias de Android para el NDK de Android es incorrecto y no existe.
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Informe de errores
+        Siguiente: Errores del corredor
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

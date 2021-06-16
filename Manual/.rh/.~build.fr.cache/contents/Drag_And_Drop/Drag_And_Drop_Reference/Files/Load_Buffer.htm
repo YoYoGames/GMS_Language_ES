@@ -1,0 +1,45 @@
+
+  
+   Buffer de carga
+  Con esta acción se puede cargar un buffer que fue previamente guardado con la acción Guardar Buffer. La acción creará un nuevo búfer, cargará el archivo de datos en él y devolverá el valor de ID único para identificar el búfer a la
+    variable. Usted proporciona el nombre del archivo a cargar (como una cadena) y una variable para almacenar el ID del buffer devuelto. Tenga en cuenta que si marca la variable como una variable local temporal, debe asegurarse de eliminar el búfer que crea esta función antes de
+    antes de que termine el script de la acción o el evento, de lo contrario perderá la referencia a ella y obtendrá una fuga de memoria cuando la variable sea descartada.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Archivo
+        El nombre (en forma de cadena) del archivo a abrir
+      
+      
+        Objetivo
+        La variable de destino para mantener el valor de identificación único para el buffer creado en la carga
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará una variable para mantener los datos del buffer y luego comprobará si se ha hecho un
+    archivo de guardado del búfer se ha hecho previamente. Si el archivo existe, entonces se carga en la variable del búfer que creamos, pero si no existe, se crea, se escribe en él y luego se guarda listo para cargarlo la próxima vez.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Guardar el búfer
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

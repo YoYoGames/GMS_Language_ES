@@ -1,0 +1,68 @@
+
+  
+  El sistema de archivos
+  Al utilizar las funciones del sistema de archivos o los archivos incluidos con GameMaker Studio 2 es de vital importancia saber exactamente cómo
+    el sistema de archivos funciona y qué cosas están sucediendo detrás de las escenas. Con ese fin, esta sección está diseñada para explicar y aclarar exactamente cómo se almacenan las cosas, dónde se almacenan y qué posibles límites o soluciones puede haber
+    pueden existir en este sistema.
+  Lo primero y más importante a tener en cuenta sobre las funciones de archivo es que están limitadas -en general y por defecto- al sandbox. Esto significa que GameMaker Studio 2 no puede guardar o cargar archivos de cualquier lugar que no sea parte del paquete de juegos o el almacenamiento local para el dispositivo sin la entrada explícita del usuario, e incluso entonces esta entrada se limita a sólo Windows, macOS y Ubuntu(Linux) plataformas de destino.
+  IMPORTANTE! Es posible desactivar el sandboxing, sin embargo, en los objetivos de escritorio(Windows, macOS y Ubuntu(Linux)) marcando la opción Desactivar sandbox del sistema de archivos en las Opciones de Juego para la plataforma de destino. Lo haces bajo tu propio riesgo, y aunque esto abrirá el guardado y la carga de archivos y te permitirá acceder a los archivos en cualquier parte del sistema dado, todavía puede estar limitado por los permisos del sistema operativo, y no serás capaz de escribir
+    en la directorio_de_programas carpeta.
+  Para entender la caja de arena, primero hay que entender que hay dos áreas distintas para los archivos:
+  
+    El paquete de archivos - aquí es donde se almacenan todos los archivos que se empaquetan con el juego ejecutable, incluyendo los archivos que ha añadido a la lista de activos de archivos incluidos desde el IDE de GameMaker Studio 2 (que
+      son los archivos externos que desea empaquetar con el juego).
+    El Área de Guardado - es un área de almacenamiento del dispositivo que puede ser escrita con seguridad por el juego y el juego tiene la garantía de que es un área escribible.
+  
+  El siguiente diagrama puede ayudarle a visualizarlo mejor:
+  
+  NOTA: Nunca se puede escribir en el directorio del paquete de archivos (programa).
+  Cuando tu juego está en sandbox, las dos áreas de destino -el directorio del bundle y el área de almacenamiento local- están disponibles en cada plataforma de destino, pero en cada una de ellas funcionarán de forma ligeramente diferente. Sin embargo, GameMaker Studio 2 ha abstraído la esencia
+    esencia de lo que se puede y no se puede hacer, lo que facilita la reorientación de los juegos a múltiples entornos.
+  Para empezar, hay que entender qué se quiere decir cuando se habla del working_directory. Es un sinónimo de las dos
+    posibles ubicaciones de guardado (como se ilustra en el diagrama anterior) y cuando usas ese directorio hará una de dos cosas dependiendo de si estás leyendo o escribiendo, y si el archivo del que estás leyendo ha sido modificado o no:
+  
+    Operaciones de lectura - working_directory comprobará primero el área de guardado para ver si el archivo al que se accede está allí, y si lo está lo utiliza. Sin embargo, si el archivo no existe en el área de guardado, entonces comprueba el área del paquete de archivos y
+      utiliza eso (si el archivo que se busca es un archivo incluido con su juego).
+    Operaciones de escritura - Esto sólo puede ocurrir en el área de guardado.
+  
+  NOTA: en general GameMaker Studio 2 se encargará de todo esto por ti y rara vez necesitarás usar la variable incorporada working_directory.
+  Utilizando estas dos sencillas reglas podemos ver ahora cómo funcionan las siguientes funciones (se trata de ejemplos para ayudar a visualizar el proceso de las diferentes funciones disponibles):
+  
+    directory_create() (y las demás funciones de directorio) sólo funcionarán en el área de guardado .
+    las funciones del sistema de archivos devolverán información sobre los archivos tanto del paquete como del área de almacenamiento , pero sólo
+     escribirán en el área de almacenamiento .
+    las funciones para escribir archivos de texto, binarios o INI crearán un nuevo archivo en el área de guardado si no existe ya uno, copiando cualquier información de los archivos originales incluidos con el paquete del juego si es que existen.
+      Ten en cuenta que los archivos originales seguirán en la parte de sólo lectura del directorio de guardado, pero no serán referenciados mientras exista una versión en la sección de lectura/escritura del área de guardado.
+  
+  En el Windows, macOS y Ubuntu(Linux) hay dos maneras de guardar y cargar archivos desde fuera de la caja de arena y es utilizando las funciones get_open_filename() y
+    get_save_filename() (ambas funciones requerirán que el usuario seleccione un área para cargar y guardar y la cadena de retorno
+    se puede utilizar en el resto de las funciones de archivo para evitar la caja de arena - ver las descripciones de las funciones en la sección de lenguaje del manual para más detalles). La otra forma es desactivar la caja de arena por completo desde las Opciones de Juego para la plataforma de destino (sólo disponible para objetivos de Escritorio, como se discute más arriba en esta página).
+  En HTML5 también es posible cargar archivos desde fuera de la caja de arena desde un servidor, sin embargo esto sólo debe hacerse utilizando la función buffer_load_async() como
+    cargar de forma sincrónica ha quedado obsoleta en la mayoría de los navegadores y con el tiempo será obsoleta. Esto significa que los archivos que se cargan de esta manera deben guardarse como archivos binarios - por ejemplo, puedes guardar un *.ini como una cadena
+    (véase ini_close() para más detalles) y luego escribirlo en un búfer que puede ser guardado y cargado usando las funciones asíncronas. Tenga en cuenta
+    que si está cargando imágenes con sprite_add() entonces éstas ya son tratadas de forma asíncrona.
+  También debes saber que cada plataforma objetivo tiene su propia área de guardado en la que se pueden escribir y leer archivos y directorios. A continuación se muestra una lista de esas áreas para cada objetivo cuando está en sandbox:
+  
+    Windows y Windows UWP: Windows tiene todos los archivos en el directorio %localappdata%\<Game Name> (en Windows 7 es el directorio /Users/<User Name>/AppData/Local/<Game Name> ).
+    HTML5: Todo se hace a través del almacenamiento local.
+    macOS: El almacenamiento dependerá de si la aplicación está en sandbox o no (siguiendo las reglas de Apple, siendo la ruta normalmente ~/Library/Application Support/<Game Name>).
+    Ubuntu (Linux): Los archivos se almacenan en el Home/.config/gamename donde "Home" es el directorio personal del usuario - /home/<username>
+    iOS / tvOS: El almacenamiento es la ubicación estándar (como se ve a través de iTunes).
+    Android: Los archivos están en la ubicación estándar (que es invisible a menos que el dispositivo esté rooteado) /data/<package name>.
+  
+  Hay que tener en cuenta que el módulo de destino HTML5 tiene un límite de almacenamiento local (que puede ser de entre 1MB y 5MB dependiendo del navegador), lo que significa que no se le permitirá guardar sprites grandes, capturas de pantalla, etc.
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: Operadores Bitwise y Binarios
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

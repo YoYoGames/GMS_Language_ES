@@ -1,0 +1,97 @@
+
+  
+  Biblioteca de acción de amortiguadores
+  
+  Un búfer es una región de memoria física que se utiliza para mantener temporalmente los datos mientras se mueven de un lugar a otro o se manipulan de alguna manera, por ejemplo se puede utilizar un búfer para mantener los datos del estado del juego. GameMaker Studio 2 tiene una serie de acciones específicas
+    acciones específicas relacionadas con la creación, modificación y carga/guardado de buffers, pero antes de utilizarlos ten en cuenta los siguientes puntos:
+  
+    Cuando se crea un búfer, se borra automáticamente y se llena a 0.
+    El argumento "size" de las funciones del buffer siempre se refiere al tamaño en bytes del buffer.
+    Los búferes deDnD™siempre están alineados a 1 byte. La "alineación" se refiere a cómo se almacenan los datos dentro de un búfer y se utiliza cuando se usan las Funciones de búfer GML , pero
+      para Drag And Drop, no es relevante.
+    Los datos en los búferes se leen y escriben de manera secuencial (es decir, se llama a la acción Escribir Búfer tres veces, entonces se escribirá el primer dato, se avanzará, se leerá el segundo dato, se avanzará y luego se escribirá
+      el último dato), con algo llamado valor de "búsqueda" para indicarle en qué parte del buffer tendrá lugar la siguiente lectura/escritura.
+    Todos los datos se escriben en el búfer y se devuelven desde el búfer como una cadena, por lo que si ha almacenado algún número real tendrá que utilizar una de las acciones de tipo de datos para convertirlo de la cadena
+      al valor.
+  
+  La memoria utilizada para crear los buffers es la memoria del sistema, por lo que incluso cuando el juego no tiene el foco, cualquier dato almacenado en un buffer debería estar a salvo, sin embargo, si la aplicación se cierra o se reinicia entonces se perderá. También vale la pena señalar que los búferes pueden
+    también pueden ser guardados como archivos y luego cargados de nuevo en el juego utilizando las acciones de archivo.
+  La siguiente página explica con más detalle cómo funcionan los buffers en el contexto de GameMaker Studio 2 y contiene un par de ejemplos de código GML:
+  
+    Uso de los buffers
+  
+  La biblioteca Buffer tiene las siguientes acciones:
+   
+  
+    
+      
+        
+        Crear un búfer
+      
+      
+        
+        Buffer de copia
+      
+      
+        
+        Borrar el búfer
+      
+      
+        
+        Buffer de lectura
+      
+      
+        
+        Buffer de escritura
+      
+      
+        
+        Buffer de búsqueda
+      
+      
+        
+        Obtener el tamaño del buffer
+      
+      
+        
+        Obtener la posición del buffer
+      
+      
+        
+        Si existe el búfer
+      
+      
+        
+        Si el final del búfer
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Acciones de archivo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

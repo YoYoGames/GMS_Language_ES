@@ -1,0 +1,58 @@
+
+  
+   Para
+  La acción For se utiliza para realizar bucles que sólo terminan cuando un valor alcanza la condición dada. Se da un valor inicial como variable (que puede marcarse como una variable local temporal - esto es lo que normalmente se quiere), luego se da
+    la condición para comprobar la variable (por ejemplo, si es menor que un determinado valor), y finalmente la cantidad para incrementar la variable en cada iteración del bucle. Así, el flujo general es el siguiente:
+  
+    Se inicializa una variable con un valor
+    Se establece la condición para comprobar esta variable con
+    Se establece cuánto debe incrementarse la variable en cada iteración del bucle
+    A continuación, se añaden acciones en el bucle, y éstas se ejecutarán en cada iteración hasta que la condición sea falsa o se encuentre una acción de ruptura.
+  
+  Cuando se añaden acciones a realizar dentro del bucle, éstas se añaden de la misma manera que se añadiría una acción a un "if", es decir, colocándola al lado de la acción en lugar de debajo de ella:
+  Todas las acciones añadidas al lado se incluirán en el For y se realizarán antes de que el evento o script continúe
+    con las acciones añadidas debajo. Tenga en cuenta que puede terminar cualquier bucle prematuramente si llama a la acción Break, y que al usar bucles For no tiene que incrementarse y puede hacer que se decremente también, siempre y cuando la condición
+    que utilices sea apropiada. Por ejemplo, establece la variable inicial en 10, establece la condición para comprobar si es menor que 0 y luego establece el valor de incremento en -1 y el bucle iterará 10 veces, contando hacia atrás desde 10 hasta 0.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Inicializar
+        Inicializar la variable que se utilizará para el recuento a un valor (se puede marcar como una variable local temporal)
+      
+      
+        Condición
+        La condición a comprobar para romper el bucle
+      
+      
+        Incremento
+        La cantidad a incrementar (o disminuir) la variable de recuento inicial en cada iteración del bucle
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior ejecuta un bucle for para comprobar si un gamepad está conectado a cualquiera de los 12
+    "disponibles. Si se descubre un gamepad, se establece una variable global con el número de ranura actual y se rompe el bucle.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones en bucle
+        Siguiente: Break
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

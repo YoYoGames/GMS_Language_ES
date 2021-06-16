@@ -1,0 +1,51 @@
+
+  
+   Declarar una variable temporal
+  Esta acción se utiliza para declarar y dar un valor inicial a una variable temporal (también llamada variable local), que es una variable que sólo existe mientras dure el evento o el script en el que fue declarada. Las variables temporales
+    son muy útiles para almacenar valores que sólo se necesitan para una sola operación y evitan que tus objetos se "llenen" de variables que sólo pueden ser utilizadas una vez. También son muy útiles para desglosar operaciones complejas, o para
+    establecer valores en otras instancias cuando se cambia el ámbito de la acción. Esto se debe a que las variables declaradas como temporalesno están asignadasa ninguna instancia en particular, sino que están asignadas al propio evento o script, por lo que si creas una variable temporal
+    y luego cambias el ámbito de la acción utilizando la acción Aplicar a..., puedes seguir comprobando la variable temporal sin problemas y sin cambiar su ámbito de acción.
+  Cabe destacar que cuando hablamos de "valores", no sólo nos referimos a valores numéricos, ya que una variable puede ser una cadena, un puntero, un ID de recurso o cualquier otra cosa que una función pueda devolver o utilizar, incluso una expresión. Consulta la sección sobre tipos de datos para obtener más información.
+  Tenga en cuenta que muchas acciones tienen una casilla de verificación "Temp" que le permite crear una nueva variable local temporal para mantener el valor de retorno de la acción, y se puede acceder a esta variable en el script de la acción o evento como lo haría con cualquier otra variable
+    a partir de entonces. Tenga en cuenta también que las variables locales temporales tienen un ámbito de aplicación en el script o evento en el que se crean, por lo que pueden ser utilizadas por otras instancias en el mismo bloque cuando se utiliza Aplicar a.
+  También puede añadir variables adicionales en la misma acción haciendo clic en el icono más  al lado de la acción, y dando otra variable local temporal
+    nombre y valor. Para obtener información más avanzada sobre las variables, consulte la sección Variables y ámbito de las variables.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Nombre
+        El nombre de la nueva variable a asignar, o el nombre de una variable existente a modificar.
+      
+      
+        Valor
+        El valor que debe tener la variable.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea dos variables temporales, " _dir"
+    y "_spd" y las establece con valores aleatorios. A continuación, utiliza estos valores para que la instancia se mueva en una dirección aleatoria a una velocidad aleatoria.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Fijar la variable global
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

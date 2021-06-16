@@ -1,0 +1,53 @@
+
+  
+   Crear tipo de partícula
+  En tus proyectos puedes tener múltiples tipos de partículas diferentes, cada una con sus propias propiedades como la dirección y el color, etc... que se establecen utilizando las diferentes acciones de tipo de partícula. Sin embargo, primero necesitas crear un tipo de partícula usando esta acción, que esencialmente asigna una pequeña cantidad de memoria para mantener todos los detalles de la partícula para que puedas usar las partículas en cualquier momento en el futuro. Se da una variable para mantener el valor de identificación único para el tipo de partícula, y luego en
+    todas las acciones futuras relacionadas con esta partícula se puede llamar a la variable. Puedes elegir marcar esta variable como una variable local temporal, pero eso significará que se descarta al final del script de la acción o del evento, lo que significa que el tipo de partícula
+    seguirá existiendo pero te dejará sin ningún medio para acceder a ella, por lo que hay que tener cuidado al usar esto (en general los tipos de partículas nunca necesitarán ser almacenados en una variable local temporal, pero para ciertas cosas, como dibujar partículas a una superficie,
+    puede ser necesario).
+  NOTA: Un tipo de partícula, una vez creado, permanece residente en la memoria del sistema mientras dure el juego, por lo que si necesitas recrearlo en algún momento (por ejemplo, si llamas a la acción Reiniciar Juego ),
+    entonces debes destruir el tipo de partícula actual, de lo contrario se produce una fuga de memoria. Esto ocurre cuando un recurso se añade a la memoria y luego se "desreferencia", lo que significa que GameMaker Studio 2 no tiene manera de interactuar con ese recurso más.
+    recurso. Esto conduce a la memoria que se obstruye por los recursos inaccesibles que a su vez puede causar problemas con su juego. Para destruir un tipo de partícula cuando ya no es necesario, utilice la acción Destruir tipo de partícula.
+  También puede establecer el modo de fusión que se utilizará para las partículas. Por defecto se dibujarán con un modo de mezcla "normal", por lo que los colores no serán modificados por lo que se dibujó debajo de la partícula, sin embargo, cuando la opción "Mezcla"
+    está activada, se dibujarán utilizando la mezcla aditiva, lo que significa que las cosas se dibujarán con cambios en los colores basados en lo que se dibujó debajo de la partícula. La mezcla aditiva da efectos muy brillantes y "resplandecientes", y es
+    ideal para explosiones, láseres, fuego, etc. mientras que la mezcla normal es mejor para cosas como la lluvia, el humo y los efectos de escombros. La imagen de abajo muestra el mismo efecto con la mezcla aditiva desactivada (izquierda) y activada (derecha):
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objetivo
+        La variable de destino que contendrá el valor de identificación del tipo devuelto
+      
+      
+        Mezcla
+        Si el tipo de partícula debe utilizar la mezcla de aditivos
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Destruir tipo de partícula
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

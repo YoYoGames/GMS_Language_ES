@@ -1,0 +1,89 @@
+
+  
+  Construcción de código de bloque de acción
+  Para añadir comportamientos a los objetos puedes construir tu código usando Acciones de las diferentes librerías disponibles en la Caja de Herramientas de Acciones. Para empezar necesitarás hacer un nuevo  proyecto de Arrastrar y Soltar y luego hacer un nuevo objeto ( puedes asignar un sprite al objeto también si es necesario). En tu nuevo objeto puedes empezar a añadir eventos,
+    y en los eventos añade tus acciones de código DnD™.
+  Observe que cuando añade un nuevo evento, se abre una ventana de "código" con una pestaña para el evento en cuestión (véase la imagen
+    arriba), y ahora puedes arrastrar cualquier acción que desees desde la caja de herramientas de la derecha al panel del bloque de acción de la ventana de código. Ahora bien, si bien es cierto que puede añadir cualquier acción, eso no significa que todas ellas vayan a funcionar o que el proyecto vaya a
+    compile con ellas. Algunas acciones requieren al menos una variable para funcionar, mientras que otras - como las acciones de Dibujo - sólo
+    funcionan si se utilizan en un evento específico. ¿Cómo saber cuáles utilizar? Bueno, en general, es simplemente una cuestión de usar la lógica... si una acción requiere una variable y no hemos definido una todavía, entonces no deberíamos usarla hasta que hayamos
+    acción para crear la variable.
+  Cuando arrastra una acción desde la caja de herramientas al espacio de trabajo principal del bloque de acción, se expandirá para mostrar losargumentos disponibles (parámetros) que puede rellenar
+    y cambiar para establecer el comportamiento. En la imagen siguiente, hemos arrastrado una acción Asignar variable de la biblioteca común de la caja de herramientas al espacio de trabajo del bloque de acción
+    el espacio de trabajo del bloque de acción:
+  Puede ver que la nueva acción también se muestra a la izquierda de la ventana de código de forma abreviada. Esta lista de acciones,
+    llamada Visión General de la acción, puede ser pulsada para navegar rápidamente a esa acción para editarla. Puedes continuar añadiendo acciones al evento si lo necesitas, con cada nueva acción "encadenada" a la anterior para mostrar el flujo del código de
+   DnD™que estás construyendo. Ten en cuenta que el área donde puedes soltar más acciones está resaltada debajo de la acción inicial, y, dependiendo de la acción que estés usando, se resaltarán diferentes áreas para mostrar en qué parte de la cadena puedes
+    añadirla:
+  A medida que añada acciones al espacio de trabajo, éstas se "encadenarán" a las acciones anteriores para que pueda ver cómo
+    el código de DnD™fluye, con una acción que lleva a otra, y el panel de visión general las muestra en forma abreviada y en orden de ejecución:
+  Algunas acciones colocarán el código en una cadena separada del flujo principal - cosas como If Variable 
+    crean una subcadena de acciones que deben ocurrir si se cumplen las condiciones correctas antes de continuar con la cadena principal:
+  Tenga en cuenta que cuando se utilizan acciones que pueden tener un bloque de cadena lateral como este, la acción tendrá dos áreas
+    resaltadas para soltar otras acciones:
+  
+    Uno debajo de la acción como normal
+    Uno a la derecha de la acción para mostrar que se quiere crear un bloque de acciones separado que se ejecute cuando la condición de la primera acción sea verdadera
+  
+  Puede cambiar la posición de las acciones dentro de la cadena simplemente haciendo clic en  y arrastrándolas a la nueva posición que necesite, y si hace un clic  y
+    mantenerlo durante un segundo y luego mover el ratón, puedes mover la acción dentro del espacio de trabajo manteniendo su lugar dentro de la cadena de bloques de acción.
+  También es posible añadir comentarios a las acciones de Drag and Drop™, de modo que puedes dejar notas junto a los distintos bloques para explicar lo que hacen (lo que resulta especialmente útil cuando se trabaja en equipo):
+  Puede obtener más información sobre esta función en la página sobre el menú del botón derecho del ratón.
+  Esto es lo básico del uso del editor de código de arrastrar y soltar, pero hay más detalles importantes que se explican en las secciones siguientes:
+   
+  Variables objetivo
+  
+    Es importante tener en cuenta que muchas acciones ofrecen una variable "objetivo", que puede marcarse como "Temporal", por ejemplo:
+    Lo que esto significa es que puede suministrar una variable que es el objetivo para mantener el valor devuelto por la
+      acción. En el ejemplo de la acción anterior, la acción devolverá el volumen del recurso de audio que selecciones, por lo que suministrarás una variable de destino para mantener este valor y poder referenciarlo más tarde.
+    Ahora bien, esta variable de destino tendrá que haber sido declarada previamente, ya sea mediante el uso de Assign Variable (que crea una Variable de Instancia) o Declare Temporary Variable (que crea una Variable Local Temporal).
+      Si marca la opción "Temp", entonces puede simplemente añadir un nombre de variable y la acción creará esa variable y la establecerá para mantener el valor de retorno para usted (creando una variable local temporal).
+      temporal). Cualquier acción utilizada después de esto puede ahora acceder al valor de la variable temporal, pero sólo dentro del mismo Evento o Script. Las variables temporales sólo están disponibles dentro del ámbito en el que fueron creadas. Para más información
+      sobre las variables y el ámbito de las variables, por favor vea aquí.
+     
+  
+  Ámbito de actuación
+  
+    No sólo las variables tienen ámbitos (véase la sección Variables de destino , más arriba), las acciones también pueden tener distintos ámbitos. De hecho, a casi todas las acciones se les puede dar un ámbito diferente para trabajar, establecido desde la ventana desplegable que se abre en la propia acción
+      como se muestra aquí:
+    También puedes establecer el alcance de todas las acciones posteriores utilizando la acción especial Aplicar a.
+      Para más información sobre esta característica de las acciones de DnD™, consulta aquí:
+    
+      Aplicación de acciones a otras instancias
+    
+     
+  
+  Auto Complete
+  
+    Al trabajar con Drag and Drop tendrá que añadir variables y expresiones en los diferentes campos de entrada de las acciones. Sin embargo, al hacerlo, a menudo aparecerá la ventana de Autocompletar para ayudarle:
+    Esta ventana emergente listará todas las variables, constantes y funciones incorporadas en GML(GameMaker Language), así como
+      así como cualquier recurso que contenga las letras iniciales de lo que estaba escribiendo. Se puede utilizar para encontrar rápidamente el recurso o la variable que está buscando para la acción sin tener que escribirlo todo usted mismo. Por ejemplo, si todas sus salas
+      tienen el prefijo "rm_", al escribirlo y esperar un momento se mostrará la ventana de autocompletar con todos los recursos que comienzan con "rm_". Tenga en cuenta que todas las variables incorporadas
+      que se muestran en la ventana de autocompletado pueden utilizarse en cualquier lugar donde se espere una variable o expresión en una acción, al igual que la mayoría de las funciones GML.
+     
+  
+  Ampliación de la acción
+  
+    A veces, al utilizar una acción, verá un pequeño icono de signo más  a un lado. Esto significa que puede ampliar la acción para realizar tareas adicionales o tomar más
+      argumentos. Por ejemplo, si miras la acción Declarar Variables Temporales, puedes ver que tiene este icono:
+    Cuando haga clic en el icono, la acción se ampliará y le permitirá declarar más variables, haciendo
+      que sea más fácil y rápido definir múltiples variables al mismo tiempo.
+    El icono también se puede utilizar para aquellas acciones que requieren argumentos opcionales ,
+      como la acción Elegir, que permite añadir varios valores diferentes para ser devueltos:
+    
+  
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Aplicación de acciones a otras instancias
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

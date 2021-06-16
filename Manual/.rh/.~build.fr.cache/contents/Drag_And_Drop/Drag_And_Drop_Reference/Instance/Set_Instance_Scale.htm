@@ -1,0 +1,48 @@
+
+  
+   Establecer la escala de la instancia
+  Este bloque de acción establece los valores image_xscale e image_yscale para la instancia. Los valores de entrada aquí son modificadores que se aplicarán al sprite asignado a la instancia, donde una escala de 1 (el valor por defecto) indica que no hay
+    escala (1:1), los valores más pequeños reducirán la escala (0,5, por ejemplo, reducirá a la mitad el ancho del sprite), y los valores más grandes aumentarán la escala. Puede utilizar valores negativos para voltear el sprite y escalarlo, a menos que el valor utilizado sea exactamente -1 (en cuyo caso el
+    (en cuyo caso el sprite es volteado o reflejado sobre su origen sin escalar). Puedes elegir establecer la escala horizontal o vertical en relación con los valores actuales, en cuyo caso estarás sumando o restando el nuevo valor de los valores de la escala actual.
+  Tenga en cuenta que el cambio de estos valores también cambiará la forma en que la instancia detecta las colisiones, a menos que haya suministrado un mask_index separado (máscara de colisión) en el Editor de Objetos. Tenga en cuenta que
+    para que los cambios en esta variable sean visibles, la instancia debe no tener ningún evento de dibujo (y así GameMaker Studio 2 dibujará por defecto el sprite) o ser dibujado usando la acción Draw Self.
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Horizontal
+        El factor de escala vertical a utilizar (por defecto es 1).
+      
+      
+        Vertical
+        El factor de escala horizontal a utilizar (por defecto es 1).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece un nuevo sprite, así como una serie de otras
+    para la visualización de ese sprite, incluyendo el ajuste de la escala a tres cuartos de su tamaño base a lo largo de ambos ejes.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Establecer el Alfa de la Instancia
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+   Si la instancia existe
+  Esta acción puede ser utilizada para comprobar si una instancia de un objeto específico existe en la sala de juego, o si una instancia específica en sí misma existe. Usted da el objeto desde el explorador de activos, y si cualquier instancia existe en la sala entonces la acción devolverá true de lo contrario devolverá false. Tenga en cuenta que puede utilizar una variable aquí con el ID único para la instancia específica (por ejemplo, como devuelto por la acción Crear Instancia de Objeto) o incluso el ID de la instancia
+    devuelto por el editor de la sala al añadir la instancia.
+  Si se marca el argumento "No", la acción comprobará si no existe ninguna instancia y si no se encuentra ninguna devolverá true y si existe alguna devolverá false.
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero, mientras que cualquier acción lanzada en otro lugar se realizará después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objeto
+        El nombre del objeto para buscar una instancia (o un ID de instancia).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una colisión y devuelve el valor de ID único de la instancia
+    con la que se está colisionando. Este valor se almacena en una variable temporal y luego se comprueba si el valor corresponde a una instancia que se encuentra actualmente dentro de la sala (si no se encuentra ninguna colisión, la variable contendrá la palabra clave " nadie"),
+    y si lo hace, entonces se establece una variable en la instancia con la que se está colisionando.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Convocatoria de evento para padres
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

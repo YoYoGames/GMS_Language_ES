@@ -1,0 +1,89 @@
+
+  
+  Archivos Biblioteca de Acción
+  
+  Las acciones de archivo se ocupan de dos tipos de archivos diferentes -archivos Buffer y archivos Ini- y también tienen ciertas acciones de archivo genéricas para renombrar o copiar archivos existentes.
+  Losarchivos de búfer se crean guardando los datos de un búfer que se ha creado previamente y estos datos se pueden cargar de nuevo en un búfer en cualquier momento en el futuro. Puede encontrar más información sobre los buffers aquí: Acciones en el buffer.
+  Losarchivos Ini son archivos pequeños y ligeros, compatibles con la mayoría de las plataformas. Son ideales para almacenar pequeñas piezas de información, como las preferencias de la interfaz, las puntuaciones locales, los datos de los niveles, etc., y son muy fáciles de usar. Los archivos Ini no
+    tienen que haber sido creados previamente para usar estas acciones, y puedes leer desde un archivo Ini inexistente y simplemente obtendrás un valor de retorno por defecto (que tú especifiques), sin embargo recomendamos que crees al menos un archivo "base"
+    ini para abrirlo y modificarlo antes de utilizar las acciones. Este archivo ini base puede crearse simplemente llamando a la acción Abrir archivo ini seguida de la acción Cerrar archivo ini, ya que al cerrar
+    el archivo lo escribirá en el disco, o puede incluir uno en los Archivos Incluidos del Navegador de Activos. Si está utilizando un archivo incluido en el Navegador de Activos como su Ini base, también debería leer
+    la sección del manual sobre cómo funciona el Sistema de Archivos.
+  NOTA: Para los juegos con localizaciones es muy importante que las letras acentuadas puedan ser leídas desde archivos externos. Esto significa que debe crear el archivo ini en formato UTF8 primero y luego añadirlo en GameMaker Studio 2 como un archivo incluido
+    para que se exporte al ejecutar el juego y se utilice en lugar del archivo ini en formato ANSI que se crea por defecto con las funciones ini cuando no se ha suministrado ninguno previamente. De esta manera, se puede leer y escribir en él correctamente con todos los acentos y las letras no romanas
+    y las letras no romanas.
+  Existen las siguientes acciones para trabajar con archivos:
+   
+  
+    
+      
+        
+        Buffer de carga
+      
+      
+        
+        Guardar el búfer
+      
+      
+        
+        Cambiar el nombre del archivo
+      
+      
+        
+        Copiar archivo
+      
+      
+        
+        Borrar archivo
+      
+      
+        
+        Abrir archivo Ini
+      
+      
+        
+        Cerrar archivo Ini
+      
+      
+        
+        Escribir en un archivo Ini
+      
+      
+        
+        Leer archivo Ini
+      
+      
+        
+        Si el archivo existe
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Acciones de los tipos de datos
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

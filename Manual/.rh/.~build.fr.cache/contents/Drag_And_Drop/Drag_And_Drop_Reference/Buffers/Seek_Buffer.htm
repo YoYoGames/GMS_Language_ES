@@ -1,0 +1,45 @@
+
+  
+   Buffer de búsqueda
+  Esta acción puede utilizarse para desplazarse (buscar) a una posición dentro de un búfer. Se suministra el valor único del ID del búfer devuelto por la acción Crear Búfer y luego el valor de desplazamiento en bytes al que se va a mover. El valor de desplazamiento
+    se aplicará desde el inicio del buffer, por lo que al llamar a esta función se moverá la posición de lectura/escritura al inicio del buffer y luego se moverá el número de bytes dados a lo largo y se posicionará la nueva posición de lectura/escritura allí. Sin embargo, si se marca
+    el desplazamiento como relativo, moverá la posición de lectura/escritura hacia adelante (o hacia atrás si el desplazamiento es un valor negativo) desde la posición actual.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+      
+        offset
+        El desplazamiento (en bytes) relativo a la posición de búsqueda actual
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene el tamaño del búfer y luego utiliza ese valor para establecer la posición de lectura/escritura
+    al final de los datos almacenados actualmente.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Obtener el tamaño del buffer
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

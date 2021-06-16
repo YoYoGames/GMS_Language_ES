@@ -1,0 +1,47 @@
+
+  
+   Estructura de datos libre
+  Esta acción liberará la estructura de datos de la memoria y debe ser llamada siempre que una estructura de datos ya no sea necesaria, por ejemplo en el evento Destroy even de una instancia o en el evento Room End, etc. Liberar una estructura de datos significa que no se pueden utilizar más acciones
+    para referirse a ella porque ya no existirá, aunque también puedes comprobarlo con la acción Si la estructura de datos existe.
+  Tenga en cuenta que, a menos que la estructura de datos tenga un índice asignado a una variable de ámbito global, no se trasladará de una sala a otra. Por ejemplo, si se crea una instancia de jugador y se asigna una estructura de datos de lista a una variable de esa instancia,
+    la lista tendrá que ser liberada si el jugador es destruido o si la sala cambia con la instancia de jugador en ella (a menos que la instancia de jugador esté marcada como persistente), por lo que la instancia de jugador tendría dos acciones de Liberar Estructura de Datos en ella para
+    ambos eventos. Es importante que todas las estructuras de datos creadas sean destruidas de esta manera cuando ya no sean necesarias para evitar fugas de memoria que pueden causar problemas de rendimiento o incluso bloquear el juego.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El tipo de estructura de datos que está liberando (lista, mapa, cuadrícula o pila)
+      
+      
+        Variable
+        La variable que contiene el índice de la estructura de datos a liberar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene el tamaño de la lista referenciada en la variable global
+    y luego utiliza un bucle for para recorrerla y destruir las instancias con los IDs almacenados en la lista. Una vez finalizado el bucle, la lista se libera de la memoria.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de la estructura de datos
+        Siguiente: Añadir a la lista
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

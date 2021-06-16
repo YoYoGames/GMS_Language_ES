@@ -1,0 +1,47 @@
+
+  
+   Establecer la zona muerta del eje del Gamepad
+  Esta acción se puede utilizar para establecer la "zona muerta" del eje del stick del gamepad. Se especifica el índice del gamepad a establecer, y luego se establece un valor de 0 a 1 y si la cantidad de entrada es menor que el valor dado, se considera que el eje del stick del gamepad
+    0. Ten en cuenta que este es un ajuste global que afectará a todos los ejes del stick conectados.
+  Tenga en cuenta que esto no modifica la salida de la acción Get Gamepad Axis, que siempre devolverá un valor de -1 y 0, y 0 y 1. Por ejemplo, el establecimiento de la zona muerta a 0,2 significará que empujar el stick a la derecha sólo
+    sólo empezará a devolver un valor de 0 - 1 cuando el valor bruto del eje sea superior a 0,2 - así que cuando el valor bruto sea 0,2, el valor de retorno será 0, cuando el valor bruto esté en 0,5, el valor de retorno será 0,375, o si el valor bruto es 0,9, entonces el valor de retorno
+    será 0,875.
+   
+  Sintaxis de la acción:
+  
+   
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Gamepad
+        El índice del gamepad.
+      
+      
+        Zona muerta
+        El valor de la zona muerta (0 - 1)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece la zona muerta para todos los índices del gamepad en 0,2.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del Gamepad
+        Siguiente: Si se pulsa el botón del Gamepad
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

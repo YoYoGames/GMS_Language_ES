@@ -1,0 +1,41 @@
+
+  
+   Borrar archivo
+  Con esta acción se puede eliminar un archivo que ha sido creado previamente. Se proporciona el nombre del archivo (como una cadena) del archivo que se va a eliminar. Tenga en cuenta que no puede eliminar ningún archivo que esté incluido en el paquete del juego, sólo los que han sido creados
+    usando las acciones Cerrar Ini o Guardar Buffer (ver la sección sobre El Sistema de Archivos para más información).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Archivo
+        El nombre (en forma de cadena) del archivo a eliminar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si el archivo "checkpoint.sav" existe, y si
+    existe, comprueba si el archivo "checkpoint_OLD.sav" existe. Si ese archivo también existe, entonces se elimina, y luego el archivo original "checkpoint.sav" es renombrado a "checkpoint_OLD.sav". Por último, se guarda un buffer
+    se guarda como "checkpoint.sav" (esencialmente estamos haciendo una copia de seguridad de un archivo de búfer guardado cada vez que lo guardamos, de modo que siempre hay un archivo guardado "actual" y otro "antiguo").
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Abrir archivo Ini
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

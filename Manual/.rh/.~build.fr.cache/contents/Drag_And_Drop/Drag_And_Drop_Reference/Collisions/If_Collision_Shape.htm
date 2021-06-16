@@ -1,0 +1,90 @@
+
+  
+   Si la forma de colisión
+  Esta acción se utiliza para comprobar y ver si hay una colisión con una instancia de un objeto dado dentro de un área de forma determinada o a lo largo de una línea. Se da la forma (rectángulo, elipse o línea), el objeto a comprobar, y luego se proporcionan las coordenadas de
+    las esquinas superior izquierda e inferior derecha de la forma que se está utilizando, o en el caso de una línea, las posiciones inicial y final. Estas pueden ser posiciones absolutas dentro de la sala de juego, o posiciones relativas a la instancia que realiza la acción. Puede ver cómo
+    esto funciona en la imagen de abajo:
+  Como puedes ver, los resultados dependerán de la máscara de colisión de la instancia
+    que se está comprobando, lo que significa que la instancia del objeto que estás buscando debe tener un sprite asignado al sprite_index, o un sprite asignado al mask_index. Si no es así, no será detectado por estas funciones,
+    independientemente de que esté dibujando un sprite o no. Cabe destacar que cualquier instancia que caiga completamente dentro de los límites establecidos para la forma de elipse o rectángulo también devolverá una colisión. La acción se evaluará como verdadera si
+    si se detecta una colisión, o falsa en caso contrario, aunque también se puede comprobar el indicador No para comprobar si no hay una colisión con el área de la forma dada, y la acción sólo se evaluará como verdadera si no se encuentran colisiones
+    y en caso contrario se evaluará como falsa. También puede establecer la opción Excluirse a sí mismo para excluir la instancia que llama de la comprobación de colisiones.
+  A continuación puede marcar/desmarcar la opción de devolver la lista. Si se marca esta opción, la acción creará y rellenará una estructura de datos de lista con todas las instanciasen colisión
+    con la forma y establecerá la variable Target con el ID de la lista DS. Si no está marcada, sólo establecerá la variable Target a un valor menor que 0 cuando no se detecte ninguna colisión, o el valor de ID único de una de las instancias en la colisión
+    (tenga en cuenta que si hay varias instancias en colisión, no tiene forma de saber qué ID de instancia se devolverá cuando no se utilice una lista).
+  Si ha seleccionado devolver una lista - y la variable Destino no está configurada como Temp - entonces también puede seleccionar la opción Liberar Destino. Si se establece como verdadero, la lista contenida en la variable de destino se destruirá y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción.
+    y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción. De este modo, puede reutilizar la misma variable sin preocuparse por las fugas de memoria, ya que, si no marca la opción Free Target, se hace responsable
+    de destruir la lista antes de volver a utilizar la variable en la acción. Tenga en cuenta que, independientemente de si esta opción está marcada o no, si ha configurado la acción como Devolución de lista, la variable de destino siempre contendrá un ID de lista,
+    y como tal, tendrá que ser liberada cuando la instancia sea destruida o la sala termine (puedes usar el evento Limpiar para esto, por ejemplo, junto con la acción Free Data Structure ).
+    Vale la pena señalar que puedes configurar la opción de Liberar Objetivo para utilizar una variable predefinida o una expresión y así controlar cuándo se libera la estructura de datos de la lista estableciendo la variable en otro lugar (o teniendo diferentes resultados para la expresión)
+    siempre que se evalúe como verdadero/falso.
+  Por último, debe proporcionar la variable de destino que desea que contenga el valor devuelto o el ID de la lista. Si marca la variable Target para mantener el valor devuelto como una variable Temp (local), entonces la acción creará esta variable para mantener
+    el valor devuelto sólo hasta el final del evento, en este caso la opción Destino Libre no hace nada y usted será responsable de destruir la lista DS si esa opción ha sido marcada. Si no se suministra ninguna variable de destino y la opción Lista de Retorno está marcada, no se creará ninguna lista.
+  IMPORTANTE! Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al sprite_index, o un sprite asignado al mask_index. Si las instancias del objeto que se
+    no tienen una máscara de colisión, la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.
+  Tenga en cuenta que para añadir acciones dentro de un bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Forma
+        La forma a utilizar
+      
+      
+        Objeto
+        El objeto para comprobar si hay instancias de
+      
+      
+        x1
+        La posición x de la que se parte
+      
+      
+        y1
+        La posición y de la que se parte
+      
+      
+        x2
+        La posición x para terminar en
+      
+      
+        y2
+        La posición y para terminar en
+      
+      
+        Objetivo libre
+        Puede establecerse en una variable o expresión, o establecerse en true/false para controlar la liberación de la memoria de la lista cuando se reutiliza una variable de la lista
+      
+      
+        Objetivo
+        La variable a la que se dirige el valor de retorno de la acción
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba la colisión con cualquier instancia del objeto "
+    obj_Enemy " dentro de un círculo de 100px alrededor de la posición de la instancia que llama. La acción genera una lista de todas las instancias que se encuentran en colisión y almacena el ID de la lista en la variable Target. Si la acción se evalúa como
+   verdadero, se recorre la lista y se reduce en 1 la variable "hp" de cada instancia con su ID almacenado en la lista.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de colisión
+        Siguiente: Si el punto de colisión
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,76 @@
+
+  
+   Establecer región emisora
+  Esta acción se utiliza para establecer la región y la forma de un emisor dentro de un sistema de partículas. Se proporciona el ID del sistema de partículas al que pertenece el emisor (devuelto por la acción Crear sistema de partículas) y luego
+    el ID del emisor real (devuelto por la acción Crear Emisor de Partículas), y luego dar una forma para que el emisor tome dentro de los valores del cuadro delimitador dado. Las formas posibles del emisor son:
+  Para definir las formas, hay que dar las coordenadas de un "cuadro delimitador" en el que se colocará la forma dada (en el caso de un rectángulo, una elipse y un rombo) o las coordenadas primera y segunda de los puntos inicial y final (en el caso de una línea).
+    (en el caso de los rectángulos, elipses y rombos) o las coordenadas de los puntos inicial y final (en el caso de las líneas). Todas las partículas que salgan del emisor se crearán dentro de
+    dentro de los límites de la forma dentro de este cuadro delimitador. También puede establecer la distribución de las partículas con la opción de:
+  
+    Lineal: Las partículas se crearán en cualquier lugar al azar dentro de la forma dada.
+    Gaussiano: Las partículas se crearán predominantemente en el centro de la forma y menos en los bordes.
+    Gaussiano inverso: Las partículas se crearán predominantemente a lo largo de los bordes de la forma con menos en el centro.
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El ID único del sistema al que pertenece el emisor
+      
+      
+        Emisor
+        El ID único del emisor para establecer la forma de
+      
+      
+        Forma
+        La forma de la partícula que se va a utilizar
+      
+      
+        Distribución
+        La distribución de partículas dentro de la forma dada
+      
+      
+        Izquierda
+        La posición del lado izquierdo de la caja delimitadora de la forma (en píxeles)
+      
+      
+        Top
+        La posición de la parte superior de la caja delimitadora de la forma (en píxeles)
+      
+      
+        A la derecha
+        La posición del lado derecho de la caja delimitadora de la forma (en píxeles)
+      
+      
+        En el fondo
+        La posición de la parte inferior de la caja delimitadora de la forma (en píxeles)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un emisor de partículas, establecerá su región
+    y luego lo pondrá a emitir un flujo de partículas.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Efecto Do
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

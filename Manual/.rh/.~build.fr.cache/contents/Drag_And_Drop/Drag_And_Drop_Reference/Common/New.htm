@@ -1,0 +1,52 @@
+
+  
+   Nuevo
+  Esta acción sólose utiliza en cuando se crean structs utilizando una función que ha sido marcada como función constructora (ver Declarar una nueva función para más información). Esta acción
+    acción toma el método de la función previamente definida, así como un número de argumentos, que puede ampliar para añadir más si es necesario utilizando el icono  de la izquierda. Estos argumentos deben corresponder a las entradas requeridas por la función, y se utilizarán para rellenar la estructura que se está creando. La estructura será devuelta a la variable de destino, que puede ser marcada como una variable local temporal
+    temporal o no.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Guión
+        El nombre del script o de la función definida por el usuario a la que se va a llamar.
+      
+      
+        Argumento0 ... Argumento3
+        Los diferentes argumentos (valores) que se van a pasar al script o a la función (los argumentos no utilizados pueden dejarse en blanco)
+      
+      
+        Objetivo
+        El nombre de la variable a la que se dirigen los valores devueltos (puede dejarse en blanco)
+      
+    
+  
+   
+  Ejemplo ampliado:
+  El código del bloque de acción anterior probablemente iría en el evento Create de una instancia, y declara
+    una nueva función constructora init_char_struct con cuatro argumentos: _str1, _str2, _val1 y _val2. Estos argumentos se utilizan para rellenar las variables dadas dentro de la estructura que la función está creando.
+    Luego se llamaría a la función usando la acción New en cualquier evento posterior, así:
+  La función es llamada y devolverá una nueva estructura al array "char", y la estructura
+    se rellenará con las variables "name", "location", "hp" y "mana", establecidas con los valores utilizados para los argumentos correspondientes en la función.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Llamada a la función
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

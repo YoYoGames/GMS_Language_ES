@@ -229,7 +229,7 @@
 <glossdef>Un sprite es un gráfico de mapa de bits diseñado para formar parte de una escena mayor. Puede ser una imagen estática o un gráfico animado.</glossdef></glossentry>
 <glossentry id="Default_statement">
 <glossterm>declaración</glossterm>
-<glossdef>En programación, una sentencia es una única línea de código escrita legalmente en un lenguaje de programación que expresa una acción a realizar. Una sentencia puede tener componentes internos propios, como expresiones, operadores y funciones. Un ejemplo de sentencia es A = B 5. Un programa de GameMaker Studio 2 no es más que una secuencia de una o varias sentencias que, en conjunto, realizan una tarea (como mover al jugador).</glossdef></glossentry>
+<glossdef>En programación, una sentencia es una única línea de código escrita legalmente en un lenguaje de programación que expresa una acción a realizar. Una sentencia puede tener componentes internos propios, como expresiones, operadores y funciones. Un ejemplo de sentencia es A = B 5. Un programa de GameMaker Studio 2 no es más que una secuencia de una o más sentencias que, en conjunto, realizan una tarea (como mover al jugador).</glossdef></glossentry>
 <glossentry id="Default_swatches">
 <glossterm>muestras</glossterm>
 <glossdef>Un muestrario es simplemente una pequeña muestra cuadrada de un color o un material que se utiliza para ilustrar su aspecto.</glossdef></glossentry>

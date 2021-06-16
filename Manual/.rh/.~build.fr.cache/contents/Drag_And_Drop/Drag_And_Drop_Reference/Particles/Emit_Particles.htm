@@ -1,0 +1,59 @@
+
+  
+   Emite partículas
+  Esta acción se utiliza para crear partículas a partir de un emisor. Se suministra el ID del sistema de partículas al que pertenece el emisor (devuelto por la acción Crear Sistema de Partículas) y luego el ID del emisor real (devuelto por la acción Crear Emisor de Partículas).
+    por la acción Crear Emisor de Partículas), y finalmente el tipo de partícula a crear (devuelto por la acción Crear Tipo de Partícula). A continuación, puede seleccionar "Ráfaga"
+    o "Stream" las partículas del emisor, así como dar el número de ellas que desea crear.
+  Cuando elija el flujo de partículas, no necesita colocar esta acción en un evento de cuadro de juego como el Evento de Paso o el evento de Dibujo, pero en su lugar, simplemente llámelo una vez en el Evento de Creación (por ejemplo) y el emisor hará un flujo de partículas cada cuadro de juego
+    hasta que llame a esta acción de nuevo para detenerla (estableciendo el valor de la cuenta a 0). Si eliges reventar las partículas, entonces puedes llamar a esto en cualquier evento que elijas y las partículas se crearán una vez.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El ID del sistema en el que se encuentra el emisor
+      
+      
+        Emisor
+        El ID del emisor a utilizar
+      
+      
+        Tipo
+        El ID del tipo de partícula a crear
+      
+      
+        Evento
+        El tipo de evento para las partículas, ya sea "Burst" o "Stream"
+      
+      
+        Cuenta
+        El número de partículas a reventar o a fluir
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un emisor de partículas, establecerá su región
+    y luego lo configurará para que emita un flujo de partículas.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer región emisora
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+   Sistema de partículas en pausa
+  Esta acción pondrá en pausa el sistema de partículas dado. Se proporciona el valor de ID único del sistema a pausar, tal y como se devolvió cuando se creó el sistema con la acción Crear Sistema de Partículas. Un sistema de partículas en pausa
+    seguirá dibujando las partículas que han sido generadas, pero ya no actualizarán su color, posición o alfa, ni completarán su vida útil y desaparecerán hasta que reanudes el sistema. Puedes elegir entre pausar o reanudar el sistema utilizando la opción
+    opción "Estado".
+  Ten en cuenta que esto no detiene a los emisores que están emitiendo partículas, ni tampoco detendrá a un emisor que esté reventando partículas - los emisores seguirán creando partículas cuando sean llamados, pero cuando el sistema esté en pausa las partículas no harán nada y se dibujarán exactamente
+    donde fueron creadas hasta que se restablezca el estado de pausa o se llame a Actualizar Sistema de Partículas.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El valor de identificación único para el sistema que se va a pausar
+      
+      
+        Estado
+        Si se pausa o se reanuda el sistema de partículas
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará una variable global y si devuelve
+   true entonces el sistema de partículas dado se pausará, de lo contrario se reanudará.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Actualizar el sistema de partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

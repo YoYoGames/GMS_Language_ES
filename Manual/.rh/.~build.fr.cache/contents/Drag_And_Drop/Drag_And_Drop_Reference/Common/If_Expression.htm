@@ -1,0 +1,51 @@
+
+  
+   Expresión If
+  Esta acción se utiliza para comprobar que una expresión es verdadera o falsa, y se puede comprobar aquí cualquier expresión lógica siempre que se evalúe a uno u otro valor. Por ejemplo, se puede utilizar cualquiera de las siguientes expresiones:
+  x < (room_width / 2) a == b ++val >= 100
+  Si marca el argumento "No", entonces las expresiones anteriores serán negadas, por ejemplo "==" se convierte en "not=". También tenga en cuenta que la expresión no está limitada a valores numéricos y puede comprobar cadenas, punteros, IDs de recursos o cualquier otra cosa que una función pueda devolver o usar (vea la sección sobre tipos de datos para más información), pero no puede comparar dos tipos de datos diferentes sin obtener un error - por ejemplo si intenta usar una cadena y un entero en la expresión obtendrá un error. Para obtener más información sobre las expresiones, consulte aquí.
+  NOTA IMPORTANTE: Debido a problemas de precisión en coma flotante, comprobar si dos valores son exactamente iguales puede devolver falso, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción Decimal a Entero antes de la comprobación o utilizando las expresiones "mayor que (>)" o "menor que (<)".
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero, mientras que
+    cualquier acción lanzada en otra parte se ejecutará después del bloque "if". Tenga en cuenta que puede "apilar" expresiones en la misma acción haciendo clic en el icono más  junto a
+    la acción, y dando otra expresión para comprobar. Esto comprobará si todas las expresiones dadas devuelven verdadero en una sola comprobación y sólo realizará el código de la acción añadida si lo hacen (ver el ejemplo dado a continuación).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Expresión
+        La expresión a comprobar.
+      
+      
+        No
+        Se establece para comprobar si la expresión no se evalúa como verdadera.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si la variable de instancia "player_score"
+    es mayor que 1000 y que la variable de instancia "player_level" es menor que 10. Si ambas comprobaciones son verdaderas, el código de acción pasa a asignar nuevos valores a estas variables.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Si no se define
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

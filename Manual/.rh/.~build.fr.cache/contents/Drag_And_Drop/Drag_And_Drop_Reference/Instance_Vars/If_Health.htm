@@ -1,0 +1,61 @@
+
+  
+   Si Salud
+  Esta acción se utiliza para comprobar el valor de la variable de instancia salud utilizando una expresión específica. Se da el tipo de expresión para comprobar y el valor para comprobar la salud actual, y la declaración "if" siempre devolverá
+    siempre devolverá verdadero o falso dependiendo de las expresiones y valores utilizados. Las expresiones disponibles son:
+  
+    Igual a - La variable y el valor son exactamente iguales
+    Menor que - La variable es menor que el valor
+    Mayor que - La variable es mayor que el valor
+    Menor o igual que - La variable es menor o igual que el valor
+    Mayor o igual que - La variable es mayor o igual que el valor
+  
+  Si se marca el argumento Not, entonces las expresiones anteriores serán negadas, por ejemplo "igual a" se convierte en "no igual a", porlo que se estaría comprobando si el valor de salud no es igual al valor dado.
+  NOTA IMPORTANTE: Debido a problemas de precisión en coma flotante, comprobar si dos valores son exactamente iguales puede devolver falso, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción Decimal a Entero antes de la comprobación o utilizando las expresiones "mayor que" o "menor que".
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero, mientras que cualquier
+    acciones lanzadas en otra parte se ejecutarán después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        No
+        Se establece para comprobar si la expresión no se evalúa como verdadera.
+      
+      
+        Expresión
+        El tipo de expresión a utilizar para la comprobación.
+      
+      
+        Valor
+        El valor para comprobar la salud.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior añadirá 25 a la variable de salud y luego comprobará si
+    la variable es ahora mayor que 100, y si lo es se pondrá a 100.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de las variables de instancia
+        Siguiente: Puntuación del conjunto
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

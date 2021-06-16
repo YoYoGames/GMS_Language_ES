@@ -1,0 +1,45 @@
+
+  
+   Buffer de lectura
+  Esta acción puede utilizarse para leer datos de un búfer previamente creado. Se suministra el valor único del ID del búfer (devuelto por la acción Crear búfer) y se da una variable para almacenar el valor devuelto. Si se marca la variable
+    como una variable local temporal, se creará para ti y se descartará de nuevo al final del evento o del script de la acción. Todos los datos se devuelven como una cadena, así que si has almacenado algún número real tendrás que usar una de las Acciones de Tipo de Datos para convertirlo de cadena a valor. Ten en cuenta también que los buffers se leen y se escriben secuencialmente, por lo que la lectura de un buffer moverá la posición de "búsqueda" a la siguiente entrada, lo que significa que para leer varias piezas de datos
+    simplemente hay que llamar a esta acción el número de veces necesario y almacenar cada dato devuelto en una variable.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+      
+        Objetivo
+        La variable de destino que contendrá los datos devueltos
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece la posición de lectura/escritura del búfer al inicio del mismo y
+    luego lee dos datos, almacenándolos (como cadenas) en variables locales temporales. Estas variables se utilizan entonces para dibujar los datos en la pantalla.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Buffer de escritura
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

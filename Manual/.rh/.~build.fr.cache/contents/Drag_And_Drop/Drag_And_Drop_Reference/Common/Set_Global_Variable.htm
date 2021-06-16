@@ -1,0 +1,56 @@
+
+  
+   Establecer la variable global
+  Esta acción se utiliza para asignar un valor a una variable global (creándola en el proceso) o para cambiar el valor de una variable global existente. Las variables globales son variables que "no pertenecen" a ninguna instancia específica, sino a todo el
+    proyecto, y como tales pueden ser accedidas y modificadas por cualquier instancia, script o código. Para obtener información más avanzada sobre las variables globales, consulte aquí.
+  Usted da el nombre de la variable global y luego el valor, que puede ser añadido en relación con el valor original si es necesario. Si das un nombre de variable nuevo (es decir, una variable que nunca ha sido asignada previamente en todo el juego) entonces esto
+    creará la nueva variable global y le asignará el valor que le des, mientras que si le das el nombre de una variable global existente, simplemente cambiará el valor por el nuevo. Tenga en cuenta que al marcar Relativo se añadirá el valor a la variable global existente
+    (utilice un número negativo para restar) y también puede utilizarexpresiones y variables creadas previamente como valor.
+  Cabe destacar que cuando hablamos de "valores", no nos referimos sólo a valores numéricos, ya que una variable puede ser una cadena, un puntero, un ID de recurso o cualquier otra cosa que una función pueda devolver o utilizar. En el caso de una cadena, la comprobación relativa concatenará el valor con lo que la variable contenía previamente, así que si tu variable era "Hola" y le asignas " Mundo" utilizando la comprobación relativa, el valor final de la variable será "Hola Mundo". Sin embargo, hay que tener cuidado
+    Sin embargo, hay que tener cuidado de que los valores de las variables sean del mismo tipo de datos, ya que si se intenta sumar, por ejemplo, un entero y una cadena, se producirá un error de compilación.
+  También puede añadir variables adicionales en la misma acción haciendo clic en el icono más  junto a la acción, y dando a otra variable global
+    nombre y valor. Para obtener información más avanzada sobre las variables, consulte la sección Variables y ámbito de las variables.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Nombre
+        El nombre de la nueva variable global a crear, o el nombre de una variable global existente a modificar.
+      
+      
+        Valor
+        El valor que debe tener la variable global.
+      
+      
+        Relativo
+        Marque esta opción para establecer el valor relativo al anterior.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una colisión entre la instancia que llama y el objeto
+    "obj_player", y si se encuentra uno se resta 1 de la variable global "player_hp" y la variable global "player_score" se pone
+    a 0.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Obtención de la variable global
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

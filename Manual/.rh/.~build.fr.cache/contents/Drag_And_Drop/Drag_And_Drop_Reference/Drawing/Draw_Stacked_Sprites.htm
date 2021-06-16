@@ -1,0 +1,59 @@
+
+  
+   Dibujar Sprites Apilados
+  Esta acción dibujará un sprite un número determinado de sprites uno tras otro en una posición determinada dentro de la sala. Usted da el sprite a dibujar y el orden de la pila, que puede ser Fila (horizontalmente, de izquierda a derecha), o columna (verticalmente,
+    de arriba a abajo), así como el número de sprites a dibujar y la posición. La posición puede ser una posición absoluta dentro de la sala, o una relativa a la posición de la instancia que realiza el dibujo, y el espacio entre imágenes se basará en
+    la anchura o la altura del sprite. Tenga en cuenta que esto simplemente dibuja una imagen estática - la imagen inicial (fotograma 0) del sprite dado - y cualquier otro fotograma será ignorado, al igual que cualquier transformación que se haya añadido mediante el cambio de las variables de instancia (como image_xscale o image_blend).
+  NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
+   
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sprite
+        El sprite a dibujar
+      
+      
+        Orden de la pila
+        El orden en el que se dibujará (fila o columna)
+      
+      
+        Número
+        El número de sprites a dibujar
+      
+      
+        x
+        La posición x a dibujar
+      
+      
+        y
+        La posición y para dibujar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene el número de instancias del objeto "obj_Player"
+    y luego lo utiliza para dibujar un número de sprites marcadores en la pantalla.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de dibujo
+        Siguiente: Dibujar Rectángulo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

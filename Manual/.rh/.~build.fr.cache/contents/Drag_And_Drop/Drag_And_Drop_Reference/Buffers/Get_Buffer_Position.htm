@@ -1,0 +1,45 @@
+
+  
+   Obtener la posición del buffer
+  Esta acción se puede utilizar para recuperar la posición actual de lectura/escritura en el buffer. Cuando se crea un buffer, la posición de lectura/escritura se establece en 0 bytes, y a medida que se añaden datos al buffer esta posición se moverá secuencialmente, lo que significa que
+    puede utilizar esta acción para obtener el número de bytes en el búfer que se establece en cualquier momento. Se suministra el valor único del ID del buffer devuelto por la acción Crear Buffer y luego se da una variable de destino para devolver
+    el valor de posición. La variable de destino puede ser marcada como una variable local temporal, en cuyo caso se creará para usted y se eliminará de la memoria de nuevo al final del script de la acción actual o evento.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+      
+        Posición
+        La posición de lectura/escritura (en bytes) dentro del buffer
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene la posición de lectura/escritura del búfer dado
+    y si no es 0 (es decir, al principio del buffer) se pone al principio del buffer.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Si el buffer existe
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

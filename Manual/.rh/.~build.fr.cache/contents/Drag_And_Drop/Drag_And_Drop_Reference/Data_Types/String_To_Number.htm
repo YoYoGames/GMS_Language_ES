@@ -1,0 +1,75 @@
+
+  
+   Cadena a número
+  Esta acción puede convertir una cadena en un número. Se proporciona la cadena a cambiar y luego se da una variable de destino a la que devolver el número real (esta variable puede ser marcada como una variable local temporal). Tenga en cuenta que si la cadena tiene algún carácter
+    que no sean números y un punto decimal, no se convertirá, aunque si la cadena comienza con un número, éste se convertirá y se excluirá el resto de la cadena. Es importante tener en cuenta que cuando se pasan decimales a esta acción
+    la cadena devuelta se redondeará a dos decimales solamente. A continuación se muestra una tabla de valores de entrada y lo que se espera que se devuelva
+  
+    
+      
+        Cadena
+        Valor devuelto
+      
+      
+        "123"
+        123
+      
+      
+        "123 Hola Mundo"
+        123
+      
+      
+        "Hola Mundo"
+        0 (por defecto, si la cadena no se puede convertir, se devolverá 0)
+      
+      
+        "Hola Mundo 123"
+        0
+      
+      
+        "123.45678"
+        123.46
+      
+    
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Valor
+        La cadena a convertir
+      
+      
+        Objetivo
+        La variable de destino para mantener el valor devuelto
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior inicializa una variable global y luego carga un archivo con
+    un buffer guardado en él. Se leen dos cadenas del buffer y se almacenan en una variable local temporal antes de que una de ellas se convierta en un número real y se almacene en otra variable local temporal. A continuación, se asignan a las variables globales, y
+    el buffer es eliminado.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del tipo de datos
+        Siguiente: De número a cadena
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

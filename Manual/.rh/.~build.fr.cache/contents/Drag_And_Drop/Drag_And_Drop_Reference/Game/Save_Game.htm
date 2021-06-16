@@ -1,0 +1,41 @@
+
+  
+   Guardar partida
+  Esta acción realizará un guardado básico del juego en un archivo determinado. Usted da un nombre de archivo (como una cadena e incluyendo la extensión) y la acción realizará un guardado limitado del estado actual del juego. Es importante entender que la acción está
+    diseñada para tomar una "instantánea" del estado actual del juego y es para usarla más como un sistema de punto de control que como un sistema de guardado universal, ya que no guarda ninguno de los recursos dinámicos (como las Estructuras de Datos o las Partículas ) . Como tal, la acción debe ser utilizada con mucho cuidado para no obtener errores o fugas de memoria. Para una aproximación más completa a la hora de guardar los datos de tu juego, consulta las Acciones de Archivo.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Archivo
+        El nombre -como cadena y con la extensión- que se le dará al archivo que se guarde (si el archivo ya existe, se sobrescribirá)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si hay una colisión con otra instancia y si se encuentra una comprueba
+    una variable de instancia. Si la variable devuelve true entonces el juego se guarda y la variable se pone en false.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del juego
+        Siguiente: Cargar el juego
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+   Sistema de partículas transparentes
+  Con esta acción puedes borrar el sistema de partículas dado a su estado por defecto, eliminando todos los emisores (tampoco es necesario llamar a la acción Destruir Emisor de Partículas ya que esto se hace automáticamente)
+    y borrar todas las partículas de la pantalla. El usuario debe suministrar el valor de identificación único del sistema a borrar, tal y como se le devolvió cuando creó el sistema con la acción Crear Sistema de Partículas. Hay que tener cuidado al utilizar
+    esta acción ya que destruye todos los emisores asociados al sistema de partículas - esto significa que cualquier instancia en la sala que utilice un emisor puede dar un error ya que ese emisor ya no existe, así que asegúrate de que la acción sólo se llama cuando
+    no vayas a crear ninguna partícula nueva a partir de ese emisor (para más información sobre los emisores de partículas consulta Crear emisor de partículas).
+  NOTA: Esta acción sólo borrará las partículas visibles en la sala, pero no borra las propiedades de las partículas ni las elimina de la memoria. Para eso debes usar la acción Destruir tipo de partícula.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El valor de identificación único para el sistema que se va a destruir
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior eliminará todas las partículas de la pantalla
+    si el jugador tiene 0 o menos vidas y luego reiniciará la sala.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Sistema de partículas en pausa
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+   Crear rejilla
+  Esta acción creará una nueva estructura de datos de rejilla y devolverá el valor del índice para que pueda acceder posteriormente a la rejilla a través de las otras acciones de estructura de datos. El índice de la rejilla será devuelto a la Variable de Destino que usted suministre, la cual puede haber sido
+    creado anteriormente utilizando Assign Variable o Declare Temp, o puede marcar la casilla "Temp" para nombrar y crear una variable local temporal
+    para almacenar el valor hasta el final del script o evento. Tenga en cuenta que, a diferencia de otras estructuras de datos, las cuadrículas no se crean "vacías", y cada celda de una cuadrícula recién creada tendrá el valor 0. Depende de ti cambiar los datos de la celda
+    o borrar la rejilla usted mismo a otro valor usando la acción Borrar Rejilla. Tenga en cuenta que puede crear rejillas DS adicionales haciendo clic en el icono más 
+    junto a la acción, y seleccionando otra variable para mantener el ID de la rejilla y dando los valores de anchura y altura de nuevo.
+  IMPORTANTE! La creación de cualquier estructura de datos consume memoria en la plataforma de destino, y como tal todas las estructuras de datos deben ser liberadas cuando ya no se necesitan utilizando la acción Liberar Estructura de Datos, de lo contrario se obtiene una
+    de lo contrario se produce una fuga de memoria que puede perjudicar el rendimiento del juego o incluso hacer que se bloquee. Esto es particularmente relevante cuando se utilizan variables locales temporales para almacenar índices de estructuras de datos, ya que estas variables se eliminan al final del código o del evento, pero
+    pero eso no significa que la estructura de datos se elimine también. La estructura de datos seguirá existiendo, sólo que no tendrás forma de referenciarla, así que o bien utilizas una variable de instancia y liberas la estructura más adelante, o liberas la estructura antes de que finalice
+    el evento o la función si su índice está almacenado en una variable temporal.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objetivo
+        La variable de destino para almacenar el índice de la cuadrícula en
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea dos variables temporales para mantener el número de celdas de 32px
+    a lo largo de la anchura y la altura de la sala, y luego crea una nueva variable de ámbito global para mantener el índice de una estructura de datos de la cuadrícula recién creada. La rejilla es entonces borrada usando la palabra clave noone.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de la estructura de datos
+        Siguiente: Crear pila
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

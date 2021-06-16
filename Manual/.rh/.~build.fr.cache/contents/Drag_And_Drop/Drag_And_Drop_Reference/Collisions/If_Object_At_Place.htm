@@ -1,0 +1,70 @@
+
+  
+   Si el objeto está en el lugar
+  Esta acción se utiliza para comprobar si hay una colisión con una o más instancias de un objeto determinado con la instancia actual situada en un punto de la sala, basándose en la máscara de colisión de la instancia que llama. La acción se evaluará como verdadera si se detecta una colisión, o falsa en caso contrario. Se da el objeto a comprobar y la posición en la que "colocar" la instancia para realizar la comprobación - que puede ser una posición absoluta en la sala o una posición relativa a la instancia
+    - y también puede comprobar la bandera No para comprobar si no hay una colisión en la posición dada, en cuyo caso la acción sólo se evaluará como verdadera si no se encuentran colisiones, en caso contrario se evaluará como falsa.
+  Después de dar el objeto y la posición, puede marcar/desmarcar la opción de devolver la lista. Si se marca esta opción, la acción creará y rellenará una estructura de datos de la lista con
+   todas las instancias en colisión con la instancia y establecerá la variable Target con el ID de la lista DS. Si no está marcada, sólo establecerá la variable Objetivo a un valor menor que 0 cuando no se detecte ninguna colisión, o el valor de ID único de una de las instancias en la colisión (ten en cuenta que si hay varias instancias en colisión, no tienes forma de saber qué ID de instancia se devolverá cuando no se utiliza una lista).
+  Si ha seleccionado devolver una lista - y la variable Destino no está configurada como Temp - entonces también puede seleccionar la opción Liberar Destino. Si se establece como verdadero, la lista contenida en la variable de destino se destruirá y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción.
+    y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción. De este modo, puede reutilizar la misma variable sin preocuparse por las fugas de memoria, ya que, si no marca la opción Free Target, se hace responsable
+    de destruir la lista antes de volver a utilizar la variable en la acción. Tenga en cuenta que, independientemente de si esta opción está marcada o no, si ha configurado la acción como Devolución de lista, la variable de destino siempre contendrá un ID de lista,
+    y como tal, tendrá que ser liberada cuando la instancia sea destruida o la sala termine (puedes usar el evento Limpiar para esto, por ejemplo, junto con la acción Free Data Structure ).
+    Vale la pena señalar que puedes configurar la opción de Liberar Objetivo para utilizar una variable predefinida o una expresión y así controlar cuándo se libera la estructura de datos de la lista estableciendo la variable en otro lugar (o teniendo diferentes resultados para la expresión)
+    siempre que se evalúe como verdadero/falso.
+  Por último, debe proporcionar la variable de destino que desea que contenga el valor devuelto o el ID de la lista. Si marca la variable Target para mantener el valor devuelto como una variable Temp (local), entonces la acción creará esta variable para mantener
+    el valor devuelto sólo hasta el final del evento, en este caso la opción Destino Libre no hace nada y usted será responsable de destruir la lista DS si esa opción ha sido marcada. Si no se suministra ninguna variable de destino y la opción Lista de Retorno está marcada, no se creará ninguna lista.
+  IMPORTANTE! Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al sprite_index, o un sprite asignado al mask_index. Si cualquiera de las instancias en
+    la colisión no tiene máscara de colisión, entonces la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.
+  Tenga en cuenta que para añadir acciones dentro de un bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objeto
+        El objeto para comprobar si hay instancias de
+      
+      
+        x
+        La posición x a comprobar
+      
+      
+        y
+        La posición y a comprobar
+      
+      
+        Objetivo libre
+        Puede establecerse en una variable o expresión, o establecerse en true/false para controlar la liberación de la memoria de la lista cuando se reutiliza una variable de la lista
+      
+      
+        Objetivo
+        La variable a la que se dirige el valor de retorno de la acción
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una colisión con cualquier instancia del objeto "
+    obj_Wall " a la izquierda y a la derecha y si se encuentra una invierte la dirección horizontal de la instancia que llama.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de colisión
+        Siguiente: Si la forma de colisión
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

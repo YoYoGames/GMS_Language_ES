@@ -1,0 +1,45 @@
+
+  
+   Renombrar archivo
+  Con esta acción puedes renombrar cualquier archivo que haya sido guardado por tu juego. Usted da el nombre del archivo a cambiar (como una cadena) y luego el nuevo nombre (también como una cadena e incluyendo la extensión del archivo), y el archivo será renombrado. Ten en cuenta que no puedes cambiar el nombre de ningún archivo que se haya incluido como un Archivo Incluido con tu juego (ver la sección sobre el Sistema de Archivos para más información).
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Archivo
+        El nombre (como una cadena) del archivo a renombrar
+      
+      
+        Nuevo nombre
+        El nuevo nombre (como una cadena) para el archivo
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si el archivo "checkpoint.sav" existe, y si
+    existe, comprueba si el archivo "checkpoint_OLD.sav" existe. Si ese archivo también existe, entonces se elimina, y luego el archivo original "checkpoint.sav" se renombra a "checkpoint_OLD.sav". Por último, se guarda un buffer
+    se guarda como "checkpoint.sav" (esencialmente estamos haciendo una copia de seguridad de un archivo de búfer guardado cada vez que lo guardamos, de modo que siempre hay un archivo guardado "actual" y otro "antiguo").
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Copiar archivo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

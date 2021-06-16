@@ -1,0 +1,58 @@
+
+  
+   Draw Instance Lives
+  Esta acción dibujará un sprite para representar cada una de las vidas que tenga la instancia en ese momento. El número a dibujar se toma del valor actual de la variable local de la instancia vidas, que es una variable especial que se crea automáticamente dentro de
+    la instancia si se utiliza alguna de las acciones que la requieren. Se da el sprite a dibujar para las vidas y el orden de la pila, que puede ser Fila (horizontalmente, de izquierda a derecha), o columna (verticalmente, de arriba a abajo), así como la posición.
+    La posición puede ser una posición absoluta dentro de la habitación, o una relativa a la posición de la instancia que hace el dibujo, y el espacio entre las imágenes se basará en la anchura o la altura del sprite. Ten en cuenta que esto simplemente dibuja una imagen estática
+    - la imagen inicial (fotograma 0) del sprite dado - y cualquier otro fotograma será ignorado, al igual que cualquier transformación que se haya añadido a la instancia mediante el cambio de las variables de instancia (como image_xscale o image_blend).
+    El texto del pie de foto se dibujará precediendo al valor de la vida y, si se trata de texto, deberá ir envuelto con "", y ambos serán formateados utilizando la fuente de dibujo actual, el color y la alineación.
+  
+  NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
+   
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Título
+        La cadena a dibujar junto con el valor de la puntuación (precede y puede dejarse en blanco)
+      
+      
+        Orden de la pila
+        El orden en el que se dibujará (fila o columna)
+      
+      
+        x
+        La posición x para dibujar las vidas en
+      
+      
+        y
+        La posición y para dibujar las vidas en
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior dibuja sprites relativos a la instancia para representar
+    el valor de la vida actual.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de dibujo
+        Siguiente: Establecer el color de dibujo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,118 @@
+
+  
+  Guía de primitivos y construcción de vértices
+  Esta guía cubre brevemente cómo construir y utilizar primitivas usando formatos de vértices personalizados y buffers de vértices. 
+  En general, cuando empiezas a trabajar con 3D, efectos especiales, procesos de dibujo complejos o shaders no necesitas preocuparte demasiado por el formato de vértices que se utiliza, ya que GameMaker Studio 2 configurará y pasará automáticamente los datos de vértices por ti. Sin embargo, a veces es necesario crear tus propios datos de vértices y formatearlos a tu gusto, especialmente cuando necesitas aumentar la velocidad, o deseas pasar información extra. Por ejemplo, el formato estándar de vértices
+    incluye una posición 3D x, y, z, color (con alfa), y coordenadas de textura UV, que, si lo creas tú mismo, sería algo así:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vertex_format_end();
+  Sin embargo, si sólo estás usando (por ejemplo) un shader para manipular la posición del vértice, entonces no habría necesidad de pasar por los datos de color o textura. En este caso, usted crearía su propio formato así:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     my_format = vertex_format_end();
+  En total, hay cinco atributos de vértice diferentes que puedes utilizar al definir un formato de vértice:
+  
+    Color
+    Normal
+    Posición
+    Posición 3D
+    Coordenadas de la textura
+  
+  En general, siempre debe proporcionar la posición o la posición 3D como parte del formato, pero todos los demás son opcionales.
+  Debe tener en cuenta que una vez que haya creado su formato de vértice, el orden en el que ha definido los atributos de vértice debe ser respetado al construir sus primitivas. Así, si has definido un formato de vértice como posición, color
+    y coordenada de textura, entonces  debes añadir estos atributos a la primitiva en el mismo orden, de lo contrario obtendrás un error. También hay que tener en cuenta que, como cualquier otro recurso dinámico, un formato de vértice requiere memoria y por lo tanto debe ser eliminado
+    cuando no se necesita utilizando la función vertex_format_delete().
+  Las primitivas que construyas se guardan en un buffer de vértices. Este debe ser creado de antemano y luego referenciado por las funciones que se utilizan para construir su primitiva. El buffer de vértices puede ser reutilizado tantas veces como sea necesario para crear diferentes
+    primitivas, o puede ser "congelado" para mantener un tipo específico de primitiva para la duración de su juego o nivel (que es el enfoque más rápido, por lo que si usted sabe que una primitiva que se construye no va a cambiar, entonces siempre debe utilizar esta opción).
+  En el siguiente código se muestra un ejemplo de construcción de una primitiva de triángulo simple:
+  // CREATE EVENT v_buff = vertex_create_buffer(); vertex_begin(v_buff, global.my_format); vertex_position(v_buff, 10, 10); vertex_colour(v_buff, c_white, 1); vertex_texcoord(v_buff, 0, 0); vertex_position(v_buff, 110, 10); vertex_colour(v_buff, c_white, 1);  vertex_coord(v_buff, 1, 0); vertex_position(v_buff, 110, 110); vertex_colour(v_buff, c_white, 1); vertex_texcoord(v_buff, 1, 1); vertex_end(v_buff);
+    
+     // DRAW EVENT var tex = sprite_get_texture(spr_Background, 0); shader_set(shd_shimmer);
+     vertex_submit(v_buff, pr_trianglelist, tex); shader_reset();
+  
+  Aquí tenemos primero que crear nuestro buffer de vértices en el evento Create de la instancia, luego comenzamos la definición de los diferentes vértices que componen nuestra primitiva triangular, dando la posición, el color y la coordenada UV de la textura para cada uno de los
+    tres puntos que queremos utilizar. A continuación, terminamos la definición de los vértices, y sabemos que el buffer de vértices con estos datos se almacena en la variable "v_buff".  
+  NOTA: Si el contenido del buffer se va a actualizar constantemente, el buffer se crearía, se le darían los datos de los vértices, y luego se destruiría de nuevo - después de haber sido dibujado - todo en el mismo paso.
+  A continuación, dibujamos el contenido del búfer de vértices en el evento de dibujo utilizando un shader. Este es un ejemplo muy simple, y es básicamente cómo GameMaker Studio 2 funciona internamente, es decir: Cuando se dibuja un sprite, GameMaker crea un buffer de vértices con cuatro vértices
+    creando dos triángulos (que forman un cuadrado, también llamado "quad"), y texturiza estos dos triángulos con la imagen del sprite. Cuando dibujamos este sprite, estamos enviando el buffer de vértices y su contenido se dibuja en la pantalla.
+  Notarás que cuando enviamos el buffer de vértices para dibujar, suministramos un tipo de primitiva. El tipo de primitiva que se utiliza puede ser un punto, una lista o tira de líneas, o una lista o tira de triángulos, pero no se permiten los abanicos de triángulos ya que la mayoría del hardware móvil
+    no aceptan ese tipo de primitiva. No olvides formatear tu buffer de vértices correctamente para el tipo de primitiva que se va a utilizar para dibujarla. Por ejemplo, dibujar una primitiva de dos triángulos como lista de triángulos requiere 6 puntos
+    pero como tira de triángulos sólo requiere 4 puntos. El tipo que utilices depende de lo que quieras dibujar y del efecto que quieras conseguir.
+  Un último punto importante que hay que tener en cuenta al utilizar tus propios búferes de vértices de esta manera es cómo afecta a los lotes de vértices que se envían a la GPU. Cuando se crea un búfer de vértices que está creando el nivel más bajo de los datos gráficos, por lo que cuando se dibuja todo
+    que sucede es que GameMaker Studio 2 envía su búfer directamente a la tarjeta gráfica. Debido a esto, si quieres un mejor batching, debes trabajarlo tú mismo y almacenar las cosas que quieres batchear dentro del mismo buffer.
+  Como ya hemos mencionado anteriormente, los formatos de vértice se construyen utilizando conjuntamente los siguientes 5 tipos de atributos (añadidos a través de la función vertex_format_add_* correspondiente):
+  
+    Color
+    Normal
+    Posición
+    Posición 3D
+    Coordenadas de la textura
+  
+  Dentro del shader GLSL ES, estos tipos se reconocen utilizando los siguientes 4 atributos:
+  
+    Color
+    Normal
+    Posición
+    Coordenadas de la textura
+  
+  Ahora, esto puede parecer extraño ya que parece que podemos especificar más tipos de atributos en nuestro formato de vértices que en el sombreador de vértices. Sin embargo, en el sombreador Posición y Posición 3D se tratan como el mismo atributo, excepto que
+    Se espera que la Posición tenga sólo coordenadas "x" e "y" mientras que la Posición 3D tiene coordenadas "x ", "y " y "z". Entonces, ¿cómo se asigna lo que hay en el formato de vértices a cómo se definen los atributos en el sombreador ? Comencemos
+    a un conjunto típico de atributos del sombreador por defecto:
+   
+  attribute vec3 in_Position; // (x,y,z) //attribute vec3 in_Normal; // (x,y,z) no utilizado en este shader. attribute vec4 in_Colour; // (r,g,b,a) attribute vec2 in_TextureCoord; // (u,v)
+  Y aquí hay un trozo de código que configura un formato de vértices compatible con este shader :
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vertex_format_end();
+  Ahora bien, ¿cómo se hace coincidir el atributo del sombreador con el tipo de formato de vértice? Sólo se basa en la convención de nombres:
+  
+    "in_Position" se asigna a vertex_format_add_position / _3d()
+    "in_Colour" se asigna a vertex_format_add_colour ()
+    
+    "in_TextureCoord" se asigna a vertex_format_add_textcoord ()
+      
+    
+  
+  
+    Ahora, las cosas se complican cuando tienes múltiples atributos del mismo tipo, pero las cosas siguen basándose en la misma convención de nombres. Ahora veremos el suministro de coordenadas adicionales de color y textura, ya que sólo puede haber un atributo de Posición y uno de Normal en el formato de sombreado o vértice, pero puede haber múltiples atributos de color o textura.
+  Cuando se añaden atributos de color adicionales al sombreador, es necesario añadir un número al final del atributo del sombreador para indicar a qué entrada concreta del formato de vértices se asigna el atributo. Aquí hay un ejemplo - primero el formato de vértice:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     my_format = vertex_format_end();
+  Y ahora los atributos de sombreado asociados:
+  attribute vec3 in_Position; // (x,y,z) attribute vec4 in_Colour0; // (r,g,b,a) attribute vec4 in_Colour1; // (r,g,b,a) attribute vec2 in_TextureCoord; // (u,v)
+  En este caso in_Colour0 se asigna al primer vertex_format_add_colour() y in_Colour1 se asigna al segundo.
+  Las coordenadas de textura se manejan de forma ligeramente diferente al color. Básicamente, cualquier cosa que no se llame in_Position , in_Normal o uno de los atributos in_Colour [0 ... ] se trata como una coordenada de textura. El orden en que se definen
+    El orden en que se definen, en la lista de atributos en el shader, es lo que denota a qué atributo en el formato de vértice se asignan. Ver el siguiente ejemplo GML:
+  vertex_format_begin(); vertex_format_add_position_3d();
+     vertex_format_add_colour();
+     vertex_format_add_textcoord();
+     vertex_format_add_textcoord();
+     vertex_format_add_textcoord();
+     my_format = vertex_format_end();
+  Y el código del shader sería algo así:
+  attribute vec3 in_Position; // (x,y,z) attribute vec4 in_Colour; // (r,g,b,a) attribute vec2 in_myTexcoord; // (u,v) attribute vec2 in_TextureCoord; // (u,v) attribute vec2 in_Something; // (u,v)
+  En este ejemplo, in_myTexcoord, in_TextureCoord e in_Something se asignan a los tres atributos de coordenadas de textura sucesivos definidos en el formato de vértices.
+  Puedes encontrar una lista completa de todas las funciones necesarias para crear formatos de vértices, buffers de vértices y primitivas en la siguiente página:
+  
+    Primitivas y formatos de vértices
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: Guía de uso de Blendmodes
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

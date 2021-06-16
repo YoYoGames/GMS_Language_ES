@@ -1,0 +1,52 @@
+
+  
+   Obtener el eje del Gamepad
+  Puedes utilizar esta acción para obtener el valor de los diferentes ejes de un gamepad determinado. Se suministra el índice del gamepad (es el número de "ranura" que ocupa un gamepad) y se selecciona el eje a comprobar desde el stick izquierdo o derecho, horizontal
+    o vertical. El valor devuelto estará entre -1 y 1 para cada uno de los ejes horizontales y verticales disponibles: -1 es izquierda y 1 es derecha para el eje horizontal, y -1 es arriba y 1 es abajo para el eje vertical. Este valor devuelto se almacenará en
+    la variable de destino que usted proporcione para su uso futuro, que puede marcar como variable "Temp", lo que significa que la acción creará una nueva variable temporal (local) para mantener el valor de retorno para usted, como se muestra en el ejemplo siguiente.
+  Vale la pena señalar que el establecimiento de la zona muerta para el eje del stick no afectará al valor devuelto, que siempre estará entre -1 y 1. Por ejemplo, el establecimiento de la zona muerta a 0,2 significará que empujando
+    el stick hacia la derecha sólo empezará a devolver un valor de 0 - 1 cuando el valor bruto del eje sea superior a 0,2 - así que cuando el valor bruto sea 0,2, el valor de retorno será 0, cuando el valor bruto esté en 0,5, el valor de retorno será 0,375, o si el valor bruto
+    es 0,9, entonces el valor de retorno será 0,875.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Gamepad
+        El índice del gamepad.
+      
+      
+        Eje
+        El eje a comprobar (stick izquierdo/ stick derecho, horizontal/vertical)
+      
+      
+        Objetivo
+        La variable de destino para almacenar el valor devuelto.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea dos variables locales (temporales) y luego almacena los valores actuales
+    para los ejes horizontal y vertical del stick izquierdo del gamepad. Estos valores se utilizan para establecer la dirección de la instancia.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del Gamepad
+        Siguiente: Gamepad Get Trigger
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

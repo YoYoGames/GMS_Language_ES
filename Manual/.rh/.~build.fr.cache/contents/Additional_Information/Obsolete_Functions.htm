@@ -1,0 +1,905 @@
+
+  
+  Funciones obsoletas
+  Aquí puedes encontrar una lista de todas las funciones que han quedado obsoletas al comparar GameMaker Studio 2 con versiones anteriores del producto. Las funciones enumeradas aquí se convertirán en scripts de compatibilidad cuando importe un *.yyz realizado con una versión heredada, y podrá seguir trabajando en el proyecto como antes. Sin embargo, le recomendamos que revise todos los scripts de compatibilidad creados en un proyecto y se asegure de que los futuros
+    proyectos utilicen las nuevas funciones/métodos de trabajo en lugar de depender de estos scripts.
+   
+  Fondos
+  
+    En el antiguo GameMaker tenías un recurso de fondo separado, donde podías añadir imágenes para usarlas como fondos. En GameMaker Studio 2 todas las imágenes se consideran sprites, y el uso que les des dependerá de la capa a la que
+      estén asignadas en la sala. Esto significa que ya no hay un recurso "fondo", y también significa que las siguientes funciones son obsoletas:
+    
+      
+        
+          dibujar_fondo
+          dibujar_fondo_ext
+          draw_background_ stretched
+          
+          draw_background_ stretched_ext
+          
+        
+        
+          draw_background_ part
+          
+          draw_background_ part_ext
+          
+          draw_background_ general
+          
+          draw_background_ tiled
+          
+        
+        
+          draw_background_ tiled_ext
+          
+          nombre_de_fondo
+          background_exists
+          background_get_ nombre
+          
+        
+        
+          dibujar_fondo
+          draw_background_ext
+          draw_background_ stretched
+          
+          draw_background_ stretched_ext
+          
+        
+        
+          background_get_ width
+          
+          background_get_ height
+          
+          background_get_ transparente
+          
+          background_get_ smooth
+          
+        
+        
+          background_get_ preload
+          
+          background_get_uvs
+          background_get_ textura
+          
+          background_set_alpha_ from_background
+          
+        
+        
+          background_create_ from_surface
+          
+          background_create_ color
+          
+          background_create_ color
+          
+          background_create_ gradiente
+          
+        
+        
+          background_add
+          background_replace
+          background_add_ alpha
+          
+          background_replace_ alpha
+          
+        
+        
+          background_delete
+          background_duplicate
+          asignación_de_fondo
+          fondo_guardado
+        
+        
+          background_prefetch
+          background_ prefetch_multi
+          
+          background_flush
+          background_flush_ multi
+          
+        
+        
+          room_set_background
+          room_set_ background_colour
+          
+           
+        
+      
+    
+    La versión anterior de GameMaker también tenía una serie de variables de fondo diferentes que accedían a la matriz de fondo global. Estas ya no son necesarias en GameMaker Studio 2:
+    
+      
+        
+        
+        
+          background_ index[0..7]
+          
+          background_ visible[0..7]
+          
+          background_ alpha[0..7]
+          
+          background_ blend[0..7]
+          
+        
+        
+          background_x[0..7]
+          background_y[0..7]
+          background_ color
+          
+          background_ showcolour
+          
+        
+        
+          background_ foreground[0..7]
+          
+          background_ hspeed[0..7]
+          
+          background_ vspeed[0..7]
+          
+          background_ htiled[0..7]
+          
+        
+        
+          background_ vtiled[0..7]
+          
+          background_ width[0..7]
+          
+          background_ height[0..7]
+          
+          background_ xscale[0..7]
+          
+        
+        
+          background_ yscale[0..7]
+          
+        
+      
+    
+    Puede encontrar más información sobre las capas de fondo en la sección sobre el editor de salas, y para obtener más información sobre las funciones que controlan las capas de fondo mediante código, consulte
+     Capas de fondo.
+     
+  
+  Azulejos
+  
+    Al igual que con los fondos (explicados anteriormente) el recurso de azulejos de GameMaker heredado ya no existe, y en su lugar tenemos Conjuntos de Azulejos en GameMaker Studio 2. En GameMaker legado, azulejos utilizado un recurso de fondo y se colocaron
+      en diferentes profundidades en el editor de habitaciones o a través de código, sin embargo, el método utilizado no era terriblemente flexible y tampoco era tan eficiente. Para solucionar estos problemas, en GameMaker Studio 2 los tilesets se crean ahora a partir de un recurso de sprite, y pueden tener
+      diferentes propiedades (como la animación o el auto-balanceo). A continuación, se colocan en una capa de mapa de azulejos dentro del editor de la sala o a través del código. Debido a estos cambios, las siguientes funciones han quedado obsoletas:
+    
+      
+        
+          tile_get_x
+          tile_get_y
+          tile_get_left
+          tile_get_top
+        
+        
+          tile_get_width
+          tile_get_height
+          tile_get_depth
+          tile_get_visible
+        
+        
+          tile_get_xscale
+          tile_get_yscale
+          tile_get_alpha
+          tile_get_background
+        
+        
+          tile_set_visible
+          tile_set_background
+          tile_set_region
+          tile_set_position
+        
+        
+          tile_set_depth
+          tile_set_scale
+          tile_set_blend
+          tile_set_alpha
+        
+        
+          tile_get_count
+          tile_get_id
+          tile_get_ids
+          tile_get_ids_at_depth
+        
+        
+          tile_add
+          tile_exists
+          tile_delete
+          tile_layer_hide
+        
+        
+          tile_layer_show
+          tile_layer_delete
+          tile_layer_shift
+          tile_layer_find
+        
+        
+          tile_layer_delete_at
+          profundidad_de_la_capa_del_azulejo
+          room_tile_add
+          room_tile_add_ext
+        
+        
+          azulejo_de_habitación_claro
+        
+      
+    
+    Puede encontrar más información sobre los conjuntos de azulejos en la sección del manual sobre el editor de conjuntos de azulejos y sobre cómo utilizarlos en el editor de habitaciones en la sección sobre capas de azulejos.
+      Para más información sobre las funciones que controlan las capas de fondo mediante código, consulte Capas de mapas de azulejos. También vale la pena señalar que el GameMaker
+      Language tiene algunas funciones específicas relacionadas con el uso de azulejos heredados en proyectos importados, y puede encontrar información sobre ellos aquí.
+     
+  
+  Objetos
+  
+    La forma de tratar los objetos en GameMaker Studio 2 ha cambiado ligeramente debido a la introducción de las capas en el editor de habitaciones. Todavía existe la variable "profundidad", pero ahora sólo se utiliza realmente para la compatibilidad y ya no se puede
+      obtener o establecer la profundidad de los objetos, sólo las instancias. Esto hace que las siguientes funciones sean obsoletas:
+    
+      
+        
+          object_get_depth
+        
+        
+          object_set_depth
+        
+      
+    
+    Puede obtener más información sobre los recursos de los objetos en la sección del manual sobre el Editor de objetos y sobre las funciones que controlan los objetos mediante el código en la sección Objetos.
+     
+  
+  Suena
+  
+    El GameMaker heredado tenía dos API de sonido diferentes, una que utilizaba las funciones obsoletas de sound_ (que sólo era realmente válida para la plataforma de destino HTML5), y otra que utilizaba las funciones de audio_. La API de audio ha sido mejorada y ampliada en GameMaker Studio 2, haciendo que las funciones heredadas que se enumeran a continuación queden obsoletas:
+    
+      
+        
+          nombre_de_sonido
+          existe_sonido
+          sound_get_name
+          sound_get_kind
+        
+        
+          sound_get_preload
+          existe_sonido
+          restaurar_sonido
+          sound_delete
+        
+        
+          sonido_reproducción
+          bucle_de_sonido
+          sonido_parada
+          sound_stop_all
+        
+        
+          sonido_de_reproducción
+          volumen_de_sonido
+          sound_fade
+          volumen_global_de_sonido
+        
+        
+          audio_music_gain
+          audio_music_is_playing
+          sistema_de_audio_nuevo
+          sistema_de_audio_antiguo
+        
+        
+          audio_pausa_música
+          audio_play_music
+          audio_resume_music
+          audio_stop_music
+        
+        
+          sistema_de_audio
+        
+      
+    
+    Puedes encontrar más información sobre los recursos de audio en la sección del manual sobre el Editor de sonido y sobre las funciones que controlan el audio mediante el código en la sección sobre Audio. 
+     
+  
+  D3D
+  
+    Cuando se utilizaban modelos 3D o primitivas en el GameMaker anterior, había que utilizar las funciones de d3d_. Éstas utilizaban una API obsoleta para el dibujo y, en muchos casos, no estaban relacionadas estrictamente con la API de Direct 3D, ni siquiera con el uso del propio 3D.
+      Con la llegada de los buffers de vértices, las matrices y las cámaras en GameMaker Studio 2, las siguientes funciones han quedado obsoletas:
+    
+      
+        
+        
+        
+          d3d_start
+          d3d_end
+          d3d_set_perspective
+          d3d_set_hidden
+        
+        
+          d3d_set_depth
+          d3d_set_lighting
+          d3d_set_shading
+          d3d_set_fog
+        
+        
+          d3d_set_culling
+          d3d_set_zwriteenable
+          d3d_set_projection
+          d3d_set_projection_ext
+        
+        
+          d3d_set_projection_ ortho
+          
+          d3d_set_projection_ perspectiva
+          
+          d3d_transform_set_ identity
+          
+          d3d_transform_ set_translation
+          
+        
+        
+          d3d_transform_set_ scaling
+          
+          d3d_transform_ set_rotation_x
+          
+          d3d_transform_set_ rotation_y
+          
+          d3d_transform_ set_rotation_z
+          
+        
+        
+          d3d_transform_set_ rotation_axis
+          
+          d3d_transform_ add_translation
+          
+          d3d_transform_add_ scaling
+          
+          d3d_transform_ add_rotation_x
+          
+        
+        
+          d3d_transform_add_ rotation_y
+          
+          d3d_transform_ add_rotation_z
+          
+          d3d_transform_add_ rotation_axis
+          
+          d3d_transform_ stack_clear
+          
+        
+        
+          d3d_transform_stack_ empty
+          
+          d3d_transform_ stack_push
+          
+          d3d_transform_stack_ pop
+          
+          d3d_transform_ stack_top
+          
+        
+        
+          d3d_transform_stack_ descartar
+          
+          d3d_transform_vertex
+          d3d_light_define_ ambient
+          
+          d3d_light_define_ dirección
+          
+        
+        
+          d3d_light_define_point
+          d3d_light_enable
+          d3d_primitive_begin
+          d3d_primitive_ begin_texture
+          
+        
+        
+          d3d_primitive_end
+          d3d_vertex
+          d3d_vertex_color
+          d3d_vertex_colour
+        
+        
+          d3d_vertex_texture
+          d3d_vertexture_ color
+          
+          d3d_vertexture_ color
+          
+          d3d_vertex_normal
+        
+        
+          d3d_vertex_normal_ color
+          
+          d3d_vertex_normal_ color
+          
+          d3d_vertex_normal_ texture
+          
+          d3d_vertex_normal_ texture_color
+          
+        
+        
+          d3d_vertex_normal_ texture_colour
+          
+          d3d_draw_block
+          d3d_draw_cylinder
+          d3d_draw_cone
+        
+        
+          d3d_draw_ellipsoid
+          d3d_draw_wall
+          d3d_draw_floor
+          d3d_model_create
+        
+        
+          d3d_model_destroy
+          d3d_model_clear
+          d3d_model_load
+          d3d_model_save
+        
+        
+          d3d_model_draw
+          d3d_model_primitive_ begin
+          
+          d3d_model_ primitive_end
+          
+          d3d_model_vertex
+        
+        
+          d3d_model_vertex_ color
+          
+          d3d_model_vertex_ color
+          
+          d3d_model_ vertex_texture
+          
+          d3d_model_vertex_ texture_color
+          
+        
+        
+          d3d_model_vertex_ texture_colour
+          
+          d3d_model_vertex_ normal
+          
+          d3d_model_ vertex_normal_color
+          
+          d3d_model_vertex_ normal_colour
+          
+        
+        
+          d3d_model_vertex_ normal_texture
+          
+          d3d_model_vertex_ normal_texture_color
+          
+          d3d_model_vertex_ normal_texture_colour
+          
+          d3d_model_block
+        
+        
+          d3d_model_cylinder
+          d3d_model_cone
+          d3d_model_ellipsoid
+          d3d_model_wall
+        
+        
+          d3d_model_floor
+        
+      
+    
+    Puedes encontrar más información sobre los buffers de vértices aquí, más sobre las matrices aquí,
+      más sobre las cámaras aquí, y más sobre las funciones de la GPU aquí.
+     
+  
+  Variables de la vista y funciones de la ventana
+  
+    Con la llegada de las funciones de cámara en GameMaker Studio 2, significa que ya no son necesarias algunas variables de vista, concretamente las que se refieren a la vista dentro de la habitación en lugar de la vista_puerto (que todavía se utiliza). También hay
+      algunas funciones para controlar cómo se muestran las cosas que estaban disponibles en las versiones anteriores de GameMaker Studio que también ya no son apropiados. Estas variables y funciones se enumeran a continuación:
+    
+      
+        
+          ver_objeto
+          ángulo_de_vista
+          vista_xview
+          vista_yview
+        
+        
+          vista_hview
+          ver_wview
+          ver_borde
+          view_vborder
+        
+        
+          ver_velocidad_de_hecho
+          view_vspeed
+          display_set_windows_ vertex_buffer_method
+          
+          display_get_windows_ vertex_buffer_method
+          
+        
+        
+          display_set_windows_ alternate_sync
+          
+          display_get_windows_ alternate_sync
+          
+          room_set_view
+        
+      
+    
+    Puede encontrar más información sobre las cámaras en la sección del manual Cámaras y la pantalla.
+     
+  
+  Apoyo de terceros
+  
+    GameMaker Studio 2 traslada muchas de las funciones incorporadas de las versiones anteriores a las extensiones, lo que significa que las siguientes funciones de apoyo de terceros se consideran obsoletas:
+    
+      
+        
+          ads_enable
+          ads_disable
+          ads_move
+          ads_get_display_ anchura
+          
+        
+        
+          ads_get_display_ altura
+          
+          ads_interstitial_ disponible
+          
+          ads_interstitial_ display
+          
+          ads_setup
+        
+        
+          ads_engagement_ disponible
+          
+          ads_engagement_ lanzamiento
+          
+          ads_engagement_ activo
+          
+          ads_eventos
+        
+        
+          ads_event_preload
+          ads_set_reward_ callback
+          
+          playhaven_add_ notification_badge
+          
+          playhaven_hide_ notification_badge
+          
+        
+        
+          playhaven_position_ notification_badge
+          
+          playhaven_update_ notification_badge
+          
+          pocketchange_display_ recompensa
+          
+          pocketchange_display_ shop
+          
+        
+        
+          evento_analítico
+          analytics_event_ext
+          facebook_init
+          facebook_login
+        
+        
+          facebook_request_ publicar_permisos
+          
+          facebook_request_ leer_permisos
+          
+          facebook_check_ permiso
+          
+          facebook_status
+        
+        
+          facebook_accesstoken
+          facebook_user_id
+          facebook_graph_ solicitud
+          
+          facebook_dialog
+        
+        
+          facebook_send_invite  
+          facebook_post_ mensaje   
+          facebook_logout 
+          facebook_launch_ offerwall  
+        
+        
+          iap_event_queue 
+          iap_files_comprados 
+          iap_is_downloaded 
+          iap_product_files 
+        
+        
+          iap_product_status 
+          iap_store_status 
+          iap_data
+          iap_activate
+        
+        
+          iap_status
+          iap_enumerar_productos
+          iap_restore_all
+          iap_acquire
+        
+        
+          iap_consumir
+          iap_product_details
+          iap_purchase_details
+           
+        
+        
+          efecto de juego de inmersión
+          parada_de_inmersión
+        
+      
+    
+    Puedes conseguir las extensiones oficiales de YoYo Games para la publicidad y otras cosas en su página deMarketplace.
+     
+  
+  Acciones dearrastrar y soltar 
+  
+    Tanto el GameMaker heredado como el GameMaker Studio 2 tienen una interfaz visual de Drag and Drop™(DnD™) para crear sus juegos, sin embargo la forma en que se maneja en GameMaker Studio 2 es bastante diferente a los métodos anteriores utilizados. Anteriormente,
+      todas las acciones DnD™tenían su propia función correspondiente que trabajaba "entre bastidores" para obtener los resultados deseados, sin embargo, esto no era muy transparente y añadía sobrecargas adicionales a las llamadas a la función, lo que se traducía en un menor rendimiento.
+      En GameMaker Studio 2 esto ha cambiado, y ahora todas las acciones compilan a código puro (y pueden ser mostradas como tal si es necesario), lo que significa que las siguientes funciones de acción son obsoletas:
+    
+      
+        
+          action_path_old
+          action_set_sprite
+          action_draw_font
+          action_draw_font_old
+        
+        
+          action_fill_color
+          action_fill_colour
+          action_line_color
+          color_de_la_línea_de_acción
+        
+        
+          action_highscore
+          action_set_relative
+          acción_movimiento
+          action_set_motion
+        
+        
+          action_set_hspeed
+          action_set_vspeed
+          action_set_gravity
+          action_set_friction
+        
+        
+          punto_de_movimiento_de_acción
+          action_move_to
+          action_move_start
+          action_move_random
+        
+        
+          action_snap
+          action_wrap
+          action_reverse_xdir
+          action_reverse_ydir
+        
+        
+          action_move_contact
+          acción_rebote
+          ruta_de_acción
+          action_path_end
+        
+        
+          action_path_position
+          acción_camino_velocidad
+          action_linear_step
+          acción_potencial_paso
+        
+        
+          action_kill_object
+          action_create_object
+          action_create_object_motion
+          action_create_object_random
+        
+        
+          action_change_object
+          action_kill_position
+          action_sprite_set
+          action_sprite_transform
+        
+        
+          action_sprite_color
+          action_sprite_colour
+          sonido_de_acción
+          action_end_sound
+        
+        
+          action_if_sound
+          acción_otra_habitación
+          action_current_room
+          action_previous_room
+        
+        
+          action_next_room
+          action_if_previous_room
+          action_if_next_room
+          action_set_alarm
+        
+        
+          acción_sueño
+          action_set_timeline
+          action_timeline_set
+          action_timeline_start
+        
+        
+          action_timeline_stop
+          action_timeline_pause
+          action_set_timeline_position
+          action_set_timeline_speed
+        
+        
+          mensaje_de_acción
+          action_show_info
+          action_show_video
+          action_end_game
+        
+        
+          action_restart_game
+          action_save_game
+          action_load_game
+          action_replace_sprite
+        
+        
+          action_replace_sound
+          action_replace_ background
+          
+          action_if_empty
+          action_if_collision
+        
+        
+          action_if
+          action_if_number
+          action_if_object
+          action_if_question
+        
+        
+          action_if_dice
+          action_if_mouse
+          action_if_aligned
+          action_execute_script
+        
+        
+          action_inherited
+          action_if_variable
+          action_draw_variable
+          action_set_score
+        
+        
+          action_if_score
+          action_draw_score
+          action_highscore_show
+          action_highscore_clear
+        
+        
+          action_set_life
+          action_if_life
+          action_draw_life
+          action_draw_life_images
+        
+        
+          action_set_health
+          action_if_health
+          action_draw_health
+          action_set_caption
+        
+        
+          action_partsyst_create
+          action_partsyst_destroy
+          action_partsyst_clear
+          action_parttype_create_old
+        
+        
+          action_parttype_create
+          action_parttype_color
+          action_parttype_colour
+          action_parttype_life
+        
+        
+          action_parttype_speed
+          action_parttype_gravity
+          action_parttype_secondary
+          action_partemit_create
+        
+        
+          action_partemit_destroy
+          action_partemit_burst
+          action_partemit_stream
+          action_cd_play
+        
+        
+          action_cd_stop
+          action_cd_pause
+          action_cd_resume
+          action_cd_present
+        
+        
+          action_cd_playing
+          action_set_cursor
+          página_de_acción
+          action_splash_web
+        
+        
+          action_draw_sprite
+          action_draw_background
+          action_draw_text
+          action_draw_text_transformed
+        
+        
+          action_draw_rectangle
+          action_draw_gradient_hor
+          action_draw_gradient_vert
+          action_draw_ellipse
+        
+        
+          action_draw_ ellipse_gradient
+          
+          action_draw_line
+          action_draw_arrow
+          acción_color
+        
+        
+          acción_color
+          action_font
+          action_fullscreen
+          acción_simulacro
+        
+        
+          acción_efecto
+        
+      
+    
+    Puedes encontrar más información sobre el nuevo DnD™en la sección de manuales de Arrastrar y soltar™.
+     
+  
+   
+  Las siguientes variables globales incorporadas también están obsoletas, aunque todavía se consideran variables reservadas en GML para que el IDE pueda reconocerlas y marcarlas para actualizarlas/eliminarlas cuando se importe un proyecto heredado que las utilice (al igual que las variables
+    variables enumeradas en las secciones Vistas y Fondos, más arriba):
+   
+  
+    
+      
+        gamemaker_registered
+        gamemaker_progamemaker_ versión
+        
+        modo_seguro
+      
+      
+        mostrar_salud
+        mostrar_puntuación
+        mostrar_vida
+      
+      
+        puntaje_de_cabecera
+        caption_lives
+        caption_health
+      
+      
+        argumento_relativo
+        room_caption
+        velocidad_de_habitación
+      
+      
+        pasos_de_transición
+        tipo_de_transición
+        guía_de_juego
+      
+      
+        error_último
+        error_ocurrido
+        copiar_superficie_del_buffer
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: El sistema de archivos
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

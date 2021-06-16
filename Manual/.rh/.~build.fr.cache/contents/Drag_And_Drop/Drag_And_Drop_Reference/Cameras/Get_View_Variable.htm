@@ -1,0 +1,85 @@
+
+  
+   Obtenga la variable de vista
+  Esta acción permite obtener el valor de ciertas variables incorporadas relacionadas con un puerto de vista determinado. Se selecciona la variable del puerto de vista que se va a recuperar, luego se da el puerto de vista al que se va a dirigir (de 0 a 7) y, por último, la variable de destino que va a contener el valor devuelto (puede marcarse como variable local temporal).
+    (esto puede ser marcado como una variable local temporal). El puerto de vista es el área de la pantalla que se utilizará para dibujar una vista de cámara determinada (tal y como se ha configurado en el editor de salas), y las diferentes variables que se pueden obtener de esta manera
+    se describen en la siguiente tabla:
+  
+    
+      
+        Variable
+        Descripción
+      
+      
+        Camera
+        El valor devuelto será el valor de identificación único de la cámara a asignar al puerto (ver aquí para más información).
+      
+      
+        Visibility
+        Esto devolverá un valor de true o false donde true es que el puerto de vista es visible (es decir, que se está dibujando en la pantalla), y false significa que no se está dibujando nada.
+      
+      
+        View Port X Coordinate
+        Esta es la posición X del puerto de vista dentro de la ventana del juego.
+      
+      
+        View Port Y Coordinate
+        Esta es la posición Y del puerto de vista dentro de la ventana del juego.
+      
+      
+        View Port Width
+        Es la anchura (en píxeles) del puerto de visualización.
+      
+      
+        View Port Height
+        Es la altura (en píxeles) del puerto de visualización.
+      
+      
+        View Port Surface ID
+        Esto devolverá el valor de ID único para la superficie asignada al puerto de vista o -1 si no se ha asignado ninguna superficie.
+      
+    
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Variable
+        La variable de vista incorporada para obtener
+      
+      
+        Ver
+        El puerto de vista al que hay que dirigirse (de 0 a 7)
+      
+      
+        Objetivo
+        La variable de destino que contendrá el valor devuelto (puede marcarse como una variable local temporal)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene el ID de la cámara actual asignada a la vista
+    puerto [0] y luego comprueba si es el mismo que el almacenado en una variable global. Si no lo es, la cámara se ajusta a la nueva.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de la cámara
+        Siguiente: Establecer la variable de vista
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

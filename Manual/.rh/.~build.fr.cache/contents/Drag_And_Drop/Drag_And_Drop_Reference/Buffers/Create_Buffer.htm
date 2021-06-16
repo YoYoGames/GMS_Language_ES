@@ -1,0 +1,48 @@
+
+  
+   Crear un búfer
+  Esta acción se puede utilizar para asignar una porción de memoria como un búfer en su juego, con la función que devuelve el valor único de identificación del búfer que debe ser almacenado en una variable y utilizado para todas las llamadas de función posteriores al búfer. Puedes suministrar
+    una variable global, una variable de instancia o hacer que la acción cree una variable local temporal para almacenar el ID del buffer. Tenga en cuenta que puede crear búferes adicionales haciendo clic en el icono más  junto a
+    de la acción, y seleccionando otra variable para guardar el ID del buffer.
+  NOTA: Es importante que elimines de la memoria cualquier recurso creado dinámicamente como este cuando ya no lo necesites para evitar fugas de memoria, por lo que cuando termines con el buffer que has creado deberás liberarlo de nuevo
+    utilizando la acción Eliminar Buffer (en el evento Otros - Limpiar, por ejemplo). Esto es especialmente importante de recordar cuando se utiliza una variable local temporal
+    temporal, ya que si no eliminas el buffer de nuevo antes de que termine el evento o el script de la acción, ya no podrás acceder a él y puedes tener problemas más adelante.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+      
+        Valor
+        El valor a añadir en la lista
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una variable global y luego un búfer, asignando el
+    ID del búfer a la variable. Este búfer tiene entonces dos piezas de datos escritas en él.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Buffer de copia
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

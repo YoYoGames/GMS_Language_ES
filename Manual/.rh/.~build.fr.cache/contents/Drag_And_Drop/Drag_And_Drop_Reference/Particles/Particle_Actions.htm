@@ -1,0 +1,189 @@
+
+  
+  Biblioteca de acción de partículas
+  Para las cosas complejas en GameMaker Studio 2 que normalmente tendría un objeto y luego crear instancias de
+    ese objeto dentro de la sala. Sin embargo, para los efectos gráficos, esto puede ser costoso ya que cada instancia tiene un "costo" en el procesamiento debido a las variables que contiene y los códigos que tiene en los diferentes eventos. Se puede reducir este
+    coste recurriendo a las baldosas para dibujar sus gráficos, o incluso utilizando la capa de activos en el editor de habitaciones, pero ambos se utilizan generalmente sólo para dibujar gráficos simples que mantienen la misma posición en el tiempo y tienen pocos efectos especiales.
+    Sin embargo, hay otra opción para dibujar efectos gráficos rápidos pero versátiles en tus juegos, y es utilizar partículas.
+  Las partículas son recursos gráficos con ciertas propiedades que se definen dentro de un sistema de partículas. Estas propiedades no pueden manipularse directamente para las partículas individuales, sino que se modifican a través de las acciones que se utilizan para definir los tipos de partículas individuales dentro del sistema.
+   tipos de partículas individuales dentro del sistema. Son muy útiles para crear efectos hermosos y llamativos (¡o sutiles y discretos!) como explosiones, calcomanías, lluvia, nieve, campos de estrellas y escombros en un juego sin la sobrecarga de la CPU o GPU que tiene el uso de
+    instancias y/o azulejos y activos.
+  La configuración básica de un sistema de partículas sigue tres pasos:
+  
+    Crear un Sistema de Partículas: El sistema de partículas es como un contenedor que utilizaremos para albergar nuestros diferentes emisores de partículas a medida que los utilizamos. Usamos acciones para definir una serie de aspectos visuales y comportamientos para nuestras partículas, y luego las usamos
+      desde un emisor que ha sido colocado en el "contenedor" (el sistema de partículas) para que puedan ser vistas.
+    Crear tipos de partículas: Los "tipos" de partículas son la definición del propio efecto gráfico. Puedes tener muchos tipos de partículas diferentes, cada uno con su propia gama de colores, alfas, tamaños y movimientos, pero es importante tener en cuenta que no tienes control sobre las partículas individuales.
+      Usted define una serie de parámetros y la partícula se creará para tener una gama aleatoria de comportamientos elegidos entre ellos.
+    Crear emisores de partículas: Los emisores se utilizan para hacer estallar o arrojar partículas dentro de límites muy claramente definidos, y se les puede dar parámetros especiales para definir exactamente cómo se debe crear un efecto de partículas determinado. Los emisores pueden ser opcionales,
+      ya que puedes utilizar la acción Explosión de partículas para emular muchos de los efectos de un emisor, con la ventaja añadida de no tener que preocuparte de limpiar el emisor después. Tenga en cuenta que los emisores, a diferencia de las partículas, deben
+      pertenecer a un sistema para que las partículas que se creen se vean.
+  
+  Puedes obtener una guía más detallada sobre la configuración y el uso de las partículas en la siguiente página del manual:
+  
+    Guía de uso de las partículas
+  
+  Aunque las partículas son una herramienta excelente para crear efectos, vienen con ciertas restricciones y reglas de buena práctica que hay que seguir a menos que quieras que tu juego tenga problemas:
+  
+    El sistema de partículas, los tipos de partículas y los emisores de partículas ocupan memoria y, por lo tanto, debes tener mucho cuidado con su uso, ya que es muy fácil causar una fuga de memoria que ralentizará y, eventualmente, bloqueará tu juego, por lo que cada tipo de partícula
+      y emisores (y posiblemente el propio sistema) deben ser destruidos en el momento en que no se necesiten.
+    Puede que las partículas sean rápidas y ligeras para la CPU y la GPU, pero siguen requiriendo cierto procesamiento, por lo que no deberías tener 40.000 de ellas estallando por la pantalla a la vez. Limítalas a las que sean necesarias para conseguir un efecto concreto y no
+      más.
+    Si defines tu propio sprite de partículas en lugar de utilizar uno de los 14 sprites incluidos, debes intentar que sean lo más pequeños posible para conseguir el efecto que necesitas.
+    Las partículas no interactúan con nada. Si necesitas que tengan algún tipo de interacción con el usuario o con otras instancias en tu juego, deberías buscar usar instancias en su lugar, ya que las partículas son puramente gráficas.
+    Aunque no hay límite técnico a la cantidad de emisores y partículas que puedes crear en un juego, deberías intentar limitar todo al mínimo número posible para mantener el uso de memoria lo más bajo posible.
+    En los dispositivos móviles, ten cuidado con las partículas, ya que dibujarlas puede ser lento si cubren una gran superficie de la pantalla (el sobredibujo en los dispositivos móviles es una de las principales causas de ralentización).
+    Si se dirige a la plataforma HTML5, tenga en cuenta que, a menos que tenga WebGL activado, tampoco podrá tener mezcla de colores (sólo se utilizará el primero de los colores de las partículas en los lienzos que no sean WebGL).
+  
+  Las siguientes secciones cubren todas las acciones para hacer sus propios sistemas de partículas:
+  
+    
+      
+         
+         
+      
+      
+        
+        Crear sistema de partículas
+      
+      
+        
+        Destruir el sistema de partículas
+      
+      
+        
+        Sistema de partículas transparentes
+      
+      
+        
+        Sistema de partículas en pausa
+      
+      
+        
+        Actualizar el sistema de partículas
+      
+      
+        
+        Crear tipo de partícula
+      
+      
+        
+        Destruye el tipo de partícula
+      
+      
+        
+                         Establecer el tamaño de las partículas 
+      
+      
+        
+        Establecer Sprite de Partículas
+      
+      
+        
+        Establecer la forma de las partículas
+      
+      
+        
+        Establecer el color de las partículas
+      
+      
+        
+        Establecer el alfa de las partículas
+      
+      
+        
+        Establecer la vida de las partículas
+      
+      
+        
+        Ajustar la velocidad de las partículas
+      
+      
+        
+        Establecer la dirección de las partículas
+      
+      
+        
+        Establecer la orientación de las partículas
+      
+      
+        
+        Fijar la gravedad de las partículas
+      
+      
+        
+        Fijar las partículas secundarias
+      
+      
+        
+        Partículas de ráfaga
+      
+      
+        
+        Crear emisor de partículas
+      
+      
+        
+        Destruir el emisor de partículas
+      
+      
+        
+        Emitir partículas
+      
+      
+        
+        Establecer la región del emisor
+      
+      
+        
+        Efecto Do
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Acciones comunes
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

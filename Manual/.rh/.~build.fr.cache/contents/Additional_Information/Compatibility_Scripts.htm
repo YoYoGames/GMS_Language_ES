@@ -1,0 +1,42 @@
+
+  
+  Guiones de compatibilidad
+  Para aquellos usuarios que vienen de versiones anteriores de GameMaker, puede ser un poco confuso utilizar GameMaker Studio 2 al principio, ya que se han realizado una serie de cambios en la forma en que se manejan los activos del proyecto, la edición y la codificación. Estos cambios significan
+    que ni el IDE ni el Lenguaje GameMaker (GML ) son compatibles con los elementos enumerados a continuación. Sin embargo, eso no significa que
+    no pueda importar a GameMaker Studio 2 juegos realizados con versiones anteriores, ya que puede hacerlo. GameMaker Studio 2 convertirá automáticamente todas las funciones heredadas en scripts de compatibilidad, que son scripts que contienen funciones que convierten
+    los métodos heredados en los métodos actualizados.
+  Lo que ocurre es que GameMaker Studio 2 analizará tu proyecto en busca de todas las funciones y variables obsoletas que hayas utilizado, y luego creará una serie de scripts utilizando esos nombres de funciones. Estos scripts contendrán la nueva función de tiempo de ejecución equivalente
+   en tiempo de ejecución o una función de script corta que realiza la misma acción que la función obsoleta.
+  Cuando importes por primera vez un proyecto de GameMaker Studio 2, se te mostrará un informe de compatibilidad muy parecido a este:
+  El cuerpo principal del informe muestra qué objetos y scripts han sido afectados y dónde, mientras que al final
+    puede encontrar una lista de los scripts que se han creado para su proyecto. Puede hacer clic en el botón central del ratón  o pulsar  en cualquiera de los scripts que aparecen en el informe para abrirlo y ver lo que se ha hecho.
+  Tenga en cuenta que si ve algún script creado con una doble barra inferior antes de su nombre (por ejemplo: __global_object_depths), se trata de scripts que han sido creados por el IDE para ayudar a la compatibilidad y no son scripts
+    que han sido convertidos a partir de funciones obsoletas, por lo que no deben ser manipulados ya que son necesarios para que los otros scripts de compatibilidad funcionen.
+  Cuando haya terminado de revisar el informe de compatibilidad puede cerrar el espacio de trabajo, pero si necesita revisar algo dentro del informe puede encontrarlo de nuevo yendo a la sección Notas del
+   Navegador de activos.
+  Tenga en cuenta que puede seguir utilizando estos scripts de compatibilidad de la misma forma en que hubiera utilizado las funciones en la versión anterior de GameMaker, sin embargo, debido a la forma en que funcionan, habrá un impacto en el rendimiento asociado a esto. Le recomendamos que
+    actualizar los proyectos para utilizar directamente los nuevos métodos y eliminar los scripts de compatibilidad si es posible, ya que mejorará el rendimiento y también le dará una idea de la forma en que GameMaker Studio 2 y el Lenguaje GameMaker funciona en comparación con los productos heredados.
+  También tenga en cuenta que hay algunas funciones que han sido introducidas en el Lenguaje GameMaker para asegurar la compatibilidad con proyectos antiguos y que aparecerán en estos scripts de compatibilidad. Sin embargo, estas funciones nunca deben ser utilizadas en sus propios proyectos.
+    Puede encontrar una lista de estas funciones en la siguiente sección del manual:
+  
+    Funciones de compatibilidad
+  
+  También puede encontrar una lista completa de todas las funciones obsoletas que tienen scripts de compatibilidad equivalentes creados para ellas en la siguiente página:
+  
+    Funciones obsoletas
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: Funciones obsoletas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

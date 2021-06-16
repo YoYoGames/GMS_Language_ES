@@ -1,0 +1,175 @@
+
+  
+  Biblioteca de acciones de estructuras de datos
+  
+  En los juegos, a menudo es necesario almacenar información de forma precisa y ordenada. Por ejemplo, es posible que necesites almacenar listas de objetos que lleva una persona o que quieras almacenar una cuadrícula de lugares que aún deben ser visitados. Ahora bien, puede utilizar múltiples variables
+    para esto, pero si quieres hacer operaciones más complicadas, como ordenar los datos o buscar un elemento concreto, tienes que escribir grandes trozos de código de bloque de acción que pueden ser lentos de ejecutar, difíciles de depurar y un verdadero dolor de escribir.
+  Para remediar esto, GameMaker Studio 2 tiene una serie de estructuras de datos incorporadas a las que se puede acceder mediante funciones especializadas. Hay cuatro tipos diferentes de estructuras de datos disponibles a través de Arrastrar y Soltar (hay seis si se utiliza GML),
+    cada una de ellas tiene sus propios pros y contras dependiendo del tipo de información que se quiera almacenar y de cómo se quiera manipular posteriormente - los cuatro tipos son:
+  
+    
+      
+        
+        Listas
+        Una lista es una estructura de datos que almacena información de forma secuencial a medida que se añade. Los índices de las listas empiezan en 0 y van subiendo por cada elemento que se añade al final de la lista, aunque también se pueden insertar datos en una posición distinta a la última. A diferencia de la estructura de datos Stack (explicada más adelante) se puede acceder a los datos desde cualquier índice de la lista en cualquier momento.
+      
+      
+        
+        Mapas
+        La estructura de datos map es excepcionalmente útil, ya que permite almacenar clave y valor de claves y valores. Por ejemplo, un personaje de tu juego puede tener una cantidad de artículos diferentes (claves) y para cada artículo individual puede tener un número de ellos (valores), como en un RPG donde puedes tener 10 pociones de salud, 5 pociones de maná y 100 de oro. Los mapas mantienen estos pares todos juntos en el mismo lugar y puedes añadir pares al mapa y buscar el valor correspondiente a ciertas claves también usando algunas funciones simples. Los mapas no están ordenados de ninguna manera (reconocible), lo que significa que para encontrar una determinada clave puede que tengas que iterar a través de todo (lo que es muy lento), y tampoco hay manera de mantener dos claves que sean iguales, ni puedes asignar a una clave dos valores.
+      
+      
+        
+        Rejillas
+        Una cuadrícula es una matriz bidimensional de valores en la que se define su anchura y su altura. Esto establece el número total de "celdas" de la rejilla (la anchura y la altura multiplicadas) y estas celdas se utilizan para contener diferentes valores de datos, que pueden ser cualquiera de los tipos de datos permitidos. Este tipo de estructura permite establecer y recuperar el valor de las celdas de la rejilla dando la posición x (columna) e y (fila) de la misma (tanto las filas como las columnas comienzan en 0 y llegan hasta el ancho de la rejilla - 1 y el alto de la rejilla -1). Cuando acceda a las estructuras de datos de la rejilla, siempre debe intentar utilizar valores enteros para la posición de la celda, y todos los índices no enteros serán eliminados por GameMaker
+          Studio 2 si no lo hace. Si esto no es lo que necesita, entonces tendrá que hacer el redondeo usted mismo previamente antes de pasar el índice que desea comprobar.
+      
+      
+        
+        Pilas
+        Una estructura de datos de pila es una estructura denominada "last-in-first-out" (LIFO). Puedes introducir valores en una pila y volver a eliminarlos sacándolos de la pila, y el valor que fue introducido en la pila más recientemente es el primero en ser sacado de ella de nuevo (piensa en una pila de monedas, donde cada moneda que añades tiene que ser sacada de nuevo antes de que puedas llegar al resto de las monedas que hay debajo). Las pilas se utilizan a menudo cuando hay interrupciones que manejar, o cuando se tienen funciones recursivas, o incluso cuando se construye una IA rudimentaria para tus juegos.
+      
+    
+  
+   
+  Básicamente, todas las estructuras de datos funcionan de la misma manera: se crea una estructura de datos y se almacena su valor de índice en una variable. A continuación, se utiliza este índice para hacer referencia a la estructura de datos en todas las llamadas a funciones posteriores que puedan realizar operaciones con ella. Por último,
+    una vez que hayas terminado, destruyes la estructura de datos de nuevo para eliminarla de la memoria. Puedes utilizar tantas estructuras al mismo tiempo como necesites, y todas las estructuras pueden almacenar tanto cadenas como valores reales.
+  NOTA: Como todos los recursos dinámicos, las estructuras de datos ocupan memoria, por lo que siempre deben ser destruidas cuando ya no se necesiten para evitar fugas de memoria que ralentizarán y eventualmente bloquearán tu juego.
+  La biblioteca de estructuras de datos tiene las siguientes acciones:
+   
+  
+    
+      
+        
+        Crear lista
+      
+      
+        
+        Crear mapa
+      
+      
+        
+        Crear rejilla
+      
+      
+        
+        Crear pila
+      
+      
+        
+        Borrar la estructura de datos
+      
+      
+        
+        Estructura de datos libre
+      
+      
+        
+        Añadir a la lista
+      
+      
+        
+        Eliminar de la lista
+      
+      
+        
+        Obtener el elemento de la lista en
+      
+      
+        
+        Obtener el índice del elemento de la lista
+      
+      
+        
+        Insertar en la lista
+      
+      
+        
+        Obtener el recuento de elementos de la lista
+      
+      
+        
+        Establecer el valor del mapa
+      
+      
+        
+        Obtener el valor del mapa
+      
+      
+        
+        Eliminar la entrada del mapa
+      
+      
+        
+        Establecer el valor de la rejilla
+      
+      
+        
+        Obtener el valor de la rejilla
+      
+      
+        
+        Rejilla transparente
+      
+      
+        
+        Empujar a la pila
+      
+      
+        
+        Pop Stack
+      
+      
+        
+        Si existe una estructura de datos
+      
+      
+        
+        Si la estructura de datos está vacía
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Acciones en el búfer
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

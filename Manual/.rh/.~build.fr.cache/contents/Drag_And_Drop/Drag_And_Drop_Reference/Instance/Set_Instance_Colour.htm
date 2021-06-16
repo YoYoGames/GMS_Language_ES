@@ -1,0 +1,42 @@
+
+  
+   Establecer el color de la instancia
+  Este bloque de acción establece el color image_blend para la "mezcla" con el sprite de la instancia. El valor por defecto es el código hexadecimal $FFFFFFFF (que representa el color blanco usando el formato ARGB ) y esto dibujará el sprite sin mezcla y con alfa completo. Cualquier otro valor (incluyendo constantes de color internas como c_red, o c_aqua) mezclará el color especificado con el sprite original así como establecerá el componente
+    image_alpha para la instancia, pero sólo cuando la casilla Usar Alfa esté marcada. Esto sobrescribirá cualquier valor alfa establecido previamente usando la acción Establecer Alfa de la Instancia.
+  Tenga en cuenta que para que los cambios en esta acción sean visibles, la instancia no debe tener ningún evento de dibujo (y así GameMaker Studio 2 dibujará por defecto el sprite) o se dibujará utilizando la acción Draw Self. También es importante
+    importante tener en cuenta también que se debe intentar limitar la mezcla en la plataforma HTML5 (a menos que se utilice WebGL), ya que cada sprite mezclado tiene que ser almacenado en caché por separado y, por lo tanto, tener muchos sprites mezclados puede afectar negativamente al rendimiento.
+  
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Color
+        El nuevo color de mezcla a utilizar (al hacer clic en la muestra de color se abrirá la ventana del selector de color).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece un nuevo sprite, así como una serie de otras
+    propiedades para la visualización de ese sprite, incluyendo el ajuste del color de la mezcla a rosa.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Si la instancia existe
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

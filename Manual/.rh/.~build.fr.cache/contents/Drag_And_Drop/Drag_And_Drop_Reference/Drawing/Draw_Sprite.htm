@@ -1,0 +1,56 @@
+
+  
+   Dibujar Sprite
+  Esta acción dibujará un sprite en algún lugar de la sala. Se especifica el sprite, la posición (ya sea una posición absoluta dentro de la habitación, o una posición relativa a la instancia que hace el dibujo) y el marco de animación del sprite, si tiene múltiples
+    fotogramas (tenga en cuenta que los fotogramas de la imagen se numeran de 0 en adelante). Si tienes un sprite animado y quieres que dibuje los fotogramas como si estuviera asignado al objeto, entonces utiliza -1 para el índice de fotogramas o la variable de instancia incorporada image_index,
+    pero ten en cuenta que si la instancia no tiene ningún sprite asignado entonces no se animará, y si el sprite asignado tiene un número de fotogramas diferente al que se está dibujando entonces el sprite se dibujará con fotogramas extra o con fotogramas perdidos.
+  IMPORTANTE: Esta acción no dibujará el sprite transformado, aunque haya cambiado la mezcla o la escala de la imagen. Para eso vea la acción Dibujar Sprite Transformado.
+  NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
+   
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sprite
+        El sprite a dibujar
+      
+      
+        x
+        La posición x a dibujar
+      
+      
+        y
+        La posición y para dibujar
+      
+      
+        Índice del marco
+        El índice del cuadro a dibujar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior dibuja un sprite "sombra" en la misma posición relativa que el
+    y luego dibuja el sprite de la instancia encima.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de dibujo
+        Siguiente: Dibujar Sprite Transformado
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

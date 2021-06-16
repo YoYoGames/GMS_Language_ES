@@ -1,0 +1,46 @@
+
+  
+   Establecer la cuenta atrás de la alarma
+  Este bloque de acción establece una cuenta atrás para una alarma determinada, y cuando la alarma llega a cero se dispara el Evento de Alarma asociado. Se proporciona el número de alarma de 0 a 11, y
+    el valor de la alarma. El valor utilizado es el número de "pasos de juego" que quiere que pasen antes de que se dispare el evento de alarma, y puede configurarlo para que sea relativo al valor actual de la alarma (sumando o restando al valor actual
+    actual). Ten en cuenta que el valor debe ser un valor entero, y puedes establecerlo en -1 para detener la alarma. Tenga en cuenta que cuando una alarma tiene una cuenta regresiva, el evento se ejecuta cuando llega a 0, pero la alarma entonces tiene una cuenta regresiva de -1 para mostrar que ha terminado. Si se pone una alarma a
+    alarma a 0 no se ejecutará el evento, ya que entonces contará hasta -1 en el siguiente paso, por lo que para ejecutar una alarma inmediatamente se debe establecer a 1. Tenga en cuenta que puede establecer alarmas adicionales en la misma acción haciendo clic en el icono más  junto a la acción.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Alarma
+        La alarma que se va a establecer (el evento de alarma correspondiente se activará cuando llegue a 0).
+      
+      
+        Cuenta atrás
+        El valor de la cuenta atrás en pasos de juego.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una variable local (temporal) y almacena el valor actual de
+    la alarma[0]. Luego se comprueba y si es menor que 0, la alarma se pone a 60.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Obtener la cuenta atrás de la alarma
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,41 @@
+
+  
+   Si el final del búfer
+  Esta acción puede utilizarse para comprobar si la posición de lectura/escritura ha alcanzado el final del buffer. Se suministra el valor único del ID del buffer devuelto por la acción Crear Buffer y entonces la acción devolverá true si la posición de lectura/escritura ha alcanzado el final de todos los datos disponibles en el buffer, o false si no lo ha hecho. Puedes marcar "no" para que la acción compruebe si la posición de lectura/escritura no está al final del buffer.
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tampón
+        El índice del buffer (almacenado en una variable)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una lista DS en la instancia y luego recorre los
+    datos dentro del buffer dado leyendo los datos y añadiéndolos a la lista. Esto continúa hasta que se alcanza el final del búfer, momento en el que se interrumpe el bucle.
+   
+   
+   
+  
+    
+      
+        Volver: Acciones de amortiguación
+        Siguiente: Crear un búfer
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

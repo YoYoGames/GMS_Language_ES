@@ -1,0 +1,102 @@
+
+  
+  Biblioteca de acciones con el ratón y el teclado
+  
+  El Ratón y Teclado es donde puede encontrar las acciones necesarias para sondear y procesar la entrada de los dispositivos de teclado o ratón. Las acciones disponibles se enumeran a continuación:
+   
+  
+    
+      
+        
+        Si se pulsa el ratón
+      
+      
+        
+        Si el ratón baja
+      
+      
+        
+        Si el ratón se libera
+      
+      
+        
+        Si se pulsa la tecla
+      
+      
+        
+        Si se pulsa la tecla
+      
+      
+        
+        Si se libera la llave
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  Las otras tres acciones aquí se refieren al teclado virtual. Si necesitas introducir texto o números en tu juego en un dispositivo con pantalla táctil, puedes utilizar las acciones del teclado virtual para usar el teclado del sistema operativo del dispositivo. Estas acciones llamarán
+    Estas acciones llamarán u ocultarán el teclado del sistema operativo y aceptarán la entrada desde él igual que un teclado físico, por lo que las acciones de teclado normales de GameMaker Studio 2 deberían funcionar con los teclados virtuales (por ejemplo, la acción "Si se suelta la tecla"), y cualquier entrada
+    del teclado virtual se almacenará en las diferentes variables del teclado, como cadena_de_teclado o último_carácter_del_tecladoetc.).
+  Al abrir o cerrar el teclado virtual se generarán Eventos Asíncronos del Sistema, en los que el mapa async_load    DS se llenará con los siguientes pares clave/valor:
+  
+    " event_type" - el tipo de evento del sistema recibido, que será "virtualkeyboard status" para los tecladosvirtuales.
+    "screen_height" - la altura del teclado virtual (en píxeles). Será 0 si el teclado es invisible.
+    "keyboard_status" - el estado actual del teclado, devuelto como una de las siguientes cadenas:
+      
+        "oculto"
+        "oculto"
+        "mostrando"
+        "visible"
+      
+    
+  
+  Las acciones del teclado virtual disponibles son:
+   
+  
+    
+      
+        
+        Mostrar el teclado virtual
+      
+      
+        
+        Ocultar el teclado virtual
+      
+      
+        
+        Obtener la altura del teclado virtual
+      
+      
+        
+        Si se muestra el teclado virtual
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Acciones del Gamepad
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

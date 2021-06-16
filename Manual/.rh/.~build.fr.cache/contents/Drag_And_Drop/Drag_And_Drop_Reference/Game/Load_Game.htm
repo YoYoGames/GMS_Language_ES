@@ -1,0 +1,40 @@
+
+  
+   Cargar el juego
+  Esta acción cargará una partida que haya sido previamente guardada mediante la acción Guardar partida. Usted da el nombre del archivo a cargar (como una cadena, e incluyendo la extensión) y el juego se cargará y continuará ejecutándose
+    desde el punto guardado. Tenga en cuenta que esto no está diseñado como un sistema universal de guardar/cargar, y tratar de cargar un juego guardado de una ejecución anterior del proyecto puede dar errores (especialmente si ha utilizado cosas como Estructuras de Datos o Partículas), y como tal sólo debe tratar de cargar los juegos que se han guardado en el progreso de un solo juego (para cosas como puntos de control). También ten en cuenta que el archivo no se cargará hasta el final del evento o script actual, por lo que cualquier acción después de la llamada a la acción de carga se seguirá realizando. Para una aproximación más completa a la carga de los datos de las partidas guardadas, ver las Acciones de Archivo.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Línea de tiempo
+        El recurso de la línea de tiempo para asignar a una instancia
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará una variable global y si es menor o igual a
+    0 cargará una partida previamente guardada.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones del juego
+        Siguiente: Reiniciar el juego
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

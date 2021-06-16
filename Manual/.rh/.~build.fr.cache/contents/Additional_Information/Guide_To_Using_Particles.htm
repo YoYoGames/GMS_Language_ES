@@ -1,0 +1,176 @@
+
+  
+  Guía de uso de las partículas
+  Esta guía es para aquellos que quieren entender cómo usar y crear partículas. Esta página cubrirá tanto las funcionesdel Lenguaje GameMaker como las acciones de
+   Arrastrar y soltar ™ acciones para las partículas, por lo que si usted nunca ha utilizado las partículas antes, esperamos que esta guía puede ayudarle a empezar, ya que son muy útiles y bastante
+    divertido de hacer.
+  Antes de seguir adelante, probablemente deberíamos explicar qué es una partícula en realidad... Básicamente, una partícula es un recurso gráfico que tiene ciertas propiedades definidas por un sistema de partículas. Estas propiedades no pueden ser manipuladas
+    directamente para las partículas individuales , pero se cambian colectivamente a través del código o las acciones que se utilizan para definir el sistema al que pertenece. Son muy útiles para crear efectos bonitos y llamativos - o sutiles y discretos
+    - en un juego sin la sobrecarga de la CPU que tiene el uso de instancias.
+  Hemos mencionado los sistemas de partículas, así que vamos a explicar qué es eso antes de continuar. Piensa en un sistema de partículas como un contenedor que usarás para mantener tus partículas listas para ser usadas. Puedes utilizar código o acciones para definir el aspecto visual de las
+    partículas, y luego se colocan en el "contenedor" (el sistema de partículas) para que puedas sacarlo y utilizarlo cuando y donde lo necesites después.
+  Antes de configurar un sistema y crear partículas, es importante saber algunas cosas... La primera es que la mayor parte del código de un sistema de partículas sólo se llama una vez en el juego, normalmente en algún tipo de objeto controlador en la primera
+    No es siempre el caso, pero para simplificar, vamos a utilizar este escenario para la siguiente guía breve, ya que es la forma más común de utilizar las partículas. Esto se hace porque un sistema de partículas, una vez creado, permanece
+    en la memoria y está listo para ser utilizado en cualquier momento, por lo que si se crea más de una vez puede aumentar rápidamente el uso de la memoria y causar lag grave, e incluso tiene el potencial de estrellar el juego. En aras de la simplicidad en esta guía, usted hará
+    un sistema de partículas global que puede ser utilizado por cualquier instancia en el juego en cualquier momento.
+   
+  Creación de un sistema de partículas
+  
+    Para empezar necesitas definir el sistema de partículas y darle un nombre para poder usarlo. Como este va a ser un sistema global que cualquier objeto puede usar, lo harás en un objeto controlador o en una función de inicialización que se ejecute al comienzo del juego.
+      del juego. El GML se vería así:
+    
+    global.P_System = part_system_create_layer("Instance_Layer", false);
+    Y usando DnD™:
+    Tenga en cuenta que el nombre de la capa suministrada debe ser una capa válida en la sala donde se utilizará el sistema,
+      de lo contrario, ninguna partícula será visible. También tenga en cuenta que ponemos la bandera "persistente" (tanto en el código como en DnD™) en falso. Un sistema de partículas persistente es uno que "persistirá" a través de las habitaciones sin la necesidad de destruir y volver a crear
+      para cada habitación. Sin embargo, para mantener las cosas simples para esta guía, no vamos a utilizar la persistencia.
+    Así que ese es el sistema creado, pero ¿qué pasa con las partículas? Tenemos que definirlas también o el sistema es inútil y no hace nada.
+     
+  
+  Definición de un tipo de partícula
+  
+    Para utilizar una partícula en un sistema hay que definir primero sus propiedades generales. Estas son como las propiedades de los objetos, pero sólo se aplican de forma general a las partículas individuales. Esto significa que si das a las partículas una velocidad de movimiento mínima
+      de 1 y una velocidad de movimiento máxima de 2, cualquier partícula creada por el sistema tendrá una velocidad aleatoria entre 1 y 2 píxeles por paso, y que en general tendrán una velocidad media de 1,5. Debes nombrar y añadir tu primera partícula al
+      usando el siguiente GML en el mismo objeto que usaste para crear el sistema:
+    
+    global.Particle1 = part_type_create();
+    Y para los que usan DnD™:
+    Tenga en cuenta que al usar DnD™también marcamos la opción de mezcla . Esto permite la mezcla aditiva para la partícula, que discutiremos un poco más abajo.
+    Ahora tienes un sistema y una partícula para poner en él, ¡pero aún no estás listo para crear tus efectos sobresalientes! Todavía tienes que definir las propiedades de la partícula, es decir, su aspecto - su velocidad, su rotación, su alfa, etc. Hay muchos
+      de detalles que se pueden utilizar para definir un efecto de partículas, por lo que a continuación se muestra una visión general de los ajustes más importantes y luego un fragmento de código y DnD™que utiliza todos ellos:
+    
+      forma: La forma de la partícula es el sprite incorporado que utilizará, siendo la constante por defecto pt_shape_pixel. También hay una función para añadir una partícula personalizada si es necesario. part_type_sprite() -
+        o la acción Set Particle Sprite.
+      tamaño: Establece los parámetros de tamaño para el tipo de partícula. Especifica el tamaño inicial mínimo, el tamaño inicial máximo y el aumento de tamaño en cada paso (utilice un número negativo para una disminución de tamaño). Este es un valor escalar que
+        modificará la escala x/y de la imagen base por igual.
+      color: Establece el color de la partícula si se utiliza un solo color. Si se suministran dos o tres colores, éste será la mezcla de colores, pasando de uno a otro a lo largo de su vida.
+      alfa: Establece el valor alfa de la partícula entre un valor de 0 y 1. Si se pasa un solo valor este será el alfa de la partícula, si se pasan dos o tres valores entonces el alfa se mezclará entre estos durante el
+        durante el tiempo de vida de la partícula.
+      Velocidad: Establece las propiedades de velocidad para el tipo de partícula. Se especifica una velocidad mínima y máxima y se elige un valor aleatorio entre los límites dados cuando se crea la partícula. Puedes indicar un aumento de velocidad en cada paso
+        e incluso utilizar un número negativo para reducir la velocidad de la partícula (la velocidad nunca será inferior a 0).
+      dirección: Establece las propiedades de dirección para el tipo de partícula. Nuevamente se especifica un rango de direcciones (en grados contrarios a las agujas del reloj - 0 indica un movimiento hacia la derecha, 90 indica un movimiento hacia arriba, etc...). Por ejemplo, para que
+        la partícula se mueva en una dirección aleatoria elegirías un mínimo de 0 y un máximo de 360 como valores. También puedes especificar un incremento en la dirección para cada paso (también puede ser negativo).
+      orientación: Establece las propiedades del ángulo de orientación para el tipo de partícula. Se especifica el ángulo mínimo, el ángulo máximo y el incremento en cada paso. También se puede indicar si el ángulo dado debe ser relativo a la dirección de
+        dirección de movimiento actual o absoluto, por ejemplo: estableciendo todos los valores a 0 pero relativo a verdadero, la orientación de la partícula seguirá con precisión la trayectoria de la partícula.
+      mezcla: Establece si se utiliza la mezcla aditiva o la mezcla normal para el tipo de partícula. Se establece en una función cuando se utiliza GML y como parte de la inicialización de las partículas cuando se utiliza DnD™. La mezcla aditiva
+        significa que las partículas utilizarán el modo de mezcla bm_add, dándoles un aspecto "brillante" donde se superponen, y también mezclándolas con cualquier cosa dibujada debajo (sprites, fondos, baldosas, etc...)
+        - muy útil para efectos de fuego y magia (por ejemplo), pero mejor dejarlo desactivado para algo como el humo. Experimenta para ver las diferencias. Tenga en cuenta que la activación de esto romperá el lote de texturas cuando se crean las partículas, y por lo tanto más lotes serán necesarios por paso para dibujarlas -.
+        por paso para dibujarlas - algo a tener en cuenta ya que puede afectar al rendimiento, especialmente en los móviles.
+      vida: Establece los límites de vida, en pasos (cuadros de juego) para el tipo de partícula. Al igual que los ajustes anteriores, esto tiene un valor mínimo y máximo y las partículas durarán un número aleatorio de pasos dentro de estos valores. Así, un tiempo de vida de 30
+        min y 30 max hará que la partícula exista durante exactamente 30 pasos, pero un tiempo de vida de 20 min y 60 max hará que cada partícula exista durante un número aleatorio de pasos entre 20 y 60.
+    
+    Ahora, antes de presentarle el código para definir la partícula, hablemospor un momento de "wiggle"... Lo creas o no, "wiggle" es una propiedad de la partícula y se puede establecer para muchos de los ajustes anteriores
+      individualmente. Cuando veas "wiggle" como argumento para una función o acción de la partícula, significa que si colocas un número entre 1 y 20 la partícula se "agitará" o fluctuará entre los valores mínimo y máximo de la propiedad,
+      siendo 1 un contoneo lento y 20 muy rápido. Así que una velocidad de partícula mínima de 2 y máxima de 5 con un meneo de 20 oscilará muy rápidamente entre las velocidades mínimas y máximas durante la vida de cada partícula creada.
+    NOTA: Hay otras propiedades menores de las partículas que no cubrimos aquí, sólo para mantener las cosas tan simples como sea posible para empezar. Consulta las páginas correspondientes para ver los detalles completos de las propiedades de las partículas.
+    Veamos ahora un código que define una partícula:
+    
+    /Esto define la forma de las partículas part_type_shape(global.Particle1,pt_shape_pixel);
+       /Esto es para el tamaño part_type_size(global.Particle1,1,1,0,2);
+       //Esto establece su color. Hay tres códigos diferentes para esto part_type_color1(global.Particle1,c_white);
+       /Esta es su alfa. Hay tres códigos diferentes para esto part_type_alpha1(global.Particle1,1);
+       //La velocidad de las partículas part_type_speed(global.Particle1,0.50,2,-0.10,0);
+       //La dirección part_type_direction(global.Particle1,0,359,0,20);
+       //Esto cambia la rotación de la partícula part_type_orientation(global.Particle1,0,0,0,0,true);
+       /Este es el modo de mezcla, ya sea aditivo o normal part_type_blend(global.Particle1,1);
+       //ésta es su vida útil en pasos part_type_life(global.Particle1,5,30);
+    
+    Para crear esta misma definición de partículas en DnD™necesitaríamos estas acciones:
+    ¡Eso es todo! Ya hemos definido nuestras partículas y están listas para ser utilizadas.
+     
+  
+  Creación de partículas directamente en el juego
+  
+    Hay un par de maneras de crear partículas, y cada una tiene sus pros y sus contras. Puedes usar emisores para hacer estallar o arrojar partículas, o puedes crear partículas directamente en un punto.
+      El uso de uno u otro depende de lo que se quiera conseguir y del efecto que se quiera crear, pero empezaremos con el más fácil de los dos, que es crear partículas directamente. En GML utilizaríamos la siguiente función:
+    
+    part_particles_create(global.P_System, x, y, global.Particle1, 10);
+    y en DnD™sería:
+    Ese único código/acción de arriba creará 10 partículas en las coordenadas x/y dadas de tipo "Particle1"
+      de nuestro sistema global. Muy sencillo. Lo bueno de esa línea de código/acción es que se puede utilizar en cualquier lugar sin ningún problema. Por ejemplo, si la colocas en el evento Global Left Pressed para el ratón en un objeto y cambias
+      x/y para la posición mouse_x/y, creará partículas en la posición del ratón cada vez que presiones el botón. O si usted tiene un cohete, entonces usted podría colocar esto en el evento de paso y tener partículas de humo que vienen cada paso (aunque 1 o
+      2 sería mejor que 10). Incluso puedes hacer que cree partículas sobre un área cambiando las coordenadas x/y aleatoriamente, por ejemplo:
+    
+    repeat(50) { var xx = x + 20 - random(40); var yy = y + 20 - random(40); part_particles_create(global.P_System, xx, yy, global.Particle1, 1); }
+    El código anterior creará 50 partículas en una posición aleatoria dentro de un área cuadrada de 40px
+      de 40px.
+    
+     
+  
+  Creación de partículas con emisores
+  
+    Ya que hemos explicado la forma fácil de crear partículas, ahora vamos a ir por el camino un poco más complejo, que es usar emisores . Los emisores son otra parte del sistema de partículas que tiene que ser definida antes de ser utilizada, por lo que vamos a
+      hacer un emisor global lo mismo que hicimos para el sistema y las partículas. También tenemos que decidir si tener un emisor estático (sin movimiento) o no y si vamos a reventar o a lanzar las partículas, así como
+      así como decidir sobre qué área y qué tipo de distribución vamos a tener el emisor utilizar.
+    ¿Qué significa todo esto? Bueno, un emisor estático es uno que puedes definir una vez y olvidarte de él, ya que no se moverá en ningún sitio mientras dure el juego, es decir, piensa en un tronco de fuego: no se mueve, sólo emite llamas y
+      por lo que es estático, pero una bola de fuego requeriría un emisor dinámico y se movería por la pantalla. En cuanto a la explosión o el flujo de partículas, una explosión es una explosión única de partículas, mientras que un flujo es precisamente eso, un flujo constante de partículas
+      a cada paso. Para el área y la distribución, con los emisores puedes definir un área para emitir partículas (que puede ser un rectángulo, una elipse, un diamante o una línea) así como la curva de distribución (gaussiana, gaussiana inversa o lineal).
+    Las siguientes imágenes ilustran los diferentes tipos de forma de área disponibles para los emisores:
+     
+     
+     
+     Y aquí se ilustran las curvas de distribución (lineal, gaussiana y gaussiana inversa):
+    
+    A continuación se muestra un ejemplo del código/acciones necesarias para definir dos emisores, que normalmente irían en el evento Create de un objeto controlador, justo después de definir el sistema de partículas. Uno de ellos será estático y emitirá partículas sobre el
+      área de toda la habitación, mientras que el otro será dinámico y seguirá al ratón y estallará cada 30 pasos desde una pequeña elipse:
+     
+    global.Particle1_Emitter1 = part_emitter_create(global.P_System); global.Particle1_Emitter2 = part_emitter_create(global.P_System);
+       //Configura el área que emitirá partículas part_emitter_region(global.P_System, global.Particle1_Emitter1, 0, room_width, 0, room_height, ps_shape_rectangle, ps_distr_linear); part_emitter_region(global.P_System, global.Particle1_Emitter2,
+      mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
+       //Configura el primero para que transmita 10 partículas en cada paso part_emitter_stream(global.P_System, global.Particle1_Emitter1, global.Particle1, 10);
+       /Ahora puede olvidarse ya que funcionará hasta que se le diga que se detenga... //Configura el evento alarm[0] para hacer estallar las partículas del emisor2... alarm[0] = 30;
+    Entonces, aquí estamos creando dos emisores de partículas que se asignan al sistema de partículas que creamos
+      al principio. Las funciones/acciones para crear estos emisores nos permiten definir un área en la sala sobre la que emitirán partículas, así como dar el tipo de partícula a emitir, y la forma y distribución a utilizar dentro del área definida. Las funciones/acciones de
+      devolverán un valor numérico, que es el valor del ID del emisor, y lo almacenamos en una variable para poder utilizar otras funciones de emisor para apuntar a esos emisores.
+    Ahora tenemos código/DnD™ para transmitir partículas (estas partículas se emitirán en cada paso del juego sin que tengamos que hacer nada más), pero también queremos añadir un EventoAlarm[0] para hacer estallar las partículas en determinados
+      intervalos:
+    
+    part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x - 10, mouse_x + 10, mouse_y - 10, mouse_y + 10, ps_shape_ellipse, ps_distr_gaussian); part_emitter_burst(global.P_System, global.Particle1_Emitter2, global.Particle1, 30); alarm[0] = 30;
+    Una ráfaga de partículas es simplemente una explosión puntual de partículas del emisor, en lugar de un flujo constante
+      flujo constante de ellas en cada paso del juego.
+    ¿Pero qué pasa si quieres que varios objetos emitan partículas? Un emisor global sólo puede estar en un lugar a la vez, por lo que tendrías que crear emisores locales en cada objeto. Estos emisores seguirán utilizando el sistema global de partículas y cualquier partícula
+      que estén dentro de él, pero pueden tener diferentes formas y tamaños y moverse con el objeto, lo que los hace ideales para cohetes o balas o cosas así. El código que debe utilizar es exactamente el mismo que el anterior, pero sin el prefijo "global" antes de los nombres de los emisores.
+      nombres de emisores.
+    Eso es la creación de partículas tratadas pero hay una cosa más que es muy importante... La limpieza cuando hayas terminado con ellas.
+     
+  
+  Limpieza
+  
+    Como se mencionó al principio, una vez creado, un sistema de partículas (y sus partículas, emisores, etc...) se almacenan en la memoria para su uso inmediato. Genial, pero ¿qué pasa cuando se reinicia el juego? ¿O si tu jugador muere y vuelve a iniciar la sala? Pues que si
+      no gestionas bien el juego tienes una fuga de memoria. Esto es cuando algo ha sido creado y utiliza la memoria, pero ha sido "desreferenciado", lo que significa que GameMaker ya no tiene acceso a él. Este tipo de cosas
+      lentamente la memoria y causar lag en su juego o incluso bloquear el ordenador causando su juego a la caída, y es un problema bastante común con los usuarios de primera vez de los sistemas de partículas.
+    Cómo se puede evitar esto? Bueno, GameMaker Studio 2 tiene GML y DnD™para borrar los sistemas de partículas y sus emisores y partículas de la memoria cuando no están en uso y con un poco de planificación al usar el siguiente código/acciones, puedes evitar fácilmente
+      este potencial problema.
+    Lo primero que tienes que hacer es decidir dónde vas a crear el sistema y cómo lo vas a utilizar. Podrías crear un sistema global en el Evento de Inicio de Juego de un objeto que esté en tu primera habitación (como un menú o una pantalla de título),
+      pero esto significa que si reinicias el juego usando la función game_restart() se recreará y causará una fuga de memoria. O bien
+      podría crear un sistema local en una instancia en cualquier sala, pero de nuevo, si deja la sala, el sistema será inaccesible y causará una fuga de memoria. Para evitar esto necesitarías tener algo como esto en el Evento de fin de juego      o en el Evento de limpieza de tu objeto:
+    part_type_destroy(global.Particle1); part_emitter_destroy(global.P_System, global.Particle1_Emitter); part_emitter_destroy(global.P_System, global.Particle2_Emitter); part_system_destroy(global.P_System);
+    
+    Esto eliminará las partículas definidas, los emisores, y luego el sistema de la memoria listo para que usted pueda reiniciar
+      el juego o cambiar de sala. Sólo recuerda que después de pensar dónde sería el lugar más adecuado para crear el sistema, ¡piensa también dónde sería el lugar más adecuado para destruir el sistema!
+     
+  
+   
+  Ahora ya sabes lo básico sobre las partículas, los sistemas de partículas y los emisores, así que ya puedes añadirlos a tu juego. Pero antes de salir corriendo a añadir efectos de partículas a todo, ten en cuenta que aunque las partículas consumen menos CPU que las instancias, no son
+    no son la solución a todo, ya que causarán lag si tienes miles de ellas a la vez. Lo mejor es experimentar y utilizarlas con cuidado para "dar cuerpo" visualmente a un juego y darle un poco más de vistosidad sin exagerar.
+    sin exagerar.
+   
+   
+  Título desplegable
+  
+    Escriba aquí su texto desplegable
+  
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: Guía para el uso de sombreadores
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

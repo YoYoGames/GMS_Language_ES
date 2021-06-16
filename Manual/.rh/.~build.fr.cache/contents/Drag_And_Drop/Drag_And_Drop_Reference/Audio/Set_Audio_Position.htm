@@ -1,0 +1,47 @@
+
+  
+   Establecer posición de audio
+  Con esta acción puedes establecer que un sonido se reproduzca a una hora determinada. Usted da el sonido a reproducir, y el tiempo para empezarlo, pero esta acción no reproducirá el sonido por usted, simplemente establecerá la posición de reproducción para el sonido. Para utilizar esta acción
+    debe establecer primero la posición y luego reproducir el sonido utilizando la acción Reproducir audio, de lo contrario no habrá ningún cambio en la posición hasta la próxima vez que reproduzca el mismo recurso sonoro (que comenzará en la
+    nueva posición). La posición se establece en segundos - se pueden utilizar valores decimales - y se puede obtener la longitud total del sonido utilizando la acción Get Audio Length, aunque si se proporciona un valor mayor que la longitud del
+    sonido deseado este será envuelto, así que si el sonido tiene una duración de 10 segundos y das 12 segundos como posición de inicio, el sonido comenzará a los 2 segundos.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sonido
+        El recurso de sonido para fijar la posición de reproducción de
+      
+      
+        Tiempo
+        El tiempo de ajuste (en segundos)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior obtiene la duración de la reproducción del recurso sonoro dado y la almacena
+    en una variable local temporal. A continuación, se utiliza para generar un valor aleatorio entre 0 y la longitud del sonido, que se almacena en una variable local temporal diferente. Este nuevo valor aleatorio se utiliza para establecer la posición de inicio del
+    y el sonido se reproduce.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de audio
+        Siguiente: Obtener la longitud del audio
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,309 @@
+
+  
+  Errores del corredor
+  Incluso después de la comprobación de la sintaxis en el editor de código y de que el compilador compruebe su código en busca de errores de compilación, todavía hay ocasiones en las que algo puede ir mal. En la mayoría de los casos esto arrojará un error de ejecución de la máquina virtual (VM ) (también llamado excepción detiempo de ejecución) que se parece a esto:
+  Los errores de ejecución son generalmente más graves que los errores de compilación, ya que significa que hay algo seriamente mal con
+    su código que ni el editor de código ni el compilador han sido capaces de detectar, y como tal debe prestar atención a todos esos errores. Cuando se produce uno, puede utilizar el botón Copiar de la ventana emergente para copiar el error en el portapapeles
+    que luego puede pegar en un archivo de texto (o donde sea) para futuras referencias.
+  La estructura de este error es la siguiente:
+  
+     Muestra el Evento en el que se ha producido el error, así como el Objeto (si procede).
+     Muestra el error real.  Por lo tanto, muestra el alcance del error
+      y el tipo de error que es. El primer valor entre los paréntesis será el ID de la instancia que estaba ejecutando el código - o podría ser uno de los valores especiales listados en la tabla de abajo - y el segundo es un valor interno que YoYo Games
+      utiliza para identificar errores y puede ser ignorado. En el caso de la imagen de arriba, está diciendo que la variable _image no ha sido establecida (es decir, no existe antes de ser accedida) en el objeto obj_EA_DEMO_Control.
+     Muestra el número de línea en la que se produce el error, así como un fragmento de
+      código que muestra la posición. Tenga en cuenta que esto no siempre es 100% preciso debido a la forma en que el juego se compila, pero debería ser suficiente para ayudarle a encontrar exactamente donde está el problema.
+  
+  Como se ha mencionado anteriormente, algunos mensajes de error no identificarán el ámbito por un valor de ID de instancia, sino por un valor negativo . Estos valores pueden utilizarse para determinar la naturaleza exacta del error y a qué se refiere con los siguientes valores
+    posible:
+   
+  
+    
+      
+        Prefijo
+        Alcance
+      
+      
+        -1
+        Auto
+      
+      
+        -2
+        Otros
+      
+      
+        -3
+        Todo
+      
+      
+        -4
+        Nadie
+      
+      
+        -5
+        Global
+      
+      
+        -6
+        No especificado
+      
+      
+        -7
+        Local
+      
+    
+  
+   
+  Los posibles errores del VM runner son los siguientes:
+   
+  
+    
+      
+        Error
+        Mensaje
+        Operación
+        Descripción
+      
+      
+        DoSet
+        Tipo de comparación inválido
+        Tipos de datos
+        Esto indica que el corredor ha intentado comparar dos tipos de datos incompatibles, como un número real con una cadena.
+      
+      
+        DoConv
+        Error de ejecución
+        Tipos de datos
+        Esto denota un error en la conversión de un tipo de datos en otro.
+      
+      
+        
+          
+        
+      
+      
+        DoAdd
+        Error de ejecución
+        Matemáticas
+        Algo ha fallado al utilizar la expresión de adición (+).
+      
+      
+        DoMul
+        Error de ejecución
+        Matemáticas
+        Algo ha fallado al utilizar la expresión de multiplicación (*).
+      
+      
+        DoSub
+        Error de ejecución
+        Matemáticas
+        Algo ha fallado al utilizar la expresión de la resta (-).
+      
+      
+        DoSub
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Matemáticas
+        Estás intentando restar el tipo de variables equivocado (por ejemplo, restar una cadena de un real).
+      
+      
+        DoDiv
+        Error de ejecución
+        Matemáticas
+        Algo ha fallado al utilizar la expresión de división (/ o div).
+      
+      
+        DoDiv
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Matemáticas
+        Estás intentando dividir el tipo de variables equivocado (por ejemplo, dividir una cadena por un real).
+      
+      
+        DoDiv
+        Dividir por cero
+        Matemáticas
+        Está intentando dividir por 0 (tenga en cuenta que esto sólo ocurrirá cuando se utilice la división de enteros, dividir un real (distinto de cero) por 0 dará como respuesta el infinito, dividir cero por cero dará como respuesta NaN). Puede comprobar estos valores con
+          (is_infinity) y (is_nan)
+      
+      
+        DoMod
+        Error de ejecución
+        Matemáticas
+        Algo ha fallado al utilizar la expresión modulo (mod).
+      
+      
+        DoMod
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Matemáticas
+        Estás intentando utilizar el módulo (mod) en un tipo de variables equivocado (por ejemplo mod una cadena por un real).
+      
+      
+        
+          
+        
+      
+      
+        DoAnd
+        Error de ejecución
+        Bitwise
+        Algo ha fallado al utilizar la expresión "and" a nivel de bits (&).
+      
+      
+        DoAnd
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Bitwise
+        Estás tratando de usar "y" a nivel de bits (&) en el tipo de variables equivocado (por ejemplo, tratando de "y" una cadena con un real).
+      
+      
+        DoOr
+        Error de ejecución
+        Bitwise
+        Algo ha fallado al utilizar la expresión "or" a nivel de bits (|).
+      
+      
+        DoOr
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Bitwise
+        Estás tratando de usar "o" (|) en el tipo de variables equivocado (por ejemplo, tratando de "o" una cadena con un real).
+      
+      
+        DoXor
+        Error de ejecución
+        Bitwise
+        Algo ha fallado al utilizar la expresión "xor" a nivel de bits (^).
+      
+      
+        DoXor
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Bitwise
+        Está intentando utilizar "xor" (^) en el tipo de variables equivocado (por ejemplo, intentando "xor" una cadena con un real).
+      
+      
+        DoShl
+        Error de ejecución
+        Bitwise
+        Algo ha salido mal al desplazar a la izquierda (<<) un valor.
+      
+      
+        DoShl
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Bitwise
+        Estás tratando de desplazar a la izquierda (<<) el tipo de variables equivocado (por ejemplo, tratando de desplazar a la izquierda una cadena).
+      
+      
+        DoShr
+        Error de ejecución
+        Bitwise
+        Algo ha ido mal al desplazar a la derecha (>>) un valor.
+      
+      
+        DoShr
+        Motor de ejecución - No se puede operar con un tipo de cadena
+        Bitwise
+        Está intentando desplazar a la derecha (>>) el tipo de variables equivocado (por ejemplo, intentando desplazar a la derecha una cadena).
+      
+      
+        
+          
+        
+      
+      
+        DoNeg
+        Error de ejecución
+        Negar
+        Estás intentando convertir un tipo de variable en negativo cuando este tipo no permite tal operación.
+      
+      
+        DoNot
+        Error de ejecución
+        Negar
+        Estás tratando de "no" un tipo de variable cuando este tipo no permite tal operación.
+      
+      
+        
+          
+        
+      
+      
+        Push
+        Error de ejecución - Índice de la variable fuera de rango (var)
+        Pila
+        La variable a la que se accede está fuera del rango establecido para el corredor.
+      
+      
+        Push
+        Variable Get (var)
+        Pila
+        La variable dada no ha sido definida o es desconocida.
+      
+      
+        Pop
+        Variable Índice fuera de rango (var)
+        Pila
+        La variable a la que se accede está fuera del rango establecido para el corredor.
+      
+      
+        Pop
+        Variable Get (var)
+        Pila
+        La variable dada no ha sido definida o es desconocida.
+      
+      
+        
+          
+        
+      
+      
+        With
+        No se puede utilizar global en la declaración con
+        Con
+        Has intentado utilizar "global" como variable dentro de una sentencia "with", es decir:
+          with (global)
+			   {
+			   //do something;
+			   }
+      
+      
+        With
+        No se puede utilizar local en la declaración con
+        Con
+        Has intentado utilizar "local" como variable dentro de una sentencia "with", es decir:
+          with (local)
+			   {
+			   //do something;
+			   }
+      
+      
+        
+          
+        
+      
+      
+        DoCall
+        Error de tipo de motor de ejecución
+        Motor
+        Se trata de un error indefinido dentro de la Máquina Virtual. Si esto ocurriera, debería presentar un informe de error (véase: el menú de ayuda para saber cómo hacerlo).
+      
+      
+        Stack Overflow
+        -
+        Motor
+        Un desbordamiento de la pila ocurre cuando se utiliza demasiada memoria en la pila de llamadas y cuando tu juego intenta utilizar más espacio del que está disponible en la pila de llamadas (es decir, cuando intenta acceder a la memoria más allá de los límites de la pila de llamadas, lo que es esencialmente
+          un desbordamiento del búfer), se dice que la pila se desborda, lo que resulta en una caída del programa. Reinicie su ordenador y GameMaker: Studio y si el error persiste, póngase en contacto con el servicio de asistencia técnica y/o presente un error (como se ha explicado anteriormente).
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Informe de errores
+        Siguiente: Errores de sintaxis
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+   Set Sprite
+  Este bloque de acción establece el sprite_index de la instancia a otro sprite del Navegador de Activos. Seleccionas el sprite al que quieres cambiar, y luego le das la imagen (cuadro de animación) a mostrar. Ten en cuenta que si no quieres que el sprite se anime después de
+    establecer el frame, necesitarás usar la acción Set Animation Speed y establecerla en 0, o si quieres que el sprite continúe animando entonces establece el valor para usar la variable incorporada image_index 
+    en su lugar.
+  Al cambiar el sprite también cambiará la máscara de colisión de la instancia, a menos que también hayas especificado un mask_index separado en el Editor de Objetos. Tenga en cuenta que para que los cambios en esta acción
+    sean visibles, la instancia debe no tener ningún evento de dibujo (y así GameMaker Studio 2 dibujará por defecto el sprite) o ser dibujado usando la acción Draw Self.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sprite
+        El nuevo sprite a utilizar (-1 si quieres eliminar el sprite).
+      
+      
+        Marco
+        El fotograma de la animación que se mostrará inicialmente (si no se utilizan fotogramas adicionales, se utilizará 0).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior establece un nuevo sprite, así como una serie de otras propiedades para la forma en que se mostrará ese sprite.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Establecer la rotación de la instancia
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

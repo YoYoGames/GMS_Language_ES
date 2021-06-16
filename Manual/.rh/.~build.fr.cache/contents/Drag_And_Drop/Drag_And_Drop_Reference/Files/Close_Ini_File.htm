@@ -1,0 +1,27 @@
+
+  
+   Cerrar archivo Ini
+  Esta acción cerrará el archivo Ini actualmente abierto. Esta acción debe llamarse en el momento en que se termine de leer o escribir en cualquier archivo Ini abierto (los archivos Ini se abren utilizando la acción Abrir Archivo Ini). Si no utiliza esta acción después de haber utilizado la acción Escribir en el archivo Ini, no se escribirá nada en el disco, ya que la información del archivo se mantiene en la memoria hasta que se llame a esta acción, momento en el que se saca de la memoria
+    y se escribe en el archivo en el disco. También tenga en cuenta que si intenta abrir un archivo Ini sin haber cerrado previamente otro (o el mismo) obtendrá un error.
+   
+  Sintaxis de la acción:
+  
+  Ejemplo:
+  El código del bloque de acción anterior abrirá un archivo ini para su uso, luego obtendrá el valor asociado con
+    la clave "nombre" bajo la cabecera "reproductor". Si el nombre devuelto coincide con el valor del nombre por defecto (es decir, el archivo, la sección o la clave no existen) entonces el archivo tiene una variable global escrita en él antes de ser cerrado (y escribir
+    los nuevos datos en el disco).
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Escribir en un archivo Ini
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

@@ -1,0 +1,55 @@
+
+  
+   Establecer el color de las partículas
+  Esta acción establecerá el color o los colores que se utilizarán cuando se cree el sprite y durante su vida útil. Primero se especifica el valor del ID del tipo de partícula (que debe ser el mismo que el valor devuelto cuando se creó la partícula utilizando la acción Crear tipo de partícula ) y luego se pueden establecer los colores a utilizar.
+  Puedes elegir tres colores para usar, y el sprite se mezclará entre ellos durante la vida de la partícula. Por ejemplo, si una partícula tiene colores rojo, verde y amarillo, y un tiempo de vida de 60 fotogramas, entonces cuando se crea (fotograma 0) será
+    rojo, luego se desvanecerá hacia el verde a la mitad de su vida (fotograma 30), antes de desvanecerse en amarillo al final de su vida (fotograma 60). Si utilizas un sprite personalizado en lugar de una forma de partícula, cualquier color que no sea blanco se mezclará
+    con el sprite utilizado.
+  NOTA: El componente alfa del color no se utiliza, sólo los componentes RGB del selector de color. Para establecer el alfa utilice la acción Establecer Alfa de Partículas.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El valor de identificación único para el tipo de partícula para establecer el color de
+      
+      
+        Inicie
+        El color inicial a utilizar
+      
+      
+        Medio
+        El color intermedio a utilizar
+      
+      
+        Finalizar
+        El color final a utilizar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer el alfa de las partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

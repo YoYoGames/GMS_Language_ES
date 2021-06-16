@@ -1,0 +1,205 @@
+
+  
+  Guía para el uso de tampones
+  Un buffer (en programación) es básicamente un espacio dentro de la memoria del sistema que se utiliza para almacenar pequeños paquetes de datos para casi cualquier cosa (por ejemplo: transferencia de datos, colisiones, datos de color, etc...). Como se mantiene en la memoria del sistema es muy rápido
+    de acceso, y un búfer se utiliza generalmente para el almacenamiento a muy corto plazo, como la recepción de la información de la red antes de procesarla, o para el almacenamiento de un punto de control en su juego (esto se explica en el ejemplo dado más abajo en la página).
+  Los buffers se crean asignando un espacio en la memoria del sistema, calculado en bytes
+   s, que se reserva para tu juego mientras éste se esté ejecutando o hasta que elimines el búfer usando la función apropiada (puedes encontrar todas las funciones de búfer GML listadas aquí).
+      Esto significa que incluso cuando tu juego no está enfocado (por ejemplo, en un dispositivo móvil cuando coges una llamada el juego se pondrá en segundo plano) el buffer seguirá existiendo, sin embargo si el juego se cierra o se reinicia el buffer se perderá.
+  NOTA: ¡Reiniciar el juego no borrará o eliminará el buffer! Pero impedirá cualquier acceso al búfer previamente creado, ya que el identificador se habrá perdido, causando una fuga de memoria que hará que el juego se bloquee.
+    Por lo tanto, al reiniciar un juego, recuerda borrar primero cualquier búfer.
+  GameMaker Studio 2 permite la creación de cuatro tipos de búferes diferentes. La razón de esto es que los búferes están diseñados para ser un medio de almacenamiento temporal altamente optimizado, y como tal debe crear un búfer que sea apropiado para el tipo de datos
+    que desea almacenar, de lo contrario podría obtener errores o causar un cuello de botella en su código. Antes de explicar esto, veamos los cuatro tipos de búferes disponibles (definidos como constantes en GML ) :
+   
+  
+    
+      
+        Constante
+        descripción
+      
+      
+        buffer_fixed
+         Un búfer de un tamaño fijo en bytes. El tamaño se establece cuando se crea el búfer y no se puede volver a cambiar.
+      
+      
+        buffer_grow
+         Un búfer que crecerá dinámicamente a medida que se añadan datos. Se crea con un tamaño inicial (que debe ser una aproximación al tamaño de los datos que se espera almacenar), y luego se expandirá para aceptar más datos que desborden
+          este tamaño inicial.
+      
+      
+        buffer_wrap
+         Un búfer donde se envolverán los datos. Cuando los datos que se añaden alcanzan el límite del tamaño del búfer, la sobreescritura se colocará de nuevo al principio del búfer, y la escritura posterior continuará desde ese punto.
+      
+      
+        buffer_fast
+         Se trata de un búfer especial "reducido" que es extremadamente rápido para leer/escribir. Sin embargo, sólo puede utilizarse con los tipos de datos buffer_u8, y debe estar alineado a 1 byte. (La información sobre los tipos de datos y la alineación de bytes se puede encontrar más adelante en esta página).
+      
+    
+  
+   
+  Estos son los tipos de búferes que tienes a tu disposición cuando utilizas GameMaker Studio 2, y el que elijas dependerá en gran medida del uso que quieras darle. Por ejemplo, un búfer de crecimiento se utilizaría para almacenar una "instantánea" de datos para crear una
+    por ejemplo, para almacenar una "instantánea" de datos para crear una partida guardada, ya que no se sabe la cantidad real de datos que se van a colocar en ella, o un búfer rápido se utilizaría cuando se sabe que los valores con los que se está trabajando están todos entre 0 y 255 o -128 y 127, por ejemplo, cuando se procesan datos ARGB de una imagen.
+    datos ARGB de una imagen.
+  Al crear un búfer, siempre hay que intentar crearlo con un tamaño adecuado al tipo, siendo la regla general
+    que debe crearse para acomodar el tamaño máximo de los datos que va a almacenar, y en caso de duda, utilizar un buffer de crecimiento para evitar errores de sobreescritura.
+  El código real para crear un buffer sería algo así:
+  player_buffer = buffer_create(16384, buffer_fixed, 2);
+   Eso crearía un buffer fijo de 16384 bytes y alineado a 2, con la función devolviendo un valor de identificación único que se almacena en una variable para la posterior referencia de este buffer.
+  Cuando se leen y escriben datos en un búfer, se hace en "trozos" de datos definidos por su "tipo de datos". El "tipo de datos" establece el número de bytes asignados dentro del buffer para el valor que se está escribiendo, y es esencial
+    que lo hagas correctamente, de lo contrario obtendrás resultados muy extraños (o incluso errores) en tu código.
+  Los búferes se escriben (y se leen) secuencialmente, es decir, se escribe un dato tras otro, y cada dato es de un tipo determinado. Esto significa que lo ideal es saber qué datos se están escribiendo en el búfer
+    en todo momento. Estos tipos de datos se definen en GML mediante las siguientes constantes:
+   
+  
+    
+      
+        Tipo de datos Constante
+        Bytes
+        Descripción
+      
+      
+        buffer_u8
+        1
+         Un entero de 8 bits sin signo. Es un valor positivo de 0 a 255.
+      
+      
+        buffer_s8
+        1
+         Un entero de 8 bits con signo. Puede ser un valor positivo o negativo de -128 a 127 (0 se considera positivo).
+      
+      
+        buffer_u16
+        2
+         Un entero de 16 bits sin signo. Es un valor positivo entre 0 y 65.535.
+      
+      
+        buffer_s16
+        2
+         Un entero de 16 bits con signo. Puede ser un valor positivo o negativo entre -32.768 y 32.767 (el 0 se considera positivo).
+      
+      
+        buffer_f16
+        2
+         Un número de punto flotante de 16 bits. Puede ser un valor positivo o negativo dentro del rango de +/- 65504. (¡No se admite actualmente!)
+      
+      
+        buffer_u32
+        4
+         Un entero de 32 bits sin signo. Es un valor positivo de 0 a 4.294.967.295.
+      
+      
+        buffer_s32
+        4
+         Un entero de 32 bits con signo. Puede ser un valor positivo o negativo entre -2.147.483.648 y 2.147.483.647 (el 0 se considera positivo).
+      
+      
+        buffer_f32
+        4
+         Un número de punto flotante de 32 bits. Puede ser un valor positivo o negativo dentro del rango de +/-16777216.
+      
+      
+        buffer_u64
+        8
+         Un valor entero sin signo de 64 bits.(¡Actualmente no es soportado por todas las funciones del buffer!)
+      
+      
+        buffer_f64
+        8
+         Un número de coma flotante de 64 bits.
+      
+      
+        buffer_bool
+        1
+         Un valor booleano. Sólo puede ser 1 o 0(verdadero o falso)
+      
+      
+        buffer_string
+        N/A
+         Esta es una cadena UTF-8 terminada en cero (0x00). Básicamente se vuelca una cadena de GameMaker en el buffer, y se pone un 0 al final.
+      
+    
+  
+   
+  Así que, digamos que has creado un buffer y quieres escribir información en él, entonces usarías algo como el siguiente código:
+  buffer_write(buff, buffer_bool, global.Sound); buffer_write(buff, buffer_bool, global.Music); buffer_write(buff, buffer_s16, obj_Player.x); buffer_write(buff, buffer_s16, obj_Player.y); buffer_write(buff, buffer_string, global.Player_Name);
+  Mirando el ejemplo anterior, puedes ver que puedes escribir diferentes tipos de datos en un buffer al mismo tiempo (sólo estás limitado a un tipo de datos específico cuando usas el tipo de buffer rápido ), y estos datos se añadirán al buffer secuencialmente
+    (aunque su posición real en el búfer dependerá de su alineación de bytes, que se explica más adelante). Lo mismo ocurre con la lectura de información del búfer, y en el caso del ejemplo anterior, se leería del búfer en el mismo orden
+    que escribió los datos, comprobando el mismo tipo de datos, por ejemplo
+  global.Sound = buffer_read(buff, buffer_bool); global.Music = buffer_read(buff, buffer_bool); obj_Player.x = buffer_read(buff, buffer_s16); obj_Player.y = buffer_read(buff, buffer_s16); global.Player_Name = buffer_read(buff, buffer_string);
+  Como puede ver, se lee la información en el mismo orden en que se lee en el buffer. Para más información sobre cómo añadir y eliminar datos del búfer, consulte los ejemplos que se dan a continuación.
+  Si has estado leyendo esta página habrás visto referencias a la alineación de bytes de un buffer. Esto se refiere básicamente a la posición en la que se almacenarán los nuevos datos dentro de un búfer determinado. ¿Cómo funciona esto? Bueno, para un búfer alineado con un solo
+    byte, cada dato se escribe en el búfer de forma secuencial, y cada nuevo dato se añade directamente después del anterior. Sin embargo, un buffer alineado de 2 bytes escribirá cada pieza de datos en intervalos de 2 bytes, de modo que incluso si
+    su escritura inicial es de 1 byte de datos, la siguiente escritura se moverá para alinearse a dos bytes:
+  Así que, si tu alineación de bytes está establecida en, digamos, 4 bytes y escribes un solo trozo de datos que tiene un tamaño de 1 byte
+    (un tell obtiene la posición actual de lectura/escritura del buffer), obtendrá un offset de 1 byte (el offset en este caso es el número de bytes desde el inicio del buffer hasta la posición actual de lectura/escritura).
+    la posición actual de lectura/escritura).
+  Sin embargo, si escribes otro trozo de datos, también de 1 byte, y luego haces un buffer tell, obtendrás un offset de 5 bytes (aunque sólo hayas escrito 2 bytes de datos) ya que la alineación ha rellenado los datos para alinearlos con los 4 bytes
+    alineación del buffer.
+  Básicamente, lo que esto significa es que la alineación sólo afectará a dónde se escriben las cosas, así que si haces un buffer tell después de escribir algo, devolverá la posición de escritura actual que sigue inmediatamente a los datos que has escrito previamente
+    previamente. Sin embargo, ten en cuenta que si escribes otro dato, internamente el buffer moverá la posición de escritura al siguiente múltiplo del tamaño de alineación antes de escribir el dato.
+  A continuación tenemos un par de ejemplos de cómo utilizar los buffers en un proyecto:
+   
+  Punto de control del búfer
+  
+    Un ejemplo sencillo de cómo se puede utilizar un buffer en cualquier juego de GameMaker Studio 2 para cualquier plataforma, es la función game_save_buffer().
+      Esta función tomará una "instantánea" del estado actual del juego y la guardará en un búfer predefinido, del que luego se podrá leer para cargar el juego en ese punto de nuevo.
+    NOTA: Esta función es muy limitada y está diseñada para que el principiante pueda poner en marcha un sistema de puntos de control rápidamente, pero los usuarios más avanzados pueden preferir codificar su propio sistema utilizando las funciones de Archivo, debido a que
+      el juego no guardará ninguno de los recursos dinámicos que puedes crear en tiempo de ejecución como estructuras de datos, superficies, sprites añadidos, etc...
+    Lo primero que tenemos que hacer es crear un nuevo objeto para controlar el guardado y la carga, por lo que crearías uno y le darías un evento Create. En este evento, podrías colocar el siguiente código:
+    SaveBuffer = buffer_create(1024, buffer_grow, 1); StateSaved = false;
+    La primera línea crea un buffer de crecimiento (ya que no sabemos el tamaño final de los datos guardados) de 1024 bytes y alineado a 1 byte. A continuación se crea una variable para comprobar si el juego se ha guardado o no (se utilizará para la carga).
+    A continuación añadiríamos un Keypress Event (por ejemplo) en el que guardaremos el estado actual del juego en el buffer creado:
+    StateSaved = true; buffer_seek(SaveBuffer, buffer_seek_start, 0); game_save_buffer(SaveBuffer);
+    
+    Lo anterior establecerá primero la variable de control a true (para que esto se guarde cuando guardemos el juego en el buffer) y luego buscará el inicio del buffer antes de escribir el estado de guardado actual en él. ¿Por qué usamos
+      buffer_seek()? Bueno, como ya se ha mencionado en esta página, se lee y se escribe en un buffer desde la última posición en la que se añadieron datos a él. Esto significa que
+      que si no se devuelve el tell del buffer al principio, cuando se guarda se añadirán los datos en el buffer en la posición actual de lectura/escritura del buffer. Por lo tanto, usamos la función buffer_seek() para mover el tell
+      al inicio del buffer.
+    Ahora hemos guardado el estado actual del juego en un buffer. El siguiente paso sería codificar cómo cargarlo, probablemente en otro Keypress Event:
+    if StateSaved { buffer_seek(SaveBuffer, buffer_seek_start, 0); game_load_buffer(SaveBuffer); }
+    El juego se cargará entonces al final del evento en el que coloques el código anterior.
+    NOTA: ¡Esto es sólo para usar en la misma sala, y no para generar partidas guardadas completas para después de que tu juego haya sido cerrado o reiniciado!
+    Lo último que hay que añadir al objeto controlador es algo de código de "limpieza". Los búferes se almacenan en la memoria y, como tal, si no se limpian cuando se termina con ellos, se pueden obtener fugas de memoria que eventualmente retrasarán y bloquearán el juego.
+      Así que probablemente añadirías un evento de finalización de sala (de la categoría de otros eventos) con:
+    buffer_delete(SaveBuffer);
+    Este objeto puede colocarse ahora en una sala y, al pulsar una tecla, guardar y cargar el estado de la sala desde un búfer.
+     
+  
+  Buffer de red
+  
+    Cuando se trabaja con las funciones de red de GameMaker Studio 2, hay que utilizar búferes para crear el paquete de datos que se envía a través de la conexión de red. Este ejemplo
+      pretende mostrar cómo se hace esto, pero debido al alcance de las posibilidades de red, sólo está diseñado para mostrar cómo utilizar los búferes en sí, y no el sistema de red completo.
+    Lo primero que mostraremos es la creación y uso de un buffer para el lado cliente de la conexión de red. Este buffer se utilizará para crear pequeños paquetes de datos que luego podrán ser enviados al servidor, por lo que en el evento Create de una
+      instancia asignaríamos un buffer así:
+    send_buff = buffer_create(256, buffer_grow, 1);
+    Hacemos que el búfer sea pequeño (256 bytes) -ya que no está pensado para contener grandes cantidades de datos-, luego lo convertimos en un búfer de crecimiento para asegurar que no haya errores en caso de que necesitemos añadir más datos para enviar en cualquier momento, y la alineación se establece en uno para mayor comodidad.
+    Ahora, digamos que queremos que nuestro cliente envíe datos al servidor. Para ello necesitamos crear un "paquete" de buffer, y en este ejemplo vamos a enviar un evento de pulsación de tecla , como cuando el jugador pulsa la flecha izquierda para 
+      moverse por el juego. Para hacer esto, primero escribimos los datos necesarios en el buffer y luego los enviamos:
+    buffer_seek(buff, buffer_seek_start, 0); buffer_write(buff, buffer_u8, 1); buffer_write(buff, buffer_s16, vk_left); buffer_write(buff, buffer_bool, true); network_send_packet(client, buff, buffer_tell(buff));
+    Antes de escribir en el buffer hemos puesto el "tell" al inicio del buffer ya que el networking siempre toma los datos del inicio de un buffer. A continuación, escribimos el valor de comprobación (que será utilizado por el servidor para determinar el tipo de evento
+      que se va a procesar), luego la tecla que se está utilizando, y luego el estado de la tecla (en este caso true para pulsada). Este búfer es enviado como un paquete de datos por la función de red. Tenga en cuenta que no enviamos todo el búfer. Sólo enviamos los datos escritos,
+      usando la función buffer_tell para devolver la posición actual de lectura/escritura del buffer (recuerda que al escribir en el buffer se mueve el "tell" al final de lo que se ha escrito). Esto es simplemente para evitar enviar más bytes de los necesarios.
+    ¿Qué pasa con la recepción de los datos en el servidor? El paquete de datos recibido debe ser escrito en el buffer en el servidor y luego utilizado para actualizar el juego. Para ello utilizaríamos el evento asíncrono de red en el objeto controlador de red del servidor, como muestra este código simplificado de abajo:
+    var buff = ds_map_find_value(async_load, "buffer"); if cmd == buffer_read(buff, buffer_u8); { key = buffer_read(buff, buffer_s16); key_state = buffer_read(buff, buffer_bool); }
+    El evento asíncrono contendrá un mapa DS temporal especial async_load (se elimina de la memoria al final del evento automáticamente) que contiene diferente información dependiendo del tipo de datos entrantes desde
+      la red. En este caso, asumimos que el mapa ha sido comprobado y que se trata de un paquete de datos en buffer enviado desde un cliente. Ahora comprobamos el primer dato que hay en el buffer para ver qué tipo de evento se ha enviado - en este caso el
+      valor "1" representa un evento de tecla, sin embargo cuando se codifican estas cosas se deben definir constantes para mantener estos valores para simplificar las cosas - y luego almacenar la tecla que se presiona y su estado (true = presionado,
+      false = liberada). Esta información se utilizaría entonces para actualizar todos los clientes con el nuevo estado del jugador cliente emisor.
+    NOTA: El buffer que se crea a partir del mapa DS se elimina automáticamente al final del Evento Asíncrono de Red, por lo que no es necesario usar buffer_delete() aquí.
+     
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: Operadores Bitwise
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

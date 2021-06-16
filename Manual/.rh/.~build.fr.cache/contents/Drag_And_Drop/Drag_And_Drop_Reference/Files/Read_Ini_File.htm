@@ -1,0 +1,65 @@
+
+  
+   Leer archivo Ini
+  Con esta acción puedes leer un dato de un archivo Ini. Previamente debe haber abierto el archivo Ini para su lectura/escritura mediante la acción Abrir archivo Ini, y luego con esta acción se da el tipo de dato a leer
+    (ya sea un número real o una cadena encerrada en ""), así como la cabecera de la sección y la clave dentro de esa sección de la que obtener los datos. También puede proporcionar un valor por defecto que puede ser un número real o una cadena, y el tipo debe
+    coincidir con el "Tipo" establecido en la acción. Esta acción por defecto será devuelta por la acción en caso de que ocurra alguna de las siguientes situaciones:
+  
+    El archivo Ini que ha abierto no existe
+    La cabecera de la sección a la que hace referencia no existe
+    La clave de la que intenta obtener datos no existe
+  
+  En cualquiera de las circunstancias anteriores, se devolverá el valor por defecto en lugar de un valor del archivo Ini. Cualquiera que sea el valor devuelto se almacenará en la variable de destino que usted especifique, que también puede ser creada en ese momento si se marca
+    como variable local temporal.
+  IMPORTANTE: intentar leer los datos de un archivo Ini que no ha sido abierto previamente usando la acción de Abrir Archivo Ini causará un grave error y hará que el juego se bloquee.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El tipo de datos a leer, ya sea una cadena (entre comillas ""), o un númeroreal
+      
+      
+        Sección
+        La sección del archivo Ini que se va a leer (como una cadena)
+      
+      
+        Clave
+        La clave dentro de la sección para leer (como una cadena)
+      
+      
+        Por defecto
+        El valor por defecto que se devuelve si el archivo, la sección o la clave no existen
+      
+      
+        Objetivo
+        La variable de destino para mantener el valor de retorno de la acción
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior abrirá un archivo Ini para su lectura y luego utilizará los datos leídos para establecer
+    3 variables globales diferentes antes de cerrar el archivo de nuevo.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Si el archivo existe
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

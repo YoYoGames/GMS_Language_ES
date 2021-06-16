@@ -1,0 +1,37 @@
+
+  
+   Ocultar el teclado virtual
+  Esta acción se puede utilizar para ocultar el teclado virtual en el dispositivo que ejecuta el juego. Al llamar a esta acción se generará un evento asíncrono del sistema, en el que el mapa async_load    DS se rellenará con los siguientes pares clave/valor:
+  
+    " tipo_evento" - será "estado del teclado virtual" cuando sea activado por acciones del teclado virtual.
+    "screen_height" - la altura del teclado virtual (en píxeles). Será 0 si el teclado es invisible.
+    "keyboard_status" - el estado actual del teclado, devuelto como una de las siguientes cadenas:
+      
+        "oculto"
+        "oculto"
+        "mostrando"
+        "visible"
+      
+    
+  
+   
+  Sintaxis de la acción:
+  
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una acción de bajar el ratón, y si se detecta una, entonces se realiza una comprobación para ver si se muestra el teclado virtual del sistema operativo.
+    Si se detecta uno, se comprueba si el teclado virtual del sistema operativo se muestra. Si no lo está, entonces se ajusta para mostrarlo - usando un tipo de teclado numérico - y si ya se está mostrando, entonces se oculta.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones con el ratón y el teclado
+        Siguiente: Obtener la altura del teclado virtual
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

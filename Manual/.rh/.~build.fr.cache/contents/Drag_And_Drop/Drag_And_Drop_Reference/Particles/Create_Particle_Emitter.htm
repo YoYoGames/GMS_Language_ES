@@ -1,0 +1,50 @@
+
+  
+   Crear emisor de partículas
+  Para poder ver tus partículas necesitas haber creado primero un Sistema de Partículas, luego haber definido algunos tipos de partículas y finalmente haber creado un emisor de partículas usando esta acción. Para crear el emisor, se llama a esta acción y se asigna el emisor a un sistema de partículas que se ha creado previamente (ver Sistema de partículas) y luego se le da una variable de destino para almacenar su
+    valor de identificación único para su uso en acciones posteriores. Puedes elegir marcar esta variable como una variable local temporal, pero eso significará que se descartará al final del script de la acción o del evento, lo que significa que el emisor seguirá existiendo pero te dejará
+    pero sin ningún medio para acceder a él, por lo que hay que tener cuidado al utilizarlo (en general, los emisores nunca necesitarán ser almacenados en una variable local temporal, pero para ciertas cosas, como dibujar partículas en una superficie, puede ser necesario).
+  IMPORTANTE! Si su sistema de partículas es persistente, entonces debe destruir todos los emisores al final de cada sala usando Destruir Emisor de Partículas y volver a crearlos en la siguiente sala según sea necesario,
+    o almacenar sus valores de ID en variables globales para que se pueda acceder a ellos en cualquier momento en cualquier sala, o tenerlos creados por un objeto persistente, para que el objeto persista y pueda acceder a ellos a través de variables de instancia. También tenga en cuenta que
+    si llamas a la acción de Reiniciar el Juego debes destruir el sistema de partículas de antemano para que el sistema y los emisores asignados sean eliminados de la memoria antes de comenzar de nuevo. Si no se eliminan correctamente los emisores
+    de la memoria del sistema como se ha indicado anteriormente dará lugar a una fuga de memoria. Esto sucede cuando un recurso se añade a la memoria y luego "desreferenciado", lo que significa que GameMaker Studio 2 no tiene manera de interactuar con ese recurso más. Esto hace que
+    a la memoria que se obstruye por los recursos inaccesibles que a su vez puede causar problemas con su juego.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El valor del ID del emisor global a crear
+      
+      
+        Objetivo
+        La variable de destino para mantener el ID del emisor
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un emisor de partículas, establecerá su región
+    y luego lo pondrá a emitir un flujo de partículas.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Destruir el emisor de partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

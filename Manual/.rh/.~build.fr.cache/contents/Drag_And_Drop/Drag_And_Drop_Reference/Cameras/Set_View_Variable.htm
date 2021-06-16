@@ -1,0 +1,93 @@
+
+  
+   Establecer la vista de la variable
+  Esta acción le permite establecer ciertas variables incorporadas relacionadas con la forma en que el puerto de vista mostrará las vistas de la cámara de la habitación. Seleccione la variable del puerto de vista que desea editar, luego indique el puerto de vista al que se dirige (de 0 a 7) y finalmente el nuevo valor
+    para la variable. El puerto de vista es el área de la pantalla que se utilizará para dibujar una vista de cámara determinada (tal y como se ha configurado en el editor de la sala), y las diferentes variables que se pueden establecer de esta manera se describen en la siguiente tabla:
+  
+    
+      
+        Variable
+        Descripción
+      
+      
+        Camera
+        Esto es para configurar la ventana gráfica para mostrar una vista de cámara diferente. Necesita suministrar el valor de ID único de la cámara a la que desea cambiar (vea aquí para
+          más información).
+      
+      
+        Visibility
+        Este es el conmutador de visibilidad para el puerto de vista y espera un valor de true o false donde al establecerlo como true hará que el puerto de vista sea visible (es decir, dibujará en la pantalla), y un valor de false no dibujará
+          nada en la pantalla.
+      
+      
+        View Port X Coordinate
+        Esta es la posición X del puerto de vista dentro de la ventana del juego. Tenga en cuenta que sólo es necesario cuando hay más de un puerto de vista activo - por ejemplo, para crear un efecto de pantalla dividida - y si se utiliza cuando sólo un puerto está activo se obtienen
+          resultados inesperados.
+      
+      
+        View Port Y Coordinate
+        Esta es la posición Y del puerto de vista dentro de la ventana del juego. Tenga en cuenta que sólo es necesario cuando hay más de un puerto de vista activo - por ejemplo, para crear un efecto de pantalla dividida - y si se utiliza cuando sólo un puerto está activo se obtienen
+          resultados inesperados.
+      
+      
+        View Port Width
+        Esta es la anchura (en píxeles) del puerto de vista. La anchura del puerto de vista (o los puertos de vista combinados si hay más de uno activo) definen la anchura de la ventana del juego o del lienzo de fondo al comienzo del juego, por lo que cambiar este valor después de que el
+          juego no tendrá ningún efecto visible en el tamaño de la ventana del juego a menos que se llame junto con la función GML window_set_size().
+          También tenga en cuenta que si tiene un tamaño de puerto mayor o menor que el asignado a la cámara, entonces la vista de la cámara se reducirá - o aumentará - para ajustarse.
+      
+      
+        View Port Height
+        Esta es la altura (en píxeles) del puerto de vista. La altura del puerto de vista (o los puertos de vista combinados si hay más de uno activo) definen la altura de la ventana de juego o del lienzo de fondo al comienzo del juego, por lo que cambiar este valor después de que
+          el juego ha comenzado no tendrá ningún efecto visible en el tamaño de la ventana del juego a menos que se llame junto con la función GML window_set_size().
+          También tenga en cuenta que si tiene un tamaño de puerto mayor o menor que el asignado a la vista de la cámara, entonces la vista de la cámara se reducirá - o aumentará - para ajustarse.
+      
+      
+        View Port Surface ID
+        Con esta variable puedes establecer que el contenido de un puerto de vista dado se dibuje en una superficie, siendo el valor que suministres el de la superficie a utilizar para dibujar el puerto de vista. Para más información, consulte aquí.
+      
+    
+  
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Variable
+        La variable de vista incorporada para establecer
+      
+      
+        Ver
+        El puerto de vista al que hay que dirigirse (de 0 a 7)
+      
+      
+        Valor
+        El nuevo valor de la variable incorporada
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si se ha pulsado una tecla y si se detecta una
+    hará visible el puerto de la vista [0], de lo contrario lo hará invisible.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de la cámara
+        Siguiente: Obtención de la Variable de Vista
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

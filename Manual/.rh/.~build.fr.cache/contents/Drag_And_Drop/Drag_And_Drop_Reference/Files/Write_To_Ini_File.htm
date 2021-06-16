@@ -1,0 +1,57 @@
+
+  
+   Escribir en un archivo Ini
+  Con esta acción puede escribir un valor numérico o una cadena en un archivo Ini. Previamente debe haber abierto el archivo Ini para su lectura/escritura mediante la acción Abrir archivo Ini, y luego con esta acción se da el tipo de
+    datos a escribir (ya sea un número real o una cadena encerrada en ""), así como la cabecera de la sección, la clave dentro de esa sección y el valor de la clave. Para ayudar a visualizar la estructura de un archivo Ini, vea esta imagen:
+  Como puede ver, los archivos Ini se dividen en secciones - donde cada sección tiene su propio nombre de cabecera - y
+    luego cada sección se divide en varios pares clave/valor (como una estructura de datos de mapa). Tenga en cuenta que puede crear archivos Ini usted mismo utilizando cualquier software de procesamiento de texto (como el Bloc de notas en
+   Windows) y luego incluirlos como un Archivo Incluido para leer y escribir en su juego.
+  IMPORTANTE! Tratar de leer datos de un archivo Ini que no ha sido abierto previamente usando la acción de Abrir Archivo Ini causará un error grave y hará que su juego se bloquee.
+  IMPORTANTE! Esto sólo escribe los datos en la memoria y para escribir finalmente los datos en el archivo en el disco, debe llamar a Cerrar Archivo Ini, de lo contrario los datos no se guardarán.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El tipo de datos a escribir, ya sea una cadena (entre comillas ""), o un númeroreal
+      
+      
+        Sección
+        La sección del archivo Ini en la que se va a escribir (como cadena)
+      
+      
+        Clave
+        La clave dentro de la sección para escribir (como una cadena)
+      
+      
+        Valor
+        El valor a escribir, ya sea una cadena o un número real basado en el argumento "tipo" (arriba)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior abrirá un ini y luego escribirá datos en tres claves diferentes bajo
+    la misma cabecera de sección (una cadena y dos números reales) antes de cerrar el archivo ini de nuevo (escribiendo así los datos en el disco).
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de archivo
+        Siguiente: Leer archivo Ini
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

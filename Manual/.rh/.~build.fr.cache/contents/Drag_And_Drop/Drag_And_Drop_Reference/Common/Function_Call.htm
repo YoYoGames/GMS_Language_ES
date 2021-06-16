@@ -1,0 +1,54 @@
+
+  
+   Llamada de función
+  Esta acción puede utilizarse para llamar a cualquier funciónGML o a cualquier función definida por el usuario. Se indica la función que se va a llamar y, a continuación, se proporcionan los argumentos adicionales
+    adicionales que requiera, es decir, cualquier valor (cadenas, enteros, índices de recursos, etc...) que desee introducir en la función para que pueda utilizarlos. Puede añadir argumentos adicionales haciendo clic en el icono del signo más  junto a
+    de la acción, y debe asegurarse de que su número de argumentos coincide con el de la función que se está utilizando (es decir, si la función requiere 3 argumentos, debe proporcionar 3 argumentos). Algunas funciones también pueden devolver un valor para su uso posterior en el bloque de acciones
+    por lo que también puede especificar la variable de destino que debe almacenar este valor de retorno, que puede haber sido creada previamente o puede ser una nueva local temporal (si marca la casilla "Temp"). Tanto el campo de destino
+    y el argumento pueden dejarse en blanco si no son necesarios.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Función
+        La función GML a llamar.
+      
+      
+        Argumento0 ... ArgumentoX
+        Los diferentes argumentos (valores) que se van a pasar a la función.
+      
+      
+        Objetivo
+        El nombre de la variable a la que se dirigen los valores devueltos (puede dejarse en blanco).
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si existe una instancia de "obj_Player"
+    y si existe, llama a la función punto_distancia() , pasando la posición x e y de la instancia actual,
+    así como la posición x e y de "obj_player". Devolverá la distancia entre los dos puntos a la variable de instancia (previamente creada) dist, o pondrá la variable a 0 si no hay ninguna instancia de
+    "obj_Player" en la sala.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Aplicar a...
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

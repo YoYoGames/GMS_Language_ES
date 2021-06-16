@@ -1,0 +1,179 @@
+
+  
+  Buenas prácticas de programación
+  En esta página vamos a cubrir algunas "mejores prácticas" a la hora de programar tu juego, y al mismo tiempo explicaremos un poco el funcionamiento interno de GameMaker Studio 2. Antes de continuar, sin embargo, vale la pena señalar dos puntos muy importantes
+    muy importantes:
+  
+    Esta es una guía, y no el método definitivo y 100% perfecto para escribir tu juego. Las cosas que se mencionan aquí están más bien en la escala de organización y micro-optimización y deben ser incorporadas a sus hábitos de programación
+      cuando te sientas cómodo con GML y creas que son apropiadas.
+    Si tu juego funciona bien y estás contento con las cosas tal y como están, no te apresures a cambiarlo todo sólo para exprimir unos pocos FPS extra. Tienes que encontrar un equilibrio entre un código legible, flexible y modular con el tiempo y la energía
+      necesario para cambiar las cosas, así como la ganancia general al final. Básicamente, si no está roto, no lo arregles y guarda lo que aprendas aquí para tu próximo proyecto.
+  
+  Dicho esto, pasemos a ver algunos consejos generales para escribir un buen código GML que puedes aplicar en cualquier momento...
+  
+  Estilo de programación
+  
+    Cuando se trata de escribir código, todo el mundo tiene un estilo. El estilo con el que programas es la forma en que colocas tus paréntesis, cómo sangras las líneas, y cómo declaras y nombras las variables, etc., y es esencial para que tu código sea claro y legible
+      para otras personas (y para tu futuro yo, cuando tengas que volver a este proyecto después de un tiempo en otra cosa).
+    Hay muchos, muchos estilos de programación, y algunos argumentarían que el suyo es el mejor para usar, pero la verdad es que casi cualquier estilo está bien siempre y cuando se sea consistente al
+      siempre que se sea coherente al utilizarlo y sea claro y obvio lo que es y lo que hace cada cosa.
+    La imagen anterior es un ejemplo de declaración de función en un script para ilustrar los puntos anteriores. Usted
+      puede ver que utiliza los comentarios de estilo JSDoc para explicar claramente lo que hace todo, y el estilo de codificación es consistente, con sangrías de 4 espacios, guiones bajos utilizados para vars locales, salida registrada, etc...
+    Tenga en cuenta también que, aunque el editor de scripts le permite doblar el código en cada uno de los corchetes de apertura/cierre, puede utilizar las etiquetas #region y #endregion para seccionar partes de su código y mejorar enormemente
+      legibilidad, especialmente cuando se trata de scripts más grandes que contienen múltiples funciones. Las regiones también pueden ser comentadas - vea la sección de Edición de esta página en el manual):
+    Al escribir el código, debe tener en cuenta que al compilar el juego final, GameMaker Studio 2 elimina los comentarios, elimina los saltos de línea innecesarios, sustituye los valores constantes/macro/enuméricos y, en general, comprime el código.
+      comentarios, elimina los saltos de línea y los espacios en blanco innecesarios, sustituye los valores constantes/macro/enuméricos y, en general, comprime el código como parte del proceso. Esto significa que puede añadir tantos espacios en blanco alrededor de su código como sea necesario y
+      no tiene que preocuparse por mantener sus comentarios cortos o por usarlos con moderación.
+     
+  
+  Uso de variables locales
+  
+    Continuando con el punto anterior sobre el estilo de programación, una cosa que hacen muchos principiantes es meter todo lo posible en una línea de código. Por ejemplo:
+    draw_sprite(sprite_index, image_index, x + lengthdir_x(100, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(100, point_direction(x, y, mouse_x, mouse_y));
+    Si bien no es completamente ilegible, es ineficiente (la función point_direction() se llama dos veces, por ejemplo) y es desordenada e incómoda de ver. Estaría mucho mejor expresado como:
+    var p_dir = point_direction(x, y, mouse_x, mouse_y); var local_x = x + lengthdir_x(100, p_dir); var local_y = y + lengthdir_y(100, p_dir); draw_sprite(sprite_index, image_index, local_x, local_y);
+    La memoria y los recursos necesarios para crear esas variables locales son insignificantes, y se compensan con creces por el beneficio instantáneo que usted (o cualquier otra persona que lea el código más tarde) obtiene de su claridad. La misma idea debería aplicarse también a las funciones, donde
+      deberías asignar nombres sensatos a las variables de entrada, y utilizar un formato claro y variables locales cuando sea necesario para hacerlo lo más legible posible.
+    Las variables locales son rápidas de procesar en el juego, así que aprovéchalas al máximo, y si una expresión aparece en un bloque de código o script dos o más veces, piensa en crear una variable local para ella. Cuando utilices los objetivos del CompiladorYoYo (YYC), si haces referencia a global o a variables de instancia varias veces en una función o bloque de código, es especialmente beneficioso asignarlas a una variable local al principio de tu código
+      y luego hacer referencia a esa variable local, ya que esto dará un rendimiento mucho mejor.
+     
+  
+  Arrays
+  
+    Las matrices son rápidas de usar y requieren menos memoria que las estructuras de datos, pero pueden optimizarse aún más. Cuando creas un array, la memoria se asigna en función de su tamaño, por lo que debes
+      debe intentar inicializar un array a su tamaño máximo primero, incluso si no planea llenarlo hasta más tarde. Por ejemplo, si sabes que necesitas que un array contenga un máximo de 100 valores, deberías inicializarlo a 100 espacios directamente,
+      utilizando la función array_create() función:
+    array = array_create(100, 0);
+    Esto asigna la memoria para ello en un "trozo" con todos los valores de la matriz que se establecen en el valor predeterminado de 0 y ayuda a mantener las cosas rápidas, ya que de lo contrario cada vez que se agrega un nuevo valor a la matriz toda la memoria tiene que ser reasignada de nuevo.
+    NOTA: ¡En el objetivo HTML5 la asignación de arrays así no se aplica y tus arrays deben ser inicializados desde 0 para este objetivo! Puedes manejar esto fácilmente comprobando la variable os_browser, por ejemplo:
+    si (os_browser == browser_not_a_browser)
+    {
+    array_create(100, 0);
+    }
+else
+    {
+    for (var i = 0; i < 100; ++i;)
+        {
+        array[i] = 0;
+        }
+    }
+    También puedes liberar la memoria asociada a un array estableciendo la variable utilizada como 0. Así, para borrar el array del ejemplo de código anterior, simplemente usarías
+    array = 0;
+    También hay que tener en cuenta que los arrays se pasan por referencia, pero se copiará todo cuando se haga un cambio (este comportamiento se llama copy on write). Por lo tanto, si pasas un array a una función, estás pasando una referencia al
+      el array original y cualquier valor que se lea de él vendrá de la fuente original. Esto es bueno y rápido, pero si necesitas modificar alguno de los valores del array, el propio array se duplica en el momento de la escritura y cualquier cambio realizado debe ser devuelto desde la función o se perderá.
+      Esto es mucho más lento y consume más memoria, así que ten cuidado con el uso de arrays en funciones.
+    Sin embargo, se puede evitar este comportamiento de copia en escritura utilizando el accesorio especial para matrices @, ya que esto da acceso directo a la matriz subyacente. Por ejemplo:
+    // Llamar a una función, pasando nuestro array mi_función(mi_array);
+    
+    // La función tiene este aspecto:
+       function my_function(_a) {
+       // Se copiará el array y se modificará la copia, // requiriendo que se utilice "return _a", posteriormente _a[0] = 100; // Esto modificará el array ORIGINAL directamente y // no requiere que se devuelva _a[@0]
+      = 100; }
+    
+     
+  
+  Estructuras de datos
+  
+    En GameMaker Studio 2 las estructuras de datos han sido optimizadas para ser mucho más rápidas que en las versiones anteriores de GameMaker. Todavía tienen que ser limpiados (destruidos) cuando
+      cuando no se utilizan para liberar memoria, y aún pueden ser más lentas que, por ejemplo, las matrices, pero la facilidad de uso y las funciones adicionales para tratar los datos que contienen pueden compensar a menudo la mínima diferencia de velocidad, así que no tengas miedo de utilizarlas en tus
+      juegos.
+    
+    Cabe destacar que, de todas las estructuras de datos, los mapas DS son especialmente rápidos, tanto para leer como para escribir, lo que los convierte en una excelente opción para todo tipo de tareas.
+    Anteriormente mencionamos los accesores para los arrays, pero también están disponibles para las estructuras de datos, lo que puede ayudar a limpiar tu código y hacerlo mucho más fácil de leer.
+     
+  
+  Colisiones
+  
+    Hay varias formas de tratar las colisiones en GameMaker Studio 2, y la mayoría de ellas conllevan una sobrecarga adicional de la CPU. Las funciones collision_ y point_, place_ y instance_ se basan en la comprobación de los límites de las cajas con
+      todas las instancias de un tipo determinado dentro de la sala, y aunque hay alguna optimización incorporada al motor para limitar estas comprobaciones, las colisiones nunca son lo más eficiente. Si se empiezan a utilizar colisiones precisas, el rendimiento
+      Si empiezas a usar colisiones precisas, el rendimiento empeorará notablemente, ya que no sólo tendrás que hacer comprobaciones por caja delimitadora, sino que también harás comprobaciones por píxel, lo cual es muy lento. Hay un blog técnico de YoYo Games que habla de esto aquí:
+    
+      Los peligros de la detección precisa de colisiones
+    
+    Esto no quiere decir que no debas utilizar estas funciones, ya que pueden ser muy útiles. Sin embargo, debes saber cuáles utilizar y cuándo, ya que todas funcionan de forma ligeramente diferente y tendrán distintas velocidades. Como regla general, las funciones
+      place_ son más rápidas que las funciones instance_, que son más rápidas que las funciones collision_ y point_, así que lea las páginas
+      del manual para cada uno de estos tipos de funciones y asegúrate de elegir la más apropiada para cada situación.
+    Alternativamente, mira a crear un sistema de colisión basado en azulejos, que puede ser creado usando las funciones de mapa de azulejos o incluso
+      un array 2D personalizado o una rejilla DS. Estos serán muy rápidos y ayudarán a aumentar la velocidad de tu juego. Sin embargo, si estás usando un terreno irregular o paredes y objetos que no se alinean con una cuadrícula, puede que no sean apropiados. Puedes encontrar un sencillo
+      tutorial sobre las colisiones de tilemap en el siguiente enlace de vídeo
+    
+      Colisiones de baldosas en GameMaker Studio 2
+    
+     
+  
+  Intercambio de texturas y lotes de vértices
+  
+    Si enciende el botón superposición de la depuraciónverá que hay dos cifras entre paréntesis en la parte superior de la pantalla cuando se está probando. La primera es el número
+      de intercambios de texturas que se realizan y la segunda es el número de lotes de vértices. Hay una serie de factores que influyen en estas cifras y nunca las bajarás a (0) (0) ya que el motor requiere uno o dos de cada
+      cada paso, pero deberías intentar reducir estos valores lo máximo posible.
+    Para los intercambios de texturas, la mejor y más eficiente manera de hacerlo es optimizar la forma en que sus sprites y fondos
+      se almacenan en la página de textura. Esto se hace desde las propiedades de los sprites, y puedes crear páginas de texturas en el editor de grupos de texturas. Si tienes un número
+      de imágenes que sólo se utilizan en el menú principal (por ejemplo), entonces ponlas juntas en una página de textura separada. Lo mismo si tienes imágenes específicas para cada nivel, o para el jugador y los enemigos,
+      etc. Básicamente, quieres agruparlas por uso para que los intercambios se reduzcan al máximo. Además, para ayudar a mantener la VRAM optimizada, puedes utilizar las diferentes funciones de prefetch y flush para cargar y eliminar texturas de la memoria según sea necesario.
+    NOTA: Como se mencionó al principio de esta página, si tu juego se ejecuta bien con unos FPS decentes, no te preocupes demasiado por los intercambios de texturas... especialmente cuando crees proyectos en los objetivos de escritorio. Estas optimizaciones son mejores cuando
+      Estas optimizaciones son mejores cuando se usan con juegos grandes o en dispositivos móviles de gama baja, y cuando se usan de forma incorrecta pueden realmente impactar negativamente en el rendimiento.
+    La información de los vértices se envía en "lotes" a la GPU para el dibujo y, en general, cuanto más grande sea el lote, mejor. Por lo tanto, se debe evitar "romper" el lote al dibujar, ya que aumentará el número de lotes de vértices enviados a
+      la GPU. Hay una serie de cosas que romperán el lote, siendo las principales los modos de mezcla, la configuración del color de dibujo, la configuración del alfa de dibujo, y el dibujo utilizando las formas y primitivas incorporadas.
+      primitivas incorporadas.
+    
+    Por lo tanto, si tienes varias instancias de viñetas que dibujan usando el modo de mezcla bm_add - por ejemplo - estarás creando un nuevo lote de vértices para cada una de ellas, lo cual es definitivamente algo malo. En su lugar, ten un objeto controlador
+      en tu juego que dibuje todas las balas, así:
+    gpu_set_blendmode(bm_add); with (obj_BULLET) { draw_self(); }  gpu_set_blendmode(bm_normal);
+    
+    NOTA: Esto no sólo se aplica al uso de bm_add - cualquier cambio de mezcla romperá el lote y dará un golpe de rendimiento.
+    De este modo, todas las viñetas se dibujarán en el mismo lote. Este método puede aplicarse también al alfa y al color de dibujo, y de hecho el uso juicioso de las funciones gpu_set_blendenable(),
+      gpu_set_alphatestref()y gpu_set_alphatestenable() puede
+      mejorar en gran medida el rendimiento y puede activarse/desactivarse según sea necesario en todo el código del proyecto, aunque puede que no sean apropiadas para todos los tipos de gráficos o proyectos.
+    NOTA: Si no necesitas que la instancia se dibuje a sí misma cuando usas un controlador de esta manera, puedes simplemente añadir un comentario en el evento de dibujo para suprimir el dibujo por defecto, o hacer la instancia invisible (aunque esto
+      (aunque esto impedirá que se ejecute todo el código de la instancia en todos los eventos de dibujo).
+    Otra forma de reducir estos números es desactivar la opción de Página de Textura Separada para los sprites a menos que sea absolutamente necesario. Cada imagen almacenada de esta manera se envía a su propia página de textura y se agrupa de manera diferente, por lo que tener estas imágenes
+      en una página de textura normal es mejor. A continuación, puede obtener las coordenadas UVS utilizando la función sprite_get_uvs() función
+      y almacenarlas en variables para su uso posterior. Puede ser una pequeña cantidad de código extra, pero el impulso que obtendrá vale la pena. Tenga en cuenta que este método no permite la repetición de texturas.
+    Como con todos estos consejos, si te complica la vida cambiarlo y tu juego funciona bien, no te preocupes demasiado...
+     
+  
+  Partículas
+  
+    Las partículas ofrecen una forma muy rápida y eficaz de crear efectos dinámicos en tu juego, y en general ofrecen un buen rendimiento. Sin embargo, hay que tener en cuenta que
+      el uso de la mezcla aditiva, la mezcla alfa y la mezcla de colores en las partículas puede reducir el rendimiento, especialmente en los objetivos móviles, así que si no lo necesitas, no lo uses. La mezcla aditiva, en particular, puede aumentar mucho los lotes de vértices
+      de los vértices y debe usarse con cuidado.
+    Ten en cuenta que en el objetivo HTML5 que no es WebGL, tener partículas multicolores y que se desvanecen requerirá una gran cantidad de caché de imágenes y será muy lento. Sin embargo, como los sprites de partículas pueden ser animados, puedes crear un sprite animado que tenga subimágenes que
+      que cambien de color y utilizarlo para la partícula. Seguirá pareciendo un cambio de color gradual, pero no requerirá la creación constante de imágenes de caché.
+    Puede encontrar más información sobre las partículas en la página Guía de uso de las partículas.
+     
+  
+  Superficies
+  
+    Por último, vamos a tocar brevemente el uso de las superficies, ya que GameMaker Studio 2 cuenta con una optimización bastante importante a la hora de utilizarlas en tus juegos: la posibilidad de
+      activar y desactivar el búfer de profundidad.
+    Cuando se utilizan superficies de forma normal, GMS2 crea una superficie y un búfer de profundidad adicional para garantizar una clasificación de profundidad adecuada al dibujar cualquier cosa en 3D. Sin embargo, para la mayoría de los juegos 2D, este búfer de profundidad adicional no es necesario y, por tanto, ocupa espacio de memoria y tiempo de procesamiento adicionales que podrían utilizarse para otras cosas.
+      está ocupando espacio de memoria adicional y tiempo de procesamiento que podría ser utilizado para otras cosas. Aquí es donde la función surface_depth_disable() viene
+      entra en juego...
+    Esta función puede llamarse antes de crear una superficie para desactivar la generación del buffer de profundidad, y todas las superficies creadas después no tendrán un buffer de profundidad creado para ellas. Puede activar/desactivar esta función según sea necesario, e incluso puede llamarla
+      una vez al comienzo del juego para deshabilitar los buffers de profundidad para todas las llamadas de superficie posteriores (y en la mayoría de los juegos 2D esto está bien). No va a dar un gran aumento de rendimiento, pero es ciertamente algo a tener en cuenta si su juego se basa en gran medida
+      en las superficies y puede evitar que el juego se quede sin memoria en los dispositivos con menos especificaciones.
+  
+   
+  Aparte de las cosas principales mencionadas anteriormente, hay otras cosas más generales que pueden ayudar al rendimiento y que también se consideran "buenas prácticas":
+  
+    no tengas miedo de usar las funciones trigonométricas ya que (en contra de la creencia popular) son bastante rápidas, especialmente cuando se comparan con las partículas, las colisiones, las cuerdas, etc...
+    no pongas código que no sea para dibujar cosas en los eventos Draw
+    utilizar una alarma para llamar a cualquier código que no tenga que ser llamado en cada paso (en lugar de añadir esto en el evento Paso de todos modos)
+  
+  Pero, como hemos mencionado al principio de la página, todas estas optimizaciones son opcionales y si tu juego funciona bien con 60 lotes de vértices, 80 intercambios de texturas, mezcla aditiva, etc., entonces no te preocupes demasiado. Sólo ten en cuenta estas cosas
+    cuando programes tu próximo juego...
+   
+   
+   
+  
+    
+      
+        Atrás: Información adicional
+        Siguiente: El sistema de archivos
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

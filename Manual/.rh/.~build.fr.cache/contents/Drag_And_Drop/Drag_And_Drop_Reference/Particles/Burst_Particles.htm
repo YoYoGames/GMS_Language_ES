@@ -1,0 +1,58 @@
+
+  
+   Partículas de ráfaga
+  Esta acción le permite reventar partículas en cualquier momento sin depender de un emisor. Debe proporcionar el valor de ID único del sistema para crear las partículas dentro de él (tal como se devolvió cuando creó el sistema con la acción Crear sistema de partículas)
+    y el ID único del tipo de partícula a crear (tal y como se devolvió al crear el tipo de partícula con la acción Crear tipo de partícula), así como la posición x/y en la que crearlas y el número a crear.
+    La posición puede ser una posición absoluta dentro de la sala, o puedes marcarla como una posición relativa a la instancia que está llamando a la acción.
+  Puedes llamar a esta acción en cada fotograma del juego para replicar el efecto de flujo de un emisor, o puedes llamarla una vez en un evento (como el evento de destrucción) para simplemente reventar las partículas.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Sistema
+        El valor de la ID del sistema de partículas a utilizar
+      
+      
+        Tipo
+        El valor de identificación del tipo de partícula a reventar
+      
+      
+        X
+        La posición x para reventar las partículas en
+      
+      
+        Y
+        Se posicionan para reventar las partículas en
+      
+      
+        Cuenta
+        El número de partículas que hay que reventar
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprobará si la instancia ha cambiado de posición
+    desde que se actualizó el último fotograma del juego y, si lo ha hecho, hará estallar algunas partículas en la nueva posición.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Crear emisor de partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

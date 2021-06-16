@@ -1,0 +1,49 @@
+
+  
+   Si se libera la llave
+  Esta acción comprueba cuándo se ha soltado una tecla del teclado. Devolverá true en el único paso del juego (fotograma) en el que se suelta la tecla y false en todos los demás momentos. Si activas el modificador not, esta acción será
+    invertirá, y comprobará si la tecla no ha sido liberada, devolviendo false en el paso de juego (frame) en el que ha sido liberada y true en todos los demás momentos.
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero,
+    mientras que cualquier acción lanzada en otra parte se ejecutará después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+   
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Clave
+        El nombre de la clave a comprobar.
+      
+      
+        No
+        Negar la comprobación (verdadero se convierte en falso y viceversa)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior sondea el estado del teclado a cada paso y
+    si se mantiene pulsada una tecla, comprueba la pulsación inicial de la misma. Si la comprobación es verdadera en la pulsación inicial de la tecla, se reproduce un sonido, y luego, mientras la tecla se mantiene pulsada, la mezcla del sprite cambia a rojo. Si la tecla no se mantiene pulsada
+    Si la tecla no se mantiene pulsada, se realiza una comprobación al soltar la tecla para restablecer el color de la mezcla a blanco.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones con el ratón y el teclado
+        Siguiente: Mostrar el teclado virtual
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

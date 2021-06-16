@@ -1,0 +1,58 @@
+
+  
+   Crear Instancia de Objeto
+  Con esta acción puede crear una instancia de cualquier objeto desde el Navegador de Activos. Se da el nombre del objeto y una posición x/y dentro de la sala donde se va a crear, así como el nombre de la capa en la que se va a crear la instancia (debe ser una
+    Capa de Instancia). Puedes marcar las banderas "relativas" para posicionar la instancia en relación con la instancia que ejecuta los bloques de código de acción. Cada vez que se crea una instancia en el juego, se le da un valor de identificación único con el que se puede
+    identificar la instancia en acciones posteriores, por lo que esta acción le permite definir una variable "objetivo" para mantener este valor de ID (como se muestra en el ejemplo siguiente). Tenga en cuenta que el objetivo puede ser marcado como una variable temporal (local), que será
+    que se creará para la acción y se podrá utilizar en todas las acciones posteriores.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Objeto
+        El nombre del objeto para crear una instancia.
+      
+      
+        x
+        La posición x en la sala para crear la instancia (puede ser relativa a la instancia que llama).
+      
+      
+        y
+        La posición y en la sala para crear la instancia (puede ser relativa a la instancia que llama).
+      
+      
+        Capa
+        El nombre (una cadena) de la capa de instancia para crear la instancia.
+      
+      
+        Objetivo
+        La variable a la que se dirige el valor de retorno.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior crea una nueva instancia y almacena su valor de identificación único en una
+    variable temporal. Esta variable se utiliza luego en la acción Applies To... para establecer algunas propiedades de la instancia creada.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Destrucción de la Instancia del Objeto
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

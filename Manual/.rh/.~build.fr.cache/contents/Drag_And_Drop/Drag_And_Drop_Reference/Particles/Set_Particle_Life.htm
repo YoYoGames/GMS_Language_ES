@@ -1,0 +1,51 @@
+
+  
+   Establecer la vida de las partículas
+  Esta acción establecerá la vida útil del tipo de partícula dado. Primero se especifica el valor del ID del tipo de partícula (que es el valor devuelto al crear la partícula mediante la acción Crear tipo de partícul a) y luego
+    puede establecer la duración mínima y máxima de la partícula en fotogramas del juego. Por ejemplo, si tu juego tiene un número de fotogramas por segundo de 60, entonces si estableces los dos valores de vida útil aquí a 60, las partículas durarán 1 segundo en pantalla antes de
+    desaparecer. Si utilizas dos valores diferentes, cada partícula generada tendrá una vida útil aleatoria dentro del mínimo y el máximo dados. Ten en cuenta que todos los valores deben ser enteros positivos.
+  IMPORTANTE! Establecer duraciones de vida muy largas y luego emitir cientos de partículas, puede causar problemas en máquinas menos potentes y en dispositivos móviles. Tenga cuidado al establecer la duración de las partículas para maximizar el efecto visual pero minimizar el coste de rendimiento.
+    rendimiento, y sólo utilice las partículas de larga duración con moderación.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Tipo
+        El valor de identificación del tipo global para establecer la duración de la vida
+      
+      
+        Vida mínima
+        La duración mínima de una partícula (en fotogramas del juego)
+      
+      
+        Vida máxima
+        La duración máxima de una partícula (en fotogramas del juego)
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones de las partículas
+        Siguiente: Establecer la velocidad de las partículas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

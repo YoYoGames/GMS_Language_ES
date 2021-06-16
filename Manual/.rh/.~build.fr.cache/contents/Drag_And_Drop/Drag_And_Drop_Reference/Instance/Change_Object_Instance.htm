@@ -1,0 +1,46 @@
+
+  
+   Cambiar la instancia del objeto
+  Con esta acción puedes cambiar una instancia en otra instancia. Tienes que especificar el objeto del que la instancia se convierte en otra instancia, y la acción cambiará la instancia, realizando el Evento de Destrucción y el Evento de Limpieza de
+    de la instancia inicial y el Evento de Creación de la nueva instancia. Tenga en cuenta que si no especifica una dirección o una velocidad, etc... entonces la nueva instancia "heredará" estos valores. Por ejemplo, si la instancia inicial tiene un ángulo_de_imagen (rotación)
+    de 180, se desplaza a 2px por tick de juego y tiene una image_speed (velocidad de animación) de 0.5, entonces la instancia en la que se transforma mantendrá estos valores a menos que se establezca explícitamente en el evento Create de la nueva instancia.
+  Hay que tener en cuenta que cambiar la instancia significa que no se pueden realizar más acciones con esa instancia hasta el siguiente tick del juego, en particular intentar acceder a variables, etc., ya que eso provocará un error. Básicamente, usted
+    cambias la instancia pero no está realmente disponible hasta el final del paso actual, por lo que acceder a cualquiera de las variables que contiene directamente (por ejemplo, llamando a inst_changed.x) no funcionará.
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+  
+    
+      
+        
+          Argumento
+          Descripción
+        
+        
+          Objeto
+          El nombre del objeto a cambiar a una instancia.
+        
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba si hay una pulsación del ratón y si se detecta una
+    entonces cambia la instancia a otra diferente.
+   
+   
+   
+  
+    
+      
+        Volver: Instance Actions
+        Siguiente: Establecer la cuenta atrás de la alarma
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

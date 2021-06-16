@@ -1,0 +1,67 @@
+
+  
+   Variable If
+  Esta acción se utiliza para comprobar el estado de una variable dada con respecto a un valor dado utilizando una expresión específica. Una sentencia "if" siempre devolverá verdadero o falso y las expresiones de comprobación pueden ser cualquiera de las siguientes
+    siguientes:
+  
+    Igual a - La variable y el valor son exactamente iguales
+    Menor que - La variable es menor que el valor
+    Mayor que - La variable es mayor que el valor
+    Menor o igual que - La variable es menor o igual que el valor
+    Mayor o igual que - La variable es mayor o igual que el valor
+  
+  Si marca el argumento "No", entonces las expresiones anteriores serán negadas, por ejemplo "es igual a" se convierte en "no es igual a". Tenga en cuenta también que ni los argumentos de la variable ni los del valor están limitados a valores numéricos
+    y pueden ser una cadena, un puntero, un ID de recurso o cualquier otra cosa que una función pueda devolver o utilizar (véase la sección sobre tipos de datos para más información), pero no puede comparar dos
+    pero no se pueden comparar dos tipos de datos diferentes sin que se produzca un error; por ejemplo, si la variable contiene una cadena y se intenta comprobar si es igual a un número, se producirá un error de sintaxis.
+  NOTA IMPORTANTE: Debido a problemas de precisión en coma flotante, comprobar si dos valores son exactamente iguales puede devolver falso, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción Decimal a Entero antes de la comprobación o utilizando las expresiones "mayor que" o "menor que".
+  Tenga en cuenta que para añadir acciones en el bloque "if", éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:
+  Estas acciones se ejecutarán ahora si el "if" se evalúa como verdadero, mientras que cualquier
+    acciones lanzadas en otra parte se ejecutarán después del bloque "if".
+   
+  Sintaxis de la acción:
+  
+  Argumentos:
+  
+    
+      
+        Argumento
+        Descripción
+      
+      
+        Variable
+        El nombre de la variable a comprobar.
+      
+      
+        No
+        Se establece para comprobar si la expresión no se evalúa como verdadera.
+      
+      
+        Expresión
+        El tipo de expresión a utilizar para la comprobación.
+      
+      
+        Valor
+        El valor para comprobar la variable.
+      
+    
+  
+   
+  Ejemplo:
+  El código del bloque de acción anterior comprueba una variable "dir" para ver si es igual a 10, y si
+    es crea una instancia de "obj_Squirrel" y si no lo es entonces destruye la instancia.
+   
+   
+   
+  
+    
+      
+        Atrás: Acciones comunes
+        Siguiente: Expresión If
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+
