@@ -1,0 +1,77 @@
+
+  
+  Opciones de juegoen macOS 
+  Esta sección describe las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos para macOS. Las diferentes secciones son:
+   
+  General
+  En la sección de información del producto , lo primero que hay que hacer es rellenar el nombre para mostrar de su juego
+    y luego rellenar el número de versión, el ID de la aplicación, el archivo de salida de la aplicación y los detalles del copyright. El archivo de salida de la aplicación es la ubicación a la que van los archivos de instalación de su juego en su máquina de desarrollo Mac.
+    de desarrollo de Mac. Cuando creas tu .app.zip, ese archivo puede ir a cualquier parte (la ubicación que especifiques al hacer el diálogo de guardado no es la única copia que se hace de ese .app.zip), pero el .pkg y otros archivos se dejan en esta carpeta, permitiéndote probar instalaciones locales a través de la Terminal de forma que se simule la compra en la Mac Store, etc.
+  Aquí también debe indicar el identificador de equipo que desea utilizar para firmar la aplicación final que GameMaker Studio 2 crea para usted. Si lo estableces aquí, anularás el identificador de equipo que hayas proporcionado en las Preferencias demacOS.
+    Después del Identificador de Equipo también tienes la opción de proporcionar el Identificador de Firma, que es requerido por Apple para todas las aplicaciones que no son de la tienda de aplicaciones (como los juegos de Steam, por ejemplo).
+  La siguiente opción es para habilitar Vapor en tu juego. Si activas esta opción, asegúrate de que tienes el SDK de Steamworksinstalado (ver aquí), y que
+    has añadido el ID de la aplicación de Steam en las Opciones Generales del juego.
+  Por último, tienes la opción de Desactivar la caja de arena del sistema de archivos. Marcando esta opción se deshabilitará la caja de arena de GameMaker Studio 2 para guardar y cargar archivos, permitiendo que sus juegos accedan a los archivos desde cualquier parte del sistema que ejecuta el juego.
+    Esta opción está desmarcada por defecto, ya que recomendamos mantener el sandbox de GameMaker Studio 2 para los archivos en todos los sistemas y cuando se marca, algunas áreas de guardado/carga pueden seguir sin estar disponibles dependiendo de los permisos a nivel de sistema operativo. Para obtener más información
+    sobre la caja de arena, consulte las páginas sobre el sistema de archivos de GameMaker Studio 2.
+   
+  Gráficos
+  Las opciones gráficas son las que debes configurar para determinar cómo tu juego utilizará la tarjeta gráfica de tu Mac de destino.
+    Se incluyen las siguientes opciones para que las modifiques:
+  
+    Permitir Menú y Dock en Pantalla Completa: Cuando está marcada, esta opción mostrará el menú del sistema operativo y el dock si el juego está en modo de pantalla completa. Esta opción está desactivada por defecto.
+    Mostrar Cursor: Cuando esto está marcado se mostrará el cursor normal de macOS, y desmarcarlo significará que no se mostrará ningún cursor a menos que hayas creado uno en tu código de juego. Esta opción está desactivada por defecto.
+    Iniciar en pantalla completa: Si esta opción está marcada, el juego se iniciará en modo de pantalla completa, de lo contrario, se iniciará en modo de ventana. Esta opción está desactivada por defecto.
+    Permitir el cambio de pantalla completa: Con esta opción marcada, el usuario puede cambiar de pantalla completa a ventana y viceversa utilizando los atajos estándar de macOS. Esta opción está desactivada por defecto.
+    Interpolar los colores entre píxeles: Activa la interpolación lineal, que básicamente "suaviza" los píxeles. Para gráficos de píxeles nítidos, debería estar desactivado, pero
+      pero si tiene bonitas mezclas alfa y gráficos con bordes suavizados es mejor dejarlo activado. Está desactivado por defecto.
+    Utiliza la sincronización para evitar el tearing: Esto activa o desactiva la sincronización v. Ten en cuenta que si tienes un juego con una velocidad de sala de 120 y el jugador tiene un monitor con una tasa de refresco
+      de 60, al activar esta opción también se bloqueará la velocidad del juego a 60. Esta opción está desactivada por defecto.
+    Permitir el cambio de tamaño de la ventana: Marcar esta opción permite al usuario cambiar el tamaño de la ventana del juego (la opción Ventana sin bordes debe estar desactivada para que esto funcione). Esta opción está desactivada por defecto.
+    Habilitar Retina: Si se marca esta opción, el búfer trasero estará a la resolución más alta (real) cuando el juego se ejecute en un monitor con retina, mientras que si se desmarca, el búfer trasero estará a la resolución aparente (más baja).
+      Lo que esto significa es que la ventana inicial del juego se ajustará al doble de la anchura y la altura que el puerto de la sala/vista a la que se ajusta la primera sala. Sin embargo, esto NO escala la superficie de la aplicación para adaptarse, y por lo tanto si usted quiere que su juego para hacer la
+      Si quieres que tu juego aproveche al máximo la pantalla retina, también debes configurar la superficie de la aplicación para que sea del mismo tamaño que la ventana (ten en cuenta que esto duplicará los píxeles a lo largo de la anchura y la altura, así que sólo activa esto y escala la superficie de la aplicación si tu juego se beneficiará
+      de la resolución aumentada).
+       Esta opción está desactivada por defecto, y al activarla no se verá ninguna diferencia cuando ejecutes o depures el juego usando VM, ya que el corredor está pre-construido en ese caso. Sólo funcionará si construyes un ejecutable a través de VM, o utilizas YYC para probar o
+      construir el juego, ya que eso reconstruirá el corredor con sus Opciones de Juego personalizadas.
+    Escala: Aquí puede elegir mantener la relación de aspecto (de modo que una habitación de 4:3 se verá en "buzón" en una de 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).
+      
+      ADVERTENCIA Ladesactivaciónde la superficie de aplicación deshabilitará todas las opciones de escalado establecidas en las Opciones de Juego de Windows hasta que se vuelva a activar. Consulte la sección La superficie de aplicación para obtener más detalles.
+  
+  Por último, existe la opción de establecer el tamaño de la página de la textura. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
+    también hay un botón marcado Vista previa que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo quedan. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura
+    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para obtener más información sobre las páginas de textura, consulte aquí.
+  NOTA: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego en los PC con especificaciones inferiores.
+   
+  Imágenes
+  En la sección de imágenes es donde se suministran las imágenes que requiere el juego. En el caso de Mac, debe suministrar un archivo de iconos 
+    (que debe estar en formato .png y 1024x1024px) y una pantalla de bienvenida (que puede estar en formato .png, .bmp, .jpg o .gif ). La pantalla de bienvenida se mostrará mientras se carga el juego.
+  En el caso de los paquetes DMG, puede proporcionar una imagen de fondo del instalador que aparecerá como fondo del instalador DMG.
+  Vale la pena señalar que GameMaker Studio 2 tiene una herramienta generadora de imágenes del proyecto que se puede utilizar para crear automáticamente todas las imágenes necesarias para todas las diferentes plataformas de destino de su juego
+    para las que se compila el juego. Si utilizas esta herramienta, debes revisar las imágenes creadas para asegurarte de que son las que necesitas.
+   
+  Embalaje
+  Si desea que el juego terminado esté listo para la App Store, debe marcar la opción Build for Mac App Store,
+    pero ten en cuenta que esto sólo funcionará si eres un desarrollador registrado y tienes los certificados necesarios. Debajo de eso están los permisos de la aplicación que sólo debe comprobar si son verdaderos ya que Apple puede rechazar su aplicación si
+    si están marcados cuando no son necesarios o viceversa. Estas opciones simplemente permiten que tu juego utilice las funciones http_ y url_. Vale la pena señalar que si usted desea apoyar GamePads en su
+    entonces la opción de crear un paquete listo para la App Store debe estar desactivada.
+  Por último, debe seleccionar su categoría de aplicación (para más información, consulte aquí).
+   
+  Social
+  Esta opción es para usar la extensión de inicio de sesión de Apple en Mac. Puedes obtener esta extensión desde la página Juegos YoYo Mercado,
+    y la propia extensión contiene instrucciones completas de uso. Si no utiliza esta extensión, no debe marcar esta opción.
+   
+   
+   
+  
+    
+      
+        Atrás: Opciones de juego
+        Siguiente: Ubuntu
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

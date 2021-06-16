@@ -1,0 +1,37 @@
+
+  
+  Secuencias
+  El último recurso que discutiremos en esta guía antes de pasar a discutir cómo todo se une en el Editor de Salas , es el recurso Secuencias. Una secuencia es esencialmente una colección de otros activos que se reúnen
+    en un lugar y luego animados juntos. La animación final (secuencia) puede ser añadida a las habitaciones en su juego como las instancias.
+  Las secuencias se crean a través del editor Editor de secuencias que se abre cada vez que se crea un nuevo activo de secuencia en el Navegador de Activos:
+  Para crear una secuencia básica se añade un sonido, un sprite o una instancia en el lienzo de la secuencia y luego se posiciona en el lugar donde se quiere
+    al inicio de la secuencia. Esto crea una Pista de activos en el panel de pistas  y también
+    añade a fotogramas clave en el panel Hoja de ruta para mostrar la duración en la que el activo será visible.
+  El tiempo de la secuencia está en fotogramas (que es lo mismo que los pasos para las instancias, es decir, un fotograma es lo mismo que un paso del juego), y puedes ver lo que ocurrirá en cualquier fotograma moviendo la secuencia cabezal de reproducción en
+    en la hoja de cálculo. La posición de la cabeza de juego también se utiliza para añadir fotogramas clave que son los fotogramas en los que quieres que empiece o termine algún estado. Las claves de los parámetros se almacenan en pistas de parámetros para
+    el activo dado.
+  Así, usted posicionaría el activo y establecería su escala y color y otras propiedades en el fotograma 0 de la secuencia. A continuación, grabaría las claves de los parámetros del activo y movería el cabezal de reproducción al fotograma en el que desea establecer el siguiente estado del activo (posición,
+    color, etc. ....). En este fotograma se cambian de nuevo los diferentes parámetros y se graban las claves para ellos, luego se repite este proceso según sea necesario para la longitud de la secuencia. Cuando pulse el botón de reproducción de la secuencia, el activo se animará, con la
+    secuencia interpolando entre los diferentes estados de los parámetros, dando un resultado final algo así: 
+  No vamos a entrar en más detalles sobre el funcionamiento de las secuencias, pero basta con decir que son una herramienta increíblemente poderosa para hacer cualquier cosa
+    desde escenas de corte, hasta menús, estados de los personajes y mucho más.
+  La página enlazada a continuación le ofrece todos los detalles sobre cómo utilizar las secuencias en sus juegos:
+  
+    El editor de secuencias
+  
+  Ahora podemos pasar a hablar del Room Editor, que es donde se unen todas estas partes de tu juego...
+   
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Habitaciones
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

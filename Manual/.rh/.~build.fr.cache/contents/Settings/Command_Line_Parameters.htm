@@ -1,0 +1,68 @@
+
+  
+  Parámetros de la línea de comandos
+  Cuando creas juegos es importante que pruebes el archivo ejecutable para asegurarte de que la compilación final es correcta y no tiene errores o diferencias imprevistas. Sin embargo, crear un ejecutable significa que, al no tener acceso a la consola de depuración ni
+    a la ventana del compilador, puede ser difícil localizar y depurar cualquier problema que pueda encontrar. Sin embargo, hay una solución para esto, y es utilizar parámetros de línea de comandos para establecer ciertas propiedades cuando se ejecuta la versión ejecutable de
+    del juego, lo que a su vez le permite crear archivos de registro de salida y probar otras situaciones especiales.
+  NOTA: Esto está disponible en el módulo de destino estándar Windows  sólo en el módulo de destino estándar.
+  Para que esto funcione, primero debes crear un ejecutable para Windows de tu juego y tenerlo instalado en tu máquina de pruebas. Una vez hecho esto, tienes que crear un acceso directo al juego en el escritorio. Aquí es donde añadiremos los parámetros
+    que se pasarán a la *.exe (para crear un acceso directo, haga clic con el botón derecho del ratón en  el ejecutable del juego y luego seleccione Enviar a >
+   Escritorio (crear acceso directo)) .
+  Una vez que haya hecho su acceso directo, puede utilizar cualquiera de los siguientes parámetros en la ruta de destino:
+  -noaudio: Apaga todo el audio del juego.
+  -inawindow: Hace que el juego se inicie en una ventana, incluso cuando está configurado para ejecutarse en modo de pantalla completa.
+  -output <filename>: Envía la salida de la consola al nombre del archivo, incluyendo cualquier mensaje de depuración que tenga en su base de código.
+  -debugoutput <filename>: Envía la salida de la consola al nombre del archivo, excluyendo cualquier mensaje de depuración personalizado, pero incluyendo información extra del corredor para el reporte de errores.
+  -software: Forzará al juego a utilizar el Procesamiento de Vértices por Software en lugar del hardware para renderizar los gráficos del juego. Esto es especialmente útil para aquellos PCs que utilizan un chipset Intel GFX integrado o que muestran problemas de visualización
+    en máquinas antiguas.
+  -intel: Esto activará una solución para los malos controladores de Intel, independientemente de la GPU que se utilice. Esta solución para esos malos controladores ralentizará las cosas, dando un golpe de rendimiento notable para su juego, por lo que si usted no
+    no necesita el arreglo no lo use.
+  -vanillaGFX: Esta opción desactiva la comprobación del fabricante del controlador y puede ser muy útil para probar el juego "tal cual".
+  Cabe destacar que el <filename> en -output y -debugoutput puede ser el mismo si se desea, ya que el archivo se abre y se cierra en cada escritura.
+  Ahora debes ir al lugar donde creaste el acceso directo al ejecutable del juego, y luego hacer clic con el botón derecho sobre él y seleccionar Propiedades.
+  Esto abrirá una ventana similar a la anterior. Aquí puede añadir en la ruta de destino su línea de comandos. Simplemente desplácese
+    hasta el final de la ruta dada, añada un espacio, y luego la cadena de parámetros. Así, por ejemplo, para crear una salida de archivo de depuración tendrías algo como
+  D:\N-UniversalGameMaker\N-Personalización de la Barra de Carga-Defecto-1.0.0\N-Personalización de la Barra de Carga.exe -debugoutput debug.txt
+  Esto creará un archivo llamado "debug.txt" en la misma ubicación que el ejecutable (no la ubicación del acceso directo, sino donde el juego está instalado) con información de depuración y compilación de su juego terminado. Haga clic en
+    en "OK" y luego usa el acceso directo para ejecutar tu juego para que use estos parámetros y te ayude con la depuración.
+  Para más información sobre cómo depurar tu juego, consulta la sección del manual sobre Depuración.
+   
+  Pruebas A/B con la línea de comandos
+  
+    El corredor YoYo también se beneficia de un parámetro especial en la línea de comandos:
+    -game <filename>: carga el archivo de juego dado
+    ¿Por qué usar esto? Bueno, normalmente no lo harías, pero si deseas tener más de una versión de tu juego funcionando a la vez puedes hacerlo utilizando esto, haciendo que las pruebas comparativas A/B sean mucho más fáciles. Con este método puedes centrarte en las pruebas con otra persona
+      o, como diseñador, obtener una mejor sensación de las cosas haciendo pruebas lado a lado.
+    Para configurar esto, necesitarás saber un par de cosas de antemano. Para empezar, necesitarás la ruta del propio Runner. Se encuentra en la carpeta de datos de programa de su sistema operativo Windows (puede estar oculta por defecto, por lo que tendrá que cambiar las propiedades de visualización para verla).
+      por lo que tendrá que cambiar las propiedades de visualización para verlo), con un formato típico como este:
+    C:\ProgramData\GameMakerStudio2\Cache\runtimes\<versión_de_ejecución>\windows\Runner.exe
+    Ten en cuenta que la carpeta runtime_version dependerá de los runtimes que tengas instalados actualmente. También necesitarás la ruta de acceso al archivo <yourgame>.win, ya que es a éste al que vamos a apuntar el corredor.
+      La forma más fácil de encontrarlo es ir a la carpeta Temp (normalmente ubicada en %localappdata%\Temp\GameMakerStudio\<nombre_del_juego>\) y buscar *.win, ya que eso le mostrará todos los disponibles y podrá
+      te mostrará todos los disponibles y puedes simplemente elegir el que necesitas para obtener la ruta completa.
+    Ahora, podríamos crear un acceso directo al corredor como lo hicimos para el ejecutable, y luego cambiar los parámetros según sea necesario, pero eso significa tener que abrir y editar entre las pruebas, lo que anula el propósito de nuestro uso de esta funcionalidad para el lado a lado
+      lado a lado. En su lugar vamos a crear un par de pequeños archivos "batch" para manejar esto.
+    Para ello, cree primero un nuevo documento de texto en su escritorio y ábralo en el Bloc de notas (o en cualquier otro editor de texto). Añade lo siguiente:
+    START C:\ProgramData\GameMakerStudio2\Cache\runtimes\<versión_de_ejecución>\windows\Runner.exe -game <patrón TEMP LOCAL>\<GAMENAME>.win
+    Tienes que establecer la ruta temporal para que apunte a tu archivo de juego *.win, y luego guardarlo como "GM_Test_1.bat" en tu escritorio (ten en cuenta que el Bloc de notas guardará automáticamente como un archivo *.txt a menos que elijas "todos los archivos" en las opciones del diálogo de guardado). Un ejemplo de cómo debería ser su comando final sería:
+    START C:\gramData\GameMakerStudio2\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\sers\Mark\AppData\Local\Temp\GameMakerStudio2\AlphaDog_Reboot\AlphaDog_Reboot.win
+    Ahora, crea otro archivo de texto y añade la misma línea, sólo que esta vez apuntas a la ruta de la segunda versión del juego con la que quieres hacer pruebas paralelas, y lo guardarías como "GM_Test_2.bat".
+      Puedes hacer doble clic en  en cualquiera de los dos casos para que aparezcan las diferentes versiones de tu juego, y
+      tenerlos como archivos por lotes significa que puedes abrirlos fácilmente de nuevo para editarlos y cambiar el juego que se está probando.
+    
+    
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Configuración del juego
+        Siguiente: El jefe de sala
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

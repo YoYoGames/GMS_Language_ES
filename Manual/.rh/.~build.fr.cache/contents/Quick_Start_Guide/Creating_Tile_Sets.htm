@@ -1,0 +1,43 @@
+
+  
+  Creación de conjuntos de baldosas
+  Los conjuntos de mosaicos se crean a partir de los sprites, pero también se clasifican como un tipo de activo separado, ya que la forma en que GameMaker Studio 2 los maneja es un poco diferente a la de los sprites y los objetos. Así, un conjunto de azulejos es una colección de azulejos creados
+    juntos en un sprite, y un azulejo es simplemente un recurso gráfico que se añade a una sala de GameMaker Studio 2 como parte de un  mapa de azulejos. Estos mapas de azulejos se dibujan en la pantalla
+    pantalla con muy poco procesamiento de la CPU/GPU, lo que los hace ideales para diseñar cualquier elemento estático en los niveles.
+  Para que el procesamiento de las baldosas sea tan rápido, tienen ciertas restricciones, siendo la más básica que sólo pueden ser rectangulares o cuadradas (si quieres algo distinto a esto, entonces tendrás que crear un sprite normal
+    y utilizar la Capa de Activos en el editor de salas, pero eso lo discutiremos en la sección posterior sobre salas). Otras restricciones incluyen el hecho de que sólo pueden ser girados 90°, o reflejados o volteados, y sólo pueden
+    sólo pueden ser animados con marcos que numeran una potencia de 2 (es decir: 2, 4, 8, 16, etc...).
+  Veamos un ejemplo sencillo de un juego de fichas: unas fichas de pared cuadradas para un juego de arriba abajo:
+  
+  Para empezar, necesitamos convertir esto en un sprite de conjunto de azulejos, lo que se haría en el Editor deSprite/Editor de Imágenes(o un editor de imágenes externo
+    y luego importado como un sprite). El sprite final debería ser algo así:
+   Observe que la primera baldosa está en blanco en esa imagen. La forma en que el mapa de azulejos para la habitación se almacena en GameMaker Studio 2 significa
+    que el primer azulejo siempre tendrá que ser en blanco, ya que es esencialmente el "borrar" azulejo o el "espacio vacío" azulejo (este azulejo "en blanco" tendrá un valor de índice de 0 - azulejos están indexados con un valor que
+    se indexan con un valor que comienza en 0 y se cuenta de izquierda a derecha, de arriba a abajo). Por lo tanto, al crear tus conjuntos de baldosas, la baldosa de la esquina superior izquierda siempre tendrá que estar vacía de esta manera. Tenga en cuenta también que, aunque la imagen anterior muestra un conjunto de azulejos de pared completo con 47 azulejos, es posible que
+    puede que no necesites tantos, ya que puedes girar y voltear los azulejos cuando los coloques en el editor de habitaciones más tarde.
+  Con el sprite creado, podemos seguir adelante y definir el conjunto de azulejos en sí, lo que significa que usted tiene que crear primero un nuevo recurso conjunto de azulejos haciendo clic derecho  el activo Conjunto de Azulejos
+    y seleccionando Crear. Esto abrirá el editor de conjuntos de baldosas, donde podrás añadir el sprite y establecer sus propiedades:
+  
+  Hemos establecido el tamaño del conjunto de azulejos a 64px, y hemos dejado el resto de las opciones en sus valores por defecto, ya que no tenemos necesidad de offsets ni nada por el estilo (los valores de offset son útiles para cualquier sprite de conjunto de azulejos que tenga espacios alrededor de cada uno de los
+    azulejos). Querrás nombrar el activo del conjunto de azulejos usando un prefijo apropiado como " ts_" para que puedas identificarlo fácilmente más tarde, y ten en cuenta que se aplican las mismas restricciones que para los sprites, es decir: el nombre no puede empezar
+    con un número, y sólo puede utilizar el guión bajo "_" y caracteres alfanuméricos.
+  Ahora puede cerrar el editor de conjuntos de azulejos, ya que puede utilizar el conjunto de azulejos "tal cual" para crear capas de mapas de azulejos en el editor de habitaciones, sin embargo, si quiere saber más sobre las funciones avanzadas del editor de conjuntos de azulejos, entonces consulte la siguiente sección del
+    el manual:
+  
+    Editores: El editor de conjuntos de azulejos
+  
+  Ahora pasamos a hablar de cómo añadir efectos de sonido a tu proyecto...
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Creación de efectos de sonido
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

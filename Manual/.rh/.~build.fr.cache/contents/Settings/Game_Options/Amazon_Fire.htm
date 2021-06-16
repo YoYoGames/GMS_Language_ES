@@ -1,0 +1,120 @@
+
+  
+  Opciones de juegode Amazon Fire (Legacy)
+  IMPORTANTE! Esta página sólo es válida para aquellas personas que tengan una licencia heredada con Amazon Fire como plataforma de destino independiente. Las nuevas licencias son compatibles con los dispositivos Fire a través de las opciones de juegode Android.
+  En esta sección se describen las diferentes opciones disponibles que controlan cómo se compilarán los proyectos de juegos de Amazon Fire. Las diferentes secciones son:
+   
+  General
+  La primera parte de la sección General está dedicada a la Información del producto y a la
+   Configuración de la construcción. Debe rellenar la información del producto, que incluye el nombre del proyecto, la información del paquete, que consiste en un dominio, una empresa y un producto.
+    La información del paquete sólo puede estar formada por letras de la A a la Z y números del 0 al 9, sin símbolos ni otros caracteres especiales, ni debe tener mayúsculas. Estos datos se utilizarán para generar un ID de paquete con el formato
+    "com.company.myappname".
+  NOTA: Si ya ha configurado las Android opciones de juego de destino, puede hacer clic en el botón "Sincronizardesde Android" en la parte superior para transferir la información relevante desde el objetivo de Android
+    al Amazon Fire.
+  A continuación, debe establecer las herramientas de compilación, así como las versiones del SDK de destino, mínimo y de compilación.
+  NOTA: También hay una opción para la versión de la "Biblioteca de apoyo" a utilizar. A partir de GameMaker Studio v2.2.4, esto ya no es necesario y cualquier valor utilizado aquí será ignorado. La configuración se mantiene
+    para su uso con proyectos heredados que requieren un tiempo de ejecución anterior a la versión 2.2.4.
+  Las herramientas de compilación (y la biblioteca de soporte, si es necesario) se utilizan cuando GameMaker Studio 2 compila el juego para el objetivo Android/AmazonFire y deben establecerse con los valores adecuados en función de las herramientas que hayas instalado con Android Studio.
+  
+    El SDK de destino indica que has probado tu aplicación en (hasta e incluyendo) la versión que especifiques aquí. Esto es simplemente para dar al sistema operativo Android una idea de cómo debe manejar su aplicación en términos de características del sistema operativo. A efectos prácticos
+      la mayoría de las aplicaciones van a querer establecer el SDK de destino a la última versión de la API (como se utiliza por el ajuste de compilación del SDK). Esto asegurará que su aplicación se vea lo mejor posible en los dispositivos Android más recientes. Ten en cuenta que a partir de noviembre de
+      2019 Google ha hecho del nivel 28 de la API el objetivo requerido.
+    La versión mínima del SDK es el nivel mínimo de API que hará funcionar tu proyecto. A partir de noviembre de 2019, Google ha hecho que el nivel de API 16 sea el mínimo absoluto requerido, pero si añades extensiones, estas pueden requerir un nivel de API mínimo más alto.
+    La versión del SDK de compilación es la versión de la API con la que se compila el proyecto. Esto significa que puede utilizar las características de la API de Android incluidas en esa versión de la API. Si intenta utilizar las características de la API 16 - por ejemplo - pero establece Compile
+      SDK 15, obtendrá un error de compilación. Sin embargo, si estableces el SDK de compilación en 28, podrás ejecutar la aplicación en un dispositivo de la API 26 (así como en todas las versiones anteriores).
+  
+  Puede seleccionar una de las configuraciones de destino predefinidas haciendo clic en el botón Prepopulate SDK values to chosen API level, que abrirá una lista de diferentes APIs para elegir. Al seleccionar una de ellas, se rellenarán todos los archivos
+    archivos del SDK con los valores apropiados que puede utilizar o editar según sea necesario.
+  NOTA: Debe haber instalado las APIs apropiadas en el Android SDK Manager o a través de Android Studio para que sus proyectos se compilen correctamente.
+  La segunda parte de la sección General cubre las diferentes orientaciones en las que se puede ejecutar el juego
+    para obtener la mejor experiencia de usuario. Las opciones disponibles son:
+  
+    Retrato
+    Retrato-inclinado
+    Paisaje
+    Paisajismo
+  
+  Por último, tiene las siguientes opciones diversas:
+  
+    Habilitar el soporte de Bluetooth/iCade: Esto añadirá soporte para gamepads bluetooth o iCade a tu proyecto de juego. Esta opción está activada por defecto.
+    Ejecutar análisis de código Lint: Cuando esta opción está marcada, las herramientas de compilación ejecutarán un análisis de código lint en el proyecto mientras se construye, dando una comprobación de errores más profunda y mostrando más información en la ventana de salida mientras el proyecto se compila
+      (también se creará un archivo LOG, con la ruta del archivo mostrada al final de la compilación en la ventana de salida). Tenga en cuenta que no todo lo que marca el análisis de lint como un error es necesariamente problemático
+      para su juego, y tener esto activado puede significar que su juego ya no se compila, aunque cuando está desactivado, se compila y se ejecuta bien. Esencialmente esto es sólo para la depuración, y la opción está desactivada por defecto.
+    Ubicación dela instalación: Aquí puede establecer la ubicación de instalación por defecto para su juego. Esto puede ser establecido como Automático, en cuyo caso el juego se instalará en la ubicación elegida por el usuario en su dispositivo, o
+      puede establecerse en Preferir Externo, que siempre intentará instalar el juego en el almacenamiento externo del dispositivo.
+  
+  También puedes configurar el margen de reposo del fuego de Amazon aquí. Esta opción está relacionada con la reducción del tartamudeo cuando se ejecuta el juego en sistemas específicos. Básicamente, si su juego se ejecuta más rápido que la velocidad de su habitación GameMaker Studio 2 se "dormir"
+    para el tiempo restante, pero este sueño puede ser bastante inexacta y que a menudo puede terminar de dormir por más tiempo de lo necesario, haciendo que su marco para tomar más tiempo que causa el tartamudeo. Para evitar esto, podemos dormir durante menos tiempo, y luego sentarse en un bucle apretado
+    para que sea más preciso - aunque el problema de estar en un bucle es que hace que el uso de la CPU aumente, lo que a su vez puede hacer que la temperatura de la CPU aumente y que el dispositivo utilice más batería. Por defecto,
+    este valor se establece en 4, y en el 99,99% de los casos estará bien con esto, pero para los dispositivos de gama baja o para los dispositivos con una gran cantidad de procesos en segundo plano que se ejecuta esto puede no ser una solución ideal y un valor de 5 hasta 10 puede ser necesario. Sin embargo, tenga en cuenta
+    que esta es una configuración muy específica del dispositivo y lo que funciona en su dispositivo de construcción puede no ser apropiado para otro usuario, y como tal, en caso de duda, déjelo en 4.
+   
+  Gráficos
+  Aquí puede cambiar los siguientes detalles relacionados con la forma en que se mostrará su juego, con las siguientes opciones disponibles:
+  
+    Interpolar los colores entre píxeles: Activa la interpolación lineal, que básicamente "suaviza" los píxeles. Para gráficos de píxeles nítidos, debería estar
+      desactivado, pero si tiene bonitas mezclas alfa y gráficos con bordes suavizados es mejor dejarlo activado. Está activada por defecto.
+    Profundidad de color dela pantalla: Esto puede ser usado para establecer la profundidad de color para el renderizado a 16bit o 24bit. Esto afectará a la compatibilidad con algunos dispositivos antiguos si se establece en 24bit, y también aumentará la ashmem que
+      es necesaria (esta es la memoria compartida en los dispositivos AmazonFire).
+    Escala: Aquí puede seleccionar la escala del lienzo de dibujo manteniendo la relación de aspecto dentro de la pantalla del dispositivo - añadiendo "relleno" alrededor de los bordes para ajustarse a la pantalla - o puede seleccionar que el lienzo de dibujo se estire para ajustarse a
+      la pantalla del dispositivo.
+  
+  Por último, existe la opción de establecer el tamaño de la página de la textura. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
+    también hay un botón marcado Vista previa que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo quedan. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura
+    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para más información sobre las páginas de texturas, consulta aquí.
+  NOTA: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego con los distintos navegadores y dispositivos.
+   
+  Iconos
+  Esta sección le permite añadir las diferentes imágenes de iconos que su proyecto necesitará para las diferentes páginas de la tienda
+    y dispositivos. Todas las imágenes de iconos deben ser creadas como archivos *.png de 24 bits con los tamaños apropiados indicados.
+  Vale la pena señalar que GameMaker Studio 2 tiene una herramienta generadora de imágenes del proyecto que se puede utilizar para crear automáticamente todas las imágenes necesarias para todas las diferentes plataformas de destino de su juego
+    para las que se compila el juego. Si utiliza esta herramienta, deberá revisar las imágenes creadas para asegurarse de que son las que necesita. La herramienta generará tanto iconos como imágenes (véase la sección siguiente).
+   
+  Imágenes
+  Aquí puede establecer el color del borde que se utilizará como fondo para las pantallas de inicio que no están configuradas para llenar
+    la pantalla completa. También puedes añadir pantallas de bienvenida a tu archivo final del juego, tanto para el modo horizontal como vertical , que se mostrarán mientras el juego se carga en el dispositivo. Esta pantalla debe ser un archivo de 24bit *.png,
+    y se recomienda que sea del mismo tamaño que la primera sala (o vista) de su juego. Si necesita que la pantalla de inicio se muestre durante un tiempo específico, también puede establecerlo aquí de 0 a 10 segundos (el tiempo por defecto de 0 significa que sólo se mostrará
+    durante el tiempo que dure la carga de los activos). También puede establecer cómo debe mostrarse la pantalla de inicio desde las siguientes opciones:
+  
+    Mantener relación de aspecto: Esto mantendrá la relación de aspecto de la imagen en comparación con la pantalla del dispositivo, añadiendo "relleno" alrededor de los bordes donde sea necesario.
+    Recortar para ajustar: Esto mantendrá la imagen 1:1 con la pantalla del dispositivo y recortará (o rellenará) los bordes según sea necesario.
+    Estirar: Esto estirará la imagen para llenar la pantalla del dispositivo (y puede distorsionar la imagen mostrada).
+  
+  Por último, puede configurar la imagen de la pancarta, que también es un *.png de 24 bits.
+   
+  Permisos
+  Desde esta pestaña puedes cambiar algunos de los permisos que tu juego puede solicitar dentro del Manifiesto de Amazon Fire. GameMaker
+    Studio 2 asignará los permisos automáticamente según se requiera en base a las funciones que utilice el juego, sin embargo puede que necesites un permiso para tu juego que no haya sido asignado correctamente (por ejemplo, cuando utilices extensiones personalizadas) en
+    en cuyo caso marque la casilla de permiso requerida.
+  La lista que figura a continuación describe los permisos disponibles:
+  
+    WRITE_EXTERNAL_STORAGE: Permitirá que su juego escriba en el almacenamiento externo.
+    READ_PHONE_STATE: Permitir el acceso de sólo lectura al estado del teléfono.
+    ACCESS_NETWORK_STATE: Permite a su juego acceder a la información sobre las redes.
+    INTERNET: Permite que su juego abra sockets de red.
+    BLUETOOTH: Permitirá que tu juego se conecte a dispositivos Bluetooth emparejados.
+    RECORD_AUDIO: Permitirá que su juego grabe la entrada de audio del micrófono.
+  
+  NOTA: Si no estás seguro de necesitarlos, probablemente deberías dejarlos sin marcar por defecto y dejar que GameMaker Studio 2 se encargue de los permisos para tu juego.
+  La sección de permisos de Amazon Fire también tiene un área donde puedes inyectar permisos en las etiquetas de la aplicación de Android en el manifest.xml de Android. Puedes encontrar una lista completa de etiquetas disponibles en la documentación de Android
+    aquí:
+  
+    Desarrollador deAndroid: Etiquetas de la aplicación
+  
+  Vale la pena señalar que para la API de destino 28 y superior, ya no se le permitirá utilizar ninguna llamada web externa utilizando "http" - se requiere "https" en su lugar - a menos que añada
+    la siguiente etiqueta:
+  android:usesCleartextTraffic = "true"
+   
+   
+   
+  
+    
+      
+        Atrás: Opciones de juego
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

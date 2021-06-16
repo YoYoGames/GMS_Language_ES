@@ -1,0 +1,39 @@
+
+  
+  Grupos de audio
+  El administrador de grupos de audio está disponible en el menú de herramientas del IDE. Aquí puede
+   añadir, eliminar y renombrar Grupos de Audio, así como establecer sus opciones de exportación a la plataforma. GameMaker Studio 2 permite asignar cada uno de los recursos de audio (efectos de sonido y música) a diferentes grupos de audio
+    para tratar de optimizar el número de sonidos que se reproducen en un momento dado, así como darle un mayor control sobre las plataformas a las que se exportan.
+  Para definir un grupo de audio, debe hacer clic en  en el botón Añadir nuevo, que creará un nuevo grupo al que podrá asignar un nombre. Para cambiar de grupo
+    haga clic en  en el menú desplegable y seleccione el que desea editar.
+  NOTA: Si selecciona audio en streaming para un sonido en el Editor de sonido, no podrá asignar el sonido a un Grupo de audio, ya que los sonidos en streaming no se empaquetan de la misma manera que otros
+    sonidos y usted tiene el control total sobre cuándo se cargan, se reproducen y se descargan utilizando el código.
+  Para añadir un sonido a un grupo de audio, tiene que abrir el Editor de sonido para ese sonido y luego seleccionar el grupo desde la opción que encontrará allí, o alternativamente puede añadir activos a un grupo de audio a través de
+    el menú del botón derecho del ratón  en el Navegador de Activos. Puede seleccionar uno o más activos de sonido (o
+    una carpeta de grupo de activos completa) y luego utilizar el menú RMB para añadir los sonidos a cualquier grupo. También puede hacer clic en el botón Añadir recurso en la parte inferior del Editor de grupos de audio para añadir activos de esa manera.
+  Una vez que tengas un sonido añadido a un grupo de audio personalizado, puedes utilizar esta ventana para elegir selectivamente a qué plataforma exportar ese sonido. Puede ser que por defecto tengas todos tus sonidos a la máxima calidad, pero que para HTML5 (por ejemplo)
+    quieras utilizar un archivo de sonido de menor calidad para utilizar menos memoria. En ese caso, añades los archivos de menor calidad a GameMaker Studio 2 y los asignas a un nuevo grupo de audio. A continuación, seleccione ese grupo de audio en el menú desplegable y establecer
+    para exportar sólo a HTML5, y eliminar la exportación a HTML5 de las opciones de exportación del grupo de audio de mayor calidad. Es importante tener en cuenta que no se pueden cambiar las opciones de exportación del grupo de audio "por defecto" y que siempre
+    se exportará a todas las plataformas disponibles cuando construyas un paquete de juego final.
+  Una vez que haya definido los grupos de audio y les haya asignado sonidos, podrá verlos en la lista de la izquierda cuando seleccione el grupo. Siempre habrá un grupo de audio "por defecto" disponible y todos los sonidos que están dentro de este grupo siempre
+    se incluirán en el paquete del juego para todas las plataformas y se cargarán en la memoria al iniciarse (a menos que se marquen como "transmitidos" en las propiedades del Editor de sonido), pero cuando se crea un grupo de audio personalizado, los archivos que se añaden a él
+   no se cargarán en la memoria hasta que llame a la función audio_group_load(). De este modo, puede controlar
+    qué audio reside en la memoria en cualquier momento. Tenga en cuenta también que para todas las funciones de grupo de audio, tendrá que suministrar el valor del ID del grupo de audio.
+    Este es simplemente el nombre que le has dado al grupo de audio.
+  Los Grupos de Audio también están vinculados a los ajustes de las Configuraciones. Cuando se selecciona una configuración, se puede abrir la ventana de Audio Groups y seleccionar los objetivos de exportación en la parte derecha para esa configuración, y
+    luego cambiar las configuraciones cambiará estos objetivos de salida. Tenga en cuenta que no puede establecer recursos de sonido a diferentes grupos por configuración, sólo el objetivo de exportación para el grupo dado.
+   
+   
+   
+  
+    
+      
+        Atrás: Configuración del juego
+        Siguiente: Grupos de texturas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

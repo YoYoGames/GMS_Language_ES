@@ -1,0 +1,63 @@
+
+  
+  El jefe de sala
+  Al utilizar el Navegador de Activos, puede crear sus salas y moverlas entre
+    los diferentes grupos de carpetas para organizar el proyecto de la forma que más te convenga. Sin embargo, los juegos en GameMaker Studio 2 generalmente tienen salas que siguen un cierto orden, y como mínimo deben tener una sala de inicio específica (después de
+    después de que el juego se inicie en esta sala, puedes usar código o acciones para ir a cualquier sala del juego si lo deseas), que es donde entra en juego el Gestor de Salas.
+  Puede abrir el gestor de salas haciendo clic en el botón "Extras"  en la parte superior del navegador de activos y seleccionándolo en el menú que se abre, o puede
+    simplemente hacer clic en  el icono a la izquierda de una sala en el navegador de activos:
+  Una vez abierto, el Gestor de Salas le presenta dos pestañas diferentes, una para el Orden de las Salas y otra para la Herencia de las Salas.
+    El orden de las salas define el orden en el que se accederá a las salas si se recorre el juego literalmente, utilizando la función room_goto_next() en
+    al final de cada sala, y la primera sala de la lista siempre estará marcada con el icono de "casa" , que muestra que esta sala es la sala de inicio designada para el juego.
+    sala de inicio del juego. Este icono también se mostrará en el Navegador de Activos para que puedas ver claramente de qué sala se trata, independientemente de cómo hayas filtrado o configurado tus activos.
+  Nota: Los IDs de sus activos de sala no estarán en el mismo orden que los definidos en esta lista, por lo que no debe suministrar un valor numérico directamente para cambiar la sala en tiempo de ejecución. Utilice siempre la constante de la sala para el activo que desea referenciar (que es simplemente su nombre) o recupérela a través de una función.
+  Puede cambiar el orden de las habitaciones simplemente haciendo clic en  y arrastrando la habitación que desee mover hacia arriba o hacia abajo en la lista, y puede utilizar  y/o  /  para seleccionar varias habitaciones y luego hacer clic y arrastrarlas para moverlas todas:
+  La pestaña de Herencia de Salas es para configurar salas "hijas". Una sala hija es aquella que se ha copiado de una sala
+    de una habitación "padre" y configurada para heredar todas sus propiedades. Si no hace nada en esta sala, entonces esta sala será una copia de la sala original, pero puede ir al Editor de salas y
+    activar o desactivar la herencia para cosas específicas como capas o instancias, así como añadir nuevas capas, instancias y propiedades a la sala.
+  Al igual que en la pestaña de Orden de Habitaciones, puede hacer clic en  y arrastrar para reordenar las habitaciones, pero tenga en cuenta que si selecciona una habitación hija y la mueve a un padre diferente, se romperá la herencia de la habitación con el padre original y en su lugar heredará las propiedades de la nueva habitación. Tenga en cuenta también que puede convertir
+    una habitación hija en una habitación "completa" sin herencia arrastrándola a la izquierda de la lista (el borde de la lista se resaltará), momento en el que simplemente se convertirá en una habitación por derecho propio.
+  Las habitaciones pueden tener varios hijos, y cada uno de ellos puede ser también un padre y tener sus propios hijos, por ejemplo:
+  Aquí tenemos una sala madre, "rm_Level_1_Day", que tiene dos hijos
+    "rm_Level_1_Day_AfterBattle" y "rm_Level_1_Night". También hemos asignado otra sala hija a "rm_Level_1_Night" llamada "
+    rm_Level_1_Night_AfterBattle ". De esta manera se pueden reutilizar los recursos y el diseño del nivel de una sala madre, y luego sólo cambiar lo necesario para hacerlo ligeramente diferente en la sala o salas hijas.
+  NOTA: Para más información sobre la herencia de habitaciones, consulte aquí.
+  Por último, el gestor de salas cuenta con algunas herramientas adicionales para ayudarle a navegar y organizar sus salas. En la parte superior tiene una barra de búsqueda que le permite añadir un término de búsqueda y luego ir rápidamente a las salas que tienen el término de búsqueda en sus
+    nombres. Las habitaciones que contengan el término de búsqueda aparecerán resaltadas y podrás navegar hasta ellas al instante utilizando los botones arriba/abajo del lateral:
+  También hay algunos botones útiles en la parte inferior del Administrador de salas que le permiten mover las salas hacia arriba o hacia abajo en la lista de orden de las salas:
+  Junto a estos botones también tienes un botón de Crear Grupo que se puede utilizar para crear una carpeta de grupo.
+    Estas carpetas se pueden utilizar para organizar mejor las salas de tu juego (el orden de las salas se seguirá respetando), y puedes hacer clic y arrastrar las salas a la carpeta para añadirlas. También puedes seleccionar varias salas haciendo clic mientras mantienes pulsado  y/o  / , luego haz clic en el botón Crear Grupo y todas las salas seleccionadas se añadirán al grupo. Tenga en cuenta que esto cambiará el orden de las habitaciones en su juego, y también tenga en cuenta que si decide eliminar la carpeta de grupo más tarde, cualquier habitación dentro de la carpeta se eliminará también (por
+    por defecto GameMaker le advertirá de esto).
+  También debe tener en cuenta que puede hacer clic con el botón derecho del ratón en cualquier sala del Administrador de salas para que aparezca el siguiente menú:
+  Este menú le ofrece las siguientes opciones:
+  
+    Crear sala hija: Esto creará una nueva habitación como hija de la habitación sobre la que se hizo clic, con la nueva habitación heredando las propiedades de la habitación padre.
+    Editar: Esto abrirá el Editor de Salas para la sala.
+    Editar etiquetas: Esto abrirá el Editor de Etiquetas para que pueda añadir etiquetas a la sala.
+    Renombrar: Permite renombrar el activo de la sala (también puede hacer un doble clic lento  en la sala para renombrarla).
+    Duplicar: Esto duplicará la sala seleccionada, colocando la nueva sala debajo de la sala seleccionada.
+    Favorito:  Esto añadirá la sala seleccionada a la sección de favoritos del navegador de activos.
+    Borrar: Al hacer clic en esta opción se eliminará la sala (o salas) que se haya seleccionado. Si se utiliza en una carpeta de grupo, todas las salas dentro de la carpeta se eliminarán junto con la carpeta. Si se utiliza en una sala principal, sólo se eliminará la sala principal,
+      y todas las salas secundarias se mantendrán, aunque ahora serán independientes y ya no serán salas secundarias.
+    Expandir hijos: Si se selecciona una carpeta de grupo, esta opción ampliará el contenido de la carpeta.
+    Expandir todo: Esta opción expandirá todos los grupos de carpetas.
+    Contraer todo: Esta opción contraerá todos los grupos de carpetas.
+    Organizar:  El submenú Organizar puede utilizarse para mover las habitaciones hacia arriba o hacia abajo en el gestor de habitaciones, de forma similar a los botones de la parte inferior de la ventana del gestor.
+    Abrir en el explorador: Esto abrirá un explorador de archivos OS en el activo en el proyecto del juego.
+    Color de los activos: Aquí puede seleccionar un color para la sala (o salas) para ayudar a identificarlos en el Administrador de salas. Ten en cuenta que este color también se utilizará en el navegador de activos y anulará cualquier color que se haya establecido previamente.
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Configuración del juego
+        Siguiente: Archivos incluidos
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

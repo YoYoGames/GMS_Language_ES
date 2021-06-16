@@ -1,0 +1,87 @@
+
+  
+  Habitaciones
+  Todos los juegos que creas en GameMaker Studio 2 necesitan al menos una sala para funcionar (pero pueden tener muchas, muchas más) , y una sala es sólo un espacio donde colocas instancias de los objetos que componen tu juego, así como baldosas y cualquier otro recurso gráfico.
+    Cuando cree por primera vez una sala en el Navegador de Activos, se le presentará un nuevo Editor de salas espacio de trabajo con el que editar sus propiedades,
+    algo así:
+  
+  Por defecto, las herramientas de la sala se situarán a la izquierda, con tres secciones principales:
+  
+    Editor de capas: Todo en una habitación se coloca en capas, y hay diferentes tipos de capas que puede elegir (más sobre esto más adelante). Las capas se ordenan por profundidad y esta profundidad es la que define el orden en el que
+      el contenido de las capas se mostrará en la pantalla cuando el juego se ejecute. El orden de la profundidad es de mayor a menor, de modo que cuanto menor sea la profundidad más cerca de la "cámara" y cuanto mayor sea la profundidad más lejos. Por ejemplo, una capa con una
+      profundidad de -300 se renderizará sobre una capa con una profundidad de -100, y una capa con una profundidad de 1000 se renderizará debajo de todo lo que tenga una profundidad menor que ésta. Tenga en cuenta que, por defecto, GameMaker Studio 2 ordenará las profundidades de las capas para usted de acuerdo a la posición
+      en el Editor de Capas, y usted puede arrastrar alrededor de las capas utilizando el ratón para reordenarlas y GameMaker Studio 2 reordenará las profundidades para que coincidan.
+    Propiedades de las capas: Cada capa que añada a la sala tendrá sus propias propiedades, y esas propiedades cambiarán dependiendo del tipo de capa. Esta ventana le permite cambiar esas propiedades y editar la forma en que la capa será
+     la capa.
+    Propiedades de las habitaciones: Las habitaciones tienen un número de propiedades también, y estas pueden ser establecidas aquí. Cosas como el tamaño de la habitación, los puertos de vista de la cámara que están activos y algunas otras cosas se pueden establecer aquí.
+  
+  Hemos mencionado que hay diferentes tipos de capas, así que vamos a repasar cuáles son y cómo se pueden utilizar al construir tus juegos:
+  
+    
+      
+        
+        Capa de fondo
+        La capa de fondo es una capa que puede rellenarse con un solo color o una sola imagen. Se puede mover y posicionar dentro de la habitación, y se pueden tener varias capas de fondo. Generalmente se utiliza, como su nombre indica
+          para generar un fondo constante para todas las demás capas de la sala. Por defecto, una nueva sala siempre contendrá una capa de fondo, pero puede eliminarla si no la necesita.
+      
+      
+        
+        Capa de instancia
+        En la capa de instancias es donde se colocan todas las instancias de los objetos que necesitas para el juego. Para añadir una instancia a una capa, simplemente haga clic en  en el objeto en el
+          navegador de activos y luego arrastrarlo al espacio de trabajo del editor de salas. Cuando sueltes el botón del ratón, se habrá añadido una instancia de ese objeto a la sala. Por defecto, una nueva sala siempre contendrá una capa de instancia, pero puede eliminarla
+          si no la necesita.
+      
+      
+        
+        Capa de mapa de azulejos
+        Después de haber creado un conjunto de azulejos, tienes que añadir los azulejos a tu habitación, lo que se hace creando una capa de mapa de azulejos. Una capa de mapa de azulejos es una capa que le permite añadir azulejos de cualquiera de los activos del conjunto de azulejos que haya creado y se configurará automáticamente para utilizar una cuadrícula del tamaño de las celdas del conjunto de azulejos. Sólo se puede añadir un único azulejo a cada celda de la cuadrícula, por lo que si necesita que varios azulejos ocupen el mismo espacio, deberá utilizar varias capas de mapa de azulejos.
+      
+      
+        
+        Capa de la ruta
+        La capa de trayectoria es la única que no se renderiza cuando se ejecuta el juego. Esta capa es más bien una capa de "conveniencia" para ayudarte a crear o editar activos de Trayectoria, ya que te permite añadir o editar trayectorias dentro del espacio real de la sala.
+      
+      
+        
+        Capa de activos
+        A veces quieres un bonito efecto gráfico pero no quieres la sobrecarga de usar una instancia o no necesitas que haga nada más que dibujarse a sí misma. Podría utilizar un mapa de mosaico, pero dado que los mapas de mosaico están restringidos a utilizar una cuadrícula y sólo
+          una sola imagen por celda de la cuadrícula, pueden ser un poco restrictivos. Es entonces cuando se utiliza la capa de activos. La capa de activos simplemente toma un recurso de sprite y lo dibuja usando los parámetros que usted establece cuando lo agrega a la habitación. Los sprites y las
+          secuencias se pueden añadir a esta capa de la misma manera que las instancias de los objetos se añaden a la capa de instancia, es decir: se hace clic en  en el sprite en el navegador de activos y luego
+          arrastrarlo al espacio de trabajo del editor de salas.
+      
+    
+  
+  
+    
+  
+  No entraremos aquí en muchos más detalles sobre el editor de salas (para eso tenemos esta sección del manual), pero explicaremos brevemente cómo añadir instancias a una capa de instancias, ya que necesitarás
+    saber eso para la siguiente sección de la Guía de Inicio Rápido.
+  Para añadir una instancia al editor de salas, primero debes seleccionar una Capa de Instancia en el Editor de Capas de la izquierda (o crear una si no existe). A continuación, puede ir al Navegador de Activos y simplemente hacer clic en  y arrastrar un objeto que desee desde allí y soltarlo en la sala en la posición que desee, lo que añadirá una única instancia de ese objeto a su juego:
+  
+  Si quieres colocar varias instancias en la habitación, entonces puedes seleccionar un objeto del árbol de recursos y luego mantener pulsado  para previsualizar el recurso,
+    y si además pulsas el botón izquierdo del ratón  puedes entonces "pintarlo" en la capa de la habitación.
+  
+  Tenga en cuenta que los activos reciben una posición cuando se añaden en el editor de la sala en función de sus posiciones en los ejes X e Y en relación con el origen de la sala. El origen de la sala es la posición (0, 0), que en GameMaker Studio 2 es la esquina superior izquierda,
+    y a la derecha es +X y abajo es +Y, por ejemplo:
+  En el ejemplo anterior la instancia se sitúa en el centro de la habitación en la posición (X:512, Y:384). También es posible salirse de los límites de la
+    límites de la sala y tener posiciones mayores que las longitudes de los ejes de la sala, o incluso menores que el origen de la sala - en cuyo caso las coordenadas X/Y serán valores negativos.
+  Para obtener información más detallada sobre el Room Editor, puede consultar la siguiente sección del manual:
+  
+    Editores: El editor de la sala
+  
+  Con esto terminamos el Editor de Habitaciones en esta Guía de Inicio Rápido, y ahora deberías saber lo suficiente para empezar a crear sprites y objetos y diseñar habitaciones para ellos. Las siguientes secciones de esta guía van a cubrir algunos de los fundamentos de la programación
+    para ayudarte en tu camino, empezando por dibujar cosas en la pantalla.
+   
+   
+  
+    
+      
+        Volver: Index
+        Siguiente: Dibujo
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

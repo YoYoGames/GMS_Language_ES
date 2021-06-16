@@ -1,0 +1,35 @@
+
+  
+  Archivos incluidos
+  GameMaker Studio 2 no se limita a los activos que creas dentro del programa, ya que puedes añadir archivos al proyecto como Archivos Incluidos para que se pueda acceder a ellos mientras se ejecuta el juego. Los archivos que añadas dependerán
+    de lo que quieras hacer, pero cosas como los archivos predeterminados de *.ini, sprites e imágenes de fondo, o archivos de texto de idiomas se utilizan comúnmente como archivos incluidos.
+  Para añadir estas cosas a su proyecto hay una ventana de edición que se puede abrir desde el menú Extras del Navegador de Activos :
+  Seleccionando esto se abrirá el Editor de Archivos Incluidos:
+  Para añadir un archivo a sus recursos simplemente utilice el botón Abrir en el explorador, que abrirá un explorador de archivos en la carpeta datafiles
+    de su proyecto. A continuación, puede añadir directorios y archivos según sea necesario y GameMaker Studio 2 actualizará el editor de archivos incluidos con estos automáticamente.
+  Tenga en cuenta que toda la edición (renombrar, organizar, etc...) debe hacerse desde el explorador de archivos por defecto.
+  Una vez que haya añadido archivos al editor, puede hacer doble clic en  para abrir las propiedades del archivo:
+  Esta ventana muestra el nombre del archivo, su tamaño en el disco, y también las plataformas a las que debe ser exportado cuando compila/prueba
+    su juego. Tienes botones para seleccionar "Todos" o "Ninguno", o puedes bajar por la lista y marcar/desmarcar los tragets a los que quieres que se exporte el archivo, según sea necesario.
+  Para más información sobre cómo se almacenan los archivos incluidos con su juego y cómo se accede a ellos, consulte la sección del manual dedicada al Sistema de Archivos.
+  IMPORTANTE! Cuando incluya archivos de sonido, debe asegurarse de que los archivos no tengan nombres que choquen con los activos de sonido de streaming. Por ejemplo, un activo de sonido llamado "main_music" y un archivo incluido llamado "main_music.ogg"
+    va a ser indefinido cuando el proyecto se ejecute. Esto se debe a que los archivos de streaming también se almacenan fuera del paquete principal del proyecto, por lo que hay que tener cuidado en estas situaciones.
+  Vale la pena señalar que puede incluir los archivos DLL (en Windows) o DyLib (en macOS) como archivos incluidos y luego crear sus propias funciones personalizadas para tratarlos utilizando external_define().
+    Éstas se pueden utilizar llamando a la función external_call() función.
+  ATENCIÓN! El uso de los archivos incluidos para crear una funcionalidad extra de esta manera es incompatible con el sistema de extensiones, en la medida en que no se pueden utilizar las external_*() funciones
+    con archivos añadidos en una extensión, ya que las extensiones ya tienen un método para añadir constantes y funciones
+   
+   
+   
+  
+    
+      
+        Atrás: Configuración del juego
+        Siguiente: Grupos de audio
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+

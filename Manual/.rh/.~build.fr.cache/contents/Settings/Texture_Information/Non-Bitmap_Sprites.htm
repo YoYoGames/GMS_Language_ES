@@ -1,0 +1,84 @@
+
+  Sprites sin mapa de bits
+  GameMaker Studio 2 tiene soporte para sprites que no son de mapa de bits en forma de archivos vectoriales SWF o archivos de animación esquelética de Spine. Ambos formatos tienen sus pros y sus contras, y las dos secciones siguientes explican cómo importarlos en el Editor de Sprites, así como un poco de información sobre cómo se dibujan.
+   
+  Sprites de animación esquelética (columna vertebral)
+  Un sprite realizado con animación esquelética, es aquel en el que se ha creado un "esqueleto" base y se ha animado utilizando fotogramas clave para mover las partes componentes del esqueleto en el tiempo. Este esqueleto es entonces pelado a partir de un atlas de texturas y la animación resultante se exporta en uno de los muchos tipos de archivo. GameMaker Studio 2 permite importar este tipo de sprite siempre que se haya exportado como archivo de formato *.json y tenga el archivo
+    archivo de atlas de texturas asociado correctamente (*.atlas) y el archivo de imagen (como *.png) en el mismo directorio.
+  Actualmente GameMaker Studio 2 sólo puede importar imágenes vectoriales desde archivos en formato JSON realizados por el programa Spine,
+    sin embargo, la forma de importarlas al programa es casi idéntica a la de añadir una imagen de mapa de bits normal. Para añadir una animación esquelética, es necesario crear un nuevo sprite, lo que hará que aparezca el cuadro de diálogo estándar Load Sprite, sólo que
+    aquí tienes que asegurarte de que has seleccionado *.json en el filtro de archivos de la parte inferior:
+  
+  Al pulsar el botón "cargar" se añadirá la animación esquelética al Navegador de Activos como un sprite, mostrándose una barra de progreso mientras se procesa el archivo. Tenga en cuenta que, dependiendo de la complejidad
+    del archivo, esto puede tardar un momento o dos. Cuando el procesamiento haya terminado, volverás al diálogo de propiedades del sprite, que ahora tendrá el siguiente aspecto:
+  Una vez que hayas importado la animación, puedes establecer las propiedades de colisión, pero ten en cuenta que aquí estás limitado a usar simplemente
+    colisiones precisas o colisiones de caja delimitadora, y que los datos de colisión para una animación esquelética se toman explícitamente de los datos proporcionados. GameMaker Studio 2 no genera ninguna máscara de colisión si los datos faltan en el archivo importado, lo que significa
+    que simplemente no obtendrá colisiones que funcionen si las máscaras no están configuradas correctamente en el programa utilizado para crear la imagen que se está importando.
+  NOTA: Debido a la complejidad de las animaciones esqueléticas, la imagen de vista previa que se muestra en el editor de sprites no pretende representar con exactitud su animación, sino que le ofrece una imagen simple que representa la animación para visualizarla
+    en el editor de espacios.
+  A diferencia de los sprites de mapa de bits, el sprite de animación esquelético importado no puede modificarse en el editor de ninguna manera, pero hay una serie de funciones disponibles dentro del Lenguaje GameMaker(GML) que pueden utilizarse para cambiar las pieles, establecer propiedades
+    y controlar otros aspectos de la animación. Tampoco puede establecer ninguna de las opciones de textura para el sprite, ya que GameMaker utilizará el atlas de textura suministrado que fue hecho por el programa que generó el sprite.
+  Hay una serie de cosas que debes tener en cuenta a la hora de importar sprites de animación de esqueleto, siendo la más importante que algunas de las funciones de dibujo y gestión de sprites no son compatibles por razones técnicas, especialmente aquellas
+    funciones de dibujo que dibujan sólo una parte de un sprite, o que "sesgan" la posición de alguna manera (ver las funciones individuales draw_sprite_*() funciones
+    para conocer los detalles exactos). Sin embargo, las funciones básicas de dibujo de sprites son totalmente compatibles, así como las variables de sprites incorporadas. Aparte de estas funciones y variables, también puedes establecer y cambiar las propiedades de la animación utilizando funciones especiales de skeleton_*, que se enumeran y explican en la sección de referencia sobre Animaciones Esqueléticas.
+   
+   
+  Sprites vectoriales (SWF)
+  Por lo general, todos los sprites en GameMaker utilizan mapas de bits que, aunque son flexibles en términos de contenido, limitan el tamaño y el número de fotogramas posibles en un sprite antes de que el uso de la memoria sea prohibitivo. Los sprites vectoriales evitan estas limitaciones
+    almacenando y dibujando su contenido de forma diferente: en lugar de una cuadrícula de píxeles, que puede volverse borrosa o en bloque cuando se escala, se dibujan como triángulos utilizando matemáticas vectoriales y estos pueden ser escalados (o reducidos) sin perder definición, como se ilustra
+    en la imagen siguiente:
+  Para ayudarte a visualizar cómo se hace esto, la imagen de abajo es del mismo sprite vectorial de Fireman sólo que ahora podemos ver los polígonos que
+    se utilizan para hacer la imagen dentro de GameMaker Studio 2:
+  Sin embargo, nada es gratis cuando se trata de programar juegos, y la contrapartida de los sprites vectoriales es que son más costosos para la CPU que los sprites de mapa de bits.
+    para dibujar que los sprites de mapa de bits y esta diferencia de velocidad aumenta a medida que aumenta la complejidad de la animación que se importa. Además, su uso de memoria se ve afectado por su complejidad visual, a diferencia de los sprites de mapa de bits. Teniendo esto en cuenta, permiten
+    que se puedan añadir grandes gráficos animados de una forma que sería imposible con los sprites tradicionales de mapa de bits.
+  En la otra cara de la ecuación del rendimiento, como los sprites vectoriales sólo dibujan los píxeles absolutamente necesarios (a diferencia de los sprites de mapa de bits, que también "dibujan" el espacio vacío alrededor de la imagen), pueden ser más baratos desde la perspectiva de la GPU. Además, en general
+    los sprites vectoriales son mucho más pequeños que sus equivalentes de mapa de bits; para el ejemplo del bombero anterior, los tamaños de los distintos tipos de sprites son los siguientes
+  Mapa de bits a 70x68 = 4x70x68 bytes x 12 cuadros = 223k Vector = 54k
+  Si se cuadruplica la resolución del sprite:
+  Mapa de bits a 280x272 = 4x280x272 bytes x 12 cuadros = 3570k Vector = 54k
+  Así que, como puedes ver, se puede ahorrar mucha memoria potencialmente usando sprites vectoriales, y todavía tenemos mucho potencial para ahorrar espacio en el futuro.
+  Actualmente GameMaker Studio 2 tiene un soporte limitado para los sprites vectoriales. y sólo puede importar imágenes vectoriales desde archivos de formato SWF. La forma de importarlas al programa es casi idéntica a la de añadir una
+    imagen de mapa de bits normal. Para añadir un sprite vectorial, crea un nuevo sprite, lo que hará que aparezca el cuadro de diálogo estándar Load Sprite, pero asegúrate de que has seleccionado *.swf en el filtro de archivos de la parte inferior.
+  Al pulsar el botón "cargar" se añadirá la imagen vectorial o la animación al Navegador de Activos ,
+    y se mostrará una barra de progreso mientras se procesa el archivo. Ten en cuenta que, dependiendo de la complejidad del archivo, esto puede llevar un tiempo (hasta un minuto para las animaciones más complejas). Cuando el procesamiento haya terminado, volverás al cuadro de diálogo de las propiedades del sprite
+    que tendrá el siguiente aspecto:
+  El editor de sprites no habrá cambiado mucho, pero ahora el botón de Editar Imagen se ha vuelto gris y no puede
+    no se puede pulsar ya que no hay mapas de bits para editar en este tipo de sprite. En segundo lugar, todas las opciones de textura también han desaparecido. Los sprites SWF se basan en las matemáticas y, como tales, no suelen tener texturas asociadas, por lo que ninguna de las
+    opciones disponibles son aplicables a este tipo de sprites.
+  NOTA: El aspecto de la imagen en el editor de vista previa elegido no será el mismo que el de su juego, ni el de la ventana de vista previa del editor de sprites. La imagen vectorial se importará al tamaño en que fue creada,
+    que no es necesariamente el tamaño con el que se muestra la vista previa (los navegadores normalmente escalan la imagen para que quepa, por ejemplo).
+  Una adición al editor de sprites es que puedes establecer la calidad del sprite vectorial cuando se dibuja usando el deslizador de precisión del SWF en la parte superior. Esto simplemente reducirá o aumentará el número de triángulos utilizados para generar el sprite
+    - con un valor de alrededor del 50% es suficiente normalmente para la mayoría de los juegos - sin embargo, usted debe experimentar con este valor si usted está utilizando la escala extrema, o está teniendo problemas de rendimiento.
+  Hay una serie de cosas que debes tener en cuenta al importar sprites vectoriales, siendo la más importante que algunas de las funciones de dibujo y gestión de sprites no son compatibles por razones técnicas, en particular aquellas funciones de dibujo
+    que dibujan sólo una parte de un sprite, o que "sesgan" la posición de alguna manera (ver las funciones individuales draw_sprite_*() funciones
+    para conocer los detalles exactos). Sin embargo, las funciones básicas de dibujo de sprites son totalmente compatibles, así como las variables de sprites incorporadas. También puede establecer diferentes valores de antialiasing(AA)
+    para los sprites SWF que se dibujan utilizando las funciones draw_enable_swf_aa(), draw_get_swf_aa_level() o draw_set_swf_aa_level().
+  También debe tener en cuenta lo siguiente:
+  
+    Al importar un archivo *.SWF, Actionscript no es compatible, por lo que si su SWF depende de él para funcionar correctamente, probablemente no saldrá bien. Del mismo modo, cualquier clip de película incrustado que tenga su propia línea de tiempo
+      sólo se mostrará el primer fotograma de la animación; toda la animación debe estar en la línea de tiempo principal.
+    Si su archivo vectorial tiene detalles particularmente finos, puede encontrar ocasionalmente que aparecen agujeros o triángulos extraños en los sprites resultantes. Esto se debe a que, en escalas pequeñas, la geometría puede colapsar y crear formas que no se triangulan bien.
+      triangulan bien. En este caso tienes dos opciones: puedes aumentar la escala del contenido del archivo vectorial, lo que dará al importador más espacio para jugar, o puedes intentar reducir el nivel de detalle del objeto que se está rompiendo.
+    GameMaker Studio 2 utiliza el tamaño del escenario del SWF como los límites del sprite resultante. Sin embargo, si hay algo en el escenario fuera de estos límites, se sigue dibujando. Esto significa que usted debe tratar de evitar poner cualquier cosa fuera de su
+      si no quiere que se muestre, o utilizar una capa de máscara para limitar el dibujo a esta zona.
+    El tamaño del escenario también afecta al tamaño de las máscaras de colisión que se generan, por lo tanto si tienes un tamaño de escenario grande y muchos fotogramas en tu animación puedes potencialmente consumir mucha memoria. Por lo tanto, sólo utilice máscaras de colisión precisas si
+      realmente lo necesitas.
+    Dado que un archivo SWF se crea a partir de múltiples capas, algunas de las cuales pueden superponerse, el alfa no funciona del mismo modo que con los sprites de mapa de bits: las áreas superpuestas no se verán tan transparentes como otras partes del sprite, ya que los píxeles se dibujan varias veces.
+      se dibujan varias veces.
+     Se admiten los rellenos de mapa de bits, aunque si utiliza rellenos de mapa de bits en mosaico como parte de su archivo SWF, debe asegurarse de que el mapa de bits tenga un tamaño de potencia de dos, ya que, de lo contrario, no se mosaizará correctamente. La representación de texto también es compatible, pero es necesario
+      pero es necesario incrustar la fuente en el archivo SWF para que aparezca en el sprite resultante. Además, actualmente sólo se admite el texto de una sola línea alineado a la izquierda.
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Grupos de texturas
+        Siguiente: Páginas de texturas
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+

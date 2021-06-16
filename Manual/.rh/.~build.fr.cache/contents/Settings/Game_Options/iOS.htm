@@ -1,0 +1,89 @@
+
+  
+  Opciones de juegopara iOS 
+  Esta sección describe las diferentes opciones disponibles que controlan cómo se compilarán los proyectos de juegos de iOS. Las diferentes secciones son:
+   
+  General
+  La primera parte de la sección General cubre los ajustes de construcción para su juego. Para empezar se establecen las orientaciones en las que
+    su juego puede ser ejecutado en para la mejor experiencia de usuario. Las opciones disponibles son:
+  
+    Retrato
+    Retrato invertido
+    Paisaje
+    Paisaje invertido
+  
+  A continuación, puede ir a la sección de soporte de dispositivos, con las siguientes opciones disponibles para establecer el tipo de dispositivo al que dirigirse:
+  
+    iPhone o iPod Touch: iPhone 6 y superior o dispositivos iPod Touch
+    iPad: Dispositivos iPad
+    Ambos: tanto el iPhone/iPod como el iPad
+  
+  Lo segundo que hay que hacer es rellenar la información del producto sobre su juego, incluyendo su nombre para mostrar, su ID de paquete y la información de la versión. Tenga en cuenta que el ID del paquete debe estar en el formato correcto de
+    para que la versión final del juego funcione correctamente, por ejemplo: com.[Company].[GameName]. Aquí también puede dar el identificador de equipo que desea utilizar para firmar la aplicación final que
+   GameMaker Studio 2 crea para usted. Al establecerlo aquí, se anulará el identificador de equipo que haya proporcionado en las Preferencias deiOS.
+  A continuación, puede marcar o desmarcar la opción de Aplazar la salida del indicador de inicio. Cuando está marcada, la barra de inicio se mostrará siempre a bajo alfa, y el primer deslizamiento despierta la barra y el segundo te lleva a casa. Si la opción
+    está desmarcada, entonces la barra no se muestra en el juego, pero el primer deslizamiento del borde te llevará a casa. Por defecto, la opción no está marcada.
+  Por último, tiene la opción de generar un Podfile y un Podfile.lock. Estos archivos son necesarios si va a añadir CocoaPods a una extensión deiOS utilizando el Editor de extensiones. Los archivos contienen macros específicas requeridas por GameMaker Studio 2 para configurar cualquier CocaoPodsde la lista al construir su juego. Al hacer clic en los botones se crearán los archivos con
+    las macros pregeneradas, y también abrirá un explorador de archivos en la ubicación de los archivos, en caso de que desee editarlos manualmente. También hay un botón que te llevará a la siguiente guía:
+  
+    iOS y tvOS: Uso de Cocoa Pods
+  
+   
+  Gráficos
+  Aquí puede cambiar los siguientes detalles relacionados con la forma en que se mostrará su juego, con las siguientes opciones disponibles:
+  
+    Interpolar los colores entre píxeles: Activa la interpolación lineal, que básicamente "suaviza" los píxeles. Para gráficos de píxeles nítidos, debería estar
+      desactivado, pero si tiene bonitas mezclas alfa y gráficos con bordes suavizados es mejor dejarlo activado. Está desactivado por defecto.
+    La mitad de las texturas del iPad 1: El iPad 1 tiene mucha menos memoria de texturas que los dispositivos más recientes, así que puedes activar esta opción para reducir el tamaño de las texturas a la mitad si quieres dirigirte a este dispositivo u obtener la máxima compatibilidad.
+    Escala: Aquí puede seleccionar la escala del lienzo de dibujo manteniendo la relación de aspecto dentro de la pantalla del dispositivo - añadiendo "relleno" alrededor de los bordes para ajustarse a la pantalla - o puede seleccionar que el lienzo de dibujo se estire para ajustarse a
+      la pantalla del dispositivo.
+  
+  Por último, existe la opción de establecer el tamaño de la página de la textura. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
+    también hay un botón marcado como Vista Previa que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo se ven. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura y
+    para evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para obtener más información sobre las páginas de textura, consulte aquí.
+  NOTA: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego con los distintos navegadores y dispositivos.
+   
+  Iconos
+  Esta sección le permite añadir los diferentes iconos requeridos por los diferentes dispositivos iPhone y iPad y las diferentes partes de la
+   iOS App Store. Estos iconos deben ser creados como imágenes de 24bit *.png en el tamaño especificado para cada uno.
+  Vale la pena señalar que GameMaker Studio 2 tiene una herramienta generadora de imágenes del proyecto que se puede utilizar para crear automáticamente todas las imágenes necesarias para todas las diferentes plataformas de destino de su juego
+    para las que se compila el juego. Si utiliza esta herramienta, deberá revisar las imágenes creadas para asegurarse de que son las que necesita. La herramienta generará tanto iconos como imágenes (véase la sección siguiente).
+  NOTA: Al importar un proyecto antiguo puede aparecer la siguiente advertencia:Esto ocurre porque la versión actual del objetivo iOS 
+    ha cambiado el formato de los iconos requeridos desde que el proyecto fue cargado previamente. Tendrá que volver a crear todos los iconos, ya que habrán sido sustituidos por los iconos genéricos de GameMaker Studio 2 (puede utilizar la mencionada herramienta
+    Generador de imágenes del proyecto para hacerlo rápidamente).
+   
+  Imágenes
+  Esta sección le permite añadir gráficos separados como Pantallas de Lanzamiento (la imagen que se mostrará brevemente mientras
+    su aplicación se carga) para cada una de las orientaciones del dispositivo, así como el color del borde que se utilizará como fondo para las pantallas de lanzamiento que no están configuradas para llenar la pantalla completa. Estas imágenes deben ser creadas como imágenes individuales de 24 bits
+    *.png sin transparencias y a un tamaño adecuado. Ten en cuenta que esto no se considera una pantalla de inicio y que Apple tiene unas directrices bastante estrictas sobre cómo debe configurarse y utilizarse. Consulta la página para desarrolladores sobre Directrices de la interfaz humana para obtener más información.
+  También puede establecer cómo debe mostrarse la pantalla de inicio desde las siguientes opciones:
+  
+    Mantener relación de aspecto: Esto mantendrá la relación de aspecto de la imagen en comparación con la pantalla del dispositivo, añadiendo "relleno" alrededor de los bordes donde sea necesario.
+    Recortar para ajustar: Esto mantendrá la imagen 1:1 con la pantalla del dispositivo y recortará (o rellenará) los bordes según sea necesario.
+    Estirar: Esto estirará la imagen para llenar la pantalla del dispositivo (y puede distorsionar la imagen mostrada).
+  
+   
+  Social
+  Esta sección es para habilitar diferentes características sociales en su juego de iOS. Se pueden elegir las siguientes opciones:
+  
+    Facebook: Si necesitas las funciones de Facebook, tienes que seleccionar esta casilla y luego proporcionar el ID de la aplicación de Facebook y el nombre de la aplicación de Facebook. Tenga en cuenta que se accede a todas las funciones de Facebook a través de una
+      y cuando marque por primera vez la casilla Usar Facebook se le pedirá que descargue e instale la extensión de Facebook desde la página Mercado.
+    Habilitar las notificaciones push: Para que su juego utilice las notificaciones push, primero deben estar habilitadas aquí, de lo contrario no funcionarán.
+    Activar el inicio de sesión con Apple: Esta opción es para usar la extensión de inicio de sesión de Apple en iOS. Puedes obtener esta extensión desde la página Juegos YoYo Mercado,
+      y la propia extensión contiene instrucciones completas de uso. Si no utiliza esta extensión, no debe marcar esta opción.
+  
+   
+   
+   
+  
+    
+      
+        Atrás: Opciones de juego
+        Siguiente: tvOS
+      
+    
+    Copyright YoYo Games Ltd. 2021 Todos los derechos reservados
+  
+  
+  
+
