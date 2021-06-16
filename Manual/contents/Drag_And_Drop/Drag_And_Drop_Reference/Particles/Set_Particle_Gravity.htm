@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fijar la gravedad de las partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Gravity action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Gravity" />
+  <meta name="search-keywords" content="Set Particle Gravity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Gravity Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Gravity.png"> Establecer la gravedad de las partículas</h1>
+  <p>Esta acción simulará el efecto de la gravedad en todas las partículas del tipo dado. Primero se especifica el valor del ID del tipo de partícula (que debe ser el mismo que el valor usado cuando se creó la partícula usando la acción <a href="Create_Particle_Type.htm">Crear Tipo de Partícula</a> ) y luego se puede establecer la fuerza de gravedad y la dirección. La fuerza es un valor <i>acumulativo</i> y se añadirá al vector de velocidad en cada fotograma del juego, por lo que una gravedad de 1 añadirá uno al valor de la velocidad en cada fotograma del juego, mientras que el valor de la dirección
+    es simplemente la dirección en la que la gravedad debe &quot;tirar&quot; de la partícula. Tenga en cuenta que tanto para la fuerza <i>como para la</i> dirección puede utilizar valores negativos, y que la dirección en <span class="notranslate">GameMaker Studio 2</span> se calcula con 0 ° a la derecha, 90 ° a la parte superior,
+    180° a la izquierda y 270° a la parte inferior.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Particle Gravity Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Gravity.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de identificación del tipo de partícula para establecer la gravedad de</td>
+      </tr>
+      <tr>
+        <td>Fuerza</td>
+        <td>La fuerza de la gravedad (en píxeles por cuadro de juego)</td>
+      </tr>
+      <tr>
+        <td>Dirección</td>
+        <td>La dirección del &quot;tirón&quot; de la gravedad</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Secondary_Particles.htm">Fijar las partículas secundarias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Gravity
+-->
+  <!-- TAGS
+action_part_type_gravity
+-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Guardar la partida</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Save Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Save Game" />
+  <meta name="search-keywords" content="Save Game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Save Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Save_Game.png"> Guardar partida</h1>
+  <p>Esta acción realizará un guardado básico del juego en un archivo determinado. Usted da un nombre de archivo (como una cadena e incluyendo la extensión) y la acción realizará un guardado limitado del estado actual del juego. Es importante entender que la acción está
+    diseñada para tomar una &quot;instantánea&quot; del estado actual del juego y es para usarla más como un sistema de punto de control que como un sistema de guardado universal, ya que no guarda <i>ninguno</i> de los recursos dinámicos (como las Estructuras de Datos <a href="../Data_Structures/Data_Structure_Actions.htm">o las Partículas</a> ) <a href="../Particles/Particle_Actions.htm">.</a> Como tal, la acción debe ser utilizada con mucho cuidado para no obtener errores o fugas de memoria. Para una aproximación más completa a la hora de guardar los datos de tu juego, consulta las <a href="../Files/File_Actions.htm">Acciones de Archivo</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Save Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Save_Game.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Archivo</td>
+        <td>El nombre -como cadena y con la extensión- que se le dará al archivo que se guarde (si el archivo ya existe, se sobrescribirá)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Save Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Save_Game.png">El código del bloque de acción anterior comprobará si hay una colisión con otra instancia y si se encuentra una comprueba
+    una variable de instancia. Si la variable devuelve <tt>true</tt> entonces el juego se guarda y la variable se pone en <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Actions.htm">Acciones del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Load_Game.htm">Cargar el juego</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Save Game
+-->
+  <!-- TAGS
+action_save_game
+-->
+</body>
+</html>

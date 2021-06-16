@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Operadores Bitwise</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains how bitwise operators work" />
+  <meta name="rh-index-keywords" content="Bitwise Operators" />
+  <meta name="search-keywords" content="bitwise,bitwise operators" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Operadores Bitwise y Binarios</h1>
+  <p>Al principio de la era de los ordenadores, el <strong>binario</strong> y el <strong>hexadecimal</strong> eran una forma de vida, probablemente porque los lenguajes de alto nivel (como el BASIC) eran simplemente demasiado lentos de ejecutar. Por ejemplo, multiplicar 32 x 32 podría haber llevado
+    varios ciclos de CPU en BASIC, pero con el binario se realiza una sola operación en un solo ciclo de CPU.</p>
+  <p>Sin embargo, hoy en día, con la potencia de un PC básico, ya no tienes que preocuparte por esto y puedes hacer las cosas de la &quot;manera larga&quot;, ya que la velocidad de la máquina y su construcción más compleja de la CPU compensarán cualquier deficiencia que tenga este enfoque.
+    este enfoque. Esto es una gran noticia, ya que significa que ya no tienes que optimizar cada línea de código que escribes, pero si este es el caso, ¿deberías preocuparte por el binario?</p>
+  <p>La respuesta es definitivamente &quot;sí, deberías&quot;. Si bien es cierto que puedes obtener algunas mejoras de velocidad - y a veces pueden ser significativas - el uso de binarios y hexadecimales conduce a una mejor comprensión de cómo funciona la CPU y también puede conducir a escribir
+    mejor código, ser capaz de empaquetar mejor los datos, y hacer algunas tareas mucho más simples. Esta página va a explicar un poco lo que es el binario, así como la forma en que se puede utilizar al hacer sus juegos.</p>
+  <p>Así que veamos primero la teoría binaria más básica: cómo se crean los números. Echa un vistazo a esta tabla:</p>
+  <p class="code">000 = 0<br> 001 = 1<br> 010 = 2<br> 100 = 4</p>
+  <p>Cada 1 o 0 representa un solo <a class="glossterm" data-glossterm="bit" href="#">bit</a> de datos, y como puedes ver esto significa que en binario, ¡10 es igual a 2! Cada bit es 2 veces el valor anterior, siendo el primer bit igual a 1. Así que el bit 2 = 2
+    el bit 3 = 4, el bit 4 = 8 y así sucesivamente (como se muestra a continuación en esta tabla de <a class="glossterm" data-glossterm="byte" href="#">bytes</a> ):</p>
+  <p class="code">00000001 = 1<br> 00000010 = 2<br> 00000100 = 4<br> 00001000 = 8<br> 00010000 = 16<br> 00100000 = 32<br> 01000000 = 64<br> 10000000 = 128</p>
+  <p>Eso está bien si quieres números que sean una potencia de 2, pero ¿cómo creamos números más complejos? Bueno, un solo número binario sólo puede almacenar un 0 o un 1, y eso es todo, así que para números más complejos tenemos que sumar bits. Si, por ejemplo, queremos
+    quisiéramos hacer 6, sumaríamos 4 y 2 así.</p>
+  <p class="code">00000010 = 2<br> 00000100 = 4<br> 00000110 = 6</p>
+  <p>Esto se aplica a <strong>todos los </strong>números binarios y a la forma en que el ordenador compone internamente cualquier número. Tomemos como ejemplo un número un poco más complicado: el 23. El número 23 se compone en realidad de <span class="inline">1+2+4+16</span> o <span class="inline">00010111</span>. ¿Qué tal un ejemplo mucho más complejo: 196? Pues bien, está formado por <span class="inline">128+64+4</span> o <span class="inline">11000100</span>. Así que en realidad no es tan complejo.</p>
+  <p>Sin embargo, si empezamos a hacer valores fuera del rango de un byte (que puede almacenar números de 0 a 255), empieza a ser un poco más difícil de seguir. Por ejemplo, 217,361 es <span class="inline">110101000100010001</span> en binario. O, <span class="inline">1+16+256+etc...</span> Las reglas son las mismas independientemente del valor que se exprese: cada número se crea a partir de la suma de varios bits.</p>
+  <p>Ahora, ¿cómo realizamos operaciones matemáticas con estos valores? Digamos que quieres almacenar <span class="inline">true</span> o <span class="inline">false</span> como un valor. Normalmente los compiladores utilizarán un <span class="inline">INT</span> (un
+    <span class="inline">INT</span> se define normalmente como un número de 32 bits con signo - con signo sólo significa que puede ser un valor positivo o negativo, mientras que sin signo significa que sólo puede ser positivo) y luego simplemente lo asignan a <span class="inline">0</span> o <span class="inline">1</span>.
+      Al tener sólo 2 estados, un valor de <span class="inline">true</span> / <span class="inline">false</span> es ideal para almacenarlo en un bit, y si hiciéramos esto podríamos almacenar 32 bits de <span class="inline">true</span> / <span class="inline">false</span> para cada
+      <span class="inline">INT</span> en lugar de uno solo, ya que un <span class="inline">INT</span> está formado por 32 bits.</p>
+  <p>¿Cómo lo hacemos? Pues resulta que es bastante fácil:</p>
+  <p class="code">banderas = banderas | 1;</p>
+  <p>El operador &quot;<span class="inline">|</span>&quot; es un operador a nivel de bits <span class="inline">OR</span>, y esto significa que la instrucción anterior <span class="inline">ORs</span> 1 en el valor mantenido en la variable <span class="inline">flags</span>. Si usted
+    Si recuerdas de antes, el uso de un 1 fijará el primer bit. Si quisiéramos fijar el segundo bit, haríamos lo siguiente:</p>
+  <p class="code">banderas = banderas | 2;</p>
+  <p>En <span class="inline">OR</span> introducimos 2, porque el patrón de bits <span class="inline">00000010</span> es igual a 2. Entonces, ¿qué hace exactamente el operador binario <span class="inline">OR</span>? Bueno, fusiona todos los bits en un solo valor,
+    así:</p>
+  <p class="code">010110100 // Valor 1<br> 110011001 // Valor 2<br> 110111101 // Valor 1 O Valor 2</p>
+  <p>Esto es lo que se conoce como una <a class="glossterm" data-glossterm="tabla de verdad" href="#">tabla de</a> verdad <a class="glossterm" data-glossterm="tabla de verdad" href="#">para el</a> operador OR:</p>
+  <p class="code">00 | 00 = 00<br> 00 | 01 = 01<br> 01 | 01 = 01<br> 01 | 00 = 01</p>
+  <p>Así que donde haya un valor con 2 ceros, se mantendrá en cero. La ventaja de usar bits como este como un estado <span class="inline">true</span>/<span class="inline">false</span>, es que puedes establecer varios bits como &quot;banderas&quot; en una sola operación,
+    algo que simplemente no podrías hacer con un valor booleano normal. Por ejemplo, digamos que el bit 1 es una bandera &quot;activa&quot;, y el bit 3 es una bandera &quot;visible&quot;. Podríamos establecer ambos haciendo esto:</p>
+  <p class="code">flags = flags | 5<span class="inline"></span>;</p>
+  <p>Esto se debe a que 5 es <span class="inline">00000101</span> en binario, y siguiendo la regla anterior, la variable &quot;flags&quot; obtendrá estos 2 bits fusionados con los suyos. Por lo tanto, incluso si el bit 1 ya estaba establecido, la operación sigue funcionando y el bit 3
+    también se activará.</p>
+  <p>¿Qué pasa con la limpieza de las banderas? Bueno, aquí es donde entra en juego la operación &quot;<span class="inline">&amp;</span>&quot; a nivel de bits <span class="inline">AND</span>. Cuando <span class="inline">AND</span> algo, los bits que se establecen en la máscara se mantienen,
+    mientras que los bits que están claros en la máscara, se eliminan - así:</p>
+  <p class="code">01110010101 // Valor 1<br> 00110000100 // Valor 2<br> 00110000100 // Valor 1 Y valor 2</p>
+  <p>Como puedes ver, donde hay un 1 en cada valor, el 1 se mantiene, y donde hay una mezcla de 0's y 1's estos se reinician a 0. Aquí está la tabla de verdad para <span class="inline">AND</span>ing:</p>
+  <p class="code">00 &amp; 00 = 00<br> 01 &amp; 00 = 00<br> 00 &amp; 01 = 00<br> 01 &amp; 01 = 01</p>
+  <p>Por lo tanto, sólo cuando haya un bit en cada lugar se mantendrá. Lo que esto significa, es que al igual que se pueden establecer múltiples banderas a la vez, también se pueden borrar múltiples banderas a la vez. Por ejemplo, tomemos el caso anterior, pero esta vez despejándolos.
+    Queremos borrar los bits 1 y 3 (dándonos el valor 5), pero recordando la tabla de verdad anterior, lo que queremos hacer es mantener todos los demás bits, y borrar los bits 1 y 3. Esto sería una &quot;máscara&quot; binaria de 111111111111111111111010 (32bits).
+    Esta máscara mantiene todos los bits actualmente establecidos, pero borra los dos bits que realmente queremos borrar. Así que si tuviéramos un valor de 1000111011 y quisiéramos borrar los bits 1 y 3 usando la máscara anterior, terminaría así...</p>
+  <p class="code">0000000000000000001000111011 // Valor<br> 111111111111111111111010 // Máscara<br> 0000000000000000001000111010 // Valor Y Máscara</p>
+  <p>Esto está muy bien, pero si tuviéramos que resolver esto cada vez que necesitáramos borrar banderas, se volvería tedioso. Lo que necesitamos es una forma de cambiar los bits fácilmente (y preferiblemente sin coste de CPU). Afortunadamente, hay una forma fácil de hacerlo utilizando el operador &quot;
+    <span class="inline">~</span> &quot; <span class="inline">NOT</span> operador.</p>
+  <p>El operador <span class="inline">NOT</span> es justo lo que dice - <em>no</em> esos bits. Aquí hay una tabla de verdad para <span class="inline">NOT</span>.</p>
+  <p class="code">~00 = 11<br> ~01 = 10<br> ~10 = 01<br> ~11 = 00</p>
+  <p>Este operador hace que la eliminación de las banderas sea muy sencilla y, lo que es mejor, suele ser una optimización en tiempo de compilación, lo que significa que si está utilizando un número constante (es decir, no una variable), el compilador cambiará los bits automáticamente por usted. Tomemos esta sentencia
+    en la que queremos borrar los bits 1 y 3 de nuevo:</p>
+  <p class="code">a = a &amp; ~5;</p>
+  <p>En realidad, esto se reducirá a sólo &quot;<span class="inline">a &amp; 11111111111111111111111111111010</span>&quot;. Esto hace que la vida sea bastante simple en términos de limpieza de banderas.</p>
+  <p>El último operador que queremos ver es &quot;<span class="inline">^</span>&quot; <span class="inline">EOR</span> (<span class="inline">Exclusive OR</span>, a veces llamado <span class="inline">XOR</span>), este operador invierte los bits establecidos en ambos
+    valores. Aquí está la tabla de verdad de <span class="inline">EOR</span>:</p>
+  <p class="code">0 ^ 0 = 0<br> 0 ^ 1 = 1<br> 1 ^ 0 = 1<br> 1 ^ 1 = 0</p>
+  <p>Este es un dato curioso, pero increíblemente útil. Por ejemplo, digamos que queremos un contador que simplemente cuente de 0 a 1 y de vuelta a 0 (alternando entre 0 y 1), podríamos añadir uno y hacer un <span class="inline">IF</span> para ver si ha llegado a
+    2, y luego volver a ponerlo en 1. O... podríamos añadir 1 y luego <span class="inline">AND</span> con 1 (ya que <span class="inline">01+01 = 10</span>, y <span class="inline">10 &amp; 01 = 0</span>) o podemos hacer esto:</p>
+  <p class="code">a = a ^ 1;</p>
+  <p>Lo que hace la primera vez que se ejecuta es <span class="inline">0 ^ 1 = 1</span>, luego la segunda vez <span class="inline">1 ^ 1 = 0</span>, alternando así las cosas de 0 a 1.</p>
+  <p>Así, - <span class="inline">OR</span> (<span class="inline">|</span>), <span class="inline">AND</span>(<span class="inline">&amp;</span>), <span class="inline">NOT</span>(<span class="inline">~</span>) y <span class="inline">EOR</span>(<span class="inline">^</span>)
+    nos permiten manipular los bits con relativa facilidad, permitiéndonos, en el nivel más simple, controlar múltiples bits a la vez. Obviamente, podemos utilizar estas operaciones para otras cosas cuando desarrollamos nuestros juegos, como enmascarar sprites, hacer operaciones con enteros <span class="inline">MOD</span> (utilizando <span class="inline">AND</span>) o hacer bonitos contadores en bucle.</p>
+  <p>Así pues, podemos hacer simplemente operaciones a nivel de bits, pero veamos las cosas más complejas, empezando por la pregunta, ¿cómo suma un ordenador? Veamos un ejemplo muy sencillo: <span class="inline">1+1</span>.</p>
+  <p class="code">00000001<br> 00000001
+    <br> 00000010
+  </p>
+  <p>Al igual que las sumas normales, sumamos los números y nos desbordamos a la siguiente columna, pero a diferencia de una suma decimal normal, sólo podemos ir de 0 a 1, no de 0 a 9. Así que añadir un <span class="inline">1+1</span> significa que nos desbordamos en <span class="inline">10</span>.
+    Veamos un ejemplo más complejo.</p>
+  <p class="code">01011011 = 91<br> 00101101 = 45<br> 10001000 = 136</p>
+  <p>Obviamente, es más difícil de ver aquí, pero los desbordamientos se suceden hasta que no hay unos en una columna. Hay que tener en cuenta que los ordenadores sólo pueden sumar (o restar, multiplicar o dividir) dos números a la vez. Por ejemplo, <span class="inline">19 + 19 + 19</span>.
+    Siendo humanos, podemos sumar todos los 9, cargar el 2 y continuar. Pero los ordenadores no pueden hacer eso, lo que sí pueden hacer es esto:<span class="inline"> (19 + 19) + 19</span>. Así que harán cada cálculo en bloques de 2.</p>
+  <p>Los cálculos binarios que más nos interesan como programadores son la multiplicación y la división. Los ordenadores sólo multiplican de dos en dos, y para hacer más dividen un número y luego suman todos los resultados. Tomemos primero algunos ejemplos muy sencillos.
+    primero. <span class="inline">4 * 2 = 8</span>. Ahora para multiplicar por 2 en binario, <em>desplazamos </em>todos los bits hacia la IZQUIERDA en uno. Así:</p>
+  <p class="code">00000100 * 2 = 00001000 = 8</p>
+  <p>Todos los bits en este caso se han movido a la izquierda en uno, haciendo que se mueva del 3er bit, al 4º, y cambiando el valor de 4 a 8. ¿Qué tal un número mayor?</p>
+  <p class="code">101 = 01100101 * 2 = 11001010 = 202</p>
+  <p>De nuevo, todos los bits se mueven en uno, y eso multiplica por 2. Entonces, ¿qué tal un múltiplo por 4? Fácil, desplazamos todo a la izquierda por 2, en lugar de por uno. Entonces, ¿qué tal 16, o 128? Esto requeriría un desplazamiento a la izquierda de 4 bits, o 7 bits respectivamente. Esto es increíblemente
+    Esto es increíblemente útil; significa que podemos hacer multiplicaciones simples simplemente moviendo los bits. Para ello, utilizamos el operador de desplazamiento a <strong>la</strong> izquierda <span class="inline">&lt;&lt;</span>. He aquí algunos ejemplos:</p>
+  <p class="code">00000001 &lt;&lt; 1 = 000000010 = 2<br> 00000001 &lt;&lt; 2 = 000000100 = 4<br> 00000001 &lt;&lt; 3 = 000001000 = 8<br> 00000001 &lt;&lt; 4 = 000010000 = 16<br> 00000001 &lt;&lt; 5 = 000100000 = 32<br> 00000001 &lt;&lt; 6 = 001000000 = 64<br> 00000001 &lt;&lt; 7 = 010000000 = 128<br> 00000001 &lt;&lt; 8 = 100000000 = 256</p>
+  <p>Ahora, aparte de ser muy útil para multiplicaciones rápidas/simples, también es muy útil para fijar bits específicos, sin tener que averiguar el valor del bit. Digamos que queremos fijar el bit 27, ¿qué número es ese? (¡67108864 por cierto!), bueno
+    podemos utilizar la sintaxis anterior para establecer fácilmente banderas como esta:</p>
+  <p class="code">a = a | (1 &lt;&lt; 27)</p>
+  <p>Bien... en realidad esto sería el bit 26 de la forma en que hemos estado describiendo las cosas hasta ahora (ya que los bits han estado comenzando en el uno), pero en realidad... los bits comienzan en el bit 0, y van hacia arriba, no en el bit 1. Así que aunque hay 32 bits en un INTEGRO, los bits van
+    de 0 a 31, no de 1 a 32. Esto es realmente muy útil, ya que ahora podemos establecer constantes para los números de bits.</p>
+  <p>Así que digamos que el bit 27 es una bandera activa, y el bit 0 es una bandera de explosión. ¿Cómo podemos activar ambos?</p>
+  <p class="code">ACTIVE = 27;<br> BOOM = 0;<br> A = A | (1 &lt;&lt; ACTIVE) | (1 &lt;&lt; BOOM);</p>
+  <p>Esto puede parecer un montón de código, pero si estos números son constantes, el compilador precompilará estas operaciones en un solo valor para que terminemos con esto como código real.</p>
+  <p class="code">A = A | 13421772;</p>
+  <p>Borrar estos bits (como vimos anteriormente) es simplemente cuestión de usar el modificador NOT, así:</p>
+  <p class="code">A = A &amp; ~((1 &lt;&lt; ACTIVO) | (1 &lt;&lt; BOOM));</p>
+  <p>Así que esto nos permite establecer y borrar los bits que queramos, y también nos permite comprimir las estructuras de datos de forma masiva. Comprimir las estructuras de datos es algo bueno, porque si usas menos memoria, tienes menos pérdidas de caché, y tu código simplemente se ejecuta
+    más rápido. Pongámoslo así, ¿qué es más rápido, copiar 32Mb o datos, o 4Mb? Bueno, claramente 4 lo es. Así que si puedes empaquetar todas tus banderas en un solo acceso a la memoria, ¡es bueno!</p>
+  <p>Ahora, echemos un vistazo rápido a cómo se hace la división, y por qué va a ser tan útil. La división se realiza desplazando los bits <em>hacia la derecha</em> utilizando el operador de <strong>desplazamiento hacia la derecha</strong> <span class="inline">&gt;&gt;</span>. Tomemos
+    un número simple - 64 - y lo dividimos por 32:</p>
+  <p class="code">64 / 32 = 01000000 &gt;&gt; 5 = 00000010</p>
+  <p>Así que ahí se desplaza el único bit hacia abajo en 5 (que es el número de desplazamientos necesarios para 32 - mira arriba), lo que nos da 2. ¿Pero qué pasa si hay otros bits ahí? Bueno, echemos un vistazo:</p>
+  <p class="code">68 / 32 = 01000100 &gt;&gt; 5 = 00000010</p>
+  <p>Así que ahí tienes .... Es exactamente lo mismo. Los bits que desplazamos hacia abajo simplemente se pierden. Esto es realmente útil, porque al dividir hacia abajo si necesitamos el resto, hay una forma aún más fácil de obtenerlo, a la que llegaremos en un momento. Pero
+    primero, vamos a tomar un ejemplo práctico. Tengo una posición X e Y, y quiero obtener la celda de la cuadrícula en la que cae, donde la cuadrícula tiene un tamaño de 32x32. Este método permite almacenar objetos, colisiones, banderas - todo tipo de cosas, y acceder a ellos
+    muy rápidamente. Así que aquí vamos:</p>
+  <p class="code">var X_index = x &gt;&gt; 5;<br> var Y_index = y &gt;&gt; 5;<br> cell_data = mygrid[# X_index,Y_index];</p>
+  <p>Entonces, ¿qué pasa si queremos el resto? Tal vez este resto se utilice como una especie de indicador de orden o algo así. Sea cual sea la razón, obtener un resto es tan sencillo como hacer un <span class="inline">AND</span>:</p>
+  <p class="code">var resto = x &amp; 31<br> var X_Index = x &gt;&gt; 5;</p>
+  <p>Ahora bien, te habrás dado cuenta de que hemos utilizado varias líneas de código aquí (como ocurre a menudo), pero esto sigue siendo sólo un par de instrucciones muy rápidas. ¿Pero por qué el 31? Bueno, como el bit 5 es 32, entonces todos los bits de abajo serían 31, y ese es el
+    resto máximo, así que eso es lo que <span class="inline">AND</span> con (también podríamos utilizar <span class="inline">(1 &lt;&lt; 5) - 1</span> que haría <span class="inline">32 - 1 = 31</span>). Ahora, si yo hiciera esto sin entender
+    binario, se vería así:</p>
+  <p class="code">var r = x mod 32;<br> var X_Index = floor(x / 32);</p>
+  <p>¿Por qué es esto mucho peor? Bueno, para dividir por 32, tenemos que ejecutar una división en coma flotante - que obviamente lleva tiempo, pero para hacer la <span class="inline">mod 32</span>, ¡en realidad hay que hacer otra! Si hiciéramos esto
+    en ensamblador, obtendríamos AMBOS valores en una sola división, pero esto no se consigue en los lenguajes de alto nivel (bueno... no muy a menudo), por lo que hay que hacer todo el trabajo dos veces. Esto se suma, especialmente si usted está haciendo un bucle apretado con un montón de cálculos
+    como este. Las divisiones de enteros usando el desplazamiento de bits como se muestra arriba realmente ayudan a optimizar tu juego.</p>
+  <p>Dado que este concepto puede ser bastante complejo de entender y de aplicar a situaciones de programación del mundo real, a continuación puedes encontrar una serie de breves ejemplos que podrían aplicarse a cualquier juego realizado con <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Alineación de baldosas</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Los desarrolladores de<span class="notranslate">GameMaker Studio 2</span> suelen utilizar la función <span class="inline">place_free()</span>, y luego, cuando se encuentra una colisión, intentan mover lentamente el objeto hacia afuera, ya sea haciendo un bucle alrededor de una posición <span class="inline">x</span> o <span class="inline">y</span> mientras continúan ejecutando esa función, o utilizando la función <span class="inline">move_outside_all()</span>.</p>
+    <p class="dropspot">Entonces, ¿cuál es la forma más rápida de hacer esto? Pues bien, si utilizamos baldosas de potencia 2 adecuadas, tenemos un método muy sencillo que además es rapidísimo. Si nos movemos hacia la derecha, y entramos en un bloque de colisión, entonces, como sabemos, todo está
+      alineado a 32, así que tenemos que alinear también el sprite a un límite de 32 píxeles - preferiblemente el de la izquierda - para que el sprite se mueva FUERA de la colisión. Esto es realmente fácil, conociendo las reglas que hemos utilizado anteriormente para obtener el resto, y sabiendo
+      cómo obtener la inversa de los bits, podemos simplemente hacer esto:<br></p>
+    <p class="code">x = x &amp; ~31;</p>
+    <p class="dropspot">Así es, eso es TODO lo que se necesita para alinear a un límite de 32 píxeles. Cambiando el 31 podemos alinear a lo que queramos - siempre y cuando sea una potencia de 2. (Esto es el equivalente a dividir por 32, y luego multiplicar por 32, eliminando así
+      los bits inferiores).</p>
+    <p class="dropspot">Si quisiéramos alinear a la derecha, entonces haríamos lo anterior, pero luego añadiríamos 32 para moverlo a la siguiente baldosa. Es sencillo. Todo esto hace que todo el código de colisión sea monumentalmente más rápido, y te permite gastar el tiempo de la CPU donde realmente lo necesitas.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Llaves y puertas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Digamos que tienes un nivel con varias puertas, y una llave para cada una. ¿Cómo puedes marcar fácilmente una llave para una puerta específica? Bueno, normalmente asignarías un ID a la llave y a la puerta. ¿Y qué pasa si quieres que una llave abra 2 o 3 puertas? Es fácil. Utilizas una MÁSCARA.
+      La puerta tendría un solo bit asignado así:<br><br></p>
+    <p class="code">door_id = 1; // 0001<br></p>
+    <p class="dropspot">Los otros serían algo así como:<br><br></p>
+    <p class="code">door_id=2; // 0010<br>door_id=4; // 0100<br>door_id=8; // 1000<br>etc...<br></p>
+    <p class="dropspot">Si quisiéramos que la llave abriera las puertas 1 y 3, entonces la llave tendría el valor MASK de 5 (que es 101 en binario). Si realizamos un <span class="inline">AND</span> de esto, y sale &quot;no cero&quot;, entonces sabemos que la llave puede abrir la
+      puerta. También puede haber llaves que no abran nada teniendo una MASCA de 0. Vea el código de abajo para la comprobación real:</p>
+    <p class="code">si ((key_id &amp; door_id) ! = 0)<br> {<br> opendoor();<br> }<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Contadores en bucle</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Digamos que queremos un simple contador de animación, que vaya de 0 a 15 (ya que tenemos 16 cuadros de animación). Normalmente se haría un incremento, y luego se haría una comprobación en <span class="inline">if</span> para envolver el número, pero para este ejemplo vamos a
+      utilizar el operador <tt>AND(&amp;)</tt>:</p>
+    <p class="code">contador = (contador + 1) &amp; 15;</p>
+    <p class="dropspot">Como 16 es una potencia de 2, podemos reducir ese número en 1 y utilizarlo como máscara, que luego podemos usar para envolver nuestro valor del contador. Si el contador sube de 15 a 16, terminamos con el patrón de bits <span class="inline">10000</span>, y si <span class="inline">AND</span> que
+      con 15 (patrón de bits <span class="inline">01111</span>) terminamos con <tt>00000</tt> (simplemente cero). Esto significa que el código anterior es útil para envolver valores dentro del rango de una potencia de 2.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Cheque del Poder de 2</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">¿Y si quieres comprobar si algo es una potencia de 2? Bueno, aquí hay un pequeño truco... Esto devolverá <span class="inline">true</span> si el valor dado es una potencia de 2:<br></p>
+    <p class="code">function is_pow2(_val)<br> {<br> return _val &amp; (_val - 1)) == 0;<br> }</p>
+    <p class="dropspot">Entonces, si tuviéramos el número 51 (<span class="inline">110011</span>) ¿qué hace esto? Bueno, obtenemos esto... <span class="inline">110011 &amp; 110010</span>, lo que obviamente nos deja con <span class="inline">false</span>, ya que quedan muchos trozos
+      después de <span class="inline">AND</span>. Si tuviéramos 64 (<span class="inline">1000000</span>), entonces se convierte en esto... <span class="inline">1000000 &amp; 0111111</span> que <em>sí</em> nos deja 0, así que es <span class="inline">true</span>.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Alineación del índice</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Aquí hay un poco de código rápido para alinear a los números de potencia de 2. (1,2,4,8,16 y así sucesivamente). Esto puede ser muy útil para la asignación de memoria, o para asegurarse de escribir datos en los límites adecuados. En este ejemplo, <span class="inline">_val1</span> necesita ser
+      alineado a <span class="inline">_val2</span> bytes, donde <span class="inline">_val2</span> es un número de potencia de 2. Esta pequeña función redondea hacia arriba al siguiente límite del número deseado.<br></p>
+    <p class="code">function align_pow2(_val1, _val2)<br> {<br> return _val1 + (_val2 - 1)) &amp; ~(_val2 - 1);<br> }<br></p>
+    <p class="dropspot"><br /></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_Information.htm">Información adicional</a></div>
+        <div style="float:right">Siguiente: <a href="Type_Tables.htm">Tablas de tipos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Bitwise Operators
+-->
+  <!-- TAGS
+bitwise_operators
+-->
+
+</body></html>

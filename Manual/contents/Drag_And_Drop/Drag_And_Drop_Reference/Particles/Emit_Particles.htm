@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Emitir partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Emit Particles action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Emit Particles" />
+  <meta name="search-keywords" content="Emit Particles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Emit Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Emit_Particles.png"> Emite partículas</h1>
+  <p>Esta acción se utiliza para crear partículas a partir de un emisor. Se suministra el ID del sistema de partículas al que pertenece el emisor (devuelto por la acción Crear <a href="Create_Particle_System.htm">Sistema de Part</a>ículas) y luego el ID del emisor real (devuelto por la acción Crear Emisor de Partículas).
+    por la acción Crear <a href="Create_Particle_Emitter.htm">Emisor</a> de Partículas), y finalmente el tipo de partícula a crear (devuelto por la acción <a href="Create_Particle_Type.htm">Crear Tipo de Partícula</a>). A continuación, puede seleccionar &quot;Ráfaga&quot;
+    o &quot;Stream&quot; las partículas del emisor, así como dar el número de ellas que desea crear.</p>
+  <p>Cuando elija el flujo de partículas, no necesita colocar esta acción en un evento de cuadro de juego como el Evento de Paso o el evento de Dibujo, pero en su lugar, simplemente llámelo una vez en el Evento de Creación (por ejemplo) y el emisor hará un flujo de partículas cada cuadro de juego
+    hasta que llame a esta acción de nuevo para detenerla (estableciendo el valor de la cuenta a 0). Si eliges reventar las partículas, entonces puedes llamar a esto en cualquier evento que elijas y las partículas se crearán una vez.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Emit Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Emit_Particles.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sistema</td>
+        <td>El ID del sistema en el que se encuentra el emisor</td>
+      </tr>
+      <tr>
+        <td>Emisor</td>
+        <td>El ID del emisor a utilizar</td>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El ID del tipo de partícula a crear</td>
+      </tr>
+      <tr>
+        <td>Evento</td>
+        <td>El tipo de evento para las partículas, ya sea &quot;Burst&quot; o &quot;Stream&quot;</td>
+      </tr>
+      <tr>
+        <td>Cuenta</td>
+        <td>El número de partículas a reventar o a fluir</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Emit Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png">El código del bloque de acción anterior creará un emisor de partículas, establecerá su región
+    y luego lo configurará para que emita un flujo de partículas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Emitter_Region.htm">Establecer región emisora</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Emit Particles
+-->
+  <!-- TAGS
+action_part_emit_emit
+-->
+</body>
+</html>

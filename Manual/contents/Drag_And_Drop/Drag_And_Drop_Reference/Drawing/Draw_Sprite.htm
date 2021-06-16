@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dibujar Sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Sprite action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Sprite" />
+  <meta name="search-keywords" content="Draw Sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Sprite Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Sprite.png" width="32"> Dibujar Sprite</h1>
+  <p>Esta acción dibujará un sprite en algún lugar de la sala. Se especifica el sprite, la posición (ya sea una posición absoluta dentro de la habitación, o una posición relativa a la instancia que hace el dibujo) y el marco de animación del sprite, si tiene múltiples
+    fotogramas (tenga en cuenta que los fotogramas de la imagen se numeran de 0 en adelante). Si tienes un sprite animado y quieres que dibuje los fotogramas como si estuviera asignado al objeto, entonces utiliza -1 para el índice de fotogramas o la variable de instancia incorporada <tt>image_index</tt>,
+    pero ten en cuenta que si la instancia no tiene ningún sprite asignado entonces no se animará, y si el sprite asignado tiene un número de fotogramas diferente al que se está dibujando entonces el sprite se dibujará con fotogramas extra o con fotogramas perdidos.</p>
+  <p class="note"><b>IMPORTANTE: </b>Esta acción no dibujará el sprite transformado, aunque haya cambiado la mezcla o la escala de la imagen. Para eso vea la acción <a href="Draw_Sprite_Transformed.htm">Dibujar Sprite Transformado</a>.</p>
+  <p class="note"><b></b><b>NOTA</b>: Esta acción es sólo para su uso en los diversos <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteo</a>, y no dibujará nada si se utiliza en otro lugar.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Draw Sprite Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Sprite.png" style="cursor: nwse-resize;" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>El sprite a dibujar</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a dibujar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para dibujar</td>
+      </tr>
+      <tr>
+        <td>Índice del marco</td>
+        <td>El índice del cuadro a dibujar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Draw Sprite Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Self.png">El código del bloque de acción anterior dibuja un sprite &quot;sombra&quot; en la misma posición relativa que el
+    y luego dibuja el sprite de la instancia encima.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Draw_Sprite_Transformed.htm">Dibujar Sprite Transformado</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Sprite
+-->
+  <!-- TAGS
+action_draw_sprite
+-->
+</body>
+</html>

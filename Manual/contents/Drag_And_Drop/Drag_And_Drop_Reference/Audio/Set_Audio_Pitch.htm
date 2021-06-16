@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ajustar el tono de audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Audio Pitch action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Audio Pitch" />
+  <meta name="search-keywords" content="Set Audio Pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Audio Pitch Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Pitch.png" width="32"> Establecer el tono de audio</h1>
+  <p>Esta acción puede utilizarse para ajustar el tono de un sonido. Usted suministra el activo de sonido desde el Navegador de Activos, y luego da el tono deseado para cambiarlo, y todas las instancias posteriores de ese sonido que usted reproduzca tendrán su tono cambiado. Esta acción
+    no cambiará el tono de ningún sonido que se esté reproduciendo, sin embargo, y debe utilizarse antes de usar la acción <a href="Play_Audio.htm">Reproducir audio</a> para el sonido.</p>
+  <p>El valor de afinación es un <i>multiplicador</i> de afinación, en el sentido de que el valor de entrada multiplica la afinación actual por esa cantidad, por lo que el valor por defecto de 1 no supone ningún cambio de afinación, mientras que un valor menor que 1 bajará la afinación y mayor que 1 la subirá.
+    Es mejor utilizar incrementos pequeños para esta función, ya que cualquier valor inferior a 0 o superior a 5 puede no ser audible de todos modos. Hay que tener en cuenta que el cambio total de tono permitido está fijado en (1/256) - 256 octavas, por lo que cualquier valor por encima o por debajo de éste no será registrado.
+    registrado.<b></b></p>
+  <p class="note"><b>NOTA</b>: El valor indicado arriba es lo que <span class="notranslate">GameMaker Studio 2</span> intenta fijar el rango, pero este valor no está garantizado en todas las plataformas de destino. <span class="notranslate">iOS</span>, por ejemplo, se fija en (1/256) - 8, por lo que puede ser necesario experimentar en cada plataforma de destino
+    y tener diferentes versiones de un recurso de sonido, cada uno pre-cambiado, en caso de requerir valores de octava más altos o más bajos.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Audio Pitch Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/a_Audio_Get_Audio_Pitch.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sonido</td>
+        <td>El recurso sonoro para ajustar el tono de</td>
+      </tr>
+      <tr>
+        <td>paso</td>
+        <td>El tono al que se ajusta el sonido (por defecto es 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Audio Pitch Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/e_Audio_Get_Audio_Pitch.png">El código del bloque de acción anterior obtiene primero el tono del sonido dado y lo almacena en una variable local temporal
+    temporal. A continuación, comprueba si se ha pulsado una tecla, y si se detecta una, se comprueba el valor del tono para ver si es menor que 2. Si lo es, el sonido se detiene, se añade 0,1 a la variable de tono, y luego se utiliza esta variable para establecer
+    el tono del sonido antes de que se reproduzca.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Actions.htm">Acciones de audio</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Audio_Pitch.htm">Obtener el tono de audio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Audio Pitch
+-->
+  <!-- TAGS
+action_audio_set_pitch
+-->
+</body>
+</html>

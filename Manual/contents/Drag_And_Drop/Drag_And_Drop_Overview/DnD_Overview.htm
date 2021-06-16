@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Visión general de DnD™</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Overview of DnD" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Overview" />
+  <meta name="search-keywords" content="DnD Overview,Drag And Drop Overview" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Resumen de<span class="notranslate">Drag And Drop™</span> </h1>
+  <p><span class="notranslate">Drag and Drop™</span><span class="notranslate">(DnD™</span>) es una herramienta visual de scripting que se puede utilizar para crear tus juegos sin tener que escribir ningún código. Esto no quiere decir que no estés programando código cuando usas DnD™, <span class="notranslate">ya que</span>lo haces, sólo que tu código se crea y se presenta
+    de forma visual utilizando &quot;bloques&quot; de acciones <strong>en </strong>lugar de texto. Las acciones son simples<span class="glossextra">expresiones</span> o<span class="glossextra">declaraciones</span> que pueden ser &quot;encadenadas&quot; para que una instancia de un objeto haga algo cuando se coloca en una habitación. Por ejemplo, puedes tener una acción en un <strong>Evento de Creación</strong> para mover
+    una instancia en una dirección aleatoria, y otra acción en un Evento de <strong>Colisión</strong> para hacer que rebote en las cosas con las que colisiona (para más información sobre los diferentes eventos disponibles y cómo funcionan juntos vea la sección sobre
+    Eventos de <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">Objeto</a>).</p>
+  <p><img alt="DnD™ Overview Screen" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Overview_Main.png">La imagen anterior muestra un objeto típico abierto en un <a href="../../Introduction/Workspaces.htm">espacio de trabajo</a> para
+    ser editado. Tiene una ventana de &quot;Evento&quot; y otra de &quot;Código&quot; encadenadas, y en la ventana de código se puede ver dónde hemos construido nuestro DnD™. Veamos un poco más de cerca esta ventana y veamos qué opciones están disponibles para nosotros:</p>
+  <p><img alt="DnD™ Properties Screen" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Overview_Properties.png">A continuación puede encontrar más información sobre cada una de las secciones mostradas:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Fichas de eventos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Cuando añades un <strong>Evento </strong>a tu objeto, se abre una nueva pestaña en la ventana de código para mostrar el contenido de ese evento. Puede añadir varios eventos y tener varias pestañas abiertas al mismo tiempo, cambiando entre ellas y editándolas
+      como desee. También puedes cerrar las pestañas en cualquier momento para reducir el desorden (si seleccionas de nuevo el evento en el objeto se volverán a abrir), y puedes hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrar la pestaña fuera de la ventana a su propia ventana de código, en cuyo caso cerrar el objeto o la ventana de código no cerrará la nueva ventana. Las pestañas también se pueden arrastrar a la izquierda o a la derecha para reordenarlas.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Resumen de la acción</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">A medida que vayas añadiendo bloques de acción a tu evento, aparecerán de forma &quot;abreviada&quot; como una visión general de lo que está ocurriendo. El orden de la vista general es el orden en el que se ejecutará cada uno de los bloques de acción para ese evento, y puedes hacer clic
+       en cualquier elemento de la lista para que la vista del bloque de acción se amplíe a esa posición para su edición.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Espacio de trabajo del bloque de acción</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Esta área del espacio de trabajo es donde arrastras las Acciones desde la <strong>Caja de Herramientas </strong>para crear tu código <span class="notranslate">DnD™</span>. Haga clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en una acción y arrástrela a esta
+      para añadirla a la lista de acciones y editarla. La mayoría de las acciones tienen varios<span class="glossextra">argumentos</span> (parámetros) que puedes establecer, y la mayoría también tomarán <strong>palabras clave</strong>,
+      por ejemplo, puede llamar a la acción <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">Establecer dirección</a> y utilizar la función <span class="notranslate">GML</span> <a href="../../GameMaker_Language/GML_Reference/Maths_And_Numbers/Number_Functions/random.htm"><span class="inline">random(val)</span></a> para
+      establecer una dirección aleatoria.</p>
+    <p class="dropspot">A medida que añada bloques de acción a su código, éstos se &quot;encadenarán&quot; visualmente para indicar el orden en que se producirán las diferentes acciones, aunque la forma en que se cree esta cadena dependerá del bloque inicial que se haya utilizado. Por ejemplo
+      un bloque <a href="../Drag_And_Drop_Reference/Common/If_Variable.htm">If Variable</a> tendrá dos cadenas - una a los bloques que se llamarán si la condición que se comprueba es <span class="inline">true</span> y luego el siguiente bloque después de
+      que. Para obtener más información sobre la construcción de bloques de acción en el código, consulte las secciones vinculadas a continuación.</p>
+    <p class="dropspot">Mientras estás en el espacio de trabajo del bloque de acción, puedes mantener pulsado el botón central del ratón <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> para desplazarte y la rueda del ratón <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> para desplazar la lista de acciones hacia arriba o hacia abajo. Si mantienes pulsado <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> mientras mueves la rueda del ratón, la vista se desplazará hacia la izquierda/derecha, y si mantienes pulsado
+      <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y mueves la rueda del ratón
+      la vista se acercará y alejará, permitiéndole ver más del espacio de trabajo con las acciones. Puede hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquier acción de la lista
+      de la lista de acciones de la izquierda para centrarse en esa acción, restableciendo el zoom y la posición. También puedes cambiar el tamaño de los bloques de acción moviendo el ratón hacia los bordes del bloque y luego -cuando el cursor cambie- arrastrando en la dirección que desees.</p>
+    <p class="dropspot">También puedes hacer clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> en cualquier lugar del espacio de trabajo <span class="notranslate">de DnD™</span>para que aparezca el menú RMB, que se explica en detalle <a href="Right_Mouse_Button_Menu_Options.htm">aquí</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Caja de herramientas</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">La <strong>caja de herramientas </strong>es donde se almacenan todas las acciones <span class="notranslate">de DnD™</span>, con diferentes secciones que contienen colecciones (bibliotecas) de acciones que son similares o están relacionadas. Cada colección de acciones está relacionada con un tema específico o un propósito común y
+      sólo tienes que hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrar la acción requerida desde la caja de herramientas al espacio de trabajo del bloque de acción para añadirla al evento actual. Para hacer las cosas
+      más sencillas -ya que hay muchas acciones- puedes utilizar la barra de &quot;Búsqueda&quot; de la parte superior para buscar una acción específica o filtrar las acciones visibles (escribe &quot;dibujar&quot;, por ejemplo, para obtener todas las acciones de dibujo), y también puedes hacer clic en
+      <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrar los iconos de cualquier biblioteca a tu carpeta de <strong>favoritos</strong> para mantener juntas las acciones más utilizadas. Esto es especialmente útil
+      si hay ciertas cosas que vas a hacer una y otra vez. La carpeta de favoritos puede borrarse haciendo clic en el pequeño icono de la &quot;papelera&quot;.</p>
+    <p class="dropspot">Para obtener una lista completa de las acciones disponibles, así como los argumentos que toman y cómo se pueden encadenar, por favor vea la sección de <a href="../Drag_And_Drop_Reference/DnD_Reference.htm">Referencia de<span class="notranslate">Arrastrar y Soltar</span></a>.</p>
+    <p class="dropspot">Puede utilizar el botón derecho del ratón <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> sobre cualquier acción de la caja de herramientas para abrir el siguiente menú:</p>
+    <p class="dropspot"><img alt="Toolbox RMB Menu" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Toolbox_RMB_Menu.png" /></p>
+    <p class="dropspot">Aquí tienes las siguientes opciones:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Usar<em>&lt;acción&gt; :</em></strong> Esto añadirá la acción que estaba bajo el ratón cuando se pulsó el botón derecho del ratón al espacio de trabajo del evento actual.</li>
+      <li class="dropspot"><b>Hacer </b>/ <strong>Eliminar Favorito</strong>: Esto añadirá o eliminará la acción a la biblioteca de <strong>favoritos</strong> en la parte superior de la caja de herramientas. Esta biblioteca es donde puede crear un grupo personalizado de acciones que utiliza regularmente, reduciendo
+        la cantidad de tiempo necesario para buscarlas en sus bibliotecas reales.</li>
+      <li class="dropspot"><strong>Borrar favoritos</strong>: Al seleccionar esta opción se eliminarán todas las acciones de la biblioteca de favoritos.</li>
+      <li class="dropspot"><strong>Borrar</strong> Usado Recientemente: Al seleccionar esta opción se eliminarán todas las acciones de la biblioteca de Usados Recientemente.</li>
+      <li class="dropspot"><strong>Contraer todo</strong>: Esta opción contraerá todas las bibliotecas de <span class="notranslate">DnD™</span>para que sólo sean visibles los títulos de las bibliotecas, y no los nodos de acción. Cada biblioteca puede ser expandida de nuevo haciendo clic en ella.</li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>Las siguientes páginas profundizan un poco más en cómo construir el código de los bloques de acción, así como en cómo establecer el alcance de las acciones para que afecten a diferentes cosas dentro de tu proyecto y otros detalles importantes:</p>
+  <ul class="colour">
+    <li><a href="Constructing_Action_Block_Code.htm">Construcción de código de bloque de acción</a></li>
+    <li><a href="Applying_Actions_To_Other_Instances.htm">Aplicación de acciones a otras instancias</a></li>
+    <li><a href="Action_Block_Functions.htm">Guiones de bloque de acción</a></li>
+    <li><a href="Changing_DnD_To_Code.htm">Cambiar <span class="notranslate">DnD™</span>a código</a></li>
+    <li><a href="Right_Mouse_Button_Menu_Options.htm">Opciones del menú del botón derecho del ratón</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="../Drag_And_Drop_Reference/DnD_Reference.htm"><span class="notranslate">Arrastrar y soltar™</span></a> Referencia </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Overview
+-->
+  <!-- TAGS
+drag_and_drop_overview
+-->
+
+</body></html>

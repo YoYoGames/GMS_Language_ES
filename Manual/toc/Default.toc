@@ -238,7 +238,7 @@
     <page href="../contents/Additional_Information/Compatibility_Scripts.htm" format="html" processing-role="normal"></page>
     <page href="../contents/Additional_Information/Obsolete_Functions.htm" format="html" processing-role="normal"></page>
   </book>
-  <book navtitle="Drag And Drop™ (Arrastrar y soltar)" href="../contents/Drag_And_Drop/Drag_And_Drop_Index.htm" format="html" processing-role="normal">
+  <book navtitle="Drag And Drop™ (arrastrar y soltar)" href="../contents/Drag_And_Drop/Drag_And_Drop_Index.htm" format="html" processing-role="normal">
     <book navtitle="Resumen de Drag And Drop™" href="../contents/Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm" format="html" processing-role="normal">
       <page href="../contents/Drag_And_Drop/Drag_And_Drop_Overview/Constructing_Action_Block_Code.htm" format="html" processing-role="normal"></page>
       <page href="../contents/Drag_And_Drop/Drag_And_Drop_Overview/Applying_Actions_To_Other_Instances.htm" format="html" processing-role="normal"></page>

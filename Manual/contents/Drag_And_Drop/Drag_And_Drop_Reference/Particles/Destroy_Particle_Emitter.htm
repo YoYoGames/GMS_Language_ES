@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Destruir el emisor de partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Destroy Particle Emitter action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Destroy Particle Emitter" />
+  <meta name="search-keywords" content="Destroy Particle Emitter" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Destroy Particle Emitter Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Destroy_Particle_Emitter.png" width="32"> Destruye el emisor de partículas</h1>
+  <p>Esta acción &quot;destruirá&quot; el emisor de partículas dado, es decir, liberará la memoria utilizada por el emisor de partículas. Se suministra el ID del sistema de partículas al que pertenece el emisor (devuelto por la acción Crear <a href="Create_Particle_System.htm">Sistema de Part</a>ículas)
+    y luego el ID del emisor real (como lo devuelve la acción Crear <a href="Create_Particle_Emitter.htm">Emisor de Part</a>ículas). Esta acción debe ser llamada siempre que no necesites más un emisor de partículas en tu juego, o siempre que desees recrear
+    el emisor de partículas (por ejemplo, justo antes de llamar a un <a href="../Game/Restart_Game.htm">reinicio del</a> juego). Tenga en cuenta que si el sistema de partículas al que se ha asignado el emisor <i>no</i> ha sido marcado como <b>Persistente</b> entonces <i>no necesita llamar a esta acción</i>,
+    ya que el emisor se limpiará automáticamente en la sala junto con el sistema de partículas.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Destroy Particle Emitter Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Destroy_Particle_Emitter.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sistema</td>
+        <td>El valor de identificación del sistema que contiene el emisor</td>
+      </tr>
+      <tr>
+        <td>Emisor</td>
+        <td>El valor del ID del emisor a destruir</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Destroy Particle Emitter Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Destroy_Particle_Emitter.png">El código del bloque de acción anterior comprobará una variable de instancia y
+    si está por encima de 100 destruirá el emisor asignado a la instancia y luego pasará a la siguiente sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Emit_Particles.htm">Emitir partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Destroy Particle Emitter
+-->
+  <!-- TAGS
+action_part_emit_destroy
+-->
+</body>
+</html>

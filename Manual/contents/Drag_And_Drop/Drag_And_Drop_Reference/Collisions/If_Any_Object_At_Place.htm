@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si cualquier objeto en el lugar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Any Object At Place action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Any Object At Place" />
+  <meta name="search-keywords" content="If Any Object At Place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Any Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Any.png"> Si cualquier objeto en el lugar</h1>
+  <p>Esta acción se utiliza para comprobar y ver si hay una instancia de <i>cualquier</i> objeto situada en una posición basada en la máscara de colisión de la instancia que llama. Se da la posición, que puede ser una posición absoluta o una posición relativa a la instancia
+    y la acción devolverá <tt>true</tt> si hay colisión o <tt>false</tt> si no la hay. También se puede marcar la bandera &quot;No&quot; para comprobar si no hay una colisión en la posición dada, y la acción devolverá entonces true si <tt>no</tt> se encuentran colisiones y false <tt>en caso contrario</tt>. Las colisiones se calculan en base a la máscara de colisión de la instancia que llama y que se superpone a la máscara de colisión de cualquier instancia en la posición (como si se estuviera &quot;colocando&quot; en la posición).</p>
+  <p class="note"><b>IMPORTANTE!</b> Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al <tt>sprite_index</tt>, o un sprite asignado al <tt>mask_index</tt>. Si <b>cualquiera</b> de las instancias en
+    la colisión no tiene máscara de colisión, entonces la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.</p>
+  <p>Tenga en cuenta que para añadir acciones dentro de un bloque &quot;<span class="inline">if</span>&quot;, éstas deben colocarse al lado de <i>la</i> acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Any Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Any.png" /></p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Any Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Any.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Any Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Any.png">El código del bloque de acción anterior comprueba si hay una colisión en la posición donde se coloca la instancia
+    y si se encuentra una, mezcla la instancia con rojo, de lo contrario deja la mezcla como normal (blanco).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collision_Actions.htm">Acciones de colisión</a></div>
+        <div style="float:right">Siguiente: <a href="If_Object_At_Place.htm">Si el objeto está en el lugar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Any Object At Place
+-->
+  <!-- TAGS
+action_if_any_object_at_place
+-->
+</body>
+</html>

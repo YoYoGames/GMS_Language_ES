@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer el color de la instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Instance Colour action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Colour" />
+  <meta name="search-keywords" content="Set Instance Colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Instance Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Colour.png"> Establecer el color de la instancia</h1>
+  <p>Este bloque de acción establece el color <tt>image_blend</tt> para la &quot;mezcla&quot; con el sprite de la instancia. El valor por defecto es el código hexadecimal $FFFFFFFF (que representa el color blanco usando el formato <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> ) y esto dibujará el sprite sin mezcla y con alfa completo. Cualquier otro valor (incluyendo constantes de color internas como <tt>c_red</tt>, o <tt>c_aqua</tt>) <i>mezclará</i> el color especificado con el sprite original así como establecerá el componente
+    <span class="inline">image_alpha</span> para la instancia, pero sólo cuando la casilla <strong>Usar Alfa</strong> esté marcada. Esto sobrescribirá cualquier valor alfa establecido previamente usando la acción <a href="Set_Instance_Alpha.htm">Establecer Alfa de la Instancia</a>.</p>
+  <p>Tenga en cuenta que para que los cambios en esta acción sean visibles, la instancia <i>no</i> debe tener ningún evento de dibujo (y así <span class="notranslate">GameMaker Studio 2</span> dibujará por defecto el sprite) o se dibujará utilizando la acción <a href="../Drawing/Draw_Self.htm">Draw Self</a>. También es importante
+    importante tener en cuenta también que se debe intentar limitar la mezcla en la plataforma <b>HTML5</b> (a menos que se utilice WebGL), ya que cada sprite mezclado tiene que ser almacenado en caché por separado y, por lo tanto, tener muchos sprites mezclados puede afectar negativamente al rendimiento.</p>
+  <p><img alt="Example of sprites being coloured" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_colour.png" /></p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Instance Colour Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Set_Colour.png" width="297" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>El nuevo color de mezcla a utilizar (al hacer clic en la muestra de color se abrirá la ventana del selector de color).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><span><img alt="Set Instance Colour Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Set_Sprite.png"></span>El código del bloque de acción anterior establece un nuevo sprite, así como una serie de otras
+    propiedades para la visualización de ese sprite, incluyendo el ajuste del color de la mezcla a rosa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Actions_Library.htm">Instance Actions</a></div>
+        <div style="float:right">Siguiente: <a href="If_Instance_Exists.htm">Si la instancia existe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Instance Colour
+-->
+  <!-- TAGS
+action_colour_sprite
+-->
+
+</body></html>

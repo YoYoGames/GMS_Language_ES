@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dibujar el valor transformado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Transformed Value action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Transformed Value" />
+  <meta name="search-keywords" content="Draw Transformed Value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Transformed Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Transformed_Value.png"> Dibujar el valor transformado</h1>
+  <p>Con esta acción se puede dibujar un título de cadena y/o una variable o valor en la pantalla. El argumento "caption" es una cadena que se desea añadir antes del valor, y puede dejarse en blanco si es necesario, y el valor puede ser una variable, un valor fijo o
+    otra cadena - en cuyo caso debe ir entre comillas, y también puede dejarse en blanco si es necesario. A continuación, se indica la posición en la que debe dibujarse la cadena, ya sea como posición absoluta o como posición relativa a la instancia que dibuja el
+    texto. Además, puede establecer la escala del texto, estirándolo a lo largo del eje horizontal o vertical, así como la rotación (los ángulos para rotar el texto son en sentido contrario a las agujas del reloj, por lo que establecerlo a 90° lo rotará a la izquierda y -90° a la
+    derecha). La escala se realiza por el factor dado, por lo que una escala de 0,5 reducirá el ancho del texto <i>a la mitad</i> y una escala de 2 duplicará el ancho, siendo 1 el valor por defecto para no escalar. Tenga en cuenta que el aspecto del texto dependerá de
+    la fuente utilizada, el color utilizado y la alineación. Todas estas cosas pueden cambiarse antes de dibujar, como se muestra en el ejemplo siguiente.<b></b></p>
+  <p class="note"><b></b><b>NOTA</b>: Esta acción es sólo para su uso en los diversos <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteo</a>, y no dibujará nada si se utiliza en otro lugar.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Draw Transformed Value Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Transformed_Value.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Título</td>
+        <td>El título a dibujar (una cadena), puede dejarse en blanco</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor a dibujar (real, variable o cadena)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a dibujar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para dibujar</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>El factor de escala x (horizontal), por defecto es 1</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>El factor de escala y (vertical), por defecto es 1</td>
+      </tr>
+      <tr>
+        <td>Rotación</td>
+        <td>El ángulo de rotación para dibujar el texto</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Draw Transformed Value Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Transformed_Value.png">El código del bloque de acción anterior establece un color, una fuente y luego alinea el texto
+    para dibujar desde el centro antes de dibujar realmente el valor de &quot;current_time&quot; junto con la leyenda &quot;TIME: &quot;, escalada para ser el doble de tamaño y &quot;vibrando&quot; ligeramente debido al cambio de ángulo aleatorio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Draw_Sprite.htm">Dibujar Sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Transformed Value
+-->
+  <!-- TAGS
+action_draw_value_transformed
+-->
+</body>
+</html>

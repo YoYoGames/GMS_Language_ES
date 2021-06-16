@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si la expresión</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing If Expression" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Expression" />
+  <meta name="search-keywords" content="If Expression" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Expression Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_If_Expression.png"> Expresión If</h1>
+  <p>Esta acción se utiliza para comprobar que una expresión es <tt>verdadera</tt> o <tt>falsa</tt>, y se puede comprobar aquí cualquier expresión lógica siempre que se evalúe a uno u otro valor. Por ejemplo, se puede utilizar cualquiera de las siguientes expresiones:</p>
+  <p class="code">x &lt; (room_width / 2)<br> a == b<br> ++val &gt;= 100</p>
+  <p>Si marca el argumento &quot;No&quot;, entonces las expresiones anteriores serán negadas, por ejemplo &quot;<span class="inline">==</span>&quot; se convierte en &quot;<span class="inline"><i>not</i>=</span>&quot;. También tenga en cuenta que la <a class="glossterm" data-glossterm="expresión" href="#">expresión</a> no está limitada a valores numéricos y puede comprobar cadenas, punteros, IDs de recursos o cualquier otra cosa que una función pueda devolver o usar (vea la sección sobre <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">tipos de datos</a> para más información), pero no puede comparar dos tipos de datos diferentes sin obtener un error - por ejemplo si intenta usar una cadena y un entero en la expresión obtendrá un error. Para obtener más información sobre las expresiones, consulte <a href="../../../GameMaker_Language/GML_Overview/Expressions_And_Operators.htm">aquí</a>.</p>
+  <p class="note"><b>NOTA IMPORTANTE</b>: Debido a <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemas de precisión en coma flotante</a>, comprobar si dos valores son exactamente iguales puede devolver <tt>falso</tt>, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción <a href="../Data_Types/Decimal_To_Integer.htm">Decimal a Entero</a> antes de la comprobación o utilizando las expresiones &quot;mayor que (&gt;)&quot; o &quot;menor que (&lt;)&quot;.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;<span class="inline">if</span>&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Expression drop actions exmaple" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/drop_if_expression.png">Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero, <tt>mientras que</tt>
+    cualquier acción lanzada en otra parte se ejecutará después del bloque &quot;if&quot;. Tenga en cuenta que puede &quot;apilar&quot; expresiones en la misma acción haciendo clic en el icono más <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>junto a
+    la acción, y dando otra expresión para comprobar. Esto comprobará si <i>todas</i> las expresiones dadas devuelven <tt>verdadero</tt> en una sola comprobación y sólo realizará el código de la acción añadida si lo hacen (ver el ejemplo dado a continuación).</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Expression Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_common_if_expression.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Expresión</td>
+        <td>La expresión a comprobar.</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Se establece para comprobar si la expresión <i>no</i> se evalúa como verdadera.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Expression Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_common_if_expression.png">El código del bloque de acción anterior comprueba si la variable de instancia &quot;<tt>player_score&quot;</tt>
+    es mayor que 1000 <i>y</i> que la variable de instancia &quot;<tt>player_level&quot; es</tt> menor que 10. Si ambas comprobaciones son verdaderas, <tt>el</tt> código de acción pasa a asignar nuevos valores a estas variables.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Common_Actions_Library.htm">Acciones comunes</a></div>
+        <div style="float:right">Siguiente: <a href="If_Undefined.htm">Si no se define</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Expression
+-->
+  <!-- TAGS
+action_if_expression
+-->
+
+</body></html>

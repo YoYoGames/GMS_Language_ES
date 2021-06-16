@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cargar el juego</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Load Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Load Game" />
+  <meta name="search-keywords" content="Load Game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Load Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Load_Game.png" style="cursor: nwse-resize;"> Cargar el juego</h1>
+  <p>Esta acción cargará una partida que haya sido previamente guardada mediante la acción <a href="Save_Game.htm">Guardar partida</a>. Usted da el nombre del archivo a cargar (como una cadena, e incluyendo la extensión) y el juego se cargará y continuará ejecutándose
+    desde el punto guardado. Tenga en cuenta que esto no está diseñado como un sistema universal de guardar/cargar, y tratar de cargar un juego guardado de una ejecución anterior del proyecto puede dar errores (especialmente si ha utilizado cosas como <a href="../Data_Structures/Data_Structure_Actions.htm">Estructuras de Datos</a> o <a href="../Particles/Particle_Actions.htm">Partículas</a>), y como tal sólo debe tratar de cargar los juegos que se han guardado en el progreso de un solo juego (para cosas como puntos de control). También ten en cuenta que el archivo <i>no</i> se cargará hasta el final del evento o script actual, por lo que cualquier acción después de la llamada a la acción de carga se seguirá realizando. Para una aproximación más completa a la carga de los datos de las partidas guardadas, ver las <a href="../Files/File_Actions.htm">Acciones de Archivo</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Load Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Load_Game.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Línea de tiempo</td>
+        <td>El recurso de la línea de tiempo para asignar a una instancia</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><span><img alt="Load Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Load_Game.png"></span>El código del bloque de acción anterior comprobará una variable global y si es menor o igual a
+    0 cargará una partida previamente guardada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Actions.htm">Acciones del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Restart_Game.htm">Reiniciar el juego</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Load Game
+-->
+  <!-- TAGS
+action_load_game
+-->
+</body>
+</html>

@@ -5,7 +5,7 @@
     a la ventana del compilador, puede ser difícil localizar y depurar cualquier problema que pueda encontrar. Sin embargo, hay una solución para esto, y es utilizar parámetros de línea de comandos para establecer ciertas propiedades cuando se ejecuta la versión ejecutable de
     del juego, lo que a su vez le permite crear archivos de registro de salida y probar otras situaciones especiales.
   NOTA: Esto está disponible en el módulo de destino estándar Windows  sólo en el módulo de destino estándar.
-  Para que esto funcione, primero debes crear un ejecutable para Windows de tu juego y tenerlo instalado en tu máquina de pruebas. Una vez hecho esto, tienes que crear un acceso directo al juego en el escritorio. Aquí es donde añadiremos los parámetros
+  Para que esto funcione, primero debes crear un ejecutable para Windows de tu juego y tenerlo instalado en tu máquina de pruebas. Una vez hecho esto, necesitas crear un acceso directo al juego en el escritorio. Aquí es donde añadiremos los parámetros
     que se pasarán a la *.exe (para crear un acceso directo, haga clic con el botón derecho del ratón en  el ejecutable del juego y luego seleccione Enviar a >
    Escritorio (crear acceso directo)) .
   Una vez que haya hecho su acceso directo, puede utilizar cualquiera de los siguientes parámetros en la ruta de destino:
@@ -16,7 +16,7 @@
   -software: Forzará al juego a utilizar el Procesamiento de Vértices por Software en lugar del hardware para renderizar los gráficos del juego. Esto es especialmente útil para aquellos PCs que utilizan un chipset Intel GFX integrado o que muestran problemas de visualización
     en máquinas antiguas.
   -intel: Esto activará una solución para los malos controladores de Intel, independientemente de la GPU que se utilice. Esta solución para esos malos controladores ralentizará las cosas, dando un golpe de rendimiento notable para su juego, por lo que si usted no
-    no necesita el arreglo no lo use.
+    no necesitas la corrección, no la uses.
   -vanillaGFX: Esta opción desactiva la comprobación del fabricante del controlador y puede ser muy útil para probar el juego "tal cual".
   Cabe destacar que el <filename> en -output y -debugoutput puede ser el mismo si se desea, ya que el archivo se abre y se cierra en cada escritura.
   Ahora debes ir al lugar donde creaste el acceso directo al ejecutable del juego, y luego hacer clic con el botón derecho sobre él y seleccionar Propiedades.

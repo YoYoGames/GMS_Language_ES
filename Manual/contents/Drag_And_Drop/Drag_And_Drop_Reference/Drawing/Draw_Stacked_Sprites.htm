@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dibujar sprites apilados</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Stacked Sprites action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Stacked Sprites" />
+  <meta name="search-keywords" content="Draw Stacked Sprites" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Stacked Sprites Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Stacked_Sprites.png"> Dibujar Sprites Apilados</h1>
+  <p>Esta acción dibujará un sprite un número determinado de sprites uno tras otro en una posición determinada dentro de la sala. Usted da el sprite a dibujar y el orden de la pila, que puede ser <b>Fila</b> (horizontalmente, de izquierda a derecha), o <b>columna</b> (verticalmente,
+    de arriba a abajo), así como el número de sprites a dibujar y la posición. La posición puede ser una posición absoluta dentro de la sala, o una relativa a la posición de la instancia que realiza el dibujo, y el espacio entre imágenes se basará en
+    la anchura o la altura del sprite. Tenga en cuenta que esto simplemente dibuja una imagen estática - la imagen inicial (fotograma 0) del sprite dado - y cualquier otro fotograma será ignorado, al igual que cualquier transformación que se haya añadido mediante el cambio de las <a href="../Instance/Set_Instance_Variable.htm">variables de</a> instancia (como <tt>image_xscale</tt> o <tt>image_blend</tt>).</p>
+  <p class="note"><b></b><b>NOTA</b>: Esta acción es sólo para su uso en los diversos <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteo</a>, y no dibujará nada si se utiliza en otro lugar.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Draw Stacked Sprites Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Stacked_Sprites.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>El sprite a dibujar</td>
+      </tr>
+      <tr>
+        <td>Orden de la pila</td>
+        <td>El orden en el que se dibujará (fila o columna)</td>
+      </tr>
+      <tr>
+        <td>Número</td>
+        <td>El número de sprites a dibujar</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a dibujar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para dibujar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Draw Stacked Sprites Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Stacked_Sprites.png">El código del bloque de acción anterior obtiene el número de instancias del objeto &quot;obj_Player&quot;
+    y luego lo utiliza para dibujar un número de sprites marcadores en la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Draw_Rectangle.htm">Dibujar Rectángulo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Stacked Sprites
+-->
+  <!-- TAGS
+action_draw_sprites_stacked
+-->
+</body>
+</html>

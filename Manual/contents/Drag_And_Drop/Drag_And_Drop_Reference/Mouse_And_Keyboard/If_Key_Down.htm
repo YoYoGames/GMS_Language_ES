@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si se pulsa la tecla</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Key Down action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Key Down" />
+  <meta name="search-keywords" content="If Key Down Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Keyboard Down Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyDown.png"> Si se pulsa la tecla</h1>
+  <p>Con esta acción puedes sondear el teclado para ver si alguna tecla está siendo presionada. La acción devolverá <tt>true</tt> a cada paso que la tecla del teclado esté siendo presionada, o <tt>false</tt> en caso contrario, aunque si se pulsa el modificador <tt>not</tt> se puede comprobar si la tecla <i>no</i> está siendo ayudada, es decir: la acción devolverá <tt>true</tt> mientras no haya ninguna tecla presionada y <tt>false</tt> si la hay. Si sólo necesita comprobar la pulsación de una sola tecla, utilice la acción <a href="If_Key_Pressed.htm">Si la tecla está pulsada</a>.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Key Down drop actions" class="center" height="215" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_KeyDrop.png" width="539">Cualquier acción lanzada en otro lugar se realizará después del bloque &quot;if&quot;
+    del bloque "if".</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Key Down Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyDown.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Clave</td>
+        <td>El nombre de la tecla del teclado a comprobar.</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Negar la comprobación (verdadero se convierte en falso y viceversa)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Key Down Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png">El código del bloque de acción anterior sondea el estado del teclado a cada paso y si una tecla está siendo
+    se comprueba la pulsación inicial de la tecla. Si la comprobación es <tt>verdadera</tt> en la pulsación inicial de la tecla, se reproduce un sonido, y luego, mientras la tecla se mantiene pulsada, la mezcla del sprite cambia a rojo. Si la tecla no se mantiene pulsada, se realiza una comprobación
+    Si la tecla no se mantiene pulsada, se realiza una comprobación al soltar la tecla para restablecer el color de la mezcla a blanco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mouse_And_Keyboard_Actions.htm">Acciones con el ratón y el teclado</a></div>
+        <div style="float:right">Siguiente: <a href="If_Key_Released.htm">Si se libera el teclado</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Key Down
+-->
+  <!-- TAGS
+action_if_key_down
+-->
+</body>
+</html>

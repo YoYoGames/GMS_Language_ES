@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cadena a número</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the String To Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - String To Number" />
+  <meta name="search-keywords" content="String To Number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="String To Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_String_To_Number.png"> Cadena a número</h1>
+  <p>Esta acción puede convertir una cadena en un número. Se proporciona la cadena a cambiar y luego se da una variable de destino a la que devolver el número real (esta variable puede ser marcada como una variable local temporal). Tenga en cuenta que si la cadena tiene algún carácter
+    que no sean números y un punto decimal, <i>no</i> se convertirá, aunque si la cadena <i>comienza</i> con un número, éste se convertirá y se excluirá el resto de la cadena. Es importante tener en cuenta que cuando se pasan decimales a esta acción
+    la cadena devuelta se redondeará a <i>dos</i> decimales solamente. A continuación se muestra una tabla de valores de entrada y lo que se espera que se devuelva</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Cadena</th>
+        <th>Valor devuelto</th>
+      </tr>
+      <tr>
+        <td>&quot;123&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;123 Hola Mundo&quot;</td>
+        <td>123</td>
+      </tr>
+      <tr>
+        <td>&quot;Hola Mundo&quot;</td>
+        <td>0 (por defecto, si la cadena no se puede convertir, se devolverá 0)</td>
+      </tr>
+      <tr>
+        <td>&quot;Hola Mundo 123&quot;</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>&quot;123.45678&quot;</td>
+        <td>123.46</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="String To Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_String_To_Number.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>La cadena a convertir</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable de destino para mantener el valor devuelto</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="String To Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_String_To_Number.png">El código del bloque de acción anterior inicializa una variable global y luego carga un archivo con
+    un buffer guardado en él. Se leen dos cadenas del buffer y se almacenan en una variable local temporal antes de que una de ellas se convierta en un número real y se almacene en otra variable local temporal. A continuación, se asignan a las variables globales, y
+    el buffer es eliminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Data_Type_Actions.htm">Acciones del tipo de datos</a></div>
+        <div style="float:right">Siguiente: <a href="Number_To_String.htm">De número a cadena</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - String To Number
+-->
+  <!-- TAGS
+action_string_to_number
+-->
+</body>
+</html>

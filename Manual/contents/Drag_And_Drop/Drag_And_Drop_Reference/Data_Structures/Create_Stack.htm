@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crear pila</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Stack action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Stack" />
+  <meta name="search-keywords" content="Create Stack" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Stack" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png"> Crear pila</h1>
+  <p>Esta acción creará una nueva estructura de datos de <b>la</b> pila y devolverá el valor del índice para que posteriormente puedas acceder a la pila a través de las otras acciones de Estructura de Datos. El índice de la pila será devuelto a la Variable de Destino que usted suministre, la cual puede haber sido
+    que puede haber sido creada anteriormente utilizando <a href="../Common/Assign_Variable.htm">Assign Variable</a> o <a href="../Common/Declare_Temporary_Variable.htm">Declare Temp</a>, o puede marcar la casilla &quot;Temp&quot; para nombrar y crear una variable local temporal para almacenar el valor hasta el final de la pila.
+    para almacenar el valor hasta el final del script o evento. Una estructura de datos de pila recién creada se considera &quot;vacía&quot;, es decir, no contiene entradas. Tenga en cuenta que puede crear pilas DS adicionales haciendo clic en el icono más <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>junto a
+    la acción, y seleccionando otra variable para mantener el ID de la pila.</p>
+  <p class="note"><b>IMPORTANTE!</b> La creación de cualquier estructura de datos consume memoria en la plataforma de destino, y como tal todas las estructuras de datos deben ser liberadas cuando ya no se necesitan utilizando la acción <a href="Free_Data_Structure.htm">Liberar Estructura de Datos</a>, de lo contrario se obtiene una
+    de lo contrario se produce una fuga de memoria que puede perjudicar el rendimiento del juego o incluso hacer que se bloquee. Esto es particularmente relevante cuando se utilizan variables locales temporales para almacenar índices de estructuras de datos, ya que estas variables se eliminan al final del código o del evento, pero
+    pero eso no significa que la estructura de datos se elimine también. La estructura de datos seguirá existiendo, sólo que no tendrás forma de referenciarla, así que o bien utilizas una variable de instancia y liberas la estructura más adelante, o liberas la estructura antes de que finalice
+    el evento o la función si su índice está almacenado en una variable temporal.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Create Stack Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/a_DS_Create_Stack.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable de destino para almacenar el índice de la pila en</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Create Stack Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/e_DS_Create_Stack.png">El código del bloque de acción anterior crea una variable de instancia y una nueva estructura de datos de la pila.
+    El índice de la pila se almacena en la nueva variable, y luego se realiza un bucle que crea 10 instancias y empuja sus valores de ID únicos en la pila.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Data_Structure_Actions.htm">Acciones de la estructura de datos</a></div>
+        <div style="float:right">Siguiente: <a href="Clear_Data_Structure.htm">Borrar la estructura de datos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Stack
+-->
+  <!-- TAGS
+action_create_stack
+-->
+</body>
+</html>

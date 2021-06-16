@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si el punto de colisión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Collision Point action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Collision Point" />
+  <meta name="search-keywords" content="If Collision Point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Collision Point Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Point.png"> Si el punto de colisión</h1>
+  <p>Esta acción se utiliza para comprobar si hay una colisión con una o más instancias de un objeto dado en un punto específico de la sala y se evaluará como <tt>verdadero</tt> si se detecta una colisión, o <tt>falso</tt> en caso contrario. Se indica el objeto
+    a comprobar y la posición a comprobar - que puede ser una posición absoluta en la sala o una posición relativa a la instancia - y también puede comprobar la bandera <b>No</b> para comprobar si <i>no</i> hay una colisión en la posición dada, lo que significa
+    que la acción sólo se evaluará como <tt>verdadera</tt> si <i>no</i> se encuentran colisiones, de lo contrario se evaluará como <tt>falsa</tt>. También puede establecer la opción <b>Excluirse a sí mismo</b> para excluir la instancia que llama de la comprobación de colisiones.</p>
+  <p>A continuación puede marcar/desmarcar la opción de <b>devolver la lista</b>. Si se marca esta opción, la acción creará y rellenará una estructura de datos de <a href="../Data_Structures/Data_Structure_Actions.htm">lista</a><span> </span>con <i>todas las</i> instancias en colisión
+    con el punto y establecerá la variable <b>Objetivo</b> con el ID de la lista DS. Si no está marcada, sólo establecerá la variable <b>Objetivo</b> a un valor menor que 0 cuando no se detecte ninguna colisión, o el valor de ID único de <i>una</i> de las instancias en la colisión
+    (tenga en cuenta que si hay varias instancias en colisión, no tiene forma de saber qué ID de instancia se devolverá cuando no se utilice una lista).</p>
+  <p>Si ha seleccionado devolver una lista - y la variable Destino <i>no</i> está configurada como <b>Temp</b> - entonces también puede seleccionar la opción <b>Destino libre</b>. Si se establece como <tt>verdadero</tt>, la lista contenida en la variable de destino se destruirá y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción.
+    y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción. De este modo, puede reutilizar la misma variable sin preocuparse por las fugas de memoria, ya que, si <i>no</i> marca la opción Free <b>Target</b>, se hace responsable
+    de destruir la lista antes de volver a utilizar la variable en la acción. Tenga en cuenta que, <i>independientemente</i> de si esta opción está marcada o no, si ha configurado la acción como <b>Devolución de lista</b>, la variable de destino <i>siempre contendrá un ID de lista</i>,
+    y como tal, tendrá que ser liberada cuando la instancia sea destruida o la sala termine (puedes usar el evento <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Clean Up</a> para esto, por ejemplo, junto con la acción <a href="../Data_Structures/Free_Data_Structure.htm">Free Data Structure</a><span> </span>).
+    Vale la pena notar que puedes establecer la opción de Liberar <b>Objetivo</b> para usar una variable predefinida o una expresión y así controlar cuando se libera la estructura de datos de la lista estableciendo la variable en otro lugar (o teniendo diferentes resultados para la expresión)
+    siempre que se evalúe como <tt>verdadero/falso</tt>.</p>
+  <p>Por último, debe proporcionar la variable de <b>destino</b> que desea que contenga el valor devuelto o el ID de la lista. Si marca la variable Target para mantener el valor devuelto como una variable <b>Temp</b> (local), entonces la acción creará esta variable para mantener
+    el valor devuelto <i>sólo</i> hasta el final del evento, en este caso la opción Destino Libre no hace nada y usted será responsable de destruir la lista DS si esa opción ha sido marcada. Si no se suministra ninguna variable de destino y la opción <b>Lista de</b> Retorno está marcada, no se creará ninguna lista.</p>
+  <p class="note"><b>IMPORTANTE!</b> Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al <tt>sprite_index</tt>, o un sprite asignado al <tt>mask_index</tt>. Si las instancias del objeto que se
+    no tienen una máscara de colisión, la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.</p>
+  <p>Tenga en cuenta que para añadir acciones dentro de un bloque &quot;<span class="inline">if</span>&quot;, éstas deben colocarse al lado de <i>la</i> acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Collision Point drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Point.png" /></p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Collision Point Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Point.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Forma</td>
+        <td>La forma a utilizar</td>
+      </tr>
+      <tr>
+        <td>Objeto</td>
+        <td>El objeto para comprobar si hay instancias de</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La posición x de la que se parte</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La posición y de la que se parte</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La posición x para terminar en</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La posición y para terminar en</td>
+      </tr>
+      <tr>
+        <td>Objetivo libre</td>
+        <td>Puede establecerse en una variable o expresión, o establecerse en <tt>true/false</tt> para controlar la liberación de la memoria de la lista cuando se reutiliza una variable de la lista</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable a la que se dirige el valor de retorno de la acción</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Collision Point Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Point.png">El código del bloque de acción anterior comprueba una colisión en la posición x/y del ratón con una instancia
+    del objeto &quot;obj_Enemigo&quot;. Si se encuentra una (o más) colisiones, se crea un efecto en la posición de la instancia con el ID almacenado en la variable Target, y luego se destruye la instancia. Si no se encuentra ninguna colisión, se crea un efecto
+    Si no se encuentra ninguna colisión, se crea un efecto diferente en la posición del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collision_Actions.htm">Acciones de colisión</a></div>
+        <div style="float:right">Siguiente: <a href="If_Any_Object_At_Place.htm">Si cualquier objeto en el lugar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Collision Point
+-->
+  <!-- TAGS
+action_if_collision_point
+-->
+</body>
+</html>

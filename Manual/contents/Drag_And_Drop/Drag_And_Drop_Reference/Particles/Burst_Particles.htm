@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Partículas de ráfaga</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Burst Particles action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Burst Particles" />
+  <meta name="search-keywords" content="Burst Particles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Burst Particles Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Burst_Particles.png"> Partículas de ráfaga</h1>
+  <p>Esta acción le permite reventar partículas en cualquier momento sin depender de un emisor. Debe proporcionar el valor de ID único del sistema para crear las partículas dentro de él (tal como se devolvió cuando creó el sistema con la acción Crear <a href="Create_Particle_System.htm">sistema de</a> partículas)
+    y el ID único del tipo de partícula a crear (tal y como se devolvió al crear el tipo de partícula con la acción Crear <a href="Create_Particle_Type.htm">tipo de partícula</a>), así como la posición x/y en la que crearlas y el número a crear.
+    La posición puede ser una posición absoluta dentro de la sala, o puedes marcarla como una posición relativa a la instancia que está llamando a la acción.</p>
+  <p>Puedes llamar a esta acción en cada fotograma del juego para replicar el efecto de flujo de un emisor, o puedes llamarla una vez en un evento (como el evento de destrucción) para simplemente reventar las partículas.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Burst Particles Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Burst_Particles.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sistema</td>
+        <td>El valor de la ID del sistema de partículas a utilizar</td>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de identificación del tipo de partícula a reventar</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>La posición x para reventar las partículas en</td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>Se posicionan para reventar las partículas en</td>
+      </tr>
+      <tr>
+        <td>Cuenta</td>
+        <td>El número de partículas que hay que reventar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Burst Particles Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Burst_Particles.png">El código del bloque de acción anterior comprobará si la instancia ha cambiado de posición
+    desde que se actualizó el último fotograma del juego y, si lo ha hecho, hará estallar algunas partículas en la nueva posición.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Create_Particle_Emitter.htm">Crear emisor de partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Burst Particles
+-->
+  <!-- TAGS
+action_part_particles_create
+-->
+</body>
+</html>

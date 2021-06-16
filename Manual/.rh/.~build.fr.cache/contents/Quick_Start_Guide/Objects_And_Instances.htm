@@ -16,7 +16,7 @@
     algún otro identificador. En general, para que un objeto dibuje algo y registre colisiones con instancias de otros objetos necesita tener un sprite asignado, que se añade usando el botón . Esto abrirá el Explorador de Activos donde puedes seleccionar el sprite a utilizar (también puedes arrastrar sprites desde el Navegador de Activos y soltarlos en el Editor de Objetos para asignarlos):
   
   Si todavía no tiene un sprite apropiado, puede hacer clic en  en el botón Nuevo Sprite  para crear un nuevo activo de sprite y editarlo como desee, igual que si hubiera creado el activo a través de las opciones estándar de creación de sprites, sólo que ahora se asignará automáticamente al objeto que tenía abierto cuando empezó a crearlo. Una vez que
-    seleccione un sprite también puede hacer clic en  en los botones Editar Sprite  o Editar Imagen  para editar las imágenes del propio sprite o el activo del sprite. Esto puede ser más rápido que encontrar primero el sprite en el Navegador de Activos y luego indicar
+    seleccione un sprite también puede hacer clic en  en los botones Editar Sprite  o Editar Imagen  para editar las imágenes del propio sprite o el activo de sprite. Esto puede ser más rápido que encontrar primero el sprite en el Navegador de Activos y luego indicar
     que quieres editarlo.
   Una vez que hayas añadido o creado el sprite, puedes cambiar algunas otras propiedades del objeto como si debe ser visible o no - por ejemplo - o qué tipo de máscara de colisión debe tener. Para juegos sencillos, probablemente
     no necesitas cambiar nada aquí y ahora puedes pasar a añadir Eventos al objeto.
@@ -50,7 +50,7 @@
       
         
         Evento de sorteo
-        Hay varios eventos de desenfundado dentro de la categoría de eventos de desenfundado, pero el que más se utiliza es el que está en la parte superior llamado simplemente "Desenfundado". Este evento general de sorteo será llamado, como el evento de paso, cada cuadro de juego, pero funciona
+        Hay varios eventos de desenfundado dentro de la categoría de eventos de desenfundado, pero el que más se utiliza es el que está en la parte superior llamado simplemente "Desenfundado". Este evento general de sorteo será llamado, al igual que el evento de paso, cada cuadro de juego, pero funciona
           de dos maneras diferentes. La primera es cuando no añades este evento al objeto... Cuando no hay un evento de dibujo especificado , entonces GameMaker Studio 2 dibujará por defecto el sprite asignado al objeto, utilizando cualquier transformación que
           han sido aplicadas en otra parte del objeto (como para cambiar su tamaño o la mezcla alfa), por lo que incluso cuando no hay un Evento de Dibujo en la lista de Eventos, todavía se está ejecutando y seguirá dibujando en la pantalla cuando una instancia se coloca en una habitación. La
           segunda forma en que funciona es cuando usted agrega el evento mismo e incluye cualquier GML o DnD™en él. Agregar algo al evento le dice a GameMaker Studio 2 "Quiero controlar lo que se dibuja para las instancias de este objeto" y anula completamente

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ajustar la velocidad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Speed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Speed" />
+  <meta name="search-keywords" content="Set Speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/i_Movement_Set_Speed.png"> Velocidad de ajuste</h1>
+  <p>Esta acción se utiliza para establecer la velocidad de movimiento de la instancia. La velocidad se calcula como el número de píxeles que una instancia tiene que mover en un solo fotograma del juego (paso). Por defecto, el valor de la velocidad se sumará al vector de dirección, por lo que si se establece
+    velocidad a 2 y la dirección a 45° la instancia se moverá hacia arriba y hacia la derecha 2 píxeles en cada cuadro de juego - pero también puedes hacer clic en el campo de <tt>dirección</tt> y seleccionar la velocidad <i>Horizontal</i> o <i>Vertical</i>.</p>
+  <p><img alt="Speed Action Options" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/speed_vectors.png">Al elegir cualquiera de estas opciones, la velocidad se fijará <i>sólo</i> para los vectores horizontales o verticales. Tenga en cuenta
+    que puede marcar el valor como relativo a la velocidad actual, lo que sumará o restará el valor de la velocidad real de la instancia, y también puede suministrar números negativos, lo que hará que se mueva en la dirección opuesta al valor de la dirección actual.
+    actual.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/a_Movement_Set_Speed.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>El valor de la velocidad (puede ser negativo).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><span><img alt="Set Speed Example" class="center" height="362" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Movement/e_Movement_Set_Direction_Fixed.png" width="408"></span>El código del bloque de acción anterior comprueba si se ha pulsado<span> el botón </span>izquierdo del ratón
+    en la instancia y si se detecta uno, establece la dirección hacia abajo (270°) y la velocidad a 5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement_Actions.htm">Acciones de movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Gravity_Direction.htm">Establecer la dirección de la gravedad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Speed
+-->
+  <!-- TAGS
+action_set_speed
+-->
+</body>
+</html>

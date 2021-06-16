@@ -1,7 +1,7 @@
 
   
   Opciones de juegoen macOS 
-  Esta sección describe las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos para macOS. Las diferentes secciones son:
+  En esta sección se describen las diferentes opciones disponibles que controlan cómo se compilarán tus proyectos de juegos para macOS. Las diferentes secciones son:
    
   General
   En la sección de información del producto , lo primero que hay que hacer es rellenar el nombre para mostrar de su juego
@@ -9,7 +9,7 @@
     de desarrollo de Mac. Cuando creas tu .app.zip, ese archivo puede ir a cualquier parte (la ubicación que especifiques al hacer el diálogo de guardado no es la única copia que se hace de ese .app.zip), pero el .pkg y otros archivos se dejan en esta carpeta, permitiéndote probar instalaciones locales a través de la Terminal de forma que se simule la compra en la Mac Store, etc.
   Aquí también debe indicar el identificador de equipo que desea utilizar para firmar la aplicación final que GameMaker Studio 2 crea para usted. Si lo estableces aquí, anularás el identificador de equipo que hayas proporcionado en las Preferencias demacOS.
     Después del Identificador de Equipo también tienes la opción de proporcionar el Identificador de Firma, que es requerido por Apple para todas las aplicaciones que no son de la tienda de aplicaciones (como los juegos de Steam, por ejemplo).
-  La siguiente opción es para habilitar Vapor en tu juego. Si activas esta opción, asegúrate de que tienes el SDK de Steamworksinstalado (ver aquí), y que
+  La siguiente opción es para habilitar Steam en tu juego. Si activas esta opción, asegúrate de que tienes el SDK de Steamworksinstalado (ver aquí), y que
     has añadido el ID de la aplicación de Steam en las Opciones Generales del juego.
   Por último, tienes la opción de Desactivar la caja de arena del sistema de archivos. Marcando esta opción se deshabilitará la caja de arena de GameMaker Studio 2 para guardar y cargar archivos, permitiendo que sus juegos accedan a los archivos desde cualquier parte del sistema que ejecuta el juego.
     Esta opción está desmarcada por defecto, ya que recomendamos mantener el sandbox de GameMaker Studio 2 para los archivos en todos los sistemas y cuando se marca, algunas áreas de guardado/carga pueden seguir sin estar disponibles dependiendo de los permisos a nivel de sistema operativo. Para obtener más información
@@ -34,13 +34,13 @@
       de la resolución aumentada).
        Esta opción está desactivada por defecto, y al activarla no se verá ninguna diferencia cuando ejecutes o depures el juego usando VM, ya que el corredor está pre-construido en ese caso. Sólo funcionará si construyes un ejecutable a través de VM, o utilizas YYC para probar o
       construir el juego, ya que eso reconstruirá el corredor con sus Opciones de Juego personalizadas.
-    Escala: Aquí puede elegir mantener la relación de aspecto (de modo que una habitación de 4:3 se verá en "buzón" en una de 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).
+    Escala: Aquí puede elegir entre mantener la relación de aspecto (de modo que una habitación 4:3 se verá en "caja de letras" en una 16:9) o escalar completamente (estirando la imagen para que se ajuste a la pantalla completa).
       
-      ADVERTENCIA Ladesactivaciónde la superficie de aplicación deshabilitará todas las opciones de escalado establecidas en las Opciones de Juego de Windows hasta que se vuelva a activar. Consulte la sección La superficie de aplicación para obtener más detalles.
+      ATENCIÓN! Alapagar la superficie de la aplicación se deshabilitarán todas las opciones de escala establecidas en las Opciones de Juego de Windows hasta que se vuelva a encender. Vea La superficie de aplicación para más detalles.
   
   Por último, existe la opción de establecer el tamaño de la página de la textura. El tamaño por defecto (y más compatible) es 2048x2048, pero puedes elegir entre 256x256 y 8192x8192. En
     también hay un botón marcado Vista previa que generará las páginas de texturas para esta plataforma y luego abrirá una ventana para que puedas ver cómo quedan. Esto puede ser muy útil si desea ver cómo se estructuran las páginas de textura
-    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para obtener más información sobre las páginas de textura, consulte aquí.
+    estructuradas y evitar tener páginas de textura más grandes (o más pequeñas) de lo necesario. Para más información sobre las páginas de texturas, consulta aquí.
   NOTA: Ten en cuenta que cuanto mayor sea el tamaño de la página de texturas, menos compatible será tu juego en los PC con especificaciones inferiores.
    
   Imágenes
@@ -58,8 +58,8 @@
   Por último, debe seleccionar su categoría de aplicación (para más información, consulte aquí).
    
   Social
-  Esta opción es para usar la extensión de inicio de sesión de Apple en Mac. Puedes obtener esta extensión desde la página Juegos YoYo Mercado,
-    y la propia extensión contiene instrucciones completas de uso. Si no utiliza esta extensión, no debe marcar esta opción.
+  Esta opción es para utilizar la extensión de inicio de sesión de Apple en Mac. Puede obtener esta extensión desde la página Juegos YoYo Mercado,
+    y la propia extensión contiene instrucciones completas de uso. Si no utilizas esta extensión, no debes marcar esta opción.
    
    
    

@@ -38,7 +38,7 @@
     
     var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange); image_blend = _col;
     Coloque unas cuantas instancias de este objeto en una habitación y, a continuación, haga clic en el botón de reproducción  en la parte superior del IDE, y pruebe a mantener pulsada y soltar la tecla Espacio . Usted
-      Debería ver que cada instancia cambiará su color rápidamente mientras se mantiene pulsada la tecla, y dejará de cambiar cuando se suelte:
+      Debería ver que cada instancia cambiará su color rápidamente mientras se mantiene la tecla pulsada, y dejará de cambiar cuando se suelte:
     
      
   
@@ -99,8 +99,8 @@
     
     draw_self(); draw_set_halign(fa_center);
        draw_text(x, y + 32, "Mi nombre es " + nombre); draw_text(x, y + 48, "Mi número es " + string(número));
-    Notarás que en el código anterior utilizamos la función string() función o Número a Cadena acción
-      en la variable "número" que queremos dibujar. Esto se debe a que todo el texto debe estar compuesto por caracteres, no por valores, y por lo tanto necesitamos usar esta función/acción para convertir el valor del número en los caracteres que queremos
+    Notarás que en el código anterior utilizamos la función string() función o Número a cadena acción
+      en la variable "número" que queremos dibujar. Esto se debe a que todo el texto debe estar formado por caracteres, no por valores, y por lo tanto necesitamos usar esta función/acción para convertir el valor del número en los caracteres que queremos
       dibujar. En este caso estamos tomando el número aleatorio que generamos y convirtiéndolo en una "cadena" de caracteres que puede ser dibujada. También hay que tener en cuenta que establecemos la alineación del texto. Esto simplemente le dice a GameMaker Studio 2 dónde empezar a
       dibujar el texto en relación con la posición dada, y en este caso queremos que el texto se centra a lo largo del eje x.
     Añade un número de instancias del objeto en el editor de salas y luego pulsa el botón de reproducción  en la parte superior del IDE. Deberías ver algo así:
@@ -131,7 +131,7 @@
     todos los ejemplos, por lo que te recomendamos que los repases uno tras otro (aunque no es estrictamente necesario).
    Texto para dibujar
   
-    Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que el posicionamiento del texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
+    Al dibujar en la capa GUI, la esquina superior izquierda es la posición de origen, y a la derecha es +X y abajo es +Y. Esto hace que posicionar el texto y los gráficos sea muy fácil, como verás en este ejemplo. Todo lo que vamos a hacer aquí es dibujar un valor
       que representa la puntuación del jugador, por lo que en nuestro objeto tendremos que añadir un evento Create para inicializar una variable que contenga este valor, así:
     
     puntuación_del_jugador = 0;
@@ -181,7 +181,7 @@
   
   Dibujar una barra de salud
   
-    Este ejemplo final cubre el dibujo de una barra de salud a la capa de la GUI. Hay un número de maneras que esto se puede hacer, pero GameMaker Studio 2 tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
+    Este ejemplo final cubre el dibujo de una barra de salud a la capa GUI. Hay un número de maneras que esto se puede hacer, pero GameMaker Studio 2 tiene una función incorporada específicamente para hacer barras de salud, así que eso es lo que vamos a utilizar aquí, aunque
       puede crear su propio uso de sprites o formas también. Para empezar, como antes, necesitamos inicializar un varaible para mantener el valor de la salud, así que añade el siguiente DnD™o GML en el evento Create del objeto (después de cualquier otro código
       que ya pueda estar ahí):
     

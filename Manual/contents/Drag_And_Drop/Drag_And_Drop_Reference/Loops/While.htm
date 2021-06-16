@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Mientras que</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the While action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - While" />
+  <meta name="search-keywords" content="While" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="While Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_While.png"> Mientras</h1>
+  <p>La acción <b>While</b> se utiliza para realizar bucles que sólo terminan cuando una condición específica vuelve a <tt>ser verdadera</tt>. Por ejemplo, puede utilizar una variable y establecerla como <tt>falsa</tt>, luego ejecutar el bucle While y hacer que compruebe esta variable, luego en
+    en algún momento del bucle se establece la variable a <tt>true</tt> y el bucle terminará. Tenga en cuenta que no importa dónde establezca la condición dentro del bucle while, <i>todas las</i> acciones dentro del bucle se ejecutarán hasta el final antes de que el resto del script
+    o evento continúe, el cambio de la condición no rompe instantáneamente el bucle.</p>
+  <p>Cuando añada una acción While en su código, necesita suministrar la variable a comprobar, el tipo de comprobación a realizar (menor que, mayor que, igual, etc...), y el valor a comprobar de la variable (también puede marcar que el bucle <i>While</i> 
+    compruebe si la condición <i>no</i> es verdadera). A continuación, añada las acciones a realizar dentro del bucle While, de la misma forma que añadiría una acción a un &quot;if&quot;, es decir, colocándola al lado de la acción en lugar de debajo de ella:</p>
+  <p><img alt="While drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/While_Drop.png">Todas las acciones añadidas al lado se incluirán en el While y se realizarán antes de que el evento o script
+    continúe con las acciones añadidas debajo (como se muestra en el ejemplo siguiente). Tenga en cuenta que puede terminar cualquier bucle prematuramente si llama a la acción <a href="Break.htm">Break</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="While Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_While.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Variable</td>
+        <td>La variable a utilizar en la comprobación</td>
+      </tr>
+      <tr>
+        <td>Es</td>
+        <td>El tipo de evaluación a realizar (menor que, mayor que, igual que, mayor o igual que y menor o igual que)</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor con el que se comprueba la variable</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="While Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_While.png">El código del bloque de acción anterior crea una variable local temporal y la establece en <tt>false</tt>. Esta variable es
+    Esta variable se comprueba en la acción del bucle While y mientras devuelva false se ejecutará el bucle. En el bucle obtenemos dos variables locales temporales para una posición aleatoria x/y en la habitación y luego comprobamos esa posición para una colisión. Si no se encuentra ninguna colisión, la variable inicial
+    se pone en <tt>verdadero</tt>, terminando el bucle. Después de que el bucle haya terminado se crea una nueva instancia en la posición aleatoria que descubrimos que no tiene colisiones.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Loop_Actions.htm">Acciones en bucle</a></div>
+        <div style="float:right">Siguiente: <a href="For.htm">Para</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - While
+-->
+  <!-- TAGS
+action_while_loop
+-->
+</body>
+</html>

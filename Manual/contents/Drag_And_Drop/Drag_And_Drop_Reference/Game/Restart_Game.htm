@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Reiniciar el juego</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Restart Game action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Restart Game" />
+  <meta name="search-keywords" content="Restart Game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Restart Game Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/i_Game_Restart_Game.png"> Reiniciar el juego</h1>
+  <p>Con esta acción puedes reiniciar el juego. Esto es similar a ejecutar el juego por primera vez y por lo tanto el <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Evento Otro - Inicio</a> del Juego se activará, así como el <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Evento Otro - Fin del Juego</a>.
+    Sin embargo, debe tenerse en cuenta que las variables globales no se reiniciarán a menos que se codifiquen explícitamente como tal - lo que significa que si no se definen y establecen en la primera sala del juego mantendrán sus valores anteriores - y que
+    Las <a href="../Data_Structures/Data_Structure_Actions.htm">Estructuras de Datos</a> y las <a href="../Particles/Particle_Actions.htm">Partículas</a> no serán liberadas tampoco y por lo tanto eso debería hacerse <i>antes de</i> llamar a la acción de Reiniciar el Juego <i>o</i> en el Evento de Fin de Juego. También ten en cuenta que el juego <i>no</i> se reiniciará en el momento en que se llame a esta acción, sino al final del script o evento en el que se coloque la acción, por lo que si hay alguna acción colocada después de esta, seguirá siendo llamada y el juego se reiniciará al final del bloque.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Restart Game Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/a_Game_Restart_Game.png" /></p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Restart Game Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Game/e_Game_Restart_Game.png">El código del bloque de acción anterior comprobará si se ha pulsado un botón del gamepad y, si se detecta uno, reiniciará
+    el juego.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Game_Actions.htm">Acciones del juego</a></div>
+        <div style="float:right">Siguiente: <a href="Exit_Game.htm">Juego de salida</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Restart Game
+-->
+  <!-- TAGS
+action_restart_game
+-->
+</body>
+</html>

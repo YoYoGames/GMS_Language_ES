@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Aplicación de acciones a otras instancias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Article explaining how to apply actions to other instances" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Applying Actions To Other Instances" />
+  <meta name="search-keywords" content="DnD,Code DnD,Apply DnD" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Aplicación de acciones a otras instancias</h1>
+  <p>La mayoría de las acciones en las bibliotecas de <span class="notranslate">DnD™</span>tienen una opción para aplicar la acción de diferentes maneras. Esto se llama establecer el <strong>ámbito de la</strong> acción y puede ser una de varias cosas:</p>
+  <p><img alt="DnD™ Applies To" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Applies_To.png">Esencialmente lo que le está diciendo a <span class="notranslate">GameMaker Studio 2</span> es la instancia que debe ejecutar la acción. El ámbito de acción por defecto
+    es <span class="inline">self</span>, lo que significa que una vez que el objeto se crea como una instancia en la sala, esa instancia ejecutará el código de la acción. Sin embargo, esto no es siempre lo que usted quiere, y puede querer que algunas acciones afecten a otras, o incluso a
+    todas las instancias de la sala. Aquí es donde entra en juego el cambiar el alcance de la acción.</p>
+  <p>A continuación se enumeran los diferentes ámbitos para realizar acciones, pero hay que tener en cuenta que si se cambia el ámbito de una acción de este modo, sólo se aplicará el nuevo ámbito a esa acción <em>y no a las acciones posteriores de la cadena</em>. Si desea aplicar
+    un cambio de ámbito de acción a varias acciones encadenadas, utilice primero la acción <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Aplicar a</a>...</p>
+  <p> </p>
+  <p><img alt="Self Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Self.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Auto</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Este es el ámbito por defecto para una acción y simplemente establece que la acción sólo debe ser llamada por la instancia que está ejecutando el código.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Other.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Otros</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">El ámbito <span class="inline">other</span> tiene dos funciones principales, y el valor que devuelve dependerá de dónde y cómo lo uses. En el <strong>evento de colisión</strong>, <span class="inline">other</span> devolverá el valor del ID de instancia único
+      (un valor único que se utiliza para distinguir las instancias individuales de cada objeto), por lo que puedes, por ejemplo, crear una instancia &quot;bala&quot; y tener un evento de colisión con una instancia &quot;jugador&quot; y en eso utilizar el ámbito <span class="inline">other</span> para eliminar los puntos de golpe del objeto &quot;jugador&quot; y luego volver al ámbito <span class="inline">self</span> para destruir la instancia &quot;bala&quot;.</p>
+    <p class="dropspot">Fuera del evento de colisión, la configuración de <span class="inline">other</span> se comportará como si estuviera establecida en <span class="inline">noone</span>, a menos que se llame desde un bloque de acciones de alcance. Esto significa que si se cambia el
+      alcance de un grupo de acciones a un objeto específico, entonces mientras esas acciones están siendo llamadas, el alcance <span class="inline">other</span> devolverá el ID de la instancia que inicialmente llamó al grupo de acciones. Por ejemplo, puede ejecutar
+      una acción <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Aplicar a</a>... y luego en el siguiente bloque de código establecer el ámbito a <span class="inline">other</span> para realizar una acción en la instancia que ejecuta todo el bloque de eventos, y no la
+      instancia que está siendo alcanzada en los bloques de código de aplicar a. La siguiente imagen muestra un ejemplo:</p>
+    <p class="dropspot"><img alt="DnD™ Scope" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Other.png">En la imagen, estamos comprobando si hay una pulsación del ratón en la instancia, y si se detecta una cambiamos de ámbito utilizando la acción <strong>Aplicar a</strong>... Los siguientes dos bloques de acción están siendo llamados desde la instancia &quot;obj_Player&quot; (si hay más de uno entonces se ejecutará para todos ellos) y así el objeto cambiará su sprite y luego creará un objeto en la otra posición,
+      es decir: la posición del objeto que está ejecutando el evento y que detectó la pulsación del ratón.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="All Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_All.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Todo</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Cuando se amplía una acción para todos, se está diciendo a <span class="notranslate">GameMaker Studio 2</span> que ejecute ese bloque para cada instancia <strong>activa dentro de la sala actual</strong>. Por ejemplo, la creación de una acción de <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Destruir Instancia de Objeto</a> 
+      y establecer su alcance en <span class="inline">all</span> hará que todas las instancias de la sala desaparezcan, sin importar el objeto del que hayan sido creadas.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Object Icon" class="icon" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/i_Scope_Object.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Objeto</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">A una acción también se le puede dar un <strong>objeto</strong> como su alcance. Lo que esto significa es que todas las instancias del objeto dado ejecutarán esa acción al mismo tiempo que es llamada. Así que si tienes 100 instancias de enemigos en la habitación, por ejemplo, y
+      quieres que todos apunten hacia un punto específico. Llamarías a la acción Establecer <a href="../Drag_And_Drop_Reference/Movement/Set_Point_Direction.htm">dirección del punto y</a> establecerías el ámbito de la acción al objeto &quot;obj_Enemigo&quot; y cuando
+      todas las instancias de ese objeto cambiarán de dirección.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Expresión</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">El campo de entrada de la Expresión es para que usted introduzca el ID de una instancia específica en la que desea que la acción funcione. Puede ser el valor de ID único asignado a una instancia desde el Room Editor o puede ser el ID de una instancia que haya almacenado
+      en una variable (donde la variable sería el valor de entrada) o incluso puede ser una expresión usando código, como se muestra en la imagen de abajo:</p>
+    <p class="dropspot"><img alt="DnD™ Target" class="center" src="../../assets/Images/Scripting_Reference/Drag_And_Drop/Overview/DnD_Scope_Target.png">En este caso, una instancia llama al <a href="../Drag_And_Drop_Reference/Instance/Set_Sprite.htm">Set Sprite</a> desde
+      la instancia creada por el código dado para la Expresión. Ten en cuenta que en este caso, la instancia que se está creando ejecutará primero su Evento de Creación antes de que se le aplique la acción.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../../Content.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="Action_Block_Functions.htm">Guiones de bloque de acción</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Applying Actions
+-->
+  <!-- TAGS
+drag_and_drop_applying
+-->
+</body>
+</html>

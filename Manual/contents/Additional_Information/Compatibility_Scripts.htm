@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Guiones de compatibilidad</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the compatibility scripts" />
+  <meta name="rh-index-keywords" content="Compatibility Scripts" />
+  <meta name="search-keywords" content="compatibility scripts" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Guiones de compatibilidad</h1>
+  <p>Para aquellos usuarios que vienen de versiones anteriores de <span class="notranslate">GameMaker</span>, puede ser un poco confuso utilizar <span class="notranslate">GameMaker Studio 2</span> al principio, ya que se han realizado una serie de cambios en la forma en que se manejan los activos del proyecto, la edición y la codificación. Estos cambios significan
+    que ni el <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> ni el <a href="../GameMaker_Language/GameMaker_Language_Index.htm"><span class="notranslate">Lenguaje GameMaker</span> (<span class="notranslate">GML</span></a> ) son compatibles con los elementos enumerados a continuación. Sin embargo, eso no significa que
+    no pueda importar a <span class="notranslate">GameMaker Studio 2</span> juegos realizados con versiones anteriores, ya que puede hacerlo. <span class="notranslate">GameMaker Studio 2</span> convertirá automáticamente todas las funciones heredadas en <strong>scripts de compatibilidad</strong>, que son scripts que contienen funciones que convierten
+    los métodos heredados en los métodos actualizados.</p>
+  <p>Lo que ocurre es que <span class="notranslate">GameMaker Studio 2</span> analizará tu proyecto en busca de todas las funciones y variables obsoletas que hayas utilizado, y luego creará una serie de scripts utilizando esos nombres de funciones. Estos scripts contendrán la nueva función de tiempo de ejecución equivalente
+   <a href="../GameMaker_Language/GML_Overview/Runtime_Functions.htm"><span class="notranslate">en tiempo de ejecución</span></a> o una <a href="../GameMaker_Language/GML_Overview/Script_Functions.htm">función de script</a> corta que realiza la misma acción que la función obsoleta.</p>
+  <p>Cuando importes por primera vez un proyecto de <span class="notranslate">GameMaker Studio</span> 2, se te mostrará un informe de compatibilidad muy parecido a este:</p>
+  <p><img alt="Compatibility Report" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Compatibility_Overview.png">El cuerpo principal del informe muestra qué objetos y scripts han sido afectados y dónde, mientras que al final
+    puede encontrar una lista de los scripts que se han creado para su proyecto. Puede hacer clic en el botón central del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> o pulsar <img alt="F1 Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_f1.png" width="55"> en cualquiera de los scripts que aparecen en el informe para abrirlo y ver lo que se ha hecho.</p>
+  <p>Tenga en cuenta que si ve algún script creado con una doble barra inferior antes de su nombre (por ejemplo: <span class="inline">__global_object_depths</span>), se trata de scripts que han sido creados por el IDE para ayudar a la compatibilidad y no son scripts
+    que han sido convertidos a partir de funciones obsoletas, por lo que <strong>no deben ser manipulados</strong> ya que son necesarios para que los otros scripts de compatibilidad funcionen.</p>
+  <p>Cuando haya terminado de revisar el informe de compatibilidad puede cerrar el espacio de trabajo, pero si necesita revisar algo dentro del informe puede encontrarlo de nuevo yendo a la sección <a href="../The_Asset_Editors/Notes.htm">Notas</a> del
+   <a href="../Introduction/The_Asset_Browser.htm">Navegador de activos</a>.</p>
+  <p>Tenga en cuenta que puede seguir utilizando estos scripts de compatibilidad de la misma forma en que hubiera utilizado las funciones en la versión anterior de <span class="notranslate">GameMaker</span>, sin embargo, debido a la forma en que funcionan, habrá un impacto en el rendimiento asociado a esto. Le recomendamos que
+    actualizar los proyectos para utilizar directamente los nuevos métodos y eliminar los scripts de compatibilidad si es posible, ya que mejorará el rendimiento y también le dará una idea de la forma en que <span class="notranslate">GameMaker Studio 2</span> y el <span class="notranslate">Lenguaje GameMaker</span> funciona en comparación con los productos heredados.</p>
+  <p>También tenga en cuenta que hay algunas funciones que han sido introducidas en el <span class="notranslate">Lenguaje GameMaker</span> para asegurar la compatibilidad con proyectos antiguos y que aparecerán en estos scripts de compatibilidad. Sin embargo, estas funciones nunca deben ser utilizadas en sus propios proyectos.
+    Puede encontrar una lista de estas funciones en la siguiente sección del manual:</p>
+  <ul class="colour">
+    <li><a href="Compatibility_Functions.htm">Funciones de compatibilidad</a></li>
+  </ul>
+  <p>También puede encontrar una lista completa de todas las funciones obsoletas que tienen scripts de compatibilidad equivalentes creados para ellas en la siguiente página:</p>
+  <ul class="colour">
+    <li><a href="Obsolete_Functions.htm">Funciones obsoletas</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_Information.htm">Información adicional</a></div>
+        <div style="float:right">Siguiente: <a href="Obsolete_Functions.htm">Funciones obsoletas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Compatibility Functions
+-->
+  <!-- TAGS
+compatibility_functions
+-->
+
+</body></html>

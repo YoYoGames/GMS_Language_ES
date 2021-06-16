@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crear un búfer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Buffer" />
+  <meta name="search-keywords" content="Create Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Create_Buffer.png"> Crear un búfer</h1>
+  <p>Esta acción se puede utilizar para asignar una porción de memoria como un búfer en su juego, con la función que devuelve el valor único <i>de identificación</i> del búfer que debe ser almacenado en una variable y utilizado para todas las llamadas de función posteriores al búfer. Puedes suministrar
+    una variable global, una variable de instancia o hacer que la acción cree una variable local temporal para almacenar el ID del buffer. Tenga en cuenta que puede crear búferes adicionales haciendo clic en el icono más <span><img alt="Expand Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>junto a
+    de la acción, y seleccionando otra variable para guardar el ID del buffer.</p>
+  <p class="note"><b>NOTA</b>: Es importante que elimines de la memoria cualquier recurso creado dinámicamente como este cuando ya no lo necesites para evitar fugas de memoria, por lo que cuando termines con el buffer que has creado deberás liberarlo de nuevo
+    utilizando la acción <a href="Delete_Buffer.htm">Eliminar Buffer</a> (en el evento <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Otros - Limpiar</a>, por ejemplo). Esto es especialmente importante de recordar cuando se utiliza una variable local temporal
+    temporal, ya que si no eliminas el buffer de nuevo antes de que termine el evento o el script de la acción, ya no podrás acceder a él y puedes tener problemas más adelante.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Create Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Create_Buffer.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tampón</td>
+        <td>El índice del buffer (almacenado en una variable)</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor a añadir en la lista</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Create Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png">El código del bloque de acción anterior crea una variable global y luego un búfer, asignando el
+    ID del búfer a la variable. Este búfer tiene entonces dos piezas de datos escritas en él.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffer_Actions.htm">Acciones de amortiguación</a></div>
+        <div style="float:right">Siguiente: <a href="Copy_Buffer.htm">Buffer de copia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Buffer
+-->
+  <!-- TAGS
+action_buffer_create
+-->
+</body>
+</html>

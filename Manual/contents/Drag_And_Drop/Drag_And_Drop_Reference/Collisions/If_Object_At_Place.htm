@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si el objeto está en el lugar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Object At Place action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Object At Place" />
+  <meta name="search-keywords" content="If Object At Place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Object At Place Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_At.png"> Si el objeto está en el lugar</h1>
+  <p>Esta acción se utiliza para comprobar si hay una colisión con una o más instancias de un objeto determinado con la instancia actual situada en un punto de la sala, basándose en la máscara de colisión de la instancia que llama. La acción se evaluará como <tt>verdadera</tt> si se detecta una colisión, o <tt>falsa</tt> en caso contrario. Se da el objeto a comprobar y la posición en la que &quot;colocar&quot; la instancia para realizar la comprobación - que puede ser una posición absoluta en la sala o una posición relativa a la instancia
+    - y también puede comprobar la bandera <b>No</b> para comprobar si <i>no</i> hay una colisión en la posición dada, en cuyo caso la acción sólo se evaluará como <tt>verdadera</tt> si <i>no</i> se encuentran colisiones, en caso contrario se evaluará como <tt>falsa</tt>.</p>
+  <p>Después de dar el objeto y la posición, puede marcar/desmarcar la opción de <b>devolver la lista</b>. Si se marca esta opción, la acción creará y rellenará una estructura de datos de la <a href="../Data_Structures/Data_Structure_Actions.htm">lista</a><span> </span>con
+   <i>todas las</i> instancias en colisión con la instancia y establecerá la variable <b>Target</b> con el ID de la lista DS. Si no está marcada, sólo establecerá la variable <b>Objetivo</b> a un valor menor que 0 cuando no se detecte ninguna colisión, o el valor de ID único de <i>una</i> de las instancias en la colisión (ten en cuenta que si hay varias instancias en colisión, no tienes forma de saber qué ID de instancia se devolverá cuando no se utiliza una lista).</p>
+  <p>Si ha seleccionado devolver una lista - y la variable Destino <i>no</i> está configurada como <b>Temp</b> - entonces también puede seleccionar la opción <b>Liberar Destino</b>. Si se establece como <tt>verdadero</tt>, la lista contenida en la variable de destino se destruirá y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción.
+    y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción. De este modo, puede reutilizar la misma variable sin preocuparse por las fugas de memoria, ya que, si <i>no</i> marca la opción Free <b>Target</b>, se hace responsable
+    de destruir la lista antes de volver a utilizar la variable en la acción. Tenga en cuenta que, <i>independientemente</i> de si esta opción está marcada o no, si ha configurado la acción como <b>Devolución de lista</b>, la variable de destino <i>siempre contendrá un ID de lista</i>,
+    y como tal, tendrá que ser liberada cuando la instancia sea destruida o la sala termine (puedes usar el evento <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>Limpiar</b></a> para esto, por ejemplo, junto con la acción <a href="../Data_Structures/Free_Data_Structure.htm">Free Data Structure</a><span> </span>).
+    Vale la pena señalar que puedes configurar la opción de Liberar <b>Objetivo</b> para utilizar una variable predefinida o una expresión y así controlar cuándo se libera la estructura de datos de la lista estableciendo la variable en otro lugar (o teniendo diferentes resultados para la expresión)
+    siempre que se evalúe como <tt>verdadero/falso</tt>.</p>
+  <p>Por último, debe proporcionar la variable de <b>destino</b> que desea que contenga el valor devuelto o el ID de la lista. Si marca la variable Target para mantener el valor devuelto como una variable <b>Temp</b> (local), entonces la acción creará esta variable para mantener
+    el valor devuelto <i>sólo</i> hasta el final del evento, en este caso la opción Destino Libre no hace nada y usted será responsable de destruir la lista DS si esa opción ha sido marcada. Si no se suministra ninguna variable de destino y la opción <b>Lista de</b> Retorno está marcada, no se creará ninguna lista.</p>
+  <p class="note"><b>IMPORTANTE!</b> Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al <tt>sprite_index</tt>, o un sprite asignado al <tt>mask_index</tt>. Si <b>cualquiera</b> de las instancias en
+    la colisión no tiene máscara de colisión, entonces la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.</p>
+  <p>Tenga en cuenta que para añadir acciones dentro de un bloque &quot;<span class="inline">if</span>&quot;, éstas deben colocarse al lado de <i>la</i> acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Object At Place drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_At.png" /></p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Object At Place Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_At.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Objeto</td>
+        <td>El objeto para comprobar si hay instancias de</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar</td>
+      </tr>
+      <tr>
+        <td>Objetivo libre</td>
+        <td>Puede establecerse en una variable o expresión, o establecerse en <tt>true/false</tt> para controlar la liberación de la memoria de la lista cuando se reutiliza una variable de la lista</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable a la que se dirige el valor de retorno de la acción</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Object At Place Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_At.png">El código del bloque de acción anterior comprueba si hay una colisión con cualquier instancia del objeto &quot;
+    <span class="inline">obj_Wall</span> &quot; a la izquierda y a la derecha y si se encuentra una invierte la dirección horizontal de la instancia que llama.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collision_Actions.htm">Acciones de colisión</a></div>
+        <div style="float:right">Siguiente: <a href="If_Collision_Shape.htm">Si la forma de colisión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Object At Place
+-->
+  <!-- TAGS
+action_if_object_at_place
+-->
+</body>
+</html>

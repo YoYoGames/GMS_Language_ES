@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si el ratón baja</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Mouse Down action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Mouse Down" />
+  <meta name="search-keywords" content="If Mouse Down Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Mouse Down Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Down.png"> Si el ratón está abajo</h1>
+  <p>Con esta acción puedes sondear el ratón para ver si el botón seleccionado se mantiene pulsado en ese momento. La acción devolverá <tt>true</tt> a cada paso que el botón se mantenga pulsado, o <tt>false</tt> en caso contrario, aunque si se pulsa el modificador <tt>not</tt> se puede comprobar si el botón <i>no</i> se mantiene pulsado, es decir: la acción devolverá <tt>true</tt> mientras no haya ningún botón pulsado y <tt>false</tt> si lo hay. Si sólo necesita comprobar si se ha pulsado un solo botón, utilice la acción
+   <a href="If_Mouse_Pressed.htm">Si el ratón</a> está presionado.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Mouse Down drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_DownDrop.png">Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero,
+    mientras que cualquier acción lanzada en otra parte se ejecutará después del bloque &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Mouse Down Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Down.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Botón del ratón</td>
+        <td>El nombre del botón del ratón a comprobar (izquierdo, medio, derecho).</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Negar la comprobación (verdadero se convierte en falso y viceversa)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Mouse Down Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png">El código del bloque de acción anterior sondea el estado del botón del ratón a cada paso y si está siendo
+    se comprueba la pulsación inicial del ratón. Si la comprobación es <tt>verdadera</tt> en la pulsación inicial, la velocidad de la instancia se establece, entonces, mientras el botón está abajo, la mezcla del sprite se cambia a rojo. Si el ratón no se mantiene pulsado, se realiza una comprobación
+    Si el ratón no se mantiene pulsado, se realiza una comprobación al soltar el ratón para restablecer el color de la mezcla a blanco y establecer la velocidad a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mouse_And_Keyboard_Actions.htm">Acciones con el ratón y el teclado</a></div>
+        <div style="float:right">Siguiente: <a href="If_Mouse_Released.htm">Si el ratón se libera</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Down
+-->
+  <!-- TAGS
+action_if_mouse_down
+-->
+</body>
+</html>

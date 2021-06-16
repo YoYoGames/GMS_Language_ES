@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si la forma de la colisión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Collision Shape action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Collision Shape" />
+  <meta name="search-keywords" content="If Collision Shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Collision Shape Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Shape.png" width="32"> Si la forma de colisión</h1>
+  <p>Esta acción se utiliza para comprobar y ver si hay una colisión con una instancia de un objeto dado dentro de un área de forma determinada o a lo largo de una línea. Se da la forma (rectángulo, elipse o línea), el objeto a comprobar, y luego se proporcionan las coordenadas de
+    las esquinas superior izquierda e inferior derecha de la forma que se está utilizando, o en el caso de una línea, las posiciones inicial y final. Estas pueden ser posiciones absolutas dentro de la sala de juego, o posiciones relativas a la instancia que realiza la acción. Puede ver cómo
+    esto funciona en la imagen de abajo:</p>
+  <p><img alt="Example of different collision shapes" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/collision_shape_example.png">Como puedes ver, los resultados dependerán de la máscara de colisión de la instancia
+    que se está comprobando, lo que significa que la instancia del objeto que estás buscando <i>debe</i> tener un sprite asignado al <tt>sprite_index</tt>, o un sprite asignado al <tt>mask_index</tt>. Si no es así, no será detectado por estas funciones,
+    independientemente de que esté dibujando un sprite o no. Cabe destacar que cualquier instancia que caiga completamente dentro de los límites establecidos para la forma de elipse o rectángulo también devolverá una colisión. La acción se evaluará como <tt>verdadera</tt> si
+    si se detecta una colisión, o <tt>falsa</tt> en caso contrario, aunque también se puede comprobar el indicador <b>No</b> para comprobar si <i>no</i> hay una colisión con el área de la forma dada, y la acción sólo se evaluará como <tt>verdadera</tt> si <i>no</i> se encuentran colisiones
+    y en caso contrario se evaluará como <tt>falsa</tt>. También puede establecer la opción <b>Excluirse a sí mismo</b> para excluir la instancia que llama de la comprobación de colisiones.</p>
+  <p>A continuación puede marcar/desmarcar la opción de <b>devolver la lista</b>. Si se marca esta opción, la acción creará y rellenará una estructura de datos de <a href="../Data_Structures/Data_Structure_Actions.htm">lista</a><span> </span>con <i>todas las instancias</i>en colisión
+    con la forma y establecerá la variable <b>Target</b> con el ID de la lista DS. Si no está marcada, sólo establecerá la variable <b>Target</b> a un valor menor que 0 cuando no se detecte ninguna colisión, o el valor de ID único de <i>una</i> de las instancias en la colisión
+    (tenga en cuenta que si hay varias instancias en colisión, no tiene forma de saber qué ID de instancia se devolverá cuando no se utilice una lista).</p>
+  <p>Si ha seleccionado devolver una lista - y la variable Destino <i>no</i> está configurada como <b>Temp</b> - entonces también puede seleccionar la opción <b>Liberar Destino</b>. Si se establece como <tt>verdadero</tt>, la lista contenida en la variable de destino se destruirá y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción.
+    y se creará una nueva lista (que se devolverá a la variable de destino) cada vez que se llame a la acción. De este modo, puede reutilizar la misma variable sin preocuparse por las fugas de memoria, ya que, si <i>no</i> marca la opción Free <b>Target</b>, se hace responsable
+    de destruir la lista antes de volver a utilizar la variable en la acción. Tenga en cuenta que, <i>independientemente</i> de si esta opción está marcada o no, si ha configurado la acción como <b>Devolución de lista</b>, la variable de destino <i>siempre contendrá un ID de lista</i>,
+    y como tal, tendrá que ser liberada cuando la instancia sea destruida o la sala termine (puedes usar el evento <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>Limpiar</b></a> para esto, por ejemplo, junto con la acción <a href="../Data_Structures/Free_Data_Structure.htm">Free Data Structure</a><span> </span>).
+    Vale la pena señalar que puedes configurar la opción de Liberar <b>Objetivo</b> para utilizar una variable predefinida o una expresión y así controlar cuándo se libera la estructura de datos de la lista estableciendo la variable en otro lugar (o teniendo diferentes resultados para la expresión)
+    siempre que se evalúe como <tt>verdadero/falso</tt>.</p>
+  <p>Por último, debe proporcionar la variable de <b>destino</b> que desea que contenga el valor devuelto o el ID de la lista. Si marca la variable Target para mantener el valor devuelto como una variable <b>Temp</b> (local), entonces la acción creará esta variable para mantener
+    el valor devuelto <i>sólo</i> hasta el final del evento, en este caso la opción Destino Libre no hace nada y usted será responsable de destruir la lista DS si esa opción ha sido marcada. Si no se suministra ninguna variable de destino y la opción <b>Lista de</b> Retorno está marcada, no se creará ninguna lista.</p>
+  <p class="note"><b>IMPORTANTE!</b> Las colisiones sólo se registrarán para aquellas instancias que tengan una máscara de colisión válida, es decir, que tengan un sprite asignado al <tt>sprite_index</tt>, o un sprite asignado al <tt>mask_index</tt>. Si las instancias del objeto que se
+    no tienen una máscara de colisión, la colisión no será detectada, independientemente de lo que la instancia esté dibujando en ese momento.</p>
+  <p>Tenga en cuenta que para añadir acciones dentro de un bloque &quot;<span class="inline">if</span>&quot;, éstas deben colocarse al lado de <i>la</i> acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Collision Shape drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/If_Collision_Shape.png" /></p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Collision Shape Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/a_Collision_Shape.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Forma</td>
+        <td>La forma a utilizar</td>
+      </tr>
+      <tr>
+        <td>Objeto</td>
+        <td>El objeto para comprobar si hay instancias de</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La posición x de la que se parte</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La posición y de la que se parte</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La posición x para terminar en</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La posición y para terminar en</td>
+      </tr>
+      <tr>
+        <td>Objetivo libre</td>
+        <td>Puede establecerse en una variable o expresión, o establecerse en <tt>true/false</tt> para controlar la liberación de la memoria de la lista cuando se reutiliza una variable de la lista</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable a la que se dirige el valor de retorno de la acción</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Collision Shape Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/e_Collision_Shape.png">El código del bloque de acción anterior comprueba la colisión con cualquier instancia del objeto &quot;
+    <span class="inline">obj_Enemy</span> &quot; dentro de un círculo de 100px alrededor de la posición de la instancia que llama. La acción genera una lista de todas las instancias que se encuentran en colisión y almacena el ID de la lista en la variable Target. Si la acción se evalúa como
+   <tt>verdadero</tt>, se recorre la lista y se reduce en 1 la variable &quot;<span class="inline">hp</span>&quot; de cada instancia con su ID almacenado en la lista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collision_Actions.htm">Acciones de colisión</a></div>
+        <div style="float:right">Siguiente: <a href="If_Collision_Point.htm">Si el punto de colisión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Collision Shape
+-->
+  <!-- TAGS
+action_if_collision_shape
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Buffer de escritura</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Write Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Write Buffer" />
+  <meta name="search-keywords" content="Write Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Write Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Write_Buffer.png" width="32"> Buffer de escritura</h1>
+  <p>Esta acción puede utilizarse para escribir datos en un búfer. Se suministra el ID único del búfer en el que se va a escribir (devuelto por la acción <a href="Create_Buffer.htm">Crear Búfer</a>) y luego el valor a escribir, que puede ser un real o una cadena, pero tenga en cuenta que
+    pero tenga en cuenta que <b>todos los valores se almacenan como cadenas</b>, así que cuando lea del búfer (usando Leer <a href="Read_Buffer.htm">Búfer</a>) puede que tenga que usar una de las <a href="../Data_Types/Data_Type_Actions.htm">Acciones de Tipo de Datos</a> para convertirlo de una cadena
+    al valor original. Ten en cuenta también que los búferes se leen y escriben <i>secuencialmente</i>, por lo que escribir en un búfer moverá la posición de &quot;búsqueda&quot; a lo largo de uno, lo que significa que para escribir varias piezas de datos sólo tienes que llamar a esta acción
+    el número de veces necesario.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Write Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Write_Buffer.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tampón</td>
+        <td>El índice del buffer (almacenado en una variable)</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor a añadir en el buffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Write Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Create_Buffer.png">El código del bloque de acción anterior crea una variable global y luego un búfer, asignando el
+    ID del búfer a la variable. Este búfer tiene entonces dos piezas de datos escritas en él.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffer_Actions.htm">Acciones de amortiguación</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Buffer_Size.htm">Buffer de búsqueda</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Write Buffer
+-->
+  <!-- TAGS
+action_buffer_write
+-->
+</body>
+</html>

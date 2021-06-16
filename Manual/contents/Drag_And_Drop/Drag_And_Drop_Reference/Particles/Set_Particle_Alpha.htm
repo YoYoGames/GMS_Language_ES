@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer el alfa de las partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Alpha action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Alpha" />
+  <meta name="search-keywords" content="Set Particle Alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Alpha Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Alpha.png"> Establecer alfa de partículas</h1>
+  <p>Esta acción establecerá el alfa para cuando se cree la partícula, así como el alfa durante su vida útil. Primero se especifica el valor del ID del tipo de partícula (que debe ser el mismo que el valor devuelto cuando se creó la partícula utilizando la acción <a href="Create_Particle_Type.htm">Crear tipo de partícula</a> ) y luego se pueden establecer los valores de alfa a utilizar.</p>
+  <p>Puedes elegir tres valores alfa para usar, y la partícula se mezclará entre ellos durante el tiempo de vida de la partícula. Por ejemplo, si una partícula tiene 0.5, 1 y 0 como valores alfa, y un tiempo de vida de 60 cuadros de juego, entonces cuando se crea (cuadro 0)
+    tendrá un alfa de 0,5, luego se desvanecerá hacia un alfa completo de 1 (fotograma 30), antes de desvanecerse para ser invisible con un alfa de 0 (fotograma 60).</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Particle Alpha Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Alpha.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de identificación único para el tipo de partícula para establecer el color de</td>
+      </tr>
+      <tr>
+        <td>Inicie</td>
+        <td>El alfa inicial a utilizar</td>
+      </tr>
+      <tr>
+        <td>Medio</td>
+        <td>El alfa intermedio para usar</td>
+      </tr>
+      <tr>
+        <td>Finalizar</td>
+        <td>El alfa final a utilizar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Particle_Life.htm">Establecer la vida de las partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Alpha
+-->
+  <!-- TAGS
+action_part_type_alpha
+-->
+</body>
+</html>

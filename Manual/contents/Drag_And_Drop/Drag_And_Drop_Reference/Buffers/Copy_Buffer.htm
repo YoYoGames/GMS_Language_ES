@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Buffer de copia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Copy Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Copy Buffer" />
+  <meta name="search-keywords" content="Copy Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Copy Buffer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Copy_Buffer.png"> Buffer de copia</h1>
+  <p>Esta acción puede utilizarse para copiar todos los datos almacenados en un búfer a otro. Cuando se utilizan dos búferes y se copia de uno a otro, ambos búferes deben haber sido creados previamente utilizando la acción <a href="Create_Buffer.htm">Crear Búfer</a>,
+    y suministrar el ID de búfer único devuelto como argumentos de origen y destino.<b></b></p>
+  <p class="note"><b>NOTA</b>: No se puede copiar en el mismo búfer.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><span><img alt="Copy Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Copy_Buffer.png" /></span></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tampón</td>
+        <td>El índice del búfer (almacenado en una variable) para copiar <i>desde</i></td>
+      </tr>
+      <tr>
+        <td>Copiar a</td>
+        <td>El índice del búfer (almacenado en una variable) para copiar <i>en</i></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Copy Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Copy_Buffer.png">El código del bloque de acción anterior creará un nuevo buffer y almacenará su ID en una variable temporal.
+    A continuación, comprueba si el búfer indexado en la variable global dada existe, y si lo hace entonces se copia en el búfer temporal y la posición de lectura/escritura se restablece al inicio, y si no existe entonces se crea.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffer_Actions.htm">Acciones de amortiguación</a></div>
+        <div style="float:right">Siguiente: <a href="Delete_Buffer.htm">Borrar el búfer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Copy Buffer
+-->
+  <!-- TAGS
+action_buffer_copy
+-->
+</body>
+</html>

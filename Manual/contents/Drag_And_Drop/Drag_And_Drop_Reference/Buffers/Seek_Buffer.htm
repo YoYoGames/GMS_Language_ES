@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Buffer de búsqueda</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Seek Buffer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Seek Buffer" />
+  <meta name="search-keywords" content="Seek Buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Seek Buffer Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Seek_Buffer.png" width="32"> Buffer de búsqueda</h1>
+  <p>Esta acción puede utilizarse para desplazarse (buscar) a una posición dentro de un búfer. Se suministra el valor único del ID del búfer devuelto por la acción <a href="Create_Buffer.htm">Crear Búfer</a> y luego el valor de desplazamiento en bytes al que se va a mover. El valor de desplazamiento
+    se aplicará desde el <i>inicio</i> del buffer, por lo que al llamar a esta función se moverá la posición de lectura/escritura al inicio del buffer y luego se moverá el número de bytes dados a lo largo y se posicionará la nueva posición de lectura/escritura allí. Sin embargo, si se marca
+    el desplazamiento como relativo, moverá la posición de lectura/escritura hacia adelante (o hacia atrás si el desplazamiento es un valor negativo) desde la posición actual.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Seek Buffer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Seek_Buffer.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tampón</td>
+        <td>El índice del buffer (almacenado en una variable)</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El desplazamiento (en bytes) relativo a la posición de búsqueda actual</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Seek Buffer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Seek_Buffer.png">El código del bloque de acción anterior obtiene el tamaño del búfer y luego utiliza ese valor para establecer la posición de lectura/escritura
+    al final de los datos almacenados actualmente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffer_Actions.htm">Acciones de amortiguación</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Buffer_Size.htm">Obtener el tamaño del buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Seek Buffer
+-->
+  <!-- TAGS
+action_buffer_seek
+-->
+</body>
+</html>

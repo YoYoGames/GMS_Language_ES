@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Nuevo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing the New action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - New" />
+  <meta name="search-keywords" content="New" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="New Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_New.png" width="32"> Nuevo</h1>
+  <p>Esta acción <strong>sólo</strong>se utiliza <strong>en<em> </em></strong>cuando se crean structs utilizando una función que ha sido marcada como función <strong>constructora</strong> (ver <a href="Declare_A_New_Function.htm">Declarar una nueva función</a> para más información). Esta acción
+    acción toma el método de la función previamente definida, así como un número de argumentos, que puede ampliar para añadir más si es necesario utilizando el icono <img alt="Expand Arguments Icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> de la izquierda. Estos argumentos deben corresponder a las entradas requeridas por la función, y se utilizarán para rellenar la estructura que se está creando. La estructura será devuelta a la variable de destino, que puede ser marcada como una variable local temporal
+    temporal o no.<strong></strong></p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="New Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_New.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Guión</td>
+        <td>El nombre del script o de la función definida por el usuario a la que se va a llamar.</td>
+      </tr>
+      <tr>
+        <td>Argumento0 ... Argumento3</td>
+        <td>Los diferentes argumentos (valores) que se van a pasar al script o a la función (los argumentos no utilizados pueden dejarse en blanco)</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>El nombre de la variable a la que se dirigen los valores devueltos (puede dejarse en blanco)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p><img alt="New Exmaple 1" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_3.png">El código del bloque de acción anterior probablemente iría en el <b>evento Create</b> de una instancia, y declara
+    una nueva función constructora <tt>init_char_struct</tt> con cuatro argumentos: <tt>_str1</tt>, <tt>_str2</tt>, <tt>_val1</tt> y <tt>_val2</tt>. Estos argumentos se utilizan para rellenar las variables dadas dentro de la estructura que la función está creando.
+    Luego se llamaría a la función usando la acción <a href="New.htm">New</a> en cualquier evento posterior, así:</p>
+  <p><img alt="New Exmaple 2" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Declare_Function_4.png">La función es llamada y devolverá una nueva estructura al array &quot;char&quot;, y la estructura
+    se rellenará con las variables &quot;name&quot;, &quot;location&quot;, &quot;hp&quot; y &quot;mana&quot;, establecidas con los valores utilizados para los argumentos correspondientes en la función.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Common_Actions_Library.htm">Acciones comunes</a></div>
+        <div style="float:right">Siguiente: <a href="Function_Call.htm">Llamada a la función</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Execute Script
+-->
+  <!-- TAGS
+action_execute_script
+-->
+</body>
+</html>

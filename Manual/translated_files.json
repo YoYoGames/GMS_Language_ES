@@ -1,123 +1,967 @@
 {
-  "contents\\Quick_Start_Guide\\Creating_Sound_Effects.htm": {
-    "fileHash": "B15973E5BE4E1B743D84AD395E1A9169",
-    "fileSize": 5382
+  "contents\\Content.htm": {
+    "fileHash": "FBCD513AD3BF0DACA19AB24435348414",
+    "fileSize": 15101
   },
-  "contents\\Quick_Start_Guide\\Creating_Sprites.htm": {
-    "fileHash": "BE3F81FCD1F184B8EDE4A58FD295B18B",
-    "fileSize": 9861
+  "contents\\Additional_Information\\Additional_Information.htm": {
+    "fileHash": "991021A394B0AEDC466A85C63E89BBB3",
+    "fileSize": 2818
   },
-  "contents\\Quick_Start_Guide\\Creating_Tile_Sets.htm": {
-    "fileHash": "7DB020827FC8558A14EA4ABD8B0498AC",
-    "fileSize": 5722
+  "contents\\Additional_Information\\Best_Practices_When_Programming.htm": {
+    "fileHash": "F55156BAE24122B389FBE28347463270",
+    "fileSize": 24680
   },
-  "contents\\Quick_Start_Guide\\Drawing.htm": {
-    "fileHash": "4333C66262F9A80C79647AFD8850454E",
-    "fileSize": 34019
+  "contents\\Additional_Information\\Bitwise_Operators.htm": {
+    "fileHash": "F85559A17F875E22297797BAF43A58D6",
+    "fileSize": 25988
   },
-  "contents\\Quick_Start_Guide\\Movement_And_Controls.htm": {
-    "fileHash": "98A2CC46A5794D0FA87F770BF86CC03C",
-    "fileSize": 26289
+  "contents\\Additional_Information\\Compatibility_Functions.htm": {
+    "fileHash": "A7D58C88C83DD17E0566D34D79024EBF",
+    "fileSize": 3820
   },
-  "contents\\Quick_Start_Guide\\Objects_And_Instances.htm": {
-    "fileHash": "9CFA9727094BFEB2CA36D082A62B1D3C",
-    "fileSize": 12730
+  "contents\\Additional_Information\\Compatibility_Scripts.htm": {
+    "fileHash": "4B54534832996C63508330877195C50A",
+    "fileSize": 5425
   },
-  "contents\\Quick_Start_Guide\\Quick_Start_Guide.htm": {
-    "fileHash": "008815AA42CCED9B7541C81DB6682AAE",
-    "fileSize": 5936
+  "contents\\Additional_Information\\Error_Reporting.htm": {
+    "fileHash": "A766587CDC472BCB360EF2402500738C",
+    "fileSize": 4032
   },
-  "contents\\Quick_Start_Guide\\Rooms.htm": {
-    "fileHash": "A3C5546A242065CADFE49017EE7A353B",
-    "fileSize": 10338
+  "contents\\Additional_Information\\Guide_To_Primitives_And_Vertex_Building.htm": {
+    "fileHash": "5BF14FDDAB9C0225E1C4FA66A7E3F907",
+    "fileSize": 12992
   },
-  "contents\\Quick_Start_Guide\\Sequences.htm": {
-    "fileHash": "76CD7A39D74501F571C5DE263771EFE4",
-    "fileSize": 4759
+  "contents\\Additional_Information\\Guide_To_Using_Blendmodes.htm": {
+    "fileHash": "83CB208B12E6892039BCC5A67C087F34",
+    "fileSize": 23485
   },
-  "contents\\Quick_Start_Guide\\Summary.htm": {
-    "fileHash": "C27AEDDC3DBF3FB1ADE64CA66A6F0143",
-    "fileSize": 5246
+  "contents\\Additional_Information\\Guide_To_Using_Buffers.htm": {
+    "fileHash": "471EB118FED741860E7CD8DC6F3AB6AC",
+    "fileSize": 22155
   },
-  "contents\\Quick_Start_Guide\\What_Is_Programming_.htm": {
-    "fileHash": "C5C2AA5D68AE1B5F394CEFEECAB5FD71",
-    "fileSize": 16646
+  "contents\\Additional_Information\\Guide_To_Using_Particles.htm": {
+    "fileHash": "18BB320CFBE70193E5F8CD22F78F613E",
+    "fileSize": 26100
   },
-  "contents\\Settings\\Audio_Groups.htm": {
-    "fileHash": "2D62C7C6A787474C569DBFCF72E2F8AD",
-    "fileSize": 5863
+  "contents\\Additional_Information\\Guide_To_Using_Shaders.htm": {
+    "fileHash": "75A2031CBF65A4696FBFF86BF000D7A1",
+    "fileSize": 41303
   },
-  "contents\\Settings\\Command_Line_Parameters.htm": {
-    "fileHash": "E35760556B65360AFF83EE05E8811C7C",
-    "fileSize": 10418
+  "contents\\Additional_Information\\Obsolete_Functions.htm": {
+    "fileHash": "65F4BEBEEAA64382340C57CE2D59D542",
+    "fileSize": 35058
   },
-  "contents\\Settings\\Configurations.htm": {
-    "fileHash": "94212B3D0686F1D34895C6020ABCC8FC",
-    "fileSize": 7083
+  "contents\\Additional_Information\\The_File_System.htm": {
+    "fileHash": "449D8CFD16C42B60F88F879F76A298CE",
+    "fileSize": 10715
   },
-  "contents\\Settings\\Game_Options.htm": {
-    "fileHash": "4B331CB88845DF4A714DEA76D78EA223",
-    "fileSize": 7887
+  "contents\\Additional_Information\\Type_Tables.htm": {
+    "fileHash": "36BAB5399DD1454FF273015B80A08684",
+    "fileSize": 33486
   },
-  "contents\\Settings\\Game_Settings.htm": {
-    "fileHash": "98614EA25F905404BFE0DF2173B6BA42",
-    "fileSize": 2212
+  "contents\\Additional_Information\\Vectors.htm": {
+    "fileHash": "8AC0D93651BD18769DA648C1176F4FCF",
+    "fileSize": 8426
   },
-  "contents\\Settings\\Included_Files.htm": {
-    "fileHash": "7D44A35A9759936FD7631C3D2DA4493C",
-    "fileSize": 5156
+  "contents\\Additional_Information\\Errors\\Compiler_Errors.htm": {
+    "fileHash": "9FA2470DC85CC5CD908099895F55A4A5",
+    "fileSize": 24585
   },
-  "contents\\Settings\\Texture_Groups.htm": {
-    "fileHash": "298BFBB8BA47B484E577424887353461",
-    "fileSize": 13352
+  "contents\\Additional_Information\\Errors\\Runner_Errors.htm": {
+    "fileHash": "F08A8E0C8CFD7B000094E6FFEE591168",
+    "fileSize": 28659
   },
-  "contents\\Settings\\The_Room_Manager.htm": {
-    "fileHash": "D9E9EA1ADE37A176F88CE7496C8997A1",
-    "fileSize": 11385
+  "contents\\Additional_Information\\Errors\\Syntax_Errors.htm": {
+    "fileHash": "BAFC2B7C5C012C0B4E807BB10A65E74F",
+    "fileSize": 33642
   },
-  "contents\\Settings\\Game_Options\\Amazon_Fire.htm": {
-    "fileHash": "332512871E435CD8CDDE0419B768B5C2",
-    "fileSize": 15642
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Index.htm": {
+    "fileHash": "E05274AE245F0E2D56FD5FA2DF7B6E67",
+    "fileSize": 5173
   },
-  "contents\\Settings\\Game_Options\\Android.htm": {
-    "fileHash": "1BB190B8F0F483BA5C3720E32E30D775",
-    "fileSize": 21954
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Action_Block_Functions.htm": {
+    "fileHash": "0D9FDE077E2ADF278413630497965BB1",
+    "fileSize": 8358
   },
-  "contents\\Settings\\Game_Options\\HTML5.htm": {
-    "fileHash": "6523401D83FDB0B35422000B15CCDA0B",
-    "fileSize": 11577
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Applying_Actions_To_Other_Instances.htm": {
+    "fileHash": "2D28CA76EF461306389402DC5D2618DB",
+    "fileSize": 8497
   },
-  "contents\\Settings\\Game_Options\\iOS.htm": {
-    "fileHash": "A964B60BBD15F5581188AB020A758189",
-    "fileSize": 10799
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Changing_DnD_To_Code.htm": {
+    "fileHash": "FD14AFE8EF8CA29E3D365E496C4F8341",
+    "fileSize": 5663
   },
-  "contents\\Settings\\Game_Options\\macOS.htm": {
-    "fileHash": "B7A426297CD6F59B42C010EFAE84B8AC",
-    "fileSize": 11501
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Constructing_Action_Block_Code.htm": {
+    "fileHash": "FAD6F00349CEBA7B7E39120FA7D7CAE4",
+    "fileSize": 13246
   },
-  "contents\\Settings\\Game_Options\\tvOS.htm": {
-    "fileHash": "3DEB82271F01A502882D51501B05D15A",
-    "fileSize": 7919
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\DnD_Overview.htm": {
+    "fileHash": "DD686B65EEF07976868A3719D023A58E",
+    "fileSize": 12078
   },
-  "contents\\Settings\\Game_Options\\Ubuntu.htm": {
-    "fileHash": "5B6BBE5EB390CAF5B6ABC0B3A890A4C3",
-    "fileSize": 7452
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Right_Mouse_Button_Menu_Options.htm": {
+    "fileHash": "EC040C15F12E07E94B4A71A270FEA85F",
+    "fileSize": 10111
   },
-  "contents\\Settings\\Game_Options\\Windows.htm": {
-    "fileHash": "57AD9C1F8ADC982DACE55A345EED7E3E",
-    "fileSize": 12279
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\DnD_Reference.htm": {
+    "fileHash": "9A7D749B3BED585AF85CC24CE6CFDE32",
+    "fileSize": 4252
   },
-  "contents\\Settings\\Game_Options\\Windows_UWP.htm": {
-    "fileHash": "0CC5D03FD0D6C2206A2CDE56C3AEC8B0",
-    "fileSize": 15903
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Audio_Actions.htm": {
+    "fileHash": "7C112CD1E3C7FFDD9901791960BD9709",
+    "fileSize": 8641
   },
-  "contents\\Settings\\Texture_Information\\Non-Bitmap_Sprites.htm": {
-    "fileHash": "7BD0B20D6957F4B98658AA8AC4C45D2C",
-    "fileSize": 14773
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Get_Audio_Length.htm": {
+    "fileHash": "E8CB41693AA754E8F6E277893A4D9C50",
+    "fileSize": 3108
   },
-  "contents\\Settings\\Texture_Information\\Texture_Pages.htm": {
-    "fileHash": "7C58BEF47D615CEC54EEFC54A931657A",
-    "fileSize": 7642
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Get_Audio_Pitch.htm": {
+    "fileHash": "B03537EA8701B26C9E8DC89E48B8007F",
+    "fileSize": 2987
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Get_Audio_Volume.htm": {
+    "fileHash": "BC34D631AA94F072986DCAEBD7E73031",
+    "fileSize": 3016
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Get_Master_Volume.htm": {
+    "fileHash": "915B3F56881FAB249DCD06C7EB5ABEB3",
+    "fileSize": 2907
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\If_Audio_Is_Paused.htm": {
+    "fileHash": "EAAA8CD7CD9F66AA171EAC4234A0FA2C",
+    "fileSize": 3248
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\If_Audio_Is_Playing.htm": {
+    "fileHash": "5DE62C9CB2E13CFA4368F6DC08437976",
+    "fileSize": 3239
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Pause_All_Audio.htm": {
+    "fileHash": "D25C50A577E3D6D0CB2F61C2A7553D17",
+    "fileSize": 2288
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Pause_Audio.htm": {
+    "fileHash": "44387DFAB52880DB91932CCEC76EF868",
+    "fileSize": 2605
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Play_Audio.htm": {
+    "fileHash": "E4F8757546E839B70FC73921224BFFF1",
+    "fileSize": 2745
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Resume_All_Audio.htm": {
+    "fileHash": "BC8F3CFEF430562E0E9A99A018CED96A",
+    "fileSize": 2309
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Resume_Audio.htm": {
+    "fileHash": "DE671803E16DC6FC310E054FE4F4CCF1",
+    "fileSize": 2557
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Set_Audio_Pitch.htm": {
+    "fileHash": "46F2F5035EC2553CABA3A1063516A4C6",
+    "fileSize": 4053
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Set_Audio_Position.htm": {
+    "fileHash": "7C34B5DB87AB55E03100ED351BADD55B",
+    "fileSize": 3589
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Set_Audio_Volume.htm": {
+    "fileHash": "1D72180DACE606DFCCF7CBE16C6B448D",
+    "fileSize": 3201
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Set_Master_Volume.htm": {
+    "fileHash": "2C1AF16C6FCE44060248F53F6F18A6C8",
+    "fileSize": 3235
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Stop_All_Audio.htm": {
+    "fileHash": "7387E960712892266052308B41B3DECA",
+    "fileSize": 2390
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Stop_Audio.htm": {
+    "fileHash": "A2D674F6592E0F05B94D0FD1B5D63EFC",
+    "fileSize": 2644
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Buffer_Actions.htm": {
+    "fileHash": "B07C50F80FA74116775E2D98B08E5295",
+    "fileSize": 7496
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Copy_Buffer.htm": {
+    "fileHash": "0E81909B072A40F10B24148DA5265B48",
+    "fileSize": 3007
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Create_Buffer.htm": {
+    "fileHash": "F52375D8F0D965BBB88508019E6DAC17",
+    "fileSize": 3764
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Delete_Buffer.htm": {
+    "fileHash": "40AA891859895FBCE0B100F067773708",
+    "fileSize": 2921
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Get_Buffer_Position.htm": {
+    "fileHash": "5A28A8B9A7A11DAAA2EB90EDA716CC52",
+    "fileSize": 3237
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Get_Buffer_Size.htm": {
+    "fileHash": "617B6CB924727DD0FAB10979EA034E2C",
+    "fileSize": 2873
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\If_Buffer_Exists.htm": {
+    "fileHash": "8806E615907A51C17EA5B9F9C0FE2692",
+    "fileSize": 2882
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\If_End_Of_Buffer.htm": {
+    "fileHash": "50DBC97CD1E8FFAE64659B9AA93BE1C7",
+    "fileSize": 3225
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Read_Buffer.htm": {
+    "fileHash": "EA6E44E5F481B966819DA0720D9DE35D",
+    "fileSize": 3402
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Seek_Buffer.htm": {
+    "fileHash": "9A495E5A9A15D1FF5DF5514F7390A2F8",
+    "fileSize": 3069
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Buffers\\Write_Buffer.htm": {
+    "fileHash": "75068AFEEFD8B6CF5FB828AC26CCED23",
+    "fileSize": 3221
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Cameras\\Camera_Actions.htm": {
+    "fileHash": "3764E733DE206E5333DE5CFA05F867C2",
+    "fileSize": 2944
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Cameras\\Get_View_Variable.htm": {
+    "fileHash": "7BC2C6088F95706D0FC5F8D7C3E51219",
+    "fileSize": 4907
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Cameras\\Set_View_Variable.htm": {
+    "fileHash": "6F76EF5BE68CBB7C193FCE5CD0C80054",
+    "fileSize": 6737
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Collisions\\Collision_Actions.htm": {
+    "fileHash": "77BF4A98004F056D586C706B064DDE92",
+    "fileSize": 3529
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Collisions\\If_Any_Object_At_Place.htm": {
+    "fileHash": "92369274992A8FDC5FB51B02E2D68C12",
+    "fileSize": 4037
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Collisions\\If_Collision_Point.htm": {
+    "fileHash": "1468C93C7D80833CC155E47B031122C7",
+    "fileSize": 7582
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Collisions\\If_Collision_Shape.htm": {
+    "fileHash": "2DBB9D267A6F52A9624BF9A4074A4327",
+    "fileSize": 8746
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Collisions\\If_Object_At_Place.htm": {
+    "fileHash": "86A064604AF87AF65B47978ADB50B6B3",
+    "fileSize": 7193
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Apply_To...htm": {
+    "fileHash": "43B7CAE49B6C97A02F85D2198B78628F",
+    "fileSize": 3467
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Assign_Variable.htm": {
+    "fileHash": "68C77C6544621F9723AE06410FAAFD92",
+    "fileSize": 4785
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Common_Actions_Library.htm": {
+    "fileHash": "5741EDF78DC3D7EFA48D839406D41749",
+    "fileSize": 7748
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Declare_A_New_Function.htm": {
+    "fileHash": "B2EBB301EC227B64F326F13279E83C54",
+    "fileSize": 6438
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Declare_Temporary_Variable.htm": {
+    "fileHash": "22A382BBE82BA737C40BEC14A819B41F",
+    "fileSize": 5008
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Else.htm": {
+    "fileHash": "517540CF7BFAD0A8EEBC5E2CFE6EE35B",
+    "fileSize": 3095
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Execute_Code.htm": {
+    "fileHash": "3412D926FFCCD3DA4D68DC8FFB3D1B43",
+    "fileSize": 2661
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Execute_Script.htm": {
+    "fileHash": "7F08EF4487F648601398C2E8DA768404",
+    "fileSize": 4076
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Exit.htm": {
+    "fileHash": "86E11622C354CE84223E951986A391EB",
+    "fileSize": 2603
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Function_Call.htm": {
+    "fileHash": "B1D55915C4091DD6C5037E2C0E860C22",
+    "fileSize": 4345
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Get_Global_Variable.htm": {
+    "fileHash": "4D31FE353003A358C3654FCA17329584",
+    "fileSize": 3723
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\If_Expression.htm": {
+    "fileHash": "510DD4AFE54756C3EB4164C0B4C8196A",
+    "fileSize": 5238
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\If_Undefined.htm": {
+    "fileHash": "B2A6EDE652F16EF71DCF9FBAE77D26F5",
+    "fileSize": 3805
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\If_Variable.htm": {
+    "fileHash": "CEC6645C5AC11681509E4F5730978BA8",
+    "fileSize": 5123
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Macro.htm": {
+    "fileHash": "FAAE53B4A8BE5F721BA895CED6A1F636",
+    "fileSize": 3085
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\New.htm": {
+    "fileHash": "90184E4665670CEBD21B7074DD6F84F7",
+    "fileSize": 4231
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Return.htm": {
+    "fileHash": "B2823E2FA5ABE884C6C449EC17AAB8CB",
+    "fileSize": 3070
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Set_Global_Variable.htm": {
+    "fileHash": "D1E3CAEA391447B27B44968AD6FC8244",
+    "fileSize": 5306
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Add_To_List.htm": {
+    "fileHash": "4D50A59052BAD53B5AB82A293F82BBAC",
+    "fileSize": 2826
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Clear_Data_Structure.htm": {
+    "fileHash": "2664E37DC2B54E6458757237A84E4421",
+    "fileSize": 3315
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Clear_Grid.htm": {
+    "fileHash": "72A19E8A357E6530D0F94178AB1590B2",
+    "fileSize": 2719
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Create_Grid.htm": {
+    "fileHash": "164968FD619187AB1AE73F38E9A58811",
+    "fileSize": 4511
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Create_List.htm": {
+    "fileHash": "82809AFC0C95F07455974FD8178EBF5C",
+    "fileSize": 4256
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Create_Map.htm": {
+    "fileHash": "B579DD4C5001B82851B7EC503A50B44F",
+    "fileSize": 4137
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Create_Stack.htm": {
+    "fileHash": "E5B24A629139ADDCA03C1F2D9D7FC482",
+    "fileSize": 4226
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Data_Structure_Actions.htm": {
+    "fileHash": "6FA62355692DFC6E911F85F8E311C269",
+    "fileSize": 15458
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Free_Data_Structure.htm": {
+    "fileHash": "B271519BF385E40DA949F3E395C61550",
+    "fileSize": 3799
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Get_Grid_Value.htm": {
+    "fileHash": "15B7540DE50C60CCEE2E82324CAEDC61",
+    "fileSize": 3437
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Get_Index_Of_List_Item.htm": {
+    "fileHash": "A1344692AFB75A00441013E9D2D860E6",
+    "fileSize": 3453
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Get_List_Item_At.htm": {
+    "fileHash": "58D15140BB7A17634DB1548DB7611F2A",
+    "fileSize": 3420
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Get_List_Item_Count.htm": {
+    "fileHash": "F100F6C64D7D1146F3DD4F079818C69F",
+    "fileSize": 2998
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Get_Map_Value.htm": {
+    "fileHash": "805E1C373E57276A5D33353427CFC254",
+    "fileSize": 3310
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\If_Data_Structure_Empty.htm": {
+    "fileHash": "ED51EF6972DDE254B67DB615497FE857",
+    "fileSize": 3774
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\If_Data_Structure_Exists.htm": {
+    "fileHash": "CE23A2D03F6F3F3FB4C1BC9EBC1B05E2",
+    "fileSize": 3761
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Insert_Into_List.htm": {
+    "fileHash": "2A68341AE8317A07DE5C65D591B542B1",
+    "fileSize": 3625
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Pop_Stack.htm": {
+    "fileHash": "55E004ACED007EC5874DC0AF48383E8A",
+    "fileSize": 2850
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Push_Onto_Stack.htm": {
+    "fileHash": "57AC2E0E0388E5FD4828BD73B5DDB97C",
+    "fileSize": 2971
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Remove_From_List.htm": {
+    "fileHash": "2F0BF476F3E365F232999ACB943667CB",
+    "fileSize": 3124
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Remove_Map_Entry.htm": {
+    "fileHash": "B56771344928D24E72C22FCF3D06CE36",
+    "fileSize": 3073
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Set_Grid_Value.htm": {
+    "fileHash": "D45819B0985D5B8A53D0A42B5605C0F4",
+    "fileSize": 3214
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Structures\\Set_Map_Value.htm": {
+    "fileHash": "6509E444D09027B189A20EF1752AB4DF",
+    "fileSize": 3007
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Types\\Data_Type_Actions.htm": {
+    "fileHash": "A16408662A9D3BDA443878E3AC0FCAFE",
+    "fileSize": 3256
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Types\\Decimal_To_Integer.htm": {
+    "fileHash": "2A50C2CA9670A81C1734DEFABA04A1DE",
+    "fileSize": 4972
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Types\\Number_To_String.htm": {
+    "fileHash": "2BBE5EE639EBE05A7DB33B4151B25F29",
+    "fileSize": 2747
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Data_Types\\String_To_Number.htm": {
+    "fileHash": "1D0E254BD47179B5D2E4D1F9E69CEC72",
+    "fileSize": 3966
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Drawing_Actions.htm": {
+    "fileHash": "B9BBEFE0CAD89A746D2420CE360282A6",
+    "fileSize": 10987
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Ellipse.htm": {
+    "fileHash": "F1B430A63569D7A4A65705B3CD567E94",
+    "fileSize": 3254
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Gradient_Ellipse.htm": {
+    "fileHash": "FE5E37795ACC0932D90D49D569D13D8D",
+    "fileSize": 3685
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Gradient_Rectangle.htm": {
+    "fileHash": "12D4BB573A782CA69EE0FA1DC90775A6",
+    "fileSize": 3952
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Healthbar.htm": {
+    "fileHash": "7E1AA64714037BFCA9810B258399D405",
+    "fileSize": 4686
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Instance_Health.htm": {
+    "fileHash": "AE6FF988210F795D45C140D72E0DB31C",
+    "fileSize": 4541
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Instance_Lives.htm": {
+    "fileHash": "B5A239821392DCCEA2C518942A3CE39A",
+    "fileSize": 4150
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Instance_Score.htm": {
+    "fileHash": "D87AA12AC7019A6270D7B17386A3A1D2",
+    "fileSize": 3405
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Line.htm": {
+    "fileHash": "5857C4544B7CAA2B415F2B4D0D50A43E",
+    "fileSize": 2959
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Rectangle.htm": {
+    "fileHash": "ED3582A41F3F2B244366519DEC088E18",
+    "fileSize": 3300
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Self.htm": {
+    "fileHash": "DD3AF82E6000A3CA1C6F29478BED9A58",
+    "fileSize": 2832
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Sprite.htm": {
+    "fileHash": "972D17C3C539051A00FEB6E642BABEF7",
+    "fileSize": 3798
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Sprite_Transformed.htm": {
+    "fileHash": "745614CD22A1EE5FD6D4C646406528B2",
+    "fileSize": 5430
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Stacked_Sprites.htm": {
+    "fileHash": "4890B7FC3D44DB0B579021BF00AC4F46",
+    "fileSize": 3879
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Transformed_Value.htm": {
+    "fileHash": "F7DE5BE2569C63BE0F9F8F052BD6B0AA",
+    "fileSize": 4572
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Draw_Value.htm": {
+    "fileHash": "91E0DD760294410AB45CD09B90B9202F",
+    "fileSize": 3639
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Get_Draw_Alpha.htm": {
+    "fileHash": "4C617381CBEFB0686910E17BFC2CBDAE",
+    "fileSize": 2256
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Get_Draw_Colour.htm": {
+    "fileHash": "669BB618A96D7227CC632E7CF15D7690",
+    "fileSize": 2356
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Get_Draw_Font.htm": {
+    "fileHash": "7608F5D2C998BD28B5CED9382BC600F0",
+    "fileSize": 2391
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Get_Text_Alignment.htm": {
+    "fileHash": "CA74E461F4288DE9466C94F54C709B28",
+    "fileSize": 4087
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Set_Draw_Alpha.htm": {
+    "fileHash": "F56DE809276475A1AB9D43693FBBB303",
+    "fileSize": 2659
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Set_Draw_Colour.htm": {
+    "fileHash": "41D7C78BFA2D0082C2457E795568BAC5",
+    "fileSize": 3012
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Set_Font.htm": {
+    "fileHash": "9EB568645B992CF77E6EF20B4B013035",
+    "fileSize": 2656
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Drawing\\Set_Text_Alignment.htm": {
+    "fileHash": "A785F35760C7A4482118DCBBD2A34A58",
+    "fileSize": 4783
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Close_Ini_File.htm": {
+    "fileHash": "EB54878D4AA0428B18C7FF7DBF4E8C0D",
+    "fileSize": 2908
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Copy_File.htm": {
+    "fileHash": "0AC8A5C8DFA3EA271DD82073447FC03F",
+    "fileSize": 2718
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Delete_File.htm": {
+    "fileHash": "4B57A5302E04C9847ED31CD2EF9D93E1",
+    "fileSize": 3133
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\File_Actions.htm": {
+    "fileHash": "AC35046326BABC81D751200346372E54",
+    "fileSize": 7336
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\If_File_Exists.htm": {
+    "fileHash": "31CEAF108640200DFA411D1C245B6EB6",
+    "fileSize": 3396
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Load_Buffer.htm": {
+    "fileHash": "604B00A994B47D52BB964BC79D678086",
+    "fileSize": 3219
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Open_Ini_File.htm": {
+    "fileHash": "91B609F6E36E318BEB86CA0254B9BD65",
+    "fileSize": 3238
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Read_Ini_File.htm": {
+    "fileHash": "A3143CC3C8101D708E84D74B4E591E27",
+    "fileSize": 4274
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Rename_File.htm": {
+    "fileHash": "EFD65722001D8B23EB3F773967D127FC",
+    "fileSize": 3223
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Save_Buffer.htm": {
+    "fileHash": "3D9940703CACD79E4049773B05106B45",
+    "fileSize": 2975
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Files\\Write_To_Ini_File.htm": {
+    "fileHash": "736F037E1A6BADA6F537CB665AACDA2C",
+    "fileSize": 4452
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Game\\Exit_Game.htm": {
+    "fileHash": "917A19FDC1C1EB2DB2E7D01B5E0A5CCD",
+    "fileSize": 2746
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Game\\Game_Actions.htm": {
+    "fileHash": "80520948D042FB30E4851C859459522D",
+    "fileSize": 3081
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Game\\Load_Game.htm": {
+    "fileHash": "87E7DE9731E0BA1451B60EA706A3AA49",
+    "fileSize": 3287
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Game\\Restart_Game.htm": {
+    "fileHash": "FF5188C77AB4A17503500516098BD896",
+    "fileSize": 3093
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Game\\Save_Game.htm": {
+    "fileHash": "0B0B20FCA39D5B1782555567777156A2",
+    "fileSize": 3200
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Gamepad_Actions.htm": {
+    "fileHash": "64ACDB9848C2A42000DE00570BF90C58",
+    "fileSize": 11935
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Get_Gamepad_Axis.htm": {
+    "fileHash": "1874E03038FB460F51066AB9FBABAEB4",
+    "fileSize": 3964
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Get_Gamepad_Connected.htm": {
+    "fileHash": "BD80C4618C5DCB477653065B234F475C",
+    "fileSize": 2987
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Get_Gamepad_Count.htm": {
+    "fileHash": "421F17189950694F4FD36F1B334577F1",
+    "fileSize": 2549
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Get_Gamepad_Trigger.htm": {
+    "fileHash": "33EF75759A8C2E44D0AC7083DF39BD6D",
+    "fileSize": 3206
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\If_Gamepad_Button_Down.htm": {
+    "fileHash": "3B25319C6742D36D57DAD0A283DBC58D",
+    "fileSize": 4184
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\If_Gamepad_Button_Pressed.htm": {
+    "fileHash": "E0EB58781B90A605AC5BCAD064449E50",
+    "fileSize": 4297
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\If_Gamepad_Button_Released.htm": {
+    "fileHash": "D3DC09D4C541CBB9F2E49A0ECA7B86B1",
+    "fileSize": 4109
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Set_Gamepad_Axis_Deadzone.htm": {
+    "fileHash": "1E2E98B5C10ECB05CB768B6446D92A72",
+    "fileSize": 3348
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Gamepad\\Set_Gamepad_Button_Threshold.htm": {
+    "fileHash": "F686AF01FF5CC40DB1A68654FEC8E4C0",
+    "fileSize": 3234
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Call_Parent_Event.htm": {
+    "fileHash": "C7F835E51D7E466CBE6B0358890B1348",
+    "fileSize": 2650
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Call_User_Event.htm": {
+    "fileHash": "423779CDC0ED9F4F1058B183220A82C4",
+    "fileSize": 2668
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Change_Object_Instance.htm": {
+    "fileHash": "35B75970C05E06FE5D98D76E1BFDB379",
+    "fileSize": 3552
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Create_Object_Instance.htm": {
+    "fileHash": "89F3A7181ECD47DC7383DBBBB797CCAF",
+    "fileSize": 3886
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Destroy_At_Position.htm": {
+    "fileHash": "5A466D40E045867B2A581F4D65A892F9",
+    "fileSize": 3080
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Destroy_Object_Instance.htm": {
+    "fileHash": "2161C7615DAB34AC2D54F3D2ABDC20CB",
+    "fileSize": 2931
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Get_Alarm.htm": {
+    "fileHash": "75B1A762BFEBAD60932033F99CC136A6",
+    "fileSize": 2671
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Get_Instance_Count.htm": {
+    "fileHash": "634F96F2CB212056E381E6DE75372C77",
+    "fileSize": 3195
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Get_Instance_Variable.htm": {
+    "fileHash": "BF1DEFB5F99BADB7EE700600BE0A6B78",
+    "fileSize": 11676
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\If_Instance_Exists.htm": {
+    "fileHash": "FF6E38F178053E7033DF817F78D4F235",
+    "fileSize": 4012
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Instance_Actions_Library.htm": {
+    "fileHash": "8E7F7BAC64F793FCFDBAD0ECE7A66986",
+    "fileSize": 8451
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Alarm.htm": {
+    "fileHash": "88DBEE805D13A667E2945B8E7E87D287",
+    "fileSize": 3602
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Animation_Speed.htm": {
+    "fileHash": "4987313C852EB6BC9E2D284E4256B10C",
+    "fileSize": 3016
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Instance_Alpha.htm": {
+    "fileHash": "164FB57F4D4CD37E2B4D2B63E75D3CDF",
+    "fileSize": 3263
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Instance_Colour.htm": {
+    "fileHash": "BE6AA31C86F338A041AA0BEC1523C76A",
+    "fileSize": 3885
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Instance_Rotation.htm": {
+    "fileHash": "C225DD7FBA74AABB9BD381AE3E9165AA",
+    "fileSize": 3011
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Instance_Scale.htm": {
+    "fileHash": "C33772F83F0EC12C01FE38EC9941318C",
+    "fileSize": 3996
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Instance_Variable.htm": {
+    "fileHash": "088960D8906FFEE0D429D9163DD173CF",
+    "fileSize": 11301
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance\\Set_Sprite.htm": {
+    "fileHash": "D98D6DD1EE71C2125B0768C159C29DA2",
+    "fileSize": 3261
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Get_Health.htm": {
+    "fileHash": "FD9338E020EA0E5AFFB00E1D6D87FC4F",
+    "fileSize": 2928
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Get_Lives.htm": {
+    "fileHash": "CCBC3235A7803308962A1506E555D525",
+    "fileSize": 2913
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Get_Score.htm": {
+    "fileHash": "198F7AF12AB54E4A4461DBC73E8FBACD",
+    "fileSize": 2951
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\If_Health.htm": {
+    "fileHash": "8146612CA70A4C7A5395F41701384EBE",
+    "fileSize": 4647
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\If_Lives.htm": {
+    "fileHash": "324F13A48E20885C69C5AE28319D3A14",
+    "fileSize": 4631
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\If_Score.htm": {
+    "fileHash": "1B4043709E283D694BAB1525816D255D",
+    "fileSize": 4638
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Instance_Variable_Actions.htm": {
+    "fileHash": "C7514225C9C905F57BB65207E5C00F94",
+    "fileSize": 5607
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Set_Health.htm": {
+    "fileHash": "62792C418668C0F1A1AB725A8B00B843",
+    "fileSize": 3060
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Set_Lives.htm": {
+    "fileHash": "6566C02C4F508252560981D4CD5A0ED7",
+    "fileSize": 2846
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Instance_Vars\\Set_Score.htm": {
+    "fileHash": "7AACA3912A38C9B0BE0B68B106F48D4A",
+    "fileSize": 2823
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\Break.htm": {
+    "fileHash": "7671A3B8A09E57BCA805B3B33AB2B384",
+    "fileSize": 2373
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\For.htm": {
+    "fileHash": "A3730FA0675F3100BD968DC2B0DC3860",
+    "fileSize": 4400
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\Loop.htm": {
+    "fileHash": "73B93F47C6056F25D8488BEF1CB9FF3F",
+    "fileSize": 2692
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\Loop_Actions.htm": {
+    "fileHash": "584856940A0C0023CC1337AF91C368B2",
+    "fileSize": 3523
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\Repeat.htm": {
+    "fileHash": "4FB2870953E6A0E08919D2ECB1705774",
+    "fileSize": 3183
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Loops\\While.htm": {
+    "fileHash": "F9C68B97C16CA2D6841D11144AC09C1C",
+    "fileSize": 4358
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Miscellaneous\\Miscellaneous_Actions.htm": {
+    "fileHash": "9108F5D24F4B9076B644889D2B294D22",
+    "fileSize": 2637
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Miscellaneous\\Set_Window_State.htm": {
+    "fileHash": "49DCE0C81A08B346C5665D24879A03B2",
+    "fileSize": 3491
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Miscellaneous\\Show_Debug_Message.htm": {
+    "fileHash": "86278F413E0A06D7A72B5D9CCAFADA72",
+    "fileSize": 3005
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\Get_Virtual_Keyboard_Height.htm": {
+    "fileHash": "988787F2DE59E8F7FB68B8F19CBF3909",
+    "fileSize": 2485
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\Hide_Virtual_Keyboard.htm": {
+    "fileHash": "B565FADCD28A10C2F361DA274CCC48A5",
+    "fileSize": 3450
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Key_Down.htm": {
+    "fileHash": "BCA7D6C088C39394FF6698FD7B71D8EA",
+    "fileSize": 3683
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Key_Pressed.htm": {
+    "fileHash": "6A346B36DCFD74EB616BCBB8EEC4E995",
+    "fileSize": 3747
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Key_Released.htm": {
+    "fileHash": "5497280C918EA398C8FB5B0F4D1D6069",
+    "fileSize": 3758
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Mouse_Down.htm": {
+    "fileHash": "3D51B8657291F8655F9ED9A13E819003",
+    "fileSize": 3854
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Mouse_Pressed.htm": {
+    "fileHash": "10C3FD8D7D2D2246F56A63884994C97D",
+    "fileSize": 3941
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Mouse_Released.htm": {
+    "fileHash": "0AD59154514960344D792B8B86BF8ADA",
+    "fileSize": 3796
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\If_Virtual_Keyboard_Is_Showing.htm": {
+    "fileHash": "4FC06EAFF17EC696338228EF14E38C72",
+    "fileSize": 3328
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\Mouse_And_Keyboard_Actions.htm": {
+    "fileHash": "13094A2B8E3DDD00566975B42C7902D4",
+    "fileSize": 7870
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Mouse_And_Keyboard\\Show_Virtual_Keyboard.htm": {
+    "fileHash": "4A226EC79AC1AE6384C5810AE3654BDC",
+    "fileSize": 13308
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Jump_To_Point.htm": {
+    "fileHash": "13593A25E3F30DF74519244D24C87411",
+    "fileSize": 3065
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Jump_To_Start.htm": {
+    "fileHash": "D7389A020AC94ACE998FD7A3E0CA83E0",
+    "fileSize": 2484
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Movement_Actions.htm": {
+    "fileHash": "64973513A191C54AD3B96939316567F0",
+    "fileSize": 6936
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Reverse.htm": {
+    "fileHash": "869372CB55ED842890D5D2C220B06FAE",
+    "fileSize": 3098
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Direction_Fixed.htm": {
+    "fileHash": "AF3C804643FCB3449B2B3FED62CB98D5",
+    "fileSize": 2539
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Direction_Random.htm": {
+    "fileHash": "314765B6D42BE4CD08CE8B944C62E592",
+    "fileSize": 2728
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Direction_Variable.htm": {
+    "fileHash": "D6CCA827162BAE6E27EBA007F39EC181",
+    "fileSize": 2825
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Friction.htm": {
+    "fileHash": "2E5B0B50C61299A8BA8085E3D125BCBB",
+    "fileSize": 2774
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Gravity_Direction.htm": {
+    "fileHash": "67FEB74D311A612C73FDA7A059A8138C",
+    "fileSize": 3096
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Gravity_Force.htm": {
+    "fileHash": "DEE4A1CFA9AC6D8171714B64BA5F72B0",
+    "fileSize": 2948
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Point_Direction.htm": {
+    "fileHash": "DB1B3002D632413E76351F5C57674EC5",
+    "fileSize": 2988
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Set_Speed.htm": {
+    "fileHash": "21FBAE24647058CB428B928A8C89A89D",
+    "fileSize": 3341
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Snap_Position.htm": {
+    "fileHash": "465D4577762E458E0C02101B10315687",
+    "fileSize": 3201
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Movement\\Wrap_Around_Room.htm": {
+    "fileHash": "4318F9624E0A004E878FD0AAA83E52B3",
+    "fileSize": 3384
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Burst_Particles.htm": {
+    "fileHash": "3DA5DFF7CCDCD04712C76BB03870A9D8",
+    "fileSize": 3691
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Clear_Particle_System.htm": {
+    "fileHash": "C85557ECEF504939153938AE22B4CF7A",
+    "fileSize": 3676
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Create_Particle_Emitter.htm": {
+    "fileHash": "702FDE0540033F2F8F93E9480B5A46A5",
+    "fileSize": 4702
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Create_Particle_System.htm": {
+    "fileHash": "D24E8CCCA0FC0E7A8ADB2859DB558BEB",
+    "fileSize": 5243
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Create_Particle_Type.htm": {
+    "fileHash": "DC42245A5A3D420A86B0B4C264736796",
+    "fileSize": 5262
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Destroy_Particle_Emitter.htm": {
+    "fileHash": "99A58EEE1AD2BEB6811D5A665C714DA9",
+    "fileSize": 3501
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Destroy_Particle_System.htm": {
+    "fileHash": "18B33C21E8AC9F9282E6BF182D03F091",
+    "fileSize": 3596
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Destroy_Particle_Type.htm": {
+    "fileHash": "137A3A130C224A9C0F9FF210AA9FD9F2",
+    "fileSize": 2920
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Do_Effect.htm": {
+    "fileHash": "9F63F263248F36DA652352588EBBCBFA",
+    "fileSize": 3787
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Emit_Particles.htm": {
+    "fileHash": "60AB477C6410FB53CFE15CF14DBCD155",
+    "fileSize": 3879
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Particle_Actions.htm": {
+    "fileHash": "A8ED0D56AC0791D314ECBCCFCCD7B5D8",
+    "fileSize": 16156
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Pause_Particle_System.htm": {
+    "fileHash": "272D5A74330AE327DC222CC6613B3554",
+    "fileSize": 3496
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Emitter_Region.htm": {
+    "fileHash": "58F1234BF6EBE19CF386E33B05168A73",
+    "fileSize": 4755
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Alpha.htm": {
+    "fileHash": "9CBF6CE25C5AD0328425277F692195FC",
+    "fileSize": 3458
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Colour.htm": {
+    "fileHash": "A4A8C0A37676182968F3573FA400EA48",
+    "fileSize": 3833
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Direction.htm": {
+    "fileHash": "EBA9F9F1E495ABA24B4A992AC6195122",
+    "fileSize": 4777
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Gravity.htm": {
+    "fileHash": "F7C3C90BBFAE670A43F5DA19D56EAA56",
+    "fileSize": 3513
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Life.htm": {
+    "fileHash": "BBD4F735874F2BC698CD579466958950",
+    "fileSize": 3693
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Set_Particle_Orientation.htm": {
+    "fileHash": "754A50C65BF5E75031524EE7A1ADDE17",
+    "fileSize": 5751
   },
   "toc\\Default.toc": {
     "fileHash": "7D4C476877208E9E5DF559875137B3B9",

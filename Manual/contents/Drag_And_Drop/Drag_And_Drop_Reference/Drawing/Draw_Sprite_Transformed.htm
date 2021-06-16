@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dibujar Sprite Transformado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Sprite Transformed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Sprite Transformed" />
+  <meta name="search-keywords" content="Draw Sprite Transformed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Sprite Transformed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Sprite_Transformed.png"> Dibujar Sprite Transformado</h1>
+  <p>Esta función dibujará el sprite dado de forma similar a la acción <a href="Draw_Sprite.htm">Dibujar Sprite</a> pero con opciones adicionales para cambiar la escala, la mezcla, la rotación y el marco del sprite que se está dibujando. El cambio de estos valores <i>no</i> modifica
+    el recurso (sólo la forma en que se dibuja), y puede utilizar cualquiera de las <a href="../Instance/Set_Instance_Variable.htm">variables de propiedades del sprite</a> disponibles en lugar de valores directos para todos los argumentos de la función. La imagen siguiente ilustra
+    cómo los diferentes valores afectan al dibujo del sprite:</p>
+  <p><img alt="Transformed Sprite Examples" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/spr_ext.png" /></p>
+  <p class="note"><b>NOTA: </b>La mezcla de colores sólo se recomienda para el objetivo HTML5 cuando WebGL está habilitado, aunque se puede establecer el color de mezcla si no está habilitado y se mezclará el sprite de forma normal. Sin embargo, toda mezcla de este modo crea un sprite duplicado
+    sprite que se almacena en la caché y se utiliza cuando se requiere. Esto está lejos de ser óptimo y si se utilizan múltiples cambios de color, se ralentizará el rendimiento de los juegos a menos que se active WebGL.
+    el tamaño de la caché de la fuente para tratar de limitar esto si es necesario utilizando la función <tt><span style="font-size:14px;"><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size.htm">sprite_set_cache_size()</a>.</span></tt></p>
+  <p class="note"><b>NOTA</b>: Esta acción es sólo para su uso en los diversos <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteo</a>, y no dibujará nada si se utiliza en otro lugar.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Draw Sprite Transformed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Sprite_Transformed.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>El sprite a dibujar</td>
+      </tr>
+      <tr>
+        <td>Marco</td>
+        <td>El fotograma del sprite que se va a dibujar (utiliza la variable incorporada <tt>image_index</tt> para el fotograma actual)</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>La posición x para dibujar dentro de la habitación</td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>La posición y para dibujar dentro de la habitación</td>
+      </tr>
+      <tr>
+        <td>Escala X</td>
+        <td>El factor de escala para el eje X (utilice la variable incorporada <tt>image_xscale</tt> para la escala X actual)</td>
+      </tr>
+      <tr>
+        <td>Escala Y</td>
+        <td>El factor de escala para el eje Y (utilice la variable incorporada <tt>image_yscale</tt> para la escala Y actual)</td>
+      </tr>
+      <tr>
+        <td>Rotación</td>
+        <td>El ángulo de dibujo para el sprite (de 0 a 360, girando en sentido contrario a las agujas del reloj, donde 0 es a la derecha - utilice la variable incorporada <tt>image_angle</tt> para la rotación actual)</td>
+      </tr>
+      <tr>
+        <td>Color</td>
+        <td>El color a mezclar con el sprite (por defecto es el blanco, y puedes usar la variable incorporada <tt>image_blend</tt> para el color actual)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Draw Sprite Transformed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Sprite_Transformed.png">El código del bloque de acción anterior comprueba una variable y, si es <tt>verdadera</tt>, el sprite se dibuja con una escala aleatoria a lo largo de los ejes x e y y se mezcla con el color rojo, de lo contrario el sprite se dibuja utilizando las transformaciones por defecto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Draw_Stacked_Sprites.htm">Dibujar sprites apilados</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Sprite Transformed
+-->
+  <!-- TAGS
+action_draw_sprite_transformed
+-->
+</body>
+</html>

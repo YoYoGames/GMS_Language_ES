@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Obtener la posición del buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Buffer Position action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Buffer Position" />
+  <meta name="search-keywords" content="Get Buffer Position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Buffer Position Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/i_Buffers_Get_Buffer_Position.png"> Obtener la posición del buffer</h1>
+  <p>Esta acción se puede utilizar para recuperar la posición actual de lectura/escritura en el buffer. Cuando se crea un buffer, la posición de lectura/escritura se establece en 0 bytes, y a medida que se añaden datos al buffer esta posición se moverá secuencialmente, lo que significa que
+    puede utilizar esta acción para obtener el número de bytes en el búfer que se establece en cualquier momento. Se suministra el valor único del ID del buffer devuelto por la acción <a href="Create_Buffer.htm">Crear Buffer</a> y luego se da una variable de destino para devolver
+    el valor de posición. La variable de destino puede ser marcada como una variable local temporal, en cuyo caso se creará para usted y se eliminará de la memoria de nuevo al final del script de la acción actual o evento.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Get Buffer Position Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/a_Buffers_Get_Buffer_Position.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tampón</td>
+        <td>El índice del buffer (almacenado en una variable)</td>
+      </tr>
+      <tr>
+        <td>Posición</td>
+        <td>La posición de lectura/escritura (en bytes) dentro del buffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Get Buffer Position Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Buffers/e_Buffers_Get_Buffer_Position.png">El código del bloque de acción anterior obtiene la posición de lectura/escritura del búfer dado
+    y si no es 0 (es decir, al principio del buffer) se pone al principio del buffer.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffer_Actions.htm">Acciones de amortiguación</a></div>
+        <div style="float:right">Siguiente: <a href="If_Buffer_Exists.htm">Si el buffer existe</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Buffer Position
+-->
+  <!-- TAGS
+action_buffer_get_position
+-->
+</body>
+</html>

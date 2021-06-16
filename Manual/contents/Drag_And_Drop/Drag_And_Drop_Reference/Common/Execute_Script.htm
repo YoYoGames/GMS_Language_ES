@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejecutar script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Execute Script" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Execute Script" />
+  <meta name="search-keywords" content="Execute Script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Execute Script Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Execute_Script.png"> Ejecutar Script</h1>
+  <p>Esta acción puede utilizarse para llamar a una función de script o a <a href="Declare_A_New_Function.htm">una función definida por el usuario</a>. En general, esta acción sólo se utilizaría para el soporte de legado y no debería usarse realmente en proyectos actuales o nuevos. Para utilizar la acción
+    se le da al activo de la secuencia de comandos para llamar - o el nombre de la variable de la función definida por el usuario para llamar - y luego se suministran los <i>argumentos</i> que se requieren, es decir, cualquier valor (cadenas, enteros, índices de recursos, etc ...) que desea introducir en la secuencia de comandos
+    o función para que pueda utilizarlos. Puede añadir los argumentos que necesite haciendo clic en el icono del signo más <span><img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> </span>junto a la acción.</p>
+  <p>Algunos scripts y funciones definidas por el usuario también pueden devolver un valor para su uso posterior en la lista de bloques de acción, por lo que se puede especificar la <b>variable de destino</b> que debe almacenar este valor de retorno. Esta puede haber sido creada previamente o puede ser una nueva variable temporal
+    local (si marca la casilla &quot;Temp&quot;). Tanto el campo de destino como el de argumento pueden dejarse en blanco si no son necesarios.</p>
+  <p>Tenga en cuenta que, por lo general, es mejor utilizar la acción <a href="Function_Call.htm">Llamada a la Función</a> para llamar a funciones definidas por el usuario, y que, por lo general, no debería necesitar utilizar esta acción, ni llamar a un activo de script directamente en el código.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Execute Script Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Execute_Script.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Guión</td>
+        <td>El nombre del script o de la función definida por el usuario a la que se va a llamar.</td>
+      </tr>
+      <tr>
+        <td>Argumento0 ... Argumento3</td>
+        <td>Los diferentes argumentos (valores) que se van a pasar al script o a la función (los argumentos no utilizados pueden dejarse en blanco)</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>El nombre de la variable a la que se dirigen los valores devueltos (puede dejarse en blanco)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Execute Script Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Execute_Script.png">El código del bloque de acción anterior llama a una función definida por el usuario, pasando dos argumentos para una
+    posición aleatoria dentro de la habitación. No devuelve nada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Common_Actions_Library.htm">Acciones comunes</a></div>
+        <div style="float:right">Siguiente: <a href="New.htm">Nuevo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Execute Script
+-->
+  <!-- TAGS
+action_execute_script
+-->
+</body>
+</html>

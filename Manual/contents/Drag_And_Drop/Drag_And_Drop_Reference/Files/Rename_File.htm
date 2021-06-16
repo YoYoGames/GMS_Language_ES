@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cambiar el nombre del archivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Rename File action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Rename File" />
+  <meta name="search-keywords" content="Rename File" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Rename File Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/i_Files_Rename_File.png"> Renombrar archivo</h1>
+  <p>Con esta acción puedes renombrar cualquier archivo que haya sido guardado por tu juego. Usted da el nombre del archivo a cambiar (como una cadena) y luego el nuevo nombre (también como una cadena e incluyendo la extensión del archivo), y el archivo será renombrado. Ten en cuenta que <i>no puedes</i> cambiar el nombre de ningún archivo que se haya incluido como un Archivo Incluido con tu juego (ver la sección sobre <a href="../../../Additional_Information/The_File_System.htm">el Sistema de Archivos</a> para más información).</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Rename File Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/a_Files_Rename_File.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Archivo</td>
+        <td>El nombre (como una cadena) del archivo a renombrar</td>
+      </tr>
+      <tr>
+        <td>Nuevo nombre</td>
+        <td>El nuevo nombre (como una cadena) para el archivo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Rename File Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Files/e_Files_Rename_File.png">El código del bloque de acción anterior comprobará si el archivo &quot;checkpoint.sav&quot; existe, y si
+    existe, comprueba si el archivo &quot;checkpoint_OLD.sav&quot; existe. Si ese archivo también existe, entonces se elimina, y luego el archivo original &quot;checkpoint.sav&quot; se renombra a &quot;checkpoint_OLD.sav&quot;. Por último, se guarda un buffer
+    se guarda como &quot;checkpoint.sav&quot; (esencialmente estamos haciendo una copia de seguridad de un archivo de búfer guardado cada vez que lo guardamos, de modo que siempre hay un archivo guardado &quot;actual&quot; y otro &quot;antiguo&quot;).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_Actions.htm">Acciones de archivo</a></div>
+        <div style="float:right">Siguiente: <a href="Copy_File.htm">Copiar archivo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Rename File
+-->
+  <!-- TAGS
+action_file_rename
+-->
+</body>
+</html>

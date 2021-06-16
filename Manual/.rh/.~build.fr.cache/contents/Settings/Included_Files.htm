@@ -16,8 +16,8 @@
     va a ser indefinido cuando el proyecto se ejecute. Esto se debe a que los archivos de streaming también se almacenan fuera del paquete principal del proyecto, por lo que hay que tener cuidado en estas situaciones.
   Vale la pena señalar que puede incluir los archivos DLL (en Windows) o DyLib (en macOS) como archivos incluidos y luego crear sus propias funciones personalizadas para tratarlos utilizando external_define().
     Éstas se pueden utilizar llamando a la función external_call() función.
-  ATENCIÓN! El uso de los archivos incluidos para crear una funcionalidad extra de esta manera es incompatible con el sistema de extensiones, en la medida en que no se pueden utilizar las external_*() funciones
-    con archivos añadidos en una extensión, ya que las extensiones ya tienen un método para añadir constantes y funciones
+  ATENCIÓN! El uso de archivos incluidos para crear una funcionalidad extra de esta manera es incompatible con el sistema de extensiones, en la medida en que no puede utilizar las external_*() funciones
+    con archivos añadidos en una extensión, ya que las extensiones ya tienen un método para añadir constantes y funciones.
    
    
    

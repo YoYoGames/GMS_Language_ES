@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Aplicar a...</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Apply To..." />
+  <meta name="rh-index-keywords" content="DnD™ Action - Apply To..." />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Apply To... Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Apply_To.png" width="32"> Aplicar a...</h1>
+  <p>Esta acción se puede utilizar para cambiar el <a href="../../Drag_And_Drop_Overview/Applying_Actions_To_Other_Instances.htm">Ámbito de Acción</a> para todas las acciones posteriores que se encadenen a ésta. Al igual que con una acción <a href="If_Variable.htm">if</a>, si se colocan más acciones a la derecha de la acción Aplicar a...
+    a la derecha de la acción <b>Aplicar a</b>... entonces se ejecutarán desde el objeto o instancia con alcance. El ámbito se elige en el menú emergente que se muestra al hacer clic en la pequeña flecha situada en la parte superior derecha de la acción, y de esta forma se puede indicar
+    un conjunto diferente de objetos - o incluso una sola instancia si tiene el ID de la instancia - para ejecutar múltiples acciones antes de continuar con el código del objeto actual.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;Se aplica a&quot;, se deben soltar al lado de <i>la</i> acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="Apply To... drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/Drop_Applies_To.png">Estas acciones se ejecutarán ahora desde el objeto o la instancia a la que se dirige el bloque
+    &quot;Se aplica a&quot;, mientras que cualquier acción lanzada en otro lugar se ejecutará después del bloque &quot;Se aplica a&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Apply To... Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Apply_To.png" /></p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Apply To... Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Apply_To.png">El código del bloque de acción anterior comprueba una variable para ver si es igual a 100 y si lo hace cambia el alcance
+    a las instancias de &quot; <span class="inline">obj_Player</span>&quot; y les dice que ejecuten la <a href="../Instance/Set_Sprite.htm">acción</a> Set Sprite <a href="../Instance/Set_Sprite.htm">(</a> todas las instancias de este objeto en la sala cambiarán de sprite en este punto), antes de continuar
+    para añadir 1 a la variable dentro de la instancia que ejecuta el bloque de código completo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Common_Actions_Library.htm">Acciones comunes</a></div>
+        <div style="float:right">Siguiente: <a href="Return.htm">Volver</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Apply To
+-->
+  <!-- TAGS
+action_apply_to
+-->
+</body>
+</html>

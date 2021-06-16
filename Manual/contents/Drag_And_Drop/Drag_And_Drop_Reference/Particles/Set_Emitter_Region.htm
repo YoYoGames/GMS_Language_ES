@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer la región del emisor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Emitter Region action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Emitter Region" />
+  <meta name="search-keywords" content="Set Emitter Region" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Emitter Region Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Emitter_Region.png"> Establecer región emisora</h1>
+  <p>Esta acción se utiliza para establecer la región y la forma de un emisor dentro de un sistema de partículas. Se proporciona el ID del sistema de partículas al que pertenece el emisor (devuelto por la acción Crear <a href="Create_Particle_System.htm">sistema de partículas</a>) y luego
+    el ID del emisor real (devuelto por la acción Crear <a href="Create_Particle_Emitter.htm">Emisor de Partículas</a>), y luego dar una forma para que el emisor tome dentro de los valores del cuadro delimitador dado. Las formas posibles del emisor son:</p>
+  <p><img alt="Emitter Shapes Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/Emitter_Shapes.png">Para definir las formas, hay que dar las coordenadas de un &quot;cuadro delimitador&quot; en el que se colocará la forma dada (en el caso de un rectángulo, una elipse y un rombo) o las coordenadas primera y segunda de los puntos inicial y final (en el caso de una línea).
+    (en el caso de los rectángulos, elipses y rombos) o las coordenadas de los puntos inicial y final (en el caso de las líneas). Todas las partículas que salgan del emisor se crearán dentro de
+    dentro de los límites de la forma dentro de este cuadro delimitador. También puede establecer la distribución de las partículas con la opción de:</p>
+  <ul class="colour">
+    <li><b>Lineal</b>: Las partículas se crearán en cualquier lugar al azar dentro de la forma dada.</li>
+    <li><b>Gaussiano</b>: Las partículas se crearán predominantemente en el centro de la forma y menos en los bordes.</li>
+    <li><b>Gaussiano inverso</b>: Las partículas se crearán predominantemente a lo largo de los bordes de la forma con menos en el centro.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Emitter Region Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Emitter_Region.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sistema</td>
+        <td>El ID único del sistema al que pertenece el emisor</td>
+      </tr>
+      <tr>
+        <td>Emisor</td>
+        <td>El ID único del emisor para establecer la forma de</td>
+      </tr>
+      <tr>
+        <td>Forma</td>
+        <td>La forma de la partícula que se va a utilizar</td>
+      </tr>
+      <tr>
+        <td>Distribución</td>
+        <td>La distribución de partículas dentro de la forma dada</td>
+      </tr>
+      <tr>
+        <td>Izquierda</td>
+        <td>La posición del lado izquierdo de la caja delimitadora de la forma (en píxeles)</td>
+      </tr>
+      <tr>
+        <td>Top</td>
+        <td>La posición de la parte superior de la caja delimitadora de la forma (en píxeles)</td>
+      </tr>
+      <tr>
+        <td>A la derecha</td>
+        <td>La posición del lado derecho de la caja delimitadora de la forma (en píxeles)</td>
+      </tr>
+      <tr>
+        <td>En el fondo</td>
+        <td>La posición de la parte inferior de la caja delimitadora de la forma (en píxeles)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Emitter Region Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Emitter.png">El código del bloque de acción anterior creará un emisor de partículas, establecerá su región
+    y luego lo pondrá a emitir un flujo de partículas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Do_Effect.htm">Efecto Do</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Emitter Region
+-->
+  <!-- TAGS
+action_part_emit_region
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer la vida de las partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Life action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Life" />
+  <meta name="search-keywords" content="Set Particle Life" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Life Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Life.png"> Establecer la vida de las partículas</h1>
+  <p>Esta acción establecerá la vida útil del tipo de partícula dado. Primero se especifica el valor del ID del tipo de partícula (que es el valor devuelto al crear la partícula mediante la acción <a href="Create_Particle_Type.htm">Crear tipo de partícul</a> a) y luego
+    puede establecer la duración mínima y máxima de la partícula en fotogramas del juego. Por ejemplo, si tu juego tiene un número de fotogramas por segundo de 60, entonces si estableces los dos valores de vida útil aquí a 60, las partículas durarán 1 segundo en pantalla antes de
+    desaparecer. Si utilizas dos valores diferentes, cada partícula generada tendrá una vida útil aleatoria dentro del mínimo y el máximo dados. Ten en cuenta que todos los valores deben ser enteros positivos.</p>
+  <p class="note"><b>IMPORTANTE!</b> Establecer duraciones de vida muy largas y luego emitir cientos de partículas, puede causar problemas en máquinas menos potentes y en dispositivos móviles. Tenga cuidado al establecer la duración de las partículas para maximizar el efecto visual pero minimizar el coste de rendimiento.
+    rendimiento, y sólo utilice las partículas de larga duración con moderación.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Particle Life Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Life.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de identificación del tipo global para establecer la duración de la vida</td>
+      </tr>
+      <tr>
+        <td>Vida mínima</td>
+        <td>La duración mínima de una partícula (en fotogramas del juego)</td>
+      </tr>
+      <tr>
+        <td>Vida máxima</td>
+        <td>La duración máxima de una partícula (en fotogramas del juego)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Particle_Speed.htm">Establecer la velocidad de las partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Life
+-->
+  <!-- TAGS
+action_part_type_life
+-->
+</body>
+</html>

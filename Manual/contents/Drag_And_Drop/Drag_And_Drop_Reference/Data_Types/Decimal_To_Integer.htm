@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Decimal a entero</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Decimal To Integer action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Decimal To Integer" />
+  <meta name="search-keywords" content="Decimal To Integer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Decimal To Integer Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/i_Types_Decimal_To_Integer.png"> Decimal a entero</h1>
+  <p>Esta acción tomará un número decimal y lo convertirá en un número entero. Usted da el valor a convertir y luego selecciona el tipo de redondeo que debe hacerse para convertirlo en un valor entero. Los tipos de redondeo disponibles son:<b></b></p>
+  <ul class="colour">
+    <li><b>Redondear</b>: Toma un número decimal y lo redondea hacia arriba <i>o</i> hacia abajo al número entero más cercano. En el caso especial de que el número suministrado sea exactamente la mitad de un entero (por ejemplo, 1,5, 17,5, -2,5, etc...) el número se redondeará al valor par más cercano, por ejemplo, 2,5 se redondeará a 2, mientras que 3,5 se redondeará a 4.
+      el valor <b>par</b> más cercano, por ejemplo, 2,5 se redondeará a 2, mientras que 3,5 se redondeará a 4. Este tipo de redondeo se denomina <i>redondeo bancario</i> y, en un gran número de iteraciones o cuando se utilizan matemáticas en coma flotante, da un redondeo estadísticamente
+      mejor redondeo que el enfoque más tradicional de &quot;redondear hacia arriba si es más de 0,5 y redondear hacia abajo en caso contrario&quot;.</li>
+    <li><b>Ceil</b>: Esto tomará un valor decimal y lo <i>redondeará</i> al entero más cercano. A diferencia del redondeo (arriba), esto no tiene en cuenta la parte decimal del valor, por lo que un número como 5.0000001 se redondeará a 6. Vale la pena
+      Cabe destacar que si se utiliza la acción Aleatoria <a href="../Random/Get_Random_Number.htm">Obtener Número Aleatorio</a> para generar un valor decimal aleatorio y luego se llama a esta acción para redondearlo, se <i>pueden</i> obtener resultados inesperados. La acción aleatoria
+      podría devolver 0, y al usar &quot;Ceil&quot; no dará 1 sino 0, así que si obtiene un decimal aleatorio de 0 a 9 y usa esta función puede esperar obtener enteros de 1 a 10, pero en realidad podría obtener enteros de
+      0 a 10. Esta es una posibilidad remota, pero debe tenerse en cuenta al utilizar esta acción.</li>
+    <li><b>Piso</b>: Esto tomará un valor decimal y lo redondeará <i>hacia abajo</i> al valor entero más cercano. A diferencia del redondeo (arriba), esto no tiene en cuenta la parte decimal del valor, por lo que un número como 5.9999999 se redondeará a
+      5.</li>
+  </ul>
+  <p>Una vez seleccionado el tipo de redondeo, debe suministrar el número a redondear (puede ser una variable), y luego dar una variable de destino a la que devolver el nuevo valor entero (que puede ser marcada como una variable local temporal).</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Decimal To Integer Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/a_Types_Decimal_To_integer.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Redondeo</td>
+        <td>El tipo de redondeo a utilizar para obtener el entero (ver descripción anterior)</td>
+      </tr>
+      <tr>
+        <td>Número</td>
+        <td>El número decimal a redondear a un entero</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable de destino para almacenar el entero devuelto</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Decimal To Integer Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Types/e_Types_Decimal_To_Integer.png">El código del bloque de acción anterior toma un valor decimal y lo convierte en un entero,
+    almacenando el valor devuelto en una variable local temporal. Este valor se convierte entonces en una cadena y se dibuja en la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Data_Type_Actions.htm">Acciones del tipo de datos</a></div>
+        <div style="float:right">Siguiente: <a href="String_To_Number.htm">Cadena a número</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Decimal To Integer
+-->
+  <!-- TAGS
+action_decimal_to_integer
+-->
+</body>
+</html>

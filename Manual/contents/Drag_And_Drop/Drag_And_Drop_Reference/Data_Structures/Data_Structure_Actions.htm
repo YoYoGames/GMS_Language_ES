@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Acciones de la estructura de datos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing all the Data Structure actions" />
+  <meta name="rh-index-keywords" content="DnD™ Overview - Data Structure Actions Library" />
+  <meta name="search-keywords" content="Data Structure Actions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Biblioteca de acciones de estructuras de datos</h1>
+  <p><img alt="Data Structure Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png" /></p>
+  <p>En los juegos, a menudo es necesario almacenar información de forma precisa y ordenada. Por ejemplo, es posible que necesites almacenar listas de objetos que lleva una persona o que quieras almacenar una cuadrícula de lugares que aún deben ser visitados. Ahora bien, puede utilizar múltiples variables
+    para esto, pero si quieres hacer operaciones más complicadas, como ordenar los datos o buscar un elemento concreto, tienes que escribir grandes trozos de código de bloque de acción que pueden ser lentos de ejecutar, difíciles de depurar y un verdadero dolor de escribir.</p>
+  <p>Para remediar esto, <span class="notranslate">GameMaker Studio 2</span> tiene una serie de estructuras de datos incorporadas a las que se puede acceder mediante funciones especializadas. Hay cuatro tipos diferentes de estructuras de datos disponibles a través de <span class="notranslate">Arrastrar y Soltar</span> (hay seis si se utiliza <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm"><span class="notranslate">GML</span></a>),
+    cada una de ellas tiene sus propios pros y contras dependiendo del tipo de información que se quiera almacenar y de cómo se quiera manipular posteriormente - los cuatro tipos son:</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="icons"><b>Listas</b></td>
+        <td class="text"><span>Una lista es una estructura de datos que almacena información de forma secuencial a medida que se añade. Los índices de las listas empiezan en 0 y van subiendo por cada elemento que se añade al final de la lista, aunque también se pueden insertar datos en una posición distinta a la última. A diferencia de la estructura de datos Stack (explicada más adelante) se puede acceder a los datos desde cualquier índice de la lista en cualquier momento.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="icons"><strong>Mapas</strong></td>
+        <td class="text"><span>La estructura de datos map es excepcionalmente útil, ya que permite almacenar </span><i>clave</i><span> y </span><i>valor</i><span> de claves y valores. Por ejemplo, un personaje de tu juego puede tener una cantidad de artículos diferentes (claves) y para cada artículo individual puede tener un número de ellos (valores), como en un RPG donde puedes tener 10 pociones de salud, 5 pociones de maná y 100 de oro. Los mapas mantienen estos pares todos juntos en el mismo lugar y puedes añadir pares al mapa y buscar el valor correspondiente a ciertas claves también usando algunas funciones simples. Los mapas no están ordenados de ninguna manera (reconocible), lo que significa que para encontrar una determinada clave puede que tengas que iterar a través de todo (lo que es muy lento), y tampoco hay manera de mantener dos claves que sean iguales, ni puedes asignar a una clave dos valores.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="icons"><strong>Rejillas</strong></td>
+        <td class="text"><span>Una cuadrícula es una matriz bidimensional de valores en la que se define su anchura y su altura. Esto establece el número total de &quot;celdas&quot; de la rejilla (la anchura y la altura multiplicadas) y estas celdas se utilizan para contener diferentes valores de datos, que pueden ser cualquiera de los tipos de datos permitidos. Este tipo de estructura permite establecer y recuperar el valor de las celdas de la rejilla dando la posición x (columna) e y (fila) de la misma (tanto las filas como las columnas comienzan en 0 y llegan hasta el ancho de la rejilla - 1 y el alto de la rejilla -1). Cuando acceda a las estructuras de datos de la rejilla, siempre debe intentar utilizar valores enteros para la posición de la celda, y todos los índices no enteros serán eliminados por </span><span class="notranslate">GameMaker</span>
+          Studio 2<span> si no lo hace. Si esto no es lo que necesita, entonces tendrá que hacer el redondeo usted mismo previamente antes de pasar el índice que desea comprobar.</span></td>
+      </tr>
+      <tr>
+        <td class="icons" style="text-align: center"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="icons"><strong>Pilas</strong></td>
+        <td class="text"><span>Una estructura de datos de pila es una estructura denominada "last-in-first-out" (LIFO). Puedes introducir valores en una pila y volver a eliminarlos sacándolos de la pila, y el valor que fue introducido en la pila más recientemente es el primero en ser sacado de ella de nuevo (piensa en una pila de monedas, donde cada moneda que añades tiene que ser sacada de nuevo antes de que puedas llegar al resto de las monedas que hay debajo). Las pilas se utilizan a menudo cuando hay interrupciones que manejar, o cuando se tienen funciones recursivas, o incluso cuando se construye una IA rudimentaria para tus juegos.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Básicamente, todas las estructuras de datos funcionan de la misma manera: se crea una estructura de datos y se almacena su valor de índice en una variable. A continuación, se utiliza este índice para hacer referencia a la estructura de datos en todas las llamadas a funciones posteriores que puedan realizar operaciones con ella. Por último,
+    una vez que hayas terminado, destruyes la estructura de datos de nuevo para eliminarla de la memoria. Puedes utilizar tantas estructuras al mismo tiempo como necesites, y todas las estructuras pueden almacenar tanto cadenas como valores reales.</p>
+  <p class="note"><b>NOTA</b>: Como todos los recursos dinámicos, las estructuras de datos ocupan memoria, por lo que <b>siempre deben ser destruidas cuando ya no se necesiten</b> para evitar fugas de memoria que ralentizarán y eventualmente bloquearán tu juego.</p>
+  <p>La biblioteca de <b>estructuras de datos</b> tiene las siguientes acciones:</p>
+  <p> </p>
+  <table class="dnd" style="text-align: left;margin-left:">
+    <tbody>
+      <tr style="height: 1px;">
+        <td class="icons" style="margin-left: 16px;"><img alt="Create List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_List.png" /></td>
+        <td class="dnd" style=""><a href="Create_List.htm">Crear lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Map Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Map.png" /></td>
+        <td class="dnd" style=""><a href="Create_Map.htm">Crear mapa</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Create_Grid.htm">Crear rejilla</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Create_Stack.htm">Crear pila</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Data_Structure.htm">Borrar la estructura de datos</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Free Data Structure Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Free_Data_Structure.png" /></td>
+        <td class="dnd" style=""><a href="Free_Data_Structure.htm">Estructura de datos libre</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Add To List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Add_To_List.png" /></td>
+        <td class="dnd" style=""><a href="Add_To_List.htm">Añadir a la lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove From List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_From_List.png" /></td>
+        <td class="dnd" style=""><a href="Remove_From_List.htm">Eliminar de la lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item At Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_At.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_At.htm">Obtener el elemento de la lista en</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Index Of List Item Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Index_Of_List_Item.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Index_Of_List_Item.htm">Obtener el índice del elemento de la lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Insert Into List Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Insert_Into_List.png" /></td>
+        <td class="dnd" style=""><a href="Insert_Into_List.htm">Insertar en la lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get List Item Count" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_List_Item_Count.png" /></td>
+        <td class="dnd" style=""><a href="Get_List_Item_Count.htm">Obtener el recuento de elementos de la lista</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Map_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Map_Value.htm">Establecer el valor del mapa</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Map Value Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Map_Value.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Get_Map_Value.htm">Obtener el valor del mapa</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Remove Map Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Remove_Map_Entry.png" /></td>
+        <td class="dnd" style=""><a href="Remove_Map_Entry.htm">Eliminar la entrada del mapa</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Set Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Set_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Set_Grid_Value.htm">Establecer el valor de la rejilla</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Get Grid Value Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Get_Grid_Value.png" /></td>
+        <td class="dnd" style=""><a href="Get_Grid_Value.htm">Obtener el valor de la rejilla</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Clear Grid Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Clear_Grid.png" /></td>
+        <td class="dnd" style=""><a href="Clear_Grid.htm">Rejilla transparente</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Push Onto Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Push_Onto_Stack.png" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">Empujar a la pila</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="Pop Stack Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Pop_Stack.png" width="32" /></td>
+        <td class="dnd" style=""><a href="Push_Onto_Stack.htm">Pop Stack</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Exists Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Exists.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Exists.htm">Si existe una estructura de datos</a></td>
+      </tr>
+      <tr>
+        <td class="dnd_icons" style="margin-left: 16px;"><img alt="If Data Structure Empty Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_If_Data_Structure_Empty.png" /></td>
+        <td class="dnd" style=""><a href="If_Data_Structure_Empty.htm">Si la estructura de datos está vacía</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../DnD_Reference.htm">Index</a></div>
+        <div style="float:right">Siguiente: <a href="../Buffers/Buffer_Actions.htm">Acciones en el búfer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Drag And Drop</span> Data Structure Actions
+Data Structure Actions
+-->
+  <!-- TAGS
+dnd_data_structures
+-->
+</body>
+</html>

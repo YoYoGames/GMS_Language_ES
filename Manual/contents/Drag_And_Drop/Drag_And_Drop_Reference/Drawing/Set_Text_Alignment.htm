@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer la alineación del texto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Text Alignment action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Text Alignment" />
+  <meta name="search-keywords" content="Set Text Alignment" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Text Alignment Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Set_Text_Alignment.png"> Establecer la alineación del texto</h1>
+  <p>Esta acción establecerá la alineación de la fuente para todas las acciones posteriores de dibujar texto. Puede establecer la alineación horizontal a la izquierda, al centro o a la derecha, y la alineación vertical a la parte superior, al centro o a la parte inferior, y el texto se alineará en relación con la posición x/y
+    de la acción de dibujo, como se muestra en las imágenes siguientes:</p>
+  <table>
+    <tbody>
+      <tr>
+        <td><img alt="Align Left" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_left.png" width="404" /></td>
+        <td>El texto está alineado horizontalmente a la izquierda</td>
+      </tr>
+      <tr>
+        <td><img alt="Align Center" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_center.png" width="404" /></td>
+        <td>El texto está alineado horizontalmente al centro</td>
+      </tr>
+      <tr>
+        <td><img alt="Align Right" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_right.png" width="404" /></td>
+        <td>El texto está alineado horizontalmente a la derecha</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img align="" alt="Align Top" height="106" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_top.png" width="106" /></td>
+        <td>El texto está alineado verticalmente en la parte superior</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img alt="Align Middle" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_middle.png" /></td>
+        <td>El texto está alineado verticalmente en el centro</td>
+      </tr>
+      <tr>
+        <td style="text-align: center"><img alt="Align Bottom" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/fa_bottom.png" /></td>
+        <td>El texto está alineado verticalmente en la parte inferior</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Tenga en cuenta que esto establecerá la alineación que se utilizará para <i>todas las</i> llamadas posteriores a dibujar texto, y por lo tanto puede ser llamado, por ejemplo, una vez al comienzo del juego - en cualquier caso, no sólo el evento de dibujo - y todas las acciones de dibujar texto utilizarán la alineación establecida.
+    Sin embargo, si necesitas que varias acciones de dibujar texto se alineen de diferentes maneras, entonces tendrás que llamar a esta acción antes de cada acción de dibujar texto que desees alinear de manera diferente.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Text Alignment Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Set_Text_Alignment.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>H.Alinear</td>
+        <td>El valor de la alineación horizontal (izquierda, centro, derecha)</td>
+      </tr>
+      <tr>
+        <td>V.Align</td>
+        <td>El valor de la alineación vertical (Superior, Medio, Inferior)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Text Alignment Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Value.png">El código del bloque de acción anterior establece el tipo de letra, el color de dibujo y la alineación para un texto
+    que se dibuja.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Text_Alignment.htm">Obtener la alineación del texto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Text Alignment
+-->
+  <!-- TAGS
+action_set_alignment
+-->
+</body>
+</html>

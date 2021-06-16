@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si el ratón se libera</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Mouse Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Mouse Released" />
+  <meta name="search-keywords" content="If Mouse Released" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Mouse Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_Released.png"> Si el ratón se libera</h1>
+  <p>Esta acción comprueba cuándo se ha soltado el botón del ratón. Devolverá <tt>true</tt> en el único paso del juego (fotograma) en el que se suelte el botón del ratón y <tt>false</tt> en todos los demás momentos. Si habilitas el modificador <tt>not</tt>, esta acción
+    se invertirá y comprobará si el botón del ratón <i>no</i> se ha soltado, devolviendo <tt>false</tt> en el paso de juego (frame) en el que se ha soltado y <tt>true</tt> en todos los demás momentos.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Mouse Released drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Mouse_ReleasedDrop.png" /></p>
+  <p>Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero, <tt>mientras que</tt> cualquier acción lanzada en otro lugar se realizará después del bloque &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Mouse Released Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_Released.png" /></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Botón del ratón</td>
+        <td>El nombre del botón del ratón a comprobar (izquierdo, medio, derecho).</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Negar la comprobación (verdadero se convierte en falso y viceversa)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Mouse Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_Down.png">El código del bloque de acción anterior sondea el estado del botón del ratón a cada paso y si
+    se mantiene pulsado, comprueba la pulsación inicial del ratón. Si la comprobación es <tt>verdadera</tt> en la pulsación inicial, la velocidad de la instancia se establece, entonces, mientras el botón está abajo, la mezcla del sprite se cambia a rojo. Si el ratón no se mantiene
+    Si el ratón no se mantiene pulsado, se realiza una comprobación al soltar el ratón para restablecer el color de la mezcla a blanco y establecer la velocidad a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mouse_And_Keyboard_Actions.htm">Acciones con el ratón y el teclado</a></div>
+        <div style="float:right">Siguiente: <a href="If_Key_Pressed.htm">Si se pulsa el teclado</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Mouse Released
+-->
+  <!-- TAGS
+action_if_mouse_released
+-->
+</body>
+</html>

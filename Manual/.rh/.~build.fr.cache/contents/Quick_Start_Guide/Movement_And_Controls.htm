@@ -81,7 +81,7 @@
     gamepad_id = -1; for (var i = 0; i < 12; i += 1;) { if gamepad_is_connected(i) { gamepad_id = i; gamepad_set_axis_deadzone(gamepad_id, 0.2); break; }  }
     
     Fíjate que en el código anterior ponemos el  zona muerta para el gamepad. Esto se debe a que los sticks analógicos en diferentes marcas de gamepads tendrán diferente sensibilidad, y a veces
-      pueden ser tan sensibles que si no estableces una zona muerta pueden causar movimientos no deseados en tus juegos. Así que establecemos la zona muerta a un valor como 0,2 para decirle a GameMaker Studio 2 que ignore cualquier valor de stick de gamepad por debajo de ese valor absoluto.
+      pueden ser tan sensibles que si no estableces una zona muerta pueden causar movimientos no deseados en tus juegos. Así que establecemos la zona muerta a un valor como 0,2 para decirle a GameMaker Studio 2 que ignore cualquier valor del stick del gamepad por debajo de ese valor absoluto.
     Para añadir el movimiento real, necesitaremos un Evento de Paso , así que añádelo ahora y dale el siguiente DnD™ o GML:
     
     if gamepad_id > -1 { var _h = gamepad_axis_value(gamepad_id, gp_axislh); var _v = gamepad_axis_value(gamepad_id, gp_axislv); x += _h * 4; y += _v * 4; }
@@ -102,7 +102,7 @@
     Para que quede más claro lo que ocurre, eliminemos todo el texto y los sprites y mostremos simplemente la misma línea de movimiento girada 45º para que sea horizontal:
     
     Como puedes ver, la diferencia es bastante obvia, y si la instancia se mueve más de 1 o 2 píxeles por paso, entonces se hace muy notorio que el movimiento diagonal es mucho más rápido. Entonces, ¿cómo limitamos esto? Hay varias maneras de hacerlo, pero vamos a
-      pero vamos a concentrarnos en una de ellas, porque introduce un par de funciones y conceptos que te serán útiles más adelante en tus juegos.
+      de hacerlo, pero vamos a concentrarnos en una de ellas, porque introduce un par de funciones y conceptos que te serán útiles más adelante en tus juegos.
     Para ello, vamos a tener que almacenar los valores de entrada de las teclas pulsadas de forma independiente envariables, para luego comprobarlos y desplazarnos según
       la combinación de teclas que se han pulsado. Así que, para esto necesitarás un objeto con un sprite asignado, y tendrás que darle un Evento de Paso con el siguiente DnD™ o GML:
     
@@ -121,8 +121,8 @@
       if " utiliza el símbolo " ||". Esto significa " or" en programación, por lo que - en lenguaje llano - se está comprobando
     si la variable _hspd no es igual a cero o si la variable _vspd no es igual a cero
     De este modo, se pueden encadenar varias expresiones en las comprobaciones " if", y existen múltiples formas diferentes de evaluar esas expresiones (para más información, consulte la sección sobre Expresiones aquí ).
-    La siguiente sección de código almacena un valor para la velocidad de movimiento real en una variable y luego obtiene una dirección utilizando los valores _hspd y _vspd , que pueden ser -1, 0 o 1. La función de dirección
-      comprueba desde (0, 0) ya que no estamos utilizando coordenadas de la habitación, y en su lugar queremos que se evalúe como una dirección de 0° a 360° basada en los valores de las variables. El siguiente diagrama ilustra mejor lo que ocurre que intentar explicarlo con
+    La siguiente sección de código almacena un valor para la velocidad de movimiento real en una variable y luego obtiene una dirección usando los valores _hspd y _vspd , que pueden ser -1, 0 o 1. La función de dirección
+      comprueba desde (0, 0) ya que no estamos utilizando coordenadas de la habitación, y en su lugar queremos que se evalúe como una dirección de 0° a 360° basada en los valores de las variables. El siguiente diagrama ilustra lo que ocurre mejor que intentar explicarlo con
       palabras:
     
     NOTA: La dirección en GameMaker Studio 2 se calcula en sentido contrario a las agujas del reloj, por lo que 0° y 360° son a la derecha, 90° es arriba, 180° es a la derecha y 270° es abajo.

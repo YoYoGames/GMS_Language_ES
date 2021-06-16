@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crear una instancia del objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Object Instance acton" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Object Instance" />
+  <meta name="search-keywords" content="Create Object Instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Object INstance Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Create.png"> Crear Instancia de Objeto</h1>
+  <p>Con esta acción puede crear una instancia de cualquier objeto desde el Navegador de Activos. Se da el nombre del objeto y una posición x/y dentro de la sala donde se va a crear, así como el nombre de la capa en la que se va a crear la instancia (debe ser una
+    Capa <b>de Instancia</b>). Puedes marcar las banderas &quot;relativas&quot; para posicionar la instancia en relación con la instancia que ejecuta los bloques de código de acción. Cada vez que se crea una instancia en el juego, se le da un valor de identificación único con el que se puede
+    identificar la instancia en acciones posteriores, por lo que esta acción le permite definir una variable &quot;objetivo&quot; para mantener este valor de ID (como se muestra en el ejemplo siguiente). Tenga en cuenta que el objetivo puede ser marcado como una variable temporal (local), que será
+    que se creará para la acción y se podrá utilizar en todas las acciones posteriores.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Create Object Instance Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Create.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Objeto</td>
+        <td>El nombre del objeto para crear una instancia.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x en la sala para crear la instancia (puede ser relativa a la instancia que llama).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y en la sala para crear la instancia (puede ser relativa a la instancia que llama).</td>
+      </tr>
+      <tr>
+        <td>Capa</td>
+        <td>El nombre (una cadena) de la capa de instancia para crear la instancia.</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable a la que se dirige el valor de retorno.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Create Object Instance Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Create.png">El código del bloque de acción anterior crea una nueva instancia y almacena su valor de identificación único en una
+    variable temporal. Esta variable se utiliza luego en la acción <a href="../Common/Apply_To...htm">Applies To...</a> para establecer algunas propiedades de la instancia creada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Actions_Library.htm">Instance Actions</a></div>
+        <div style="float:right">Siguiente: <a href="Destroy_Object_Instance.htm">Destrucción de la Instancia del Objeto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Object Instance
+-->
+  <!-- TAGS
+action_create_instance
+-->
+</body>
+</html>

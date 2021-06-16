@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Asignación de la variable</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section detailing Assign Variable" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Assign Variable" />
+  <meta name="search-keywords" content="Assign Variable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Assign Variable Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/i_Common_Assign_Var.png"> Asignar variable</h1>
+  <p>Esta acción se utiliza para asignar un valor a una variable (creándola en el proceso) o para cambiar el valor de una variable existente. Se da el nombre de la variable y luego el valor, que puede añadirse <i>en relación</i> con el valor original si
+    Si es necesario, se puede añadir un valor relativo al valor original. Si das un nombre de variable nuevo (es decir, una variable que nunca ha sido asignada previamente en la instancia) entonces se creará la nueva variable y se le asignará el valor que des, mientras que si das el nombre de una variable existente, se
+    simplemente cambiará el valor por el nuevo. Tenga en cuenta que al marcar <b>Es Relativo</b> se sumará el valor al valor de la variable existente (utilice un número negativo para restar) y también puede utilizar <span class="glossextra">expresiones s</span> y variables creadas previamente como valor.</p>
+  <p>Cabe destacar que cuando hablamos de &quot;valores&quot;, no sólo nos referimos a valores numéricos, ya que una variable puede ser una cadena, un puntero, un ID de recurso o cualquier otra cosa que una función pueda devolver o utilizar. En el caso de una cadena, al marcar <b>Relative</b> se
+    concatenará el valor con lo que la variable contenía previamente, así que si su variable era &quot;Hola&quot; y le asigna &quot; Mundo&quot; utilizando la comprobación relativa, el valor final de la variable será &quot;Hola Mundo&quot;. Hay que tener cuidado
+    sin embargo, hay que asegurarse de que los valores de las variables son del mismo <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">tipo de datos</a>, ya que intentar sumar, por ejemplo, un entero y una cadena, dará lugar a un error del compilador.</p>
+  <p>Tenga en cuenta que puede añadir variables adicionales en la misma acción haciendo clic en el icono más <img src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Icon_Expand_Arguments.png"> al lado de la acción, y dando otro nombre de variable y
+    valor. Para obtener información más avanzada sobre las variables, consulte la sección <a href="../../../GameMaker_Language/GML_Overview/Variables_And_Variable_Scope.htm">Variables y ámbito de las variables</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Assign Variable Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/a_Common_Assign_Var.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Nombre</td>
+        <td>El nombre de la nueva variable a asignar, o el nombre de una variable existente a modificar.</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor que debe tener la variable.</td>
+      </tr>
+      <tr>
+        <td>Relativo</td>
+        <td>Comprueba que el valor es relativo al anterior.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Assign Variable Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Common/e_Common_Assign_Var.png">El código del bloque de acción anterior comprueba dos variables de instancia y si una es mayor que otra (
+    si &quot;<span class="inline">my_score</span>&quot; es mayor que &quot;<span class="inline">level_score</span>&quot;), entonces establece un número de variables de instancia con nuevos valores.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Common_Actions_Library.htm">Acciones comunes</a></div>
+        <div style="float:right">Siguiente: <a href="Declare_Temporary_Variable.htm">Declarar una variable temporal</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Assign Variable
+-->
+  <!-- TAGS
+action_variable
+-->
+
+</body></html>

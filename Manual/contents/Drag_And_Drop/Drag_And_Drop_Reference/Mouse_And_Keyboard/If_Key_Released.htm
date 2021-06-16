@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si se libera la llave</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Key Released action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Key released" />
+  <meta name="search-keywords" content="If Key Released Action" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Keyboard Released Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_KeyboardMouse_KeyReleased.png"> Si se libera la llave</h1>
+  <p>Esta acción comprueba cuándo se ha soltado una tecla del teclado. Devolverá <tt>true</tt> en el único paso del juego (fotograma) en el que se suelta la tecla y <tt>false</tt> en todos los demás momentos. Si activas el modificador <tt>not</tt>, esta acción será
+    invertirá, y comprobará si la tecla <i>no</i> ha sido liberada, devolviendo <tt>false</tt> en el paso de juego (frame) en el que ha sido liberada y <tt>true</tt> en todos los demás momentos.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Key Released drop actions example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_If_Key_ReleasedDrop.png">Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero,
+    mientras que cualquier acción lanzada en otra parte se ejecutará después del bloque &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><span><img alt="If Key Released Action" class="center" height="131" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/a_KeyboardMouse_KeyReleased.png" width="272" /></span></p>
+  <h4>Argumentos:</h4>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Clave</td>
+        <td>El nombre de la clave a comprobar.</td>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Negar la comprobación (verdadero se convierte en falso y viceversa)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><span><img alt="If Key Released Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/e_KeyboardMouse_KeyDown.png"></span>El código del bloque de acción anterior sondea el estado del teclado a cada paso y
+    si se mantiene pulsada una tecla, comprueba la pulsación inicial de la misma. Si la comprobación es <tt>verdadera</tt> en la pulsación inicial de la tecla, se reproduce un sonido, y luego, mientras la tecla se mantiene pulsada, la mezcla del sprite cambia a rojo. Si la tecla no se mantiene pulsada
+    Si la tecla no se mantiene pulsada, se realiza una comprobación al soltar la tecla para restablecer el color de la mezcla a blanco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mouse_And_Keyboard_Actions.htm">Acciones con el ratón y el teclado</a></div>
+        <div style="float:right">Siguiente: <a href="Show_Virtual_Keyboard.htm">Mostrar el teclado virtual</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Key Released
+-->
+  <!-- TAGS
+action_if_key_released
+-->
+</body>
+</html>

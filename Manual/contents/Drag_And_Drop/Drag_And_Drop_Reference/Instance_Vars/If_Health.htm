@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si la salud</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Health action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Health" />
+  <meta name="search-keywords" content="If Health" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Health Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/i_IV_If_Health.png"> Si Salud</h1>
+  <p>Esta acción se utiliza para comprobar el valor de la variable de instancia <tt>salud</tt> utilizando una expresión específica. Se da el tipo de expresión para comprobar y el valor para comprobar la <tt>salud</tt> actual, y la declaración &quot;if&quot; siempre devolverá
+    siempre devolverá <tt>verdadero</tt> o <tt>falso</tt> dependiendo de las expresiones y valores utilizados. Las expresiones disponibles son:</p>
+  <ul class="colour">
+    <li><b>Igual a</b> - La variable y el valor son exactamente iguales</li>
+    <li><b>Menor que</b> - La variable es menor que el valor</li>
+    <li><b>Mayor que</b> - La variable es mayor que el valor</li>
+    <li><b>Menor o igual que</b> - La variable es menor <i>o</i> igual que el valor</li>
+    <li><b>Mayor o igual que</b> - La variable es mayor <i>o</i> igual que el valor</li>
+  </ul>
+  <p>Si se marca el argumento <b>Not</b>, entonces las <i>expresiones</i> anteriores serán <i>negadas</i>, por ejemplo &quot;igual a&quot; se convierte en &quot;no igual a&quot;, por<i>lo</i> que se estaría comprobando si el valor de salud no es <tt>igual</tt> al valor dado.</p>
+  <p class="note"><b>NOTA IMPORTANTE</b>: Debido a <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemas de precisión en coma flotante</a>, comprobar si dos valores son exactamente iguales puede devolver <tt>falso</tt>, ya que uno puede ser exactamente 1, mientras que
+    el otro puede ser 1.00000000000001. Esto puede evitarse utilizando la acción <a href="../Data_Types/Decimal_To_Integer.htm">Decimal a Entero</a> antes de la comprobación o utilizando las expresiones &quot;mayor que&quot; o &quot;menor que&quot;.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="If Health drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_Drop_If_Health.png">Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero, <tt>mientras que</tt> cualquier
+    acciones lanzadas en otra parte se ejecutarán después del bloque &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="If Health Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/a_IV_If_Health.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>No</td>
+        <td>Se establece para comprobar si la expresión <i>no</i> se evalúa como verdadera.</td>
+      </tr>
+      <tr>
+        <td>Expresión</td>
+        <td>El tipo de expresión a utilizar para la comprobación.</td>
+      </tr>
+      <tr>
+        <td>Valor</td>
+        <td>El valor para comprobar la <tt>salud</tt>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="If Health Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance_Vars/e_IV_If_Health.png">El código del bloque de acción anterior añadirá 25 a la variable de <tt>salud</tt> y luego comprobará si
+    la variable es ahora mayor que 100, y si lo es se pondrá a 100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variable_Actions.htm">Acciones de las variables de instancia</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Score.htm">Puntuación del conjunto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Health
+-->
+  <!-- TAGS
+action_if_health
+-->
+</body>
+</html>

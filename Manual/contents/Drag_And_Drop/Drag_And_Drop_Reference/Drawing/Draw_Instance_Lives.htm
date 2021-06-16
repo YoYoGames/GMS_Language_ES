@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dibujar Vidas de Instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Draw Instance Lives action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Draw Instance Lives" />
+  <meta name="search-keywords" content="Draw Instance Lives" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Draw Instance Lives Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/i_Drawing_Draw_Instance_Lives.png"> Draw Instance Lives</h1>
+  <p>Esta acción dibujará un sprite para representar cada una de las vidas que tenga la instancia en ese momento. El número a dibujar se toma del valor actual de la variable local de la instancia <tt>vidas</tt>, que es una variable especial que se crea automáticamente dentro de
+    la instancia si se utiliza alguna de las acciones que la requieren. Se da el sprite a dibujar para las vidas y el orden de la pila, que puede ser <b>Fila</b> (horizontalmente, de izquierda a derecha), o <b>columna</b> (verticalmente, de arriba a abajo), así como la posición.
+    La posición puede ser una posición absoluta dentro de la habitación, o una relativa a la posición de la instancia que hace el dibujo, y el espacio entre las imágenes se basará en la anchura o la altura del sprite. Ten en cuenta que esto simplemente dibuja una imagen estática
+    - la imagen inicial (fotograma 0) del sprite dado - y cualquier otro fotograma será ignorado, al igual que cualquier transformación que se haya añadido a la instancia mediante el cambio de las variables de instancia (como <tt>image_xscale</tt> o <tt>image_blend</tt>).
+    El texto del pie de foto se dibujará precediendo al valor de la vida y, si se trata de texto, deberá ir envuelto con &quot;&quot;, y ambos serán formateados utilizando la fuente de dibujo actual, el color y la alineación.</p>
+  <p><b></b></p>
+  <p class="note"><b>NOTA</b>: Esta acción es sólo para su uso en los diversos <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">eventos de sorteo</a>, y no dibujará nada si se utiliza en otro lugar.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Draw Instance Lives" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/a_Drawing_Draw_Instance_Lives.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Título</td>
+        <td>La cadena a dibujar junto con el valor de la puntuación (precede y puede dejarse en blanco)</td>
+      </tr>
+      <tr>
+        <td>Orden de la pila</td>
+        <td>El orden en el que se dibujará (fila o columna)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x para dibujar las vidas en</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para dibujar las vidas en</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Draw Instance Lives Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Drawing/e_Drawing_Draw_Instance_Lives.png">El código del bloque de acción anterior dibuja sprites relativos a la instancia para representar
+    el valor de la <tt>vida</tt> actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_Actions.htm">Acciones de dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Draw_Colour.htm">Establecer el color de dibujo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Draw Instance Lives
+-->
+  <!-- TAGS
+action_draw_instance_lives
+-->
+</body>
+</html>

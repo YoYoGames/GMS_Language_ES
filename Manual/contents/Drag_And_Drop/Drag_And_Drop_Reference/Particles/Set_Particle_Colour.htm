@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer el color de las partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Colour action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Colour" />
+  <meta name="search-keywords" content="Set Particle Colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Colour.png"> Establecer el color de las partículas</h1>
+  <p>Esta acción establecerá el color o los colores que se utilizarán cuando se cree el sprite y durante su vida útil. Primero se especifica el valor del ID del tipo de partícula (que debe ser el mismo que el valor devuelto cuando se creó la partícula utilizando la acción <a href="Create_Particle_Type.htm">Crear tipo de partícula</a> ) y luego se pueden establecer los colores a utilizar.</p>
+  <p>Puedes elegir tres colores para usar, y el sprite se mezclará entre ellos durante la vida de la partícula. Por ejemplo, si una partícula tiene colores rojo, verde y amarillo, y un tiempo de vida de 60 fotogramas, entonces cuando se crea (fotograma 0) será
+    rojo, luego se desvanecerá hacia el verde a la mitad de su vida (fotograma 30), antes de desvanecerse en amarillo al final de su vida (fotograma 60). Si utilizas un sprite personalizado en lugar de una forma de partícula, cualquier color que no sea blanco se mezclará
+    con el sprite utilizado.<b></b></p>
+  <p class="note"><b>NOTA</b>: El componente alfa del color <b>no</b> se utiliza, sólo los componentes RGB del selector de color. Para establecer el alfa utilice la acción <a href="Set_Particle_Alpha.htm">Establecer Alfa de Partículas</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Particle Colour Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Colour.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de identificación único para el tipo de partícula para establecer el color de</td>
+      </tr>
+      <tr>
+        <td>Inicie</td>
+        <td>El color inicial a utilizar</td>
+      </tr>
+      <tr>
+        <td>Medio</td>
+        <td>El color intermedio a utilizar</td>
+      </tr>
+      <tr>
+        <td>Finalizar</td>
+        <td>El color final a utilizar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Particle_Alpha.htm">Establecer el alfa de las partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Colour
+-->
+  <!-- TAGS
+action_part_type_colour
+-->
+</body>
+</html>

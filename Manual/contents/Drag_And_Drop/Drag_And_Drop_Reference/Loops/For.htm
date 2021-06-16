@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Para</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the For action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - For" />
+  <meta name="search-keywords" content="For" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="For Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/i_Loops_For.png"> Para</h1>
+  <p>La acción <b>For</b> se utiliza para realizar bucles que sólo terminan cuando un valor alcanza la condición dada. Se da un valor inicial como variable (que puede marcarse como una variable local temporal - esto es lo que normalmente se quiere), luego se da
+    la condición para comprobar la variable (por ejemplo, si es menor que un determinado valor), y finalmente la cantidad para incrementar la variable en cada iteración del bucle. Así, el flujo general es el siguiente:</p>
+  <ul class="colour">
+    <li>Se inicializa una variable con un valor</li>
+    <li>Se establece la condición para comprobar esta variable con</li>
+    <li>Se establece cuánto debe incrementarse la variable en cada iteración del bucle</li>
+    <li>A continuación, se añaden acciones en el bucle, y éstas se ejecutarán en cada iteración hasta que la condición sea <tt>falsa</tt> o se encuentre una acción de ruptura.</li>
+  </ul>
+  <p>Cuando se añaden acciones a realizar dentro del bucle, éstas se añaden de la misma manera que se añadiría una acción a un &quot;if&quot;, es decir, colocándola al lado de la acción en lugar de debajo de ella:</p>
+  <p><img alt="For drop actions" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/For_Drop.png">Todas las acciones añadidas al lado se incluirán en el For y se realizarán antes de que el evento o script continúe
+    con las acciones añadidas debajo. Tenga en cuenta que puede terminar cualquier bucle prematuramente si llama a la acción <a href="Break.htm">Break</a>, y que al usar bucles For no tiene <i>que</i> incrementarse y puede hacer que se decremente también, siempre y cuando la condición
+    que utilices sea apropiada. Por ejemplo, establece la variable inicial en 10, establece la condición para comprobar si es menor que 0 y luego establece el valor de incremento en -1 y el bucle iterará 10 veces, contando hacia atrás desde 10 hasta 0.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="For Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/a_Loops_For.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Inicializar</td>
+        <td>Inicializar la variable que se utilizará para el recuento a un valor (se puede marcar como una variable local temporal)</td>
+      </tr>
+      <tr>
+        <td>Condición</td>
+        <td>La condición a comprobar para romper el bucle</td>
+      </tr>
+      <tr>
+        <td>Incremento</td>
+        <td>La cantidad a incrementar (o disminuir) la variable de recuento inicial en cada iteración del bucle</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="For Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Loops/e_Loops_For.png">El código del bloque de acción anterior ejecuta un bucle <tt>for</tt> para comprobar si un gamepad está conectado a cualquiera de los 12
+    &quot;disponibles. Si se descubre un gamepad, se establece una variable global con el número de ranura actual y se rompe el bucle.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Loop_Actions.htm">Acciones en bucle</a></div>
+        <div style="float:right">Siguiente: <a href="Break.htm">Break</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - For
+-->
+  <!-- TAGS
+action_for
+-->
+</body>
+</html>

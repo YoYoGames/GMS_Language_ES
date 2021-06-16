@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Si la instancia existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the If Instance Exists action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - If Instance Exists" />
+  <meta name="search-keywords" content="If Instance Exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="If Instance Exists Icon" class="icon" height="31" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Exists.png" width="31"> Si la instancia existe</h1>
+  <p>Esta acción puede ser utilizada para comprobar si una instancia de un objeto específico existe en la sala de juego, o si una instancia específica en sí misma existe. Usted da el objeto desde el explorador de activos, y si cualquier instancia existe en la sala entonces la acción devolverá <tt>true</tt> de lo contrario devolverá <tt>false</tt>. Tenga en cuenta que puede utilizar una variable aquí con el ID único para la instancia específica (por ejemplo, como devuelto por la acción <a href="Create_Object_Instance.htm">Crear Instancia de Objeto</a>) o incluso el ID de la instancia
+    devuelto por el editor de la sala al añadir la instancia.</p>
+  <p>Si se marca el argumento &quot;No&quot;, la acción comprobará si no existe <i>ninguna instancia</i> y si no se encuentra ninguna devolverá true y <tt>si</tt> existe alguna devolverá false.</p>
+  <p>Tenga en cuenta que para añadir acciones en el bloque &quot;if&quot;, éstas deben colocarse al lado de la acción, como se muestra en la imagen siguiente:</p>
+  <p><img alt="Instance Exists drop example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists_Drop.png" /></p>
+  <p>Estas acciones se ejecutarán ahora si el &quot;if&quot; se evalúa como verdadero, <tt>mientras que</tt> cualquier acción lanzada en otro lugar se realizará después del bloque &quot;if&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Instance Exists Action" class="center" height="124" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/a_Instance_Exists.png" width="260" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Objeto</td>
+        <td>El nombre del objeto para buscar una instancia (o un ID de instancia).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Instance Exists Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/e_Instance_Exists.png">El código del bloque de acción anterior comprueba si hay una colisión y devuelve el valor de ID único de la instancia
+    con la que se está colisionando. Este valor se almacena en una variable temporal y luego se comprueba si el valor corresponde a una instancia que se encuentra actualmente dentro de la sala (si no se encuentra ninguna colisión, la variable contendrá la palabra clave &quot; nadie<tt>&quot;),</tt>
+    y si lo hace, entonces se establece una variable en la instancia con la que se está colisionando.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Actions_Library.htm">Instance Actions</a></div>
+        <div style="float:right">Siguiente: <a href="Call_Parent_Event.htm">Convocatoria de evento para padres</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - If Instance Exists
+-->
+  <!-- TAGS
+action_if_instance_exists
+-->
+</body>
+</html>
