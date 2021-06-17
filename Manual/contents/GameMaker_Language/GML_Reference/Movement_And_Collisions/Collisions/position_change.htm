@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cambio_de_posición</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_change" />
+  <meta name="rh-index-keywords" content="position_change" />
+  <meta name="search-keywords" content="position_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cambio_de_posición</h1>
+  <p>Esta función comprobará una posición en busca de una colisión con <i>cualquier instancia</i> en el punto dado, y si hay una, cambiará <b>todas las</b> instancias en colisión para que sean instancias del objeto elegido. Puede establecer el argumento &quot;perf&quot; a
+   <tt>true</tt> que forzará a <span class="notranslate">GameMaker Studio 2</span> a realizar los eventos <strong>Destroy</strong> y <strong>Clean Up</strong> de la instancia encontrada así como el evento <strong>Create</strong> de la nueva instancia, o <tt>false</tt> para no
+    realizar ninguno de estos eventos. Por favor, tenga en cuenta que si elige no realizar los eventos Destroy, Clean Up y Create, cualquier instancia creada que utilice una variable normalmente definida en el evento create, bloqueará el juego ya que esa variable ya no existirá.
+    existirá.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">position_change(x, y, obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de dónde cambiar las instancias de colisión.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde cambiar las instancias de colisión.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El nuevo objeto en el que se convertirá el objeto llamado.</td>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td>Si se realiza el evento Create de ese nuevo objeto (true) o no (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">position_change(200, 200, obj_Bird, true);</p>
+  <p>Esto cambiará todas las instancias que colisionan en el punto (200,200) en una instancia de &quot;obj_Bird&quot;, realizando el evento Create de &quot;obj_Bird&quot; para cada una de ellas en el proceso.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="position_destroy.htm">position_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_change
+-->
+  <!-- TAGS
+position_change
+-->
+</body>
+</html>

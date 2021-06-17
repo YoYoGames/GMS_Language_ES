@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_destroy" />
+  <meta name="rh-index-keywords" content="part_emitter_destroy" />
+  <meta name="search-keywords" content="part_emitter_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_destroy</h1>
+  <p>Esta función eliminará el emisor especificado del sistema dado y lo borrará de la memoria (esto también detendrá cualquier partícula que sea producida por el emisor dado, pero <i>NO</i> lo elimina de la sala). Esta función siempre debe
+    cuando el emisor ya no sea necesario para el sistema, para evitar fugas de memoria y errores.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_emitter_destroy( ps, ind );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El sistema de partículas para destruir el emisor de.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del emisor a destruir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if part_emitter_exists(global.Sname, p_emit)<br> {
+    <br> part_emitter_destroy(global.Sname, p_emit1);<br> }
+  </p>
+  <p>El código anterior comprobará si el emisor de partículas indexado en la variable &quot;p_emit&quot; existe en el sistema de partículas dado y si lo hace se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Emitters.htm">Emisores de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_emitter_destroy_all.htm">part_emitter_destroy_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_destroy
+-->
+  <!-- TAGS
+part_emitter_destroy
+-->
+</body>
+</html>

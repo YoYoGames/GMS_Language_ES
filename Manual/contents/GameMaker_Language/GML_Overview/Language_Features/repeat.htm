@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Repita</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the repeat function" />
+  <meta name="rh-index-keywords" content="repeat" />
+  <meta name="search-keywords" content="if,else,then,?,ternary,conditional" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Repita</h1>
+  <p>El <span class="notranslate">Lenguaje GameMaker</span> tiene un número de maneras en que usted puede realizar <i>bucles</i>, es decir, tener una declaración o declaraciones iterando sobre sí misma un cierto número de veces. La más simple de ellas es la sentencia <tt>repeat</tt>, que tiene la forma:</p>
+  <p class="code">repeat (&lt;expresión&gt;)<br> {<br> &lt;expresión&gt;;<br> &lt;expresión&gt;;<br>...<br> }</p>
+  <p>Con la <tt>repetición</tt>, la <a class="glossterm" data-glossterm="declaración" href="#">sentencia</a> dada se repite el número de veces indicado por el valor redondeado de la <a class="glossterm" data-glossterm="expresión" href="#">expresión</a>. En
+    ejemplo, lo siguiente crea cinco bolas en posiciones aleatorias:</p>
+  <p class="code">repetir (5)<br> {
+    <br> instance_create_layer(random(400), random(400), &quot;Instances&quot;, obj_ball);<br> }
+  </p>
+  <p>Esto puede ser muy útil para evitar escribir el mismo código varias veces, o para utilizar matrices, o para contar a través de un número de operaciones, etc. Tampoco está limitado a usar una sola sentencia, y puede repetir varias sentencias encerrándolas
+    encerrándolas entre llaves <tt>{}</tt>. Por ejemplo:</p>
+  <p class="code">var _x = 32;<br> repeat (global.p_lives)<br> {<br> draw_sprite(spr_heart, 0, _x, 32);<br> _x += sprite_get_width(spr_heart);<br> }</p>
+  <p>El ejemplo anterior repite las declaraciones en los corchetes durante tantas <a class="glossterm" data-glossterm="iteración" href="#">iteraciones</a>como tenga la variable global &quot;lives&quot;, y cada iteración dibuja
+    el sprite del corazón en la posición <span class="inline">_x</span>, luego mueve la posición a lo largo de un bit basado en el ancho del sprite del corazón.</p>
+  <p><strong>¿Cuándo debe utilizar un bucle <span class="inline">repeat</span>?</strong> Siempre que quiera repetir sobre una o más sentencias un número fijo de veces sin necesidad específica de mantener un recuento de las iteraciones.</p>
+  <p>Cabe destacar que se pueden utilizar las sentencias especiales <span class="inline"><a href="break.htm">break</a></span> y <span class="inline"><a href="continue.htm">continue</a></span> dentro de un
+    <font face="Lucida Console"><span style="font-size: 16px;"><b>repetir</b></span></font> dentro de un bucle. Usando <span class="inline">break</span> saldrá inmediatamente del bucle y pasará a cualquier código que esté en el evento o función después de que el bucle debería haber terminado, por ejemplo</p>
+  <p class="code">var i = 0;<br> var temp = 0;<br> repeat (10)<br> {<br> temp += array[i];<br> if (temp &gt; max_total)<br> {<br> break;<br> } <br> else<br> {<br> i += 1;<br> } <br> }</p>
+  <p>El código anterior hace un bucle a través de 10 valores <a href="../Arrays.htm">del array</a> y los añade a una variable local. Si el total de la variable local es mayor que el valor dado para <span class="inline">max_total</span>, entonces el bucle se termina usando
+    break, de lo contrario el bucle continuará. </p>
+  <p>Un ejemplo de uso de <span class="inline">continue</span> en un bucle de <span class="inline">repeat</span> sería:</p>
+  <p class="code">repeat(10)<br> { <br> var _x = random(room_width);<br> var _y = random(room_height);<br> if (instance_position(_x, y, obj_Enemy)<br> {
+    <br> continúa;
+    <br> }
+    <br> instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br> }</p>
+  <p>Este código se repetirá 10 veces, generando una posición aleatoria de la habitación y comprobando si existe una instancia del objeto <span class="inline">obj_Enemy</span> en esa posición. Si lo hace, la iteración del bucle actual se termina usando <span class="inline">continue</span> y se inicia una nueva iteración, y si no lo hace entonces se crea una instancia del objeto <span class="inline">obj_Enemy</span> en la posición aleatoria.</p>
+  <p>Para ver más ejemplos de funciones de bucle, consulte las secciones <a href="while.htm"><tt>mientras</tt></a>, <a href="do___until.htm"><tt>do... hasta</tt></a>y <a href="for.htm"><tt>para</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="while.htm">mientras</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+repeat
+-->
+  <!-- TAGS
+repeat
+-->
+
+</body></html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>persistente</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable persistent" />
+  <meta name="rh-index-keywords" content="persistent" />
+  <meta name="search-keywords" content="persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>persistente</h1>
+  <p>Esta variable puede leerse para saber si la instancia está marcada como <tt>persistente</tt> o no, o puede utilizarse para establecer la persistencia como <tt>verdadera</tt> (persistente) o <tt>falsa</tt> (no persistente) para la instancia. Una instancia persistente es aquella que
+    Una instancia persistente es aquella que se &quot;traslada&quot; de una sala a otra, lo que significa (por ejemplo) que sólo tiene que crearse una vez al comienzo del juego y estará presente en todas las salas posteriores. Hay que tener cuidado con la persistencia, ya que es fácil perder la pista de las instancias persistentes
+    lo que puede llevar a problemas más adelante en el desarrollo del juego.</p>
+  <p>Cuando se crea una instancia con la persistencia activada en una sala, esta variable se establecerá como <tt>verdadera</tt> y se le asignará una capa o una profundidad (dependiendo de la función que se haya utilizado para crear la instancia del objeto). Cuando se cambie la sala
+    y si la siguiente habitación <i>no</i> tiene una capa con el mismo nombre o profundidad que la asignada, entonces se creará una nueva capa para la instancia que persiste a través de las habitaciones. Si se asignó una capa con nombre cuando se creó la instancia,
+    entonces la nueva capa también tendrá el mismo nombre que la capa original, mientras que si asignó una profundidad a la instancia entonces la nueva capa se llamará &quot; _layer_XXX<tt>&quot;,</tt> donde &quot;XXX&quot; es un valor hexadecimal utilizado para dar a la capa un nombre único.
+    nombre único. Estas capas se eliminarán de la sala al finalizar la misma. Otra cosa a tener en cuenta sobre las capas y las instancias persistentes es que si ha asignado a la instancia una capa con nombre en la creación, y hay otra capa en las siguientes salas con el
+    mismo nombre, la instancia persistente se asignará a la capa con el mismo nombre, <i>independientemente de la profundidad de la capa</i>. Por último, si una instancia persistente se traslada a una sala con una capa con la misma profundidad en la que se creó la instancia, no se asignará a esta capa, sino que se asignará a la capa con el mismo nombre.
+   <i>no</i> se asignará a esta capa, sino que se creará una nueva capa a la misma profundidad (siguiendo la convención de nombres explicada anteriormente).</p>
+  <p>Un objeto persistente seguirá teniendo sus eventos de <b>Inicio de Juego</b>, <b>Fin de Juego</b>, <b>Inicio de Sala</b> y <b>Fin de Sala</b>, sin embargo si reinicias el juego (con, por ejemplo, la función <tt>game_restart()</tt> ) todos los objetos persistentes serán
+    serán eliminados y sólo existirán cuando sean creados de nuevo por el juego. Ten en cuenta también que si desactivas un objeto persistente, ya no pasará de una sala a otra a no ser que se reactive antes de que se dispare el evento Room End.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">persistente;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !persistent<br> {
+    <br> persistent = true;<br> }
+  </p>
+  <p>El código anterior comprobará la instancia para ver si la persistencia está marcada como <tt>falsa</tt> y si la instancia NO es persistente la bandera de persistencia se establece como <tt>verdadera</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variables.htm">Instance Variables</a></div>
+        <div style="float:right">Siguiente: <a href="depth.htm">profundidad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+persistent
+-->
+  <!-- TAGS
+persistent
+-->
+</body>
+</html>

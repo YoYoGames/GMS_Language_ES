@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Creación de partidos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the XBox Live Match Making functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Match Making,Xbox Live Match Making" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Creación de partidos</h1>
+  <p>El matchmaking (multijugador) para Xbox Live y UWP requiere un poco de configuración, en parte a través de un archivo de configuración que define qué conexiones de red vas a utilizar, y en parte a través de la configuración de plantillas de sesión y tolvas de matchmaking en el Portal del Desarrollador de Xbox
+    Portal del desarrollador. <span class="notranslate">GameMaker Studio 2</span> soporta esto a través del uso del objetivo UWP y le permite hacer lo siguiente:</p>
+  <ul class="colour">
+    <li>Crear una sesión multijugador</li>
+    <li>Encontrar (y/o unirse) a una sesión multijugador</li>
+    <li>Reciba una notificación cuando los jugadores pertinentes se unan o abandonen una sesión, así como los detalles de su conexión a la red</li>
+    <li>Recibir una notificación cuando el anfitrión de la sesión migra a un usuario diferente</li>
+    <li>Obtener una lista de usuarios en la sesión</li>
+    <li>Dejar una sesión</li>
+  </ul>
+  <p>La conectividad de red de Xbox Live se basa en algo llamado <b>Asociación de Dispositivos Seguros</b>, que es básicamente un contrato que define exactamente cómo el dispositivo se conecta a otros dispositivos y qué tipo de datos puede comunicar utilizando
+    esa conexión. Esto se configura mediante un archivo que debes incluir en tu proyecto. Puedes encontrar un ejemplo de este archivo <a href="http://help.yoyogames.com/attachments/token/aF6pHTwVLjGal1JOQbV3NpyZg/?name=test_xbox_network_manifest.man" target="_blank">aquí</a>. Los principales puntos importantes en el archivo son el protocolo y los números de puerto para cada descripción de socket, ya que estos deben coincidir con lo que realmente se configura en el código.</p>
+  <p>Una vez que hayas creado este archivo de manifiesto de red, debería añadirse al proyecto como un <a href="../../../../Settings/Included_Files.htm">archivo incluido</a>. Luego, dentro de las Opciones de Juego UWP, en la pestaña General de Xbox One, debe ser
+    seleccionado en el cuadro combinado &quot;Archivo incluido para el manifiesto de configuración de red&quot;.</p>
+  <p>Para crear una sesión multijugador, es necesario especificar qué <b>plantilla</b> de sesión se va a utilizar. Estas plantillas de sesión se definen en el XDP, pero a continuación se muestra un ejemplo:</p>
+  <p class="code">Nombre de la sesión: MatchSession<br> Versión del contrato: 107<br> Plantilla de la sesión (texto JSON):<br> {
+    <br> &quot;constantes&quot;: {<br> &quot;sistema&quot;: {<br> &quot;version&quot;: 1,<br> &quot;maxMembersCount&quot;: 12,<br> &quot;capabilities&quot;: {<br> },
+    <br> &quot;memberInitialization&quot;: {<br> &quot;externalEvaluation&quot;: false,<br> &quot;membersNeedToStart&quot;: 1<br> }
+    <br> },
+    <br> &quot;custom&quot;: {}<br> }
+    <br> }
+  </p>
+  <p>Una descripción de los campos se puede encontrar en &quot;Visión general de la sesión&quot; en el archivo de ayuda de XDK. Tenga en cuenta que actualmente no es posible establecer los parámetros de la sesión dinámicamente desde GameMaker <span class="notranslate">Studio 2.</span></p>
+  <p>Junto con la plantilla de la sesión, también debe configurarse una tolva de emparejamiento para poder encontrar la sesión (esto también se hace en el XDP). Las tolvas se utilizan para definir las reglas que se utilizan al emparejar a los jugadores. Al igual que con los parámetros de la sesión, no
+    Actualmente no soportamos la configuración de los parámetros de la tolva dinámicamente desde <span class="notranslate">GameMaker</span>: Studio. Vea la sección &quot;SmartMatch Matchmaking Configuration&quot; en el archivo de ayuda XDK para más detalles.</p>
+  <p>Las siguientes funciones están disponibles para el matchmaking de XboxLive (tenga en cuenta que también tendrá que utilizar las <a href="../../Networking/Networking.htm">funciones de red de</a> <span class="notranslate">GameMaker Studio 2</span> para las conexiones
+    etc.):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_matchmaking_start.htm">xboxlive_matchmaking_start</a></li>
+    <li><a href="xboxlive_matchmaking_stop.htm">xboxlive_matchmaking_stop</a></li>
+    <li><a href="xboxlive_matchmaking_create.htm">xboxlive_matchmaking_create</a></li>
+    <li><a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></li>
+    <li><a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></li>
+    <li><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session</a></li>
+    <li><a href="xboxlive_matchmaking_session_leave.htm">xboxlive_matchmaking_session_leave</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> ofrece un conjunto adicional de funciones de matchmaking para que puedas invitar a otros jugadores de la red a unirse a una sesión, o para que aceptes una invitación para unirte a la sesión de otra persona. Las funciones disponibles
+    son:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_matchmaking_send_invites.htm">xboxlive_matchmaking_send_invites</a></li>
+    <li><a href="xboxlive_matchmaking_set_joinable_session.htm">xboxlive_matchmaking_set_joinable_session</a></li>
+    <li><a href="xboxlive_matchmaking_join_invite.htm">xboxlive_matchmaking_join_invite</a></li>
+  </ul>
+  <p> </p>
+  <p>Cuando el jugador acepta una invitación de otro jugador, ocurre una de estas dos cosas:</p>
+  <ul class="colour">
+    <li>Si su juego se está ejecutando, recibirá un <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">Evento Social Asíncrono</a> con el mapa <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> DS que contiene las siguientes claves/valores:
+      <ul>
+        <li>&quot; id&quot; - Se establecerá como MATCHMAKING_INVITATION.</li>
+        <li>&quot;<strong>invitation_id</strong>&quot; - Este es el valor único del ID de la sesión</li>
+        <li>&quot;<strong>invitation_host</strong>&quot; - Es el valor único de ID de sesión para el anfitrión de la sesión</li>
+      </ul>
+      Deberás guardar los valores de ID y Host y luego dejar las sesiones que necesites, y llamar a la función <tt>xboxlive_matchmaking_join_invite()</tt>, pasando como argumentos los valores de ID y Host de la invitación en un evento Step.</li>
+    <li>Si su juego no se está ejecutando actualmente, será iniciado por el sistema operativo. Recibirá el mismo tipo de <b>Evento Social Asíncrono</b> con las mismas claves establecidas que las enumeradas anteriormente. Guárdelas en variables, luego conéctese a
+      Xbox Live matchmaking y finalmente llame a <tt>xboxlive_matchmaking_join_invite()</tt>.</li>
+  </ul>
+  <p>Una vez que hayas llamado a <tt>xboxlive_matchmaking_join_invite</tt> <tt>()</tt> el usuario intentará unirse a la sesión y recibirás Eventos Sociales Asíncronos como si hubieras llamado a <tt>xboxlive_matchmaking_find()</tt> en
+    esta sesión.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../UWP_And_XBox_Live.htm">UWP y XBox Live</a></div>
+        <div style="float:right">Siguiente: <a href="../Users_And_Accounts/Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+XBox Live Match Making
+-->
+  <!-- TAGS
+xboxlive_matchmaking_functions
+-->
+</body>
+</html>

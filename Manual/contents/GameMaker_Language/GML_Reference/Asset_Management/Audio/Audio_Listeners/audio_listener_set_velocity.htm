@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_velocity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_velocity" />
+  <meta name="rh-index-keywords" content="audio_listener_set_velocity" />
+  <meta name="search-keywords" content="audio_listener_set_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_velocity</h1>
+  <p>Esta función puede utilizarse para dar al oyente dado efectos <em>Doppler </em>y simular el movimiento del audio basado en el vector que se resuelve a partir de las posiciones relativas x, y y z dadas. El índice del oyente por defecto es 0, pero se puede utilizar la función
+    <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> para obtener los diferentes índices disponibles para la plataforma de destino.</p>
+  <p>Si el oyente dado no se va a mover nunca, o el movimiento no es un movimiento constante, normalmente no necesitarás establecer estos valores, pero, por ejemplo, si estás haciendo un juego de desplazamiento donde el jugador tiene un movimiento constante de abajo a arriba y
+    los enemigos un movimiento constante de arriba a abajo, deberías establecer las velocidades del oyente <i>y</i> del emisor (para los emisores usarías <a href="../Audio_Emitters/audio_emitter_velocity.htm"><tt>audio_emitter_velocity()</tt></a>) a los vectores adecuados
+    para simular el efecto Doppler correcto a medida que se mueven más allá de la instancia del jugador.</p>
+  <p>La imagen siguiente muestra cómo se podría configurar para el juego de ejemplo dado anteriormente:</p>
+  <p><img alt="Audio Listener Set Velocity Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener_Velocity.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_listener_set_velocity(index, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El oyente para el que se obtienen los datos (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La velocidad x del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La velocidad y del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La velocidad z del oyente (por defecto 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var data = audio_listener_get_data(info[? &quot;index&quot;]);<br> if data[? &quot;vx&quot;] != 0<br> {
+    <br> audio_listener_set_velocity(info[? &quot;index&quot;], 0, 0, 0);<br> }
+    <br> ds_map_destroy(info);
+    <br> ds_map_destroy(data);
+    <br> }
+  </p>
+  <p>El código anterior comprueba el número de oyentes disponibles, luego hace un bucle a través de ellos y si su velocidad x no es 0, establece sus valores de velocidad a 0, 0, 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_listener_set_orientation.htm">audio_listener_set_orientation</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_velocity
+-->
+  <!-- TAGS
+audio_listener_set_velocity
+-->
+</body>
+</html>

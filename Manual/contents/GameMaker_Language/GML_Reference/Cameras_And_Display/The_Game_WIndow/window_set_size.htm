@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tamaño_de_la_ventana</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_set_size" />
+  <meta name="rh-index-keywords" content="window_set_size" />
+  <meta name="search-keywords" content="window_set_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tamaño_de_la_ventana</h1>
+  <p>Con esta función puedes cambiar el tamaño de la ventana del juego. Si utilizas esta función para cambiar el tamaño de la ventana de juego, el contenido de la ventana se escalará para ajustarse con una relación 1:1 al lienzo de fondo, lo que mantendrá la imagen nítida
+    y clara (aunque escalada si la ventana es distinta al tamaño de la sala o de la vista). Por ejemplo, si tienes una ventana de 200 x 150 píxeles, y el jugador estira la ventana arrastrando los bordes, el tamaño final de la ventana puede ser de 400 x 300 píxeles, pero el lienzo de dibujo
+    lienzo sigue siendo de 200 x 150, lo que da una imagen borrosa ya que la proporción de píxeles es ahora de 1:2. Sin embargo, si se utiliza esta función para establecer el tamaño de la ventana, la relación 1:1 se mantiene, aunque la imagen se escala para ajustarse al nuevo tamaño de la ventana.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">window_set_size( w, h );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>El nuevo ancho de la ventana.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La nueva altura de la ventana.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> global.scale += 1;<br> window_set_size(200 * global.scale, 150 * global.scale);<br> }
+  </p>
+  <p>El código anterior cambiará el tamaño de la ventana en función del valor de la variable &quot;global.scale&quot; cuando se pulse el botón del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../The_Game_Window/The_Game_Window.htm">La ventana de juego</a></div>
+        <div style="float:right">Siguiente: <a href="../The_Game_Window/window_set_rectangle.htm">window_set_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_set_size
+-->
+  <!-- TAGS
+window_set_size
+-->
+
+</body></html>

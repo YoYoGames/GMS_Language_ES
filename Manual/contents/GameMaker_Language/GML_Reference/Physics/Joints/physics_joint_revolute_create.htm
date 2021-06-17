@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_revolute_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_revolute_create" />
+  <meta name="rh-index-keywords" content="physics_joint_revolute_create" />
+  <meta name="search-keywords" content="physics_joint_revolute_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_revolute_create</h1>
+  <p>Una junta revoluta obliga a dos cuerpos a compartir un punto de anclaje común (a menudo llamado punto de bisagra) y la junta tiene un único grado de libertad: la rotación relativa de los dos cuerpos alrededor de este punto. Para especificar una revoluta es necesario proporcionar dos instancias
+    y un único punto de anclaje en el cuarto, como puedes ver en la imagen proporcionada:</p>
+  <p><img alt="Revolute joint anchor points illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_1.png">Si te fijas en la imagen, puedes ver que las dos instancias se han creado
+    para que se superpongan y en el punto en el que se tocan hemos definido una articulación revoluta. Ahora, esta articulación puede ser limitada en su libertad de rotación gracias a los valores &quot;ang_min_limit&quot; y &quot;ang_max_limit&quot;. ¿Cómo funciona esto? Pues bien,
+    veamos otra imagen:</p>
+  <p><img alt="Revolute joint angle limits illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/revolute_joint_image_2.png">Como puede ver, los ángulos en el mundo de la física <i>no</i> son los mismos que los ángulos estándar de
+   <span class="notranslate">GameMaker Studio 2</span> donde la derecha es 0 grados y luego va en sentido contrario a las agujas del reloj de modo que arriba es 90, izquierda es 180, y abajo es 270. No, cuando se trata de la junta revoluta, el eje de 0 grados va desde la posición de la junta hasta el origen de la
+    segunda instancia definida por la función y los ángulos se calculan entonces en el sentido de las agujas del reloj. Si activa la limitación de ángulos, los límites se definen como relativos a este eje de 0 grados y el rango de límites <i>debe incluir el cero</i>, de lo contrario
+    la articulación dará un bandazo cuando se inicie el cuarto. Por último, puede definir la articulación como si tuviera o no motor. Esto significa que cuando no está influenciada por una colisión, la articulación se moverá en una dirección, que está definida por la velocidad del motor con un número positivo
+    un número positivo en el sentido de las agujas del reloj y un número negativo en el sentido contrario. El argumento &quot;max_motor_torque&quot; es para limitar la velocidad de la rotación para que no tengas un motor perpetuamente acelerado y para limitar la influencia que una colisión
+    puede tener en la rotación. De este modo, puede utilizar un motor de articulación para simular la fricción de la articulación estableciendo la velocidad de la articulación a cero y el par máximo a algún valor pequeño, pero significativo. El motor tratará de evitar que la articulación gire, pero cederá
+    a una carga significativa.</p>
+  <p>Al igual que con todas las articulaciones, si se establece el valor &quot;col&quot; en true entonces <tt>las</tt> dos instancias pueden interactuar y colisionar entre sí, pero sólo <i>si</i> tienen eventos de colisión, sin embargo, si se establece en false, no <tt>van</tt> a colisionar
+    no colisionarán.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_revolute_create(inst1, inst2, w_anchor_x, w_anchor_y, ang_min_limt, ang_max_limit, ang_limit, max_motor_torque, motor_speed, motor, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>La primera instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>La segunda instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>w_anclaje_x</td>
+        <td>La coordenada x de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anclaje_y</td>
+        <td>La coordenada y de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>ang_min_limit</td>
+        <td>El límite inferior permitido para el ángulo de la articulación</td>
+      </tr>
+      <tr>
+        <td>ang_max_limit</td>
+        <td>El límite superior permitido para el ángulo de la articulación</td>
+      </tr>
+      <tr>
+        <td>ang_limit</td>
+        <td>Si el para limitar el ángulo de la articulación (verdadero) o no (falso)</td>
+      </tr>
+      <tr>
+        <td>par_máximo_del_motor</td>
+        <td>Establece el par motor máximo utilizado para alcanzar la velocidad deseada del motor (en Newtons por metro)</td>
+      </tr>
+      <tr>
+        <td>velocidad_del_motor</td>
+        <td>Esta es la velocidad a la que debe girar el motor</td>
+      </tr>
+      <tr>
+        <td>motor</td>
+        <td>Si el motor debe estar activo (true) o no (false)</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Si las dos instancias pueden colisionar (verdadero) o no (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (índice de la articulación)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id=instance_create_layer(x+25, y, &quot;Instances&quot;, obj_Door);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_revolute_create(id, o_id, x+25, y, -90, 90, 1, 0, 0, 0, 0);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>El código anterior crea y define un nuevo fixture y luego crea una instancia de &quot;obj_Door&quot;, vinculando el fixture creado a los dos nuevos objetos. A continuación, se unen mediante una junta revolutiva sin motor y con ángulos limitados a una oscilación de +/- 90 grados.
+    de giro. Por último, se elimina la fijación porque ya no es necesaria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_prismatic_create.htm">physics_joint_prismatic_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_revolute_create
+-->
+  <!-- TAGS
+physics_joint_revolute_create
+-->
+</body>
+</html>

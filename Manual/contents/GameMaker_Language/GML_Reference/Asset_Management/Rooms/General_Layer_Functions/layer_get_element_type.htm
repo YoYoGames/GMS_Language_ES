@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_element_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_element_type" />
+  <meta name="rh-index-keywords" content="layer_get_element_type,layerelementtype_background	,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+  <meta name="search-keywords" content="layer_get_element_type,layerelementtype_background	,layerelementtype_instance,layerelementtype_tilemap,layerelementtype_sprite,layerelementtype_particlesystem,layerelementtype_tile,layerelementtype_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_element_type</h1>
+  <p>Puede utilizar esta función para obtener el <i>tipo</i> de elemento para el elemento dado. Se suministra el valor único del ID del elemento (por ejemplo, el devuelto por la función que creó el elemento o por el editor de salas) y la función devolverá una de las siguientes
+    constantes (o -1 si el elemento no existe o el valor de ID es erróneo):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layerelementtype_background</td>
+        <td>El elemento es un fondo.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_instance</td>
+        <td>El elemento es una instancia.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_sprite</td>
+        <td>El elemento es un activo sprite.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_tilemap</td>
+        <td>El elemento es un tilemap.</td>
+      </tr>
+      <tr>
+        <td>layerelementtype_particlesystem</td>
+        <td>El elemento es un sistema de partículas.</td>
+      </tr>
+      <tr>
+        <td>elemento de capa tipo baldosa</td>
+        <td>El elemento es un azulejo de fondo heredado (esto sólo es válido para los proyectos que se han importado de versiones anteriores de <i><span class="notranslate">GameMaker</span></i>).</td>
+      </tr>
+      <tr>
+        <td>secuencia_de_tipos_de_capas</td>
+        <td>El elemento es un activo de la secuencia.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Tenga en cuenta que esta función es más útil cuando tiene varios tipos de elementos diferentes asignados a una capa, y que puede obtener una lista de todos los elementos de cualquier capa utilizando la función <a href="layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_get_element_type(element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>capa</td>
+        <td>El valor de identificación único del elemento para obtener el tipo de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Constante (ver tabla, arriba) o -1 si el elemento no existe o es inválido</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sprite<br> {
+    <br> layer_sprite_destroy(a[i])
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior obtiene los IDs de todos los elementos de la instancia asignados a la capa de la instancia que ejecuta el código. A continuación, el código comprueba si alguno de los elementos devueltos es un activo de sprite y, si lo es, se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_x.htm">layer_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_element_type
+layerelementtype_background
+layerelementtype_instance
+layerelementtype_sprite
+layerelementtype_tilemap
+layerelementtype_particlesystem
+layerelementtype_tile
+layerelementtype_sequence
+-->
+  <!-- TAGS
+layer_get_element_type
+-->
+</body>
+</html>

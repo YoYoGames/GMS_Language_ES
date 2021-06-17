@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_blendmode_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_blendmode_ext" />
+  <meta name="rh-index-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_set_blendmode_ext,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_blendmode_ext</h1>
+  <p>Cuando <span class="notranslate">GameMaker Studio 2</span> va a dibujar un píxel hay un color de origen (el color del píxel que vamos a dibujar) y un color de destino (el color que ya está en el píxel que estamos dibujando), por lo que al determinar el nuevo color de
+    el píxel, los colores de origen y destino se calculan según el modo de fusión elegido. Cada componente de los colores se almacena como un valor de punto flotante entre 0 y 1, y el nuevo color se calcula multiplicando cada componente del
+    color de origen por algún factor y multiplicando cada componente del color de destino por algún otro factor y luego sumando los resultados componente por componente.</p>
+  <p>Esta función le permite establecer los diferentes componentes que deben ser factorizados para crear un modo de mezcla personalizado. Tanto el origen como el destino tienen un componente rojo, verde, azul y alfa, y en el siguiente gráfico los RGBA del origen
+    de la fuente se consideran (Rs, Gs, Bs, As) mientras que los del destino son (Rd, Gd, Bd, Ad). Las once constantes que se pueden utilizar pueden ser de origen o de destino (o ambas) cuando se utilizan en esta función.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Factor de mezcla (rojo, verde, azul, alfa)</th>
+      </tr>
+      <tr>
+        <td>bm_zero</td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td>bm_one</td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td>bm_src_colour</td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_colour</td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha</td>
+        <td>(As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_src_alpha</td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_alpha</td>
+        <td>(Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_alpha</td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_dest_colour</td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_inv_dest_colour</td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td>bm_src_alpha_sat</td>
+        <td>(f, f, f, 1) donde f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><b>IMPORTANTE!</b> HTML5 sin WebGL activado <b>no</b> podrá mostrar los siguientes modos correctamente:</p>
+  <ul class="colour" style="padding-left: 120px">
+    <li><tt>bm_src_colour</tt></li>
+    <li><tt>bm_inv_src_colour</tt></li>
+    <li><tt>bm_dest_colour</tt></li>
+    <li><tt>bm_inv_dest_colour</tt></li>
+    <li><tt>bm_src_alpha_sat</tt></li>
+  </ul>
+  <p> </p>
+  <p>Tenga en cuenta que puede suministrar dos argumentos individuales a esta función o puede suministrar una matriz de argumentos (como la devuelta por la función <a href="gpu_get_blendmode_ext.htm"><tt>gpu_get_blendmode_ext()</tt></a> por ejemplo). Si se suministra una matriz
+    debe tener los siguientes dos elementos:</p>
+  <ul class="colour">
+    <li>0] = Modo de fusión de la fuente (por defecto es <tt>bm_src_alpha</tt>)</li>
+    <li>1] = Modo de fusión de destino (por defecto es <tt>bm_inv_src_alpha</tt>)</li>
+  </ul>
+  <p>Para ayudarte a sacar el máximo provecho de los modos de fusión y entender cómo funcionan y cómo afectan a la imagen final que se dibuja en la pantalla, te recomendamos que leas la siguiente guía:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Guía de uso de Blendmodes</a></li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_blendmode(src, dest);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td>Factor de modo de mezcla de la fuente (ver constantes arriba).</td>
+      </tr>
+      <tr>
+        <td>dest</td>
+        <td>Factor de modo de mezcla de destino (véase las constantes anteriores)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gpu_set_blendmode_ext(bm_src_alpha, bm_one);<br> draw_circle_colour(100, 100, 50, c_white, c_black, 0);<br> gpu_set_blendmode(bm_normal);
+  </p>
+  <p>Esto convertirá el negro en transparencia, creando un efecto de "resplandor" al ser el blanco fuerte en el exterior y debilitarse gradualmente a partir del centro del círculo. El modo de fusión se restablece después de dibujar el círculo para asegurar que la fusión aditiva
+    no se aplique también a todo lo que viene después.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_blendmode_ext_sepalpha.htm">gpu_set_blendmode_ext_sepalpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_blendmode_ext
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_set_blendmode_ext
+-->
+</body>
+</html>

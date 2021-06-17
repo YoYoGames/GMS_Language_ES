@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the function font_get_info" />
+  <meta name="rh-index-keywords" content="font_get_info" />
+  <meta name="search-keywords" content="font_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_info</h1>
+  <p>Esta función se utiliza para recuperar información de la fuente dada. Se suministra un índice de fuente (que puede ser un activo añadido a través del <a href="../../../../Introduction/The_Asset_Browser.htm">navegador de activos</a> o una fuente <a href="font_add.htm">añadida</a> en <span class="notranslate">tiempo de ejecución</span>) y la función devuelve una <a href="../../../GML_Overview/Structs.htm">estructura</a> con las siguientes variables:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la variable</th>
+        <th style="">Tipo de datos</th>
+        <th style="">Descripción</th>
+      </tr>
+      <tr>
+        <td><strong>ascenderOffset</strong></td>
+        <td style="">real</td>
+        <td style="">El desplazamiento máximo desde la línea de base hasta la parte superior de la fuente (en píxeles)</td>
+      </tr>
+      <tr>
+        <td><strong>tamaño</strong></td>
+        <td style="">real</td>
+        <td style="">El tamaño aproximado de la fuente (en píxeles)</td>
+      </tr>
+      <tr>
+        <td><strong>spriteIndex</strong></td>
+        <td style="">activo (real)</td>
+        <td style="">El índice del sprite para la fuente si se <a href="font_add_sprite.htm">creó a partir de un sprite</a>, de lo contrario -1</td>
+      </tr>
+      <tr>
+        <td><strong>textura</strong></td>
+        <td style="">activo (real)</td>
+        <td style="">-1 si la fuente fue creada a partir de un sprite, de lo contrario el ID de la textura de la fuente</td>
+      </tr>
+      <tr>
+        <td><strong>nombre</strong></td>
+        <td style="">cadena</td>
+        <td style="">El nombre de la fuente</td>
+      </tr>
+      <tr>
+        <td><strong>negrita</strong></td>
+        <td style="">booleano</td>
+        <td style=""><tt>true</tt> si la fuente está en negrita, en caso contrario, <tt>false</tt> <em>(ver <strong>NOTA </strong></em>más abajo)</td>
+      </tr>
+      <tr>
+        <td><strong>cursiva</strong></td>
+        <td style="">booleano</td>
+        <td style=""><tt>true</tt> si el tipo de letra es cursiva, en caso contrario <tt>false</tt><em> (ver <strong>NOTA </strong></em>más abajo)</td>
+      </tr>
+      <tr>
+        <td><strong>glifos</strong></td>
+        <td style="">struct</td>
+        <td style="">Una estructura que contiene información sobre cada glifo de la fuente (más información <a href="#glyphs">a continuación</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>NOTA</strong>: Las variables <tt><strong>negrita</strong></tt> y<tt>cursiva</tt> sólo reflejan la configuración del usuario para la fuente, por lo que pueden no ser precisas para las fuentes que están en negrita o cursiva por defecto.</p>
+  <p>Si la fuente suministrada no existe, la función devolverá undefined <tt>.</tt></p>
+  <p>Tenga en cuenta también que el cambio de los valores de cualquiera de estas variables, o de cualquier variable contenida en la estructura de <tt>glifos</tt>, no cambiará la forma en que se representa la fuente, por lo que esta información debe considerarse <strong>de sólo lectura</strong>.</p>
+  <h2 id="glyphs">Estructura de los glifos</h2>
+  <p>La variable <tt>glyphs</tt> en la estructura devuelta será una estructura en sí misma, que contendrá información para cada glifo incluido en la fuente. Cada variable de esta estructura será el nombre del carácter de un glifo, que contendrá una estructura con información
+    para ese glifo. Puedes imaginar estas estructuras anidadas en el siguiente formato (empezando por la estructura principal):</p>
+  <p class="code">{<br> glifos:<br> {<br> A: {},<br> B: {},<br> C: {},<br> // ...otros glifos<br> },<br> // ...otra información de la fuente<br> }
+  </p>
+  <p>Puede utilizar el nombre del carácter de un glifo para recuperar su información de la estructura, como en el siguiente código:</p>
+  <p class="code">var _font_info = font_get_info(Font1);<br>
+    <br> var _info_A = _font_info.glyphs[$ &quot;A&quot;]; // $ es un accesorio estructural<br>
+    <br> show_debug_message(_info_A);
+  </p>
+  <p>El código anterior obtiene la estructura del glifo para el carácter &quot;A&quot; y lo imprime en el registro de salida. También puede sustituir la cadena (<tt>&quot;A&quot; ) por una</tt> variable que contenga una cadena, lo que le permitirá obtener información de cualquier glifo a través de
+    esa variable en <span class="notranslate">tiempo de ejecución</span>.</p>
+  <p>La estructura devuelta para un glifo contendrá las siguientes variables:</p>
+  <p class="note"><strong>NOTA</strong>: En HTML5, la estructura de glifos estará vacía para cualquier fuente de archivo cargada (como <tt>*.ttf</tt> o <tt>*.otf</tt>) ya que el <span class="notranslate">tiempo de ejecución</span> no tendrá información sobre esos glifos.</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la variable</th>
+        <th style="">Tipo de datos</th>
+        <th style="">Descripción</th>
+      </tr>
+      <tr>
+        <td><strong>char</strong></td>
+        <td style="">real</td>
+        <td style="">Si la fuente fue creada a partir de un sprite, este será el índice de imagen del glifo de ese sprite, de lo contrario será su número de carácter Unicode<br>
+          <br>
+         <em><strong>Nota</strong></em>: Todas las variables por debajo de esto no estarán presentes en la estructura si la fuente fue creada a partir de un sprite</td>
+      </tr>
+      <tr>
+        <td><strong>x</strong></td>
+        <td style="">real</td>
+        <td style="">La posición X del glifo en la página de la textura (en texels)</td>
+      </tr>
+      <tr>
+        <td><strong>y</strong></td>
+        <td style="">real</td>
+        <td style="">La posición Y del glifo en la página de la textura (en texels)</td>
+      </tr>
+      <tr>
+        <td><strong>w</strong></td>
+        <td style="">real</td>
+        <td style="">La anchura del glifo en la página de la textura (en texels)</td>
+      </tr>
+      <tr>
+        <td><strong>h</strong></td>
+        <td style="">real</td>
+        <td style="">La altura del glifo en la página de la textura (en texels)</td>
+      </tr>
+      <tr>
+        <td><strong>turno</strong></td>
+        <td style="">real</td>
+        <td style="">El número de píxeles a desplazar a la derecha cuando se avanza al siguiente carácter (puede ser negativo para desplazar a la izquierda)</td>
+      </tr>
+      <tr>
+        <td><strong>offset</strong></td>
+        <td style="">real</td>
+        <td style="">El número de píxeles para desplazar horizontalmente la representación de este glifo (puede ser positivo o negativo)</td>
+      </tr>
+      <tr>
+        <td><strong>kerning</strong></td>
+        <td style="">matriz</td>
+        <td style="">Una matriz de enteros que contiene información sobre el desplazamiento en pares (o grupos de 2). El primer entero de un par es el valor Unicode de un carácter, y el segundo entero es la cantidad a añadir al valor de desplazamiento de ese carácter (puede ser positivo o
+          negativo) si es precedido por el carácter de este glifo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>NOTA</strong>: En el caso de las fuentes de archivo cargadas en <span class="notranslate">tiempo de ejecución</span>, los valores <tt>x</tt> e <tt>y</tt> de un glifo pueden ser -1 si aún no se ha renderizado, ya que no tendrá posición en la página de textura utilizada para la caché.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">font_get_info(fuente);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>La fuente para la que se debe recuperar la información.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Struct (o indefinido)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _info = font_get_info(my_font);<br>
+    <br> if (_info != undefined &amp;&amp; _info.bold)<br> {
+    <br> image_xscale *= 2;<br> image_yscale *= 2;<br> }
+  </p>
+  <p>Este código recupera la información de la fuente almacenada en la variable <tt>my_font</tt>. Si el valor devuelto <strong>no </strong>es<tt>indefinido</tt> y la fuente dada está en negrita, la escala de la instancia se duplica.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fonts.htm">Fuentes</a></div>
+        <div style="float:right">Siguiente: <a href="font_exists.htm">font_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_info
+-->
+  <!-- TAGS
+font_get_info
+-->
+</body>
+</html>

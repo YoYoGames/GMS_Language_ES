@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_test_overlap</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_test_overlap" />
+  <meta name="rh-index-keywords" content="physics_test_overlap" />
+  <meta name="search-keywords" content="physics_test_overlap" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_test_overlap</h1>
+  <p>Esta función puede utilizarse para comprobar si un cuerpo físico (es decir, el accesorio de una instancia) se solapa, o <i>se</i> solapará, cuando se rote y se coloque en una posición determinada de la sala. el argumento &quot;ángulo&quot; es el
+    es el ángulo de rotación que tiene (o tendrá) la instancia que se llama en la posición que se va a comprobar, y el argumento &quot;obj&quot; puede ser un único id de instancia, y el índice del objeto o el <a href="../../GML_Overview/Instance_Keywords.htm"><i>palabras clave</i></a> <b>todo</b> u <b>otro</b>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_test_overlap(xpos, ypos, angle, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>La posición x en la habitación para comprobar</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>La posición y en la sala para comprobar</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El ángulo a comprobar (de la instancia que llama)</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if physics_test_overlap(x+20, y-35, 0, obj_Bomb)<br> {
+    <br> alarm[0] = room_speed;<br> ignited = true;<br> }
+  </p>
+  <p>El código anterior comprobará una posición para un solapamiento de la fijación de la física, y si hay uno, establece una variable y una alarma.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics.htm">Física</a></div>
+        <div style="float:right">Siguiente: <a href="physics_mass_properties.htm">physics_mass_properties</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_test_overlap
+-->
+  <!-- TAGS
+physics_test_overlap
+-->
+
+</body></html>

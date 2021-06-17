@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_in</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the variable in_sequence" />
+  <meta name="rh-index-keywords" content="in_sequence" />
+  <meta name="search-keywords" content="in_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_in</h1>
+  <p>Esta es una <strong>variable incorporada</strong> que forma parte de las <a href="../Instances/Instance_Variables/Instance_Variables.htm">variables de instancia</a> creadas para cada instancia de objeto en tu juego. Si la instancia está siendo controlada por una secuencia
+    esta variable devolverá <span class="inline">true</span>, de lo contrario devolverá <span class="inline">false</span>. Esta es una variable <strong>de sólo lectura</strong> y no puede ser modificada.</p>
+  <p>Tenga en cuenta que esta variable se convertirá en <tt>falsa</tt> después de que la Secuencia que la controla haya terminado, incluso si su Elemento de Secuencia todavía existe, y se convertirá en <tt>verdadera</tt> si ese elemento de Secuencia se <a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">reproduce de nuevo</a>.</p>
+  <p>Puedes usar esta variable en tus objetos controlados por el jugador (o por la CPU) para asegurarte de que sólo se mueven por código cuando no están en una Secuencia. Esto puede ser útil para las cutscenes, cuando necesitas usar las mismas instancias en una Secuencia (usando
+    la función <tt><a href="sequence_instance_override_object.htm">sequence_instance_override_object()</a></tt> ) y necesitas asegurarte de que no pueden ser movidos por su código habitual mientras esa escena está activa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">secuencia_in</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (!in_sequence)<br> {
+    <br> x += move_x;<br> y += move_y;<br> }
+  </p>
+  <p>El código anterior comprueba la variable <span class="inline">in_sequence</span>, y si es <span class="inline">false</span> (lo que significa que la instancia no está siendo controlada por una secuencia) entonces añade <tt>move_x</tt> y <tt>move_y</tt> a la posición de la instancia
+    de la instancia, asegurándose de que sólo se mueve cuando no está en una secuencia.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_exists.htm">sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+in_sequence
+-->
+  <!-- TAGS
+in_sequence
+-->
+</body>
+</html>

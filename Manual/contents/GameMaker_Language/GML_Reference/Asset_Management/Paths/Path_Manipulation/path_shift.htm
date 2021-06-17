@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>desplazamiento_de_trayectoria</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_shift" />
+  <meta name="rh-index-keywords" content="path_shift" />
+  <meta name="search-keywords" content="path_shift" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>desplazamiento_de_trayectoria</h1>
+  <p>Con esta función puedes desplazar una trayectoria a lo largo del eje horizontal y vertical. Tenga en cuenta que esto no tendrá ningún efecto visible en el juego si la instancia que sigue la trayectoria que se está desplazando la sigue relativamente (en lugar de absolutamente), ya que la posición de la trayectoria
+    no se tiene en cuenta la posición de la ruta. <strong>Esta función cambia el activo de la ruta real</strong>, y por lo tanto afectará permanentemente a cómo la ruta es utilizada por todas las instancias en el juego desde el momento en que la función se utiliza hasta el final del juego. Si esto no es
+    no es lo que necesitas, entonces deberías usar una función como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para crear una copia del camino primero, y luego llamar a esta función en el activo duplicado (no olvides llamar a
+    <span class="inline"><a href="path_delete.htm">path_delete()</a></span> en el activo cuando ya no sea necesario).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_shift(index, xshift, yshift);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a cambiar.</td>
+      </tr>
+      <tr>
+        <td>xshift</td>
+        <td>El número de píxeles horizontales para desplazar la trayectoria. Negativo=izquierda, positivo=derecha.</td>
+      </tr>
+      <tr>
+        <td>yshift</td>
+        <td>El número de píxeles verticales para desplazar la trayectoria. Negativo=arriba, positivo=abajo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mi_camino = camino_duplicado(pth_AI);<br> camino_desplazamiento(mi_camino, 50, 50);<br> camino_inicio(mi_camino, 4, camino_acción_inversa, true);</p>
+  <p>El código anterior duplica un activo de ruta y almacena su valor de ID en una variable. Esta variable se utiliza entonces para desplazar la posición de la ruta duplicada y luego la instancia inicia la ruta.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="../Path_Variables/path_index.htm">path_index</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_shift
+-->
+  <!-- TAGS
+path_shift
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>distancia_al_objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for distance_to_object" />
+  <meta name="rh-index-keywords" content="distance_to_object" />
+  <meta name="search-keywords" content="distance_to_object" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>distancia_al_objeto</h1>
+  <p>Esta función calcula la distancia desde el borde del cuadro delimitador de la instancia que llama hasta el borde más cercano de la instancia más próxima del objeto especificado. El objeto puede ser un índice de objeto o un ID de instancia específico, así como el <a href="../../../GML_Overview/Instance_Keywords.htm"><i>palabra clave</i></a>   <b>y</b> la distancia se devuelve en píxeles. Tenga en cuenta que si alguno de los objetos no tiene un sprite o una máscara definida, los resultados serán incorrectos.</p>
+  <p> </p>
+  <h4><b>Sintaxis:</b></h4>
+  <p class="code">distancia_al_objeto(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real.</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (distance_to_object(obj_Player) &lt; range)<br> {
+    <br> canshoot = true;<br> }
+  </p>
+  <p>El código anterior comprobará la distancia al objeto jugador y si es menor que el valor almacenado en la variable &quot;range&quot; la variable &quot;canshoot&quot; se pone a true.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Angles_And_Distance.htm">Ángulos y distancia</a></div>
+        <div style="float:right">Siguiente: <a href="distance_to_point.htm">distancia_al_punto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+distance_to_object
+-->
+  <!-- TAGS
+distance_to_object
+-->
+
+</body></html>

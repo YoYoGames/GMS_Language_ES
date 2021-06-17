@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>elija</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for choose" />
+  <meta name="rh-index-keywords" content="choose" />
+  <meta name="search-keywords" content="choose" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>elija</h1>
+  <p>A veces quiere especificar algo más que números para una selección aleatoria, o los números que quiere no están en ningún orden real o dentro de algún rango establecido. En estos casos, se utilizaría <tt>choose()</tt> para generar un resultado aleatorio. Por ejemplo, digamos que
+    quieres crear un objeto con un sprite aleatorio al principio, entonces podrías usar esta función para establecer el índice del sprite a uno de un conjunto de sprites dados. Tenga en cuenta que puede tener tantos como necesite (tenga en cuenta que más argumentos significarán que la función
+    será más lenta de analizar).</p>
+  <p class="note"><b>NOTA</b>: Esta función devolverá el mismo valor cada vez que el juego se ejecute de nuevo debido a que <span class="notranslate">GameMaker Studio 2</span> genera la misma semilla aleatoria inicial cada vez para facilitar la depuración del código. Para evitar este comportamiento utilice
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> al inicio de tu juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">choose(val0, val1, val2... max_val);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>val0... max_val</td>
+        <td>Un valor de entrada que puede ser una cadena, un entero, una variable o una constante.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Uno de los argumentos dados</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">sprite_index = choose(spr_Cactus, spr_Flower, spr_Tree, spr_Shrub);<br> hp = choose(5, 8, 15, 32, 40);<br> name = choose(&quot;John&quot;, &quot;Steven&quot;, &quot;Graham&quot;, &quot;Jack&quot;, &quot;Emily&quot;, &quot;Tina&quot;, &quot;Jill&quot;,
+    &quot;Helen&quot;);</p>
+  <p>El código anterior utiliza choose para establecer una serie de propiedades para la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="random.htm">aleatorio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+choose
+-->
+  <!-- TAGS
+choose
+-->
+
+</body></html>

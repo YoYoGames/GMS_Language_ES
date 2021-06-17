@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_pragma</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gml_pragma" />
+  <meta name="rh-index-keywords" content="gml_pragma" />
+  <meta name="search-keywords" content="gml_pragma" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_pragma</h1>
+  <p>La función <tt>gml_pragma</tt> afecta a la forma en que el objetivo dado compila su código y debe ser llamado con los diferentes comandos para optimizar aún más la compilación final de su proyecto. Estos comandos son efectivamente <i>pre-procesados</i> antes de que el
+    por lo que la función puede ser colocada en cualquier parte del proyecto y será procesada antes de que el juego sea compilado completamente. Los comandos disponibles son los siguientes:</p>
+  <ul class="colour">
+    <li>&quot; forceinline<b>&quot; -</b> Cuando la función es llamada con el pragma &quot;forceinline&quot; en una función de script, el <b>YYC compilará</b> el proyecto con la función inline, en lugar de referenciada. Esto dará un mayor impulso al procesamiento
+      pero hay que tener cuidado al usarlo, ya que también inflará el tamaño final del archivo ejecutable, especialmente si el código en línea es grande y/o se utiliza en varios lugares diferentes, así como aumentar en gran medida el tiempo de compilación. Tenga en cuenta que este pragma
+     <b>sólo</b> es <b>válido cuando se construye utilizando el YYC</b>.</li>
+    <li>&quot; global<b>&quot;, &quot;</b>[código gml]&quot; -<b> El</b> pragma<b>&quot;global</b>&quot; permite llamar a algún código GML formateado como una cadena <span class="notranslate">,</span> en un ámbito global, en tiempo de compilación, antes de que se ejecute la primera sala del juego. Por ejemplo<br>
+     <p class="code">gml_pragma(&quot;global&quot;, &quot;Init()&quot;);</p>
+      Esto llamará a la función de script &quot;Init&quot; antes de que se ejecute la primera sala del juego. Tenga en cuenta que el <span class="notranslate">GML</span> suministrado como segundo argumento <b>debe ser una constante en tiempo de compilación</b>, y también tenga en cuenta que no puede utilizar este pragma para crear instancias
+      o realizar cualquier operación que requiera una sala (o cualquier cosa en una sala) para funcionar.</li>
+    <li>&quot; PNGCrush<b>&quot; -</b> El pragma &quot;PNGCrush&quot; utilizará el programa PNGCrush en <a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">cada</a> textura creada. Tenga en cuenta que esto puede añadir significativamente el tiempo que se necesita
+      para compilar el juego, por lo que no lo quiere en todo el tiempo, aunque puede hacer un ahorro significativo en el tamaño del archivo final.</li>
+    <li>&quot;Texgroup.Scale<b>&quot;, &quot;</b>[TextureGroupName]<b>&quot;, &quot;[Scale Divisor</b>]&quot; - El &quot;<b>Texgroup.Scale&quot;</b> escalará el grupo de texturas dado al compilar. Necesitas dar dos argumentos adicionales aquí: el &quot;[TexGroupName]&quot;
+      que es el nombre (una cadena) del grupo de texturas a escalar, y el &quot;[Divisor de Escala]&quot; (también una cadena), que es el divisor que deseas utilizar para el escalado, es decir<br>
+     <p class="code">gml_pragma(&quot;Texgroup.Scale&quot;, &quot;level1&quot;, &quot;2&quot;);</p>
+      Esto reducirá a la mitad todas las texturas del grupo de texturas &quot;nivel1&quot;.</li>
+    <li>&quot; UnityBuild<b>&quot;, &quot;</b>[activar/desactivar<b>]&quot; - Si llama a</b> la función con este pragma y establece el argumento activar/desactivar en true entonces al compilar <tt>colapsará</tt> todos los archivos .cpp en el proyecto en un solo archivo
+      que luego se utiliza para construir todo, por ejemplo:<br>
+     <p class="code">gml_pragma(&quot;UnityBuild&quot;, &quot;true&quot;);</p>
+      El beneficio de hacer una construcción de la unidad es que las construcciones son más rápidas, pero el lado negativo es que se hace una construcción <i>completa</i> cada vez, por lo que incluso si se cambia una sola parte del código que va a construir todo de nuevo sin utilizar ningún archivo en caché. Esto se ha
+      se ha añadido específicamente para la exportación a Xbox One utilizando el YYC, aunque se puede llamar para otras construcciones<b>(sólo YYC</b>). Para más información sobre las compilaciones de unity, por favor vea <a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">aquí</a>.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: El primer argumento de la función <tt>gml_pragma</tt> <b>debe ser una constante de cadena en tiempo de compilación</b> y no una variable.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gml_pragma(comando, [opcional...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>comando</td>
+        <td>Una cadena con uno de los comandos enumerados a continuación.</td>
+      </tr>
+      <tr>
+        <td>[opcional]</td>
+        <td>Algunos de los comandos disponibles requieren un argumento o argumentos opcionales. Estos se explican a continuación para cada comando.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gml_pragma(&quot;forceinline&quot;);</p>
+  <p>El código de ejemplo anterior forzará que la función del script donde se utiliza sea alineada en la compilación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="parameter_count.htm">parameter_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_pragma
+-->
+  <!-- TAGS
+gml_pragma
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_set_timeout</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_set_timeout" />
+  <meta name="rh-index-keywords" content="network_set_timeout" />
+  <meta name="search-keywords" content="network_set_timeout" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_set_timeout</h1>
+  <p>Con esta función puedes establecer el tiempo de espera para leer y escribir datos a/desde un servidor a través del socket dado. Tenga en cuenta que el tiempo de espera no genera ningún tipo de evento, por lo que tendrá que ocuparse usted mismo de los tiempos de espera utilizando alarmas (por ejemplo).
+    Tenga en cuenta que este valor sólo afecta al envío y la recepción de datos, y si desea cambiar el valor del tiempo de espera de la conexión, deberá utilizar la función <a href="network_set_config.htm"><tt>network_set_config()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_set_timeout(socket, read_timeout, write_timeout);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>toma de corriente</td>
+        <td>El id del socket a utilizar.</td>
+      </tr>
+      <tr>
+        <td>read_timeout</td>
+        <td>Los milisegundos en los que se agotará el tiempo de espera de una transferencia desde un servidor.</td>
+      </tr>
+      <tr>
+        <td>write_timeout</td>
+        <td>Los milisegundos en los que se agotará el tiempo de transferencia a un servidor.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">network_set_timeout(sock, 3000, 3000);</p>
+  <p>El código anterior establecerá el tiempo de espera para leer y escribir datos a través del socket indexado en la variable &quot;sock&quot; a 3 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_send_broadcast.htm">network_send_broadcast</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_set_timeout
+-->
+  <!-- TAGS
+network_set_timeout
+-->
+</body>
+</html>

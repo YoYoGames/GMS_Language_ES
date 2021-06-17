@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_master_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_master_gain" />
+  <meta name="rh-index-keywords" content="audio_get_master_gain" />
+  <meta name="search-keywords" content="audio_get_master_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_master_gain</h1>
+  <p>Con esta función puedes obtener el valor absoluto del volumen global de todos los sonidos y la música para un oyente específico. El índice del oyente por defecto es 0, pero puede utilizar la función <a href="Audio_Listeners/audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> para
+    obtener los diferentes índices disponibles para la plataforma de destino. El valor de ganancia devuelto se basa en una escala lineal de 0 (silencio) a 1 (volumen máximo). Tenga en cuenta que en algunas plataformas puede tener una ganancia superior a 1, aunque un valor de 1 se considera
+    &quot;volumen completo&quot; y cualquier valor mayor puede introducir recortes de audio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_get_master_gain(listenerIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>listenerIndex</td>
+        <td>El índice del oyente para obtener la ganancia de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> for( var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var ind = info[? &quot;index&quot;];<br> if audio_get_master_gain(ind) != 1<br> {
+    <br> audio_set_master_gain(info[? &quot;index&quot;], 1);<br> }
+    <br> ds_map_destroy(info);
+    <br> }
+  </p>
+  <p>El código anterior recorre los oyentes disponibles, comprobando si su ganancia es 1 o no, y si no lo es la pone a 1 para cada uno de ellos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_channel_num.htm">audio_channel_num</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_master_gain
+-->
+  <!-- TAGS
+audio_get_master_gain
+-->
+</body>
+</html>

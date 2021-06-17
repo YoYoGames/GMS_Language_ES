@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estructuras de datos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Data Structures" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Data Structures" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Estructuras de datos</h1>
+  <p>En los juegos, a menudo es necesario almacenar información de forma precisa y ordenada. Por ejemplo, es posible que necesites almacenar listas de objetos que lleva una persona o que quieras almacenar una cuadrícula de lugares que aún deben ser visitados. Ahora bien, <i>puedes</i> utilizar los arrays
+    para esto, pero si quieres hacer operaciones más complicadas, como ordenar los datos o buscar un elemento concreto, tienes que escribir grandes trozos de código <span class="notranslate">GML</span> que pueden ser lentos de ejecutar, difíciles de depurar y un verdadero dolor de cabeza.</p>
+  <p>Para remediar esto, <span class="notranslate">GameMaker Studio 2</span> tiene una serie de estructuras de <b>datos</b> incorporadas a las que se puede acceder a través de funciones especializadas. Hay seis tipos diferentes de estructuras de datos disponibles, cada una de las cuales tiene sus propias ventajas, dependiendo del tipo de
+    información que se desea almacenar y cómo se desea manipular posteriormente: pilas, colas, listas, mapas, colas de prioridad y cuadrículas.</p>
+  <p>Básicamente, todas las estructuras de datos funcionan de la misma manera: se crea una estructura de datos y se almacena su <i>valor de índice</i> en una variable. A continuación, se utiliza este índice para hacer referencia a la estructura de datos en todas las llamadas de función posteriores que pueden realizar operaciones en
+    en ella. Por último, una vez que has terminado, destruyes la estructura de datos de nuevo para eliminarla de la memoria. Puedes utilizar tantas estructuras al mismo tiempo como necesites, y todas las estructuras pueden almacenar cualquiera de los <a href="../../GML_Overview/Data_Types.htm">tipos de datos</a> disponibles.</p>
+  <p class="note"><b>NOTA: </b>Como todos los recursos dinámicos, las estructuras de datos ocupan memoria, por lo que <b>siempre</b> deben ser destruidas cuando ya no se necesiten para evitar fugas de memoria que ralentizarán y eventualmente bloquearán tu juego.</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se crea una estructura de datos, el valor del índice para identificarla es un valor entero que comienza en 0. Esto significa que diferentes estructuras de datos pueden tener el <b>mismo</b> valor de índice, por lo que en caso de duda se debe utilizar la función <span style="font-size:1px;"><tt style="font-size: 14px">ds_exists</tt></span>    antes de acceder a ellas. Ten en cuenta también que los índices se reutilizan, por lo que el valor del índice de una estructura de datos destruida puede ser utilizado por otra recién creada posteriormente, y te recomendamos que pongas cualquier variable que contenga un índice DS a -1 después de haber destruido
+    la estructura de datos.</p>
+  <p>La información sobre las diferentes estructuras de datos se encuentra en las siguientes secciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="DS_Grids/DS_Grids.htm">Rejillas</a></li>
+    <li><a href="DS_Lists/DS_Lists.htm">Listas</a></li>
+    <li><a href="DS_Maps/DS_Maps.htm">Mapas</a></li>
+    <li><a href="DS_Priority_Queues/DS_Priority_Queues.htm">Colas prioritarias</a></li>
+    <li><a href="DS_Queues/DS_Queues.htm">Colas</a></li>
+    <li><a href="DS_Stacks/DS_Stacks.htm">Pilas</a></li>
+  </ul>
+  <p> </p>
+  <p>Antes de utilizar las estructuras de datos en tu juego, también debes tener en cuenta que hay ciertos momentos en los que, debido a errores de redondeo, puedes obtener un resultado que no es el esperado. Esto puede resolverse cambiando la precisión del DS mediante la siguiente
+    función:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_set_precision.htm">ds_set_precision</a></li>
+  </ul>
+  <p> </p>
+  <p>También hay una función especial para comprobar si existe una estructura de datos de un tipo determinado:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_exists.htm">ds_existe</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../GML_Reference.htm">Referencia<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="../Strings/Strings.htm">Cuerdas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Data Structures
+-->
+  <!-- TAGS
+data_structure_functions
+-->
+</body>
+</html>

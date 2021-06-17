@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_get_index" />
+  <meta name="rh-index-keywords" content="layer_background_get_index" />
+  <meta name="search-keywords" content="layer_background_get_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_get_index</h1>
+  <p>Esta función se puede utilizar para obtener el valor del índice de la imagen actual del elemento de fondo. Se da el ID del elemento de fondo (que se obtiene al crear un elemento de fondo con <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    o al utilizar la función <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), y la función devolverá un valor real que representa el índice de la imagen que se muestra para el sprite. La función devolverá -1 si el
+    elemento de fondo no existe o el elemento no tiene un sprite válido asignado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_background_get_index(background_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>El valor de identificación único del elemento de fondo para obtener la información</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (el índice de la imagen del sprite actual o -1)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> if layer_background_get_index(back_id) &lt; 4<br> {
+    <br> layer_background_index(back_id, 4);<br> }
+  </p>
+  <p>El código anterior obtendrá el ID de la capa llamada &quot;Background_sky&quot; y luego lo utilizará para obtener el ID del elemento de fondo en esa capa. Este ID se utiliza para comprobar si el índice de la imagen del elemento es menor que 4, y si es así
+    se establece en 4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Background_Layers.htm">Capas de fondo</a></div>
+        <div style="float:right">Siguiente: <a href="layer_background_get_speed.htm">layer_background_get_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_get_index
+-->
+  <!-- TAGS
+layer_background_get_index
+-->
+</body>
+</html>

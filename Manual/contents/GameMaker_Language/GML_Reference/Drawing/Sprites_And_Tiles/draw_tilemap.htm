@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_mapa_de_tilema</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_tilemap" />
+  <meta name="rh-index-keywords" content="draw_tilemap" />
+  <meta name="search-keywords" content="draw_tilemap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_mapa_de_tilema</h1>
+  <p>Esta función puede utilizarse para dibujar un tilemap dado en cualquier lugar de la sala. Se le da el ID del elemento tilemap (que se obtiene cuando se crea un elemento tilemap usando <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    o al utilizar la función <a href="../../Asset_Management/Rooms/Tile_Map_Layers/layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), y luego da la posición x/y para el dibujo (en la habitación). Tenga en cuenta que esto simplemente dibujará el tilemap en
+    el punto especificado, utilizando la profundidad de la capa de la instancia que llama a la función. <i>No</i> mueve el tilemap - ni lo cambia de ninguna manera - y no importa si el tilemap está marcado como visible o no.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_tilemap(tilemap_element_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos para obtener la posición y de la celda</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x dentro de la habitación para dibujar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y dentro de la habitación para dibujar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Effects&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> draw_tilemap(map_id, mouse_x, mouse_y);</p>
+  <p>El código anterior obtiene el ID de la capa y luego lo utiliza para obtener un ID de mapa de azulejos específico que a su vez se utiliza para dibujar el mapa de azulejos en la posición del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_self.htm">draw_self</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tilemap
+-->
+  <!-- TAGS
+draw_tilemap
+-->
+</body>
+</html>

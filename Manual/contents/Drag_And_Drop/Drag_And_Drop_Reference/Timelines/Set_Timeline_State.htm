@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer el estado de la línea de tiempo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Timeline State action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Timeline State" />
+  <meta name="search-keywords" content="Set Timeline State" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Timeline State Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_State.png" width="32"> Establecer el estado de la línea de tiempo</h1>
+  <p>Esta acción puede utilizarse para iniciar, detener, pausar o reanudar una línea de tiempo. La línea de tiempo debe haberse establecido primero para la instancia utilizando la acción <a href="Set_Instance_Timeline.htm">Establecer línea de tiempo de la instancia</a>, y luego puede utilizar esta acción en cualquier momento para
+    cambiar su estado de ejecución entre las siguientes opciones</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Opción</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Inicie</td>
+        <td>Inicie la línea de tiempo asignada a la instancia (si la línea de tiempo estaba en pausa, esto establecerá la posición de inicio en el momento 0 de nuevo).</td>
+      </tr>
+      <tr>
+        <td>Currículum Vitae</td>
+        <td>Reanudar una línea de tiempo en pausa (si la línea de tiempo estaba detenida y no en pausa, esto no hará nada).</td>
+      </tr>
+      <tr>
+        <td>En pausa</td>
+        <td>Poner en pausa la línea de tiempo asignada a la instancia (mientras esté en pausa los momentos de una línea de tiempo no avanzarán con los fotogramas del juego).</td>
+      </tr>
+      <tr>
+        <td>Detener</td>
+        <td>Detener la línea de tiempo asignada a la instancia.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p><img alt="Set Timeline State Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_State.png" /></p>
+  <p> </p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Estado</td>
+        <td>El estado en el que se encuentra la línea de tiempo (véase la tabla anterior)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Set Timeline State Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Timeline_State.png">El código del bloque de acción anterior comprobará el valor mantenido en una variable global y
+    si es <tt>verdadero</tt>, la línea de tiempo se pausa, y si es <tt>falso</tt>, la línea de tiempo se reanuda.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timeline_Actions.htm">Acciones de la línea de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Instance_Timeline.htm">Establecer la línea de tiempo de la instancia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Timeline State
+-->
+  <!-- TAGS
+action_set_timeline_state
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_show_profile_card_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_show_profile_card_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_show_profile_card_for_user" />
+  <meta name="search-keywords" content="xboxlive_show_profile_card_for_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_show_profile_card_for_user</h1>
+  <p>Con esta función se puede solicitar que la XBox muestre la tarjeta de perfil del puntero ID del usuario objetivo. La función requiere tanto el puntero de identificación del usuario que <i>solicita</i> la información como el puntero de identificación del usuario
+    para obtener la tarjeta de perfil del usuario <i>objetivo</i>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_show_profile_card_for_user(requesting_user_id, target_user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>solicitar_usuario_id</td>
+        <td>El ID de usuario (un puntero) del usuario solicitante</td>
+      </tr>
+      <tr>
+        <td>target_user_id</td>
+        <td>El ID de usuario (un puntero) del usuario para obtener la tarjeta de perfil de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (gamepad(0, gp_start))<br> {
+    <br> xboxlive_show_profile_card_for_user(user[0], user[1]);<br> }
+  </p>
+  <p>El código anterior comprueba si se ha pulsado un botón del gamepad y, si se detecta alguno, muestra la tarjeta de perfil del usuario en cuestión.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_reputation_for_user.htm">xboxlive_reputación_para_usuario</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_show_profile_card_for_user
+-->
+  <!-- TAGS
+xboxlive_show_profile_card_for_user
+-->
+</body>
+</html>

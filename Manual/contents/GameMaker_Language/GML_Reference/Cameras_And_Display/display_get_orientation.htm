@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mostrar_obtener_orientación</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_get_orientation" />
+  <meta name="rh-index-keywords" content="display_get_orientation,display_landscape,display_landscape_flipped,display_portrait,display_portrait_flipped" />
+  <meta name="search-keywords" content="display_get_orientation,display_landscape,display_landscape_flipped,display_portrait,display_portrait_flipped" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mostrar_obtener_orientación</h1>
+  <p>Esta función devolverá una de las dos constantes que tiene <span class="notranslate">GameMaker Studio 2</span> para indicarle si el dispositivo que ejecuta el juego está siendo sostenido en modo horizontal o vertical (véase la tabla siguiente). Tenga en cuenta que esta función puede no detectar correctamente la orientación
+    del dispositivo cuando se utiliza en el módulo de destino HTML5. Sin embargo, esto es fácilmente imitado por el uso de la siguiente secuencia de comandos:</p>
+  <p class="code">return (browser_width &lt; browser_height);</p>
+  <p>Devolverá <tt>true</tt> para el retrato y <tt>false</tt> para el paisaje.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">display_get_orientation()</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Constante</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>mostrar_paisaje</td>
+        <td>El dispositivo se sostiene horizontalmente, es decir, el borde más largo es de izquierda a derecha, y el botón de menú está a la derecha.</td>
+      </tr>
+      <tr>
+        <td>mostrar_paisaje_inclinado</td>
+        <td>Como arriba, sólo que ahora el botón del menú está a la izquierda.</td>
+      </tr>
+      <tr>
+        <td>mostrar_retrato</td>
+        <td>El dispositivo se sujeta verticalmente, es decir, el borde más largo va de arriba a abajo y el botón del menú está en la parte inferior.</td>
+      </tr>
+      <tr>
+        <td>display_portrait_flipped</td>
+        <td>Como en el caso anterior, sólo que ahora el botón del menú está en la parte superior.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si display_get_orientation() == display_landscape<br> {
+    <br> global.Config = 0;<br> }
+    <br> else
+    <br> {
+    <br> global.Config = 1;<br> }
+  </p>
+  <p>El código anterior comprueba la orientación del dispositivo y establece una variable global en función del valor devuelto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Cámaras y pantalla</a>
+        <div style="float:left">Atrás: </div>
+        <div style="float:right">Siguiente: <a href="display_get_dpi_x.htm">display_get_dpi_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_get_orientation
+display_landscape
+display_landscape_flipped
+display_portrait
+display_portrait_flipped
+-->
+  <!-- TAGS
+display_get_orientation
+-->
+</body>
+</html>

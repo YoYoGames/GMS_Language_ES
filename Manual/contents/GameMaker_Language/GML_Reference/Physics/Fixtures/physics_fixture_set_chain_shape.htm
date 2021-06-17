@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_chain_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_chain_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_chain_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_chain_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_chain_shape</h1>
+  <p>Esta función define una forma de fijación &quot;en cadena&quot;. Una fijación en cadena se compone de un número de puntos, que se conectan entre sí utilizando formas de borde para unirlos. La función toma el índice (ID) de la fijación y puede decirle a la fijación
+    que haga un bucle o no. Si se establece como <tt>verdadero</tt>, se conectará el último punto con el primer punto con una arista, mientras que si se establece como <tt>falso</tt>, no. Tenga en cuenta que esta función prepara la fijación para aceptar los puntos necesarios para hacer la cadena,
+    y estos deben ser añadidos después de llamar a esta función usando <a href="physics_fixture_add_point.htm"><tt>physics_fixture_add_point()</tt></a>de la misma manera que cuando se construye un fixture poligonal.</p>
+  <p>Al crear una fijación de cadena, debes darle al menos dos puntos, pero no estás limitado en el número de puntos subsiguientes que puedes añadir para conformar la fijación terminada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_set_chain_shape(fixture, loop)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>El índice de la luminaria</td>
+      </tr>
+      <tr>
+        <td>bucle</td>
+        <td>Si se cierra la cadena<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var xx = -100;<br> var yy = room_height / 2;<br> var fix = physics_fixture_create(); physics_fixture_set_chain_shape(fix, false);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> physics_fixture_add_point(fix, xx, yy);<br> xx += 50 + random(150);<br> yy = (room_height / 2) - 250 + irandom(500);<br> }
+    <br> physics_fixture_bind(fix, id);</p>
+  <p>El código anterior creará una línea de luminarias de &quot;borde&quot; con una variedad de alturas a lo largo de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_chain_shape
+-->
+  <!-- TAGS
+physics_fixture_set_chain_shape
+-->
+</body>
+</html>

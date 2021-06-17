@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_create_buffer_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer_ext" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer_ext" />
+  <meta name="search-keywords" content="vertex_create_buffer_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_create_buffer_ext</h1>
+  <p>Al igual que la función <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>esta función creará un nuevo búfer de vértices. Este es un búfer de <i>crecimiento</i> especial creado por <span class="notranslate">GameMaker Studio 2</span> que está preformateado para su uso cuando
+    construir primitivas para su uso con <span class="notranslate">shaders</span>. Puedes especificar un tamaño inicial para el buffer (en bytes) y devolverá un &quot;handle&quot; (índice) para el buffer que deberá ser utilizado en todas las llamadas posteriores al buffer.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_create_buffer_ext(tamaño);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño inicial del buffer (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">v_buff = vertex_create_buffer_ext(1024 * 1024);</p>
+  <p>El código anterior creará un nuevo búfer de vértices, inicialmente de 1MB de tamaño, y almacenará su manejador en la variable &quot;v_buff&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_create_buffer_from_buffer.htm">vertex_create_buffer_from_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer_ext
+-->
+  <!-- TAGS
+vertex_create_buffer_ext
+-->
+
+</body></html>

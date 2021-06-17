@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_set_rich_presence</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_set_rich_presence" />
+  <meta name="rh-index-keywords" content="xboxlive_set_rich_presence" />
+  <meta name="search-keywords" content="xboxlive_set_rich_presence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_set_rich_presence</h1>
+  <p>Esta función establecerá la cadena de presencia enriquecida para el usuario dado. Una cadena de presencia enriquecida muestra la actividad de un usuario en el juego después del nombre del juego que el usuario está jugando, separado por un guión. Esta cadena se muestra debajo del
+    Gamertag de un jugador en la lista de &quot;Amigos y Clubes&quot;, así como en el perfil de usuario de Xbox Live del jugador.</p>
+  <p>Cuando se utiliza esta función se necesita suministrar el puntero de ID de usuario para el usuario, y luego se puede marcar el usuario como actualmente activo en el juego o no (usando <tt>true/false</tt>). Si se establece en <tt>falso</tt>, entonces la cadena de presencia rica será
+    con &quot;/afk&quot; o algo apropiado. El siguiente argumento es el ID de la cadena de presencia enriquecida que se va a mostrar, y finalmente puedes (opcionalmente) suministrar una cadena <tt>service_config_id</tt>. Tenga en cuenta que éste es un argumento opcional, ya que si
+    ha llamado a <a href="../Stats_And_Leaderboards/xboxlive_stats_setup.htm"><tt>xboxlive_stats_setup()</tt></a> no es necesario pasar el <tt>service_config_id</tt> aquí.</p>
+  <p>Para obtener más información sobre la presencia enriquecida y cómo configurar las cadenas que se utilizarán en el centro de socios, consulte la siguiente documentación de Microsoft:</p>
+  <ul>
+    <li><a href="https://docs.microsoft.com/en-us/gaming/xbox-live/features/social/rich-presence/" target="_blank">Visión general de las cadenas de presencia</a></li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero ID del usuario a comprobar.</td>
+      </tr>
+      <tr>
+        <td>is_user_active</td>
+        <td>Marcar el usuario como activo o no.</td>
+      </tr>
+      <tr>
+        <td>cadena_de_presencia_rica</td>
+        <td>El ID de la cadena de presencia enriquecida que se va a utilizar (tal y como se define en el Centro de Socios - máximo 50 caracteres)</td>
+      </tr>
+      <tr>
+        <td>service_config_id</td>
+        <td>OPCIONAL] Esta es la cadena config_id para el juego.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var pad_uid = xboxlive_user_for_pad(0);<br> xboxlive_set_rich_presence(pad_uid, true, &quot;Playing_Challenge&quot;);</p>
+  <p>El código anterior obtiene el puntero de ID de usuario para el usuario asignado a la ranura [0] del gamepad, y luego establece la cadena de presencia rica para ese usuario.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_gamedisplayname_for_user.htm">xboxlive_gamedisplayname_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_set_rich_presence
+-->
+  <!-- TAGS
+xboxlive_set_rich_presence
+-->
+</body>
+</html>

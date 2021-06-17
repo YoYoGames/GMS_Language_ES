@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weak_ref_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_create" />
+  <meta name="rh-index-keywords" content="weak_ref_create" />
+  <meta name="search-keywords" content="weak_ref_create,weak references" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>weak_ref_create</h1>
+  <p>Con esta función puedes crear una <a class="glossterm" data-glossterm="referencia débil" href="#">referencia débil</a> a una estructura que puede ser utilizada para comprobar si la estructura está todavía &quot;viva&quot; (referenciada) o no en el juego. Se suministra la referencia
+    referencia a la estructura que quieres rastrear, y la función devolverá otra estructura que es una referencia débil a esa estructura. Ten en cuenta que puedes comprobar si una referencia es &quot;fuerte&quot; o &quot;débil&quot; utilizando la función <span class="inline"><a href="../Variable_Functions/instanceof.htm">instanceof()</a></span>,
+    ya que una referencia fuerte devolverá &quot;<span class="inline">struct</span>&quot; o el nombre de la función constructora que creó la estructura, o &quot;<span class="inline">weakref</span>&quot; si es una referencia débil. También hay que tener en cuenta que
+    la estructura de referencia débil tendrá una variable &quot;<span class="inline">ref</span>&quot; a la que se puede acceder para obtener la cadena de referencia a la estructura en cuestión, a menos que se haya recogido el garabato, en cuyo caso devolverá <span class="inline">undefined</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">weak_ref_create(struct_to_track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>struct_to_track</td>
+        <td>La estructura para la que se quiere crear una referencia débil</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructurar</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">inventory_ref = weak_ref_create(inventory);</p>
+  <p>El código anterior crea una referencia débil a una estructura y la almacena en una variable de instancia para su uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Garbage_Collection.htm">Recogida de basura</a></div>
+        <div style="float:right">Siguiente: <a href="weak_ref_alive.htm">weak_ref_alive</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_create
+-->
+  <!-- TAGS
+weak_ref_create
+-->
+
+</body></html>

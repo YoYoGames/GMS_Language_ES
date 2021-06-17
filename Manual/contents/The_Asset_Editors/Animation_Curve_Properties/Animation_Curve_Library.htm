@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>La biblioteca de curvas de animación</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page explaining the Animation Curve Library" />
+  <meta name="rh-index-keywords" content="Animation Curve Editor" />
+  <meta name="search-keywords" content="Aniimation Curves,Anim Curves,Curves,Animation Curve Library,Preset Library" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>La biblioteca de curvas de animación</h1>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library.png" style="cursor: nesw-resize;">La ventana de <strong>la Biblioteca de Curvas</strong> de Animación le permite cambiar el Tipo de Curva para la Curva de Animación, y aplicar
+    un preajuste al canal seleccionado. Puede abrirse haciendo <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> clic con el botón izquierdo en el botón <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" width="13"> en el Editor de <a href="../Animation_Curves.htm">Curvas</a> de Animación o en la <a href="../Sequence_Properties/Using_Animation_Curves.htm"> <span class="notranslate">Hoja de</span></a> Secuencia, o haciendo <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> clic con el botón derecho
+    en cualquier lugar del Editor de Canales.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Tipo de curva</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">El <strong>Tipo de Curva</strong> controla la forma en que un canal fluye de un punto a otro, que puede establecerse en una de las siguientes opciones:</p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Lineal</strong>: Esto creará una progresión lineal entre los puntos del canal</li>
+      <li class="dropspot"><strong>Suave</strong>: Esto utilizará la <a class="glossterm" data-glossterm="interpolación catmull-rom" href="../Animation_Curves.htm#">interpolación de catmull-rom</a> para crear una progresión suave entre los puntos del canal</li>
+      <li class="dropspot"><strong>Bezier</strong>: Esto utilizará las matemáticas de la curva Bezier para crear una progresión suave entre los puntos del canal, donde se puede controlar el aspecto de la curva manipulando los &quot;tiradores&quot; de los puntos</li>
+    </ul>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Types.png" style="cursor: nwse-resize;">Tenga en cuenta que al cambiar el Tipo de Curva se aplicará ese tipo a <em>todos los</em> canales de la Curva de Animación.</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Preselecciones de curvas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Un preajuste<strong>de curva</strong> cambia la forma de tu curva. <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> Haciendo clic con el botón izquierdo del ratón en un preajuste del menú de preajustes, se aplicará ese preajuste a tu canal seleccionado.
+      canal seleccionado, y al hacer clic en <strong>Reset </strong>el canal volverá a ser como era antes de que se abriera la ventana de la Biblioteca de Curvas de Animación.</p>
+    <p class="dropspot"><span class="dropspotnote"><strong>NOTA</strong>: Los preajustes sólo pueden aplicarse si el Tipo de curva está configurado como <strong>Bézier</strong>.</span></p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset0.gif">Por defecto, un preajuste se aplica a todo el canal. Puede seleccionar una sección de su canal arrastrando con el botón izquierdo del ratón <img class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en el <strong>Editor de Canales</strong>, y luego abrir la ventana de la Biblioteca de Curvas de Animación a través del botón <img class="icon" height="20" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png" width="13"> o haciendo clic con el botón derecho del ratón <img class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">, que aplicará cualquier preajuste sólo a la sección seleccionada.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Preset1_Selection.gif">Tenga en cuenta que su canal de curva (o selección dentro de ese canal) necesita tener una pendiente para que un preajuste tenga algún efecto, ya que cualquier interpolación aplicada
+      interpolación aplicada se basa en la diferencia vertical entre los puntos inicial y final. Una curva plana no tiene tal diferencia entre los dos puntos, por lo que no verá ningún resultado después de aplicar un preajuste a tal curva.</p>
+    <p class="dropspot">Hay dos <strong>modos de aplicación</strong> que puedes elegir, que afectan a cómo se aplica un preajuste a tu canal (o a tu selección dentro de ese canal):</p>
+    <p class="dropspot"><br />
+      <img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes.png" style="cursor: nwse-resize;" /></p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Sobrescribir:</strong> Esta es la opción por defecto cuando se abre la ventana a través del botón <img class="icon" src="../../assets/Images/Icons/Animation_Curve_Library_Button.png"> en el Editor de Curvas de Animación o en la <span class="notranslate">Hoja de</span> Secuencia. Sobrescribe
+        cualquier punto entre los puntos de inicio y final de su canal o selección.</li>
+      <li class="dropspot"><strong>Entre:</strong> Es la opción por defecto cuando se abre la ventana mediante <img class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> haciendo clic con el botón derecho en cualquier lugar del Editor de Canales. Aplica el preajuste entre cada par de puntos seleccionados,
+        y añade los nuevos puntos que sean necesarios sin eliminar los existentes.</li>
+    </ul>
+    <p class="dropspot">La siguiente imagen muestra el preajuste de la curva <img class="icon" src="../../assets/Images/Icons/Curve_Expo.png"> <strong>Expo </strong>aplicado a un canal utilizando los modos de aplicación <strong>Between </strong>y <strong>Overwrite </strong>:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Apply_Modes_Difference.png" /></p>
+    <p class="dropspot">Como puedes ver en la imagen de arriba, <strong>Between </strong>aplica el preajuste de la curva a cada par de puntos, e inserta los nuevos puntos que sean necesarios. <strong>Sobrescribir</strong> elimina cualquier punto entre los puntos inicial y final y luego
+      aplica el preajuste.</p>
+    <p class="dropspot">También hay tres <strong>modos de suav </strong>ización que puede elegir, que controla cómo se acelera o desacelera una curva. El modo de suavización por defecto es <strong>Ease Out</strong>.</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings.png" /></p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Facilidad de entrada:</strong> La curva comienza con una aceleración más rápida, y luego se desacelera</li>
+      <li class="dropspot"><strong>Facilidad de salida</strong>: La curva comienza con una aceleración más lenta, y luego se acelera con el tiempo</li>
+      <li class="dropspot"><strong>Facilidad de entrada-salida:</strong> La curva comienza con una aceleración más lenta, se acelera con el tiempo y luego se desacelera</li>
+    </ul>
+    <p class="dropspot">La siguiente imagen muestra el preajuste de la curva de <b>Quart </b>en los tres modos de flexión:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Animation_Curves_Library_Easings_Quart.png" /></p>
+  </div>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Animation_Curves.htm">Curvas de animación</a></div>
+        <div style="float:right">Siguiente: <a href="../Extensions.htm">Extensiones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animation Curve Library
+Animation Curve Preset Library
+Curve Library
+Curve Presets
+-->
+  <!-- TAGS
+animation_curve_library
+-->
+
+</body></html>

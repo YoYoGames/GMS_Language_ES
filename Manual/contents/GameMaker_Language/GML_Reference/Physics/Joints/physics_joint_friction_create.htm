@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_friction_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_friction_create" />
+  <meta name="rh-index-keywords" content="physics_joint_friction_create" />
+  <meta name="search-keywords" content="physics_joint_friction_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_friction_create</h1>
+  <p>La articulación de fricción es un poco diferente a todas las demás articulaciones en la simulación física, ya que la conexión creada no limitará la posición o el movimiento de las instancias, sino su velocidad y rotación. Esto funciona tomando los valores máximos de entrada
+    para la fuerza y el par de torsión y aplicándolos a la segunda fijación para reducir la velocidad y el momento angular a los mismos valores que los de la primera instancia. Por lo tanto, si tienes una instancia fija y una instancia móvil y las conectas con una junta de fricción
+    la instancia móvil se ralentizará gradualmente hasta que también se quede inmóvil. Si ambas instancias estuvieran en movimiento, la segunda instancia verá modificada su velocidad de movimiento para igualar la de la primera instancia.</p>
+  <p><img alt="Friction joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/friction_joint_image.png">Como en la mayoría de las juntas, usted proporciona las instancias a unir, así como la posición
+    en la que se creará la unión dentro de la sala. A continuación, se suministra la fuerza máxima y la torsión máxima (fricción direccional y rotacional), y si se establece el valor &quot;col&quot; como verdadero, <tt>las</tt> dos instancias pueden interactuar y colisionar entre sí, pero sólo si tienen eventos de colisión.
+    entre sí, pero <i>sólo</i> si tienen eventos de colisión, sin embargo, si se establece en <tt>falso</tt>, no van a colisionar no importa qué.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_friction_create(inst1, inst2, anchor_x, anchor_y, max_force, max_torque, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>La primera instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>La segunda instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>ancla_x</td>
+        <td>La coordenada x de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>ancla_y</td>
+        <td>La coordenada y de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>fuerza_máxima</td>
+        <td>La fuerza de fricción máxima que se aplicará</td>
+      </tr>
+      <tr>
+        <td>par_máximo</td>
+        <td>La fuerza máxima de rotación que se aplicará</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Si las dos instancias pueden colisionar (verdadero) o no (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (índice de la articulación)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id = instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>El código anterior creará una fijación y la vinculará a dos instancias, antes de conectarlas mediante una junta de fricción.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_delete.htm">physics_joint_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_friction_create
+-->
+  <!-- TAGS
+physics_joint_friction_create
+-->
+</body>
+</html>

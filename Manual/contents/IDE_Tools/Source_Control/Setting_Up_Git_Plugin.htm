@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Configuración del plugin Git</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control and setting GIT up." />
+  <meta name="rh-index-keywords" content="Source Control - Setting Up GIT Plugin" />
+  <meta name="search-keywords" content="GIT setup,Source Control Setup" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Configuración del plugin <span class="notranslate">GIT</span> </h1>
+  <p>Al empezar a utilizar el plugin <span class="notranslate">de GIT</span>, tenemos que configurar una identidad para que <span class="notranslate">GIT</span> haga commit como, lo que significa que tenemos que ir a la sección <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Plugins - Source Control (<span class="notranslate">Git</span></a> )
+    de las <a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">Preferencias</a> y añadir los datos de autentificación.</p>
+  <p><img alt="SCM Identity Preferences" class="center" src="../../assets/Images/IDE Tools/SCM_IdentityPrefs.png">Esta identidad de autenticación se utilizará para todos los proyectos futuros, y <span class="notranslate">GameMaker Studio 2</span> le ofrece dos formas diferentes de configurarla
+    de configurarla:</p>
+  <ul class="colour">
+    <li><strong>Nombre de usuario y contraseña</strong>: Al hacer clic en el botón &quot;Añadir<em>nuevo usuario/contraseña de autenticación&quot;</em>, aparecerá la siguiente ventana en la que podrá introducir la URL del repositorio <strong>, el nombre de usuario</strong> <strong>y</strong> la contraseña.
+      la <strong>contraseña</strong>:<br>
+      <img alt="SCM Username and Password" class="center" src="../../assets/Images/IDE Tools/SCM_UsernamePassword.png">Si quiere que esto afecte sólo a un repositorio específico, coloque la URL del repositorio en el campo superior. Sin embargo, si es
+      autenticación en todo el dominio que desea (por ejemplo: &quot;<span class="inline">bitbucket.org</span>&quot; o &quot;<span class="inline">github.com</span>&quot; ) entonces sólo coloque el dominio y nada más. Cuando algo necesita comprobar la autenticación,
+      buscará primero una coincidencia con un repositorio específico, y luego una coincidencia con el dominio. Esto le permitirá tener una autenticación por defecto para un dominio, y anularla con detalles específicos para ciertos repositorios más tarde.</li>
+  </ul>
+  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em">NOTA: Si está utilizando un repositorio externo, entonces debería utilizar el nombre de usuario y la contraseña asociados a la cuenta configurada para ese repositorio, pero si quiere utilizar un repositorio local, puede utilizar cualquier nombre de usuario y contraseña.</p>
+  <ul class="colour">
+    <li>Pares de<strong>claves</strong> SSH: Al hacer clic en &quot;Añadir<em>nueva autenticación de pares de claves SSH&quot;</em> se le presentará la siguiente ventana en la que puede introducir la <strong>URL</strong> del repositorio <strong>y la</strong> contraseña <strong>antes de</strong> dar las
+      rutas de acceso a los archivos de <strong>Clave Pública</strong> y <strong>Clave Privada</strong> requeridos:<br>
+      <img alt="SCM SSH Settings" class="center" src="../../assets/Images/IDE Tools/SCM_SSH.png">Al igual que las autenticaciones de Nombre de Usuario/Contraseña, puede tener autenticaciones específicas de dominio y de repositorio cuando utilice pares de claves SSH. Si ya tiene un
+      SSH Keypair generado, puede configurar las rutas aquí, así como cualquier contraseña requerida para acceder a ellas. Tenga en cuenta que si necesita un acceso rápido a la clave pública, el botón de copia <img alt="Icon SCM Copy" class="icon" height="22" src="../../assets/Images/IDE Tools/SCM_Copy.png" width="22"> copiará automáticamente el contenido al portapapeles por usted. Si aún no tiene un par de claves SSH, al hacer clic en el botón <strong>Create KeyPair</strong> aparecerá un cuadro de diálogo de archivo donde colocar la clave privada, y
+      la clave pública se creará junto a ella - esto rellenará las rutas de las claves pública y privada automáticamente por ti.</li>
+  </ul>
+  <p>Estos ajustes se utilizarán ahora para comunicarse con el repositorio (IE: <span class="notranslate">Git</span> Hub, Bit Bucket, etc.) cuando se manejen solicitudes de clonación, push y pull. Sin embargo, todavía necesita configurar las opciones por proyecto, lo que puede hacerse abriendo las <a href="../../Settings/Game_Options.htm">Opciones Principales</a> y haciendo clic en la opción <strong>Activar Control de Fuentes</strong>. Esto activará el SCM para el proyecto actual.</p>
+  <p><img alt="Enable Source Control" class="center" src="../../assets/Images/IDE Tools/SCM_EnableSourceControl.png">Una vez que haya habilitado el control de código fuente (y lo haya aplicado) aparecerá un nuevo menú contextual en la parte superior del IDE con la siguiente opción (cada una
+    de las cuales se explica con más detalle en el resto de las secciones de este tutorial):</p>
+  <p><img class="center" src="../../assets/Images/IDE Tools/SCM_ContextMenu.png" /></p>
+  <p class="note"><strong>NOTA</strong>: Si necesita volver a editar los detalles de autenticación, simplemente haga doble clic en la entrada y se abrirá la ventana de detalles para que pueda editarlos, pero no podrá cambiar el nombre de la URL. Si necesita cambiar la URL, tendrá que
+    eliminar los datos de autenticación y volver a añadirlos. Para eliminar los datos de autenticación, haga clic en el botón de cierre situado a la izquierda de la fila en la ventana principal de Preferencias.</p>
+  <p class="note"><img alt="Delete SSH Keypairs" class="center" src="../../assets/Images/IDE Tools/SCM_DeleteSSH.png" /></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Source_Control.htm">Control de la fuente</a></div>
+        <div style="float:right">Siguiente: <a href="Repository_Options.htm">Opciones de repositorio</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Setting Up <span class="notranslate">GIT</span>
+<span class="notranslate">GIT</span>
+-->
+  <!-- TAGS
+source_control_setup_git
+-->
+</body>
+</html>

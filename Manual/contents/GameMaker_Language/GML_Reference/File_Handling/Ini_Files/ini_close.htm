@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_close" />
+  <meta name="rh-index-keywords" content="ini_close" />
+  <meta name="search-keywords" content="ini_close" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_close</h1>
+  <p>Esta función debe ser llamada en el momento en que se termina de leer o escribir en cualquier archivo ini abierto. Si no utiliza la función después de haber utilizado cualquiera de las funciones de escritura ini, entonces no se escribirá nada en el disco, ya que la información del archivo se mantiene
+    en la memoria hasta que se llama a esta función, que fuerza la escritura. Si intentas abrir un ini sin haber cerrado previamente otro (o el mismo) también obtendrás un error.</p>
+  <p>La función también devolverá una cadena con el archivo ini codificado en ella. Esta cadena puede guardarse en un servidor y/o utilizarse de nuevo junto con la función <a href="ini_open_from_string.htm"><tt>ini_open_from_string()</tt></a> para volver a crear el ini.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ini_close();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> score = ini_read_real(&quot;save1&quot;, &quot;score&quot;, 0);<br> ini_close();
+  </p>
+  <p>Esto abrirá 'savedata.ini' y establecerá la puntuación al valor bajo la sección &quot;save1&quot; con la clave &quot;score&quot; en ella, luego cerrará el .ini de nuevo. Si no hay ningún valor en &quot;save1&quot;, &quot;score&quot; o no hay
+    &quot;savedata.ini&quot; presente, la puntuación se establecerá en 0 y se creará un nuevo archivo ini.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Siguiente: <a href="ini_write_real.htm">ini_write_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_close
+-->
+  <!-- TAGS
+ini_close
+-->
+</body>
+</html>

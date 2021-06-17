@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_density</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_density" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_density" />
+  <meta name="search-keywords" content="physics_fixture_set_density" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_density</h1>
+  <p>La densidad de algo se define como su masa por unidad de volumen, lo que básicamente significa <i>la cantidad de masa que cabe en el espacio que ocupa en el mundo</i>. Así, un globo tendría una densidad baja ya que tiene poca masa que ocupa un gran espacio,
+    mientras que una barra de plomo tendría una densidad alta, ya que tiene una gran masa, pero ocupa poco espacio.</p>
+  <p><img alt="Physics density illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_density_image.png">En el mundo físico de <span class="notranslate">GameMaker Studio 2</span> 2D, la masa se calcula automáticamente
+    a partir de los valores que introduzcas para la <b>densidad</b> y por la <b>superficie</b> de la forma que definas para el accesorio. Esto tendrá un impacto directo en la cantidad de inercia de un accesorio tiene, así como la forma en que reacciona a las colisiones y las fuerzas, por lo que
+    si haces una forma pequeña con una densidad alta tendrá una masa muy grande (como una barra de plomo), pero si defines una forma grande con una densidad baja tendrá una masa mucho menor (como un globo).</p>
+  <p class="note"><b>NOTA</b>: Si desea que la instancia que va a recibir el accesorio sea <strong>estática </strong>(es decir, inmóvil en el mundo del juego), entonces la densidad debe establecerse en 0, dándole esencialmente una densidad infinita.</p>
+  <p class="note">NOTA: Un accesorio estático puede hacerse <strong>cinemático</strong> (es decir, puede moverse pero sin los efectos de la fuerza o la gravedad) haciendo que tenga una densidad de 0 y luego estableciendo el <span class="inline"><a href="../Physics_Variables/phy_speed_x.htm"><span style="font-size:14px;">phy_speed_x</span>
+    , <span class="inline"><a href="../Physics_Variables/phy_speed_y.htm"><span style="font-size:14px;">phy_speed_y</span>
+    o <span class="inline"><a href="../Physics_Variables/phy_angular_velocity.htm"><span style="font-size:14px;">phy_angular_velocity</span>
+     variables.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_set_density(fixture, density)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>el índice de la luminaria</td>
+      </tr>
+      <tr>
+        <td>densidad</td>
+        <td>la densidad del accesorio calculada en kg/m²</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_fixture_set_density(fix_Balloon, 0.1);</p>
+  <p>El código anterior establecerá la densidad del accesorio indexado en &quot;fix_Ballon&quot; a 0,1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_density
+-->
+  <!-- TAGS
+physics_fixture_set_density
+-->
+</body>
+</html>

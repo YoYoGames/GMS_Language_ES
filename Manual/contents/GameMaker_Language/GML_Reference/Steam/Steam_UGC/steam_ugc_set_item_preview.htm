@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_set_item_preview</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_set_item_preview" />
+  <meta name="rh-index-keywords" content="steam_ugc_set_item_preview" />
+  <meta name="search-keywords" content="steam_ugc_set_item_preview" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_set_item_preview</span></h1>
+  <p>Esta función establecerá la imagen de vista previa que se utilizará para el artículo dado. La imagen debe ser suministrada como un archivo en formato PNG, JPG o GIF con un tamaño máximo de 1MB. La ruta de la imagen debe ser una ruta relativa en el save are <i>o en</i> el game
+    (es decir, un archivo incluido). El controlador de actualización es el valor devuelto al llamar a la función <a href="steam_ugc_start_item_update.htm"><tt><span class="notranslate">steam_ugc_start_item_update</span>()</tt></a>. La función devolverá <tt>true</tt> si se ha accedido a la API con éxito
+    y <tt>false</tt> si hubo un problema.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_set_item_preview</span>(ugc_update_handle, preview);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ugc_update_handle</td>
+        <td>El identificador único para el UGC que se va a actualizar.</td>
+      </tr>
+      <tr>
+        <td>ver</td>
+        <td>La imagen de vista previa (JPG, GIF o PNG - tamaño máximo de 1MB) que se utilizará para el artículo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var app_id = <span class="notranslate">steam_get_app_id</span>();<br> var updateHandle = <span class="notranslate">steam_ugc_start_item_update</span>(app_id, global.Publish_ID);<br> <span class="notranslate">steam_ugc_set_item_title</span>(updateHandle, &quot;¡Mi artículo del taller(3)!&quot;);<br> steam_ugc_set_item_description( updateHandle, &quot;probando
+    taller...&quot;);<br> steam_ugc_set_item_visibility(updateHandle, ugc_visibility_public);<br> var tagArray;<br> tagArray[0] = &quot;Test&quot;;<br> tagArray[1] = &quot;New&quot;;<br> steam_ugc_set_item_tags( <span class="notranslate">updateHandle</span>, tagArray);<br> steam_ugc_set_item_preview <span class="notranslate">(</span>updateHandle,
+    &quot;promo.jpg&quot;);<br> steam_ugc_set_item_content(updateHandle, &quot;WorkshopContent1&quot;);<br> requestId = steam_ugc_submit_item_update(updateHandle, &quot;Version 1.2&quot;);</p>
+  <p>El código anterior obtiene el ID del juego y lo utiliza junto con un ID de archivo publicado previamente para generar un controlador de actualización para el elemento. Este manejador se utiliza entonces para actualizar varias piezas de información antes de que la actualización sea enviada a los servidores de Workshop
+    del taller.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Siguiente: <a href="steam_ugc_submit_item_update.htm"><span class="notranslate">steam_ugc_submit_item_update</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_set_item_preview
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_set_item_preview
+-->
+</body>
+</html>

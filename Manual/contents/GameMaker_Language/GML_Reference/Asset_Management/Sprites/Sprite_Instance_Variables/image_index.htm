@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>índice_de_imagen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_index" />
+  <meta name="rh-index-keywords" content="image_index" />
+  <meta name="search-keywords" content="image_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>índice_de_imagen</h1>
+  <p>Un sprite se compone de una o más <i>sub-imágenes</i> que pueden hacer que el sprite aparezca animado al cambiar de una a otra, o pueden ser cambiadas en código para dar diferentes &quot;estados&quot;, muy parecido a lo que tiene un botón en las ventanas.
+    Si el sprite está animado, puedes obtener el fotograma actual de la animación comprobando la variable <tt>image_index</tt>, o si quieres cambiar el estado de un sprite estático, puedes seleccionar una nueva sub-imagen ajustando esta variable a la sub-imagen deseada
+    deseada del sprite. Ten en cuenta que para que los cambios en esta variable sean visibles, la instancia debe <i>no</i> tener ningún evento de dibujo (y así <span class="notranslate">GameMaker Studio 2</span> dibujará por defecto el sprite) o ser dibujado usando una de las funciones de dibujo como
+    <a href="../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>dibujar_self()</tt></a> o <a href="../../../Drawing/Sprites_And_Tiles/draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a> (suministrando el image_index en el argumento apropiado).</p>
+  <p>Tenga en cuenta que al establecer esta variable directamente en un fotograma <em>no</em> se activarán los mensajes de difusión que puedan estar presentes en ese fotograma.</p>
+  <p>También hay que tener en cuenta que mientras se usan los sprites de animación esquelética, todavía se pueden obtener y establecer los valores de <tt>image_index</tt> - ver la función <a href="../Skeletal_Animation/Animation/skeleton_animation_get_duration.htm"><tt>skeleton_animation_get_duration()</tt></a> para
+    ejemplos de cómo hacerlo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">image_index;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (image_speed &gt; 0)<br> {
+    <br> si (image_index &gt;= image_number - 1) instance_destroy();<br> }
+  </p>
+  <p>El código anterior comprueba si el sprite está animando, y si lo está entonces comprueba si el image_index actual está en el último fotograma y en ese caso destruye la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="image_number.htm">número_de_imagen</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_index
+-->
+  <!-- TAGS
+image_index
+-->
+</body>
+</html>

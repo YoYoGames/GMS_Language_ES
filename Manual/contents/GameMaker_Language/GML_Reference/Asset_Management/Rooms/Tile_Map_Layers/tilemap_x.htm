@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_x" />
+  <meta name="rh-index-keywords" content="tilemap_x" />
+  <meta name="search-keywords" content="tilemap_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_x</h1>
+  <p>Esta función controla la posición a lo largo del eje x de la habitación del elemento de mapa de azulejos del activo en la capa. Se le da el ID del elemento de mapa de azulejos (que se obtiene cuando se crea un elemento de mapa de azulejos utilizando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    o al utilizar la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), y luego establece el valor x a utilizar (basado en las coordenadas de la habitación).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_x(tilemap_elemento_id, x);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x para el mapa de azulejos</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> tilemap_x(map_id, irandom(room_width));</p>
+  <p>El código anterior obtiene el valor del ID del activo del mapa de azulejos asignado a la capa &quot;Asset_sky&quot; y luego establece su posición x a un valor aleatorio entre 0 y el ancho de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_y.htm">tilemap_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_x
+-->
+  <!-- TAGS
+tilemap_x
+-->
+</body>
+</html>

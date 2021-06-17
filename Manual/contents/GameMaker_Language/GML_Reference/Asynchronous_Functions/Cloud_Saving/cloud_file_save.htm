@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>guardar_archivo_en_la_nube</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for cloud_file_save" />
+  <meta name="rh-index-keywords" content="cloud_file_save" />
+  <meta name="search-keywords" content="cloud_file_save" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>guardar_archivo_en_la_nube</h1>
+  <p>Esta función enviará un archivo al servicio de nube elegido para su almacenamiento. La función devolverá un valor de <b>identificación</b> único que deberá ser utilizado en el evento asíncrono apropiado para identificar el mapa DS que se devuelve como &quot;call back&quot;
+    del servicio en la nube. El archivo debe contener <i>toda</i> la información que necesites guardar para tu juego, ya que sólo puedes almacenar un único &quot;blob de datos&quot; en la nube, y ejecutar esta función de nuevo sobrescribirá cualquier valor previamente almacenado
+    (al igual que el uso de la función <a href="cloud_string_save.htm"><tt>cloud_string_save()</tt></a> ). La descripción debe ser una cadena corta de información que describa el guardado, por ejemplo: &quot;Nivel2, Etapa2&quot;.</p>
+  <p>Para más información sobre los datos asíncronos devueltos, consulte la función <a href="cloud_synchronise.htm"><tt>cloud_synchronise()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">cloud_file_save(file, description);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>El archivo que se va a cargar (como una cadena).</td>
+      </tr>
+      <tr>
+        <td>descripción</td>
+        <td>Una breve descripción de los datos almacenados.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var t_str = &quot;&quot;;<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> t_str += string(global.Highscore[i]) + &quot;|&quot;<br> }
+    <br> var file = file_text_open_write(&quot;Highscores.txt&quot;);<br> file_text_write_string(file, t_str);<br> file_text_close(file);
+    <br> save_check = cloud_file_save(&quot;Highscores.txt&quot;, &quot;Current Highscores&quot;);</p>
+  <p>El código anterior crea una cadena a partir de los valores almacenados en la matriz global &quot;Highscores&quot; y luego escribe esta cadena en un archivo para su almacenamiento local. A continuación, el archivo se envía al servicio en la nube para su almacenamiento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cloud_Saving.htm">Ahorro en la nube</a></div>
+        <div style="float:right">Siguiente: <a href="cloud_synchronise.htm">cloud_synchronise</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+cloud_file_save
+-->
+  <!-- TAGS
+cloud_file_save
+-->
+</body>
+</html>

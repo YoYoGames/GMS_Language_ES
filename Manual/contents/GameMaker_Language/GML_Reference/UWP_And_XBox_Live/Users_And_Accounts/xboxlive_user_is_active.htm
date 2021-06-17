@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_user_is_active</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_user_is_active" />
+  <meta name="rh-index-keywords" content="xboxlive_user_is_active" />
+  <meta name="search-keywords" content="xboxlive_user_is_active" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_user_is_active</h1>
+  <p>Con esta función puedes comprobar si el ID de usuario dado está en la lista de usuarios que actualmente utilizan la consola, y la función devolverá <tt>true</tt> si lo está, o <tt>false</tt> en caso contrario. Puedes obtener un puntero de ID de usuario con la función <tt><a href="xboxlive_get_user.htm">xboxlive_get_user()</a></tt>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_user_is_active(user_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero ID del usuario a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.PlayerNum = 0;<br> global.Player_ID = array_create();<br> for(var i = 0; i &lt; xboxlive_get_user_count(); ++i;) <br> {
+    <br> var _uid = xboxlive_get_user(i);<br> if xboxlive_user_is_active(_uid)<br> {
+    <br> global.Player_ID[global.PlayerNum++] = _uid;<br> }
+    <br> }
+  </p>
+  <p>El código anterior recorre las cuentas de usuario y comprueba si alguna de ellas está activa. Si lo están, su ID de usuario se añade a un array global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_user_is_remote.htm">xboxlive_user_is_remote</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_user_is_active
+-->
+  <!-- TAGS
+xboxlive_user_is_active
+-->
+</body>
+</html>

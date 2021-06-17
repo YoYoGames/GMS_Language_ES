@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_find_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_find_value" />
+  <meta name="rh-index-keywords" content="ds_list_find_value" />
+  <meta name="search-keywords" content="ds_list_find_value" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_find_value</h1>
+  <p>Con esta función se puede comprobar la posición de la lista dada y se devolverá el valor mantenido dentro de la lista para esa posición. Tenga en cuenta que si da una posición que está fuera del tamaño de la lista dada (por ejemplo, la posición 11 en una lista de 10 valores) entonces la función
+    puede devolver <tt>undefined</tt> <i>o</i> 0. Esto se debe a que cuando se crea la lista, internamente las primeras entradas de la lista se ponen a 0 para minimizar los problemas de rendimiento al añadir inicialmente elementos a la lista (aunque la función <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a>    devolverá 0 en una lista recién creada). Si desea asegurarse de que la lista está &quot;realmente&quot; vacía al crearla, debe llamar a <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a> después de crear la lista, con lo que
+    significa que cualquier valor devuelto para las ranuras de la lista sin rellenar será <tt>indefinido</tt>, lo que puede comprobar de forma consistente utilizando la función <a href="../../Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a> función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_find_value(id, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la lista a utilizar.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>La posición en la que buscar, donde 0 corresponde al principio de la lista y la posición final es ds_list_size(id)-1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real, Cadena o Indefinido</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">val = ds_list_find_value(list, ds_list_size(list) - 1);</p>
+  <p>El código anterior comprueba la lista indexada en la variable &quot;list&quot; en la última posición de la lista y almacena el valor devuelto en la variable &quot;val&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_insert.htm">ds_list_insert</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_find_value
+-->
+  <!-- TAGS
+ds_list_find_value
+-->
+
+</body></html>

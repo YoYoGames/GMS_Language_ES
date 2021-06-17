@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>reinicio_del_juego</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_restart" />
+  <meta name="rh-index-keywords" content="game_restart" />
+  <meta name="search-keywords" content="game_restart" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>reinicio_del_juego</h1>
+  <p>Con esta función puedes reiniciar el juego. Esto es esencialmente lo mismo que ejecutar el juego por primera vez y por lo tanto el <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Evento de Inicio de Juego</a> se activará, <i>así</i> como el <a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">Evento de Fin de Juego</a>. Sin embargo, debe tenerse en cuenta que ciertas cosas <b>no</b> se reiniciarán cuando se llame a esta función:</p>
+  <ul class="colour">
+    <li>Las variables globales no se reiniciarán a menos que se codifiquen explícitamente como tales - por ejemplo, la variable global incorporada <tt>puntuación</tt> no comenzará a cero después de un reinicio del juego si ya ha sido modificada en el juego.</li>
+    <li>El estado de la GPU no se modificará (por lo que si has establecido el color de dibujo o el alfa, por ejemplo, se mantendrá en el valor modificado).</li>
+    <li>La velocidad del juego se mantendrá en lo que hayas establecido en tu código de juego (si lo has cambiado, este cambio se perpetuará).</li>
+    <li>Cualquier activo del Navegador de Activos que haya sido cambiado en tiempo de ejecución dentro del juego - por ejemplo si cambias el origen de un recurso de sprite o cambias la posición de un recurso de ruta - <i>no</i> será restablecido.</li>
+    <li>Los recursos dinámicos como los buffers, las superficies, las estructuras de datos o los sprites importados tampoco se limpiarán o eliminarán (aunque puede perder las referencias a ellos, así que tenga cuidado cuando utilice esta función de usar referencias globales para el recurso dinámico,
+      o limpiarlas antes de llamar a la función).</li>
+    <br />
+  </ul>
+  <h4>Sintaxis:</h4>
+  <p class="code">game_restart();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si keyboard_check_pressed(ord(&quot;R&quot;)) game_restart();</p>
+  <p>Esto reiniciaría el juego cuando el jugador pulsara la tecla &quot;R&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Game_Control.htm">Control general del juego</a></div>
+        <div style="float:right">Siguiente: <a href="game_load.htm">game_load</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_restart
+-->
+  <!-- TAGS
+game_restart
+-->
+</body>
+</html>

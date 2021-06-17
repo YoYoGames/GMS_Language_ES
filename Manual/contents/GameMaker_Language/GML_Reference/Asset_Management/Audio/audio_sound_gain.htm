@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_gain" />
+  <meta name="rh-index-keywords" content="audio_sound_gain" />
+  <meta name="search-keywords" content="audio_sound_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_gain</h1>
+  <p>Con esta función se puede hacer un fundido de entrada o salida de un sonido durante un tiempo determinado, o se puede utilizar para ajustar la ganancia del sonido de forma instantánea. El tiempo se mide en milisegundos, y la función requiere que se introduzca un nivel final de ganancia para que el sonido haya
+    que el sonido haya alcanzado al final de ese tiempo. Esta ganancia puede estar entre 0 (silencio) y cualquier valor superior a 0, aunque normalmente se consideraría que el volumen máximo es 1. Se puede utilizar cualquier valor superior a 1 pero, dependiendo del sonido utilizado y de la plataforma a la que se compila
+    puede producirse una distorsión o recorte cuando se reproduce el sonido. Tenga en cuenta que la escala de ganancia es lineal, y para cambiar instantáneamente la ganancia, simplemente ponga el argumento de tiempo a 0.</p>
+  <p>Esta función afectará a <i>todas las</i> instancias del sonido que se estén reproduciendo actualmente en la sala si el índice es un recurso sonoro, y el volumen final será el volumen al que se reproducirán todas las instancias posteriores del sonido
+    sonido. Sin embargo, si ha utilizado el índice devuelto por una función como <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> sólo afectará a esa única instancia del sonido.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_sound_gain(índice, volumen, tiempo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sonido para el que se va a ajustar la ganancia.</td>
+      </tr>
+      <tr>
+        <td>volumen</td>
+        <td>Valor para el volumen de la música.</td>
+      </tr>
+      <tr>
+        <td>tiempo</td>
+        <td>La duración del cambio de ganancia en milisegundos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si val<br> {
+    <br> var snd = audio_play_sound(snd_fountain);<br> audio_sound_gain(snd, 0, 0);<br> audio_sound_gain(snd, 1, 5000);<br> }
+  </p>
+  <p>El código anterior comprueba una variable y si devuelve <tt>true</tt> asigna el índice de un sonido a reproducir a la variable local &quot;snd&quot;. Esta variable se utiliza entonces para reducir el volumen de ese sonido
+    sonido a 0 y subir el volumen al máximo durante 5 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_sound_get_gain.htm">audio_sound_get_gain</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_gain
+-->
+  <!-- TAGS
+audio_sound_gain
+-->
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_speed" />
+  <meta name="rh-index-keywords" content="sprite_set_speed" />
+  <meta name="search-keywords" content="sprite_set_speed,spritespeed_framespergameframe,spritespeed_framespersecond" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_speed</h1>
+  <p>Esta función se puede utilizar para establecer la velocidad y el tipo de animación base como para el recurso sprite. Esto se establece normalmente en el <a href="../../../../../The_Asset_Editors/Sprites.htm">Editor de Sprite</a>, pero puede haber momentos en los que se requiere
+    que lo establezca manualmente para un recurso de sprite dado. Necesitas suministrar el índice del sprite a establecer, la velocidad de la animación y el tipo de velocidad de la animación a aplicar. El tipo de velocidad de animación puede ser cualquiera de las siguientes constantes:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespersecond</span></td>
+        <td>El sprite se definió con animación en <i>cuadros por segundo</i>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">spritespeed_framespergameframe</span></td>
+        <td>El sprite se definió con en la animación en <i>fotogramas por cuadro de juego</i>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> La selección del tipo de velocidad que se va a utilizar para calcular las animaciones es muy importante, ya que hay una gran diferencia entre las dos opciones. Los dos ejemplos siguientes ilustran esta diferencia:</p>
+  <ul class="colour">
+    <li>Si tienes un sprite que dibuja 1 fotograma por <i>segundo</i> y estableces la velocidad de la imagen en 0,5, se dibujará a 0,5 fotogramas por segundo. Si la velocidad de fotogramas del juego es de 60 fotogramas por segundo, el sprite dibujará 1 fotograma por cada 120
+      fotogramas del juego.</li>
+    <li>Si tienes un sprite que dibuja 1 fotograma por <i>fotograma del</i> juego y estableces la velocidad de la imagen en 0,5, dibujará 0,5 fotogramas por fotograma del juego. Si la velocidad de fotogramas del juego es de 60 fotogramas por segundo, el sprite dibujará 30 fotogramas por
+      cada 60 fotogramas del juego.</li>
+  </ul>
+  <p>Puedes encontrar el valor de la velocidad usada para la animación del sprite usando la función <a href="../Sprite_Information/sprite_get_speed.htm"><tt>sprite_get_speed()</tt></a>y puedes obtener el tipo de velocidad de la animación usando 
+    <a href="../Sprite_Information/sprite_get_speed_type.htm"><tt>sprite_get_speed_type()</tt></a>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Esta función afectará al <b>recurso</b> sprite, por lo que cualquier cambio que realice con esta función afectará a <b>todas las</b> instancias que estén utilizando el sprite y a todas las futuras
+    instancias futuras.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_set_speed(index, speed, type)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sprite para obtener el tipo de animación de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Constante (ver arriba)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">sprite_set_speed(sprite_index, 10, spritespeed_framespersecond);</p>
+  <p>El código anterior establece la velocidad de animación base para el sprite asignado a la instancia a 10 cuadros por segundo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_delete.htm">sprite_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_speed
+spritespeed_framespergameframe
+spritespeed_framespersecond
+-->
+  <!-- TAGS
+sprite_set_speed
+-->
+</body>
+</html>

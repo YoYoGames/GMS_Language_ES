@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_exists" />
+  <meta name="rh-index-keywords" content="part_emitter_exists" />
+  <meta name="search-keywords" content="part_emitter_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_exists</h1>
+  <p>Con esta función puedes comprobar si el emisor de partículas indexado existe en el sistema dado o no. Tenga en cuenta que si la variable que se comprueba es una variable no inicializada (a la que un emisor de partículas debería tener asignado su índice)
+    se producirá un error.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_emitter_exists(ps, ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El sistema de partículas para buscar un emisor.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del emisor a buscar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if part_emitter_exists(sname, p_emit1)<br> {
+    <br> part_emitter_burst(sname, p_emit1, part_1, 30);<br> }
+  </p>
+  <p>El código anterior buscará el emisor indexado en la variable &quot;permiso&quot; y si existe, hará estallar 30 partículas de él.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Emitters.htm">Emisores de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_emitter_create.htm">part_emitter_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_exists
+-->
+  <!-- TAGS
+part_emitter_exists
+-->
+</body>
+</html>

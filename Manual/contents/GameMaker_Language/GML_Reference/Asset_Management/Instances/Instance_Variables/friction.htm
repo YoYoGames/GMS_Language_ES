@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fricción</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable friction" />
+  <meta name="rh-index-keywords" content="friction" />
+  <meta name="search-keywords" content="friction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fricción</h1>
+  <p><tt>La fricción</tt> es una de las propiedades &quot;incorporadas&quot; que pueden tener las instancias y puede utilizarse para ralentizar la instancia en el tiempo cuando el <a href="speed.htm"><tt>velocidad</tt></a> es distinto de cero. Funciona simplemente restando una cantidad
+    de la velocidad a cada paso hasta que el objeto tenga una velocidad de 0, por lo que si la fricción se establece, por ejemplo, en 0,1 y la velocidad de la instancia es de 1 (1 píxel por paso), se ralentizará y se detendrá después de que hayan pasado 10 pasos. Tenga en cuenta también que la fricción se aplica
+    se aplica a las velocidades positivas y negativas por igual, con el resultado neto de que el objeto tiene una velocidad de 0 después de un tiempo determinado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">fricción;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si abs(velocidad) &gt; 0<br> {
+    <br> fricción = 0,05;<br> }
+    <br> si no
+    <br> {
+    <br> fricción = 0;<br> }
+  </p>
+  <p>El código anterior sólo aplicará la fricción si la velocidad <a class="glossterm" data-glossterm="absoluto" href="#">absoluta</a> de la instancia es superior a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variables.htm">Instance Variables</a></div>
+        <div style="float:right">Siguiente: <a href="gravity.htm">gravedad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+friction
+-->
+  <!-- TAGS
+friction
+-->
+
+</body></html>

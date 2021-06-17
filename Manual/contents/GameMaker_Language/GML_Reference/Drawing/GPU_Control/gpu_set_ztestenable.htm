@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_ztestenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_ztestenable" />
+  <meta name="rh-index-keywords" content="gpu_set_ztestenable" />
+  <meta name="search-keywords" content="gpu_set_ztestenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_ztestenable</h1>
+  <p>Esta función puede usarse para activar o desactivar la prueba del búfer z, afectando a cómo se dibujarán las cosas (en general, sólo es útil cuando se trabaja con proyectos 3D). Esencialmente, por defecto cuando la prueba z está desactivada y tienes dos objetos dibujando en el mismo espacio,
+   <i>ambos</i> objetos se renderizarán sin tener en cuenta si uno de ellos sobredibujará al otro, resultando en llamadas de dibujo innecesarias. Si activas esta opción, el buffer z se comprueba para ver si un objeto será &quot;visible&quot; y no se dibuja si no lo es.
+    no lo es. Ten en cuenta que este es el comportamiento <i>por defecto</i>, pero puedes cambiarlo modificando el tipo de comparación utilizado para la comprobación del z-buffer (ver la función <a href="gpu_get_zfunc.htm"><tt>gpu_set_zfunc()</tt></a>.</p>
+  <p>Por defecto, la comprobación del búfer z está desactivada<tt>(false</tt>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_ztestenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Habilitar o deshabilitar la prueba del búfer z<tt>(verdadero</tt> o <tt>falso</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gpu_set_ztestenable(true);<br> draw_sprite(spr_Background, 0, 0, 0);<br> gpu_set_ztestenable(false);
+  </p>
+  <p>El código anterior activa la prueba del buffer z para dibujar un sprite de fondo y luego la desactiva para continuar dibujando.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_zfunc.htm">gpu_set_zfunc</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_ztestenable
+-->
+  <!-- TAGS
+gpu_set_ztestenable
+-->
+</body>
+</html>

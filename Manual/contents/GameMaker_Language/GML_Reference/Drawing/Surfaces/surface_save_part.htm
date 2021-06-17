@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_guardar_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_save_part" />
+  <meta name="rh-index-keywords" content="surface_save_part" />
+  <meta name="search-keywords" content="surface_save_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_guardar_parte</h1>
+  <p>Esta función guardará una parte de una superficie en el disco utilizando el nombre de archivo dado. La superficie <i>debe</i> guardarse como un archivo en formato <tt>*.png</tt>, y la posición (x,y) debe darse como coordenadas locales a la superficie, teniendo en cuenta que la esquina superior izquierda de la superficie es siempre (0,0).
+    de la superficie es siempre (0,0).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_save_part(surface_id, fname, x, y, width, height);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a establecer como objetivo de dibujo.</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>El nombre del archivo de imagen guardado.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x inicial dentro de la superficie.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición inicial y dentro de la superficie.</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El ancho de la pieza a guardar.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura de la pieza a guardar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;S&quot;)<br> {
+    <br> surface_save_part(surf, &quot;test.png&quot;, 0, 0, 100, 100);<br> }
+  </p>
+  <p>El código anterior comprobará si el usuario pulsa la tecla &quot;S&quot; en el teclado y si lo hace guardará en el disco una parte de la superficie indexada en la variable &quot;surf&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="draw_surface.htm">dibujar_superficie</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_save_part
+-->
+  <!-- TAGS
+surface_save_part
+-->
+</body>
+</html>

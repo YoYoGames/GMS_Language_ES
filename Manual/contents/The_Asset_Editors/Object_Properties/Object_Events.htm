@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Eventos de objetos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the events system and the different events in an object" />
+  <meta name="rh-index-keywords" content="Objects - Events" />
+  <meta name="search-keywords" content="events,object events,events list" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Eventos de objetos</h1>
+  <p>Entonces, ¿qué son los <strong>eventos</strong> de objeto? Básicamente, son momentos discretos en el bucle del juego en los que se hace que ocurran cosas en función de lo que hayas programado para ellos. <span class="notranslate">GameMaker Studio 2</span> trabaja con ciclos de estos eventos - desde el momento en que una
+    Desde el momento en que se inicia una habitación hasta el momento en que se termina, hay un bucle de juego que se ejecuta en cada <strong>paso </strong>una serie de eventos que se ejecutan o se comprueban, y usted puede optar por colocar el código o las acciones <span class="notranslate">de DnD™</span>en sus objetos que responden a estos eventos (un paso
+    es un momento en el tiempo del juego, gobernado por la configuración de la velocidad de la sala, y también puede ser llamado un <strong>marco</strong>) .</p>
+  <p>Veamos una configuración típica de objetos con eventos y código:</p>
+  <p><img alt="Object Editor Events View" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Events.png">Como puedes ver en nuestro objeto de ejemplo hay una serie de eventos listados a los que debería responder, pero inicialmente cuando creas
+    un objeto esta lista está vacía y usted debe decidir qué eventos necesita y qué instancias de ese objeto deben hacer cuando esos eventos se activan. Para añadir eventos al objeto, pulse el botón <em>Añadir Evento</em> que se encuentra en la parte inferior de la lista de eventos
+    lo que hará que aparezca la siguiente ventana:</p>
+  <p><img alt="Object Editor Events List" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_EventList.png">Esta es la lista de todos los eventos básicos y categorías de eventos a los que un objeto puede responder, y dentro de cada categoría hay sub
+    eventos para refinar aún más los comportamientos. Por ejemplo, si hace clic en la categoría de eventos<strong>Key Press</strong> <img alt="Key Press Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardPress.png" width="16"> 
+    aparece otra ventana con los eventos que permiten seleccionar a <em>qué </em>tecla debe responder el objeto. Una vez que hayas seleccionado tu evento, la ventana de código (o ventana del espacio de trabajo <span class="notranslate">de DnD™</span>) se encadenará a él y se abrirá a la derecha.
+    Ahora puedes editar el código para dar a tu objeto un comportamiento o reacción específica a ese evento.</p>
+  <p>Puede pulsar el botón derecho del ratón <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" style=""> en cualquier evento que se haya añadido a un objeto para obtener las siguientes opciones de menú:</p>
+  <p><img alt="Object Editor Events Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_RMBMenu.png">Estas opciones son:</p>
+  <ul class="colour">
+    <li><strong>Añadir evento</strong> - Añadir un nuevo evento de la lista de eventos.</li>
+    <li><strong>Cortar </strong>/ <strong>Copiar </strong>/ <strong>Pegar Eventos</strong> - Cortar, copiar o pegar el evento seleccionado. También puede utilizar los atajos de teclado estándar: <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">X</span>, <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">C</span>, y <img alt="CTRL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <span class="inline">V</span>.</li>
+    <li><strong>Duplicar Evento</strong> - Duplica el evento elegido. Esto tomará el contenido del evento elegido y lo duplicará en otro evento que usted especifique.</li>
+    <li><strong>Cambiar Evento</strong> - Cambiar el evento. Esto le pedirá que elija otra categoría de evento y, una vez seleccionado, el contenido del evento actual se cambiará al nuevo evento (eliminando el evento original en el proceso).</li>
+    <li><strong>Convertir a Ar</strong> rastrar <span class="notranslate">y</span><strong> <span class="notranslate">Soltar</span></strong> / Código - Los eventos de objeto se crearán utilizando el método elegido al crear el proyecto, ya sea mediante código o mediante acciones de <span class="notranslate">Arrastrar y Soltar™</span>. Con esta opción puede convertir de uno a otro, independientemente
+      del tipo de proyecto.</li>
+    <li><strong>Borrar Evento</strong> - Borrar el evento (o eventos).</li>
+  </ul>
+  <p>Al eliminar eventos, puede utilizar <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para seleccionar varios eventos y eliminarlos todos juntos.
+    Cada objeto que se crea tiene su propia lista discreta de eventos que se añaden a él desde el <strong>Editor de Objetos</strong>. Estos eventos se dividen en dos categorías:</p>
+  <ul class="colour">
+    <li>los que ejecutan cada paso del juego</li>
+    <li>las que se &quot;activan&quot; por un evento del juego, como que la instancia llegue al borde de la sala o que se pulse el teclado o el ratón.</li>
+  </ul>
+  <p>La lista completa de eventos se presenta a continuación:</p>
+  <p> </p>
+  <p><img alt="Create Event Icon" src="../../assets/Images/Icons/Icon_Create.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Crear</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Este evento ocurre cuando se crea por primera vez una instancia del objeto, y es lo primero que ocurre dentro de una instancia colocada en la habitación a través del Editor de Habitaciones cuando se entra en una habitación. Esto significa que este evento es el lugar ideal para inicializar
+      inicializar<span class="glossextra">variables</span>, iniciar <a href="../Timelines.htm">líneas de tiempo</a>, establecer <a href="../Paths.htm">rutas</a>, etc... y hacer cualquier otra cosa que generalmente
+      que por lo general sólo necesita hacerse una vez o sólo cuando una instancia se crea por primera vez en la sala. Si su objeto tiene alguna <strong>Variable de Objeto</strong> o <strong>Variable de Instancia</strong> añadida en el Editor de Objetos o en el Editor de Salas, entonces estas variables serán
+      inicializadas primero y luego se ejecutará el <strong>Evento de Creación</strong>.</p>
+    <p class="dropspot">Recuerde que puede modificar cualquier cosa que configure en el Evento de Creación desde el <a href="../Room_Properties/Layer_Properties.htm">Código de Creación de Instancia</a> en el Editor de Salas, ya que éste se ejecuta directamente después del evento de creación de la instancia y puede
+      puede usarse para crear <strong>Variables</strong> de Instancia o para anular cualquier variable añadida como Variables de Objeto o en el Evento de Creación actual.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Destroy Event Icon" src="../../assets/Images/Icons/Icon_Destroy.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Destruye</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">Este evento es el que se ejecuta cuando se destruye una instancia. A menudo se pasa por alto cuando se añaden comportamientos a los objetos, pero puede ser muy útil, por ejemplo creando efectos de explosión o de partículas cuando se mata a un enemigo, o para reaparecer
+      una nueva instancia del objeto en otra parte de la sala, o incluso para añadir puntos a una puntuación.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Clean Up Event Icon" src="../../assets/Images/Icons/Icon_Destroy.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Limpieza</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><span>Este evento será llamado después de cualquier evento que elimine una instancia del objeto de la sala. Por lo tanto, se activará si:</span></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><span>la instancia se destruye</span></li>
+      <li class="dropspot"><span>la sala termina</span></li>
+      <li class="dropspot"><span>el juego termina</span></li>
+    </ul>
+    <p class="dropspot"><span>Está diseñado para que lo utilices para &quot;limpiar&quot; los recursos dinámicos que puedas tener en tu juego (como superficies, estructuras de datos, etc...) o para realizar cualquier tarea que necesites que se realice una vez que <em>la </em>instancia sea eliminada del juego de cualquier manera.</span></p>
+    <p class="dropspot"><span>Ten en cuenta que este evento será llamado <em>instantáneamente </em>después del evento que lo activó, pero la instancia no será realmente eliminada del juego <strong>hasta el final del evento actual</strong>. Por ejemplo, si llamas a <span class="inline">instance_destroy()</span> en el Evento de <em>Paso</em>, entonces el Evento de Destrucción será llamado, luego el Evento de Limpieza, y luego el resto del <em>Evento de Paso terminará de ejecutarse</em>. Esto significa que cualquier código que tengas después de la llamada a <span class="inline">instance_destroy()</span> se seguirá ejecutando y será una causa potencial de errores si has limpiado una estructura de datos o algún otro recurso que el código requiera, por lo que hay que tener cuidado al usar este evento.</span>
+    </p>
+    <p> </p>
+  </div>
+  <p><img alt="Alarm Event Icon" src="../../assets/Images/Icons/Icon_Alarm.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Alarma</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">La categoría de alarmas está dividida en 12 eventos, uno por cada una de las posibles alarmas que se pueden establecer en una instancia. Así, al hacer clic en la categoría <em>Añadir </em>alarma, se presenta esta ventana:</p>
+    <p class="dropspot"><img alt="Object Editor Alarm Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_AlarmEvents.png">Aquí selecciona la alarma que desea crear y, una vez hecho esto, verá que se ha añadido a la ventana de eventos
+      para que puedas añadirle código de forma normal. ¿Pero qué es una alarma? Bueno, es un evento especial que no hace nada a menos que la alarma haya sido previamente establecida, y entonces esperará hasta que esa alarma haya contado hasta 0 antes de ejecutar las acciones
+      o código que hayas añadido en ella.</p>
+    <p class="dropspot">Una vez que la alarma ha llegado a 0 y se ha ejecutado el código, entonces contará hacia abajo hasta -1, donde permanecerá hasta que se establezca de nuevo (lo que significa que usted puede comprobar el valor de una alarma para ver si es mayor que -1, lo que le dirá si se está ejecutando o no). Así, digamos que
+      usted establece <span class="inline">alarm[0]</span> en el evento de creación del objeto a 30, esto significa que <span class="notranslate">GameMaker Studio 2</span> contará 30 pasos de juego antes de ejecutar las acciones o el código que se colocan en el evento <span class="inline">alarm[0]</span>. Tenga en cuenta que el establecimiento de una alarma a 0 <em>no </em>se ejecutará el código de la alarma, ya que el evento se activa, pero la alarma se establece en -1 inmediatamente, por lo que el código se omite. Si necesitas que una alarma ejecute el siguiente paso, entonces debes ponerla a 1.</p>
+    <p class="dropspot">Esto puede ser muy útil ya que te permite poner en marcha cosas en momentos precisos, e incluso puedes hacer que se repitan ya que no hay nada que te impida poner una alarma en su propio evento. Imagina que tienes un monstruo y quieres que gire a la derecha cada
+      cada tres segundos... pues bien, en su evento de creación pondrías una alarma a la velocidad de la sala * 3 (si la velocidad de la sala es 30, eso son 30 pasos por segundo, así que multiplícalo por 3 y tendrás 3 segundos) y luego en el evento de alarma tendrías el código o
+      para establecer su dirección, así como la acción (o código) para establecer su alarma a la velocidad de la habitación * 3 de nuevo. De esta manera, puedes configurar simples bucles de juego donde las cosas sólo suceden en intervalos específicos.</p>
+    <p class="dropspot">Cabe destacar que una alarma sin acciones o código en ella <em>no </em>tendrá cuenta atrás. Sin embargo, incluso con sólo un comentario y sin código o acciones, entonces la alarma continuará la cuenta atrás y se puede establecer y comprobar como lo haría normalmente.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Step Event Icon" src="../../assets/Images/Icons/Icon_Step.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Paso</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> divide el tiempo en <strong>pasos </strong>con la velocidad de la sala definiendo cuántos de estos pasos se supone que hay por segundo (un paso también puede ser llamado un <strong>cuadro</strong>). Un solo paso, es básicamente el bucle que se ejecuta
+      constantemente con todos los eventos que se comprueban y desencadenan como sea necesario mientras el juego se ejecuta, así que como se puede imaginar, el <strong>evento </strong>de paso es un evento que se comprueba cada paso del juego mientras la instancia existe.</p>
+    <p class="dropspot">El evento del paso se compone en realidad de tres sub eventos que se describen a continuación:</p>
+    <p class="dropspot"><img alt="Object Editor Step Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Step.png">Para la mayoría de las cosas el evento de paso estándar estará bien para usar, pero a veces quieres un poco más de control sobre qué código se ejecuta y en
+      en qué momento, por lo que para eso se proporcionan los eventos de paso <strong>Begin </strong>y <strong>End </strong>. Los tres se comprueban en cada paso, pero su orden nunca variará incluso si las futuras actualizaciones del motor de <span class="notranslate">GameMaker Studio 2</span> cambian otros
+      eventos, lo que significa que este es el único método fiable para asegurarse de que algo siempre sucede antes de otra cosa.</p>
+    <p class="dropspot">¿Para qué se puede utilizar el evento de paso? Bueno, se puede utilizar para acciones o código que necesita ser ejecutado continuamente. Por ejemplo, si un objeto debe seguir a otro, aquí se puede adaptar la dirección del movimiento hacia el objeto que estamos siguiendo
+      para que siga moviéndose suavemente detrás. Sin embargo, ten cuidado con este evento, y no pongas muchas acciones complicadas en el evento de paso de los objetos, especialmente si estás planeando tener muchas instancias del objeto en tu sala de juegos, ya que esto podría
+      ralentizar el juego. Muchas cosas pueden ser colocadas en alarmas, o configuradas para que se disparen usando algunos de los <strong>Otros </strong>eventos, en lugar de que sucedan todo el tiempo.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Collision Event Icon" src="../../assets/Images/Icons/Icon_Collision.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">Colisión</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot">Obviamente cuando se hace un juego, es muy importante que se sepa cuando dos (o más) instancias de un objeto han colisionado, y para ello tenemos el <strong>Evento de Colisión</strong>. Este es un evento que se coloca en un objeto y luego se especifica contra
+      qué otro objeto debe comprobar las colisiones.</p>
+    <p class="dropspot">Cuando no tienes la física activada, estas colisiones se calcularán en base a la máscara de los dos objetos (la máscara se define dentro de las propiedades del sprite, o se puede asignar independientemente en las propiedades del objeto) y si se solapan
+      o no. Ten en cuenta que si una de las instancias de la colisión no tiene asignada una máscara (o la máscara del sprite no está definida), <em>aunque esté dibujando algo</em> no se detectará ninguna colisión.</p>
+    <p class="dropspot">Si tienes activada <strong>la física </strong>, la colisión se basará en el tipo de <strong>forma de colisión</strong><em>(Fixture</em>) que hayas definido para el objeto en sus propiedades de física, al igual que su reacción a la colisión. Este
+      significa que puede no necesitar ningún código para tratar la colisión, pero este evento todavía necesitará tener al <em>menos un comentario en él </em>para que las colisiones sean detectadas.</p>
+    <p class="dropspot">Por último, cabe señalar que todas las colisiones se calcularán una vez por paso de juego antes de que se active el evento de colisión, de modo que cuando se ejecute el evento de colisión, todas las colisiones ya se habrán calculado y preasignado. Esto significa que
+      si creas una instancia en este evento y luego intentas comprobar una colisión con ella, la colisión no será detectada o resuelta hasta la siguiente <a class="glossterm" data-glossterm="iteración" href="#">iteración</a> del bucle del juego.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Keyboard Icon" src="../../assets/Images/Icons/Icon_Keyboard.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Teclado,</a>  <img alt="Keyboard Press Icon" src="../../assets/Images/Icons/Icon_KeyboardPress.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Prensa del Teclado,</a>  <img alt="Keyboard Release Icon" height="16" src="../../assets/Images/Icons/Icon_KeyboardRelease.png" style="cursor: nwse-resize;" width="15">    <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Liberación del teclado</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot">Dejar que el jugador controle los diferentes aspectos de su juego es muy importante, y para ello <span class="notranslate">GameMaker Studio 2</span> le proporciona una lista muy completa de eventos de teclado que pueden utilizarse en cualquiera de las tres categorías principales de teclado. Para la
+      categoría general de teclado, se dispara de forma continua en cada paso mientras la tecla seleccionada esté pulsada, mientras que los eventos de la categoría Pulsar y Soltar sólo se dispararán una vez cuando la tecla esté inicialmente pulsada o liberada.</p>
+    <p class="dropspot">Hay que tener en cuenta que los eventos de teclado se activan realmente en todas las instancias activas de una sala cada vez que se utiliza una tecla, pero sólo responderán las que tengan un evento definido para esa tecla en particular y se pueden crear múltiples eventos de teclado en
+      cualquier objeto y las instancias de ese objeto responderán a todos ellos mientras el juego se esté ejecutando.</p>
+    <p class="dropspot">Cuando añada cualquier evento de teclado a un objeto, se le presentará el menú de sub-evento de teclado donde puede especificar la tecla que va a comprobar:</p>
+    <p class="dropspot"><img alt="Object Editor Keyboard Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Keyboard.png">La mayoría de ellos son bastante obvios, pero vamos a repasar brevemente las secciones: en la parte superior tenemos las teclas de dirección
+      seguidas de las teclas modificadoras más usadas, luego el resto del teclado (dividido en más sub-secciones para que puedas obtener la tecla exacta requerida como <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55"> o <img alt="Insert Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Insert.png" width="55">) y finalmente dos sub-eventos muy especiales, <strong>Sin Tecla</strong> y <strong>Cualquier Tecla</strong>. Como sus nombres implican, estos son sub
+      eventos que comprueban cuando <em>no </em>se pulsa ninguna tecla o cuando se pulsa <em>cualquier </em>tecla. Tenga en cuenta que las teclas del teclado numérico sólo producen los eventos correspondientes cuando <strong>el Bloqueo Numérico </strong>está activado.</p>
+    <p class="dropspot">Los eventos de <strong>Pulsar </strong>y <strong>Soltar </strong>para el teclado son casi exactamente los mismos que el evento normal del teclado, excepto que en lugar de activarse continuamente, se activan una sola vez. Cuando el teclado registra por primera vez
+      que una tecla ha sido presionada generará un evento de Teclado <strong>Presionado</strong> (así como un evento de Teclado regular), y la primera vez después de eso donde una tecla ya no es detectada como presionada disparará un único evento de Liberación de <strong>Teclado</strong>.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt=" Mouse Icon" height="16" src="../../assets/Images/Icons/Icon_MouseEvent.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Ratón</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot">La categoría Ratón está separada en una serie de eventos que pueden ser seleccionados para darle un control más preciso sobre lo que está sucediendo en su juego. Aquí puedes ver exactamente cuáles son estos eventos:</p>
+    <p class="dropspot"><img alt="Object Editor Mouse Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Mouse.png">Los eventos de los botones de la izquierda <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">, de la derecha <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> y del medio <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> (ya sean <strong>normales</strong>, <strong>pulsados </strong>o <strong>liberados</strong>) funcionan todos
+      funcionan en la máscara de la instancia que tiene el evento. Lo que esto significa es que <span class="notranslate">GameMaker Studio 2</span> comprobará la posición del ratón en la sala cuando se usen esos botones contra las máscaras de colisión de las instancias que tienen un evento de ratón. Si
+      Si hay una &quot;colisión&quot; con el <a class="glossterm" data-glossterm="cuadro delimitador" href="#">cuadro</a> delimitador de la instancia <a class="glossterm" data-glossterm="cuadro delimitador" href="#">entonces el</a> evento se activará, así que asegúrese de que cualquier instancia con estos eventos tiene un sprite con una máscara de colisión válida
+      o que el objeto tenga un sprite de máscara seleccionado en las propiedades del objeto. Como sus nombres implican, estos eventos se activarán bien una vez cuando el botón del ratón elegido se pulse o suelte por primera vez, o bien de forma continua en cada paso mientras se mantenga el botón
+      se mantenga.
+    </p>
+    <p class="dropspot">Los eventos de entrada y salida del ratón también son similares a los eventos de botón en el sentido de que también dependen de la máscara de la instancia para funcionar, pero esta vez se activan cuando el ratón &quot;entra&quot; (toca) por primera vez la instancia o cuando el ratón &quot;sale&quot;
+      (deja de tocar) la instancia. Sin embargo, estos eventos no son continuos, y se activan sólo una vez por cada vez que el ratón entra o sale del objeto - por lo que son un método ideal para crear, por ejemplo, botones que necesitan cambiar cuando el ratón
+      antes de volver a la normalidad cuando se retira el ratón.</p>
+    <p class="dropspot">Finalmente tenemos otra sección para los eventos del ratón que se llama <strong>Ratón Global</strong>. En este submenú encontrarás una selección de eventos que sirven para registrar los eventos del ratón en instancias aunque el ratón no esté sobre ellas o incluso
+      cerca de ellas. Estos son eventos que se generan para <em>todas las </em>instancias y si hay acciones o código definido para el evento especificado entonces se ejecutará, independientemente de la posición del ratón dentro de la sala de juego.</p>
+    <p class="dropspot">Tenga en cuenta que en los dispositivos móviles o de pantalla táctil el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> también se puede utilizar para comprobar una pestaña de dedo en una pantalla táctil, y el botón derecho del ratón <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> se activa con un doble toque en la pantalla (este comportamiento se puede cambiar mediante un código).</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Gestures Icon" src="../../assets/Images/Icons/Icon_Gesture.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">Gestos</a></p>
+  <div class="droptext" data-targetname="drop-down18">
+    <p class="dropspot">Este evento es el que se activará cuando el usuario toque la pantalla (en el móvil) o haga clic y mueva el ratón (en el resto de plataformas). Estos eventos son similares a los eventos de ratón, en el sentido de que tienes versiones regulares y versiones <em>globales</em>.
+      Las versiones regulares de estos eventos sólo se activarán cuando los toques se produzcan en una instancia que tenga un sprite (o una máscara) y los toques se produzcan dentro de su <a class="glossterm" data-glossterm="cuadro delimitador" href="#">caja delimitadora</a>. Las versiones globales
+      de estos eventos, sin embargo, se activarán cuando el usuario toque <em>cualquier </em>parte de la pantalla.</p>
+    <p class="dropspot">Los eventos gestuales detectan lo siguiente:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Tap Icon" class="icon" src="../../assets/Images/Icons/Icon_Tap.png"> <strong>toques </strong>- cuando un usuario hace clic/toca y suelta rápidamente</li>
+      <li class="dropspot"><img alt="Drag Icon" class="icon" src="../../assets/Images/Icons/Icon_Drag.png"> <strong>arrastra </strong>- cuando un usuario toca/clica y lo mantiene y luego mueve su dedo/cursor</li>
+      <li class="dropspot"><img alt="Flick Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Flick.png" width="20"> <strong>flicks </strong>- cuando el usuario mueve y suelta un toque/clic en un solo movimiento</li>
+      <li class="dropspot"><img alt="Pinch Icon" class="icon" src="../../assets/Images/Icons/Icon_Pinch.png"> <strong>pellizcos </strong>- cuando el usuario tiene dos dedos en la pantalla y los mueve juntos/separados</li>
+      <li class="dropspot"><img alt="Rotate Icon" class="icon" src="../../assets/Images/Icons/Icon_Rotate.png"> <strong>gira </strong>- cuando el usuario tiene dos dedos en la pantalla y luego los gira alrededor de un punto</li>
+    </ul>
+    <p class="dropspot"><img alt="Object Editor Gesture Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Gesture.png">Los diferentes eventos contendrán siempre un mapa DS llamado &quot;<span class="inline">event_data</span>&quot;, que
+      contendrá una serie de pares clave/valor con datos sobre la posición y el movimiento del toque/clic. Para conocer todos los detalles de todos los subeventos disponibles y su funcionamiento, consulta la siguiente sección:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Gesture_Events.htm">El evento de los gestos</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Other Icon" height="16" src="../../assets/Images/Icons/Icon_Other.png" width="16"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#">Otros</a></p>
+  <div class="droptext" data-targetname="drop-down19">
+    <p class="dropspot">Hay una serie de eventos especiales que se pueden utilizar al crear juegos con <span class="notranslate">GameMaker Studio</span> 2 y que están agrupados en su mayoría bajo el evento Otros y se pueden seleccionar en el menú emergente de sub-eventos que aparece al seleccionarlo. Aquí tienes una
+      imagen de todos estos otros eventos:</p>
+    <p class="dropspot"><img alt="Object Editor Other Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_OtherEvents.png">Para más información sobre cada uno de los eventos que aparecen en la imagen superior, consulte la siguiente sección:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Other_Events.htm">Los otros eventos</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Draw Event" src="../../assets/Images/Icons/Icon_Draw.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down20" href="#">Dibujar</a></p>
+  <div class="droptext" data-targetname="drop-down20">
+    <p class="dropspot">Esta categoría de eventos es la que rige lo que se ve en la pantalla cuando se ejecuta el juego, y se divide en varios eventos discretos:</p>
+    <p class="dropspot"><img alt="Draw Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Draw.png">Como puede ver, la categoría de eventos de dibujo tiene varios tipos de eventos diferentes. <strong>Draw Begin</strong>, <strong>Draw </strong>y <strong>Draw End</strong> son los eventos de dibujo &quot;estándar&quot; que probablemente usarás más. Por defecto, el evento principal Draw siempre es llamado para cada instancia, independientemente de si tiene un sprite o no, aunque si marcas la instancia como invisible, el evento
+      no se activará (así que tenlo en cuenta si tienes alguna lógica de juego en el evento draw de un objeto invisible, ya que no se ejecutará). El evento de dibujo principal es también donde <span class="notranslate">GameMaker Studio 2</span> dibuja por defecto el sprite de la instancia cuando no hay código ni
+      acciones en el evento (es decir, usted no ha añadido en la lista de eventos para el objeto). El dibujo por defecto utiliza el sprite asociado con la instancia y dibujará eso con cualquier transformación establecida en el código o acciones aplicadas.</p>
+    <p class="dropspot">Los eventos de dibujado normales dibujan <em>antes </em>que los eventos de dibujado de <strong>la GU </strong>I y <em>entre </em>los eventos de <strong>pre-dibujado </strong>y <strong>post-dibujado </strong>, lo que significa que todo lo que se dibuja en este evento se dibuja por debajo del
+      del evento Draw <strong>GUI </strong>, independientemente de la capa (es decir, cualquier cosa dibujada en el evento Draw GUI siempre se dibujará por encima de cualquier cosa dibujada en el evento draw normal, independientemente del orden de las capas).</p>
+    <p class="dropspot">Tenga en cuenta que lo anterior es simplemente una visión general de cómo funcionan los Eventos de Sorteo, pero para conocer todos los detalles de todos los sub-eventos disponibles, consulte la siguiente sección:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Draw_Events.htm">El evento del sorteo</a></li>
+    </ul>
+    <p> </p>
+    <p> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Async Event" src="../../assets/Images/Icons/Icon_Async.png"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#">Asíncrono</a></p>
+  <div class="droptext" data-targetname="drop-down21">
+    <p class="dropspot">Esta categoría de eventos es especial en el sentido de que los eventos que contiene no son desencadenados por defecto por <span class="notranslate">GameMaker Studio 2</span>, sino por el final de alguna otra acción, como la carga de un archivo, o la respuesta de un servidor web. La categoría se divide en los
+      siguientes eventos:</p>
+    <p class="dropspot"><img alt="Object Editor Asynchronous Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_Async.png" /></p>
+    <p class="dropspot">Así que, digamos que quieres añadir un archivo de imagen a <span class="notranslate">GameMaker Studio 2</span>. Bueno, usted codificaría esto en otro evento (tal vez el evento Create) de un objeto y luego hacer que ese objeto dibuje una barra de carga mientras espera (por ejemplo), sondeando el evento asíncrono apropiado
+      hasta la <a class="glossterm" data-glossterm="llamada de retorno" href="#">llamada de retorno</a> que le dice a <span class="notranslate">GameMaker Studio 2</span> que el archivo se ha cargado. A continuación, puede utilizar los datos devueltos en este evento para hacer otras cosas, como cambiar de habitación, o comprar un artículo.</p>
+    <p class="dropspot">Tenga en cuenta que lo anterior es simplemente una visión general de cómo funciona el Evento Asíncrono, pero para conocer todos los detalles de todos los sub-eventos disponibles, consulte la siguiente sección:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="Async_Events.htm">Lista de eventos asíncronos</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p>También debe tener en cuenta que puede nombrar los eventos, o al menos darles un breve texto descriptivo que se mostrará junto a ellos en el Editor de Eventos. Para ello, simplemente añada lo siguiente en la primera línea del editor de código para el evento:</p>
+  <p class="code">/// @description Su texto aquí</p>
+  <p>Así, podría tener algo como esto en - por ejemplo - un evento de <strong>Alarma </strong></p>
+  <p class="code">/// @description Esta es la alarma de lucha de la IA</p>
+  <p>Y ahora en tu Editor de Eventos verás esto:</p>
+  <p><img alt="Object Editor Named Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_NamedEvents.png" /></p>
+  <p>Para los usuarios <span class="notranslate">de DnD™</span>, añadir un comentario requiere el uso de la acción <strong>Ejecutar Código</strong>, que debe colocarse en la parte superior de las acciones para el evento, antes de todo lo demás. Cuando añades esta acción, le das la misma línea de código
+    que se muestra arriba para nombrar el evento, por ejemplo</p>
+  <p><img alt="Naming An Event In DnD" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_DnD_NamedEvents.png">Para obtener información adicional sobre algunos de los eventos mencionados y el orden general de los mismos, consulte las siguientes secciones:</p>
+  <ul class="colour">
+    <li><a href="Event_Order.htm">Orden de los eventos</a></li>
+    <li><a href="Other_Events.htm">Los otros eventos</a></li>
+    <li><a href="Draw_Events.htm">Los eventos del sorteo</a></li>
+    <li><a href="Async_Events.htm">Los eventos asíncronos</a></li>
+    <li><a href="Gesture_Events.htm">Los eventos de los gestos</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Objects.htm">El editor de objetos</a></div>
+        <div style="float:right">Siguiente: Objetos padres</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Events
+Named Events
+-->
+  <!-- TAGS
+object_events
+-->
+
+</body></html>

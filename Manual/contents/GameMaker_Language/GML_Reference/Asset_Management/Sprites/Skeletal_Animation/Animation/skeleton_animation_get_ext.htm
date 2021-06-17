@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_get_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_ext" />
+  <meta name="rh-index-keywords" content="skeleton_animation_get_ext" />
+  <meta name="search-keywords" content="skeleton_animation_get_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_get_ext</h1>
+  <p>Un solo sprite de animación de esqueleto puede tener varios conjuntos de animación, y a estos conjuntos se les pueden asignar diferentes pistas para que puedas &quot;mezclar y combinar&quot; conjuntos de animación. Esta función devolverá el nombre del conjunto de animación actualmente utilizado por el
+    número de pista dado (como se establece en la función <a href="skeleton_animation_set_ext.htm"><tt>skeleton_animation_set_ext</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_animation_get_ext(pista);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>pista</td>
+        <td>El número de pista para obtener el nombre del conjunto de animación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if skeleton_animation_get_ext(1) != &quot;bodyfight&quot;<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+  </p>
+  <p>El código anterior cambiará el conjunto de animación que está siendo utilizado por la pista 1 a &quot;bodyfight&quot; si no lo está ya.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation.htm">Animación</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_animation_set_ext.htm">skeleton_animation_set_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_get_ext
+-->
+  <!-- TAGS
+skeleton_animation_get_ext
+-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_position" />
+  <meta name="rh-index-keywords" content="audio_listener_set_position" />
+  <meta name="search-keywords" content="audio_listener_set_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_position</h1>
+  <p>Con esta función puede cambiar la posición de un <i>oyente</i> determinado dentro del espacio de audio 3D. El índice del oyente por defecto es 0, pero puede utilizar la función <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> para
+    obtener los diferentes índices disponibles para la plataforma de destino. La imagen de ejemplo de abajo muestra la posición por defecto del oyente en el espacio de audio:</p>
+  <p><img alt="Audio Listener Spacial Position Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener.png">Como puedes ver, la posición por defecto es (0, 0, 0) pero normalmente usarás esta función
+    para mover el oyente con el objeto jugador dentro de su juego y así cambiar la forma en que el audio creado por los emisores es escuchado por el jugador, por ejemplo, en la imagen de abajo de un juego de arriba hacia abajo, la instancia del jugador establece el oyente que causará
+    el audio de los distintos emisores &quot;cambie&quot; a medida que el jugador se mueve por el nivel:</p>
+  <p><img alt="Audio Listener Game Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Game.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_listener_set_position(index, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El oyente para el que se obtienen los datos (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La posición z del oyente (por defecto 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _vmat = camera_get_view_mat(view_camera[0]);<br> audio_listener_set_position(global.Player_Listener, _vmat[0], _vmat[1], _vmat[2]);<br> audio_listener_set_orientation(info[? &quot;index&quot;], _vmat[3], _vmat[4], _vmat[5], _vmat[6], _vmat[7],
+    _vmat[8]);</p>
+  <p>El código anterior recupera la matriz de vista para la vista de cámara [0] y luego la utiliza para establecer la posición y la orientación del oyente de audio con el ID almacenado en la variable global &quot;Player_Listener&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_listener_set_velocity.htm">audio_listener_set_velocity</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_position
+-->
+  <!-- TAGS
+audio_listener_set_position
+-->
+</body>
+</html>

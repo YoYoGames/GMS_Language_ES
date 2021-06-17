@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_is_compiled</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_is_compiled" />
+  <meta name="rh-index-keywords" content="shader_is_compiled" />
+  <meta name="search-keywords" content="shader_is_compiled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_is_compiled</span></h1>
+  <p>Esta función comprobará un <span class="notranslate">sombreador</span> en tiempo de ejecución para asegurarse de que ha sido compilado con éxito. Si lo ha hecho, la función devuelve <tt>true</tt>, de lo contrario devuelve <tt>false</tt>. Esta función debe ser
+    utilizar al inicio del juego para asegurarse de que la plataforma que ejecuta el juego ha compilado correctamente los <span class="notranslate">sombreadores</span> utilizados (en particular en <span class="notranslate">Windows</span>, donde algunos ordenadores pueden estar utilizando DX9 con el nivel de <span class="notranslate">sombreado</span> 2.0 y no una versión posterior que utiliza el nivel de <span class="notranslate">sombreado</span> 
+    3.0).</p>
+  <p>Si tu <span class="notranslate">shader</span> <i>NO</i> ha sido compilado y llamas a <a href="shader_set.htm"><tt><span class="notranslate">shader_set</span>()</tt></a> el juego se bloqueará, por lo que vale la pena tener algún tipo de comprobación siempre que se utilice
+    cualquier cosa que no sea un simple <span class="notranslate">sombreador</span> GLSL ES.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">shader_is_compiled</span><span class="notranslate">(shader</span>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">sombreador</span></td>
+        <td>El <span class="notranslate">sombreado</span> a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.GFX = false;<br> if<span class="notranslate">(shader_is_compiled</span>(sh_glass) &amp;&amp; shader_is_compiled(sh_warp))<br> {
+    <br> global.GFX = true;<br> }
+  </p>
+  <p>El código anterior establecerá una variable global a <tt>false</tt>, y luego si los dos <span class="notranslate">shaders</span> que se están comprobando han compilado correctamente, se establecerá a <tt>true</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+        <div style="float:right">Siguiente: <a href="shaders_are_supported.htm"><span class="notranslate">shaders_are_supported</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_is_compiled
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_is_compiled
+-->
+</body>
+</html>

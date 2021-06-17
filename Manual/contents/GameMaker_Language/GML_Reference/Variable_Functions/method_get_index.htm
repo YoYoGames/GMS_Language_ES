@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>method_get_index</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function method_get_index" />
+  <meta name="rh-index-keywords" content="method_get_index" />
+  <meta name="search-keywords" content="method_get_index" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>method_get_index</h1>
+  <p>Con esta función se puede recuperar el índice de <a href="../../GML_Overview/Script_Functions.htm">Script</a> para el script donde se definió el método. Si el método no fue definido en un script, la función devolverá
+    -1, de lo contrario devolverá el valor del índice del script.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">method_get_index(método);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>método</td>
+        <td>La variable del método a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _index = method_get_index(light_setup);<br> if _index != -1<br> {
+    <br> show_debug_message(script_get_name(_index));
+    <br> }
+  </p>
+  <p>El código anterior comprobará el índice del script para el método &quot;light_setup&quot; y, si no es -1, mostrará el nombre del script en la consola.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="is_string.htm">is_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+method_get_index
+-->
+  <!-- TAGS
+method_get_index
+-->
+</body>
+</html>

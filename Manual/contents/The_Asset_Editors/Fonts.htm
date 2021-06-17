@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fuentes</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the font editor works" />
+  <meta name="rh-index-keywords" content="Font Editor" />
+  <meta name="search-keywords" content="fonts,font editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de fuentes</h1>
+  <p><img alt="The Font Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts.png" /></p>
+  <p>Cuando usted quiere dibujar un texto en su juego, este texto se dibuja en una <a class="glossterm" data-glossterm="fuente" href="#">fuente</a> estándar Arial de 12 puntos, pero para hacer textos más interesantes o de aspecto único, probablemente querrá utilizar diferentes fuentes.
+    Por lo tanto, para utilizar diferentes fuentes que tienes en tu ordenador debes crear un <strong>activo de fuente</strong> en <span class="notranslate">GameMaker Studio 2</span>. Esto se hace haciendo clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> en el <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> y seleccionando &quot;<em>Crear&quot; -&gt; &quot;Fuente&quot;.</em> Para cada activo de fuente que se crea se especifica un tipo particular de la fuente de su equipo que puede
+    que puede ser utilizado en su juego utilizando la acción o el código para establecer una fuente para el dibujo.</p>
+  <p>Cuando se crea por primera vez un recurso de fuente, se abre la ventana del editor de fuentes con las siguientes opciones:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Detalles</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Aquí puedes dar a tu fuente un nombre único (sólo con caracteres alfanuméricos y el símbolo &quot;_&quot; bajo la barra), así como elegir la fuente a utilizar. La fuente debe estar instalada en su máquina y, debido a cuestiones de licencia, <span class="notranslate">GameMaker Studio 2</span> no
+      por defecto, GameMaker Studio 2 no almacena los archivos de fuente reales con el archivo del proyecto, sino que la fuente se <a class="glossterm" data-glossterm="renderizado" href="#">representa</a> en una <a href="../Settings/Texture_Information/Texture_Pages.htm">página de textura</a> como una serie de glifos de mapa de bits.
+      de glifos de mapa de bits. La página de textura será asignada a un <a href="../Settings/Texture_Groups.htm">grupo de texturas</a>, que puede elegir desde la opción <strong>Grupo</strong> aquí también.</p>
+    <p class="dropspot">Si desea distribuir el archivo de fuente real ( <span class="inline">*.ttf</span> o <tt>*.otf</tt> solamente) junto con el proyecto al hacer un activo <span class="notranslate">de Marketplace</span> o por cualquier otra razón, puede marcar la opción <strong>Copiar al proyecto</strong>. Este
+      abrirá el explorador de archivos donde puede seleccionar el archivo de la fuente y se añadirá a los archivos incluidos en el proyecto.</p>
+    <p class="note"><strong>IMPORTANTE!</strong> Sólo debe utilizar fuentes <strong>cuya redistribución o uso en su proyecto esté legalmente permitido y autorizado</strong>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Presets</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">En esta sección puede establecer el tamaño (en puntos - el valor predeterminado es 12pt) y si la fuente debe dibujarse en negrita o cursiva o si se le aplica <a class="glossterm" data-glossterm="antialiasing" href="#">el antialiasing</a>. La ventana de vista previa de la derecha
+      le mostrará el texto aproximadamente como se verá en su juego con el tamaño y las transformaciones que haya especificado.</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Controles de la gama</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Al crear un recurso de fuente es raro que quieras incluir todos los glifos de la fuente. Por eso <span class="notranslate">GameMaker Studio 2</span> utiliza por defecto sólo los caracteres del 32 al 127 de la fuente elegida, ya que esto nos da los números y
+      las letras minúsculas y mayúsculas junto con ciertos signos de puntuación. Sin embargo, puede cambiar el rango de caracteres utilizado para ayudar a optimizar sus juegos, es decir, si sólo necesita los números de una fuente específica, entonces <em>sólo </em>seleccione los números. Para ello
+      Para ello, primero debe hacer clic en el botón <strong>Eliminar </strong>para borrar el rango actual (puede que tenga que seleccionar el rango para que esto funcione haciendo clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en la ventana de
+      en la ventana de vista previa) y luego hacer clic en el botón <strong>Añadir </strong>para agregar un nuevo rango. Esto abrirá la siguiente ventana encadenada:<br>
+    </p>
+    <p class="dropspot"><img alt="Font Range Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Range.png">Esta ventana tiene algunos botones que le ayudan a establecer un rango estándar para su fuente:</p>
+    <p class="dropspot">   - El rango <em>normal </em>de 32 a 127<br>
+      <br> - El rango <em>ASCII </em>de 0 a 255<br>
+      <br> - El rango de <em>dígitos </em>que sólo contiene los 10 dígitos<br>
+      <br> - El rango de <em>letras </em>que sólo contiene todas las mayúsculas y minúsculas<br>
+    </p>
+    <p class="dropspot">Se pueden utilizar otros rangos escribiendo el primer y el último índice de caracteres del rango que se desea establecer en las casillas de entrada del rango de caracteres (si un carácter no se encuentra en el rango, se sustituye por un espacio). Además de estos botones y cuadros de entrada
+      dispone de otras dos opciones especialmente útiles:<br>
+    </p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Desde el código</strong>: si haces clic en este botón y luego en Aceptar, <span class="notranslate">GameMaker Studio 2</span> analizará automáticamente el código de tu juego en busca de cadenas y luego creará diferentes rangos de caracteres para cubrir todo el texto de tu juego. Tenga en cuenta que busca
+        todas las cadenas (ya sea dentro de &quot;&quot; o '') y por lo tanto también puede incluir nombres de archivos en los rangos de caracteres.<br>
+      </li>
+      <li class="dropspot"><strong>Desde</strong> archivo: funciona de forma similar a la opción &quot;desde código&quot; explicada anteriormente. Si haces clic en ella, se te pedirá que proporciones un archivo y, una vez hecho esto, deberás hacer clic en Aceptar. <span class="notranslate">GameMaker Studio 2</span> analizará el archivo
+        archivo y creará rangos de caracteres para el texto que se encuentra en él.</li>
+    </ul>
+    <p class="dropspot">Tenga en cuenta que puede editar manualmente el rango de texto añadiendo o eliminando glifos de texto en la ventana de vista previa directamente.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Controles de textura</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Como se mencionó anteriormente (en la sección de <strong>Detalles de la Fuente</strong>) por defecto todos los glifos de la fuente se <a class="glossterm" data-glossterm="renderizado" href="#">renderizarán</a> en una página de textura como parte de un grupo de textura para convertirlos en recursos gráficos.
+      y cuando el juego se compila la fuente se añadirá a una textura temporal para crear una sola imagen con todos los glifos de la fuente requeridos y luego esto se añadirá al grupo de textura principal para la exportación. Los botones aquí son para ajustar
+      cómo se genera la textura de la fuente o para regenerar una nueva textura de la fuente.</p>
+    <p class="dropspot">El botón <strong>Opciones </strong>abrirá las opciones avanzadas de textura de la fuente:</p>
+    <p class="dropspot"><img alt="Font Options Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_Options.png">Estas opciones pueden alterar, a veces radicalmente, cómo se mostrará una fuente en el juego, y no todas las fuentes requerirán los mismos ajustes.
+      Las siguientes opciones están diseñadas para ofrecerte la mayor personalización posible para tu fuente:</p>
+    <ul class="colour">
+      <li class="dropspot"><strong>Insinuación</strong>: La insinuación de fuentes (también conocida como instrucción) es el uso de instrucciones matemáticas para ajustar la visualización de una fuente de contorno de modo que se alinee con una cuadrícula rasterizada. En las resoluciones de pantalla bajas, el hinting es fundamental para producir un texto claro y legible.
+        y legible, y aquí puede seleccionar entre diferentes algoritmos de insinuación para obtener el mejor resultado posible. El valor por defecto es &quot;normal&quot;.</li>
+      <li class="dropspot"><strong>Opciones de gl</strong>ifos: Estas opciones se pueden utilizar para cambiar la forma en que se cargan los glifos habilitando/deshabilitando diferentes operaciones. Estas son:
+        <ol>
+          <li><em>Desactivar la</em> sugerencia: Esto deshabilitará el hinting nativo de las fuentes y el auto-hinter.</li>
+          <li>Desactivar<em>Auto-Hinter</em>: Esto deshabilitará el auto-hinter y en su lugar utilizará el hinter nativo de la fuente (si tiene uno). Tenga en cuenta que esto anula la opción &quot;Preferir Auto-Hinter&quot;.</li>
+          <li><em>Preferir</em> Auto-Hinter: Esto le dirá a <span class="notranslate">GameMaker Studio 2</span> que prefiera usar el auto-hinter sobre cualquier hinter nativo que la fuente pueda tener. Tenga en cuenta que esto es anulado por el &quot;Desactivar Auto-hinter&quot; y &quot;Desactivar Hinting&quot;
+            opciones.
+          </li>
+          <li><em>Deformación</em>: Al activar esta opción, los glifos se deforman ligeramente para mejorar la alineación de la cuadrícula. Tenga en cuenta que esto requiere el puntero automático y un modo de insinuación &quot;Normal&quot;.</li>
+          <li><em>Sin escala</em>: Cuando esta opción está marcada, mantendrá los glifos en unidades de fuente e ignorará el tamaño solicitado. Esto implica que el hinting está deshabilitado.<br>
+          </li>
+        </ol>
+        El estado por defecto de todas las opciones anteriores es <strong>desactivado</strong>.</li>
+      <li class="dropspot"><strong>Intérprete</strong>: Aquí puede seleccionar la versión de <em>TrueType</em> que <span class="notranslate">GameMaker Studio 2</span> debe utilizar para la representación de las fuentes. Por defecto es <em>TrueType v40</em>.</li>
+      <li class="dropspot"><strong>Redondeo</strong>: Esta opción es para establecer el método de redondeo cuando se convierte de un tamaño decimal de punto fijo a un entero. Por defecto es &quot;floor&quot;.</li>
+    </ul>
+    <p class="dropspot">El botón <strong>Regenerar </strong>puede utilizarse para regenerar la textura de la fuente. Esto es necesario si quiere actualizar cualquier cambio que haya hecho a una fuente existente, o si ha creado una nueva fuente y quiere ver cómo se ve en la Ventana de vista previa
+      de la fuente. Tenga en cuenta que también puede regenerar las fuentes desde el menú del botón derecho <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> para la fuente (o fuentes) en el Navegador de Activos.<br>
+    </p>
+    <p class="dropspot"><img alt="Regenerate Fonts RMB Menu Option" class="center" src="../assets/Images/Asset_Editors/Editor_Fonts_MenuRegenerate.png">Es importante tener en cuenta que cuando se crea por primera vez una nueva fuente, si no se regenera la textura en el editor,
+      entonces la textura se creará la primera vez que ejecute o pruebe su juego, pero esa es la única vez que se generará automáticamente. Esto significa que una vez que una fuente tiene una textura generada, cualquier cambio realizado en el recurso de la fuente requerirá
+      que la fuente se regenere para que los cambios sean visibles en el juego, de lo contrario se seguirá utilizando la textura de la fuente &quot;antigua&quot;.</p>
+    <p class="dropspot"><span class="notranslate">GameMaker Studio 2</span> renderizará la textura de la fuente generada como un archivo <span class="inline">PNG </span>junto con el resto de los archivos del proyecto, y en caso de que cargue el proyecto y no se encuentre la fuente base, el juego seguirá mostrando el texto correctamente
+      utilizando la textura almacenada. Sin embargo, una fuente perdida significará que ya no podrás cambiar ninguna de sus propiedades, aparte de su nombre, familia de fuentes y grupo de texturas (desde el <a href="../Settings/Texture_Groups.htm">editor de grupos de texturas</a>).</p>
+    <p class="dropspot"><br />
+    </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Modo de vista previa</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">En esta sección puede elegir que la ventana de vista previa muestre un texto de muestra de la fuente seleccionada, o la imagen de textura renderizada que se ha generado para la fuente.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Vista previa</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">La ventana
+     <strong>Ventana de vista previa</strong> es donde se puede ver una vista previa de la fuente, ya sea como una muestra de texto, o como una textura. Cuando el
+     <strong>Modo de </strong>vista previa se establece en
+     <em>Muestra</em>, puede escribir cualquier texto que desee probar directamente en la ventana de vista previa para ver cómo se ve, mientras que al seleccionar
+      Vista previa <em>del juego </em>mostrará la imagen de la textura generada para la fuente. Si no hay ninguna imagen presente, entonces debe hacer clic en el botón
+     <strong>Regenerar </strong>para generar la textura.</p>
+    <p class="dropspot">Tenga en cuenta que la imagen de la textura puede ser diferente a la muestra, ya que la textura
+     <em>no</em> se regenera a menos que se indique explícitamente. Esto significa que después de haber generado inicialmente una textura de fuente, los cambios realizados en el recurso de fuente no se llevarán al juego a menos que se regenere la textura.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Vista previa de la gama</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Aquí se enumeran los diferentes rangos de caracteres que ha añadido para la fuente. Los valores de los rangos se muestran a la izquierda y los glifos de los rangos que corresponden a esos valores se muestran a la derecha.</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Asset_Editors.htm">Los editores de activos</a></div>
+        <div style="float:right">Siguiente: <a href="Notes.htm">Notas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Font Editor
+Fonts
+-->
+  <!-- TAGS
+font_editor
+-->
+
+</body></html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>textura_está_lista</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_is_ready" />
+  <meta name="rh-index-keywords" content="texture_is_ready" />
+  <meta name="search-keywords" content="texture_is_ready" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>textura_está_lista</h1>
+  <p>Esta función puede utilizarse para comprobar si una página de textura específica ha sido desempaquetada y está lista para su uso, o si un grupo de páginas de textura ha sido desempaquetado y está listo para su uso. Se suministra el <b>ID de la página de textura</b> única (tal y como lo devuelven las funciones <tt>texturegroup_*</tt> ) o la cadena de ID del grupo de texturas (tal y como se define en el editor de grupos de texturas), y la función devolverá <tt>true</tt> si se han desempaquetado, o <tt>false</tt> en caso contrario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">texture_is_ready(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tex_id</td>
+        <td>El ID de la página de la textura (un entero) <i>o</i> el ID de un grupo de texturas (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> if !texture_is_ready(_tex_array[i])<br> {
+    <br> texture_prefetch(_tex_array[i]);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior recuperará los IDs de las páginas de texturas para el grupo de texturas &quot;MainMenu&quot;, luego comprobará si están desempaquetadas, y si no lo están, serán pregrabadas en la VRAM.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Siguiente: <a href="texturegroup_get_textures.htm">texturegroup_get_textures</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_is_ready
+-->
+  <!-- TAGS
+texture_is_ready
+-->
+</body>
+</html>

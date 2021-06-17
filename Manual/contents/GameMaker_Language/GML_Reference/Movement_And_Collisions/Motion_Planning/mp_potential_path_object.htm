@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_potencial_camino_objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_potential_path_object" />
+  <meta name="rh-index-keywords" content="mp_potential_path_object" />
+  <meta name="search-keywords" content="mp_potential_path_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_potencial_camino_objeto</h1>
+  <p>Esta función calcula una trayectoria para la instancia desde su posición <i>y orientación</i> actuales hasta la posición especificada por los argumentos xgoal, ygoal. Utiliza el tamaño de paso indicado mientras intenta evitar la colisión con las instancias del objeto especificado
+    por el argumento &quot;obj&quot;. Como en la función <a href="mp_potential_step.htm"><tt>mp_potencial_paso()</tt></a> utiliza pasos de campo potencial para conseguirlo y la forma en que lo hace puede modificarse mediante la función <a href="mp_potential_settings.htm"><tt>mp_potencial_configuración()</tt></a>.
+    La trayectoria indicada debe existir ya y será sobrescrita por la nueva trayectoria. La función devolverá si se ha encontrado un camino (true) o no (false).</p>
+  <p>Para evitar que la función continúe calculando eternamente es necesario proporcionar un factor mayor que 1 - la función se detendrá e informará de un fallo si no puede encontrar un camino más corto que este factor multiplicado por la distancia entre el inicio y la meta. Un factor de 4
+    suele ser suficiente, pero si se prevén desvíos largos se puede hacer más largo. Si falla, se crea un camino que va en la dirección aproximada de la meta, pero no la alcanzará.</p>
+  <p class="note"><b>NOTA</b>: Esta función no mueve la instancia. Sólo establece una ruta, y debe utilizar las funciones de <a href="../../Asset_Management/Paths/Paths.htm">ruta</a> para el movimiento.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_potencial_camino_objeto(camino, xobjetivo, yobjetivo, tamaño de paso, factor, obj)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camino</td>
+        <td>índice de la ruta que debe utilizar la función</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>La posición x del objetivo.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>La posición y del objetivo.</td>
+      </tr>
+      <tr>
+        <td>tamaño del paso</td>
+        <td>La velocidad a la que se mueve la instancia en píxeles por paso.</td>
+      </tr>
+      <tr>
+        <td>factor</td>
+        <td>Este número se utiliza para evitar un bucle infinito. Debe ser mayor que 1. Consulte la descripción de la función para obtener más información.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que debe bloquear la ruta. Puede ser un índice de objeto, un id de instancia o la palabra clave especial<b>,all</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path = path_add();<br> mp_potential_path_object(path, obj_Player.x, obj_Player.y, 3, 4, obj_Wall);<br> path_start(path, 3, 0, 0);</p>
+  <p>El código anterior crea un nuevo recurso de ruta y almacena su índice en la variable &quot;ruta&quot;. A continuación, genera una ruta utilizando <tt>mp_potential_path</tt> entre el objeto con este código y el objeto &quot;obj_Player&quot;, comprobando si hay colisiones
+    con el objeto &quot;obj_Muro&quot;. Finalmente, inicia el objeto a lo largo de ese camino, incluso si la función no ha devuelto una ruta completa al &quot;obj_Player&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_create.htm">mp_grid_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_potential_path_object
+-->
+  <!-- TAGS
+mp_potential_path_object
+-->
+</body>
+</html>

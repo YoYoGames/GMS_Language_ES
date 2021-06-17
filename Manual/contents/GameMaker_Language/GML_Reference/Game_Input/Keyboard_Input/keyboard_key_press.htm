@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tecla_Pulsar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_key_press" />
+  <meta name="rh-index-keywords" content="keyboard_key_press" />
+  <meta name="search-keywords" content="keyboard_key_press" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tecla_Pulsar</h1>
+  <p>Con esta función se puede simular la pulsación de cualquier tecla del teclado. Cuando se utiliza, la tecla se marcará como pulsada hasta que se llame a la función de liberación correspondiente (ver <a href="keyboard_key_release.htm"><tt>keyboard_key_release()</tt></a>).
+    La función tomará un valor de código de tecla devuelto por la función <a href="../../Strings/ord.htm"><tt>ord()</tt></a> (sólo letras <i>mayúsculas</i> de la A a la Z o números del 0 al 9), o cualquiera de las constantes <tt>vk_*</tt> listadas en la página principal de <a href="Keyboard_Input.htm">Entrada de Teclado</a>.</p>
+  <p>Tenga en cuenta que después de llamar a esta función, si la tecla se pulsa <i>físicamente</i> en el teclado, este evento de pulsación <i>no</i> se registrará de nuevo hasta que la tecla se haya liberado físicamente (activando el evento de liberación y deteniendo esta función),
+    o se haya llamado a la función de liberación de la tecla correspondiente y se haya vuelto a pulsar la tecla.</p>
+  <p> </p>
+  <h4><b>Sintaxis:</b></h4>
+  <p class="code">keyboard_key_press(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>La tecla para simular una pulsación de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Devuelve:</b></h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4><b>Ejemplo:</b></h4>
+  <p class="code">keyboard_key_press(vk_space);</p>
+  <p>Esto simulará una pulsación de la barra espaciadora.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Keyboard_Input.htm">Entrada del teclado</a></div>
+        <div style="float:right">Siguiente: <a href="keyboard_key_release.htm">keyboard_key_release</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_key_press
+-->
+  <!-- TAGS
+keyboard_key_press
+-->
+
+</body></html>

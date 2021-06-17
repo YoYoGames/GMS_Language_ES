@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>clickable_add_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_add_ext" />
+  <meta name="rh-index-keywords" content="clickable_add_ext" />
+  <meta name="search-keywords" content="clickable_add_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>clickable_add_ext</h1>
+  <p>Con esta función se puede crear un icono personalizado, sobre el que se puede hacer clic, que actúa como un &quot;botón&quot; fuera del lienzo del juego, pero dentro de la propia ventana del navegador. La función devolverá un valor de identificación que debe ser almacenado en una variable para ser utilizado en todas
+    funciones de botón posteriores que hagan referencia al nuevo icono. Esta función es muy útil para evitar que el navegador cree una ventana emergente al hacer clic en el botón, ya que todo se hace a través del propio <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Esta función funciona exactamente igual que la función <a href="clickable_add.htm"><tt>clickable_add()</tt></a> donde debe establecer la posición relativa al (0,0) de la ventana del navegador, dar la entrada de la página de textura para el sprite que desea que tenga el icono del botón
+    (ver: <a href="../Asset_Management/Sprites/Sprite_Information/sprite_get_tpe.htm"><tt>sprite_get_tpe()</tt></a>), especificar una URL a abrir o un script (desde el Navegador de Activos de <span class="notranslate">GameMaker Studio 2</span>) a abrir o ejecutar y luego
+    establecer el objetivo y los parámetros a utilizar. Sin embargo, esta función también tiene dos opciones adicionales que le permiten establecer el alfa del icono de 0 (totalmente transparente) a 1 (totalmente opaco) y la escala del icono, que es un valor multiplicador aplicado al
+    sprite utilizado. Así, un valor de 1 es la escala por defecto, mientras que (por ejemplo) 0,5 sería la mitad de la escala y 2 sería el doble.</p>
+  <p>También vale la pena señalar que si el argumento de la URL que pasas es el nombre de una <a href="../../GML_Overview/Script_Functions.htm">función de script</a> (es decir, no comienza con &quot;http://&quot;) Y el script se llama <tt><b>gmcallback_*</b></tt>    entonces puedes obtener una alimentación directa de un evento html5. Los nombres de las funciones de script de <span class="notranslate">GameMaker Studio 2</span> <i>no</i> están ofuscados si comienzan con <tt>gmcallback_</tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">clickable_add_ext(x, y, tpe, url, target, params, alpha, scale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x dentro de la <i>ventana</i>.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y dentro de la <i>ventana</i>.</td>
+      </tr>
+      <tr>
+        <td>tpe</td>
+        <td>La entrada de la página de textura para el sprite que se va a utilizar.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>La URL (dirección de la página web) a la que enlazar, o el script a ejecutar.</td>
+      </tr>
+      <tr>
+        <td>objetivo</td>
+        <td>Esta es la zona de destino para abrir la URL (ver descripción).</td>
+      </tr>
+      <tr>
+        <td>params</td>
+        <td>Los diferentes parámetros del icono (ver descripción).</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa de la imagen del icono (por defecto 1).</td>
+      </tr>
+      <tr>
+        <td>escala</td>
+        <td>La escala del icono (por defecto 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">home_but = clickable_add_ext(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;, 1, 2);</p>
+  <p>El código anterior crea un icono DOM sobre el que se puede hacer clic en la posición (32, 32) de la página en la que se está ejecutando el lienzo del juego. El icono utiliza el sprite referenciado desde la página de textura como &quot;spr_MS_Home&quot; y cuando se hace clic en el icono se abrirá una nueva ventana
+    para la URL especificada y con las propiedades definidas para esa ventana. el botón también se escalará al doble del tamaño del sprite original y a la mitad de un alfa de imagen de 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Web_And_HTML5.htm">Web y HTML5</a></div>
+        <div style="float:right">Siguiente: <a href="clickable_change.htm">clickable_change</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_add_ext
+-->
+  <!-- TAGS
+clickable_add_ext
+-->
+</body>
+</html>

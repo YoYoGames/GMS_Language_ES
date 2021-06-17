@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_wrap</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_wrap" />
+  <meta name="rh-index-keywords" content="move_wrap" />
+  <meta name="search-keywords" content="move_wrap" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_wrap</h1>
+  <p>Esta función &quot;envolverá&quot; automáticamente una instancia que haya salido de la sala en el eje horizontal o vertical (o en ambos). Usted puede especificar un margen fuera de los bordes de la habitación para que esto ocurra, y cuando la instancia ha viajado fuera de
+    de ese margen <span class="notranslate">GameMaker Studio 2</span> automáticamente lo envolverá de nuevo en la habitación en el otro lado. Tenga en cuenta que la instancia debe tener una velocidad para que la envoltura funcione, porque la dirección de la envoltura se basa en la dirección del movimiento.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">move_wrap(hor, vert, margin);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>hor</td>
+        <td>Si se envuelve horizontalmente (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>vert</td>
+        <td>Si se envuelve verticalmente (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>margen</td>
+        <td>A qué distancia de la habitación, en píxeles, debe estar el objeto para iniciar la envoltura.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">move_wrap(true, false, sprite_width);</p>
+  <p>Esto hará que la instancia se envuelva horizontalmente pero no verticalmente, cuando esté sobre su propio ancho de sprite fuera de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="place_snapped.htm">lugar_secuestrado</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_wrap
+-->
+  <!-- TAGS
+move_wrap
+-->
+</body>
+</html>

@@ -103,9 +103,9 @@ else
   
   Intercambio de texturas y lotes de vértices
   
-    Si enciende el botón superposición de la depuraciónverá que hay dos cifras entre paréntesis en la parte superior de la pantalla cuando se está probando. La primera es el número
+    Si enciende el superposición de la depuraciónverá que hay dos cifras entre paréntesis en la parte superior de la pantalla cuando se realizan las pruebas. La primera es el número
       de intercambios de texturas que se realizan y la segunda es el número de lotes de vértices. Hay una serie de factores que influyen en estas cifras y nunca las bajarás a (0) (0) ya que el motor requiere uno o dos de cada
-      cada paso, pero deberías intentar reducir estos valores lo máximo posible.
+      de cada paso, pero deberías intentar que estos valores sean lo más bajos posible.
     Para los intercambios de texturas, la mejor y más eficiente manera de hacerlo es optimizar la forma en que sus sprites y fondos
       se almacenan en la página de textura. Esto se hace desde las propiedades de los sprites, y puedes crear páginas de texturas en el editor de grupos de texturas. Si tienes un número
       de imágenes que sólo se utilizan en el menú principal (por ejemplo), entonces ponlas juntas en una página de textura separada. Lo mismo si tienes imágenes específicas para cada nivel, o para el jugador y los enemigos,
@@ -116,7 +116,7 @@ else
       la GPU. Hay una serie de cosas que romperán el lote, siendo las principales los modos de mezcla, la configuración del color de dibujo, la configuración del alfa de dibujo, y el dibujo utilizando las formas y primitivas incorporadas.
       primitivas incorporadas.
     
-    Por lo tanto, si tienes varias instancias de viñetas que dibujan usando el modo de mezcla bm_add - por ejemplo - estarás creando un nuevo lote de vértices para cada una de ellas, lo cual es definitivamente algo malo. En su lugar, ten un objeto controlador
+    Por lo tanto, si tienes varias instancias de viñetas que dibujan usando el modo de mezcla bm_add - por ejemplo - estarás creando un nuevo lote de vértices para cada una de ellas, ¡lo cual es definitivamente algo malo! En su lugar, ten un objeto controlador
       en tu juego que dibuje todas las balas, así:
     gpu_set_blendmode(bm_add); with (obj_BULLET) { draw_self(); }  gpu_set_blendmode(bm_normal);
     
@@ -150,7 +150,7 @@ else
       está ocupando espacio de memoria adicional y tiempo de procesamiento que podría ser utilizado para otras cosas. Aquí es donde la función surface_depth_disable() viene
       entra en juego...
     Esta función puede llamarse antes de crear una superficie para desactivar la generación del buffer de profundidad, y todas las superficies creadas después no tendrán un buffer de profundidad creado para ellas. Puede activar/desactivar esta función según sea necesario, e incluso puede llamarla
-      una vez al comienzo del juego para deshabilitar los buffers de profundidad para todas las llamadas de superficie posteriores (y en la mayoría de los juegos 2D esto está bien). No va a dar un gran aumento de rendimiento, pero es ciertamente algo a tener en cuenta si su juego se basa en gran medida
+      una vez al inicio del juego para deshabilitar los buffers de profundidad para todas las llamadas de superficie posteriores (y en la mayoría de los juegos 2D esto está bien). No va a dar un gran aumento de rendimiento, pero es ciertamente algo a tener en cuenta si su juego se basa en gran medida
       en las superficies y puede evitar que el juego se quede sin memoria en los dispositivos con menos especificaciones.
   
    

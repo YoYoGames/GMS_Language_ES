@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sombreadores</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Shaders" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Shaders,_YY_GLSLES_,_YY_GLSL_,_YY_HLSL11_,_YY_PSSL_" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">Sombreadores</span></h1>
+  <p><span class="notranslate">Los sombreadores</span> son una herramienta increíblemente poderosa para manipular qué y cómo se <a class="glossterm" data-glossterm="renderizado" href="#">renderizan</a> las cosas en la pantalla por la tarjeta gráfica. Dado que estos pequeños programas se ejecutan en la propia tarjeta gráfica
+    esto significa que son extremadamente rápidos de procesar, liberando valiosos ciclos de la CPU para más lógica del juego.</p>
+  <p>Para crear un <span class="notranslate">sombreador</span> necesitarás haber escrito tanto un <b> <span class="notranslate">sombreador</span></b> de vértices como un <b> <span class="notranslate">sombreador de</span></b> fragmentos (también conocido como <b> <span class="notranslate">sombreador de</span></b> píxeles) utilizando el <a href="../../../../The_Asset_Editors/Shaders.htm">editor de<span class="notranslate">sombreadores</span></a>, e incluso si (por ejemplo)
+    sólo quieres cambiar las posiciones de los vértices de una instancia que se está dibujando, o si sólo quieres cambiar los valores de color de los píxeles, todavía necesitarás <b>ambos</b> programas para que funcione un <span class="notranslate">shader</span> completo.</p>
+  <p class="note"><b>NOTA</b>: <span class="notranslate">Los shaders</span> <b>no</b> permiten cambiar el valor de ninguna variable que se les pase, por lo que se llamarán <b>constantes<span class="notranslate">del shader</span></b> en toda la documentación que se refiera a ellos.</p>
+  <p>Para obtener una descripción completa de las funciones y variables disponibles de GLSL ES que puede utilizar para programar los <span class="notranslate">sombreadores</span>, consulte las <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">páginas de referencia de OpenGL ES Shading Language (GLSL ES)</a>.
+    El siguiente enlace también es útil, ya que contiene algunas tarjetas de referencia rápida para la API de OpenGL ES (tenga en cuenta que sólo las dos últimas tarjetas mostradas son aplicables a <span class="notranslate">GameMaker Studio 2</span>): <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">Tarjetas</a> de referencia de OpenGL ES.</p>
+  <p>Utilizar un <span class="notranslate">shader</span> en tus proyectos es muy sencillo, y sólo requiere un par de líneas de código para sacarle el máximo partido:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(myShader);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Como puedes ver, se utilizan de manera similar a los modos de mezcla y las superficies, donde primero seleccionas (estableces) el <span class="notranslate">sombreador</span>, dibujas lo que quieres usando el mismo, y luego restableces el objetivo de dibujo de nuevo. Si quieres renderizar toda la pantalla a través de un <span class="notranslate">shader</span>
+    y no sólo un único sprite o fondo, necesitarás configurar una superficie para capturar la vista actual, y luego pasarla al <span class="notranslate">shader</span> (ver <a href="../../Drawing/Surfaces/Surfaces.htm">Superficies</a> para más información).</p>
+  <p class="note"><b>NOTA</b>: <span class="notranslate">Los shaders</span>, como todo lo relacionado con el dibujo, <b>sólo</b> pueden <b>utilizarse en el evento draw</b>. También vale la pena señalar que si usted está tratando de utilizar un valor de color en un <span class="notranslate">sombreador</span> y el objeto no tiene textura, los resultados saldrán negros.</p>
+  <p>Si el <span class="notranslate">sombreador</span> que está utilizando tiene valores de entrada, estos se establecen utilizando las funciones de <i>uniforme</i>. Primero debes obtener el <i>manejador</i> de uniforme (que es esencialmente un valor de identificación para el uniforme que se va a establecer) utilizando la función <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a> en
+    el <b>evento Create</b> de la instancia que utiliza el <span class="notranslate">sombreador</span>, y luego almacenar estos manejadores en variables, algo así:</p>
+  <p class="code">colour_to_find = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;<span class="notranslate">f_Colour1</span>&quot;);<br> colour_to_set = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);</p>
+  <p>Una vez que se tienen los manejadores uniformes, se pueden establecer en el código del <span class="notranslate">sombreador</span> para el <b>Evento de Dibujo</b> así:</p>
+  <p class="code"><span class="notranslate">shader_set</span>(sShaderDemo5);<br> <span class="notranslate">shader_set_uniform_f</span>(colour_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(colour_to_set, 1,0,0 );<br> draw_sprite(sprite_index,image_index,x+24, y);<br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>Una última cosa que hay que tener en cuenta es que, aunque <span class="notranslate">los shaders</span> se aceptan en todas las plataformas, siguen siendo específicos de cada dispositivo y si el hardware o el software del dispositivo no puede utilizar <span class="notranslate">los shaders</span>, se producirá un error. Por lo tanto, se recomienda comprobar que
+    el <span class="notranslate">shader</span> ha sido compilado antes de configurar los uniformes o utilizar el propio <span class="notranslate">shader</span>, así:</p>
+  <p class="code">if<span class="notranslate">(shader_is_compiled</span>(myShader))<br> {
+    <br> <span class="notranslate">shader_set</span>(myShader);
+    <br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> else show_debug_message(&quot; Shader failed&quot;);</p>
+  <p>Como comprobación adicional, también puedes llamar a la función <a href="shaders_are_supported.htm"><tt><span class="notranslate">shaders_are_supported</span>()</tt></a> para ver si el hardware soporta <span class="notranslate">shaders</span>. En general, usted haría estas comprobaciones al inicio del juego y almacenaría los resultados como una
+   <a href="../../../GML_Overview/Variables/Global_Variables.htm">variable global</a> para comprobarlo más tarde.</p>
+  <p>Es importante tener en cuenta que <span class="notranslate">GameMaker Studio 2</span> también admite algunas <b>macros</b> de compilación condicional que se pueden utilizar dentro de <span class="notranslate">los sombreadores</span> GLSL ES para que puedan realizar código alternativo en plataformas específicas soportadas. Las macros y las plataformas en las que se
+    se generan en se muestran en la tabla siguiente:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Macro de<span class="notranslate">sombreado</span> </th>
+        <th>Valor</th>
+        <th>Plataforma de destino</th>
+      </tr>
+      <tr>
+        <td>EL SISTEMA DE GESTIÓN DE LA CALIDAD DE LOS PRODUCTOS DE LA INDUSTRIA DE LA CONSTRUCCIÓN ES UN SISTEMA DE GESTIÓN DE LA CALIDAD.</td>
+        <td>1</td>
+        <td>Todas las plataformas de destino</td>
+      </tr>
+      <tr>
+        <td>EL SISTEMA DE GESTIÓN DE LA CALIDAD DE LOS PRODUCTOS DE LA INDUSTRIA DE LA CONSTRUCCIÓN ES UN SISTEMA DE GESTIÓN DE LA CALIDAD.</td>
+        <td>2</td>
+        <td>Mac y <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+      </tr>
+      <tr>
+        <td>EL SISTEMA DE CONTROL DE CALIDAD DE LOS PRODUCTOS DE LA EMPRESA ES EL MISMO QUE EL DE LOS PRODUCTOS DE LA EMPRESA.</td>
+        <td>3</td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td>EL SISTEMA DE SEGURIDAD DE LA EMPRESA ES EL MISMO QUE EL DE LOS DEMÁS.</td>
+        <td>4</td>
+        <td>PS4</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Cuando compilas tu proyecto de <span class="notranslate">GameMaker Studio 2</span> en cualquiera de las plataformas listadas utilizando un <span class="notranslate">shader</span> en formato GLSL ES, se generará <i>una</i> de las macros anteriores que puede ser utilizada comprobada en el código del <span class="notranslate">shader</span> así:</p>
+  <p class="code">#ifdef _YY_HLSL11_<br> // Código del <span class="notranslate">shader</span> HLSL aquí<br> #else
+    <br> // Código <span class="notranslate">del</span> shader GLSL aquí<br> #endif
+  </p>
+  <p>Si no conoces los <span class="notranslate">shaders</span> o quieres una guía más completa para crearlos y utilizarlos con <span class="notranslate">GameMaker Studio 2</span>, consulta la siguiente página del manual:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm">Guía para el uso de <span class="notranslate">sombreadores</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Las siguientes funciones están disponibles para dibujar y ajustar <span class="notranslate">los sombreadores</span>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="shader_get_name.htm"><span class="notranslate">shader_get_name</span></a></li>
+    <li><a href="shader_get_uniform.htm"><span class="notranslate">shader_get_uniform</span></a></li>
+    <li><a href="shader_get_sampler_index.htm"><span class="notranslate">shader_get_sampler_index</span></a></li>
+    <li><a href="shader_set.htm"><span class="notranslate">shader_set</span></a></li>
+    <li><a href="shader_set_uniform_f.htm"><span class="notranslate">shader_set_uniform_f</span></a></li>
+    <li><a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader_set_uniform_f_array</span></a></li>
+    <li><a href="shader_set_uniform_i.htm"><span class="notranslate">shader_set_uniform_i</span></a></li>
+    <li><a href="shader_set_uniform_i_array.htm"><span class="notranslate">shader_set_uniform_i_array</span></a></li>
+    <li><a href="shader_set_uniform_matrix.htm"><span class="notranslate">shader_set_uniform_matrix</span></a></li>
+    <li><a href="shader_set_uniform_matrix_array.htm"><span class="notranslate">shader_set_uniform_matrix_array</span></a></li>
+    <li><a href="shader_reset.htm"><span class="notranslate">shader_reset</span></a></li>
+    <li><a href="shader_is_compiled.htm"><span class="notranslate">shader_is_compiled</span></a></li>
+    <li><a href="shaders_are_supported.htm"><span class="notranslate">shaders_are_supported</span></a></li>
+    <li><a href="shader_current.htm"><span class="notranslate">shader_actualidad</span></a></li>
+  </ul>
+  <p> </p>
+  <p>También tenemos una función especial que define un estado global para todos los <span class="notranslate">sombreadores</span>:</p>
+  <ul>
+    <li><a href="shader_enable_corner_id.htm"><span class="notranslate">shader_enable_corner_id</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Al trabajar con muestreadores de textura en <span class="notranslate">los shaders</span> necesitarás información sobre la textura que se está utilizando, en cuyo caso puedes utilizar las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Sprites/Sprite_Information/sprite_get_texture.htm">sprite_get_texture</a></li>
+    <li><a href="../Sprites/Sprite_Information/sprite_get_uvs.htm">sprite_get_uvs</a></li>
+    <li><a href="../Fonts/font_get_texture.htm">font_get_texture</a></li>
+    <li><a href="../Fonts/font_get_uvs.htm">font_get_uvs</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_width.htm">texture_get_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_height.htm">texture_get_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_width.htm">texture_get_texel_width</a></li>
+    <li><a href="../../Drawing/Textures/texture_get_texel_height.htm">texture_get_texel_height</a></li>
+    <li><a href="../../Drawing/Textures/texture_set_stage.htm">texture_set_stage</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></li>
+    <li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm">gpu_set_texrepeat</a></li>
+  </ul>
+  <p> </p>
+  <p>Aunque este manual <b>no</b> cubre ninguna de las funciones y variables de <span class="notranslate">los</span> shaders de Open GL, contiene una lista de las que son exclusivas de <span class="notranslate">GameMaker Studio 2</span>. Estas constantes no son parte de la especificación de Open GL para <span class="notranslate">sombreadores</span> y se suministran
+    para simplificar la integración de <span class="notranslate">los sombreadores</span> dentro de sus proyectos.</p>
+  <ul class="colour">
+    <li><a href="Shader_Constants.htm">Constantes de<span class="notranslate">sombreado</span> </a></li>
+  </ul>
+  <p> </p>
+  <p>Por último, <span class="notranslate">GameMaker Studio 2</span> te permite definir tus propios <b>formatos de vértices</b> a partir de los cuales puedes crear tus propias primitivas personalizadas. Esto puede acelerar enormemente las operaciones de <span class="notranslate">los sombreadores</span> o puede utilizarse para ampliar sus capacidades y crear efectos sorprendentes.
+    Puedes encontrar información sobre esto en las siguientes secciones:</p>
+  <ul class="colour">
+    <li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Asset_Management.htm">Gestión de activos</a></div>
+        <div style="float:right">Siguiente: <a href="../Sequences/Sequences.htm">Secuencias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shaders</span>
+_YY_GLSLES_
+_YY_GLSL_
+_YY_HLSL11_
+_YY_PSSL_
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_functions
+-->
+
+</body></html>

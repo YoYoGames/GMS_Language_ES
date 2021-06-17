@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_edge_shape</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_edge_shape" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_edge_shape" />
+  <meta name="search-keywords" content="physics_fixture_set_edge_shape" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_edge_shape</h1>
+  <p>Esta función define una forma de fijación de &quot;borde&quot;. Una forma de borde es simplemente una línea que generará una colisión cuando otros accesorios la sobrepasen, y puede ser muy útil para generar (por ejemplo) terreno, o para crear bordes alrededor de una habitación.
+    La posición del borde se define utilizando el espacio <i>local</i>, es decir, la posición x/y de la instancia se considera (0,0), por lo que debe tenerse en cuenta al crearlos (en el ejemplo de código siguiente, la instancia se habría colocado en
+    (0,0) en la habitación para evitar complicaciones).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>el índice de la luminaria</td>
+      </tr>
+      <tr>
+        <td>local_x1</td>
+        <td>posición inicial x para el borde</td>
+      </tr>
+      <tr>
+        <td>local_y1</td>
+        <td>posición inicial y para el borde</td>
+      </tr>
+      <tr>
+        <td>local_x2</td>
+        <td>posición x final para el borde</td>
+      </tr>
+      <tr>
+        <td>local_y2</td>
+        <td>posición final y para la arista</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var xx = 0;<br> var y1 = room_height - 100;<br> var y2 = room_height - 50 - irandom(100);<br> for (var i = 0; i &lt; 10; i++;)<br> {
+    <br> var fix = physics_fixture_create();<br> physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);<br> physics_fixture_bind(fix, id);<br> physics_fixture_delete(fix);
+    <br> xx += 50;<br> y1 = y2;<br> y2 = room_height - 50 - irandom(100);<br> }
+  </p>
+  <p>El código anterior creará una línea de luminarias de &quot;borde&quot; con una variedad de alturas a lo largo de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_edge_shape
+-->
+  <!-- TAGS
+physics_fixture_set_edge_shape
+-->
+</body>
+</html>

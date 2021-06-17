@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>botón_de_dibujo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_button" />
+  <meta name="rh-index-keywords" content="draw_button" />
+  <meta name="search-keywords" content="draw_button" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>botón_de_dibujo</h1>
+  <p>Esta función dibujará un &quot;botón&quot; rectangular muy simple utilizando el color de dibujo y el alfa actualmente seleccionados, donde el <i>argumento</i> arriba define cómo se ve el efecto de borde biselado, como se muestra en la imagen de abajo:</p>
+  <p><img alt="Draw button exmple" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_button.png"><b>NOTA</b>: Si quieres dibujar una forma usando un <span class="notranslate">shader</span>, debes tener en cuenta que la mayoría de <span class="notranslate">los shaders</span> esperan los
+    siguientes entradas: vértice, textura, color. Sin embargo, cuando se utiliza esta función, sólo se pasan datos de vértice y color, por lo que el <span class="notranslate">shader</span> puede no dibujar nada (o dibujar algo pero no correctamente). Si necesitas dibujar formas de esta manera, entonces
+    el <span class="notranslate">sombreador</span> debe ser personalizado con esto en mente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_button(x1, y1, x2, y2, up);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La coordenada x de la izquierda del botón</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La coordenada y de la parte superior del botón</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La coordenada x de la derecha del botón</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La coordenada y de la parte inferior del botón</td>
+      </tr>
+      <tr>
+        <td>arriba</td>
+        <td>Si el botón está arriba<tt>(verdadero</tt>) o abajo<tt>(falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_button(100, 100, 200, 150, !mouse_check_button(mb_left));</p>
+  <p>Esto dibujará un botón que aparecerá pulsado si se mantiene pulsado el botón izquierdo del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Basic_Forms.htm">Formularios básicos</a></div>
+        <div style="float:right">Siguiente: <a href="draw_healthbar.htm">draw_healthbar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_button
+-->
+  <!-- TAGS
+draw_button
+-->
+</body>
+</html>

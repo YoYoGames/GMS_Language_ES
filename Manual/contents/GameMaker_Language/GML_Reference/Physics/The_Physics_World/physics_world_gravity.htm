@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_gravity</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_gravity" />
+  <meta name="rh-index-keywords" content="physics_world_gravity" />
+  <meta name="search-keywords" content="physics_world_gravity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_gravity</h1>
+  <p>Como todas las funciones de física, <tt>physics_world_gravity()</tt> sólo funcionará en una instancia si la sala tiene un mundo de física definido para ella en el editor de salas o usando <a href="physics_world_create.htm"><tt>physics_world_create()</tt></a>. En ese caso
+    utilizará el punto de definición 0,0 del mundo de la física para calcular la dirección y la fuerza de la gravedad basándose en el vector calculado a partir de las entradas xg e yg. Aquí hay algunas imágenes para ilustrar...</p>
+  <p><img alt="Physics world gravity illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_gravity_image.png">Como puedes ver, las coordenadas xg,yg son relativas a la posición de 0,0 definida para
+    el mundo de la física, y la gravedad misma se calcula como un vector de esos dos componentes. Así, los valores por defecto de 0,10 le darán una dirección de la gravedad hacia abajo (270 grados) con una aceleración de 10 metros por segundo al cuadrado. Fíjate en los metros por segundo al <i>cuadrado</i>!
+    Al igual que todas las funciones de física, la gravedad se calcula utilizando metros como medida base, por lo que la escala de píxeles a metros que se establece en la función <tt>physics_world_create</tt> es importante aquí. La gravedad también se <i>acumula</i> en el objeto (pero la
+    cantidad exacta depende de lo que haya establecido para la función <a href="../Fixtures/physics_fixture_set_linear_damping.htm"><tt>physics_fixture_set_linear_damping()</tt></a>), lo que significa que en una habitación con una room_speed de 60, sin amortiguación, la instancia
+    se acelerará 10 metros por segundo, cada segundo - que, si usted tiene una escala de 0,1 píxeles a metros es lo mismo que decir que se acelerará a una velocidad de 100 píxeles por segundo en 60 pasos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_world_gravity(xg, yg)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xg</td>
+        <td>La componente x del vector gravedad</td>
+      </tr>
+      <tr>
+        <td>yg</td>
+        <td>La componente y del vector gravedad</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_world_gravity(-5, 0);</p>
+  <p>El código anterior establecerá la gravedad (suponiendo que la física de la habitación 0,0 se establece en la parte superior izquierda) a la derecha - 0 grados - con una aceleración de 5 metros por segundo al cuadrado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Physics_World.htm">El mundo de la física</a></div>
+        <div style="float:right">Siguiente: <a href="physics_world_update_iterations.htm">physics_world_update_iterations</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_gravity
+-->
+  <!-- TAGS
+physics_world_gravity
+-->
+</body>
+</html>

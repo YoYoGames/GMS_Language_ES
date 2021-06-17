@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_delete" />
+  <meta name="rh-index-keywords" content="physics_fixture_delete" />
+  <meta name="search-keywords" content="physics_fixture_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_delete</h1>
+  <p>Dado que una vez que un fixture ha sido vinculado a una instancia, esa instancia mantiene las propiedades del fixture, podemos eliminar el fixture de la memoria con esta función, particularmente si ya no planeamos usarlo de nuevo. Tenga en cuenta que si no se eliminan los accesorios
+    después de que ya no se necesiten puede causar una fuga de memoria que ralentizará y eventualmente bloqueará tu juego, por lo que debes tener cuidado de limpiar adecuadamente después de definir y vincular los fixtures.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_delete(fixture)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>el accesorio que se va a borrar de la memoria</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var fix, inst;<br> fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(fix, 16);<br> physics_fixture_set_density(fix, 1.0);<br> inst = instance_create_layer(x, y, &quot;Instances&quot;, genericBodyObject);<br> physics_fixture_bind(fix,
+    inst);<br> physics_fixture_delete(fix);
+  </p>
+  <p>El código anterior creará una fijación y asignará su índice a la variable &quot;fix&quot;. A continuación, define la forma y la densidad del fixture antes de vincularlo a la instancia que se creó con el índice almacenado en la variable &quot;inst&quot;.
+    Por último, se elimina el fixture para evitar fugas de memoria, ya que no se necesita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_remove_fixture.htm">physics_remove_fixture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_delete
+-->
+  <!-- TAGS
+physics_fixture_delete
+-->
+</body>
+</html>

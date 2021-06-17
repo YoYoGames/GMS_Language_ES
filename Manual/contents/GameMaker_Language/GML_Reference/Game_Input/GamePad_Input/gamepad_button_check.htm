@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_button_check</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_button_check" />
+  <meta name="rh-index-keywords" content="gamepad_button_check" />
+  <meta name="search-keywords" content="gamepad_button_check" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_button_check</h1>
+  <p>Esta función devolverá <tt>true</tt> o <tt>false</tt> dependiendo de si se detecta que el botón del gamepad está pulsado o no. Si está comprobando un botón analógico, entonces la comprobación tendrá en cuenta el <a href="gamepad_set_button_threshold.htm">ajuste del umbral</a> y sólo devolverá <span class="inline">true</span> mientras el valor bruto de entrada esté por encima del umbral dado (puede obtener este valor bruto utilizando la función <span class="inline"><a href="gamepad_button_value.htm">gamepad_button_value()</a></span>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_button_check(device, button);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>botón</td>
+        <td>Qué <a href="Gamepad_Input.htm">constante</a> del botón del gamepad hay que comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gamepad_button_check(0, gp_face1)<br> {
+    <br> if canshoot = true<br> {
+    <br> audio_play_sound(snd_Shoot, 0, false);<br> instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet)<br> canshoot = false;<br> alarm[0] = room_speed / 2;<br> }
+    <br> }
+  </p>
+  <p>El código anterior detectará si el botón inferior de la cara superior (la &quot;X&quot; en un mando de ps3) se mantiene pulsado y si es así, disparará una instancia &quot;bala&quot; y activará una alarma.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_button_check_pressed.htm"> gamepad_button_check_pressed </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_button_check
+-->
+  <!-- TAGS
+gamepad_button_check
+-->
+</body>
+</html>

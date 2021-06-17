@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_stretch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_stretch" />
+  <meta name="rh-index-keywords" content="layer_background_stretch" />
+  <meta name="search-keywords" content="layer_background_stretch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_stretch</h1>
+  <p>Usando esta función puedes cambiar el sprite de un elemento de fondo para que se estire y se ajuste a la habitación o para que permanezca a 1:1 con la resolución. Se suministra el ID del elemento de fondo (que se obtiene cuando se crea un elemento de fondo utilizando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    o al utilizar la función <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), y luego establece el argumento de estiramiento como <tt>verdadero</tt> o <tt>falso</tt>. Cuando se establece como <tt>verdadero</tt>, el sprite del elemento se estirará para ajustarse a
+    la habitación (ya sea escalado hacia arriba o hacia abajo dependiendo de los tamaños del sprite y de la habitación), y cuando se establece en <tt>falso</tt>, el sprite del elemento se mostrará en su resolución nativa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_background_stretch(background_element_id, stretch)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>El valor de identificación único del elemento de fondo que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>estiramiento</td>
+        <td>La palanca de estiramiento, que puede ser <tt>verdadera</tt> o <tt>falsa</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_stretch(back)<br> {
+    <br> layer_background_stretch(back, false);<br> }
+    <br> si no
+    <br> {
+    <br> layer_background_stretch(back, true);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba si se pulsa el botón del ratón y, si se detecta alguno, conmuta el estiramiento del sprite del elemento de fondo asignado a la capa en la que se encuentra la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Background_Layers.htm">Capas de fondo</a></div>
+        <div style="float:right">Siguiente: <a href="layer_background_blend.htm">layer_background_blend</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_stretch
+-->
+  <!-- TAGS
+layer_background_stretch
+-->
+</body>
+</html>

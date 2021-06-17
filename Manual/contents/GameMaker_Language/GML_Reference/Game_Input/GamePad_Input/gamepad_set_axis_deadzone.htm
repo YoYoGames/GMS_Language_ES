@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_axis_deadzone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_axis_deadzone" />
+  <meta name="rh-index-keywords" content="gamepad_set_axis_deadzone" />
+  <meta name="search-keywords" content="gamepad_set_axis_deadzone" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_axis_deadzone</h1>
+  <p>Esta función puede utilizarse para establecer la &quot;zona muerta&quot; del eje del joystick. Se especifica la ranura del dispositivo a ajustar, y luego se establece un valor de 0 a 1 y si la cantidad de entrada es menor que el valor dado, se considera que el eje del joystick está en 0.
+    Tenga en cuenta que este es un ajuste global que afectará a <i>todos los</i> ejes de todos los joysticks conectados a la ranura del dispositivo especificado. </p>
+  <p>El uso de esta función no significa que el valor del eje parta del valor de la zona muerta, ya que la función <a href="gamepad_axis_value.htm"><span class="inline">gamepad_axis_value()</span></a> <em>siempre</em> devolverá un valor normalizado entre -1
+    y 0 o 0 y 1. Por ejemplo, establecer la zona muerta en 0,2 significará que al empujar el stick hacia la derecha sólo empezará a devolver un valor de 0 - 1 cuando el valor <em>bruto</em> del eje sea superior a 0,2 - por lo que cuando el valor bruto sea 0,2, el valor de retorno será 0,
+    cuando el valor bruto esté en 0,5, el valor de retorno será 0,375, o si el valor bruto es 0,9, entonces el valor de retorno sería 0,875.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_set_axis_deadzone(device, deadzone);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>zona muerta</td>
+        <td>El valor de la zona muerta de 0 a 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gamepad_is_connected(0) gamepad_set_axis_deadzone(0, 0.05);<br> si gamepad_is_connected(1) gamepad_set_axis_deadzone(1, 0.05);<br> si gamepad_is_connected(2) gamepad_set_axis_deadzone(2, 0.05);<br> si gamepad_is_connected(3) gamepad_set_axis_deadzone(3,
+    0.05);</p>
+  <p>El código anterior establecerá la zona muerta del eje del joystick en cualquiera de los 4 dispositivos conectados a 0,05.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_set_vibration.htm"> gamepad_set_vibration </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_axis_deadzone
+-->
+  <!-- TAGS
+gamepad_set_axis_deadzone
+-->
+</body>
+</html>

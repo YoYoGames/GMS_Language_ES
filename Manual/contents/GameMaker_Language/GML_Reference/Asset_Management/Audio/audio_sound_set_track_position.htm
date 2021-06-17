@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sound_set_track_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sound_set_track_position" />
+  <meta name="rh-index-keywords" content="audio_sound_set_track_position" />
+  <meta name="search-keywords" content="audio_sound_set_track_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sound_set_track_position</h1>
+  <p>Esta función establecerá la posición (en segundos) dentro del archivo de sonido para que el sonido se reproduzca. El sonido puede ser una instancia única de un sonido (el índice de los sonidos individuales que se reproducen puede almacenarse en una variable cuando se utiliza la función 
+    <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> o <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> ) o un activo de sonido. Si se trata de un ID de sonido único que se utiliza, entonces la posición cambiará inmediatamente
+      al nuevo tiempo dado, y si es un activo del Navegador de Activos entonces todas las reproducciones posteriores del sonido dado comenzarán en el nuevo tiempo. La función ignorará cualquier valor dado que sea más largo que la longitud del sonido dado para el valor &quot;index&quot;
+      del sonido.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_sound_set_track_position(index, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sonido a cambiar.</td>
+      </tr>
+      <tr>
+        <td>tiempo</td>
+        <td>El tiempo (en segundos) al que se debe fijar el punto de inicio.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var snd = audio_play_sound(snd_MainTrack, 0, false);<br> audio_sound_set_track_position(snd, 32);</p>
+  <p>El código anterior reproduce un sonido y luego utiliza el valor de ID devuelto para establecer la posición de inicio del sonido a 32 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_sound_get_track_position.htm">audio_sound_get_track_position</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sound_set_track_position
+-->
+  <!-- TAGS
+audio_sound_set_track_position
+-->
+</body>
+</html>

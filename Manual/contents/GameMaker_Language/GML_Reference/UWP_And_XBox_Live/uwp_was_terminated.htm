@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_fue_terminado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_was_terminated" />
+  <meta name="rh-index-keywords" content="uwp_was_terminated" />
+  <meta name="search-keywords" content="uwp_was_terminated" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_fue_terminado</h1>
+  <p>Con esta función se puede averiguar si el juego fue cerrado previamente por el sistema (es decir, no es la primera ejecución del juego). Si lo ha sido, la función devolverá <tt>true</tt>, en caso contrario devolverá <tt>false</tt>. Un ejemplo de
+    de uso sería comprobarlo y ver si el juego fue previamente terminado por el sistema, y entonces (si devuelve <tt>true</tt>) cargar la etapa anterior en la que el jugador estaba en el juego. Si el objetivo es la <span class="notranslate">XBox</span> One entonces el comportamiento requerido de los juegos
+    si se detecta esto será diferente entre las diferentes versiones de los documentos de certificación, por lo que vale la pena comprobar la última versión para ver lo que el juego <i>debe hacer.</i> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">uwp_was_terminated();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if xboxlivewas_terminated()<br> {
+    <br> buffer_load(&quot;Player_Save.sav&quot;);
+    <br> global.GameLoaded = true;<br> }
+  </p>
+  <p>El código anterior comprueba si la aplicación ha sido previamente terminada por el sistema, y si es así, carga un buffer y establece una variable global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="UWP_And_XBox_Live.htm">UWP y XBox Live</a></div>
+        <div style="float:right">Siguiente: <a href="uwp_was_closed_by_user.htm">uwp_was_closed_by_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_was_terminated
+-->
+  <!-- TAGS
+uwp_was_terminated
+-->
+</body>
+</html>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_format_add_custom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_add_custom" />
+  <meta name="rh-index-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+  <meta name="search-keywords" content="vertex_format_add_custom,vertex_type_float1,vertex_type_float2,vertex_type_float3,vertex_type_float4,vertex_type_colour,vertex_type_ubyte4,vertex_usage_position,vertex_usage_colour,vertex_usage_normal,vertex_usage_textcoord,vertex_usage_blendweight,vertex_usage_blendindices,vertex_usage_depth,vertex_usage_tangent,vertex_usage_binormal,vertex_usage_fog,vertex_usage_sample" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_format_add_custom</h1>
+  <p>Esta función permite utilizar un tipo de datos personalizado para atributos específicos del formato de vértice como parte del nuevo formato de vértice que se está creando. Los valores disponibles para utilizar están definidos por la constante del tipo de datos que se elija, que se indica a continuación:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>vertex_type_float1</td>
+        <td>Un único valor de coma flotante</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float2</td>
+        <td>Dos valores de coma flotante</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float3</td>
+        <td>Tres valores en coma flotante</td>
+      </tr>
+      <tr>
+        <td>vertex_type_float4</td>
+        <td>Cuatro valores de coma flotante</td>
+      </tr>
+      <tr>
+        <td>tipo_de_vértice_color</td>
+        <td>Cuatro valores de componentes (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>vertex_type_ubyte4</td>
+        <td>Valores de bytes sin signo de cuatro componentes (de 0 a 255)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> El uso que se le dará a estas constantes también necesita ser definido para que los valores puedan ser &quot;ligados&quot; apropiadamente dentro del shader <span class="notranslate">que se está</span> creando. Esto es necesario debido al hecho de que DX y OpenGL tienen diferentes requisitos por lo que si
+    si no los vinculas correctamente, no aparecerán correctamente en el shader. Las constantes de uso disponibles que puede elegir se enumeran a continuación y las que utilice dependerán de las características específicas del <span class="notranslate">sombreador</span> que se está creando:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>posición_de_uso_de_vértices</td>
+        <td>valores de posición (x, y, z)</td>
+      </tr>
+      <tr>
+        <td>uso_de_vértices_color</td>
+        <td>valores de color (r, g, b, a)</td>
+      </tr>
+      <tr>
+        <td>uso_de_vértices_normal</td>
+        <td>valores normales de los vértices (nx, ny, nz)</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_textcoord</td>
+        <td>Coordenadas UV (u, v)</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_blendweight</td>
+        <td>el peso de mezcla de la matriz de entrada (para la animación esquelética, por ejemplo)</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_blendindices</td>
+        <td>los índices de las matrices a utilizar (para la animación esquelética, por ejemplo)</td>
+      </tr>
+      <tr>
+        <td>profundidad_de_uso_de_vértices</td>
+        <td>valor del búfer de profundidad de vértices</td>
+      </tr>
+      <tr>
+        <td>uso_de_vértices_tangentes</td>
+        <td>valores tangentes</td>
+      </tr>
+      <tr>
+        <td>vertex_usage_binormal</td>
+        <td>valores binormales</td>
+      </tr>
+      <tr>
+        <td>uso_de_vértices_de_la_niebla</td>
+        <td>valores de niebla</td>
+      </tr>
+      <tr>
+        <td>muestra_de_uso_de_vértices</td>
+        <td>índice de muestreo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Hay que tener en cuenta algunas cosas importantes cuando se utilizan formatos personalizados como estos:</p>
+  <ul class="colour">
+    <li>La función <tt>vertex_format_add_custom()</tt> sólo admite <tt>vertex_usage_position</tt>, <tt>vertex_usage_colour</tt>, <tt>vertex_usage_normal</tt> y <tt>vertex_usage_textcoord</tt> cuando se utilizan <span class="notranslate">sombreadores</span> GLSL. Éstos se asignarán a los atributos <span class="notranslate">del sombreador</span> 
+     <tt>in_Position</tt>, <tt>in_Colour[0 - ...]</tt>, <tt>in_Normal</tt> respectivamente (cualquier cosa que no sea uno de estos tres atributos - por ejemplo: coordenadas de textura - puede ser asignada a cualquier atributo que definas).</li>
+    <li>En general, deberías usar <tt>vertex_usage_textcoord</tt> para todos los parámetros extra siempre que sea posible, ya que los tipos como <tt>vertex_usage_blendweight</tt> y <tt>vertex_usage_tangent</tt> están casi obsoletos en la mayoría de los lenguajes de <span class="notranslate">sombreado</span>, y probablemente no se convertirán
+      convertirán correctamente. En su lugar, utiliza los tipos <tt>vec</tt>, <tt>vec2</tt>, <tt>vec3</tt> o <tt>vec4</tt> <tt>vertex_usage_textcoord</tt> y todo debería funcionar bien.</li>
+    <li>GLSL ES <i>no</i> soporta atributos enteros, por lo que pasar <tt>ivec4</tt>'s no funciona (este tipo se suele utilizar al pasar vertex_usage_blendindices <tt>).</tt> Lo que hay que hacer es pasar coordenadas de textura y luego en el
+     <span class="notranslate">shader</span>, convertirlas a <tt>ivec4</tt> de esta manera:</li>
+  </ul>
+  <p> </p>
+  <p class="code">attribute vec3 in_Position;<br> attribute vec4 in_BlendIndices;<br> attribute vec4 in_BlendWeights;<br>
+    <br> varying vec4 v_vColour;<br> varying mat4 v_mat;<br>
+    <br> void main()<br> {
+    <br> gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4( in_Position.xyz, 1.0);<br> v_vColour = in_BlendWeights;<br> ivec4 t = ivec4(in_BlendIndices);<br> v_mat = gm_Matrices[ t.x ];<br> }
+  </p>
+  <ul class="colour">
+    <li>Los pesos de mezcla se almacenan normalmente en una matriz y luego se accede a ellos utilizando los índices de mezcla, pero se puede ver aquí que en lugar de definir <tt>in_BlendIndices</tt> como un atributo <tt>ivec4</tt>, es un vec4 <tt>,</tt> luego se convierte en un ivec4 <tt>en</tt> 
+      el código. Esto se usa para indexar el array creado usando la <tt>gm_Matrix</tt> (sólo se puede acceder a un array usando un valor <tt>INT</tt> - no un float).</li>
+    <br />
+  </ul>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_format_add_custom(type, usage);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de datos que contendrán estos datos de vértice personalizados (ver la <b><i>constantes de tipo</i></b> listados más abajo).</td>
+      </tr>
+      <tr>
+        <td>uso</td>
+        <td>El uso que se le dará a los datos (ver la <b><i>constantes de uso</i></b> que se enumeran a continuación).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_textcoord();
+    <br> vertex_format_add_custom(vertex_type_float3, vertex_usage_position);<br> my_format = vertex_format_end();</p>
+  <p>El código anterior creará un nuevo formato de vértice con sólo la textura y 3 valores de punto flotante personalizados para la posición. A continuación, almacena el id del formato en la variable &quot;mi_formato&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_format_end.htm">vertex_format_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_add_custom
+vertex_type_float1
+vertex_type_float2
+vertex_type_float3
+vertex_type_float4
+vertex_type_colour
+vertex_type_ubyte4
+vertex_usage_position
+vertex_usage_colour
+vertex_usage_normal
+vertex_usage_textcoord
+vertex_usage_blendweight
+vertex_usage_blendindices
+vertex_usage_depth
+vertex_usage_tangent
+vertex_usage_binormal
+vertex_usage_fog
+vertex_usage_sample
+-->
+  <!-- TAGS
+vertex_format_add_custom
+-->
+
+</body></html>

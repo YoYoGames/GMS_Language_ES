@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_create" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_create,xboxlive_match_visibility_open,xboxlive_match_visibility_private,xboxlive_match_visibility_usetemplate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_create</h1>
+  <p>Esta función creará una sesión multijugador utilizando la plantilla de sesión, la tolva de emparejamiento y la plantilla de asociación de dispositivos seguros, que deberías haber creado de antemano en el panel de control de XDP. El ID de usuario que puede recuperar para un determinado juego
+    llamando a la función <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> y la visibilidad será una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_open</td>
+        <td>especifica que la sesión puede ser unida por los demás.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_private</td>
+        <td>especifica que la sesión no es visible para los usuarios que no son miembros de la sesión.</td>
+      </tr>
+      <tr>
+        <td>xboxlive_match_visibility_usetemplate</td>
+        <td>especifica que se debe usar el valor utilizado en la plantilla de la sesión (normalmente se debe usar esto ya que no se puede anular el valor de una plantilla si se ha establecido uno en XDP).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>La función devuelve un valor único de ID de solicitud, que puede utilizarse para identificar el evento social asíncrono correcto para esta función. Este evento se activará cuando se haya creado la sesión y contendrá un Mapa DS en la variable <tt>async_load</tt> con los siguientes pares clave/valor:</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - contiene el ID de la solicitud devuelto por la función de llamada</li>
+    <li>&quot;status&quot; - contiene la cadena &quot;session_created&quot; para informar del tipo de evento que se ha activado.</li>
+    <li>&quot;sessionid&quot; - contiene el ID de la sesión, o -1 en caso de fallo</li>
+    <li>&quot;error&quot; - contiene 0 en caso de éxito, o -1 en caso de fallo</li>
+    <li>&quot;correlationid&quot; - el manejador de la sesión para la correlación con la función <tt><a href="xboxlive_matchmaking_join_session.htm">xboxlive_matchmaking_join_session()</a></tt></li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero de identificación del usuario que se utilizará</td>
+      </tr>
+      <tr>
+        <td>visibilidad</td>
+        <td>Una de las constantes mencionadas anteriormente</td>
+      </tr>
+      <tr>
+        <td>plantilla</td>
+        <td>El nombre de la plantilla de la sesión</td>
+      </tr>
+      <tr>
+        <td>tolva</td>
+        <td>El nombre de la tolva de la búsqueda de partidos</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>El nombre de la plantilla de asociación de dispositivos seguros</td>
+      </tr>
+      <tr>
+        <td>matchattributes</td>
+        <td>[OPCIONAL]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ID de la solicitud (entero)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var userID = xboxlive_user_for_pad(global.PadIndex);<br> result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p>
+  <p>Lo anterior recuperará el ID del usuario en el gamepad dado y luego iniciará una sesión de matchmaking para ellos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Match_Making.htm">La creación de partidos</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_matchmaking_find.htm">xboxlive_matchmaking_find</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_create
+xboxlive_match_visibility_open
+xboxlive_match_visibility_private
+xboxlive_match_visibility_usetemplate
+-->
+  <!-- TAGS
+xboxlive_matchmaking_create
+-->
+</body>
+</html>

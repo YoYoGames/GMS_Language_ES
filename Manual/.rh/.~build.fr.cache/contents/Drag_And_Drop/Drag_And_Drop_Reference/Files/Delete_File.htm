@@ -22,7 +22,7 @@
    
   Ejemplo:
   El código del bloque de acción anterior comprobará si el archivo "checkpoint.sav" existe, y si
-    existe, comprueba si el archivo "checkpoint_OLD.sav" existe. Si ese archivo también existe, entonces se elimina, y luego el archivo original "checkpoint.sav" es renombrado a "checkpoint_OLD.sav". Por último, se guarda un buffer
+    existe, comprueba si el archivo "checkpoint_OLD.sav" existe. Si ese archivo también existe, entonces se elimina, y luego el archivo original "checkpoint.sav" se renombra a "checkpoint_OLD.sav". Por último, se guarda un buffer
     se guarda como "checkpoint.sav" (esencialmente estamos haciendo una copia de seguridad de un archivo de búfer guardado cada vez que lo guardamos, de modo que siempre hay un archivo guardado "actual" y otro "antiguo").
    
    

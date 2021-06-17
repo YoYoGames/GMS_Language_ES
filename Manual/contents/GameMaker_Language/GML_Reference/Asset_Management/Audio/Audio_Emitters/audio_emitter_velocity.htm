@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>velocidad del emisor de audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_velocity" />
+  <meta name="rh-index-keywords" content="audio_emitter_velocity" />
+  <meta name="search-keywords" content="audio_emitter_velocity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>velocidad del emisor de audio</h1>
+  <p>Esta función se puede utilizar para dar a un emisor efectos <em>Doppler </em>y simular el movimiento del audio basado en el vector que se resuelve a partir de las posiciones relativas x, y y z dadas. Si el emisor en sí no se va a mover nunca, normalmente no será necesario
+    pero, por ejemplo, si usted está haciendo un juego de disparos de desplazamiento donde los enemigos vienen de la derecha y se desplazan a la izquierda, se establecería esto para tener una velocidad de (hspeed, 0, 0) en el evento de creación de los enemigos (y actualizar
+    el emisor de cada instancia en el evento de paso usando <a href="audio_emitter_position.htm"><tt>audio_emitter_position()</tt></a>) para dar a cualquier sonido emitido por las instancias enemigas el Doppler correcto al pasar por la instancia del jugador (que a su vez
+    utilizaría la función <a href="../Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a> para poner el <i>oyente</i> en la posición correcta).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_emitter_velocity(emisor, vx, vy, vz);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>emisor</td>
+        <td>El índice del emisor a cambiar.</td>
+      </tr>
+      <tr>
+        <td>vx</td>
+        <td>El valor del vector x (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>vy</td>
+        <td>El valor del vector y (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>vz</td>
+        <td>El valor del vector z (por defecto 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">s_emit = audio_emitter_create();<br> audio_emitter_position(s_emit, room_width, 0, 0);<br> audio_emitter_velocity(s_emit, -5, 0, 0);</p>
+  <p>El código anterior crea un emisor de audio y asigna su índice a la variable &quot;s_emit&quot;. Este emisor se coloca en una posición dentro de la sala y se le da una velocidad de 5 píxeles por paso a lo largo del eje x (se hará un Doppler correcto en relación con
+    con respecto al oyente como si tuviera una velocidad horizontal de 5 píxeles por paso).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Emitters.htm">Emisores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_emitter_falloff.htm">audio_emitter_falloff</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_velocity
+-->
+  <!-- TAGS
+audio_emitter_velocity
+-->
+</body>
+</html>

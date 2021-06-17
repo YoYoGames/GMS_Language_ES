@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_get_names</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_get_names" />
+  <meta name="rh-index-keywords" content="variable_instance_get_names" />
+  <meta name="search-keywords" content="variable_instance_get_names" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instance_get_names</h1>
+  <p>Con esta función puedes recuperar un array poblado con los nombres de las variables de <b>instancia</b> para una instancia, o las variables <b>globales</b> para un juego. Cuando se pasa un valor de ID de instancia, cada
+    en el array será una cadena con el nombre de la variable que corresponde a una variable de <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">ámbito de</a> instancia que se ha creado en la instancia. Sin embargo, si pasas
+    Si pasas la palabra clave <tt>global</tt>, cada entrada del array será una cadena con el nombre de la variable que corresponda a una variable de ámbito <a href="../../GML_Overview/Variables_And_Variable_Scope.htm">global</a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">variable_instance_get_names(instance_id/global);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>instance_id/global</td>
+        <td>El valor de identificación único de la instancia a comprobar o la palabra clave <tt>global</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Matriz (cada entrada es una cadena)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var str = &quot;&quot;;<br> var array = variable_instance_get_names(id);<br> show_debug_message(&quot;Variables para &quot; + object_get_name(object_index) + string(id));<br> for (var i = 0; i &lt; array_length(array); i++;) <br> {
+    <br> str = array[i] + &quot;:&quot; + string(variable_instance_get(id, array[i]));<br> show_debug_message(str);
+    <br> }
+  </p>
+  <p>El código anterior recuperará un array de todas las variables de ámbito de instancia para la instancia que ejecuta el bloque de código y luego las mostrará junto con sus valores en la salida de depuración.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="variable_instance_names_count.htm">variable_instance_names_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_get_names
+-->
+  <!-- TAGS
+variable_instance_get_names
+-->
+</body>
+</html>

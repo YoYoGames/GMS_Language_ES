@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gif_open</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for gif_open" />
+  <meta name="rh-index-keywords" content="gif_open" />
+  <meta name="search-keywords" content="gif_open" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gif_open</h1>
+  <p>Con esta función puede crear una imagen vacía en formato GIF, lista para que se le añadan datos. Cuando llame a la función, deberá especificar la anchura y la altura del GIF (en píxeles, y no hay límite superior en el tamaño, excepto por la memoria disponible),
+    y la función devolverá el valor de identificación único que se utilizará para identificar el regalo en las funciones posteriores, o devolverá -1 si el gif no ha podido ser inicializado (por ejemplo, si la anchura/altura son demasiado grandes para la memoria disponible). También puede especificar
+    un argumento opcional para establecer el &quot;color claro&quot; del GIF. Se trata de un valor RGB (sin componente alfa), y se limpiará el GIF con este color antes de añadirle nada. Si no se proporciona un argumento de color claro, se utilizará el color por defecto
+    se utilizará el color negro por defecto.</p>
+  <p>Tenga en cuenta que al utilizar esta función debe llamar a <a href="gif_save.htm"><tt>gif_save()</tt></a> para finalizar la creación del GIF antes de abrir otro archivo para su grabación (así que por cada <tt>gif_open()</tt> debe haber un <tt>gif_save()</tt> que lo acompañe).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gif_open(anchura, altura, [clear_colour]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El ancho del gif a crear</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura del gif a crear</td>
+      </tr>
+      <tr>
+        <td>[clear_colour]</td>
+        <td><b>Opcional</b>] El color (RGB) para borrar el gif a</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si save_gif == true<br> {
+    <br> si count == 0<br> {
+    <br> gif_image = gif_open(room_width, room_height);<br> }
+    <br> else if count &lt; 30<br> {
+    <br> gif_add_surface(gif_image, application_surface, 6/100);<br> }
+    <br> else
+    <br> {
+    <br> gif_save(gif_image, &quot;GameCapture.gif&quot;);<br> count = 0;<br> save_gif = false;<br> }
+    <br> count++;
+    <br> }
+  </p>
+  <p>El código anterior creará un archivo de imagen GIF con 30 fotogramas tomados de la superficie de la aplicación y luego lo guardará.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Cámaras y pantalla</a>
+        <div style="float:left">Atrás: </div>
+        <div style="float:right">Siguiente: <a href="gif_add_surface.htm">gif_add_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gif_open
+-->
+  <!-- TAGS
+gif_open
+-->
+</body>
+</html>

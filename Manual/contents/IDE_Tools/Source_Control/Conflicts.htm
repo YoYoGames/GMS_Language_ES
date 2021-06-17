@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Conflictos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control standard workflow
+" />
+  <meta name="rh-index-keywords" content="Source Control - Conflicts" />
+  <meta name="search-keywords" content="source control conflicts,conflicts tools" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Conflictos</h1>
+  <p>En esta sección vamos a ver cómo resolver los conflictos entre un <a href="Cloning_A_Repository.htm">repositorio local clonado</a> y un repositorio maestro. Asumiendo que ahora está usando un repositorio local, necesitaremos editar un archivo y luego causar
+    algún tipo de conflicto, así que abra el script de prueba que hemos estado usando y cambie el mensaje &quot;Hola Mundo&quot; a algo como esto:</p>
+  <p class="code">show_debug_message(&quot;Hola mundo, ¿cómo estás?&quot;);</p>
+  <p>Ahora deberías guardar el proyecto y confirmarlo en el repositorio local. Ahora, como estamos enlazados a un repositorio maestro remoto (aunque sea uno que hayamos clonado en el mismo disco) necesitamos hacer un Push para que los cambios lleguen al maestro. Para ello, vaya a
+    a <strong>Source Control</strong> &gt; <strong>Push Changes,</strong> que nos dará una actualización del estado en la <a href="../../Introduction/The_Output_Window.htm">pestaña de salida de</a> Source Control <a href="../../Introduction/The_Output_Window.htm">:</a></p>
+  <p><img alt="Source Control Output Panel" class="center" src="../../assets/Images/IDE Tools/SCM_OutputPanel.png">Ahora necesitamos abrir nuestro proyecto original (no el clonado), así que busca donde lo guardaste en el disco - o simplemente comprueba los <strong>Proyectos Recientes</strong> en el <a href="../../IDE_Navigation/Menus/The_File_Menu.htm">menú Archivo</a>, ya que debería estar directamente debajo del actual - y cárgalo en <span class="notranslate">GameMaker Studio 2</span>. Una forma fácil de comprobar que tienes el proyecto correcto es simplemente comprobar el script que tienes
+    y si el mensaje es &quot;Hola Mundo&quot; entonces tienes el correcto, o puedes abrir la <strong>ventana</strong> de Ver <strong>Historia</strong> y comprobarlo de esa manera.</p>
+  <p>Ahora tienes que editar el script de nuevo, para que se lea algo como esto:</p>
+  <p class="code">show_debug_message(&quot;Esto causará un conflicto&quot;);</p>
+  <p>Esto puede ser guardado en el disco, y los cambios confirmados, pero si usted trata de empujar estos cambios obtendrá el siguiente mensaje:</p>
+  <p><span class="buttons"><img alt="Source Control Push Conflict Message" class="center" src="../../assets/Images/IDE Tools/SCM_PushConflict.png"></span>Alguien ya ha empujado los cambios que usted no tiene todavía! Esto significa que necesita hacer un pull
+    en el repositorio y ver cuál es exactamente el problema, así que vaya a <strong>Source Control</strong> &gt; <strong>Pull Changes.</strong> Esto mostrará dos ventanas, la primera es una advertencia sobre los ficheros cambiados (como en las acciones anteriores, querrá elegir
+   <strong>Recargar </strong>aquí y <em>no </em><strong>Guardar</strong>), y la otra es la ventana de <strong>Conflictos </strong>:</p>
+  <p><img alt="Source Control Conflict Window" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictsWindow.png">Esta ventana mostrará los archivos en conflicto en una lista a la izquierda, y puede seleccionar los archivos de esa lista usando el botón izquierdo del ratón
+    <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" width="20"> (o seleccionar varios archivos usando <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> o <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> junto con <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" width="20">). Tiene cuatro opciones para tratar los archivos en conflicto, disponibles desde los botones de la derecha:</p>
+  <ul class="colour">
+    <li><strong>Usar el suyo</strong> - Esto sobrescribirá los cambios que haya hecho con el del repositorio remoto.</li>
+    <li><strong>Usar el mío</strong> - Esto anulará los cambios del repositorio remoto con los que acaba de hacer.</li>
+    <li><strong>Combinar </strong>- Esto intentará abrir una Herramienta de Combinación Externa para manejar el conflicto.</li>
+    <li><strong>Elija</strong> la herramienta de fusión - Esto le permitirá configurar la herramienta de fusión (véase la sección sobre <a href="External_Merge_Diff_Tools.htm">herramientas externas de fusión/difusión</a> para más detalles).</li>
+  </ul>
+  <p>Ahora, puede utilizar los botones para resolver el conflicto, pero antes de hacerlo, vamos a abrir el archivo en conflicto para ver exactamente cuál es el problema. Si abre el script que está en conflicto se verá así:</p>
+  <p><img alt="Source Control Conflicted Code" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictedCode.png">Esto muestra que &quot;This Will Cause A Conflict&quot; está en el HEAD (esto es lo que hemos empujado al repositorio local) y que
+    &quot;Hola Mundo, ¿Cómo estás?&quot; está siendo extraído de master, el repositorio remoto. Ahora puede volver a la ventana de conflictos y pulsar en <strong>Usar el suyo</strong> para extraer el fichero cambiado y sobrescribir el fichero HEAD actual. El script
+    se marcará como cambiado y deberá hacer un nuevo commit y push antes de continuar.</p>
+  <p>Tenga en cuenta que en realidad podríamos arreglar esto en el IDE de <span class="notranslate">GameMaker Studio 2</span>. Si eliminamos las líneas 1, 2, 3 y 5 para que nos quedemos sólo con <span class="inline">show_debug_message(&quot;Hello World, How Are You?&quot;)</span> y lo guardamos, se eliminará el conflicto,
+    ya que <span class="notranslate">Git</span> asumirá que sabes lo que estás haciendo con tu propio archivo. Sin embargo, esto es propenso a errores, por lo que se recomienda instalar una herramienta de fusión, luego configurarla y usarla en lugar de intentar fusionar manualmente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Source_Control.htm">Control de la fuente</a></div>
+        <div style="float:right">Siguiente: <a href="External_Merge_Diff_Tools.htm">Herramientas externas de fusión/diferencia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Conflicts
+conflicts
+-->
+  <!-- TAGS
+source_control_conflicts
+-->
+</body>
+</html>

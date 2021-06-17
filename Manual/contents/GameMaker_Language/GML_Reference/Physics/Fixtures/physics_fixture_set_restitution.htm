@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_restitution</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_restitution" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_restitution" />
+  <meta name="search-keywords" content="physics_fixture_set_restitution" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_restitution</h1>
+  <p>En física, la restitución se define como &quot;el retorno de un objeto o sistema a su estado original después de la deformación elástica&quot;, pero como los accesorios en el GameMaker <span class="notranslate">Studio 2 son</span> realmente cuerpos rígidos y no pueden ser deformados, la restitución es
+    restitución es una forma de decir lo &quot;rebotante&quot; que es el accesorio. Este ajuste afectará a lo mucho que un objeto &quot;rebota&quot; cuando colisiona con otros objetos y es co-dependiente de otras fuerzas que actúan sobre la instancia como la gravedad y la fricción,
+    y suele ser un valor entre 0 y 1 (se pueden utilizar valores más altos pero pueden dar resultados imprevisibles). Aquí hay una ilustración de cómo funciona:</p>
+  <p><img alt="Physics restitution illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_set_restitution_image.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_set_restitution(fixture, restitution)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>El índice de la luminaria</td>
+      </tr>
+      <tr>
+        <td>restitución</td>
+        <td>La restitución del accesorio (normalmente entre 0 y 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_fixture_set_restitution(fix_Ball, 0.9);</p>
+  <p>El código anterior establecerá la restitución del accesorio indexado en &quot;fix_ball&quot; a 0,9.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_restitution
+-->
+  <!-- TAGS
+physics_fixture_set_restitution
+-->
+</body>
+</html>

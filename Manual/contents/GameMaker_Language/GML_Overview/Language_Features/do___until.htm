@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>hacer / hasta que</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the do / until functions" />
+  <meta name="rh-index-keywords" content="do,until" />
+  <meta name="search-keywords" content="do,until" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>hacer / hasta que</h1>
+  <p>Una función <tt>do</tt> es otra forma de iterar sobre una o más<span class="glossextra">declaraciones</span> múltiples veces, y es realmente una declaración &quot;do...<tt>until&quot;</tt> ya que
+    no se puede tener una sin la otra ya que se le está diciendo a <span class="notranslate">GameMaker Studio 2</span> que haga algo hasta que una <a class="glossterm" data-glossterm="expresión" href="#">expresión</a> específica devuelva <tt>true</tt>. Tiene esta forma:</p>
+  <p class="code">do<br> {
+    <br> &lt;declaración&gt;;
+    <br> &lt;declaración&gt;;
+    <br> ...
+    <br> }
+    <br> hasta (&lt;expresión&gt;);</p>
+  <p>La sentencia (que puede ser un bloque de código de múltiples sentencias entre llaves <tt>{}</tt>) se ejecuta hasta que la expresión sea <tt>verdadera</tt>, y la sentencia inicial <strong>siempre se ejecuta al menos una vez</strong>. A continuación puede
+    puede encontrar un ejemplo de una forma típica de utilizar <tt>do... until</tt>:</p>
+  <p class="code">do<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> }
+    <br> hasta que (place_free(x, y));</p>
+  <p>El código anterior intenta colocar el objeto actual en una posición libre y establecerá las variables x/y al menos una vez, y luego realizará tantas <a class="glossterm" data-glossterm="iteración" href="#">iteraciones</a>como sean necesarias
+    hasta que la expresión <tt>place_free()</tt> devuelva <tt>true</tt>.</p>
+  <p><strong>¿Cuándo debe utilizar un bucle <span class="inline">do</span> / <span class="inline">until</span>?</strong> Debe usarse siempre que quiera repetir una o más sentencias, pero no sepa realmente cuántas veces tiene que repetirse, y quiera
+    asegurar que las sentencias se ejecuten al <em>menos una vez</em> antes de que el bucle termine.</p>
+  <p>También puede utilizar los botones <a href="break.htm"><span class="inline">break</span></a> y <a href="continue.htm"><span class="inline">continue</span></a> dentro de los bucles de <span class="inline">do</span>. El uso de <span class="inline">break</span> hará que
+    inmediatamente saldrá del bucle y pasará a cualquier código que esté en el evento o función después de que el bucle debería haber terminado, por ejemplo</p>
+  <p class="code">var _id = noone;<br> do
+    <br> {<br> _id = list[| 0];<br> if instance_exists(_id)<br> {<br> _break;<br> } <br> ds_list_delete(list, 0);<br> } <br> until (ds_list_empty(list));<br> target = _id;</p>
+  <p>En el código anterior, creamos una variable local y la establecemos para que contenga la palabra clave <a href="../Instance_Keywords.htm">noone</a>. A continuación, realizamos un bucle <span class="inline">do / until</span> que comprueba la primera posición de una lista DS para ver si contiene un ID de instancia válido, y si lo hace, entonces .
+    ID de instancia, y si lo hace entonces <span class="inline">break</span> el bucle, de lo contrario el valor de la posición de la lista se elimina. Después de que el bucle se termine (ya sea por el <span class="inline">break</span> o porque la lista está vacía) el valor de la variable local
+    se asigna a la variable de instancia <span class="inline">target</span>.</p>
+  <p>Un ejemplo de uso de continue en un bucle <span class="inline">do / until</span> sería:</p>
+  <p class="code">do<br> {
+    <br> var _x = random(room_width);<br> var _y = random(room_height);<br> if (instance_position(_x, y, obj_Enemy)<br> {
+    <br> continúa;
+    <br> }
+    <br> instance_create_layer(_x, _y, &quot;Instances&quot;, obj_Enemy);<br> }
+    <br> hasta que (instance_count(obj_Enemy) &gt;= 10);</p>
+  <p>Este código generará una posición aleatoria de la habitación y luego comprobará si existe una instancia del objeto <span class="inline">obj_Enemy</span> en esa posición. Si existe, la iteración del bucle actual se termina con <span class="inline">continue</span> y se inicia una nueva iteración.
+    se inicia una nueva iteración, y si no existe entonces se crea una instancia del objeto <span class="inline">obj_Enemy</span> en la posición aleatoria. El bucle sólo terminará cuando haya 10 o más instancias del objeto en la sala.</p>
+  <p>Una nota final: ten cuidado con tus bucles <tt>do</tt>, ya que puedes hacerlos fácilmente para siempre, en cuyo caso tu juego se colgará y no reaccionará a ninguna entrada del usuario y tendrán que forzar su cierre.</p>
+  <p>Para más ejemplos de palabras clave de bucle, consulte las secciones sobre <a href="repeat.htm"><tt>repetir</tt></a>, <a href="while.htm"><tt>mientras</tt></a>y <a href="for.htm"><tt>para</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="for.htm">para</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+do
+until
+-->
+  <!-- TAGS
+do
+until
+-->
+
+</body></html>

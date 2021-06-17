@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_set" />
+  <meta name="rh-index-keywords" content="ds_list_set" />
+  <meta name="search-keywords" content="ds_list_set" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_set</h1>
+  <p>Esta función puede utilizarse para fijar una entrada de la lista previamente añadida. Se da el ID de la lista (tal y como se devolvió cuando se creó la lista) y la posición dentro de la lista que se va a establecer, así como el valor que se va a establecer. Tenga en cuenta que si la entrada que se establece está fuera de los límites
+    de la lista (por ejemplo, usted establece la entrada 20 de la lista, pero la lista actual sólo contiene 10 entradas), entonces la lista se llenará hasta la posición dada y cada entrada se establecerá en 0. Esta función es la misma que el uso del <a href="../../../GML_Overview/Accessors.htm">accesorio de lista DS</a>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_set(id, pos, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El identificador de la lista a la que hay que añadir.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>La posición dentro de la lista a establecer.</td>
+      </tr>
+      <tr>
+        <td>[val2, ... max_val]</td>
+        <td>El valor a establecer en la lista.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = 0; i &lt; ds_list_size(list); i++;) <br> {
+    <br> ds_list_set(list, i, -1);<br> }
+  </p>
+  <p>El código anterior añadirá el valor almacenado en la variable &quot;score&quot; a la lista indexada en la variable &quot;sc_list&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_delete.htm">ds_list_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_set
+-->
+  <!-- TAGS
+ds_list_set
+-->
+
+</body></html>

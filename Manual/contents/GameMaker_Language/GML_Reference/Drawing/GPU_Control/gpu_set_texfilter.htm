@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texfilter</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texfilter" />
+  <meta name="rh-index-keywords" content="gpu_set_texfilter" />
+  <meta name="search-keywords" content="gpu_set_texfilter" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texfilter</h1>
+  <p>Esta función se puede utilizar para establecer el filtrado de texturas (interpolación lineal) de todas las imágenes dibujadas en la pantalla del juego. Cuando esto está habilitado<tt>(true</tt>) todas las texturas serán suavizadas cuando se dibujen (esto incluye a los sprites ya que también se consideran texturas),
+    lo que significa que cuando se escalan o se mueven, si no hay una relación de píxeles de 1:1, habrá una &quot;mancha&quot; a través de varios píxeles que puede hacer que las imágenes aparezcan borrosas dependiendo del estilo artístico utilizado. Si esta opción está desactivada<tt>(false</tt>), las imágenes
+    se dibujarán basándose en el píxel más cercano cuando se escalen o se muevan, lo que puede dar lugar a imágenes &quot;en bloque&quot;. El valor por defecto es <tt>falso</tt>, y esto también se puede cambiar en las <b>Opciones Globales del Juego</b> para las plataformas individuales de destino.</p>
+  <p class="note"><b>NOTA</b>: Este ajuste anulará cualquier interpolación de la fase de textura establecida para <span class="notranslate">los sombreadores</span> que utilicen la función <a href="gpu_set_texfilter_ext.htm"><tt>gpu_set_texfilter_ext()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: En el objetivo HTML5, esta función sólo funcionará con WebGL activado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_texfilter(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Activar o desactivar el filtrado de texturas<tt>(verdadero</tt> / <tt>falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gpu_get_texfilter()<br> {
+    <br> gpu_set_texfilter(false);
+    <br> }
+    <br> si no
+    <br> {
+    <br> gpu_set_texfilter(true);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el filtrado de texturas está activado o desactivado y lo cambia en consecuencia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_texfilter_ext.htm">gpu_set_texfilter_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texfilter
+-->
+  <!-- TAGS
+gpu_set_texfilter
+-->
+</body>
+</html>

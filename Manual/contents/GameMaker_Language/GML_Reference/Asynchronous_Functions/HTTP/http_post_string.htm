@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_post_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for http_post_string" />
+  <meta name="rh-index-keywords" content="http_post_string" />
+  <meta name="search-keywords" content="http_post_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_post_string</h1>
+  <p>En informática, una solicitud <b>post</b> se utiliza cuando el cliente necesita enviar datos al servidor como parte de la solicitud de recuperación, como cuando se carga un archivo o se envía un formulario completado, y lo mismo ocurre con esta función en <span class="notranslate">GameMaker Studio 2</span>.
+    A diferencia del método de solicitud <span class="inline"><a href="http_get.htm">http_get()</a></span>, en el que sólo se envía una URL al servidor, <tt>http_post_string()</tt> también incluye una cadena que se envía al servidor y puede dar lugar a la creación
+    de un nuevo recurso o la actualización de un recurso existente o ambos. Hay que tener en cuenta que los parámetros de petición HTTP (los trozos que a veces se &quot;añaden&quot; al final de una URL cuando se envía un formulario en una página web) son perfectamente aceptables cuando se utiliza
+    esta función.</p>
+  <p class="note"><b>NOTA: </b>Debe tener en cuenta que, debido a la protección XSS de los navegadores, las solicitudes e intentos de carga de recursos de dominios cruzados se bloquean y pueden aparecer resultados en blanco. Para más información, consulte la sección sobre <a href="HTTP.htm">problemas</a> entre dominios.</p>
+  <p>Este evento generará un &quot;call back&quot; que es recogido por cualquier <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/HTTP.htm">evento</a> HTTP, en cuyo caso generará un mapa DS ( <a href="../../Data_Structures/DS_Maps/DS_Maps.htm">más</a> conocido como &quot;diccionario&quot;) que es exclusivo de este evento y se almacena en la variable especial <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><b>async_load</b></a>. Este mapa DS contendrá
+    diferentes valores dependiendo de si se devuelven datos o no. Por ejemplo, si se ha solicitado un archivo, el evento se disparará varias veces a medida que se reciba cada paquete de datos para poder mostrar una barra de progreso, por ejemplo. La estructura general
+    para el mapa DS será la siguiente:</p>
+  <ul class="colour">
+    <li><b>id: </b>El ID que fue devuelto por el comando. Si lanza una serie de peticiones <tt>http_</tt> entonces necesita saber cuál es la que está recibiendo la respuesta, por lo que utilizaría este valor para compararlo con el valor que almacenó cuando originalmente
+      originalmente la solicitud para encontrar la correcta.</li>
+    <li><b>estado: </b>Devuelve un valor inferior a 0 si se trata de un error, 0 si está completo y 1 si está recibiendo paquetes (para más detalles, véase más abajo).</li>
+    <li><b>resultado: </b>Los datos recibidos (sólo cadena).</li>
+    <li><b>url: </b>La URL completa que ha solicitado.</li>
+    <li><b>http_status: </b>El código de estado http en bruto (si está disponible). Esto devuelve el código de estado web estándar para la mayoría de los navegadores, por ejemplo: 304 para &quot;No Modificado&quot; o 204 para &quot;Sin Contenido&quot;, etc...</li>
+  </ul>
+  <p>Si hay varios paquetes que se devuelven a su juego, la clave de devolución de llamada &quot;estado&quot; devolverá 1, en cuyo caso el mapa DS tendrá las siguientes claves adicionales:</p>
+  <ul class="colour">
+    <li><b>&quot;contentLength&quot;: </b>Es el tamaño del archivo que el servidor web ha dicho que debe esperar recibir (puede ser -1 si el servidor no devuelve este dato).</li>
+    <li><b>&quot;sizeDownloaded&quot;: </b>El tamaño de los datos que ya se han descargado.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">http_post_string(url, string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>La dirección web del servidor del que desea obtener información</td>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>La cadena que desea enviar a la URL especificada</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>La función <tt>http_post_string(</tt> ) puede ser llamada desde cualquier evento, y como es asíncrona la llamada de retorno puede ser casi instantánea o puede tardar varios segundos. La llamada a la función es sencilla y sería algo así:</p>
+  <p class="code">var str = &quot;name=&quot; + global.player_name + &quot;&amp;score=&quot; + string(global.player_score);<br> post = http_post_string(&quot;http://www.angusgames.com/game?game_id=&quot; + string(global.game_id), str);</p>
+  <p>El código anterior envía una petición de recuperación a la URL especificada con los parámetros dados, así como el envío de los datos adicionales (nombre del jugador y puntuación en forma codificada por la URL) almacenados en la variable str. Esto desencadenará todos los <b>eventos Http</b> asíncronos definidos si se recibe una devolución de llamada, y puede comprobar el &quot;id&quot; devuelto con el almacenado en la variable post para <tt>asegurarse</tt> de que ejecuta el código correcto en caso de haber utilizado varias <tt>funciones</tt> http_post_string <tt>()</tt>. El siguiente
+    código de ejemplo muestra cómo se haría esto:</p>
+  <p class="code">var r_str = &quot;null&quot;;<br> if ds_map_find_value(async_load, &quot;id&quot;) == post<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == 0<br> {
+    <br> r_str = ds_map_find_value(async_load, &quot;result&quot;);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará primero el id del mapa DS que se ha creado, y luego comprobará el estado de la llamada de retorno. Si el valor es igual a 0 (señalando el éxito) el resultado de la llamada de retorno se almacenará en una variable para su uso futuro, de lo contrario
+    la variable simplemente mantendrá un valor por defecto (en este caso &quot;null&quot;).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Siguiente: <a href="http_get_request_crossorigin.htm">http_get_request_crossorigin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_post_string
+-->
+  <!-- TAGS
+http_post_string
+-->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_position</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_position" />
+  <meta name="rh-index-keywords" content="audio_listener_position" />
+  <meta name="search-keywords" content="audio_listener_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_position</h1>
+  <p>Con esta función puede cambiar la posición del <i>oyente</i> dentro del espacio de audio 3D. La imagen de ejemplo siguiente muestra la posición por defecto del oyente en el espacio de audio:</p>
+  <p><img alt="Audio Listener Spacial Position Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Listener.png" /></p>
+  <p class="note"><b>NOTA: </b>si tiene varios oyentes debe utilizar la función <tt><a href="audio_listener_set_position.htm" style="font-size: 14px">audio_listener_set_position()</a></tt>.</p>
+  <p>Como puedes ver, la posición por defecto es (0, 0, 0) pero normalmente usarás esta función para mover el listener con el objeto jugador dentro de tu juego y así cambiar la forma en que el audio creado por los emisores es escuchado por el jugador, por ejemplo, en la imagen
+    imagen de abajo de un juego de arriba hacia abajo, la instancia del jugador establece el oyente que hará que el audio de los diversos emisores de &quot;cambiar&quot; como el jugador se mueve alrededor del nivel:</p>
+  <p><img alt="Audio Listener Game Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Game.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_listener_position(x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y del oyente (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La posición z del oyente (por defecto 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si velocidad &gt; 0<br> {
+    <br> audio_listener_position(x, y, 0);<br> }
+  </p>
+  <p>El código anterior comprueba si la velocidad de la instancia del reproductor es superior a 0 y, si lo es, actualiza el oyente de audio a la posición x/y actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_listener_velocity.htm">audio_listener_velocidad</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_position
+-->
+  <!-- TAGS
+audio_listener_position
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_exists" />
+  <meta name="rh-index-keywords" content="surface_exists" />
+  <meta name="search-keywords" content="surface_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_existe</h1>
+  <p>Esta función es esencial cuando se trabaja con superficies debido a su naturaleza volátil. Las superficies se mantienen siempre en la memoria de la textura, lo que significa que pueden ser destruidas de un momento a otro (por ejemplo, cuando se inicia un salvapantallas en Windows, o
+    cuando se minimiza en un dispositivo <span class="notranslate">Android</span> ), por lo que siempre debe comprobar que una superficie existe antes de hacer algo con ella (esto incluye dibujarla en la pantalla). El código de ejemplo siguiente muestra un uso típico de este comando en el evento de dibujo de una instancia
+    para comprobar la existencia de una superficie y volver a crearla si ha sido eliminada (tenga en cuenta que la superficie habrá sido creada originalmente en el evento de creación del objeto).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">superficie_existe(superficie_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(1024, 1024);<br> }
+    <br> else
+    <br> {
+    <br> if view_current = 1<br> {
+    <br> draw_surface(surf,0,0);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará si existe una superficie indexada en la variable &quot;surf&quot;, y si no existe, la recreará. Si existe, entonces comprueba qué vista se está dibujando actualmente y si es la vista[1] dibuja la superficie.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_create.htm">surface_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_exists
+-->
+  <!-- TAGS
+surface_exists
+-->
+</body>
+</html>

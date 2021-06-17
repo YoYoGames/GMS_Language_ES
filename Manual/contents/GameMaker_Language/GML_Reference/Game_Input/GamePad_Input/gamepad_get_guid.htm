@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_guid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_guid" />
+  <meta name="rh-index-keywords" content="gamepad_get_guid" />
+  <meta name="search-keywords" content="gamepad_get_guid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_guid</h1>
+  <p>Con esta función puedes recuperar el GUID del gamepad conectado al índice de la ranura dada. Se suministra la ranura del gamepad a comprobar (de 0 a 11), y la función devolverá una de las siguientes cadenas:</p>
+  <ul class="colour">
+    <li>&quot;ninguno&quot;<b>si</b> no hay ningún GUID disponible o no hay ningún gamepad conectado</li>
+    <li>&quot;<b>índice del dispositivo fuera de rango&quot; si</b> el índice de la ranura del gamepad está fuera de rango</li>
+    <li>La cadena GUID, algo así como &quot;050000005e040000fd020000ffff3f00&quot;, si la ranura tiene un gamepad asignado y puede obtener el GUID para él</li>
+  </ul>
+  <p>Esta función se suele utilizar junto con <a href="gamepad_get_description.htm"><tt>gamepad_get_description()</tt></a> para generar parte de la cadena SDL necesaria para reasignar los controladores en <span class="notranslate">Windows</span>, <span class="notranslate">Android</span> y <span class="notranslate">macOS</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_get_guid(índice);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>Qué índice de &quot;ranura&quot; del gamepad hay que comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _guid = gamepad_get_guid(global.PadIndex);<br> var _desc = gamepad_get_description(global.PadIndex);<br> global.GamepadID = _guid + &quot;,&quot; + _desc;</p>
+  <p>El código anterior obtiene las cadenas de descripción del GUID y del nombre, luego las concatena y almacena la cadena final en una variable global para futuras referencias.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_get_device_count.htm"> gamepad_get_device_count </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_guid
+-->
+  <!-- TAGS
+gamepad_get_guid
+-->
+</body>
+</html>

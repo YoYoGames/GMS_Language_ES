@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_maximise</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_gui_maximise" />
+  <meta name="rh-index-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+  <meta name="search-keywords" content="display_set_gui_maximise,display_set_gui_maximize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>
+    display_set_gui_maximise
+  </h1>
+  <p>Esta función puede utilizarse para maximizar la capa de la interfaz gráfica de usuario y configurarla para que sea escalada y desplazada en relación con las dimensiones de la pantalla, en lugar de la posición y las dimensiones de la superficie de la aplicación por defecto. Por defecto, la capa GUI es 1:1 con la resolución de la superficie de la aplicación
+    y se dibuja también en la posición (0,0) de la superficie. Sin embargo, esto no es siempre lo que quieres, por lo que puedes utilizar esta función para establecer que se dibuje en relación con la posición absoluta (0,0) de la pantalla o de la ventana del juego. Los argumentos que
+    que proporcione a esta función dependerá del efecto que desee que tenga en la capa de la interfaz gráfica de usuario. Simplemente llamando a la función sin argumentos, la capa de la GUI se dibujará en la posición (0,0) de la pantalla o ventana del juego, con la anchura y la altura
+    se escalan para ajustarse a toda el área:</p>
+  <p class="code">display_set_gui_maximise();</p>
+  <p>Sin embargo, puedes establecer el <i>factor de escala</i> para la capa de la GUI, y la anchura y la altura serán escaladas por esa cantidad. Recuerde que la capa de la GUI siempre se hace para ajustarse al tamaño de la pantalla o de la ventana del juego, o de la superficie de la aplicación, por lo que establecer
+    este valor a cualquier cosa que no sea 1, básicamente escala el número de píxeles a lo largo de la anchura y la altura. Si tu pantalla es de 1024x768 y estableces el factor de escala en 0.5, entonces tu capa GUI será la mitad del tamaño de la pantalla, duplicando efectivamente
+    el tamaño de los píxeles:</p>
+  <p class="code">display_set_gui_maximise(0.5, 0.5);</p>
+  <p>Al establecer los valores de esta manera también se fijará la posición de dibujo en el (0,0) de la pantalla o ventana de juego, por lo que se pueden proporcionar valores de desplazamiento para &quot;mover&quot; la posición (0,0):</p>
+  <p class="code">var pos = application_get_position();<br> display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);</p>
+  <p>Por último, puedes restablecer la capa de la GUI utilizando esta función, estableciendo los factores de escala a -1. Esto hará que la capa GUI vuelva a tener una escala de 1:1 y que la posición de dibujo sea la posición (0,0) de la superficie de la aplicación en lugar de la pantalla o
+    ventana.</p>
+  <p class="code">display_set_gui_maximise(-1, -1);</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">display_set_gui_maximise<i>(xscale, yscale, xoffset, yoffset</i>);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td><i>&lt;Opcional&gt; El</i> factor de escala horizontal (utilice -1 para restablecer el valor predeterminado).</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td><i>&lt;Opcional&gt; El</i> factor de escala vertical (utilice -1 para restablecer el valor predeterminado).</td>
+      </tr>
+      <tr>
+        <td>xoffset</td>
+        <td><i>&lt;Opcional&gt; La</i> posición de desplazamiento<i> x</i> para el dibujo.</td>
+      </tr>
+      <tr>
+        <td>yffset</td>
+        <td><i>&lt;Opcional&gt; La</i> posición de desplazamiento<i> y</i> para el dibujo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">display_set_gui_size(display_get_width() / 2, display_get_height() / 2);<br> display_set_gui_maximise(2, 2, 0, 0);</p>
+  <p>El código anterior bloqueará el evento draw GUI a la anchura y altura dadas, escalando todos los componentes para que se ajusten a la pantalla, usando esa proporción.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Cámaras y pantalla</a>
+        <div style="float:left">Atrás: </div>
+        <div style="float:right">Siguiente: <a href="display_set_ui_visibility.htm">display_set_ui_visibility</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_maximise
+display_set_gui_maximize
+-->
+  <!-- TAGS
+display_set_gui_maximise
+-->
+</body>
+</html>

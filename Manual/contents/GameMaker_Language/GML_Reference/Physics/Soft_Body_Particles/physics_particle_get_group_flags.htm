@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_get_group_flags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_get_group_flags" />
+  <meta name="rh-index-keywords" content="physics_particle_get_group_flags" />
+  <meta name="search-keywords" content="physics_particle_get_group_flags" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_get_group_flags</h1>
+  <p>Con esta función puede recuperar los indicadores de grupo de un grupo de partículas. El valor del <tt>grupo</tt> es el que se devolvió al crear el grupo de partículas mediante la función <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>,
+    y la función devolverá un valor que es el valor combinado de las banderas actualmente establecidas.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_get_group_flags(grupo)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>grupo</td>
+        <td>El grupo de partículas a conseguir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var flags = physics_particle_get_group_flags(group, flags);<br> if flags != phy_particle_group_flag_solid | phy_particle_group_flag_rigid<br> {
+    <br> flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br> physics_particle_set_group_flags(group, flags);<br> }
+  </p>
+  <p>El código anterior creará una variable para almacenar el valor de las banderas y luego la utilizará para comprobar las banderas del grupo indexado en la variable &quot;grupo&quot;. Si no son iguales, el grupo se establece con estas banderas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_group_get_inertia.htm">physics_particle_group_get_inertia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_get_group_flags
+-->
+  <!-- TAGS
+physics_particle_get_group_flags
+-->
+</body>
+</html>

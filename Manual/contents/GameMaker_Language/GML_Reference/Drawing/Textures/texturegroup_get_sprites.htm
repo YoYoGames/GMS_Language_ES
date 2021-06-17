@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>texturegroup_get_sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texturegroup_get_sprites" />
+  <meta name="rh-index-keywords" content="texturegroup_get_sprites" />
+  <meta name="search-keywords" content="texturegroup_get_sprites" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>texturegroup_get_sprites</h1>
+  <p>Con esta función puedes recuperar el índice de cada uno de los sprites asignados a las páginas de textura dentro del grupo de texturas dado. Se suministra la cadena de ID del grupo de texturas (como se define en el Editor de grupos de texturas) y la función devolverá una matriz 1D
+    en la que cada entrada contiene el índice de un recurso de sprites. Si la función falla, es decir, si se proporciona un grupo no válido o si el grupo no tiene ninguna textura asignada, la matriz estará vacía (longitud 0).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">texturegroup_get_sprites(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tex</td>
+        <td>El nombre del grupo de texturas a comprobar (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Matriz 1D</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _tex_array = texturegroup_get_sprites( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> show_debug_message(&quot;Sprite &quot; + string(i) + &quot; Índice:&quot; + string(tex_array[i]));<br> }
+  </p>
+  <p>El código anterior recuperará los índices de los sprites para el grupo de texturas &quot;MainMenu&quot;, y luego mostrará esos IDs en la ventana de salida de la consola.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Siguiente: <a href="texturegroup_get_fonts.htm">texturegroup_get_fonts</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texturegroup_get_sprites
+-->
+  <!-- TAGS
+texturegroup_get_sprites
+-->
+</body>
+</html>

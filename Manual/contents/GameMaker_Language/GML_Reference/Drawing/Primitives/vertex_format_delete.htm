@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_format_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_delete" />
+  <meta name="rh-index-keywords" content="vertex_format_delete" />
+  <meta name="search-keywords" content="vertex_format_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_format_delete</h1>
+  <p>Esta función debe llamarse siempre que se termine de utilizar cualquier formato vectorial creado. Usted proporciona el valor del ID del formato (tal y como lo devuelve la función <a href="vertex_format_end.htm"><tt>vector_format_end()</tt></a>), y esta función liberará la memoria
+    memoria asociada a él. Tenga en cuenta que si intenta utilizar este formato de nuevo después de llamar a esta función, obtendrá un error.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_format_delete(formatID);</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_format_delete(myFormat);</p>
+  <p>El código anterior eliminará de la memoria el formato de vértice creado en la variable &quot;myFormat&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_create_buffer.htm">vertex_create_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_delete
+-->
+  <!-- TAGS
+vertex_format_delete
+-->
+
+</body></html>

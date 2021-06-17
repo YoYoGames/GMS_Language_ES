@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cadena</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string" />
+  <meta name="rh-index-keywords" content="string" />
+  <meta name="search-keywords" content="string" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cadena</h1>
+  <p>Con esta función puede convertir cualquier número real en una cadena. Si el número real es un entero, se guardará sin decimales, de lo contrario, se guardará con dos decimales. Si necesita más decimales, utilice la función
+    <a href="string_format.htm"><span class="inline">string_format()</span></a>. También tenga en cuenta que el uso de esta función en una variable que almacena una <a href="../../GML_Overview/Arrays.htm">matriz</a>, una <a href="../Data_Structures/Data_Structures.htm">estructura de datos</a>
+    o una <a href="../../GML_Overview/Structs.htm">estructura</a> convertirá el contenido de estas variables en una cadena que puede ser enviada a la consola o guardada en un archivo para su depuración.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string(val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>El número real que se convertirá en una cadena.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_text(100, 100, &quot;Puntuación: &quot; + string(puntuación) + &quot; / Salud: &quot; + string(salud));</p>
+  <p>El código anterior utiliza la función de <tt>cadena</tt> para dibujar tanto números reales como cadenas (draw sólo acepta <i>una</i> cadena <i>o</i> un real, pero no ambos).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_byte_at.htm">string_byte_at</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string
+-->
+  <!-- TAGS
+string
+-->
+
+</body></html>

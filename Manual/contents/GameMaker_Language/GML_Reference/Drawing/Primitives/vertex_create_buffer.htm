@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_create_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer" />
+  <meta name="search-keywords" content="vertex_create_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_create_buffer</h1>
+  <p>Con esta función puedes crear un nuevo búfer de vértices. Se trata de un búfer de <i>crecimiento</i> especial creado por <span class="notranslate">GameMaker Studio 2</span> que está preformateado para su uso cuando se construyen primitivas (para su uso con <span class="notranslate">shaders</span>, por ejemplo). La función devolverá un
+    &quot;Pointer&quot; (índice) para el búfer que luego debe ser utilizado en todas las llamadas posteriores a la misma.</p>
+  <p>Cuando se utiliza un búfer de vértices creado con esta función, simplemente se llama a <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a> para empezar a asignar datos de vértices a ella para empezar a definir su primitiva personalizada, que luego se mantendrá en el buffer listo para
+    para ser enviada al <span class="notranslate">shader</span>. El buffer puede ser reutilizado cuando sea necesario (a menos que hayas utilizado la función <a href="vertex_freeze.htm"><tt>vertex_freeze()</tt></a> ), con cada llamada de <a href="vertex_begin.htm"><tt>vertex_begin()</tt></a> borrando los datos del
+    datos del búfer listo para aceptar los nuevos datos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_create_buffer();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">v_buff = vertex_create_buffer();</p>
+  <p>El código anterior creará un nuevo búfer de vértices y almacenará su manejador en la variable &quot;v_buff&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer
+-->
+  <!-- TAGS
+vertex_create_buffer
+-->
+
+</body></html>

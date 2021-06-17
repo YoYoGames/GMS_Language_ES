@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_set_joinable_session</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_set_joinable_session" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_set_joinable_session" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_set_joinable_session" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_set_joinable_session</h1>
+  <p>Esta función establece una sesión (previamente creada) para que esté disponible para que otros usuarios se unan a través de la interfaz de usuario del sistema. Un usuario sólo tiene una sesión a la que puede unirse a la vez, y cuando abandona la sesión (o la sesión termina) ésta se borra, sin embargo puede
+    Sin embargo, puede borrarla manualmente introduciendo -1 en el argumento de la sesión.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_matchmaking_set_joinable_session(local_user, session_that_is_joinable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>usuario_local</td>
+        <td>El puntero del ID de usuario local.</td>
+      </tr>
+      <tr>
+        <td>sesión_que_es_unible</td>
+        <td>El ID de la sesión que se puede unir, o -1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (global.session_ID != -1)<br> {<br> xboxlive_matchmaking_set_joinable_session(xboxlive_user_for_pad(0), global.session_ID);<br> }</p>
+  <p>El código anterior comprueba si hay un valor de ID de sesión válido, y si se detecta uno, establece que la sesión es unificable.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Match_Making.htm">La creación de partidos</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_matchmaking_join_invite.htm">xboxlive_matchmaking_join_invite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_set_joinable_session
+-->
+  <!-- TAGS
+xboxlive_matchmaking_set_joinable_session
+-->
+</body>
+</html>

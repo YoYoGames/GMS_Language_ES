@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>date_valid_datetime</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_valid_datetime" />
+  <meta name="rh-index-keywords" content="date_valid_datetime" />
+  <meta name="search-keywords" content="date_valid_datetime" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>date_valid_datetime</h1>
+  <p>Con esta función puede comprobar un valor de fecha y hora para ver si es válido (devuelve <tt>true</tt>) o no (devuelve <tt>false</tt>). Tenga en cuenta que esta función sólo considerará que una fecha válida es <i>posterior</i> al 1/1/1970 y que cualquier fecha anterior devolverá
+    devolverá <tt>false</tt>, por lo que lo más temprano que se puede comprobar sería:</p>
+  <p class="code">date_valid_datetime(1970, 01, 01, 0, 0, 0);</p>
+  <h2> </h2>
+  <h4>Sintaxis:</h4>
+  <p class="code">date_valid_datetime(año, mes, día, hora, minuto, segundo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>año</td>
+        <td>El año que hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>mes</td>
+        <td>El mes para comprobarlo.</td>
+      </tr>
+      <tr>
+        <td>día</td>
+        <td>El día para comprobarlo.</td>
+      </tr>
+      <tr>
+        <td>hora</td>
+        <td>La hora de la comprobación.</td>
+      </tr>
+      <tr>
+        <td>minuto</td>
+        <td>El minuto para comprobarlo.</td>
+      </tr>
+      <tr>
+        <td>segundo</td>
+        <td>El segundo a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if date_valid_datetime(2011, 9, 15, 10, 3, 30)<br> {
+    <br> mydatetime = date_create_datetime(2011, 9, 15, 10, 3, 30);<br> }</p>
+  <p>Esto establecerá &quot;mydatetime&quot; en el 15 de septiembre de 2011, 10:03.30, si es un valor válido (que lo es).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Date_And_Time.htm">Fecha y hora</a></div>
+        <div style="float:right">Siguiente: <a href="date_date_of.htm">fecha_de</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+date_valid_datetime
+-->
+  <!-- TAGS
+date_valid_datetime
+-->
+
+</body></html>

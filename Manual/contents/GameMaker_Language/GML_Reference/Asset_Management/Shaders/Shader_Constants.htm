@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Constantes de sombreado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different Shader Constants" />
+  <meta name="rh-index-keywords" content="gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue" />
+  <meta name="search-keywords" content="Shader Constants,gm_Matrices,MATRIX_VIEW,MATRIX_PROJECTION,MATRIX_WORLD,MATRIX_WORLD_VIEW,MATRIX_WORLD_VIEW_PROJECTION,MATRIX_MAX,MAX_VS_LIGHTS,gm_BaseTexture,gm_LightingEnabled,gm_FogStart,gm_RcpFogRange,gm_PS_FogEnabled,gm_FogColour,gm_VS_FogEnabled,gm_AlphaTestEnabled,gm_AlphaRefValue" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Constantes de<span class="notranslate">sombreado</span> </h1>
+  <p>Además de las funciones y constantes de <span class="notranslate">sombreado</span> definidas en las <a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf" target="_blank">páginas de referencia de</a> OpenGL ES Shading Language (GLSL ES), también hay una serie de
+    de constantes de <span class="notranslate">sombreado</span> disponibles que son exclusivas de <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Las siguientes constantes de matriz de visualización pueden utilizarse como índices de matriz cuando se utiliza la constante de matriz de <span class="notranslate">sombreado</span> <tt>gm_Matrices</tt>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>MATRIX_VIEW</td>
+        <td>Esta constante de índice de matriz mantiene el índice de la matriz de la vista actual. El índice devuelto se utilizará como un valor de matriz cuando se llame a la constante <tt>gm_Matrices</tt> dentro del código <span class="notranslate">del shader</span>.</td>
+      </tr>
+      <tr>
+        <td>PROYECCIÓN_DE_MATRIZ</td>
+        <td>Esta constante de índice de matriz mantiene el índice de la matriz de proyección actual. El índice devuelto se utilizará como un valor de matriz cuando se llame a la constante <tt>gm_Matrices</tt> dentro del código <span class="notranslate">del shader</span>.</td>
+      </tr>
+      <tr>
+        <td>MATRIX_WORLD</td>
+        <td>Esta constante de índice de matriz mantiene el índice de la matriz mundial actual. Esto puede ser usado para cosas como la iluminación si tienes información de luz en el espacio del mundo. El índice devuelto se utilizaría como un valor de matriz cuando se llame a la constante <tt>gm_Matrices</tt> dentro del código <span class="notranslate">del shader</span>.</td>
+      </tr>
+      <tr>
+        <td>VISTA_DEL_MUNDO_DE_LA_MATRIZ</td>
+        <td>Esta constante de índice de matriz mantiene el índice del resultado de las matrices de mundo y vista multiplicadas juntas. Esto se utiliza a menudo para cosas como la niebla. El índice devuelto será utilizado como un valor de matriz cuando se llame a la constante <tt>gm_Matrices</tt> 
+          dentro del código <span class="notranslate">del shader</span>.</td>
+      </tr>
+      <tr>
+        <td>MATRIZ_VISTA_MUNDO_PROYECCIÓN</td>
+        <td>Esta constante de índice de matriz mantiene el índice del resultado de las matrices de mundo, vista y proyección multiplicadas juntas. Esta es la matriz de transformación normal utilizada para las posiciones de los vértices. El índice devuelto se utilizará como un valor de matriz cuando
+          llamar a la constante <tt>gm_Matrices</tt> dentro del código <span class="notranslate">del shader</span>.</td>
+      </tr>
+      <tr>
+        <td>MATRIX_MAX</td>
+        <td>Esto no es un índice de matriz, sino que devuelve el tamaño de la matriz en el <span class="notranslate">sombreador de</span> vértices.</td>
+      </tr>
+      <tr>
+        <td>MAX_VS_LIGHTS</td>
+        <td>Esto no es un índice de matriz, sino que devuelve el número de las luces en el <span class="notranslate">sombreador de</span> vértices.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>La siguiente constante también está disponible para la iluminación:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>MAX_VS_LIGHTS</td>
+        <td>El número máximo de luces puntuales y direccionales disponibles en el <span class="notranslate">shader</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Los siguientes uniformes y constantes de matriz predefinidos pueden utilizarse en su <span class="notranslate">sombreador</span> para acceder a los valores específicos de <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>gm_Matrices[matriz]</td>
+        <td>Esta constante de matriz devuelve una matriz de transformación y es uno de los uniformes predefinidos disponibles que <span class="notranslate">GameMaker Studio 2</span> crea para que usted pueda utilizar dentro del editor de código <span class="notranslate">de sombreado</span>. El índice de la matriz se elige de una de las constantes enumeradas anteriormente.</td>
+      </tr>
+      <tr>
+        <td>gm_BaseTexture</td>
+        <td>Se trata de una constante de muestreo 2D que devuelve la textura del objeto actual, tal y como lo establece <span class="notranslate">GameMaker Studio 2</span>. Así que sería el sprite actual, la superficie o la textura que normalmente se utilizaría al dibujar sin que se llame al <span class="notranslate">shader</span>.</td>
+      </tr>
+      <tr>
+        <td>gm_LightingEnabled</td>
+        <td>Esto se puede utilizar para obtener o establecer la iluminación de <span class="notranslate">GameMaker Studio 2</span> cuando se utiliza el 3D.</td>
+      </tr>
+      <tr>
+        <td>gm_FogStart</td>
+        <td>Esto se puede utilizar para obtener la distancia en la que los polígonos comienzan a mezclarse con el color de la niebla.</td>
+      </tr>
+      <tr>
+        <td>gm_RcpFogRange</td>
+        <td>Esto se puede utilizar para obtener la distancia a la que la niebla es máxima y ya no se puede ver nada.</td>
+      </tr>
+      <tr>
+        <td>gm_PS_FogEnabled</td>
+        <td>Esto devolverá <tt>true</tt> o <tt>false</tt> si la GPU tiene activada la niebla de píxeles o no.</td>
+      </tr>
+      <tr>
+        <td>gm_FogColour</td>
+        <td>Esto se puede utilizar para obtener el color de la niebla utilizado por <span class="notranslate">GameMaker Studio 2</span>.</td>
+      </tr>
+      <tr>
+        <td>gm_VS_FogEnabled</td>
+        <td>Esto devolverá <tt>true</tt> o <tt>false</tt> si la GPU tiene activada la niebla de vértices o no.</td>
+      </tr>
+      <tr>
+        <td>gm_AlphaTestEnabled</td>
+        <td>Esto puede ser usado para obtener pruebas alfa en el <span class="notranslate">shader</span>. Ver <a href="../../Drawing/GPU_Control/gpu_set_alphatestenable.htm"><tt>gpu_set_alphatestenable()</tt></a> para más información sobre las pruebas alfa.</td>
+      </tr>
+      <tr>
+        <td>gm_AlphaRefValue</td>
+        <td>Se puede utilizar para obtener el valor de referencia de la prueba alfa actual. Consulte <a href="../../Drawing/GPU_Control/gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a> para más información sobre la referencia de prueba alfa.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Shaders.htm"><span class="notranslate">Shaders</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Shader</span> Constants
+gm_Matrices
+MATRIX_VIEW
+MATRIX_PROJECTION
+MATRIX_WORLD
+MATRIX_WORLD_VIEW
+MATRIX_WORLD_VIEW_PROJECTION
+MATRIX_MAX
+MAX_VS_LIGHTS
+gm_Matrices[matrix]
+gm_BaseTexture
+gm_LightingEnabled
+gm_FogStart
+gm_RcpFogRange
+gm_PS_FogEnabled
+gm_FogColour
+gm_VS_FogEnabled
+gm_AlphaTestEnabled
+gm_AlphaRefValue
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_constants
+-->
+</body>
+</html>

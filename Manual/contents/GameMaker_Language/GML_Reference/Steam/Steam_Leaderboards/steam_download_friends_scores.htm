@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_download_friends_scores</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_download_friends_scores" />
+  <meta name="rh-index-keywords" content="steam_download_friends_scores" />
+  <meta name="search-keywords" content="steam_download_friends_scores" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_download_friends_scores</span></h1>
+  <p>Con esta función puedes recuperar <i>sólo</i> las puntuaciones de la tabla de clasificación que pertenecen a aquellas personas que están marcadas como &quot;amigos&quot; en el <span class="notranslate">cliente de</span> Steam <span class="notranslate">.</span> Así, si tu tabla de clasificación tiene 200 entradas, y 50 de ellas son tus amigos, esta función
+    recuperará sólo esos 50 resultados. El nombre de la tabla de clasificación es una cadena que se definió cuando creaste la tabla de clasificación utilizando la función <a href="steam_create_leaderboard.htm"><tt><span class="notranslate">steam_create_leaderboard</span>()</tt></a>y la función devolverá
+    un valor que puede ser utilizado para identificar la devolución de la llamada en el <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm">evento asíncrono<span class="notranslate">de Steam</span></a>, o devolverá -1 si ha fallado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_download_friends_scores</span>(lb_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>lb_nombre</td>
+        <td>El nombre de la tabla de clasificación de la que se descargan las puntuaciones (una cadena).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">score_get = <span class="notranslate">steam_download_friends_scores</span>(&quot;Game Scores&quot;);</p>
+  <p>Esto enviará una solicitud al servidor de <span class="notranslate">Steam</span> para las puntuaciones de los amigos de los usuarios de la tabla de clasificación dada y almacenará el <b>id asíncrono</b> de la solicitud en la variable &quot;score_get&quot;. Esto será manejado en el <b>evento asíncrono</b> <b><span class="notranslate">de</span></b> Steam,
+    como se muestra en el Ejemplo Extendido para <a href="steam_download_scores.htm"><tt><span class="notranslate">steam_download_scores</span>()</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_Leaderboards.htm">Tablas de clasificación</a></div>
+        <div style="float:right">Siguiente: <a href="steam_create_leaderboard.htm"><span class="notranslate">steam_create_leaderboard</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_download_friends_scores
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_download_friends_scores
+-->
+</body>
+</html>

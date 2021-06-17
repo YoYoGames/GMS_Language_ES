@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_de_objetivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_set_target" />
+  <meta name="rh-index-keywords" content="surface_set_target" />
+  <meta name="search-keywords" content="surface_set_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_de_objetivo</h1>
+  <p>Con esta función estableces todo el dibujo posterior a la superficie de destino en lugar de la pantalla y de esta manera puedes decirle a <span class="notranslate">GameMaker Studio 2</span> que sólo dibuje cosas específicas en la superficie especificada. Tenga en cuenta que si no llama a <a href="surface_reset_target.htm"><tt>surface_reset_target()</tt></a>    después de haber terminado, no se dibujará nada en la pantalla ya que todo el dibujo posterior (incluso en otras instancias) se hará en la superficie. También debes tener en cuenta que no se verá nada si la propia superficie no se dibuja en la pantalla en el evento draw
+    de una instancia. Puedes comprobar el valor de retorno de esta función también como una herramienta de depuración para comprobar si el objetivo de la superficie se estableció o no, con un valor de retorno de 0 siendo un fracaso para establecer el objetivo y cualquier otro valor positivo siendo un éxito.</p>
+  <p>Una cosa que hay que tener en cuenta es que las superficies se <i>apilan</i>, por lo que no se puede saltar de un objetivo a otro y luego volver al objetivo de extracción normal al final, sino que hay que abrir y cerrar los objetivos de renderización. Por ejemplo, esto <b>no</b> funcionará correctamente:</p>
+  <p class="code">surface_set_target(surf1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_set_target(surf2);
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target();
+  </p>
+  <p>En su lugar, debe restablecer el objetivo para cada una de las superficies que establezca, del mismo modo que debe utilizar paréntesis de apertura y cierre {} para los bloques de código. Así que lo anterior debe ser escrito como esto:</p>
+  <p class="code">surface_set_target(surf1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_reset_target();
+    <br> surface_set_target(surf2);
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target();
+  </p>
+  <p>o como esto:</p>
+  <p class="code">surface_set_target(surf1);<br> draw_text(32, 32, &quot;surface1&quot;);<br> surface_set_target(surf2);
+    <br> draw_text(32, 64, &quot;surface2&quot;);<br> surface_reset_target();
+    <br> surface_reset_target();
+  </p>
+  <p class="note"><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de la textura. Debería comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_set_target(surface_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a establecer como objetivo de dibujo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si view_current = 0<br> {
+    <br> surface_set_target(surf);
+    <br> con (obj_Effect)<br> {
+    <br> draw_self();
+    <br> }
+    <br> surface_reset_target();
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_surface(surf, 0, 0);<br> }
+  </p>
+  <p>El código anterior comprobará qué vista se está dibujando actualmente, y si es la vista[0] establece el objetivo de dibujo a una superficie y dibuja todas las instancias del objeto &quot;obj_Effect&quot; antes de restablecer el objetivo de dibujo de nuevo. Si la vista no es view[0]
+    la superficie se dibuja en la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_set_target_ext.htm">surface_set_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_set_target
+-->
+  <!-- TAGS
+surface_set_target
+-->
+</body>
+</html>

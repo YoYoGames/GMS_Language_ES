@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lectura_del_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_read" />
+  <meta name="rh-index-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_read,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lectura_del_buffer</h1>
+  <p>Esta función puede utilizarse para leer datos de un buffer previamente creado. El valor de retorno dependerá del tipo de datos que esté leyendo, que a su vez está definido por las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer_u8</td>
+        <td>Un entero de 8 bits sin signo. Es un valor positivo de 0 a 255.</td>
+      </tr>
+      <tr>
+        <td>buffer_s8</td>
+        <td>Un entero de 8 bits con signo. Puede ser un valor positivo o negativo de -128 a 127 (0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u16</td>
+        <td>Un entero de 16 bits sin signo. Es un valor positivo entre 0 y 65.535.</td>
+      </tr>
+      <tr>
+        <td>buffer_s16</td>
+        <td>Un entero de 16 bits con signo. Puede ser un valor positivo o negativo entre -32.768 y 32.767 (el 0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u32</td>
+        <td>Un entero de 32 bits sin signo. Es un valor positivo de 0 a 4.294.967.295.</td>
+      </tr>
+      <tr>
+        <td>buffer_s32</td>
+        <td>Un entero de 32 bits con signo. Puede ser un valor positivo o negativo entre -2.147.483.648 y 2.147.483.647 (el 0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u64</td>
+        <td>Un entero de 64 bits sin signo.</td>
+      </tr>
+      <tr>
+        <td>buffer_f16</td>
+        <td>Un flotador de 16 bits. Puede ser un valor positivo o negativo dentro del rango de +/- 65504. <i>(¡No se admite actualmente!)</i></td>
+      </tr>
+      <tr>
+        <td>buffer_f32</td>
+        <td>Un flotador de 32 bits. Puede ser un valor positivo o negativo dentro del rango de +/-16777216.</td>
+      </tr>
+      <tr>
+        <td>buffer_f64</td>
+        <td>Un flotador de 64 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_bool</td>
+        <td>Un valor booleano. Sólo puede ser 1 o 0<tt>(verdadero</tt> o <tt>falso</tt>)</td>
+      </tr>
+      <tr>
+        <td>cadena_de_buffer</td>
+        <td>Una cadena de cualquier tamaño.</td>
+      </tr>
+      <tr>
+        <td>texto_buffer</td>
+        <td>Una cadena de cualquier tamaño, sin el carácter final nulo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Si la función tiene éxito, devolverá un valor del tipo dado, pero si falla, causará un error de ejecución.</p>
+  <p class="note"><b>NOTA</b>: Si se utiliza un tipo de datos incorrecto para los datos que se leen, se devolverán valores erróneos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_read(buffer, type)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del búfer del que hay que leer.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de datos que se va a leer del búfer (véase la lista de constantes anterior).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real/Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var cmd = buffer_read(buff, buffer_s16);</p>
+  <p>El código anterior lee del buffer con el id almacenado en la variable &quot;buff&quot; un valor de 16 bits con signo en la variable local &quot;cmd&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_write.htm">buffer_write</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_read
+buffer_u8
+buffer_s8
+buffer_u16
+buffer_s16
+buffer_u32
+buffer_s32
+buffer_u64
+buffer_f16
+buffer_f32
+buffer_f64
+buffer_bool
+buffer_string
+buffer_text
+-->
+  <!-- TAGS
+buffer_read
+-->
+</body>
+</html>

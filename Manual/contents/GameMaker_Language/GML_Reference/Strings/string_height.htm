@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>altura_de_la_cadena</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_height" />
+  <meta name="rh-index-keywords" content="string_height" />
+  <meta name="search-keywords" content="string_height" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>altura_de_la_cadena</h1>
+  <p>Esta función devolverá la altura (en píxeles) de la cadena introducida, teniendo en cuenta la separación entre líneas y los saltos de línea que pueda tener el texto. Es muy útil para calcular las distancias entre los elementos del texto basándose en la más alta de las letras
+    que componen la cadena tal y como se dibujaría con <a href="../Drawing/Text/draw_text.htm"><tt>dibujar_texto()</tt></a> utilizando la fuente definida actualmente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">cadena_altura(cadena);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>La cadena para medir la altura de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var hh = string_height(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;);<br> draw_text(32, 32, string(score));<br> draw_text(32, 32 + hh, string(lives);</p>
+  <p>El código anterior obtendrá la altura de la cadena dada y luego dibujará dos líneas de texto, utilizando la altura de la cadena devuelta como separador.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_height_ext.htm">string_height_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_height
+-->
+  <!-- TAGS
+string_height
+-->
+
+</body></html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_redonda_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_roundrect_ext" />
+  <meta name="rh-index-keywords" content="draw_roundrect_ext" />
+  <meta name="search-keywords" content="draw_roundrect_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_redonda_ext</h1>
+  <p>Con esta función puede dibujar un contorno de un rectángulo redondeado o un rectángulo redondeado relleno donde la posición (x1,y1) es la esquina superior izquierda y la posición (x2,y2) es la esquina inferior derecha. También debe proporcionar los valores del radio para los ejes
+    x e y (en píxeles) y las esquinas se redondearán con estas cantidades. Puedes definir la precisión del dibujo de las esquinas con la función <a href="draw_set_circle_precision.htm"><tt>draw_set_circle_precision()</tt></a>. Tenga en cuenta que
+    el rectángulo que se dibuja puede necesitar diferentes valores (+/-1 en la x, y, o en la anchura o altura) para ser dibujado con las dimensiones deseadas debido a las diferencias entre las distintas plataformas soportadas.</p>
+  <p class="note"><b>NOTA</b>: Si quieres dibujar una forma usando un <span class="notranslate">shader</span>, debes tener en cuenta que la mayoría de <span class="notranslate">los shaders</span> esperan las siguientes entradas: vértice, textura, color. Sin embargo, cuando se utiliza esta función, sólo se pasan datos de vértice y color, por lo que el
+    puede no dibujar nada (o dibujar algo pero no correctamente). Si necesitas dibujar formas de esta manera, entonces el <span class="notranslate">shader</span> debe ser personalizado con esto en mente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_roundrect_ext(x1, y1, x2, y2, xrad, yrad, outline);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La coordenada x de la esquina superior izquierda del rectángulo redondeado (como si fuera un rectángulo normal).</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La coordenada y de la esquina superior izquierda del rectángulo redondeado (como si fuera un rectángulo normal).</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La coordenada x de la esquina inferior derecha del rectángulo redondeado (como si fuera un rectángulo normal).</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La coordenada y de la esquina inferior derecha del rectángulo redondeado (como si fuera un rectángulo normal).</td>
+      </tr>
+      <tr>
+        <td>xrad</td>
+        <td>El radio de la curva a lo largo del eje x desde las esquinas del rectángulo.</td>
+      </tr>
+      <tr>
+        <td>yrad</td>
+        <td>El radio de la curva a lo largo del eje y desde las esquinas del rectángulo.</td>
+      </tr>
+      <tr>
+        <td>esbozar</td>
+        <td>Si el rectángulo redondeado se dibuja relleno (falso) o como un contorno de un píxel de ancho (verdadero).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var dist = punto_distancia(x, y, mouse_x, mouse_y) / 10;<br> draw_set_colour(c_lime);
+    <br> draw_roundrect_ext(x - 50, y - 50, x + 50, y + 50, dist, dist, 0);</p>
+  <p>Esto dibujará un rectángulo redondeado relleno con las esquinas redondeadas por una cantidad basada en la posición del ratón en relación con la instancia que hace el dibujo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Basic_Forms.htm">Formularios básicos</a></div>
+        <div style="float:right">Siguiente: <a href="draw_roundrect_colour_ext.htm">draw_roundrect_colour_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_roundrect_ext
+-->
+  <!-- TAGS
+draw_roundrect_ext
+-->
+</body>
+</html>

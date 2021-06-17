@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_parte_de_espalda</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part" />
+  <meta name="rh-index-keywords" content="draw_sprite_part" />
+  <meta name="search-keywords" content="draw_sprite_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_parte_de_espalda</h1>
+  <p>Con esta función puedes dibujar parte de cualquier sprite en una posición determinada dentro de la sala. Al igual que con <a href="draw_sprite.htm"><tt>dibujar_sprite()</tt></a> puedes especificar un sprite y una sub-imagen para dibujar, entonces debes dar las <i>coordenadas relativas</i> dentro del sprite del área a seleccionar para dibujar. Esto significa que una posición izquierda de 0 y una posición superior de 0 sería la esquina superior izquierda del sprite y todas las coordenadas posteriores deberían tomarse desde esa posición. La imagen siguiente muestra un ejemplo
+    de cómo funciona esto:</p>
+  <p><img alt="draw_sprite_part example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_part.png">Debe tener en cuenta que si la página de textura permite el recorte automático, esta función puede no funcionar como se espera,
+    ya que el espacio extra &quot;vacío&quot; alrededor del sprite habrá sido eliminado para crear la página de textura. Para resolver este problema, tendrá que establecer la configuración de la página de textura (en el <a href="../../../../Settings/Texture_Groups.htm">Editor de grupos de texturas</a>)
+    para desactivar la opción <b>Recorte automático</b>.</p>
+  <p class="note"><b>NOTA</b>: Al dibujar con esta función, el desplazamiento <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> e <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> del sprite se ignoran y la parte del sprite se dibujará con la esquina superior izquierda en la posición x / y especificada en la sala.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo es útil para sprites <b>de mapa de bits</b> y no funcionará con sprites SWF o JSON (Spine).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_sprite_part(sprite, subimg, left, top, width, height, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>La subimagen (fotograma) del sprite a dibujar (image_index o -1 se correlacionan con el fotograma actual de la animación en el objeto).</td>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>La posición x en el sprite de la esquina superior izquierda del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>La posición y en el sprite de la esquina superior izquierda del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El ancho del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_sprite_part(sprite_index, image_index, 4, 0, sprite_width-16, sprite_height-16, x, y );</p>
+  <p>Esto dibujará el sprite asignado a las instancias (sprite_index) y su fotograma actual de animación (image_index), sin embargo recortará un margen de 4px de la anchura en ambos lados, y un margen de 8 píxeles de la altura desde la parte inferior del sprite original de 24x24
+    original de 24x24 píxeles.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part
+-->
+  <!-- TAGS
+draw_sprite_part
+-->
+</body>
+</html>

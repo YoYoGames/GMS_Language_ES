@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_id" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_id" />
+  <meta name="search-keywords" content="layer_sprite_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_id</h1>
+  <p>Esta función puede utilizarse para recuperar el valor de identificación único de un elemento de sprite en una capa. Se proporciona el ID de la capa (que se obtiene al crear la capa con <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> o cuando
+    se utiliza el nombre de la capa junto con <a href="../General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a>) y el nombre del elemento sprite tal y como está definido en el Room Editor. La función devolverá el valor del ID asociado a ese elemento sprite
+    en la capa.</p>
+  <p>Tenga en cuenta que esta función está diseñada específicamente para su uso con sprites que han sido añadidos en el IDE en una capa de activos, y si ha añadido un sprite a una capa a través de código utilizando la función <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>,
+    entonces el ID devuelto por esa función debe ser utilizado para todas las referencias futuras (ya que ese elemento sprite no tendrá ningún nombre para ser pasado a esta función).</p>
+  <p>Si la capa especificada no existe, o no se puede encontrar el elemento sprite dado, la función devolverá -1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_get_id(layer_id, sprite_element_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>sprite_element_name</td>
+        <td>El nombre único del elemento sprite en la capa tal y como se define en el Editor de Salas</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del ID del elemento del sprite (Real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_trees&quot;);<br> var back_id = layer_sprite_get_id(lay_id, &quot;graphic_254367CB&quot;);<br> layer_sprite_change(back_id, spr_Trees_Winter);</p>
+  <p>El código anterior obtendrá el ID de la capa llamada &quot;Activos_árboles&quot; y luego lo utilizará para recuperar el ID del elemento sprite &quot;graphic_254367CB&quot; en esa capa. El ID del elemento sprite recuperado se utilizará para cambiar el elemento
+    sprite del elemento.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_exists.htm">layer_sprite_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_id
+-->
+  <!-- TAGS
+layer_sprite_get_id
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>motion_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function motion_set" />
+  <meta name="rh-index-keywords" content="motion_set" />
+  <meta name="search-keywords" content="motion_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>motion_set</h1>
+  <p>Esta función establece una nueva dirección de movimiento y una nueva velocidad a la instancia que ejecuta el código. Tenga en cuenta que esto <i>no</i> se suma a la velocidad y la dirección actuales de la instancia (para eso se usaría <a href="motion_add.htm"><tt>motion_add()</tt></a>)
+    sino que la fuerza a la nueva configuración.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">motion_set(dir, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>La nueva dirección.</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>La nueva velocidad.`</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si irandom(9) = 1<br> {<br> motion_set(random(360), 1 + random(3));<br> }</p>
+  <p>Este código hará que la instancia cambie de velocidad y dirección a intervalos aleatorios.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="move_towards_point.htm">mover_hacia_el_punto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+motion_set
+-->
+  <!-- TAGS
+motion_set
+-->
+</body>
+</html>

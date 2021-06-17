@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_pos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_pos" />
+  <meta name="rh-index-keywords" content="draw_sprite_pos" />
+  <meta name="search-keywords" content="draw_sprite_pos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_pos</h1>
+  <p>Con esta función se puede dibujar un sprite distorsionado sobre el área definida por las cuatro coordenadas de las esquinas. Los dos primeros argumentos son el sprite a dibujar y la subimagen del sprite (la misma que en la función <a href="draw_sprite.htm"><tt>dibujar_sprite()</tt></a>)
+    pero los siguientes son los que definen la posición de cada una de las cuatro esquinas de la <b>caja delimitadora</b> del sprite dado. Estas coordenadas deben darse en <i>el sentido de las agujas del reloj</i>, de modo que la primera coordenada es la superior izquierda, luego la superior derecha, luego la inferior
+    derecha y finalmente la inferior izquierda. También puede establecer un valor para el alfa del sprite para dibujarlo con transparencia. La imagen siguiente ilustra cómo funciona esta función:</p>
+  <p><img alt="draw_sprite_pos example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_sprite_pos.png" /></p>
+  <p class="note"><b>ATENCIÓN!</b> La imagen de arriba es sólo para fines ilustrativos, y si usted utiliza esta función en un sprite, obtendrá resultados diferentes y puede experimentar &quot;cizallamiento&quot; de la textura debido a la forma en que un sprite se construye a partir de un quad de primitivas.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo es útil para sprites <b>de mapa de bits</b> y no funcionará con sprites SWF o JSON (Spine).</p>
+  <p class="note"><b>NOTA</b>: Cuando utilice esta función, debe tener desactivado el ajuste <a href="../../../../Settings/Texture_Groups.htm">Recorte automático</a> para las páginas de textura.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_sprite_pos(sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>La subimagen (fotograma) del sprite a dibujar (image_index o -1 se correlacionan con el fotograma actual de la animación en el objeto).</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La primera coordenada x.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La primera coordenada y.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La segunda coordenada x.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La segunda coordenada y.</td>
+      </tr>
+      <tr>
+        <td>x3</td>
+        <td>La tercera coordenada x.</td>
+      </tr>
+      <tr>
+        <td>y3</td>
+        <td>La tercera coordenada y.</td>
+      </tr>
+      <tr>
+        <td>x4</td>
+        <td>La cuarta coordenada x.</td>
+      </tr>
+      <tr>
+        <td>y4</td>
+        <td>La cuarta coordenada y.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa del sprite (de 0 a 1 donde 0 es transparente y 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);</p>
+  <p>El código anterior dibujará el sprite asociado a la instancia que ejecuta el código distorsionado alrededor de la posición x / y de la instancia y con un alfa totalmente opaco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_sprite_tiled.htm">draw_sprite_tiled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_pos
+-->
+  <!-- TAGS
+draw_sprite_pos
+-->
+</body>
+</html>

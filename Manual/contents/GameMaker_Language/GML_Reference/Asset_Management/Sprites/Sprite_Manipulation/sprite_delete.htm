@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_delete</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_delete" />
+  <meta name="rh-index-keywords" content="sprite_delete" />
+  <meta name="search-keywords" content="sprite_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_delete</h1>
+  <p>Esta función borrará un sprite del juego, liberando cualquier memoria que estuviera reservada para él. Esta es una función muy importante para aquellos momentos en los que necesitas crear y cambiar sprites desde fuentes externas (como cargar un sprite desde un archivo con
+    <span class="inline"><a href="sprite_add.htm">sprite_add()</a></span> , o duplicar un sprite usando <span class="inline"><a href="sprite_duplicate.htm">sprite_duplicate()</a></span>) y siempre debe ser usada para eliminar aquellos activos que ya no son
+    que ya no son necesarios para el juego, o para borrar un activo indexado de una variable antes de reasignar otro activo a esa variable. <b>Esto no puede ser usado para borrar sprites que están incluidos en el juego como parte de los activos en el Navegador de Activos</b>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_delete(índice);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sprite a eliminar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var spr = sprite_create_from_surface(application_surface, 0, 0, 32, 32, false, false, 16, 16);<br> sprite_merge(spr_Player, spr);<br> sprite_delete(spr);
+  </p>
+  <p>El código anterior crea una variable local y luego almacena el índice del sprite creado desde la superficie de la aplicación. Este sprite se fusiona entonces con el activo indexado en la variable &quot;spr_Player&quot; antes de volver a ser eliminado de la memoria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_set_alpha_from_sprite.htm">sprite_set_alpha_from_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_delete
+-->
+  <!-- TAGS
+sprite_delete
+-->
+</body>
+</html>

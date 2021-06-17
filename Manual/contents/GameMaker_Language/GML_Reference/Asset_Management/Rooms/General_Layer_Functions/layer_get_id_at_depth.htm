@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_id_at_depth</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_id_at_depth" />
+  <meta name="rh-index-keywords" content="layer_get_id_at_depth" />
+  <meta name="search-keywords" content="layer_get_id_at_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_id_at_depth</h1>
+  <p>Puede utilizar esta función para obtener los IDs de todas las capas asignadas a una profundidad específica. Se da la profundidad a comprobar y la función devolverá un <a href="../../../../GML_Overview/Arrays.htm">array</a> con 1 o más entradas dependiendo de si hay
+    capas en la profundidad dada o no. Si no hay capas en la profundidad dada, el array tendrá una única entrada en la posición [0] con un valor de -1, pero, si hay capas en la profundidad, se hará una entrada en el array por cada
+    capa encontrada - el valor de la entrada será el valor de identificación único para una capa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_get_id_at_depth(depth)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>profundidad</td>
+        <td>La profundidad para comprobar y recuperar los ID de las capas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var a = layer_get_id_at_depth(0);<br> if a[0] != -1<br> {
+    <br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> layer_destroy(a[i]);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior recupera datos sobre las capas con una profundidad de 0. Se comprueba si existe alguna capa a esa profundidad, y si la hay se analiza el array devuelto y se destruye cada una de las capas encontradas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_name.htm">layer_get_name</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_id_at_depth
+-->
+  <!-- TAGS
+layer_get_id_at_depth
+-->
+</body>
+</html>

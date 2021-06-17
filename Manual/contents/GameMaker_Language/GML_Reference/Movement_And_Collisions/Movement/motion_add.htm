@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>motion_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function motion_add" />
+  <meta name="rh-index-keywords" content="motion_add" />
+  <meta name="search-keywords" content="motion_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>motion_add</h1>
+  <p>Esta función modificará los valores actuales <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/direction.htm">direction</a></span> y <span class="inline"><a href="../../Asset_Management/Instances/Instance_Variables/speed.htm">speed</a></span> de
+    la instancia que ejecuta el código, combinando los valores dados con los valores actuales. Si desea simplemente cambiar estos valores, debería utilizar la función <span class="inline"><a href="motion_set.htm">motion_set()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">motion_add(dir, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>La dirección añadida.</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>La velocidad añadida.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var pdir;<br> pdir = point_direction(other.x, other.y, x, y);<br> motion_add(pdir, other.speed);<br> if speed &gt; 8 speed = 8;</p>
+  <p>el código anterior sería llamado en el evento de colisión con otro objeto. Añade a la dirección de movimiento y a la velocidad de la instancia un vector basado en la posición y la velocidad de la otra instancia implicada en la colisión. Luego limita la
+    velocidad si es superior a 8 (píxeles por paso).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="motion_set.htm">motion_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+motion_add
+-->
+  <!-- TAGS
+motion_add
+-->
+</body>
+</html>

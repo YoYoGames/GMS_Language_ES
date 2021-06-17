@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_get" />
+  <meta name="rh-index-keywords" content="ds_grid_get" />
+  <meta name="search-keywords" content="ds_grid_get" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_get</h1>
+  <p>Esta función puede utilizarse para obtener el valor (ya sea un número real o una cadena) de cualquier celda dentro de la cuadrícula DS dada. Si se pasan coordenadas no válidas a la función, el valor devuelto será <tt>indefinido</tt> y se mostrará un error
+    en la ventana de salida.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_get(índice, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x de la celda de la que quiere encontrar el valor.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y de la celda de la que quiere encontrar el valor.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real o Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var xx = irandom(ds_grid_width(grid) - 1);<br> var yy = irandom(ds_grid_height(grid) - 1);<br> val = ds_grid_get(grid, xx, yy)</p>
+  <p>El código anterior selecciona una celda aleatoria de la cuadrícula DS indexada en la variable &quot;grid&quot; y almacena su valor en la variable &quot;val&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_get_max.htm">ds_grid_get_max</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_get
+-->
+  <!-- TAGS
+ds_grid_get
+-->
+
+</body></html>

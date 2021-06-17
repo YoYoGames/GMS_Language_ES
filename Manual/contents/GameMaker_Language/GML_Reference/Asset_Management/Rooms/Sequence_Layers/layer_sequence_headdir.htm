@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_de_cabecera_de_la_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headdir" />
+  <meta name="rh-index-keywords" content="layer_sequence_headdir, seq_dir_right, seq_dir_left" />
+  <meta name="search-keywords" content="layer_sequence_headdir,seq_dir_right,seq_dir_left" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_de_cabecera_de_la_capa</h1>
+  <p>Con esta función se puede establecer la dirección del <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">cabezal de reproducción de</a> la secuencia dada. Se proporciona el ID del elemento de la secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>    o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones de los elementos de la capa</a>, y luego da la dirección del cabezal de reproducción que debe ser una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seq_dir_right</td>
+        <td>La secuencia reproducirá los fotogramas en un orden incremental de izquierda a derecha</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seq_dir_left</td>
+        <td>La secuencia reproducirá los fotogramas en un orden decreciente de derecha a izquierda</td>
+        <td>-1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sequence_headdir(sequence_element_id, direction)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>dirección</td>
+        <td>La dirección del cabezal de reproducción, una constante, indicada anteriormente</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_headdir(_seq, seq_dir_left);</p>
+  <p>El código anterior crea una nueva secuencia y almacena su ID en una variable local. Este ID se utiliza entonces para establecer la dirección del cabezal de reproducción para disminuir los fotogramas (reproducción de derecha a izquierda).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_pause.htm">layer_sequence_pause</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_headdir
+seq_dir_left
+seq_dir_right
+-->
+  <!-- TAGS
+layer_sequence_headdir
+-->
+
+</body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variables y alcance de las variables</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining variables and their scoping in GML" />
+  <meta name="rh-index-keywords" content="Variables And Variable Scope" />
+  <meta name="search-keywords" content="variables,scope,local variables,instance variables,global variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Variables y alcance de las variables</h1>
+  <p>Como cualquier lenguaje de programación <b><span class="notranslate">GML</span></b> utiliza <i>variables</i> como unidad básica para la mayoría de las operaciones de programación. Las variables se utilizan para almacenar información en la memoria de los dispositivos para su uso posterior (o instantáneo), y se les da un nombre para poder referirse
+    a ellas en <span class="notranslate">tiempo de ejecución</span> y funciones de script. Una variable en <b><span class="notranslate">GML</span></b> puede almacenar muchos datos diferentes <a href="Data_Types.htm"><strong>tipos de datos</strong></a>como un número real (p. ej.: 100, 2,456575, -56, etc.), una cadena (p. ej.: &quot;¡Hola mundo!&quot;), un número entero
+    (ej: 1, 556, -7), o un booleano<tt>(verdadero</tt> o <tt>falso</tt>), así como otras cosas:</p>
+  <p class="code">var _num = 126.4545;<br> var _str = &quot;Hello World&quot;;<br> new_num = _num * 100;<br> global.my_string = _str + &quot; I said&quot;;</p>
+  <p>También se pueden utilizar variables para mantener los valores devueltos por las funciones, por ejemplo:</p>
+  <p class="code">var _id = instance_nearest(x, y, obj_Tree);<br> root = sqrt(1000);<br> global.str = string_upper(&quot;Hello World&quot;);</p>
+  <p>Así pues, una variable es algo que podemos nombrar y utilizar para almacenar un valor para utilizarlo posteriormente en una o varias operaciones. Un gran ejemplo del &quot;mundo real&quot; de una variable es pi 𝜋 .. <b>. es </b> una variable que todo el mundo conoce y contiene el valor 3,14159265(etc...).
+    ¿Por qué la tenemos en nuestro idioma? Bueno, es mucho más fácil decir a alguien &quot;pi&quot; que &quot;tres punto uno cuatro uno cinco nueve dos seis cinco&quot;. Nombrar las cosas así simplifica mucho la vida y también significa que si el valor
+    de esa variable, no tenemos que cambiar el número en todas partes, ya que el nombre de la variable sigue <i>siendo</i> el mismo.</p>
+  <p>Cuando se forman variables en <b><span class="notranslate">GML</span></b> debe tener un nombre que empiece por una letra o el símbolo de subrayado &quot;_&quot; y sólo puede contener letras, números y el símbolo de subrayado '_' con una longitud máxima de 64 símbolos. Así, las variables válidas
+    son cosas como <tt>fish</tt>, <tt>foo_bar</tt>, <tt>num1</tt>, o <tt>_str</tt>, mientras que las variables no válidas serían <tt>6fish</tt>, <tt>foo bar</tt>, o <tt>*num</tt>.</p>
+  <p>Ahora bien, en muchos lenguajes de programación es necesario crear una &quot;asignación&quot; de variable antes de poder utilizarla. Esto significa básicamente que le dices a la computadora el nombre que deseas usar para la variable y le asignas un valor inicial. A la variable se le
+    La variable recibe un lugar en la memoria para almacenar el valor o realizar operaciones con ella. La asignación de una variable tiene la forma de:</p>
+  <p class="code">&lt;variable&gt; = &lt;expresión&gt;;</p>
+  <p>Una expresión puede ser un simple valor, pero también puede ser más complicada, por lo que, en lugar de asignar un valor a una variable, también se puede añadir un valor al valor actual de la variable utilizando <span class="inline"><b>+=</b></span>, por ejemplo:</p>
+  <p class="code">a = 100; // Asignación de un valor simple<br> b = 200;<br> c = 300;<br> a += b; // Asignación con operación<br> a = b + c; // Asignación con expresión</p>
+  <p class="note"><b>NOTA</b>: El <span class="notranslate">Lenguaje GameMaker</span> también aceptará &quot;<span class="inline">:=</span>&quot; para las asignaciones, aunque no suele ser la forma más común de hacerlo:</p>
+  <p class="code">&lt;variable&gt; := &lt;expresión&gt;;</p>
+  <p>Del mismo modo, puede restar con <span class="inline"><b>-=</b></span>, multiplicar con <span class="inline"><b>*=</b></span>, dividir con <span class="inline"><b>/=</b></span>, o utilizar operadores a nivel de bits con <span class="inline"><b>|=</b></span>,
+    <span class="inline"><b>&amp;=</b></span> , o <span class="inline"><b>^=</b></span>. También puede sumar o restar <i>uno</i> de un valor utilizando <span class="inline"><b>++</b></span>, <span class="inline"><b>--</b></span>. Para más información, consulte
+    la sección de <a href="Expressions_And_Operators.htm">Expresiones y Operadores</a>.</p>
+  <p>Tenga en cuenta que <i>no puede</i> hacer lo siguiente (o cualquier variación):</p>
+  <p class="code">a = b = c = 4;</p>
+  <p>Y en su lugar debería hacerse como:</p>
+  <p class="code">a = 4;<br> b = 4;<br> c = 4;</p>
+  <p>Las asignaciones de variables mostradas arriba son todas variables de <strong>instancia </strong>, sin embargo hay otras tres categorías principales de variables cuando se programa con <span class="notranslate">GameMaker Studio 2</span> y cada una tiene su propio <strong>alcance </strong>(que puede ser considerado
+    como su área de operación, o alcance). Los diferentes tipos de variables y su alcance se describen en las siguientes páginas:</p>
+  <ul class="colour">
+    <li><a href="Variables/Local_Variables.htm">Variables locales</a></li>
+    <li><a href="Variables/Instance_Variables.htm">Variables de instancia</a></li>
+    <li><a href="Variables/Global_Variables.htm">Variables globales</a></li>
+    <li><a href="Variables/Constants.htm">Constantes</a></li>
+  </ul>
+  <p>El <span class="notranslate">Lenguaje GameMaker</span> también tiene diferentes variables incorporadas que pueden tener cualquiera de los alcances antes mencionados (excepto <i>local</i>). Estas variables son especiales, ya que se incluyen por defecto como parte de los objetos y las habitaciones en el juego
+    mundo. Algunas variables globales incorporadas están listadas en la sección mencionada anteriormente, y las diferentes partes del manual para sprites, habitaciones, objetos, etc... también describen las variables incorporadas disponibles en cada caso. Ejemplos de estas variables de instancia incorporadas
+    de instancia incorporadas serían:</p>
+  <p class="code"><tt><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></tt><br>
+    <a href="../GML_Reference/Asset_Management/Paths/Path_Variables/path_index.htm"><tt>escala_de_trayectoria</tt></a><br>
+    <a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm"><tt>velocidad</tt></a></p>
+  <p>Y ejemplos de variables globales incorporadas serían:</p>
+  <p class="code"><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm"><tt>ver_exportación</tt></a><br>
+    <a href="../GML_Reference/OS_And_Compiler/GM_version.htm"><tt>GM_versión</tt></a><br>
+    <a href="../GML_Reference/Asset_Management/Rooms/room.htm"><tt>sala</tt></a></p>
+  <p>La mayoría de las variables incorporadas pueden cambiarse y establecerse como otras variables, y algunas incluso pueden ser <a href="Arrays.htm">matrices</a>, sólo que no tienes que establecerlas para crearlas como lo harías con una variable regular, ya que ya estarán inicializadas a un
+    valor por defecto.</p>
+  <p>Por último, hay una serie de funciones que se dedican a establecer, obtener o comprobar variables de alguna manera, disponibles en la siguiente página:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Funciones variables</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Arrays.htm">Arrays</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables
+variables - built-in
+variables - scope
+declaring variables
+scope
+built-in variables
+-->
+  <!-- TAGS
+variables
+-->
+</body>
+</html>

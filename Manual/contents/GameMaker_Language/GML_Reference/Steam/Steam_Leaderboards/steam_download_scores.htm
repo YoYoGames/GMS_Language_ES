@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_download_scores</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_download_scores" />
+  <meta name="rh-index-keywords" content="steam_download_scores" />
+  <meta name="search-keywords" content="steam_download_scores" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_download_scores</span></h1>
+  <p>Esta función se utiliza para recuperar un rango secuencial de entradas de la tabla de clasificación por ranking. Los parámetros <tt>start_idx</tt> y <tt>end_idx</tt> controlan el rango solicitado de rangos, por ejemplo, puede mostrar los 10 primeros en una tabla de clasificación para
+    su juego estableciendo el valor inicial en 1 y el valor final en 10. El nombre de la tabla de clasificación es una cadena que se definió al crear la tabla de clasificación mediante la función <a href="steam_create_leaderboard.htm"><tt><span class="notranslate">steam_create_leaderboard</span>()</tt></a>,
+    y la función devolverá un valor que puede ser usado para identificar la llamada de vuelta en el <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Steam.htm">Evento Asíncrono<span class="notranslate">de Steam</span></a>, o devolverá -1 si ha fallado. Tenga en cuenta que cuando
+    descargar una tabla de clasificación, la clave &quot;entries&quot; del <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> mapa puede tener una clave adicional de &quot;datos&quot; si se subieron datos adicionales del buffer
+    cargado junto con la puntuación (ver <a href="steam_upload_score_buffer.htm"><tt><span class="notranslate">steam_upload_score_buffer</span>()</tt></a>). Este búfer de datos estará <b>codificado en Base 64</b>, por lo que tendrá que utilizar la función <a href="../../Buffers/buffer_base64_decode.htm"><tt>buffer_base64_decode()</tt></a>    en el buffer antes de leer los datos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_download_scores</span>(lb_name, start_idx, end_idx);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>lb_nombre</td>
+        <td>El nombre de la tabla de clasificación de la que se descargan las puntuaciones (una cadena).</td>
+      </tr>
+      <tr>
+        <td>start_idx</td>
+        <td>La posición inicial dentro de la tabla de clasificación.</td>
+      </tr>
+      <tr>
+        <td>end_idx</td>
+        <td>La posición final dentro de la tabla de clasificación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo ampliado solicitaremos el ranking de los diez primeros de la tabla de clasificación dada y analizaremos sus resultados en el <b>evento asíncrono<span class="notranslate">de Steam</span></b>. para empezar necesitamos solicitar las puntuaciones con el siguiente código:</p>
+  <p class="code">score_get = <span class="notranslate">steam_download_scores</span>(&quot;Game Scores&quot;, 1, 10);</p>
+  <p>Esto enviará una solicitud al servidor de <span class="notranslate">Steam</span> para las puntuaciones de la tabla de clasificación &quot;Game Scores&quot;, almacenando el id asíncrono <b>de la</b> solicitud en la variable &quot;score_get&quot;. esto será entonces manejado en el evento asíncrono de Steam <b><span class="notranslate">de</span></b> la <b>siguiente</b> manera:</p>
+  <p class="code">var async_id = ds_map_find_value(async_load, &quot;id&quot;);<br> if async_id == score_get<br> {
+    <br> var entries = ds_map_find_value(async_load, &quot;entries&quot;);<br> var map = json_decode(entries);<br> if ds_map_exists(map, &quot;default&quot;)<br> {
+    <br> ds_map_destroy(map);
+    <br> exit;
+    <br> }
+    <br> else
+    <br> {
+    <br> var list = ds_map_find_value(map, &quot;entries&quot;);<br> var len = ds_list_size(list);<br> var entry;<br> for(var i = 0; i &lt; len; i++;)<br> {
+    <br> entry = ds_list_find_value(list, i );<br> <span class="notranslate">steam_name</span>[i] = ds_map_find_value(entry, &quot;name&quot;);<br> steam_score <span class="notranslate">[i]</span>= ds_map_find_value(entry, &quot;score&quot;);<br> steam_rank[i] = ds_map_find_value(entry,
+    &quot;rank&quot;);<br> }
+    <br> }
+    <br> ds_map_destroy(map)
+    <br> }
+  </p>
+  <p>Lo que hacemos aquí es comprobar primero la clave &quot;id&quot; del <tt>mapa</tt> especial async_load <tt>DS.</tt> Si este valor es el mismo que el de la función original de devolución de llamada (almacenado en la variable &quot;score_get&quot;) entonces continuamos procesando los
+    datos. Lo primero que hacemos es analizar el <tt>async_load</tt> ds_map en busca de la clave &quot;entries&quot;, que contendrá un objeto JSON con los datos de la tabla de clasificación. Este objeto JSON es decodificado (ver <a href="../../File_Handling/Encoding_And_Hashing/json_decode.htm"><tt>json_decode()</tt></a>)
+    como otro mapa DS, y este nuevo id de mapa se almacena en la variable &quot;map&quot;.</p>
+  <p>Este mapa se comprueba en busca de la clave &quot;default&quot; y si se encuentra entonces el mapa se destruye y se sale del evento. Si no se encuentra la clave &quot;default&quot;, el código analizará el mapa para extraer la información necesaria sobre la tabla de posiciones,
+    extrayendo primero una lista DS de la clave &quot;entries&quot; del mapa DS, y luego haciendo un bucle a través de cada entrada de la lista para obtener otro <i>mapa</i> DS con el nombre, la puntuación y el rango de cada entrada. Estos valores se almacenan entonces en arrays.</p>
+  <p>Una vez que el bucle ha terminado, el mapa JSON DS es destruido (que a su vez destruye todos los mapas y listas internas). No hay necesidad de destruir el mapa <tt>async_load</tt> DS ya que esto es manejado por usted por <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_Leaderboards.htm">Tablas de clasificación</a></div>
+        <div style="float:right">Siguiente: <a href="steam_download_scores_around_user.htm"><span class="notranslate">steam_download_scores_around_user</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_download_scores
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_download_scores
+-->
+</body>
+</html>

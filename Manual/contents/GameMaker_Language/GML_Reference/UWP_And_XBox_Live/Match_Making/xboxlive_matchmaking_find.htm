@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_find</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_find" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_find" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_find" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_find</h1>
+  <p>Esta función buscará una sesión multijugador utilizando la plantilla de sesión, la tolva de emparejamiento y la plantilla de asociación de dispositivos seguros, que deberías haber creado de antemano en el panel de control de XDP. El ID de usuario que puede recuperar para un determinado
+    game pad llamando a la función <a href="../Users_And_Accounts/xboxlive_user_for_pad.htm"><tt>xboxlive_user_for_pad()</tt></a> función. La función devolverá un valor único de ID de solicitud, que puede utilizarse para identificar el <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">evento social asíncrono</a> correcto para esta función. Este evento se activará cuando se haya creado la sesión y contendrá un Mapa DS en la variable <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> con los siguientes
+    pares clave/valor:</p>
+  <ul class="colour">
+    <li>&quot;requestid&quot; - contiene el ID de la solicitud devuelto por la función de llamada</li>
+    <li>&quot;status&quot; - contiene la cadena &quot;session_created&quot; para informar del tipo de evento que se ha activado.</li>
+    <li>&quot;num_results&quot; - contiene 1 o más si se ha encontrado una sesión, en caso contrario contiene 0.</li>
+    <li>&quot;sessionid&lt;index&gt;<i>&quot; -</i> contiene el ID de la sesión, o -1 en caso de fallo (&lt;index/gt; es un<i> valor de 0</i> a &quot;num_results&quot; - 1).</li>
+    <li>&quot;sessionOwner&lt;index&gt;<i>&quot; -</i> contiene el ID del anfitrión de la sesión si se ha encontrado una sesión (&lt;index&gt; es un<i> valor de 0 a</i> &quot;num_results&quot; - 1).</li>
+    <li>&quot;error&quot; - contiene 0 en caso de éxito, o -1 en caso de fallo</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_matchmaking_find(user_id, template, hopper, sdatemplate, [matchattributes]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero de identificación del usuario que se utilizará</td>
+      </tr>
+      <tr>
+        <td>plantilla</td>
+        <td>El nombre de la plantilla de la sesión</td>
+      </tr>
+      <tr>
+        <td>tolva</td>
+        <td>El nombre de la tolva de la búsqueda de partidos</td>
+      </tr>
+      <tr>
+        <td>sdatemplate</td>
+        <td>El nombre de la plantilla de asociación de dispositivos seguros</td>
+      </tr>
+      <tr>
+        <td>matchattributes</td>
+        <td>[OPCIONAL]</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ID de la solicitud (entero)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var userID = xboxone_user_for_pad(global.PadIndex);<br> result = xboxone_matchmaking_find(userID, &quot;MatchTicketSession&quot;, &quot;MatchTicketHopper&quot;, &quot;PeerServerTraffic&quot;);</p>
+  <p>Lo anterior recuperará el ID del usuario en el gamepad dado y luego tratará de encontrar una sesión de matchmaking para ellos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Match_Making.htm">La creación de partidos</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_matchmaking_session_get_users.htm">xboxlive_matchmaking_session_get_users</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_find
+-->
+  <!-- TAGS
+xboxlive_matchmaking_find
+-->
+</body>
+</html>

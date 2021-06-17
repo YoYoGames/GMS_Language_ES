@@ -31,14 +31,14 @@
     en el editor de espacios.</p>
   <p>A diferencia de los sprites de mapa de bits, el sprite de animación esquelético importado <strong>no puede modificarse en el editor</strong> de ninguna manera, pero hay una serie de funciones disponibles dentro del <span class="notranslate">Lenguaje GameMaker</span><span class="notranslate">(GML</span>) que pueden utilizarse para cambiar las pieles, establecer propiedades
     y controlar otros aspectos de la animación. Tampoco puede establecer ninguna de las opciones de textura para el sprite, ya que <span class="notranslate">GameMaker</span> utilizará el atlas de textura suministrado que fue hecho por el programa que generó el sprite.</p>
-  <p>Hay una serie de cosas que debes tener en cuenta a la hora de importar sprites de animación de esqueleto, siendo la más importante que algunas de las funciones de dibujo y gestión de sprites no son compatibles por razones técnicas, especialmente aquellas
+  <p>Hay una serie de cosas que debes tener en cuenta al importar sprites de animación de esqueleto, siendo la más importante que algunas de las funciones de dibujo y gestión de sprites no son compatibles por razones técnicas, especialmente aquellas
     funciones de dibujo que dibujan sólo una parte de un sprite, o que &quot;sesgan&quot; la posición de alguna manera (ver las funciones individuales <a href="../../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/Sprites_And_Tiles.htm"><span class="inline">draw_sprite_*()</span></a> funciones
     para conocer los detalles exactos). Sin embargo, las funciones básicas de dibujo de sprites son totalmente compatibles, así como las variables de sprites incorporadas. Aparte de estas funciones y variables, también puedes establecer y cambiar las propiedades de la animación utilizando funciones especiales de <span class="inline">skeleton_*</span>, que se enumeran y explican en la sección de referencia sobre <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Animaciones Esqueléticas</a>.</p>
   <p> </p>
   <p> </p>
   <h2>Sprites vectoriales (SWF)</h2>
   <p>Por lo general, todos los sprites en <span class="notranslate">GameMaker</span> utilizan mapas de bits que, aunque son flexibles en términos de contenido, limitan el tamaño y el número de fotogramas posibles en un sprite antes de que el uso de la memoria sea prohibitivo. Los sprites vectoriales evitan estas limitaciones
-    almacenando y dibujando su contenido de forma diferente: en lugar de una cuadrícula de píxeles, que puede volverse borrosa o en bloque cuando se escala, se dibujan como triángulos utilizando matemáticas vectoriales y éstos pueden ser escalados (o reducidos) sin perder definición, como se ilustra
+    almacenando y dibujando su contenido de forma diferente: en lugar de una cuadrícula de píxeles, que puede volverse borrosa o en bloque cuando se escala, se dibujan como triángulos utilizando matemáticas vectoriales y estos pueden ser escalados (o reducidos) sin perder definición, como se ilustra
     en la imagen siguiente:</p>
   <p><img alt="Vector And Bitmap Sprite Comparison" class="center" src="../../assets/Images/Settings/Vector_Compare.png">Para ayudarte a visualizar cómo se hace esto, la imagen de abajo es del mismo sprite vectorial de Fireman sólo que ahora podemos ver los polígonos que
     se utilizan para hacer la imagen dentro de <span class="notranslate">GameMaker Studio 2</span>:</p>
@@ -50,7 +50,7 @@
   <p class="code">Mapa de bits a 70x68 = 4x70x68 bytes x 12 cuadros = 223k<br> Vector = 54k</p>
   <p>Si se cuadruplica la resolución del sprite:</p>
   <p class="code">Mapa de bits a 280x272 = 4x280x272 bytes x 12 cuadros = 3570k<br> Vector = 54k</p>
-  <p>Así que, como puedes ver, se puede ahorrar mucha memoria potencialmente usando sprites vectoriales, y todavía tenemos mucho potencial para ahorrar espacio en el futuro.</p>
+  <p>Así que, como puedes ver, se puede ahorrar mucha memoria potencialmente utilizando sprites vectoriales, y todavía tenemos mucho potencial para ahorrar espacio en el futuro.</p>
   <p>Actualmente <span class="notranslate">GameMaker Studio 2</span> tiene <em>un </em>soporte <em>limitado </em>para los sprites vectoriales. y sólo puede importar imágenes vectoriales desde archivos de formato <span class="inline">SWF</span>. La forma de importarlas al programa es casi idéntica a la de añadir una
     imagen de mapa de bits normal. Para añadir un sprite vectorial, crea un nuevo sprite, lo que hará que aparezca el cuadro de diálogo estándar Load Sprite, pero asegúrate de que has seleccionado <span class="inline">*.swf</span> en el filtro de archivos de la parte inferior.</p>
   <p><img alt="Import Vector Image" class="center" src="../../assets/Images/Settings/Import_Vector.png" style="cursor: nwse-resize;">Al pulsar el botón &quot;cargar&quot; se añadirá la imagen vectorial o la animación al <a href="../../Introduction/The_Asset_Browser.htm">Navegador de</a> Activos <a href="../../Introduction/The_Asset_Browser.htm">,</a>

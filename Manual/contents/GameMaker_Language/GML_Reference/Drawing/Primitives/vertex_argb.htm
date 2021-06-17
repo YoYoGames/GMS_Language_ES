@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_argb</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_argb" />
+  <meta name="rh-index-keywords" content="vertex_argb" />
+  <meta name="search-keywords" content="vertex_argb" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_argb</h1>
+  <p>Esta función establecerá los valores <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> para el vértice que se está definiendo para la primitiva personalizada. Usted proporciona el búfer para escribir los datos, así como los valores rojo, verde, azul y alfa
+    que desea utilizar como un único entero sin signo de 32 bits - la muestra de alfa en los 8 bits más altos, seguida por la muestra de rojo, la muestra de verde y finalmente la muestra de azul en los 8 bits más bajos. Puede utilizar la notación hexadecimal ($AARRGGBB) un número real o utilizar cualquiera
+    de las funciones <tt>make_colour_*()</tt> para definir el valor del color.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_argb(buffer, argb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El búfer en el que se escribirá la información.</td>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>El valor alfa del color (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>La parte del componente rojo de un color (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>La parte del componente verde de un color (0 - 255).</td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>La parte del componente azul de un color (0 - 255).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_argb(buff, $FFFFFFFF);</p>
+  <p>El código anterior establecerá los valores ARGB del vértice que se está definiendo como blanco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_texcoord.htm">vertex_texcoord</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_argb
+-->
+  <!-- TAGS
+vertex_argb
+-->
+
+</body></html>

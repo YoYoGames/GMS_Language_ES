@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_empty</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_empty" />
+  <meta name="rh-index-keywords" content="ds_queue_empty" />
+  <meta name="search-keywords" content="ds_queue_empty" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_empty</h1>
+  <p>Con esta función puedes comprobar la cola DS dada para ver si está vacía (devuelve <tt>true</tt>) o no (devuelve <tt>false</tt>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_queue_empty(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la estructura de datos a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (count == 15) &amp;&amp; (!ds_queue_empty(command_queue))<br> {
+    <br> ds_queue_clear(command_queue);
+    <br> alarm[0] = room_speed;<br> ai_count = 0;<br> }
+  </p>
+  <p>El código anterior comprueba una variable para ver si ha alcanzado un valor específico y si lo ha hecho borra la cola DS indexada en la variable &quot;command_queue&quot;, establece una alarma y reinicia la variable a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Queues.htm">Colas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_queue_size.htm">ds_queue_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_empty
+-->
+  <!-- TAGS
+ds_queue_empty
+-->
+
+</body></html>

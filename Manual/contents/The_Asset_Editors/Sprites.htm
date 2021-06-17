@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sprites</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the sprite editor works" />
+  <meta name="rh-index-keywords" content="Sprite Editor" />
+  <meta name="search-keywords" content="sprites,sprite editor, broadcast messages" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de sprites</h1>
+  <p><img alt="The Sprite Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites.png">El <strong>editor de sprites</strong> es donde se establecen las propiedades generales de <a class="glossterm" data-glossterm="sprites" href="#">los sprites</a> que
+    que hagas. Puedes abrir esta ventana creando un nuevo sprite (haz clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en el <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> y selecciona &quot;Crear
+    Sprite&quot;), haciendo doble clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en un sprite existente o haciendo clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> un sprite existente y seleccionando &quot;Propiedades<strong>&quot;.</strong></p>
+  <p>Las partes que componen el Editor de Sprite son las siguientes:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Nombre del Sprite</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Aquí puedes nombrar el sprite. El nombre del sprite es lo que se utilizará en todo el proyecto del juego para identificar el sprite como un recurso y sólo puede ser alfanumérico y sólo puede utilizar el símbolo de la barra inferior &quot;_&quot;. Aunque puede utilizar números en el nombre del
+      sprites, el nombre no puede empezar con un número, ya que eso lo convertiría en un nombre de recurso inválido al usar <span class="notranslate">GML</span> o <span class="notranslate">DnD™</span>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Propiedades de la imagen</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot">En esta sección puede establecer el tamaño de la imagen haciendo clic en el botón <strong>Tamaño del Sprite</strong> <img alt="Sprite Size Icon" class="icon" src="../assets/Images/Icons/Icon_SpriteSize.png">. Esto abrirá la siguiente ventana:</p>
+    <p class="dropspot"><img alt="Sprite Editor Resize Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Sprites_ResizeProperties.png">Aquí puedes ver una vista previa del sprite antes y después de aplicar las transformaciones elegidas, y la sección de abajo es
+      para establecer las nuevas propiedades del sprite y está dividida en dos partes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Escalar Imagen</strong>: Con esta opción puedes cambiar el tamaño del lienzo de dibujo del sprite y cualquier imagen contenida en el sprite será estirada y escalada para ajustarse al nuevo tamaño. Puedes elegir escalar y mantener la relación de aspecto de la imagen base,
+        y también puedes elegir si escalar en Píxeles o en Porcentaje. Dependiendo del tipo de imagen con la que esté trabajando, también puede activar o no la interpolación lineal (en general, la interpolación lineal &quot;suaviza&quot; los píxeles sobre
+        un área y por eso es mejor dejarla desactivada para el pixel art).</li>
+      <li class="dropspot"><strong>Redimensionar</strong> el lienzo: Esta opción redimensionará el lienzo de dibujo al nuevo tamaño sin escalar el contenido. Puede establecer el punto de &quot;anclaje&quot; para el cambio de tamaño utilizando las flechas de dirección y luego establecer el valor del tamaño. Hay una opción
+        para mantener la relación de aspecto cuando se redimensiona el lienzo y en la parte inferior puede elegir establecer los valores de redimensionamiento en píxeles o en porcentaje.</li>
+    </ul>
+    <p class="dropspot">Cuando esté satisfecho con el nuevo tamaño, puede hacer clic en <em>Aplicar </em>para aplicar los cambios y cerrar la ventana de propiedades de Redimensionamiento. Tenga en cuenta que al aplicar un cambio de escala o tamaño a un sprite, puede elegir que el cambio se aplique también al origen
+      del sprite, marcando la casilla <strong>Aplicar al origen </strong>junto al botón <em>Aplicar </em>. Cuando está marcada - si el origen no es uno de los ajustes por defecto y no está bloqueado en el sprite - entonces su posición será escalada para
+      para que coincida con el cambio de tamaño del sprite. Si no está marcada, no se aplicará ninguna escala al origen. Si el origen no es un valor personalizado o está bloqueado, aparecerá en gris y no estará disponible. Puedes configurar esta opción para todos los sprites desde las
+     <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm">Preferencias del editor de</a> sprites.</p>
+    <div class="dropspotnote">NOTA: Esta opción sólo está disponible para los sprites de <a class="glossterm" data-glossterm="mapa de bits" href="#">mapa de bits</a> y estará atenuada para los sprites de animación SWF o de esqueleto.</div>
+    <p class="dropspot">En esta sección también puedes abrir el <a href="Image_Editor.htm">Editor de Imágenes</a> para dibujar tu sprite, o puedes hacer clic en el botón &quot;<em>Importar&quot;</em> para importar un sprite creado previamente. Los sprites se pueden importar desde los formatos de
+      formatos de mapa de bits ( <span class="inline">PNG</span>, <span class="inline">JPG</span>, <span class="inline">GIF</span>, etc...) pero <span class="notranslate">GameMaker Studio 2</span> también admite sprites vectoriales (<span class="inline">SWF</span>) y sprites de animación esquelética (
+      <span class="inline">Spine</span> ). Para obtener más información sobre estos formatos, consulte la sección sobre <a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Sprites que no son</a> de mapa de bits. Tenga en cuenta que al importar sprites de mapa de bits puede seleccionar
+      varios archivos de imagen en el explorador de archivos y cada uno se añadirá al mismo sprite como subimágenes separadas (fotogramas).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Ajustes de textura</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">Esta sección de la ventana de propiedades del sprite se ocupa de cómo <span class="notranslate">GameMaker Studio 2</span> almacena las imágenes que componen el sprite en<span class="glossextra">páginas de</span> <a class="glossterm" data-glossterm="página de texturas" href="#">textura</a>para su uso con
+      dispositivos y navegadores. Para las plataformas de escritorio esto puede no ser demasiado importante, pero cuando se empieza a desarrollar para móviles o web la gestión adecuada de sus activos de imagen (texturas) se convierte en muy importante como texturas mal gestionados pueden tener efecto perjudicial
+      efecto perjudicial en su juego, causando problemas de rendimiento.</p>
+    <p class="dropspot">Las casillas de verificación Mosaico <strong>horizontal</strong> y <strong>Mosaico vertical</strong> no suelen estar marcadas por defecto, ya que la mayoría de las veces no se desea mosaiquizar los sprites. Sin embargo, en ciertas circunstancias puede desear que se mosaticen, lo que significa que
+      debería marcar estas opciones, especialmente si va a escalar la vista o la habitación, ya que el escalado puede introducir artefactos en los gráficos de un juego si la página de textura no se genera correctamente.</p>
+    <p class="dropspot">Si su sprite va a ser utilizado como un mapa de textura en un juego 3D, entonces debe marcar la casilla <strong>Página de Textura Separada</strong> y el sprite recibirá una página de textura propia (tenga en cuenta que cada sub-imagen también obtendrá su propia página de textura
+      página de textura, por lo que si su sprite tiene 10 imágenes generará 10 páginas de textura). Esto aumentará las necesidades de memoria de texturas de tu juego, por lo que hay que tener mucho cuidado al usar esta opción. También tenga en cuenta que, en general, si su sprite está utilizando esta opción
+      para 3D, entonces las texturas deben ser una potencia de 2 (es decir: 128x128, 256x256, 512x512 etc...).</p>
+    <p class="dropspot">La siguiente opción es activar el alfa <strong>premultiplicado</strong> para las imágenes del sprite. Cuando se activa, esto pre-multiplica el alfa de todas las sub-imágenes del sprite. Esto normalmente sólo es necesario al dibujar sprites en superficies, o para algunos efectos especiales específicos.
+      efectos especiales. Para el uso normal de los sprites no debería ver ninguna diferencia notable entre el sprite normal y el premultiplicado.</p>
+    <p class="dropspot">También tenemos una opción de<strong> filtrado de bordes</strong>. Esta opción es específicamente para cuando usted tiene <a class="glossterm" data-glossterm="interpolación lineal" href="#">interpolación lineal</a> habilitado para su juego y usted está viendo &quot;halos&quot;
+      de color alrededor de sus sprites. Esto es causado por el hardware de interpolación de múltiples <a class="glossterm" data-glossterm="texel" href="#">texturas</a>de origen en la página de textura a la vez, y puede ser particularmente
+      obvio cuando se escalan los juegos en la resolución. Si activas esta opción, los píxeles de los bordes tomarán el color del píxel de sprite alfa más cercano y así se mezclarán los píxeles interpolados sin el halo que había antes.</p>
+    <p class="dropspot">Por último, puede elegir el grupo de <strong>texturas</strong> al que desea que pertenezca el recurso sprite. Básicamente, un grupo de texturas (previamente definido en el <a href="../Settings/Texture_Groups.htm">Gestor de Grupos de Text</a>uras) es algo que puedes
+      es algo que puedes configurar para que todos los recursos de imagen que necesitas para salas o niveles específicos de tu juego puedan ser almacenados juntos. Así, por ejemplo, puedes tener todas tus imágenes de nivel 1 en un grupo de texturas, todas tus imágenes de nivel 2 en otro, etc... y
+     <span class="notranslate">GameMaker Studio 2</span> intentará colocar todos esos recursos agrupados en la misma página de texturas para reducir el intercambio de páginas de texturas mientras tu juego se ejecuta en la plataforma de destino elegida.</p>
+    <div class="dropspotnote"><strong>NOTA</strong>: Esto puede no ser siempre necesario y el aumento de rendimiento de este método dependerá de si el dispositivo de destino está vinculado a la CPU o a la GPU.</div>
+    <p class="dropspot">Puede obtener más información sobre las páginas de textura <a href="../Settings/Texture_Information/Texture_Pages.htm">aquí</a>.</p>
+    <p class="dropspot">Los grupos de texturas sólo son relevantes para las imágenes <a class="glossterm" data-glossterm="mapa de bits" href="../Settings/Texture_Groups.htm#">de mapa de bits</a>, y los sprites que no son de mapa de bits no serán asignados a grupos de texturas y algunas de las opciones anteriores no estarán disponibles
+      para ellos. Algunos sprites que no son de mapa de bits ya tendrán su propia página de texturas (sprites de animación de esqueleto), mientras que otros simplemente no requieren texturas, ya que se componen de vectores (sprites <span class="glossextra">SWF</span> ). Para más información, consulte la siguiente sección:</p>
+    <ul class="dropspotlist">
+      <li><a href="../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Sprites sin mapa de bits</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Máscara de colisión</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Todos los sprites tienen una <strong>máscara</strong> de colisión que corresponde al área del sprite que se utilizará para detectar colisiones cuando el sprite se asigne a una instancia. En primer lugar se puede establecer el <strong>Modo de </strong>la máscara de colisión, que
+      puede ser uno de los siguientes:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Automático</strong>: <span class="notranslate">GameMaker Studio 2</span> calculará la máscara de colisión automáticamente basándose en los valores alfa de los sprites (esto dependerá de la configuración de la Tolerancia que se explica a continuación).</li>
+      <li class="dropspot"><strong>Imagen completa</strong>: La máscara se calculará con sus límites siendo los mismos que los límites izquierdo, derecho, superior e inferior del sprite.</li>
+      <li class="dropspot"><strong>Manual</strong>: Si selecciona esta opción, significa que desea establecer los límites de la máscara de colisión utilizando los valores de entrada para la izquierda, la derecha, la parte superior y la parte inferior.</li>
+    </ul>
+    <p class="dropspot">Además del modo de máscara de colisión, hay varios <strong>tipos </strong>de máscara de colisión que puedes elegir en el menú desplegable:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Rectángulo</strong>: Una simple máscara de colisión rectangular. Es la más rápida de resolver cuando se utiliza en el proyecto.</li>
+      <li class="dropspot"><strong>Rectángulo girado</strong>: Esta es una simple máscara de colisión rectangular que rotará junto con el valor <span class="inline">image_angle</span> de la instancia con el sprite asignado. Esto es más lento de resolver que la máscara de colisión rectangular normal, pero más rápido que una máscara de colisión precisa.
+        rectangular normal, pero más rápida que una máscara de colisión precisa.</li>
+      <li class="dropspot"><strong>Elipse</strong>: Crea una máscara de colisión elíptica. Esta es más lenta de resolver que la máscara rectangular.</li>
+      <li class="dropspot"><strong>Diamante</strong>: Crea una máscara de colisión en forma de &quot;diamante&quot;. Esta es más lenta de resolver y genera más sobrecarga de la CPU que las máscaras rectangulares y elípticas.</li>
+      <li class="dropspot"><strong>Preciso</strong>: Crea una máscara de colisión precisa basada en el contorno del sprite. Si el sprite tiene múltiples sub-imágenes, entonces esto será un <em>compuesto </em>de los bordes de <em>todas </em>las sub-imágenes colocadas unas sobre otras.
+        Tenga en cuenta que la máscara de precisión se recortará a la <a class="glossterm" data-glossterm="cuadro delimitador" href="#">caja delimitadora</a> si el Modo está establecido en Manual y usted cambia los valores por defecto. Esto es muy lento y genera mucha sobrecarga en la CPU.</li>
+      <li class="dropspot"><strong>Preciso (por fotograma)</strong>: Crea una máscara de colisión precisa por fotograma (es decir, la máscara cambiará para ajustarse al contorno de cada fotograma diferente). Tenga en cuenta que la máscara precisa se recortará al <a class="glossterm" data-glossterm="cuadro delimitador" href="#">cuadro delimitador</a> si el Modo está establecido en Manual y usted cambia los valores por defecto. Este es, con mucho, el tipo de máscara de colisión más lento de resolver y debería evitarse excepto en casos muy, muy específicos y poco frecuentes.
+        casos muy específicos y poco frecuentes.
+      </li>
+    </ul>
+    <p class="dropspot">La siguiente imagen ilustra las diferentes opciones de máscara:</p>
+    <p class="dropspot"><img alt="Collisions" class="center" src="../assets/Images/Asset_Editors/bbox_image.png">Las opciones de comprobación de colisiones son muy importantes para tu juego, ya que influirán directamente en cómo interactúan tus objetos y cómo se ejecuta tu juego, con
+      con una configuración incorrecta que incluso tiene un impacto negativo en el rendimiento general. ¿Por qué? Bien, cada vez que dos instancias se encuentran, y ambas instancias tienen una máscara válida, se genera un evento de colisión comprobando la superposición del cuadro delimitador <em>y </em>la
+      máscara, que puede ser precisa o no, y adaptada al índice de la imagen o no. A continuación se muestra una imagen para ilustrar esto:</p>
+    <p class="dropspot"><img alt="Different collisions and how they are resolved" class="center" src="../assets/Images/Asset_Editors/basic_collisions_image.png" /></p>
+    <p class="dropspot">Debajo de la configuración de la máscara de colisión, tiene el control deslizante de <strong>la tolerancia alfa </strong>, que indica la tolerancia para crear la máscara con respecto a la transparencia de los píxeles de los sprites - con una tolerancia más alta los píxeles que son parcialmente
+      transparentes se dejan fuera de la máscara, mientras que con una tolerancia menor la máscara tendrá en cuenta esos píxeles. Esto influye tanto en el cuadro delimitador (cuando no está configurado como manual) como en la máscara para la comprobación precisa de colisiones.</p>
+    <p class="dropspot">Por último, puede establecer los límites de la caja <strong>delimitadora</strong> para la máscara. El cuadro delimitador es el nombre que se le da al área rectangular en la que encaja la máscara del sprite. Sólo los píxeles dentro de este cuadro delimitador se utilizan para la máscara y estarán involucrados en
+      y estarán involucrados en la comprobación de colisiones, y por defecto se calcula automáticamente, teniendo en cuenta la tolerancia alfa. Si tienes marcada la opción &quot;precisa (por fotograma)&quot;, esto también será independiente para cada sub-imagen. Cuando lo configure usted mismo, puede
+      introducir los valores en las casillas de la izquierda, la derecha, la parte superior y la inferior, o puede hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en la ventana de vista previa del sprite y arrastrarlo para &quot;dibujarlo&quot; sobre
+      el sprite. Ten en cuenta que al &quot;dibujar&quot; el cuadro delimitador, la máscara se genera automáticamente para ajustarse a los valores finales, y el cuadro delimitador puede &quot;recortar&quot; la máscara.</p>
+    <p class="dropspot">Cabe destacar que si vas a la ventana de vista previa, puedes ajustar la máscara de colisión utilizando los &quot;tiradores&quot; que se encuentran en cada esquina. Haciendo clic y arrastrando estos ajustará la máscara de colisión de la misma manera que lo haría la introducción de valores para el cuadro delimitador.
+      de la caja delimitadora.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down21" href="#">Nueve rodajas</a></p>
+  <div class="droptext" data-targetname="drop-down21">
+    <p class="dropspot"><strong><span data-keyref="Nine Slicing">Rebanado en nueve</span></strong> (también conocido como 9-slicing) es una técnica utilizada para escalar imágenes rectangulares para preservar los detalles, haciendo que mantengan su forma original después de la escala. Consulte la página sobre el <a href="Sprite_Properties/Nine_Slices.htm">rebanado</a> en nueve para obtener más información.</p>
+    <p class="dropspot"><img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_0_Preview.png">La sección de Nine <strong>Slice</strong> del Editor de Sprite le permite habilitar <span data-keyref="Nine Slicing">el Nine Slicing</span> en un sprite, y previsualizarlo
+      en acción dentro de la ventana de <strong>Vista Previa</strong> de Nueve Cortes a la derecha.</p>
+    <p class="dropspot">La ventana de vista previa de <strong>Nine</strong> Slice permite cambiar el tamaño de la imagen y muestra el aspecto que tendrá la imagen final, después de haberla escalado mediante la técnica de Nine Slice. Este sprite de previsualización también se puede girar.</p>
+    <p class="dropspot">La sección de <strong>nueve rebanadas</strong> tiene las siguientes opciones:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Activar Nine Slice:</strong> Esta opción controla si se utiliza la escala de Nine Slice cuando se escala el sprite. Cuando está activada, la escala de Nine Slice se utilizará para el sprite (y cualquier instancia de objeto que utilice ese sprite) colocado en una Secuencia
+        o una capa de sala, y los sprites escalados dibujados con <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_ext.htm">draw_sprite_ext()</a> y otras funciones similares.<br>
+        <br>
+        <span class="expandtext"><span style="font-size:17px;"><strong>NOTA</strong>: Nine Slicing no funcionará con funciones que dibujen sólo una parte del sprite o lo distorsionen, como <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_part.htm">draw_sprite_part()</a> y <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_sprite_pos.htm">draw_sprite_pos()</a></span></span>
+      </li>
+      <li class="dropspot"><strong>Guías:</strong> Esta sección muestra el desplazamiento de cada guía en su eje, y puede utilizarse para cambiar esos desplazamientos. Estas guías también se pueden mover dentro de la ventana de <strong>vista previa del sprite</strong> simplemente arrastrándolas con el ratón.<br>
+        <br>
+       <span class="dropspotnote"><strong>NOTA:</strong></span>Las guías en el mismo eje no pueden cruzarse entre sí, y arrastrar una sobre la otra hará que la segunda guía sea empujada.<br>
+        <br>
+        <img class="center" height="348" src="../assets/Images/Asset_Editors/Nine_Slice_GIF_Guides.gif" width="612"><br> El desplazamiento de cada guía es relativo a su borde correspondiente. Por ejemplo, la guía izquierda se desplaza desde el borde izquierdo, el borde derecho
+        Por ejemplo, la guía izquierda está desplazada desde el borde izquierdo, la derecha desde el borde derecho, y así sucesivamente.<br>
+        <br> El color y el alfa de cada guía pueden cambiarse haciendo clic en el botón de color situado junto a la posición de la guía.<br>
+        <img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_4_Color.png"></li>
+      <li class="dropspot"><strong>Resaltar</strong>: Esta opción afecta a la forma en que aparece una rebanada seleccionada en la ventana de vista previa de sprites. <strong>&quot;Invertido</strong> &quot; resalta el sprite con una superposición excepto la rebanada seleccionada, y &quot;Superposición&quot; <strong> resalta</strong> sólo la rebanada seleccionada con una superposición.<br>
+        <img src="../assets/Images/Asset_Editors/Nine_Slice_5_Highlight.png"><br> El color y el alfa de la superposición pueden cambiarse haciendo clic en el botón de color situado junto al menú desplegable.</li>
+      <li class="dropspot"><strong>Rebanada seleccionada:</strong> Esta opción se puede utilizar para seleccionar un slice, eligiendo uno de los slices de los bordes (izquierdo, superior, derecho, inferior) y el central. <img class="icon" src="../assets/Images/Icons/Icon_LMB.png"> También se puede seleccionar una rebanada haciendo clic con el botón izquierdo del ratón en la ventana de <strong>vista previa del sprite</strong>, y haciendo clic de nuevo se deselecciona.</li>
+      <li class="dropspot"><strong>Modo Mosaico: </strong>Esta opción se utiliza junto con la opción de <strong>Slice seleccionado</strong>, para controlar cómo aparece el slice cuando se escala el sprite. Puede aplicar uno de los siguientes modos de mosaico a cada slice:<br>
+        <img class="center" src="../assets/Images/Asset_Editors/Nine_Slice_3_TileModes.png">
+        <ul>
+          <li class="dropspot"><strong>Estirar</strong><strong>:</strong> La rebanada se estirará para llenar el espacio entre sus esquinas conectadas.</li>
+          <li class="dropspot"><strong>Repetir</strong><strong>:</strong> El corte se repetirá o se embaldosará para conservar los detalles.</li>
+          <li class="dropspot"><strong>Reflejar</strong><strong>:</strong> La rebanada se repetirá por medio de un espejo.</li>
+          <li class="dropspot">Repetición<strong>en blanco</strong><strong>:</strong> El corte sólo aparecerá una vez, dejando un área en blanco tras él.</li>
+          <li class="dropspot"><strong>Ocultar</strong><strong>:</strong> El corte no aparecerá en absoluto.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down19" href="#">Mensajes de difusión</a></p>
+  <div class="droptext" data-targetname="drop-down19">
+    <p class="dropspot">Este botón añadirá un mensaje de <strong>difusión</strong> a la línea de tiempo del sprite, abriendo un diálogo donde se puede añadir el mensaje a difundir. El mensaje se añadirá dondequiera que el <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">cabezal de reproducción</a> esté en la vista de fotogramas y consiste en una simple cadena que puede ser recogida en el <a href="Sequence_Properties/Broadcast_Messages.htm">Evento de Mensaje</a> de Difusión cuando se dispara y luego se actúa sobre él.</p>
+    <p class="dropspot"><img alt="Add broadcast messages to a sprite" class="center" src="../assets/Images/Asset_Editors/Sprite_Broadcast_Message.gif">Una vez añadido, el mensaje se mostrará en la vista de marco, y podrá pulsar el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> sobre él para abrir un menú en el que podrá eliminar el mensaje o editarlo. Para más información sobre los mensajes de difusión, consulte <a href="Sequence_Properties/Broadcast_Messages.htm">aquí</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Velocidad de la trama</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot">En esta sección puedes establecer la <strong>velocidad </strong>a la que deben reproducirse los fotogramas de la animación desde el cuadro de entrada de la izquierda. El ajuste de la velocidad de los fotogramas puede basarse en &quot;Fotogramas por segundo<strong>&quot;, o</strong>&quot;Fotogramas por<strong>cuadro de</strong> juego<strong>&quot;,</strong>
+      donde un ajuste de 30 &quot;Cuadros por segundo&quot; mostrará 30 cuadros de la animación en un segundo, mientras que un ajuste de 30 &quot;Cuadros por cuadro de juego&quot; intentará mostrar los 30 cuadros en un solo paso de juego, por lo que los valores de &quot;Cuadros por cuadro de juego&quot;
+      se suelen fijar en 1 o menos (por ejemplo, una velocidad de fotogramas por cuadro de juego de 0,5 mostrará un nuevo cuadro cada dos pasos de juego).</p>
+    <p class="dropspot">Es importante tener en cuenta que la configuración de la velocidad de los fotogramas no sólo afectará a la reproducción de la animación en la ventana de vista previa, sino que <strong>también gobernará cómo se anima el sprite en tus juegos.</strong> La velocidad que establezcas aquí mostrará la vista previa del
+      como se ejecutará en el juego con un multiplicador de velocidad de imagen de 1, pero esto se puede establecer en el código utilizando la variable <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm"><span class="inline">image_speed</span></a> variable
+      lo que significa que el sprite puede correr más rápido o más lento dependiendo de lo que se programe. Así, por ejemplo, si se configura el sprite para usar 10 &quot;cuadros por segundo&quot; y luego se establece el <span class="inline">image_speed</span> a 0.5, el juego dibujará el sprite
+      a la mitad de la velocidad - 5 fotogramas por segundo. Por el contrario, si establecemos el <span class="inline">image_speed</span> para el mismo sprite a 2, en el juego se dibujará animado el doble de rápido - 20 cuadros por segundo. Tenga en cuenta que la velocidad de fotogramas también se puede establecer
+      en el <a href="Image_Editor.htm">Editor de Imágenes</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">Origen de los sprites</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot">La barra superior del editor de sprites contiene las propiedades <strong>del origen del sprite</strong>. Este es el punto del sprite que corresponde a su posición dentro de la sala, es decir, cuando se crea una instancia en una posición x/y particular, el origen del
+      el origen del sprite se coloca allí.</p>
+    <p class="dropspot">Por defecto, el origen es la esquina <em>superior izquierda </em>del sprite, pero a menudo es más conveniente utilizar el <em>centro de la mitad</em> o puede desear que se utilice alguna otra posición (como para un personaje de un juego de plataformas podría querer <em>el centro inferior</em>),
+      así que puedes hacer clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el menú desplegable del origen y seleccionar uno de los valores por defecto. También puedes establecer el origen manualmente haciendo clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en la imagen de vista previa del sprite, lo que moverá la cruz del marcador de origen al punto en el que hayas hecho clic, o introduciendo diferentes valores para x e y en las casillas correspondientes. Tenga en cuenta que incluso puede establecer un origen fuera del área del sprite utilizando números negativos
+      (para la izquierda y arriba) o números positivos mayores que el ancho y el alto del sprite (para la derecha y abajo), lo que puede ser muy útil cuando se trata de objetos que necesitan dibujar sprites compuestos.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Controles de zoom</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot">En la parte superior derecha de la ventana de vista previa tienes los <strong>controles de zoom</strong>. Estos botones controlan el nivel de zoom del sprite en la vista previa. Puedes acercar o alejar el zoom y al hacer clic en el botón <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> se restablecerá la vista previa para que sea 1:1 con el sprite que se está editando. También puedes hacer clic en el botón Window Fit <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> para hacer que toda la vista previa del sprite se ajuste a
+      la ventana actual del editor (esto ampliará o reducirá el zoom según sea necesario para que se ajuste). Tenga en cuenta que puede acercarse y alejarse utilizando los botones <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> y la rueda del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, y pulsando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> se ajustará la vista previa
+      para que sea 1:1 con el tamaño del sprite actual.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Vista previa</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot">La ventana de <strong>previsualización de </strong>sprites muestra el sprite tal y como se verá en el juego, y puede ampliarse o reducirse utilizando la rueda del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, y desplazarse utilizando el botón
+      botón central del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> y arrastrando, o alternativamente usar la combinación <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> y arrastrando. También puedes utilizar los controles del marco (explicados más adelante) para cambiar la forma en que se muestra la imagen de la vista previa.</p>
+    <p class="dropspot">Esta ventana también mostrará una &quot;cruz&quot; que marca el origen <strong>del</strong> sprite (ver la sección Origen del Sprite, arriba, para más detalles), y también puede mostrar la máscara de colisión <strong>si esa</strong> opción está siendo editada (ver
+      la sección Máscara de colisión, más arriba).</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down17" href="#">Controles de reproducción</a></p>
+  <div class="droptext" data-targetname="drop-down17">
+    <p class="dropspot">Los <strong>controles de reproducción</strong> sirven para reproducir en la ventana de vista previa la animación de los fotogramas, con el botón de reproducción <img alt="Sprite Play Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Play.png"> que inicia/detén la
+      y el botón de bucle <img alt="Sprite Loop Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_Loop.png"> se utiliza para establecer si el sprite hace un bucle <img alt="Sprite Loop On Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_LoopOn.png"> (vuelve al fotograma 1 cuando se alcanza el último fotograma) o hace un ping-pong <img alt="Sprite Pingpong Icon" class="icon" src="../assets/Images/Icons/Icon_Sprite_PingPong.png"> (retrocede a través de los fotogramas cuando se alcanza el último fotograma).</p>
+    <p class="dropspot">Tenga en cuenta que la opción de bucle/ping-pong <strong>no afectará a la forma en que el sprite se muestra en el juego</strong>, por lo que la configuración de estas opciones en el sprite no cambiará la forma en que se muestra cuando el juego se compila y se ejecuta. Esto también es cierto para los puntos de bucle
+      que pueden establecerse en la <strong>Vista de Fotogramas </strong>(ver más abajo para más información) - estos son puramente visibles en el editor de sprites y están diseñados para ayudarte a probar tus animaciones, pero no tendrán efecto en cómo se muestra la animación del sprite
+      en tus juegos.</p>
+    <p class="dropspot">Una parte adicional de los Controles de Fotogramas es la visualización del fotograma <strong>actual</strong> y la entrada un poco más a la izquierda. El cuadro muestra el número total de fotogramas de la animación del sprite, así como el fotograma actual que se muestra. Puedes cambiar
+      Puedes cambiar el fotograma actual en cualquier momento haciendo clic en el cuadro de entrada y escribiendo el número de fotograma que quieres ver.</p>
+    <div class="dropspotnote"><strong>IMPORTANTE!</strong> Los fotogramas se muestran numerados del 1 al número de <em>fotogramas máxim</em>os, sin embargo, en el código del juego, los fotogramas se numerarán del 0 al <em>número de fotogramas máximos - 1</em>.</div>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down18" href="#">Marcos</a></p>
+  <div class="droptext" data-targetname="drop-down18">
+    <p class="dropspot">Esta parte del editor de sprites muestra cada uno de los diferentes <strong>fotogramas </strong>que componen un único conjunto de sprites a lo largo de una línea de tiempo de la secuencia. Puedes hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquier fotograma y arrastrarlo a la izquierda o a la derecha para cambiar el orden en el que serán animados, y también puedes hacer doble clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquier fotograma para lanzar
+      el <a href="Image_Editor.htm">Editor de imágenes</a> y editarlos. Puedes cortar, copiar y pegar fotogramas utilizando los atajos de teclado estándar o usando las opciones de menú del botón derecho del ratón <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">, y también puedes seleccionar varios fotogramas para operar con <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21">.</p>
+    <p class="dropspot">El menú del botón derecho del ratón tiene las siguientes opciones:</p>
+    <p class="dropspot"><img alt="RMB Frame View Menu" class="center" src="../assets/Images/Asset_Editors/Sprite_RMB_Frame_menu.png" /></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Añadir fotograma</strong> - Añade un nuevo fotograma a la animación al final.</li>
+      <li class="dropspot"><strong>Insertar fotograma</strong> - Inserta un nuevo fotograma en la animación después del fotograma actualmente seleccionado.</li>
+      <li class="dropspot"><strong>Cortar </strong>/ <strong>Copiar </strong>/ <strong>Pegar </strong>- Cortar, copiar y pegar uno o más cuadros.</li>
+      <li class="dropspot"><strong>Borrar fotogramas seleccionados</strong> - Borra el o los fotogramas actualmente seleccionados.</li>
+    </ul>
+    <p class="dropspot">Aparte de la opción dada anteriormente para estirar un marco, también puede posicionar el ratón en el borde de un marco y luego cuando el cursor cambia a una flecha doble, simplemente haga clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastre para cambiar el tamaño del marco para que tome más tiempo:</p>
+    <p class="dropspot"><img alt="Stretch a frame using the mouse" class="center" src="../assets/Images/Asset_Editors/Sprite_Stretch_Frame.gif">Un fotograma estirado tardará más tiempo en mostrarse, igual que si hubieras duplicado el mismo fotograma varias veces. </p>
+    <p class="dropspot">Por último, también puede ampliar la línea de tiempo del fotograma utilizando los &quot;tiradores&quot; situados a ambos lados de la vista del fotograma, como se muestra en la imagen siguiente:</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Sprite_Loop_Markers.gif" src="../assets/Images/Asset_Editors/Sprite_Loop_Markers.gif" alt="Sprite frame view zoom controls" class="center" /><br /></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Asset_Editors.htm">Los editores de activos</a></div>
+        <div style="float:right">Siguiente: <a href="Tile_Sets.htm">Juegos de baldosas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sprite Editor
+Origin
+Mask
+Collision Mask
+-->
+  <!-- TAGS
+sprite_editor
+-->
+
+</body></html>

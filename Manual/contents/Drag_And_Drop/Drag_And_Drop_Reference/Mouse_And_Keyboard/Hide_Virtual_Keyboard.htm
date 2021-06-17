@@ -14,13 +14,13 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><img alt="Hide Virtual Keyboard Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Mouse_And_Keyboard/i_VirtualKeyboard_Hide.png"> Ocultar el teclado virtual</h1>
-  <p>Esta acción se puede utilizar para ocultar el teclado virtual en el dispositivo que ejecuta el juego. Al llamar a esta acción se generará un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">evento asíncrono del sistema</a>, en el que el mapa <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt>   <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS</a> se rellenará con los siguientes pares clave/valor:</p>
+  <p>Esta acción se puede utilizar para ocultar el teclado virtual en el dispositivo que ejecuta el juego. Al llamar a esta acción se generará un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">evento asíncrono del sistema</a>, en el que el mapa <tt><a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm">async_load</a> </tt>   <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS</a> se llenará con los siguientes pares clave/valor:</p>
   <ul class="colour">
     <li>&quot; tipo_evento<b>&quot; -</b> será &quot;<b>estado del teclado</b> virtual<b>&quot; cuando sea activado</b> por acciones del teclado virtual.</li>
     <li>&quot;<b>screen_height&quot; -</b> la altura del teclado virtual (en píxeles). Será 0 si el teclado es invisible.</li>
     <li>&quot;<b>keyboard_status&quot; -</b> el estado actual del teclado, devuelto como una de las siguientes cadenas:
       <ul>
-        <li>&quot;oculto&quot;</li>
+        <li>&quot;hiding&quot;</li>
         <li>&quot;oculto&quot;</li>
         <li>&quot;mostrando&quot;</li>
         <li>&quot;visible&quot;</li>

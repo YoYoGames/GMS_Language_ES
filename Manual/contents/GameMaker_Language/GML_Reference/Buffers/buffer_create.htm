@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>crear_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_create" />
+  <meta name="rh-index-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+  <meta name="search-keywords" content="buffer_create,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>crear_buffer</h1>
+  <p>Utiliza esta función para asignar una porción de memoria como un buffer en su juego, con la función devolviendo el <i>id</i> único del buffer que debe ser almacenado en una variable y utilizado para todas las llamadas posteriores a la función del buffer. El búfer puede entonces ser
+    El búfer puede utilizarse para almacenar diferentes tipos de datos (especificados cuando se escribe en el búfer utilizando la función <a href="buffer_write.htm"><tt>buffer_write()</tt></a> con las siguientes constantes que se utilizan para definir el tipo de búfer:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer_fixed</td>
+        <td>Un buffer de tamaño fijo.</td>
+      </tr>
+      <tr>
+        <td>buffer_grow</td>
+        <td>Un búfer que &quot;crecerá&quot; dinámicamente a medida que se añadan datos</td>
+      </tr>
+      <tr>
+        <td>buffer_wrap</td>
+        <td>Un búfer donde los datos se &quot;envolverán&quot;. Cuando los datos que se añaden alcanzan el límite del tamaño del búfer, la sobreescritura se colocará de nuevo al principio del búfer, y la escritura posterior continuará desde ese punto.</td>
+      </tr>
+      <tr>
+        <td>buffer_fast</td>
+        <td>Buffer especial &quot;despojado&quot; que es extremadamente rápido para leer/escribir. Sólo se puede utilizar con <a href="buffer_read.htm">los tipos de datos</a> <tt>buffer_u8</tt>, y <i>debe</i> estar alineado a 1 byte.</td>
+      </tr>
+      <tr>
+        <td>buffer_vbuffer</td>
+        <td>Este tipo de búfer debe utilizarse únicamente como búfer de vértices.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Aparte del tipo de búfer, también tendrás que establecer la <i>alineación de bytes</i> para el búfer. Este valor variará en función de los datos que desee almacenar en el búfer, y en la mayoría de los casos un valor de 1 está perfectamente bien. Sin embargo, tenga en cuenta que
+    para algunas operaciones es <i>esencial</i> una alineación específica, y una alineación incorrecta puede causar errores (para más detalles sobre la alineación, véase <a href="../../../Additional_Information/Guide_To_Using_Buffers.htm">Bufferes</a>). La siguiente es una guía general
+    para mostrar qué valores son los más apropiados para cada tipo de datos (en caso de duda, utilice una alineación de 1):</p>
+  <ul class="colour">
+    <li>Las cadenas deben estar alineadas a 1 byte.</li>
+    <li>Los enteros de 8 bits con signo o sin signo pueden ser alineados a cualquier valor, pero tenga en cuenta que para un buffer rápido (ver <a href="buffer_write.htm"><tt>buffer_write()</tt></a>) <i>debe</i> estar alineado a 1.</li>
+    <li>Los enteros de 16 bits con signo o sin signo deben alinearse a 2 bytes.</li>
+    <li>Los enteros de 32 bits con o sin signo deben alinearse a 4 bytes</li>
+    <li>Los flotadores de hasta 16bits deben alinearse a 2 bytes. <i>(¡No se admite actualmente!)</i></li>
+    <li>Los flotadores de hasta 32bits deben alinearse a 4 bytes.</li>
+    <li>Los flotadores de hasta 64bits deben alinearse a 8 bytes.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: La alineación de los bytes puede ser muy importante, ya que una elección incorrecta puede afectar negativamente al rendimiento.</p>
+  <p class="note"><b>NOTA</b>: Es importante que elimines de la memoria cualquier recurso creado dinámicamente como éste cuando ya no lo necesites para evitar fugas de memoria, así que cuando termines con el buffer que has creado deberás liberarlo de nuevo
+    utilizando <span style="font-size:1px;"><a href="buffer_delete.htm"><tt style="font-size: 14px">buffer_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_create(size, type, alignment)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño (en bytes) del buffer.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de buffer a crear (ver la lista de constantes anterior).</td>
+      </tr>
+      <tr>
+        <td>alineación</td>
+        <td>La alineación de bytes para el buffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Int (ID de la memoria intermedia de vértices)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">player_buffer = buffer_create(16384, buffer_fixed, 2);</p>
+  <p>El código anterior asigna 16384 bytes de memoria a un buffer y devuelve el índice de ese buffer, que se almacena en la variable &quot;player_buffer&quot;, para su uso futuro. El buffer está alineado a un límite de dos bytes.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_create_from_vertex_buffer.htm">buffer_create_from_vertex_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_create
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_create
+-->
+</body>
+</html>

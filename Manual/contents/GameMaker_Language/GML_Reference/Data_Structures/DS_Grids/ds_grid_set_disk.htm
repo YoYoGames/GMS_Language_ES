@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_set_disk</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_set_disk" />
+  <meta name="rh-index-keywords" content="ds_grid_set_disk" />
+  <meta name="search-keywords" content="ds_grid_set_disk" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_set_disk</h1>
+  <p>Con esta función puede fijar una región circular de una cuadrícula a un valor determinado. Debe proporcionar una celda de la rejilla inicial (como coordenadas de los ejes x e y), así como el radio del disco que debe fijarse y el valor al que desea fijar el disco, como se muestra
+    en la siguiente ilustración:</p>
+  <p><img alt="DS grid set disk" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_disk.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_set_disk(index, xm, ym, r, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>xm</td>
+        <td>La posición x del disco en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>ym</td>
+        <td>La posición y del disco en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>r</td>
+        <td>El radio del disco en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor a establecer con las celdas dentro del disco.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_grid_set_disk(grid, ds_grid_width(grid) div 2, ds_grid_height(grid) div 2, 5, -4)</p>
+  <p>El código anterior establecerá una región circular con un radio de 5 celdas en la cuadrícula DS indexada en la variable &quot;grid&quot; con un valor de -4.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set_disk
+-->
+  <!-- TAGS
+ds_grid_set_disk
+-->
+
+</body></html>

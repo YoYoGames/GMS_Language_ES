@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_hat_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_hat_value" />
+  <meta name="rh-index-keywords" content="gamepad_hat_value" />
+  <meta name="search-keywords" content="gamepad_hat_value" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_hat_value</h1>
+  <p>Con esta función puedes obtener el valor actual de un &quot;sombrero&quot; del gamepad. Cada valor del sombrero es una máscara de bits para las diferentes direcciones donde:</p>
+  <ul class="colour">
+    <li>Arriba = 1</li>
+    <li>Derecho = 2</li>
+    <li>Abajo = 4</li>
+    <li>Izquierda = 8</li>
+  </ul>
+  <p>Tenga en cuenta que se pueden combinar (por ejemplo, si se suministra un índice de sombrero de 3 se estaría comprobando hacia arriba y hacia la derecha) pero sólo se pueden pulsar como máximo 2 bits a la vez. La función devolverá un valor real entre 0 y 1, donde 0 es no pulsado y 1 es totalmente pulsado
+    (y puede haber valores intermedios dependiendo de si el gamepad soporta entrada analógica para sombreros).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_hat_value(dispositivo, hatindex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>hatindex</td>
+        <td>Qué sombrero (o sombreros) del gamepad hay que comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _dir = gamepad_hat_value(global.PadIndex, 0);<br> switch (_dir)<br> {
+    <br> caso 1: y -= 3; break;<br> caso 2: x += 3; break;<br> caso 3: y -= 3; x += 3; break;<br> caso 4: x -= 3; break;<br> caso 6: y += 3; x += 3; break;<br> caso 8: y += 3; break;<br> caso 9: y -= 3; x -= 3; break;<br> caso 12: y += 3; x -= 3; break;<br> }
+  </p>
+  <p>El código anterior almacena el estado del sombrero &quot;0&quot; en una variable local, luego comprueba cuál es el valor de retorno y actúa en consecuencia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_get_mapping.htm">gamepad_get_mapping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_hat_value
+-->
+  <!-- TAGS
+gamepad_hat_value
+-->
+
+</body></html>

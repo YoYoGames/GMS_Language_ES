@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_create" />
+  <meta name="rh-index-keywords" content="ds_map_create" />
+  <meta name="search-keywords" content="ds_map_create" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_create</h1>
+  <p>Esta función se utiliza para crear un nuevo mapa DS vacío y devolverá su id, que se utilizará para acceder a la estructura de datos en todas las demás funciones del mapa DS.</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se crea una estructura de datos, el valor del índice para identificarla es un valor entero que comienza en 0. Esto significa que las estructuras de datos de diferentes tipos pueden tener el <b>mismo</b> valor de índice, por lo que en caso de duda se debe utilizar el
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> antes de acceder a ellas. También hay que tener en cuenta que los índices se reutilizan, por lo que el valor del índice de una estructura de datos destruida puede ser utilizado por otra recién creada posteriormente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_create();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (ID del mapa DS)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">inventario = ds_map_create();</p>
+  <p>El código anterior creará un nuevo mapa DS vacío y almacenará su índice de identificación en la variable &quot;inventario&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_add.htm">ds_map_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_create
+-->
+  <!-- TAGS
+ds_map_create
+-->
+
+</body></html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_get_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_get_region" />
+  <meta name="rh-index-keywords" content="os_get_region" />
+  <meta name="search-keywords" content="os_get_region" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_region</h1>
+  <p>Esta función devuelve una cadena con el código regional de dos o tres letras para el sistema operativo que está ejecutando el juego, tal y como establece el estándar <a href="http://en.wikipedia.org/wiki/ISO_3166-1" target="_blank">ISO3166-1</a>. Si la información no está disponible
+    se mantendrá simplemente una cadena vacía &quot;&quot;.</p>
+  <p class="note"><b>NOTA</b>: Este no es el código regional de la ubicación que se devuelve, sino el código regional del idioma del sistema operativo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">os_get_region()</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">switch (os_get_language())<br> {
+    <br> case &quot;zh&quot;:<br> var region = os_get_region();<br> if (region == &quot;HK&quot; || region == &quot;MO&quot; || region == &quot;TW&quot;)<br> {
+    <br> ini_open(&quot;chinese_traditional.ini&quot;);
+    <br> }
+    <br> si no
+    <br> {
+    <br> ini_open(&quot;chinese_simplified.ini&quot;);
+    <br> }
+    <br> break;
+    <br> caso &quot;fr&quot;:<br> ini_open(&quot;french.ini&quot;);
+    <br> break;
+    <br> case &quot;it&quot;:<br> ini_open(&quot;italian.ini&quot;);
+    <br> break;
+    <br> por defecto:
+    <br> ini_open(&quot;english.ini&quot;);
+    <br> break;
+    <br> }
+  </p>
+  <p>El código anterior comprueba el idioma del sistema operativo y si es chino, entonces comprueba la región del sistema operativo, abriendo un archivo <tt>*.ini</tt> diferente dependiendo de los valores devueltos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="os_get_info.htm">os_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_region
+-->
+  <!-- TAGS
+os_get_region
+-->
+</body>
+</html>

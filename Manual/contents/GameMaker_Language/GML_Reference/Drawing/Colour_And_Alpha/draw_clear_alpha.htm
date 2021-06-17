@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_clear_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_clear_alpha" />
+  <meta name="rh-index-keywords" content="draw_clear_alpha" />
+  <meta name="search-keywords" content="draw_clear_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_clear_alpha</h1>
+  <p>Esta función se puede utilizar para limpiar toda la pantalla con un color determinado y el componente alfa del destino se establece en el valor que se ha establecido - esta función <i>no</i> hace ninguna mezcla mientras funciona pero cualquier operación de mezcla posterior puede
+    Esta función no realiza ningún tipo de mezcla, pero cualquier operación de mezcla posterior puede ser configurada para utilizar el alfa de destino que se ha establecido. Esto es sólo para su uso en el evento de dibujo de una instancia (no se mostrará si se utiliza en cualquier otro evento), y también puede ser muy útil para limpiar <a href="../Surfaces/Surfaces.htm">las superficies</a> cuando son recién creadas.</p>
+  <p>Vale la pena señalar que cuando se utiliza el módulo HTML5, se puede utilizar esta función para hacer que el fondo del lienzo sea transparente, lo que permitirá que cualquier imagen que se utilice en el HTML del anfitrión se vea con el juego corriendo sobre ella. Para conseguir este efecto
+    primero debes ir al editor de la <a href="../../../../The_Asset_Editors/Rooms.htm">sala</a> y eliminar cualquier <b>capa de fondo</b> del <a href="../../../../The_Asset_Editors/Rooms.htm">editor de la sala</a>, luego desmarcar la opción <b>Borrar fondo de la vista</b> que se encuentra en las <a href="../../../../The_Asset_Editors/Room_Properties/Room_Properties.htm">Propiedades de la vista</a>.
+    Finalmente, deberá crear un nuevo objeto, colocarlo en la primera habitación del juego y asignarle una profundidad muy alta (por ejemplo, 10000). Luego, en el evento <b>Pre Draw</b> utilice esta función para establecer el alfa del lienzo al color y la transparencia que
+    que desees que tenga.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_clear_alpha(col, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>El color con el que se borrará la pantalla</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>La transparencia del color con el que se limpiará la pantalla</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_clear_alpha(c_red, 0.5);</p>
+  <p>Esto limpiará la pantalla con un 50% (0,5) de transparencia con el color rojo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Colour_And_Alpha.htm">Color y Alfa</a></div>
+        <div style="float:right">Siguiente: <a href="draw_set_alpha.htm">draw_set_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_clear_alpha
+-->
+  <!-- TAGS
+draw_clear_alpha
+-->
+</body>
+</html>

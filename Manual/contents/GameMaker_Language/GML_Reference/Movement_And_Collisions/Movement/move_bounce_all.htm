@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_bounce_all</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_bounce_all" />
+  <meta name="rh-index-keywords" content="move_bounce_all" />
+  <meta name="search-keywords" content="move_bounce_all" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_bounce_all</h1>
+  <p>Con esta función puedes ordenar a una instancia que rebote contra <b>todas las</b> instancias dentro de la sala, con la única excepción de aquellas que no tienen asignado ningún índice de sprite o máscara. También puedes decirle que utilice la comprobación de colisión precisa cuando esté activada,
+    pero ten en cuenta que esto requiere que todas las instancias tengan máscaras precisas habilitadas y ralentizará mucho tu juego cuando haya muchas instancias involucradas debido a la cantidad de procesamiento que hay que hacer. Esto debería ir normalmente en el evento de paso de una instancia
+    pero también puede usarse de forma selectiva en un evento de colisión, como se ilustra en el siguiente ejemplo de código.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">move_bounce_all( adv );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>adv</td>
+        <td>Si se activa el rebote avanzado (true) o no (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si otro.visible<br> {
+    <br> move_bounce_all(false);
+    <br> }
+  </p>
+  <p>El código anterior se colocaría en un evento de colisión con otro objeto. Primero comprueba si el objeto es visible y, si lo es, realiza la acción <tt>move_bounce_all()</tt>. Tenga en cuenta que en este caso el rebote es selectivo y sólo
+    se calculará para esta colisión, en lugar de para cada instancia, cada paso.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="move_bounce_solid.htm">move_bounce_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_bounce_all
+-->
+  <!-- TAGS
+move_bounce_all
+-->
+</body>
+</html>

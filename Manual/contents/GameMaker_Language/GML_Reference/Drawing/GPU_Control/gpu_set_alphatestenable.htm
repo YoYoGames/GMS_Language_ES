@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_alphatestenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_alphatestenable" />
+  <meta name="rh-index-keywords" content="gpu_set_alphatestenable" />
+  <meta name="search-keywords" content="gpu_set_alphatestenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_alphatestenable</h1>
+  <p>Esta función activará o desactivará la prueba alfa para tu juego (por defecto está desactivada). Al activar la prueba alfa, puedes utilizar la función complementaria <a href="gpu_set_alphatestref.htm"><tt>gpu_set_alphatestref()</tt></a> para establecer el valor de &quot;corte&quot;
+    a partir del cual todos los valores alfa se pondrán a 0. La imagen de abajo muestra la diferencia que puede verse cuando la prueba alfa está activada o desactivada:</p>
+  <p><img alt="Alpha test example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/alpha_test_on_off.png" /></p>
+  <p class="note"><b>NOTA</b>: Esta función puede afectar negativamente al rendimiento de los dispositivos <span class="notranslate">iOS</span> y <span class="notranslate">Android</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_alphatestenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Activar o desactivar las pruebas alfa<tt>(verdadero</tt> / <tt>falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !gpu_get_alphatestenable()<br> {
+    <br> gpu_set_alphatestenable(true);
+    <br> gpu_set_alphatestref(128);
+    <br> }
+  </p>
+  <p>El código anterior comprobará si la prueba de alfa está activada y, si no lo está, activará la prueba de alfa y establecerá el umbral de la prueba en 128 (sólo se dibujarán los píxeles con un alfa superior a 0,5).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_alphatestref.htm">gpu_set_alphatestref</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_alphatestenable
+-->
+  <!-- TAGS
+gpu_set_alphatestenable
+-->
+</body>
+</html>

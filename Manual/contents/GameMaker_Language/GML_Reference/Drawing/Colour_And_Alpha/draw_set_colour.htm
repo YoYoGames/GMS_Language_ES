@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_colour" />
+  <meta name="rh-index-keywords" content="draw_set_colour,draw_set_color" />
+  <meta name="search-keywords" content="draw_set_colour,draw_set_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_colour</h1>
+  <p>Con esta función puedes establecer el color de dibujo base para el juego. Este valor afectará a todos los dibujos posteriores cuando sea apropiado, incluyendo fuentes, formas, primitivas y 3D. Si alguno de esos activos se dibuja con su propio valor de color cambiado, este valor
+    será ignorado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_set_colour(col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>El color a establecer para el dibujo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;NIVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;NIVEL 1&quot;);</p>
+  <p>El código anterior dibujará un texto en la posición especificada con un efecto de sombra creado por la modificación del alfa y el color del dibujo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Colour_And_Alpha.htm">Color y Alfa</a></div>
+        <div style="float:right">Siguiente: <a href="colour_get_blue.htm">color_get_blue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_colour
+draw_set_color
+-->
+  <!-- TAGS
+draw_set_colour
+-->
+</body>
+</html>

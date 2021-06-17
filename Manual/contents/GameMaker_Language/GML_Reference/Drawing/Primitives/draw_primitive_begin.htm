@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_primitive_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_primitive_begin" />
+  <meta name="rh-index-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglefan,pr_trianglestrip" />
+  <meta name="search-keywords" content="draw_primitive_begin,pr_pointlist,pr_linelist,pr_linestrip,pr_trianglelist,pr_trianglestrip,pr_trianglefan" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_primitive_begin</h1>
+  <p>Esta función debe ser llamada antes de poder definir cualquier primitiva. Hay 6 tipos de primitivas que se pueden definir con las siguientes constantes:</p>
+  <ul class="colour">
+    <li><b>pr_pointlist</b></li>
+    <li><b>pr_linelist</b></li>
+    <li><b>pr_linestrip</b></li>
+    <li><b>pr_trianglelist</b></li>
+    <li><b>pr_trianglestrip</b></li>
+    <li><b>pr_trianglefan</b></li>
+  </ul>
+  <p> </p>
+  <p>La siguiente imagen ilustra básicamente el aspecto que deben tener y también el orden en el que debes definir los vértices:</p>
+  <p><img alt="The different primitive types" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/primitive_types.png">Tenga en cuenta que en algunas plataformas<span class="notranslate">(Windows</span>, UWP, XBox) el tipo <tt>pr_trianglefan</tt> no es soportado nativamente
+    por lo que <span class="notranslate">GameMaker Studio 2</span> realiza una conversión cuando se compila el juego para que funcione. Esto significa que en esas plataformas el tipo <tt>pr_trianglefan</tt> será mucho más lento de usar que los otros. También hay que tener en cuenta que para utilizar esta
+    en HTML5, <i>debes</i> habilitar WebGL en las Opciones de Juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_primitive_begin(kind)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>amable</td>
+        <td>El tipo de primitiva que vas a dibujar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _steps = 20;<br> var _xx = 50;<br> var _yy = 50;<br> var _radius = 30;<br> draw_primitive_begin(pr_trianglefan);
+    <br> draw_vertex(_xx, _yy);<br> for(var i = 0; i &lt;= _steps; ++i;)<br> {
+    <br> draw_vertex(_xx + lengthdir_x(_radio, 270 * i / _pasos), _yy + lengthdir_y(_radio, 270 * i / _pasos));<br> }
+    <br> draw_primitive_end();
+  </p>
+  <p>El código anterior dibujará tres cuartos de un círculo hecho con primitivas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="draw_primitive_begin_texture.htm">draw_primitive_begin_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_primitive_begin
+pr_pointlist
+pr_linelist
+pr_linestrip
+pr_trianglelist
+pr_trianglestrip
+pr_trianglefan
+-->
+  <!-- TAGS
+draw_primitive_begin
+-->
+
+</body></html>

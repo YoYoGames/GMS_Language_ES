@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>archivo_eliminar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_delete" />
+  <meta name="rh-index-keywords" content="file_delete" />
+  <meta name="search-keywords" content="file_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>archivo_eliminar</h1>
+  <p>Esta función borrará el archivo especificado del sistema. Hay que tener en cuenta que esta función sólo eliminará los archivos que <span class="notranslate">GameMaker Studio 2</span> es capaz de crear y analizar: archivos ini, archivos de texto y archivos binarios, o aquellos archivos hechos
+    para almacenar recursos creados por el juego, como sprites o superficies. Sin embargo, <i>no</i> eliminará ningún otro archivo. La función también devolverá <tt>true</tt> si el archivo ha sido eliminado con éxito, o <tt>false</tt> en cualquier otra circunstancia.</p>
+  <p class="note"><b>ATENCIÓN!</b> Esta función puede no funcionar como se espera debido a que <span class="notranslate">GameMaker Studio 2</span> está en un entorno aislado. Por favor, consulte la sección sobre los <a href="../../../../Additional_Information/The_File_System.htm">límites del sistema de archivos</a> para obtener más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_delete(fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>El nombre del archivo a eliminar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if file_exists(&quot;nivel.txt&quot;)<br> {
+    <br> file_delete(&quot;level.txt&quot;);
+    <br> }
+  </p>
+  <p>Esto comprobaría la existencia de un archivo y si existe se elimina.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_System.htm">Sistema de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="file_rename.htm">file_rename</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_delete
+-->
+  <!-- TAGS
+file_delete
+-->
+</body>
+</html>

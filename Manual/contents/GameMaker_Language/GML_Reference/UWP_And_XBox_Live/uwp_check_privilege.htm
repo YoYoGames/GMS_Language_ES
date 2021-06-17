@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>uwp_check_privilege</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for uwp_check_privilege" />
+  <meta name="rh-index-keywords" content="uwp_check_privilege,uwp_privilege_result_no_issue,uwp_privilege_result_purchase_required,uwp_privilege_result_aborted,uwp_privilege_result_banned,uwp_privilege_result_restricted,uwp_privilege_internet_browsing,uwp_privilege_social_network_sharing,uwp_privilege_share_kinect_content,uwp_privilege_video_communications,uwp_privilege_communications,uwp_privilege_user_created_content,uwp_privilege_multiplayer_sessions,uwp_privilege_sessions,uwp_privilege_fitness_upload" />
+  <meta name="search-keywords" content="uwp_check_privilege,uwp_privilege_result_no_issue,uwp_privilege_result_purchase_required,uwp_privilege_result_aborted,uwp_privilege_result_banned,uwp_privilege_result_restricted,uwp_privilege_internet_browsing,uwp_privilege_social_network_sharing,uwp_privilege_share_kinect_content,uwp_privilege_video_communications,uwp_privilege_communications,uwp_privilege_user_created_content,uwp_privilege_multiplayer_sessions,uwp_privilege_sessions,uwp_privilege_fitness_upload" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>uwp_check_privilege</h1>
+  <p>Con esta función puedes comprobar que un determinado usuario tiene un privilegio elegido. La función devolverá true o false en el Evento Asíncrono del Sistema dependiendo de si el privilegio está habilitado o no, y si establece el argumento attempt_resolution a
+    true y el privilegio no está habilitado, también abrirá un diálogo del sistema (suspendiendo el juego) para pedir al usuario que actualice la cuenta o lo que sea necesario para obtener el privilegio. Si el usuario habilita la opción requerida, la función
+    retornará a true.</p>
+  <p>La función requiere que se utilice una de las siguientes constantes para la solicitud de privilegios:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>uwp_privilege_internet_browsing</td>
+        <td>Comprueba si la navegación por Internet está permitida</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_social_network_sharing</td>
+        <td>Comprueba si está permitido compartir en las redes sociales</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_share_kinect_content</td>
+        <td>Comprueba si está permitido compartir el mando de Kinect</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_video_communications</td>
+        <td>Compruebe si se permite la comunicación por vídeo</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_communications</td>
+        <td>Compruebe si la comunicación por Internet está permitida</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_user_created_content</td>
+        <td>Comprobar si se permite el acceso a los contenidos creados por el usuario</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_multiplayer_sessions</td>
+        <td>Comprueba si se permiten las sesiones multijugador en línea</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_sessions</td>
+        <td>Compruebe si se permiten las sesiones en línea</td>
+      </tr>
+      <tr>
+        <td>uwp_privilege_fitness_upload</td>
+        <td>Compruebe si se permite la carga de datos de fitness</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Una vez que se ha llamado a la función, en <span class="notranslate">XBox</span> One se lanzará un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">evento asíncrono del sistema</a> cuando se reciba el resultado de la llamada de retorno, que tendrá el DS especial
+    map <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>. Este mapa debe ser analizado para la siguiente clave:</p>
+  <ul class="colour">
+    <li>&quot;event_type<b>&quot; -</b> debe contener el valor &quot;check_privilege_result&quot; si el evento fue disparado por esta función</li>
+  </ul>
+  <p>Si el tipo de evento se relaciona con esta función, entonces también habrá las siguientes teclas adicionales cuando la función sea llamada en XBox:</p>
+  <ul class="colour">
+    <li>&quot; resultado<b>&quot; -</b> Será una o más de las siguientes constantes (valores combinados):<br>
+      <table>
+        <tbody>
+          <tr>
+            <th>Constante</th>
+            <th>Descripción</th>
+            <th>Valor</th>
+          </tr>
+          <tr>
+            <td>uwp_privilege_result_no_issue</td>
+            <td>No hay problemas de privilegios con el usuario</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>uwp_privilege_result_purchase_required</td>
+            <td>El usuario debe comprar algo adicional, normalmente una suscripción, para tener acceso</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>uwp_privilege_result_aborted</td>
+            <td>La comprobación fue abortada</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>uwp_privilege_result_banned</td>
+            <td>El usuario está prohibido</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>uwp_privilege_result_restricted</td>
+            <td>El usuario tiene restringido el acceso, normalmente a través del control parental</td>
+            <td>8</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <br />
+    <li>&quot; privilegio<b>&quot; -</b> será una de las constantes enumeradas anteriormente para su uso en la función, para que pueda comprobar qué privilegio ha solicitado en el caso de múltiples comprobaciones.</li>
+  </ul>
+  <p>Si el proyecto se ejecuta en una plataforma UWP que no es <span class="notranslate">XBox One</span>, entonces el Evento Asíncrono <i>no</i> se activará, y en su lugar la función devolverá inmediatamente con -1, 0, o 1 donde:</p>
+  <ul class="colour">
+    <li>-1 significa -1 el usuario no tiene el privilegio</li>
+    <li>0 significa que la función no ha podido consultar al usuario</li>
+    <li>1 significa que el usuario tiene el privilegio.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">uwp_check_privilege(user_id, privilege, attempt_resolution);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero de la ID de usuario a comprobar.</td>
+      </tr>
+      <tr>
+        <td>privilegio</td>
+        <td>La constante de privilegio a comprobar (ver descripción, arriba).</td>
+      </tr>
+      <tr>
+        <td>intento_de_resolución</td>
+        <td>Permitir el intento de resolución si se establece como <tt>verdadero</tt>, o ignorar si se establece como <tt>falso</tt>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var user_one = xboxlive_get_user(0);<br> if (xboxlive_user_is_signed_in(user_one))<br> {
+    <br> uwp_check_privilege(user_one, xboxlive_privilege_multiplayer_sessions, true);<br> }
+  </p>
+  <p>Lo anterior comprueba si el usuario ha iniciado la sesión y, si lo hace, comprueba el permiso de las sesiones multijugador.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="UWP_And_XBox_Live.htm">UWP y XBox Live</a></div>
+        <div style="float:right">Siguiente: <a href="uwp_suspend.htm">uwp_suspender</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+uwp_check_privilege
+uwp_privilege_result_no_issue
+uwp_privilege_result_purchase_required
+uwp_privilege_result_aborted
+uwp_privilege_result_banned
+uwp_privilege_result_restricted
+uwp_privilege_internet_browsing
+uwp_privilege_social_network_sharing
+uwp_privilege_share_kinect_content
+uwp_privilege_video_communications
+uwp_privilege_communications
+uwp_privilege_user_created_content
+uwp_privilege_multiplayer_sessions
+uwp_privilege_sessions
+uwp_privilege_fitness_upload
+-->
+  <!-- TAGS
+uwp_check_privilege
+-->
+</body>
+</html>

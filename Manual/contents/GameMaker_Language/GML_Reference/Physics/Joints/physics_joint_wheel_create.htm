@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_wheel_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_wheel_create" />
+  <meta name="rh-index-keywords" content="physics_joint_wheel_create" />
+  <meta name="search-keywords" content="physics_joint_wheel_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_wheel_create</h1>
+  <p>Una articulación de rueda simplemente combina un pistón y una articulación de revolución, como una rueda montada en el amortiguador de un coche. Se especifica el punto de anclaje para la junta así como las dos instancias habilitadas por la física para la junta, y la primera instancia actuará como el &quot;cuerpo&quot;
+    para la articulación, mientras que la segunda será la &quot;rueda&quot;, y se le permitirá moverse libremente alrededor del eje de la articulación. También puede establecer un vector de eje, que es la línea imaginaria a lo largo de la cual la articulación actuará como un &quot;muelle&quot; permitiendo que la
+    que permite a la rueda rebotar hacia arriba y hacia abajo a lo largo de ella cuando se encuentra con obstáculos (como en el caso de la junta de pistón). La siguiente imagen lo ilustra:</p>
+  <p><img alt="Wheel joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/wheel_joint_image.png">Si elige habilitar un motor, entonces la segunda instancia girará alrededor de la posición de anclaje, y
+    puede establecer el par motor máximo utilizado para alcanzar la velocidad deseada del motor (N/m), así como la velocidad a la que debe girar el motor. Dado que la articulación de la rueda también tiene un eje a lo largo del cual puede moverse, puede establecer la frecuencia de oscilación (en Hz) así como
+    así como la relación de amortiguación de la articulación - es posible que tengas que jugar con estos valores para afinarlos y se recomienda que empieces con valores más pequeños y los incrementes hasta que consigas el efecto que deseas.</p>
+  <p>Al igual que con todas las articulaciones, si se establece el valor &quot;col&quot; en true entonces <tt>las</tt> dos instancias pueden interactuar y colisionar entre sí, pero sólo <i>si</i> tienen eventos de colisión, sin embargo, si se establece en false, no <tt>van</tt> a colisionar
+    no colisionarán.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>La primera instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>La segunda instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>ancla_x</td>
+        <td>La coordenada x donde se ancla la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>ancla_y</td>
+        <td>La coordenada y donde se ancla la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>eje_x</td>
+        <td>El componente x del vector del eje de la rueda</td>
+      </tr>
+      <tr>
+        <td>eje_y</td>
+        <td>La componente y del vector del eje de la rueda</td>
+      </tr>
+      <tr>
+        <td>enableMotor</td>
+        <td>Si el motor debe estar activo (true) o no (false)</td>
+      </tr>
+      <tr>
+        <td>par_máximo_del_motor</td>
+        <td>Establece el par motor máximo utilizado para alcanzar la velocidad deseada del motor (en Newtons por metro)</td>
+      </tr>
+      <tr>
+        <td>velocidad_del_motor</td>
+        <td>Esta es la velocidad a la que debe girar el motor</td>
+      </tr>
+      <tr>
+        <td>freq_hz</td>
+        <td>Es la frecuencia de oscilación de la junta, en hertzios</td>
+      </tr>
+      <tr>
+        <td>relación_de_amortiguación</td>
+        <td>Esta relación de amortiguación para la junta</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Si las dos instancias pueden colisionar (verdadero) o no (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (índice de la articulación)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var mainFixture = physics_fixture_create();<br> physics_fixture_set_box_shape(mainFixture, 128, 32);<br> var wheelFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(wheelFixture, 32);<br> var o_id = instance_create_layer(x+25,
+    y + 100, &quot;Instances&quot;, obj_Wheel);<br> physics_fixture_bind(mainFixture, id);<br> physics_fixture_bind(wheelFixture, o_id);<br> physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);<br> physics_fixture_delete(mainFixture);
+    <br> physics_fixture_delete(wheelFixture);
+  </p>
+  <p>El código anterior crea y define dos nuevas fijaciones. A continuación, se vinculan a la instancia que llama y a una nueva instancia que se crea antes de que se aplique una junta de rueda para conectarlos, después de lo cual los accesorios se eliminan de la memoria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_weld_create.htm">physics_joint_weld_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_wheel_create
+-->
+  <!-- TAGS
+physics_joint_wheel_create
+-->
+</body>
+</html>

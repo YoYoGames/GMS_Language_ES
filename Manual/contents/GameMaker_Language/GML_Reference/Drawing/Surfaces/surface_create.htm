@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>crear_superficie</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_create" />
+  <meta name="rh-index-keywords" content="surface_create" />
+  <meta name="search-keywords" content="surface_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>crear_superficie</h1>
+  <p>Esta función se utiliza para crear una superficie y devolverá el índice de la superficie que debe ser almacenado en una variable para futuras llamadas a la función. Cuando la superficie se crea por primera vez, puede contener &quot;ruido&quot; ya que básicamente es sólo un área de
+    de memoria que se pone a un lado para el propósito (y esa memoria todavía puede contener información), por lo que es posible que desee limpiar la superficie antes de usarla con una función como <a href="../Colour_And_Alpha/draw_clear_alpha.htm"><tt>dibujar_claro_alfa()</tt></a>.</p>
+  <p>Se recomienda encarecidamente que todas las superficies se creen con un tamaño que sea una potencia de 2, es decir: 16, 128, 512 o 1024 píxeles de tamaño, por ejemplo. Esto no es exactamente necesario en ciertas plataformas (como <span class="notranslate">Windows</span> y MacOS), pero sin duda aumentará
+    la compatibilidad en esos objetivos, mientras que para HTML5 y los dispositivos es esencial y muy es importante que usted recuerde esto o puede tener problemas más adelante.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">crear_superficie(w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura de la superficie a crear.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la superficie a crear.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(1024, 1024);<br> surface_set_target(surf);
+    <br> draw_clear_alpha(c_black, 0);<br> surface_reset_target();
+    <br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>El código anterior comprueba si existe una superficie y, si no existe, crea una superficie de 1024 píxeles de ancho y 1024 píxeles de alto, asignando el índice a la variable &quot;surf&quot;. El objetivo de dibujo se establece entonces en la nueva superficie, que
+    se borra y se hace transparente antes de que el objetivo de dibujo se restablezca en la pantalla. Por último, la superficie se asigna a una vista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_create_ext.htm">surface_create_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_create
+-->
+  <!-- TAGS
+surface_create
+-->
+</body>
+</html>

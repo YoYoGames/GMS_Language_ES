@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_stringify</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_stringify" />
+  <meta name="rh-index-keywords" content="json_stringify" />
+  <meta name="search-keywords" content="json_stringify" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_stringify</h1>
+  <p>Con esta función puedes convertir structs y arrays simples o anidados en una cadena JSON válida. Usted proporciona el valor inicial a utilizar (un índice de matriz o una referencia de estructura) y luego la función lo &quot;encadenará&quot;, convirtiéndolo en una cadena JSON,
+    convirtiendo los arrays de <span class="notranslate">GameMaker</span> en arrays JSON, y los structs de <span class="notranslate">GameMaker</span> en objetos JSON.</p>
+  <p>Al utilizar esta función hay que tener en cuenta algunas cosas importantes:</p>
+  <ul class="colour">
+    <li>La función <em>no </em> convertirá los mapas DS, las listas o cualquier otra estructura de datos en JSON, y simplemente almacenará el valor del índice interno de la estructura (que es de poca utilidad ya que el índice cambiará entre las ejecuciones del juego), y como tal
+      no debes intentar encadenar ningún valor que pueda contener referencias a estructuras de datos (para eso tienes <a href="json_encode.htm"><span class="inline">json_encode()</span></a>).</li>
+    <li>La función convertirá casi cualquier valor en una cadena JSON &quot;válida&quot;, sin embargo, los valores reales contenidos en la cadena pueden no ser exactamente lo que se espera debido a la forma en que opera el estándar JSON:<br>
+      <br> &quot;JSON es agnóstico respecto a los números. En cualquier lenguaje de programación, puede haber una variedad de tipos de números de diversas capacidades y complementos, fijos o flotantes, binarios o decimales. Esto puede dificultar el intercambio entre diferentes lenguajes de
+      lenguajes de programación. En cambio, JSON sólo ofrece la representación de los números que utilizan los humanos: una secuencia de dígitos. Todos los lenguajes de programación saben cómo dar sentido a las secuencias de dígitos, aunque no estén de acuerdo con las representaciones internas&quot;.<br>
+      <br> Para más información, véase el <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">estándar JSON</a> de la ECMA <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">.</a></li>
+    <li>Si incluye un int64 en los valores a convertir en JSON, lo escribirá como un <i>int</i> si está en el rango válido para un int32, como un <i>double</i> si puede hacerlo sin perder precisión o (si ninguno de esos casos es aplicable) como una <i>cadena</i> con un identificador &quot; @i64@<tt>&quot;</tt> antes y &quot; $i64$&quot; después<tt>.</tt> Cuando vuelva a analizar el JSON, <span class="notranslate">GameMaker Studio 2</span> recogerá estos identificadores y volverá a convertir el valor en un int64. Esto significa
+      que si el JSON está destinado a un servidor o a algún otro objetivo que no sea GameMaker, estos valores no serán apropiados y, por tanto, deben evitarse.</li>
+    <li>Si incluye <span class="inline">infinity</span>, <span class="inline">-infinity</span> o <span class="inline">NaN</span> en los valores a convertir a JSON, se codificarán como cadenas, ya que estos valores no forman parte del estándar JSON, y
+      al analizar el JSON resultante <strong>no </strong>se convertirán de nuevo en sus valores <span class="notranslate">de tiempo de ejecución</span> y permanecerán como cadenas. Tenga en cuenta que <span class="inline">NaN</span> se convertirá en &quot;nan&quot; (minúsculas) al encadenarse.</li>
+    <li>Se debe tener cuidado al escribir cualquier cadena JSON devuelta a un archivo <span class="inline">ini</span>, ya que las especificaciones de <span class="inline">ini</span> pueden causar problemas al usar comillas y caracteres de escape. Consulte la función <a href="../Ini_Files/ini_write_string.htm"><tt>ini_write_string()</tt></a>      para más información.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><code>json_stringify</code>(val)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor de referencia de una estructura o matriz para convertirlo en una cadena JSON</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _contents = {<br> version : &quot;1&quot;,<br> data: {<br> webSocket : 1,<br> ipv4Address : &quot;95.39.220.218&quot;,<br> ipv6Address : &quot;0000:0000:0000:0000:ffff:5f27:dcda&quot;,<br> header
+    : &quot;Está recibiendo un paquete&quot;,<br> body : &quot;Este paquete está vacío y es sólo de prueba&quot;,<br> }, <br> };
+    <br> packet = json_stringify(map);</p>
+  <p>El código anterior convertirá la estructura &quot;_contents&quot; en una cadena JSON y almacenará la cadena en una variable. La cadena real sería así:</p>
+  <p class="code">{ &quot;versión&quot;: &quot;1&quot;, &quot;miObj&quot;: {&quot;header&quot;: &quot;You are receiving a packet&quot;, &quot;webSocket&quot;: 1, &quot;body&quot;: &quot;Un paquete de patatas fritas con queso y cebolla&quot;, &quot;ipv4Address&quot;: &quot;95.39.220.218&quot;,
+    &quot;ipv6Address&quot;: &quot;0000:0000:0000:0000:0000:ffff:5f27:dcda&quot; } }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Encoding_And_Hashing.htm">Codificación de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="json_parse.htm">json_parse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_stringify
+-->
+  <!-- TAGS
+json_stringify
+-->
+</body>
+</html>

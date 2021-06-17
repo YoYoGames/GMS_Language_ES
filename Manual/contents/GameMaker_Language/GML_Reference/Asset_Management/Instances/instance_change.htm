@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cambio_de_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_change" />
+  <meta name="rh-index-keywords" content="instance_change" />
+  <meta name="search-keywords" content="instance_change" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cambio_de_instancia</h1>
+  <p>Puede utilizar esta función para cambiar una instancia de un objeto en otra instancia de un objeto diferente, y mientras lo hace decidir si realizar los eventos de destrucción y limpieza de las instancias iniciales y el evento de creación de las nuevas instancias. De esta manera
+    puedes hacer (por ejemplo) que una bomba se convierta en una explosión - en cuyo caso el argumento &quot;perf&quot; probablemente sería verdadero ya que querrías que la bomba realizara su Evento de Destrucción y Limpieza, así como que la explosión realizara su Evento de Creación
+    o puedes hacer que el personaje del jugador se transforme en uno diferente - en cuyo caso el argumento &quot;perf&quot; probablemente sería falso ya que no quieres que las instancias realicen sus eventos de Crear y Destruir/Limpiar.</p>
+  <p>Vale la pena señalar que el cambio de la instancia significa que usted no debe realizar ninguna otra acción con esa instancia hasta el siguiente paso, en particular, tratar de acceder a las variables, etc ... ya que causará un error. Básicamente, usted cambia la instancia pero
+    no está realmente disponible hasta el final del paso actual, por lo que acceder a cualquiera de las variables que contiene directamente (por ejemplo, llamando a <tt>obj_Changed.x</tt>) no funcionará.</p>
+  <p class="note"><b>ATENCIÓN!</b> Cuando se cambia una instancia habilitada para la física, las propiedades físicas <b>no serán</b> transferidas a la nueva instancia a la que se está cambiando. Por lo tanto, debe tener un código para &quot;transferir&quot; el estado físico de la instancia actual
+    actual a la nueva instancia, o haber definido las propiedades físicas de la nueva instancia en su Evento de Creación, o en el editor de objetos. Por esta razón se recomienda que no se utilice esta función con instancias con física habilitada, sino que se utilice
+    una combinación de <span style="font-size:1px;"><tt style="font-size: 14px">instance_destroy()</tt></span> y <span><span style="font-size:1px;"><tt style="font-size: 14px">instance_create_layer()</tt></span></span>.
+  </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">cambio_de_instancia(obj, perf);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El nuevo objeto en el que se convertirá el objeto llamado.</td>
+      </tr>
+      <tr>
+        <td>perf</td>
+        <td>Si se van a realizar los eventos de creación y destrucción de ese nuevo objeto (true) o no (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check(vk_enter)<br> {
+    <br> instance_change(obj_Player_Swimming, false);<br> exit;
+    <br> }
+  </p>
+  <p>El código anterior cambiará la instancia de llamada en una instancia de &quot;obj_Player_Swimming&quot; sin realizar el evento de destrucción de la instancia original ni el evento de creación de la nueva instancia cuando el usuario presione la tecla &quot;Enter&quot;, saliendo del bloque de código
+    bloque de código cuando haya terminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_copy.htm">instance_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_change
+-->
+  <!-- TAGS
+instance_change
+-->
+</body>
+</html>

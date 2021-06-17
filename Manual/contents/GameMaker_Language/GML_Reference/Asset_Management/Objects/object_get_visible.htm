@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_visible" />
+  <meta name="rh-index-keywords" content="object_get_visible" />
+  <meta name="search-keywords" content="object_get_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_visible</h1>
+  <p>Esta función le dirá si el objeto que está comprobando ha sido marcado como &quot;visible&quot; (ejecuta su evento de dibujo) o no (no ejecuta su evento de dibujo). Tenga en cuenta que esta no es una función de instancia. Por lo tanto, puedes tener un objeto visible
+    y una instancia invisible del mismo objeto y viceversa. Puedes establecer la visibilidad de una instancia individual usando la variable <a href="../Instances/Instance_Variables/visible.htm"><tt>visible</tt></a> variable de instancia.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">object_get_visible(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El índice del objeto a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (!visible) &amp;&amp; (object_get_visible(object_index))<br> {<br> visible = true;<br> }</p>
+  <p>El código anterior comprobará la instancia que se está ejecutando para ver si es visible o no, así como comprobará el índice del objeto de la instancia para ver si está marcado como visible o no. Si la instancia <i>no</i> es visible todavía el índice del objeto está marcado como on,
+    establecerá &quot;visible&quot; como verdadero para esa instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Siguiente: <a href="object_get_physics.htm">object_get_physics</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_visible
+-->
+  <!-- TAGS
+object_get_visible
+-->
+</body>
+</html>

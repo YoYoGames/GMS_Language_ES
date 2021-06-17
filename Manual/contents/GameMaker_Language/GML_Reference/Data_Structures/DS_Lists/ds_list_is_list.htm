@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_is_list</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_is_list" />
+  <meta name="rh-index-keywords" content="ds_list_is_list" />
+  <meta name="search-keywords" content="ds_list_is_list" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_is_list</h1>
+  <p>Con esta función puedes comprobar si otra lista DS está almacenada en la posición dada dentro de una lista DS. Si la posición dada contiene un ID de lista DS, entonces la función devolverá <tt>true</tt>, de lo contrario devolverá <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_is_list(id, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la lista a comprobar.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>La posición dentro de la lista a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var size = ds_list_size(ships) ;<br> for (var i = 0; i &lt; size; i++;)<br> {
+    <br> if ds_list_is_list(ships, i)<br> {
+    <br> ds_list_destroy(i);
+    <br> }
+    <br> }
+    <br> ds_list_destroy(ships);
+  </p>
+  <p>El código anterior hace un bucle a través de una lista DS y comprueba si alguna de las entradas contiene otros ID de lista. Si lo hacen, entonces estas listas son destruidas, y luego la lista principal es destruida después de que el bucle haya terminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_is_map.htm">ds_list_is_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_is_list
+-->
+  <!-- TAGS
+ds_list_is_list
+-->
+
+</body></html>

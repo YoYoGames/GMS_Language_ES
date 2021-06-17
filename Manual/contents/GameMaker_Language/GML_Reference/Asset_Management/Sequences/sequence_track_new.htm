@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>pista_secuencia_nueva</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_track_new" />
+  <meta name="rh-index-keywords" content="sequence_track_new,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty" />
+  <meta name="search-keywords" content="sequence_track_new,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>pista_secuencia_nueva</h1>
+  <p>Con esta función puede crear una nueva <a href="../../../GML_Overview/Structs.htm">estructura de</a> pista de secuencia, suministrando el tipo de pista que desea hacer que será una de las siguientes constantes:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seqtracktype_graphic</td>
+        <td>Esta es una pista de activos gráficos (sprite).</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_audio</td>
+        <td>Esta es una pista de activos de audio.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_instance</td>
+        <td>Esta es una pista de activos de instancia.</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_sequence</td>
+        <td>Se trata de una pista de activos secuenciales.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask</td>
+        <td>Esta es una pista de activos de grupo de máscara de clip.</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_mask</td>
+        <td>Esta es una pista de activos de máscara de clip utilizada para generar la máscara de clip.</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_subject</td>
+        <td>Esta es una pista de activos de sprite de máscara de clip que se está enmascarando.</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_group</td>
+        <td>Este seguimiento de los activos de la carpeta de grupo.</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_colour</td>
+        <td>Esta es una pista de parámetros de datos de color.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_real</td>
+        <td>Se trata de una pista de parámetros de valor numérico real.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_message</td>
+        <td>Esta es una pista de mensajes de difusión.</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_moment</td>
+        <td>Esta es una pista de eventos/momentos.</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_bool</td>
+        <td>No se utiliza actualmente.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_string</td>
+        <td>No se utiliza actualmente.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_spriteframes</td>
+        <td>No se utiliza actualmente.</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_empty</td>
+        <td>No se utiliza actualmente.</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>La función devolverá una <a href="Sequence_Structs/The_Track_Struct.htm">estructura de pista de</a> secuencia a la que se le pueden añadir datos antes de asignarla a un <a href="Sequence_Structs/The_Sequence_Object_Struct.htm">objeto de secuencia</a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">secuencia_pista_nueva(tipo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de pista a crear, una constante, listada anteriormente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructurar</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">myseq = sequence_create();<br> var mytracks = array_create(1);<br> mytracks[0] = sequence_track_new(seqtracktype_graphic);<br> var graphickeys = array_create(1);<br> graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br> graphickeys[0].frame
+    = 0;<br> graphickeys[0].length = 1;<br> graphickeys[0].stretch = true;<br> graphickeys[0].disabled = false;<br> var graphickeydata = array_create(1);<br> graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br> graphickeydata[0].spriteIndex
+    = spr_Platform;<br> graphickeydata[0].channel = 0;<br> graphickeys[0].channels = graphickeydata;<br> mytracks[0].name = &quot;TestGraphicTrack&quot;;<br> mytracks[0]. keyframes<span class="notranslate">= graphickeys</span>;<br> myseq.tracks = mytracks;</p>
+  <p>El código anterior crea una nueva secuencia y luego crea una pista de activos gráficos y establece algunos datos de <span class="notranslate">fotogramas clave</span> en la pista. Esta pista se asigna a la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_track_new
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+-->
+  <!-- TAGS
+sequence_track_new
+-->
+
+</body></html>

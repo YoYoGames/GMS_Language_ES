@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>para</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the for function" />
+  <meta name="rh-index-keywords" content="for" />
+  <meta name="search-keywords" content="for" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>para</h1>
+  <p>Una de las formas más utilizadas para iterar sobre una <a class="glossterm" data-glossterm="declaración" href="#">sentencia</a> (o sentencias) varias veces es utilizar un bucle <tt>for</tt>, que tiene esta forma:</p>
+  <p class="code">for (&lt;asignación&gt;; &lt;expresión&gt;; &lt;operación&gt;;)<br> {<br> &lt;declaración&gt;;<br> &lt;declaración&gt;;<br>...<br> }</p>
+  <p>Esto funciona de la siguiente manera - Primero se ejecuta la asignación que asigna un valor a una variable, luego se evalúa la <a class="glossterm" data-glossterm="expresión" href="#">expresión</a> y, si es <tt>verdadera</tt>, se ejecutan las sentencias entre las llaves{}
+    se ejecutan. A continuación se realiza la operación sobre la variable asignada y luego se evalúa de nuevo la expresión. Este bucle continuará hasta que la expresión resulte <tt>falsa</tt>.</p>
+  <p>Ahora, esto puede sonar complicado cuando se escribe así, pero debes interpretarlo como:</p>
+  <ol>
+    <li>La primera asignación inicializa el bucle for</li>
+    <li>La expresión comprueba si el bucle debe terminar</li>
+    <li>La declaración se realiza</li>
+    <li>La operación se realiza</li>
+    <li>Volver al paso 2 y realizar la expresión de nuevo y continuar o salir del bucle</li>
+  </ol>
+  <p>Esto es extremadamente útil para hacer tareas repetitivas que implicarían múltiples líneas de código de cualquier otra manera, y se utiliza comúnmente como contador para evaluar arrays, dibujar cosas, establecer valores incrementales, etc. El siguiente ejemplo de código ilustra
+    un uso típico de este tipo de sentencia:</p>
+  <p class="code">for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> draw_text(32, 32 + (i * 32), string(i) + &quot;. &quot;+ string(scr[i]));<br> }
+  </p>
+  <p>El código anterior inicializa un bucle <span class="inline">for</span>, comenzando en 0 y contando hasta (e incluyendo) 9, y luego utiliza el valor del bucle <tt>i</tt> para dibujar los valores almacenados en un array por la pantalla. Observe cómo la variable del bucle <tt>for</tt> 
+   <tt>i</tt> se utiliza no sólo para el bucle a través de la matriz, pero para dibujar un número, así como decirle a <span class="notranslate">GameMaker Studio</span> 2 donde dibujar los valores en la habitación. Esta flexibilidad es una de las principales razones por las que los bucles <tt>for</tt> son tan importantes en la programación.</p>
+  <p><strong>¿Cuándo se debe utilizar un bucle <tt>for</tt></strong>? En cualquier momento que necesite realizar un número fijo de iteraciones sobre una o más sentencias mientras mantiene un registro de la <a class="glossterm" data-glossterm="iteración" href="#">iteración</a> que está
+    que se está ejecutando en ese momento y utilizando ese valor de iteración.</p>
+  <p class="note"><b>NOTA</b>: Verás múltiples ejemplos cuando trabajes con otras personas de las variables &quot; i&quot;<tt>y</tt>&quot; j&quot; que se utilizan para la variable del contador del bucle. Estos <b>no</b> son nombres de variables obligatorios y puedes usar cualquier cosa
+    como &quot; a&quot; o &quot; foo&quot; o<tt>lo que sea.</tt> El uso de &quot; i&quot;<tt>y</tt>&quot; j&quot; es simplemente una convención estándar en programación.</p>
+  <p>Vale la pena notar que puedes usar las sentencias especiales <span class="inline"><a href="break.htm">break</a></span> y <span class="inline"><a href="continue.htm">continue</a></span> dentro de un bucle <span class="inline">for</span> también. Usando <span class="inline">break</span> se saldrá inmediatamente del bucle y se pasará a cualquier código que esté en el evento o función después de que el bucle debería haber terminado, ej:</p>
+  <p class="code">var _inst = noone;<br> for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> _inst = instance_find(obj_Enemy_Parent, i);<br> if instance_exists(_inst)<br> {<br> if _inst.object_index == obj_Enemy_Melee<br> {<br> break;<br> } <br> } <br> } <br> target = _inst;</p>
+  <p>El código anterior recorre las 10 instancias más cercanas del objeto &quot;padre&quot; dado, y si se encuentra una instancia comprueba el ID del objeto de la instancia, y si es una instancia de <span class="inline">obj_Enemy_Melee</span> entonces el bucle se termina
+    utilizando <span class="inline">break</span> y el valor del ID asignado a una variable (si no se encuentra ninguna instancia, entonces se añadirá la palabra clave <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span> a la variable).</p>
+  <p>Un ejemplo de uso de <span class="inline">continue</span> en un bucle de <span class="inline">for</span> sería:</p>
+  <p class="code">var _val = 0;<br> for (var i = 0; i &lt; 10; i += 1)<br> {
+    <br> if (val_array[i] &lt;= 0)<br> {<br> continue;<br> } <br> _val += val_array[i];<br> }
+    <br> draw_text(32, 32, &quot;Total de valores positivos = &quot; + string(_val));</p>
+  <p>Este código comprobará el valor almacenado en cada posición del array de una <a href="../Arrays.htm">matriz</a> 1D de 10 longitudes, y si alguno es menor o igual a 0 se <span class="inline">continue</span> el bucle, lo que significa que la iteración actual terminará,
+    <span class="inline">i</span> se incrementará, y se iniciará la siguiente iteración del bucle. Si el valor es mayor que 0, entonces se añade a la variable local <span class="inline">_val</span>, y una vez finalizado el bucle el valor total
+    es dibujado en la pantalla.</p>
+  <p>Para más ejemplos de palabras clave de bucle, consulte las secciones sobre <a href="repeat.htm"><tt>repetir</tt></a>, <a href="while.htm"><tt>mientras</tt></a>y <a href="do___until.htm"><tt>do / until</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="switch.htm">cambiar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+for
+-->
+  <!-- TAGS
+for
+-->
+
+</body></html>

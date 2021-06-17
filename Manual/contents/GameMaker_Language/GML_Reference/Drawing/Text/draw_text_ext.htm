@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_texto_texto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_ext" />
+  <meta name="rh-index-keywords" content="draw_text_ext" />
+  <meta name="search-keywords" content="draw_text_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_texto_texto</h1>
+  <p>Esta función dibujará el texto de forma similar a <a href="draw_text.htm"><tt>dibujar_texto</tt><tt>()</tt><tt></tt></a> sólo que ahora puede establecer el espacio entre cada línea de texto -en caso de que el texto ocupe más de una línea- y limitar el ancho (en píxeles)
+    de la cadena por línea, de modo que si alguna línea supera este valor, <span class="notranslate">GameMaker Studio 2</span> dividirá automáticamente el texto en la siguiente línea en el espacio en blanco más cercano disponible (si el texto no tiene espacios en blanco, entonces superará este valor máximo de
+    de ancho). Tenga en cuenta que cualquier espacio en blanco colocado al principio de la cadena será eliminado antes de ser analizado para el dibujo debido a esto. También tenga en cuenta que un valor de -1 para el argumento de la separación de la línea será por defecto una separación basada en la
+    altura del carácter &quot;M&quot; en la fuente elegida.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_text_ext(x, y, string, sep, w);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>El cordón a dibujar.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>La distancia en píxeles entre líneas de texto.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura máxima en píxeles de la cadena antes de un salto de línea.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_text_ext(100, 50, keyboard_string, 3, 300);</p>
+  <p>El código anterior dibujará cualquier texto que el usuario escriba en el teclado, dividiéndolo en nuevas líneas cada vez que la longitud de la cadena para esa línea supere los 300 píxeles. el código también mantendrá una separación de 3 píxeles entre las líneas si esto ocurre.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Siguiente: <a href="draw_text_colour.htm">dibujar_texto_color</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_ext
+-->
+  <!-- TAGS
+draw_text_ext
+-->
+</body>
+</html>

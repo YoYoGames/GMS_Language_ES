@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_de_asignación</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_assign" />
+  <meta name="rh-index-keywords" content="path_assign" />
+  <meta name="search-keywords" content="path_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_de_asignación</h1>
+  <p>Con esta función puede copiar los datos de la ruta de una ruta a otra. La ruta <i>a la que</i> se está copiando se borrará primero (si tiene algún punto de ruta) y se <strong>sobrescribirá completamente</strong> con la ruta desde la que se está copiando.
+    copiado. Ninguna de las rutas se borra en el proceso y el resultado son dos rutas, con dos índices diferentes, pero con la misma forma y puntos. En general, se recomienda utilizar esta función en una ruta creada con <span class="inline"><a href="path_add.htm">path_add()</a></span>,
+    ya que si la usas en un activo de ruta, <strong>afectará permanentemente a la ruta para todas las instancias del juego</strong> desde el momento en que se usa la función hasta el final del juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_assign(index, path);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta que se va a sobrescribir.</td>
+      </tr>
+      <tr>
+        <td>camino</td>
+        <td>El índice de la ruta que sobreescribirá 'índice'.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mypath = path_add();<br> path_assign(mypath, choose(path_1, path_2, path_3));</p>
+  <p>El código anterior creará una nueva ruta vacía indexada en la variable &quot;mypath&quot; y luego copiará los datos de la ruta desde uno de los tres recursos de ruta disponibles.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_delete.htm">path_delete</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_assign
+-->
+  <!-- TAGS
+path_assign
+-->
+</body>
+</html>

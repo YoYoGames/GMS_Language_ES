@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_load_partial</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_partial" />
+  <meta name="rh-index-keywords" content="buffer_load_partial" />
+  <meta name="search-keywords" content="buffer_load_partial" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load_partial</h1>
+  <p><span>Esta función cargará algunos de los datos del buffer que fueron previamente guardados usando la función </span><a href="buffer_save.htm"><tt>buffer_save()</tt></a><span> en un buffer ya creado. Se da el id del buffer previamente creado en el que se va a cargar, luego el archivo del buffer guardado que se va a cargar, y luego el desplazamiento desde el inicio del buffer (en bytes) desde el que se desea cargar los datos. Los siguientes argumentos sirven para establecer la longitud de los datos del buffer (en bytes) desde el punto de desplazamiento inicial que se desea cargar y el punto de desplazamiento al que cargar los datos en el buffer (de nuevo, en bytes).</span></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_load_partial(buffer, filename, offset, src_len, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a cargar.</td>
+      </tr>
+      <tr>
+        <td>nombre de archivo</td>
+        <td>El nombre del archivo a cargar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El desplazamiento dentro del búfer para cargar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>src_len</td>
+        <td>La longitud de la parte del buffer a cargar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>El offset donde empezar a poner los datos parciales en el nuevo buffer (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buff = buffer_create(256, buffer_grow, 1);<br> var _file = &quot;save.dat&quot;;<br> var _so = 6;<br> var _sl = 5;<br> var _do= 0;<br> buffer_load_partial(buff, _file, _so, _sl, _do);</p>
+  <p>El código anterior creará un nuevo búfer &quot;grow&quot; y luego cargará en él una parte de los datos guardados en el archivo &quot;save.dat&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_compress.htm">buffer_compress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_partial
+-->
+  <!-- TAGS
+buffer_load_partial
+-->
+</body>
+</html>

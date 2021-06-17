@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>redondo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for round" />
+  <meta name="rh-index-keywords" content="round" />
+  <meta name="search-keywords" content="round" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>redondo</h1>
+  <p>Tal como dice, <tt>round()</tt> toma un número real y lo redondea hacia arriba o hacia abajo al entero más cercano. En el caso especial de que el número suministrado sea exactamente un medio entero (1,5, 17,5, -2,5, etc.), el número se redondeará al valor <i>par</i> más cercano, por ejemplo, 2,5 se redondeará a 2, mientras que 3,5 se redondeará a 4. Este tipo de redondeo se denomina <i>redondeo bancario</i> y, en un gran número de iteraciones o cuando se utilizan matemáticas en coma flotante, proporciona un redondeo estadísticamente mejor
+    que el enfoque más tradicional de &quot;redondear hacia arriba si es más de 0,5 y redondear hacia abajo en caso contrario&quot;.</p>
+  <p>Esto significa que si la fracción de un valor es 0,5, el resultado redondeado es el <i>entero par</i> más cercano al valor de entrada. Así, por ejemplo, 23,5 se convierte en 24, al igual que 24,5, mientras que -23,5 se convierte en -24, al igual que -24,5. Este método trata los valores positivos
+    y negativos de forma simétrica, por lo que no tiene sesgo de signo y, lo que es más importante, para distribuciones razonables de valores, el valor esperado (promedio) de los números redondeados es el mismo que el de los números originales.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">redondo(n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>El número a redondear.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">puntuación += round(hp / 5);</p>
+  <p>El código anterior añadirá un entero redondeado al valor de la puntuación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="floor.htm">piso</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+round
+-->
+  <!-- TAGS
+round
+-->
+
+</body></html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_de_capa_escala_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_xscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_xscale" />
+  <meta name="search-keywords" content="layer_sequence_xscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_de_capa_escala_x</h1>
+  <p>Con esta función puede establecer la escala X para el elemento de secuencia dado. Se suministra el ID del elemento de la secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones</a> del elemento de la capa junto con la nueva escala a establecer en el eje X y la secuencia será escalada por esta cantidad. Una escala de 1 indica que no hay escala (1:1), los valores más pequeños reducirán la escala (0,5, por ejemplo, reducirá la anchura de la secuencia a la mitad), los valores más grandes aumentarán la escala y los valores negativos reflejarán la secuencia.
+    y los valores negativos reflejarán la secuencia sobre su origen <i>y</i> la escalarán a menos que el valor utilizado sea exactamente -1 (en cuyo caso la secuencia se refleja sobre su origen sin escalar).</p>
+  <p>Es muy importante tener en cuenta que la aplicación de <em>una</em> escala desigual (por ejemplo, escalar el eje X en 3 y el eje Y en 2) a los elementos de la secuencia que contienen cualquier instancia que utiliza <em>la rotación</em>, <strong>puede causar problemas con el dibujo de la instancia, las colisiones, la selección, y muchas otras cosas</strong>.
+    Básicamente, si su secuencia depende de <em>cualquier</em> propiedad de instancia, no recomendamos que combine el escalado desigual con la rotación de instancia.</p>
+  <p>También tenga en cuenta que no debe cambiar las variables <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> para cualquier
+    en una secuencia que utilice esta función, ya que se sobrescribirán en cuanto la secuencia se actualice después de llamar a la función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sequence_xscale(sequence_element_id, xscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>El nuevo valor de la escala del eje X que se aplicará al elemento de la secuencia</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si seq_scale &lt; 2<br> {
+    <br> seq_scale += 0.01;<br> layer_sequence_xscale(my_seq, seq_scale);<br> layer_sequence_yscale(my_seq, seq_scale);<br> }
+  </p>
+  <p>El código anterior comprueba el valor mantenido en la variable <span class="inline">seq_scale</span>, y si es menor que 2 entonces lo suma y luego utiliza el valor para establecer la escala X e Y del elemento de la secuencia referenciado en la variable <span class="inline">my_seq</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_yscale.htm">capa_secuencia_escala</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_xscale
+-->
+  <!-- TAGS
+layer_sequence_xscale
+-->
+</body>
+</html>

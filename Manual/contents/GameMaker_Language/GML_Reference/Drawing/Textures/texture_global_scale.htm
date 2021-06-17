@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>textura_escala_global</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_global_scale" />
+  <meta name="rh-index-keywords" content="texture_global_scale" />
+  <meta name="search-keywords" content="texture_global_scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>textura_escala_global</h1>
+  <p>Esta función permite controlar el escalado de las páginas de texturas al cargarlas desde el archivo WAD que forma parte del ejecutable final del juego. El valor de entrada debe ser un valor de potencia de dos y funcionará así:</p>
+  <ul class="colour">
+    <li>Para establecer que las páginas de textura sean 1:1 utiliza <tt>texture_global_scale(1)</tt></li>
+    <li>Para que las texturas se reduzcan a la mitad todo el tiempo, utiliza <tt>texture_global_scale(2)</tt></li>
+    <li>Para descuadrarlas utiliza <tt>texture_global_scale(4)</tt>, etc...</li>
+  </ul>
+  <p>De esta manera puedes controlar mejor el uso de la memoria de la página de texturas en plataformas con problemas de poca memoria. Tenga en cuenta que las páginas de texturas se crean bajo demanda del WAD, y por lo tanto puede llamar a esto al comienzo del juego para cargar todas las texturas a escala, o puede
+    puede llamarlo en momentos específicos para cargar texturas específicas, en cuyo caso probablemente querrá llamar a <a href="draw_texture_flush.htm"><tt>draw_texture_flush()</tt></a> antes de llamar a esta función, y luego utilizar las funciones de pre-fetch para obtener la correcta
+    páginas de textura en la memoria.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">texture_global_scale(pow2integer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>pow2integer</td>
+        <td>El factor de escala a utilizar (1, sin escala, 2, media escala, 4, cuarto de escala, etc...)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_texture_flush();<br> texture_global_scale(2);
+    <br> sprite_prefetch(spr_Trees);
+  </p>
+  <p>El código anterior vaciará todas las texturas de la memoria, luego establecerá el escalado de las texturas a 2 (para que las páginas de texturas tengan la mitad de tamaño) y finalmente precargará la página de texturas que contiene el sprite &quot;spr_Trees&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_texture_flush.htm">draw_texture_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_global_scale
+-->
+  <!-- TAGS
+texture_global_scale
+-->
+</body>
+</html>

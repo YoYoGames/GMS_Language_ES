@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Crear elemento de secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Create Sequence action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Create Sequence Element" />
+  <meta name="search-keywords" content="Create Sequence,Create Sequence Element" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Create Sequence Element Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_create.png"> Crear elemento de secuencia</h1>
+  <p>Con esta acción puede crear un elemento de cualquier secuencia desde el Navegador de Activos. Se da el nombre de la secuencia y una posición x/y dentro de la sala donde se va a crear, así como la capa en la que se va a crear (esta capa debe
+    ser una capa <b>de activos</b>). Puedes marcar las banderas &quot;relativas&quot; para posicionar la secuencia en relación con la instancia que ejecuta los bloques de código de acción. Cada vez que se crea una secuencia en el juego de esta manera, se le da un valor de <b>identificación de elemento</b> único
+    con el que podrá identificar la secuencia en acciones posteriores, por lo que esta acción le permite definir una variable &quot;objetivo&quot; para mantener este valor de ID (como se muestra en el ejemplo siguiente). Tenga en cuenta que el objetivo puede ser marcado como una variable temporal (local)
+    que se creará para la acción y podrá utilizarse en todas las acciones posteriores para el evento en el que se encuentra la acción.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Create Sequence Element Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_create.png" /></p>
+  <h4>Argumentos:</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td>Secuencia</td>
+          <td>El nombre de la secuencia para crear un elemento.</td>
+        </tr>
+        <tr>
+          <td>x</td>
+          <td>La posición x en la sala para crear la secuencia (puede ser relativa a la instancia que llama).</td>
+        </tr>
+        <tr>
+          <td>y</td>
+          <td>La posición y en la sala para crear la secuencia (puede ser relativa a la instancia que llama).</td>
+        </tr>
+        <tr>
+          <td>capa</td>
+          <td>El nombre (una cadena) de la capa de activos para crear la secuencia.</td>
+        </tr>
+        <tr>
+          <td>Objetivo</td>
+          <td>La variable a la que se dirige el valor de retorno.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Create Sequence Element Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_create.png">El código del bloque de acción anterior crea una nueva secuencia y almacena su valor único de
+    en una variable. Esta variable se utiliza entonces para pausar la secuencia utilizando la acción <a href="Pause_Sequence.htm">Pausar Secuencia</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Actions_Library.htm">Secuencia de acciones</a></div>
+        <div style="float:right">Siguiente: <a href="Destroy_Sequence_Element.htm">Destruir elemento de secuencia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Create Sequence Element
+-->
+  <!-- TAGS
+action_create_sequence
+-->
+</body>
+</html>

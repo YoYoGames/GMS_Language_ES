@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Orden de evaluación</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the Evaluation Order of arguments" />
+  <meta name="rh-index-keywords" content="Evaluation Order" />
+  <meta name="search-keywords" content="Evaluation Order" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Orden de evaluación</h1>
+  <p>Cuando programes tu juego usando el <span class="notranslate">Lenguaje GameMaker</span> debes tener en cuenta que los argumentos de las llamadas a funciones <strong>no tienen garantizado un orden de evaluación</strong>. Esto significa que el orden de ejecución de las funciones colocadas en tu código cambiará
+    de una plataforma a otra, por lo que debes codificarlas de forma explícita. Esto se debe a las diferencias de optimización entre las distintas plataformas de destino, por ejemplo, en el destino <span class="notranslate">Windows</span> los argumentos de las funciones pueden evaluarse de derecha a izquierda, pero
+    en el objetivo HTML5, pueden ser evaluados de izquierda a derecha. Por lo tanto, para evitar cualquier problema, es mejor no llamar a varias funciones en los argumentos de una sola llamada a una función, ya que puede estar creando una dependencia en el orden de evaluación.</p>
+  <p>Para ver un ejemplo de lo que esto significa, considere el siguiente código que tiene una <a href="Script_Functions.htm">función de script</a> &quot;<span class="inline">buffer_get_info</span>&quot; que está llamando a varias <a href="Runtime_Functions.htm"><span class="notranslate">funciones</span></a> de tiempo de ejecución <a href="Runtime_Functions.htm">y</a> usándolas como argumentos:</p>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));</p>
+  <p>Ahora, el problema aquí es que en algunas plataformas, el <i>último</i> <tt>buffer_read(</tt> ) será llamado <i>primero</i>, y por lo tanto todos los argumentos del script serán erróneos ya que los datos están siendo leídos desde el buffer en orden &quot;inverso&quot; a como se
+    percibiría. Esto tiene el efecto de afectar a todos los valores posteriores de la función <tt>buffer_read</tt> (), por lo que todos los argumentos que se pasen a esta función del script serán erróneos.</p>
+  <p>Para evitar esto, debes llamar <i>explícitamente</i> a las funciones en el orden requerido y almacenar los valores devueltos en variables, así:</p>
+  <p class="code">var val[0] = buffer_read(buff, buffer_s8);<br> var val[1] = buffer_read(buff, buffer_s16);<br> var val[2] = buffer_read(buff, buffer_s16);<br> buffer_get_info(val[0], val[1], val[2]);</p>
+  <p>Aunque puede parecer un método más verboso, mantiene todo claro y evita cualquier posible problema con el orden de evaluación.</p>
+  <p>También debes tener cuidado al utilizar<span class="glossextra">expresiones</span>, ya que el orden en el que se evalúan cambiará dependiendo del objetivo al que estés compilando.
+    Por lo tanto, cuando utilices expresiones en tu código, asegúrate de utilizar paréntesis <span class="inline">()</span> para controlar adecuadamente el orden de las operaciones. Esto es muy importante para garantizar el correcto comportamiento de tus juegos en todas las plataformas de destino
+    y es <i>esencial</i> para la plataforma HTML5. La página sobre expresiones explica esto con más detalle.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Expressions_And_Operators.htm">Expresiones y operadores</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+evaluation order
+-->
+  <!-- TAGS
+evaluation_order
+-->
+
+</body></html>

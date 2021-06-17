@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_mass</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_mass" />
+  <meta name="rh-index-keywords" content="phy_mass" />
+  <meta name="search-keywords" content="phy_mass" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_mass</h1>
+  <p>Esta variable <b>de sólo lectura</b> devuelve la masa de la instancia en <i>kilogramos</i>. Este valor se calcula automáticamente en función de la superficie de los artefactos asignados y sus valores de densidad, pero puede modificarse mediante la función <tt><a href="../physics_mass_properties.htm">physics_mass_properties()</a></tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">phy_mass;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única, o <tt>indefinido</tt> si la instancia no tiene activada la física)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (phy_mass &lt; other.phy_mass)<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior es del evento de colisión de la instancia con otra y compara la masa de cada instancia y destruye la que tiene menos masa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics_Variables.htm">Variables físicas</a></div>
+        <div style="float:right">Siguiente: <a href="phy_sleeping.htm">phy_sleeping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_mass
+-->
+  <!-- TAGS
+phy_mass
+-->
+</body>
+</html>

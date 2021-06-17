@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>con</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the with function" />
+  <meta name="rh-index-keywords" content="with" />
+  <meta name="search-keywords" content="with" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>con</h1>
+  <p>Como se indica en la sección <a href="../Addressing_Variables_In_Other_Instances.htm">Direccionamiento de variables en otras instancias</a>, es posible leer y cambiar el valor de las variables en instancias y <a href="../Structs.htm">structs</a> distintos de
+    que la que está ejecutando un código determinado. Sin embargo, en muchos casos querrás hacer mucho más que cambiar una sola variable dentro de esas otras instancias, y puede que quieras realizar acciones de código más complejas que requieran múltiples funciones
+    y líneas de código. Por ejemplo, imagina que quieres mover todas las instancias de un objeto bola en tu juego 8 píxeles hacia abajo. Usted puede pensar que esto se logra simplemente con el siguiente trozo de código:</p>
+  <p class="code">obj_ball.y = obj_ball.y + 8;</p>
+  <p>Pero esto no es correcto, ya que el lado derecho de la asignación obtiene el valor de la coordenada y de la primera bola y le suma 8. A continuación, este nuevo valor se establece como la coordenada y de <em>todas las </em>bolas, por lo que el resultado es que todas las bolas obtienen la misma coordenada y,
+    e incluso si se utiliza lo siguiente:</p>
+  <p class="code">obj_ball.y += 8;</p>
+  <p>tendrá exactamente el mismo efecto porque es simplemente una abreviación de la primera declaración. Entonces, ¿cómo <i>podemos</i> conseguir algo así? Por eso existe la sentencia <tt>with</tt> en <span class="notranslate">GML</span>. La sentencia <span class="inline">with</span> 
+    tiene la siguiente sintaxis:</p>
+  <p class="code">con (&lt;expresión&gt;)<br> {<br> &lt;expresión&gt;;<br> &lt;expresión&gt;;<br>...<br> }</p>
+  <p>Para la <a class="glossterm" data-glossterm="expresión" href="#">expresión</a>, puede indicar una o más instancias (o una estructura) para realizar el código, utilizando un ID de instancia, el ID de objeto (que indica que <i>todas las instancias</i> en la sala
+    de este objeto deben ejecutar el bloque de código), el ID de la estructura, o una de las <a href="../Instance_Keywords.htm">palabras clave</a> especiales<tt>(all</tt> u <tt>other</tt>). Esto cambiará el <strong>ámbito</strong> del código dentro de las llaves
+    <span class="inline">{}</span> de la instancia, estructura o función que realmente contiene el código a la instancia (o instancias o estructura) dada en la expresión.</p>
+  <p>Una vez que la expresión ha establecido el ámbito de la <span class="inline">with</span>, la <a class="glossterm" data-glossterm="declaración" href="#">sentencia</a> se ejecutará para cada una de las instancias indicadas, como si esa instancia fuera la actual (
+    <span class="inline">self</span> ) actual. Así que, volviendo a nuestro problema original, para mover todas las instancias del objeto bola 8 píxeles hacia abajo se escribiría</p>
+  <p class="code">con (obj_ball)<br> {
+    <br> y += 8;<br> }
+  </p>
+  <p>Esencialmente se trata de un bucle, y en cada <a class="glossterm" data-glossterm="iteración" href="#">iteración</a> del bucle, el código se ejecutará en una instancia del objeto <span class="inline">obj_ball</span>.</p>
+  <p>Si quieres ejecutar varias sentencias, sólo tienes que incluirlas entre llaves, igual que harías con cualquier otro bloque de código. Así, por ejemplo, para mover todas las bolas de nuestro ejemplo a una posición aleatoria y darles una velocidad y dirección aleatorias,
+    se utilizaría:</p>
+  <p class="code">con (obj_ball)<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> speed = 1 + random(2);<br> direction = random(360);<br> }
+  </p>
+  <p>Como se mencionó anteriormente, dentro de la(s) declaración(es), la instancia o estructura indicada se ha convertido en la instancia de destino (<span class="inline">self</span>) que ejecuta el bloque de código, lo que significa que la instancia original (que contiene el <tt>with</tt> y el
+    todo el bloque de código) se ha convertido en la instancia <a href="../Instance_Keywords.htm"><tt>otros</tt></a> instancia. Así que - por ejemplo - para mover todas las bolas a la posición de la instancia actual que realmente contiene el código, puedes escribir esto:</p>
+  <p class="code">con (obj_ball)<br> {
+    <br> x = otro.x;<br> y = otro.y;<br> }
+  </p>
+  <p>La declaración <tt>con</tt> es una herramienta extremadamente poderosa y es útil en muchísimas circunstancias, por lo que es importante que entiendas bien cómo se puede utilizar. Para ayudarte, hay algunos ejemplos de uso más abajo:</p>
+  <p class="code">with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Ball))<br> {
+    <br> velocidad = otra.velocidad;<br> dirección = otra.dirección;<br> }
+  </p>
+  <p>El código anterior creará una instancia de <tt>obj_Ball</tt> y le asignará la velocidad y la dirección de la instancia que ejecuta todo el bloque de código.</p>
+  <p class="code">with (instance_nearest(x, y, obj_Ball))<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior destruirá la instancia de <tt>obj_Bola</tt> más cercana a la instancia que ejecuta el código.</p>
+  <p class="code">with(clone_struct)<br> {<br> xx = other.x;<br> yy = other.y;<br> spd = other.speed;<br> dir = other.direction;<br> }</p>
+  <p>El código anterior utiliza <span class="inline">with</span> para apuntar a una estructura y establecer las variables miembro de la estructura dadas a los valores almacenados en las variables de instancia de la instancia que llama al código.</p>
+  <p class="code">var _inst = noone;<br> with (obj_ball)<br> {
+    <br> if (str &gt; other.str)<br> {
+    <br> _inst = id;<br> }
+    <br> }
+    <br> if (_inst != noone)<br> {
+    <br> target = _inst;<br> }
+  </p>
+  <p>El código anterior es ligeramente más complejo que los anteriores debido a que utiliza una <a href="../Variables_And_Variable_Scope.htm">variable</a> local. Esta variable es <strong>local </strong>para el <em>evento</em> o la<em>función de</em> <em>script </em>y
+    y no a la instancia o estructura, por lo que puede ser utilizada y accedida por todas las instancias a las que se hace referencia dentro del bloque de código. Así, en el código anterior hemos establecido una variable local con la palabra clave especial <tt>noone</tt> y luego usamos la construcción <tt>with</tt> 
+    para que cada instancia de <tt>obj_Ball</tt> compruebe su variable <tt>str</tt> con la de la instancia que ejecuta el bloque de código. Si el valor de la variable es mayor, entonces almacenan su ID único en la variable local <tt>inst</tt>, lo que significa
+    que al final del código, sólo la instancia con un valor mayor que la instancia que llama (o la palabra clave <tt>noone</tt> si ninguna es mayor) se almacenará en la variable local <span class="inline">_inst</span>.</p>
+  <p>Cabe destacar que se pueden utilizar las sentencias especiales <span class="inline"><a href="break.htm">break</a></span> y <span class="inline"><a href="continue.htm">continue</a></span> dentro de un
+    <font face="Lucida Console"><span style="font-size: 16px;"><b>con</b></span></font> también. Usando <span class="inline">break</span> saldrá inmediatamente del bloque de código <span class="inline">with</span> y pasará a cualquier código que esté en el evento o función después de que el
+    <span class="inline">with</span> debería haber terminado, por ejemplo</p>
+  <p class="code">var count = 0;<br> with (obj_Enemy)<br> {
+    <br> if (++count &gt; 10)<br> {
+    <br> break;
+    <br> }
+    <br> hp = 100;<br> }
+  </p>
+  <p>El código anterior recorre las instancias de la sala del objeto <span class="inline">obj_Enemy</span> y establece la variable <span class="inline">hp</span> en 100 para las 10 primeras que encuentra. Si existen más de 10 instancias, el código con
+    llama a <span class="inline">break</span> y termina.</p>
+  <p>Un ejemplo de uso de <span class="inline">continue</span> en un bucle de <span class="inline">with</span> sería:</p>
+  <p class="code">with (obj_Enemy_Parent)<br> {<br> if (invulnerable == true)<br> {<br> continue;<br> } <br> hp -= 25;<br> }</p>
+  <p>Este código recorrerá todas las instancias con el padre <span class="inline">obj_Enemy_Parent</span>, y luego comprobará cada instancia para ver si la variable de instancia <span class="inline">invulnerable</span> es <span class="inline">true</span> o no. Si
+    lo es, la palabra clave <span class="inline">continue</span> termina la iteración actual del bucle y pasa a la siguiente instancia disponible, de lo contrario elimina 25 de la variable <span class="inline">hp</span>. Esto se repetirá hasta que todas las instancias
+    con ese padre hayan sido comprobadas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="return.htm">retorno</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+with
+-->
+  <!-- TAGS
+with
+-->
+
+</body></html>

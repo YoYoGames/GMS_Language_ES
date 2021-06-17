@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_añadir_punto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_add_point" />
+  <meta name="rh-index-keywords" content="path_add_point" />
+  <meta name="search-keywords" content="path_add_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_añadir_punto</h1>
+  <p>Con esta función se puede añadir un punto a la trayectoria especificada y establecer su factor de velocidad. Este punto se añade al final de la trayectoria, independientemente de la posición del punto, y el factor es igual al porcentaje de <a href="../Path_Variables/path_speed.htm"><tt>velocidad_de_la_trayectoria</tt></a> que
+    la siguiente instancia va realmente cuando llega a este punto de la trayectoria. Si desea colocar un punto de la trayectoria en alguna otra posición que no sea el final, deberá utilizar <a href="path_insert_point.htm"><tt>camino_insertar_punto()</tt></a>.</p>
+  <p>Si se utiliza en una ruta desde el Navegador de Activos, tenga en cuenta que <strong>la función cambiará el activo real</strong>, y por lo tanto afectará permanentemente la forma en que la ruta es utilizada por todas las instancias en el juego desde el momento en que se utiliza la función hasta el final del
+    juego. Si esto no es lo que necesitas, entonces deberías usar una función como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para crear primero una copia de la ruta, y luego llamar a esta función en el activo duplicado (no
+    olvide llamar a <span class="inline"><a href="path_delete.htm">path_delete()</a></span> en el activo cuando ya no sea necesario).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_add_point(index, x, y, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a la que se añade el punto.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x del nuevo punto.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y del nuevo punto.</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>El factor de velocidad del punto (el valor por defecto es 100).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p></p>
+  <p class="code">mi_ruta = path_add();<br> for (var i = 0; i &lt;= 360; i += 36;)<br> {
+    <br> path_add_point(my_path, x + lengthdir_x(50, i), y + lengthdir_y(50, i), 100);<br> }
+  </p>
+  <p>El código anterior creará una trayectoria circular alrededor de la posición x/y de la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_change_point.htm">path_change_point</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_add_point
+-->
+  <!-- TAGS
+path_add_point
+-->
+</body>
+</html>

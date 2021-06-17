@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_vibration</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_vibration" />
+  <meta name="rh-index-keywords" content="gamepad_set_vibration" />
+  <meta name="search-keywords" content="gamepad_set_vibration" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_vibration</h1>
+  <p>Con esta función puedes establecer la vibración de los motores del gamepad, con cualquiera de los motores utilizando un valor de 0 (sin vibración) a 1 (vibración total). Tenga en cuenta que no hay límite de tiempo en esta función, por lo que tendrá que utilizar una variable o una alarma para apagar la vibración (poner los motores a 0) después de un tiempo determinado.
+    desactivar la vibración (poner los motores a 0) después de un tiempo determinado, de lo contrario el gamepad seguirá vibrando indefinidamente.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo está disponible actualmente para los módulos de destino estándar <b><span class="notranslate">Windows</span></b> <b>PS4</b> y <b>Xbox One</b>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_set_vibration(device, left_motor, right_motor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>motor_izquierdo</td>
+        <td>La cantidad de vibración del motor izquierdo de 0 a 1.</td>
+      </tr>
+      <tr>
+        <td>motor_derecho</td>
+        <td>La cantidad de vibración del motor derecho de 0 a 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si vidas = 0<br> {
+    <br> gamepad_set_vibration(0, 1, 1);<br> alarm[0] = room_speed / 2;<br> }
+  </p>
+  <p>El código anterior se utilizaría (por ejemplo) en un evento de colisión para hacer que el gamepad conectado a la &quot;ranura&quot; 0 vibre durante medio segundo, y la alarma que se establezca se utilizará para apagarlo de nuevo una vez que haya pasado ese tiempo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_set_colour.htm"> gamepad_set_colour </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_vibration
+-->
+  <!-- TAGS
+gamepad_set_vibration
+-->
+
+</body></html>

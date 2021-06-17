@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_exists" />
+  <meta name="rh-index-keywords" content="script_exists" />
+  <meta name="search-keywords" content="script_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_existe</h1>
+  <p>Esta función devolverá <tt>true</tt> o <tt>false</tt> dependiendo de si el script o <a href="../../../GML_Overview/Script_Functions.htm">función de script</a> con el índice dado existe. Tenga en cuenta
+    que <i>no</i> se trata de una cadena, sino del nombre del activo que contiene el índice único para cada script (tal y como aparecería en el IDE) o la variable del nombre de la función del script, tal y como se define dentro del activo del script (tenga en cuenta que
+    esto no funcionará para las <a href="../../../GML_Overview/Method_Variables.htm">variables de método</a>). Para más información sobre los scripts, véase <a href="../../../../The_Asset_Editors/Scripts.htm">El editor de scripts</a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">script_exists(scr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>El nombre de la secuencia de comandos que desea comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">script[0] = -1;<br> script[1] = AI_Left;<br> script[2] = AI_Right;<br> var script_num = choose(0, 1, 2);<br> if script_exists(script[script_num])<br> {
+    <br> script_execute(script[script_num]);
+    <br> }
+  </p>
+  <p>El ejemplo anterior añade dos funciones de script y un valor en un array, luego procede a obtener un número aleatorio y lo utiliza para elegir una función de script para ejecutar, a menos que se elija el -1 en cuyo caso no ocurrirá nada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Scripts.htm">Guiones</a></div>
+        <div style="float:right">Siguiente: <a href="script_get_name.htm">script_get_name</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_exists
+-->
+  <!-- TAGS
+script_exists
+-->
+</body>
+</html>

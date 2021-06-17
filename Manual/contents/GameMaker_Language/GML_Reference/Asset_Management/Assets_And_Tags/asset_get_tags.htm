@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_get_tags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_get_tags" />
+  <meta name="rh-index-keywords" content="asset_get_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="asset_get_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_get_tags</h1>
+  <p>Con esta función puede recuperar todas las etiquetas asignadas a un activo desde el Navegador de Activos. Usted proporciona el nombre del activo (como una cadena) o su índice de activo, y la función devolverá una <a href="../../../GML_Overview/Arrays.htm">matriz</a> de etiquetas para ese activo. Si no se encuentra ninguna etiqueta o hay un error (es decir, la cadena de nombre dada no existe), el array devuelto estará vacío. Si suministra un valor de índice de activo, tendrá que suministrar el argumento opcional tipo de activo
+    (una constante), ya que los activos de diferentes tipos pueden tener el mismo índice, aunque no puedan tener el mismo nombre. Los tipos de activos disponibles se enumeran en la siguiente tabla:</p>
+  <p> </p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>objeto_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Objects.htm">objeto</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sound</td>
+        <td>El nombre de pila hace referencia a un <a href="../../../../The_Asset_Editors/Sounds.htm">sonido</a>.</td>
+      </tr>
+      <tr>
+        <td>sala_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Rooms.htm">habitación</a>.</td>
+      </tr>
+      <tr>
+        <td>activos_tiles</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Tile_Sets.htm">conjunto de baldosas</a>.</td>
+      </tr>
+      <tr>
+        <td>ruta_de_activo</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Paths.htm">ruta</a>.</td>
+      </tr>
+      <tr>
+        <td>script_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Scripts.htm">guión</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Fonts.htm">fuente</a>.</td>
+      </tr>
+      <tr>
+        <td>línea_de_tiempo_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Timelines.htm">línea de tiempo</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">sombreador</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Curva de Animación</a>.</td>
+      </tr>
+      <tr>
+        <td>secuencia_de_activos</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Sequences.htm">Secuencia</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">asset_get_tags(name_or_index, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_o_índice</td>
+        <td>El nombre del activo (una cadena) o su valor de índice (un entero).</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPCIONAL! El tipo de activo para el que se obtienen las etiquetas, sólo se utiliza cuando se suministra un índice para el primer argumento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mis_etiquetas = asset_get_tags(object_get_name(object_index));</p>
+  <p>El código anterior recuperará todas las etiquetas asignadas al objeto del que se ha creado la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Assets_And_Tags.htm">Activos y etiquetas</a></div>
+        <div style="float:right">Siguiente: <a href="asset_add_tags.htm">asset_add_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_get_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_get_tags
+-->
+</body>
+</html>

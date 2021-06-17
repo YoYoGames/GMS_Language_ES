@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ver_puerto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_yport" />
+  <meta name="rh-index-keywords" content="view_yport" />
+  <meta name="search-keywords" content="view_yport" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ver_puerto</h1>
+  <p>Con esta matriz incorporada puedes obtener o establecer la posición y del puerto de vista dado. El puerto de vista es el área de la pantalla donde se dibuja la vista, y puedes tener hasta 8 activos en cualquier momento (el array tiene valores de 0 a 7 inclusive para dar 8
+    puertos). Ahora, el valor por defecto de <span class="notranslate">GameMaker Studio 2</span> es que la ventana del juego (o lienzo de fondo) es del mismo tamaño que la habitación, sin embargo, cuando se activan los puertos de vista y las cámaras, este comportamiento cambia y se utiliza el <i>tamaño total del cuadro delimitador para todos los puertos de vista</i>. Así, si tienes dos puertos de vista diferentes en dos posiciones distintas, el área total que cubren define el tamaño de la ventana de juego. La siguiente imagen ilustra esto:</p>
+  <p><img alt="Canvas with multiple view ports example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png">Si sólo tiene <i>un</i> puerto de vista, ajustar el valor x o y del puerto puede
+    tener algunos efectos interesantes, pero normalmente no es práctico (ver la imagen de abajo) y por eso es mejor mantener la posición x e y como (0,0).</p>
+  <p><img alt="view_yport example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/view_xyport.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">view_yport[0 .. 7];</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">view_xport[0] = 0;<br> view_yport[0] = 0;</p>
+  <p>El código anterior restablece la posición del puerto de vista[0] a la posición (0,0) (esquina superior izquierda) de la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="view_set_wport.htm">view_wport</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_yport
+-->
+  <!-- TAGS
+view_yport
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_enable_drawevent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function draw_enable_drawevent" />
+  <meta name="rh-index-keywords" content="draw_enable_drawevent" />
+  <meta name="search-keywords" content="draw_enable_drawevent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_enable_drawevent</h1>
+  
+    <p>Con esta función puedes elegir habilitar<tt>(true</tt>) o deshabilitar<tt>(false</tt>) el evento draw para <b>todas las instancias del juego</b>, dándote así el control sobre cómo y cuándo se dibujan las cosas, útil si deseas implementar una técnica de
+      técnica de &quot;salto de cuadro&quot;. Ten en cuenta que esto no sólo evita que las instancias dibujen en la pantalla, sino que suprime el evento draw por completo, lo que significa que hay que tener cuidado ya que cualquier lógica de juego que esté presente en ese evento no se ejecutará
+      tampoco. Una cosa importante a entender sobre esta función es que si la llamas justo al comienzo del juego, antes de que el marco inicial sea renderizado (es decir: el evento Create del primer objeto en la primera habitación del juego), entonces la ventana del juego <b>no será render</b>izada.
+      Esto podría ser útil para proyectos online que requieren un servidor que no necesita renderizar nada.</p>
+  
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_enable_drawevent(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Activar</td>
+        <td>Establecer como <tt>verdadero</tt> o <tt>falso</tt>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">frame_skip ++;<br> if (frame_skip mod 5) == 0<br> {
+    <br> draw_enable_drawevent(true);
+    <br> }
+    <br> else
+    <br> {
+    <br> draw_enable_drawevent(false);
+    <br> }
+  </p>
+  
+    <p>El código anterior comprueba una variable y si devuelve <tt>true</tt>, habilita el evento de sorteo, de lo contrario el evento de sorteo se desactiva.</p>
+  
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing.htm">Dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="draw_flush.htm">draw_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_enable_drawevent
+-->
+  <!-- TAGS
+draw_enable_drawevent
+-->
+</body>
+</html>

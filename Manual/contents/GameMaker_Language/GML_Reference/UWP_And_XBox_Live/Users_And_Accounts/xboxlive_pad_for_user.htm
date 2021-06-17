@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_pad_for_user</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_pad_for_user" />
+  <meta name="rh-index-keywords" content="xboxlive_pad_for_user" />
+  <meta name="search-keywords" content="xboxlive_pad_for_user" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_pad_for_user</h1>
+  <p>Los usuarios de Xbox pueden tener varios pads asignados a su ID de usuario, y cada uno de ellos llena una &quot;ranura&quot;. Estas ranuras están numeradas desde el 0, y pueden contener cualquier índice de pad, por lo que la ranura 0 podría ser asignada al pad 3 y la ranura 1 podría ser asignada al pad 2. Esta función
+    se puede utilizar para obtener el pad que está asignado a cualquier ranura, y es particularmente útil si un usuario deja un gamepad sin entrada durante un cierto período de tiempo, ya que se apagará por sí mismo, por lo que puede comprobar cualquier ID de usuario utilizando esta función
+    para asegurarte de que tiene un gamepad activo, y si no lo tiene, reaccionar en consecuencia (por ejemplo) pausando tu juego. Si el pad está activo, su valor de índice será devuelto, pero si no, la función devolverá -1.</p>
+  <p>Tenga en cuenta que si un pad en cualquier ranura se vuelve inactivo, las ranuras posteriores se &quot;deslizarán&quot; a la posición vacante, por lo que si tiene tres pads activos asignados a las ranuras 0, 1 y 2, y el pad de la ranura 0 está inactivo, las ranuras 1 y a pasarán a ser las ranuras 0 y
+    1, por lo que la ranura 0 debería contener siempre un pad activo a menos que todos los pads estén apagados (en cuyo caso devolverá -1).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_pad_for_user(user_id, slot);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El ID de usuario (un puntero) para comprobar</td>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El índice (un entero) de la ranura del gamepad a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (xboxlive_pad_for_user(user_id, 0) == -1)<br> {
+    <br> for(var i = 0; i &lt; gamepad_get_device_count(); i++;) <br> {
+    <br> var u_id = xboxlive_user_for_pad(i);<br> if (u_id == -1)<br> {
+    <br> async_ID = xboxlive_pad_for_user(i, u_id);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba la ranura 0 para el puntero de ID de usuario dado para ver si se ha asignado algún gamepad, y si no, se asigna uno.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_pad_count_for_user.htm">xboxlive_pad_count_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_pad_for_user
+-->
+  <!-- TAGS
+xboxlive_pad_for_user
+-->
+</body>
+</html>

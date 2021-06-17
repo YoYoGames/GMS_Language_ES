@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>La estructura de la pista</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Track Struct" />
+  <meta name="rh-index-keywords" content="Sequence Track Struct" />
+  <meta name="search-keywords" content="The Track Struct,seqtracktype_graphic,seqtracktype_audio,seqtracktype_instance,seqtracktype_sequence,seqtracktype_clipmask,seqtracktype_clipmask_mask,seqtracktype_clipmask_subject,seqtracktype_group,seqtracktype_colour,seqtracktype_real,seqtracktype_message,seqtracktype_moment,seqtracktype_bool,seqtracktype_string,seqtracktype_spriteframes,seqtracktype_empty,type,name,tracks,visible,keyframes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>La estructura de la pista</h1>
+  <p>La estructura de pista puede utilizarse tanto para las<span class="glossextra">pistas de</span><a class="glossterm" data-glossterm="seguimiento de activos" href="#">activos</a>de nivel superior <i></i>como para las<a class="glossterm" data-glossterm="pistas de parámetros" href="#">pistas de parámetros</a> de subpistas <i></i>,
+    y el comportamiento de la pista se define por dos cosas, su <b>nombre</b> y su tipo <b>.</b> <a href="../../../../GML_Overview/Structs.htm">Los</a> structs de pista se crean con la función <a href="../sequence_track_new.htm"><tt>sequence_track_new()</tt></a>    y pueden ser recuperados de los activos de la secuencia utilizando la propiedad <tt>activeTracks</tt> de la Estructura de <a href="The_Sequence_Instance_Struct.htm">la Instancia de la Secuencia</a> o la propiedad <tt>tracks</tt> de la <a href="The_Sequence_Object_Struct.htm">Estructura del Objeto de la Secuencia</a>.</p>
+  <p>Las propiedades disponibles para la estructura de la pista son:</p>
+  <ul class="colour">
+    <li><tt>tipo</tt>: Las siguientes constantes se pueden utilizar para definir el tipo de pista que se está creando en la secuencia (estas constantes también se utilizan cuando se generan <span class="notranslate">fotogramas clave</span> y datos de <span class="notranslate">fotogramas clave</span>, que se explican en las secciones siguientes):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>seqtracktype_graphic</td>
+        <td>Esta es una pista de activos gráficos (sprite).</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_audio</td>
+        <td>Esta es una pista de activos de audio.</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_instance</td>
+        <td>Esta es una pista de activos de instancia.</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_sequence</td>
+        <td>Se trata de una pista de activos secuenciales.</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask</td>
+        <td>Esta es una pista de activos de grupo de máscara de clip.</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_mask</td>
+        <td>Esta es una pista de activos de máscara de clip utilizada para generar la máscara de clip.</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_clipmask_subject</td>
+        <td>Esta es una pista de activos de sprite de máscara de clip que se está enmascarando.</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_group</td>
+        <td>Este seguimiento de los activos de la carpeta de grupo.</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_colour</td>
+        <td>Esta es una pista de parámetros de datos de color.</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_real</td>
+        <td>Se trata de una pista de parámetros de valor numérico real.</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_message</td>
+        <td>Esta es una pista de mensajes de difusión.</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_moment</td>
+        <td>Esta es una pista de eventos/momentos.</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_bool</td>
+        <td>No se utiliza actualmente.</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_string</td>
+        <td>No se utiliza actualmente.</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_spriteframes</td>
+        <td>No se utiliza actualmente.</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td>seqtracktype_empty</td>
+        <td>No se utiliza actualmente.</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>nombre</tt>: Cuando se crea una pista de activos, el nombre que se da aquí puede ser cualquier cadena que se requiera para identificar la pista, sin embargo para las pistas de parámetros, es necesario especificar cadenas específicas para decirle a <span class="notranslate">GameMaker Studio</span> 2 qué tipo de pista de parámetros
+      que está creando (estas cadenas sólo son aplicables a los tipos de pista de parámetros <tt>seqtracktype_real</tt> y <tt>seqtracktype_colour</tt> ):
+      <ul class="colour">
+        <li>&quot;<strong>Posición</strong>&quot;: cuando se establece en una pista de tipo seqtracktype_real <tt>,</tt> indica que el contenido de esta pista debe utilizarse como datos de posición.</li>
+        <li>&quot;Escala<strong>&quot;:</strong> cuando se establece en una pista que es de tipo seqtracktype_real <tt>,</tt> indica que el contenido de esta pista debe utilizarse como datos de escala.</li>
+        <li>&quot;<strong>rotation</strong>&quot;: cuando se establece en una pista que es de tipo seqtracktype_real <tt>,</tt> indica que el contenido de esta pista debe utilizarse como datos de rotación.</li>
+        <li>&quot;Mezclar_multiplicar<strong>&quot;:</strong> cuando se establece en una pista que es de tipo seqtracktype_colour <tt>,</tt> indica que el contenido de esta pista debe utilizarse como datos de multiplicación de color. Los datos de <span class="notranslate">los fotogramas clave</span> de esta pista deben
+          ser una matriz de cuatro valores con el formato [A, R, G, B]. Tenga en cuenta que los valores de cada componente se expresan entre 0 y 1, donde 0 corresponde al valor HEX #00 y 1 corresponde al valor HEX #FF (0 - 255 como se muestra en el selector de color
+          para las pistas de mezcla de imágenes en el Editor de Secuencias).</li>
+        <li>&quot;image_speed&quot;<strong>-</strong> cuando se establece en una pista que es de tipo <tt>seqtracktype_real</tt> indica que el contenido de esta pista debe ser utilizado como el valor de la velocidad de la imagen.</li>
+        <li>&quot;image_index&quot;<strong>-</strong> cuando se establece en una pista que es de tipo seqtracktype_real <tt>,</tt> indica que el contenido de esta pista debe utilizarse como valor de índice de la imagen.</li>
+        <li>&quot;image_angle&quot;<strong>-</strong> cuando se establece en una pista de tipo seqtracktype_real <tt>,</tt> indica que el contenido de esta pista debe utilizarse como valor de ángulo de la imagen.</li>
+        <li>&quot;image_blend&quot;<strong>-</strong> cuando se establece en una pista de tipo seqtracktype_colour <tt>,</tt> indica que el contenido de esta pista debe utilizarse como valor de mezcla de la imagen. Los datos de <span class="notranslate">los fotogramas clave</span> de esta pista deben ser una
+          matriz de cuatro valores con el formato [A, R, G, B]. Tenga en cuenta que los valores de cada componente se expresan entre 0 y 1, donde 0 corresponde al valor HEX #00 y 1 corresponde al valor HEX #FF (0 - 255 como se muestra en el selector de color
+          para las pistas de colores múltiples en el Editor de Secuencias).</li>
+      </ul>
+    </li>
+    <li><tt>pistas</tt>: Esta propiedad permite acceder a la lista de pistas que son hijas de esta pista. Cuando se obtiene esta propiedad se devuelve un <a href="../../../../GML_Overview/Arrays.htm">array</a> de structs de pistas, y cuando se establece esta propiedad
+      se debe especificar un array de structs de pistas.</li>
+    <li><tt>visible</tt>: Indica si esta pista es visible (el valor es <tt>verdadero</tt>) o no (el valor es <tt>falso</tt>). Puedes obtener o establecer este valor y si una pista no es visible entonces ninguna de sus pistas hijas se dibujará tampoco.</li>
+    <li><tt><span class="notranslate">fotogramas clave</span></tt>: Esta propiedad permite acceder a la lista de structs de <a href="The_Keyframe_Struct.htm"><span class="notranslate">fotogramas</span></a> clave de la pista. Cuando se obtiene esta propiedad se devuelve un array de structs de <span class="notranslate">fotogramas</span> clave, y cuando se establece esta propiedad se debe especificar un array de structs de <span class="notranslate">fotogramas clave</span>
+      debe especificarse una matriz de estructuras de fotogramas clave.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="The_Keyframe_Struct.htm">La estructura de <span class="notranslate">los fotogramas clave</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Track Struct
+seqtracktype_graphic
+seqtracktype_audio
+seqtracktype_instance
+seqtracktype_sequence
+seqtracktype_clipmask
+seqtracktype_clipmask_mask
+seqtracktype_clipmask_subject
+seqtracktype_group
+seqtracktype_colour
+seqtracktype_real
+seqtracktype_message
+seqtracktype_moment
+seqtracktype_bool
+seqtracktype_string
+seqtracktype_spriteframes
+seqtracktype_empty
+type
+name
+tracks
+visible
+<span class="notranslate">keyframes</span>
+-->
+  <!-- TAGS
+sequence_track
+-->
+
+</body></html>

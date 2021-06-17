@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>rango_aleatorio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for random_range" />
+  <meta name="rh-index-keywords" content="random_range" />
+  <meta name="search-keywords" content="random_range" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>rango_aleatorio</h1>
+  <p>Esta función devuelve un número aleatorio entre el rango especificado, y este valor de retorno no necesita ser un número entero. Por ejemplo, <tt>random_range(20,50)</tt> devolverá un número aleatorio entre 20 y 50, pero el valor puede ser un número real como 38,65265.
+    También se pueden utilizar números reales como argumentos de entrada.</p>
+  <p class="note"><b>NOTA</b>: Esta función devolverá el mismo valor cada vez que el juego se ejecute de nuevo debido a que <span class="notranslate">GameMaker Studio 2</span> genera la misma semilla aleatoria inicial cada vez para facilitar la depuración del código. Para evitar este comportamiento utilice
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">randomise()</tt></a></span> al inicio de su juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">random_range(n1, n2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>n1</td>
+        <td>El extremo inferior del rango del que se seleccionará el número aleatorio.</td>
+      </tr>
+      <tr>
+        <td>n2</td>
+        <td>El extremo superior del rango del que se seleccionará el número aleatorio.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">puntuación += random_range(500, 600);</p>
+  <p>Esto añadirá entre 500 y 600, a la puntuación total.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="irandom.htm">irandom</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+random_range
+-->
+  <!-- TAGS
+random_range
+-->
+</body>
+</html>

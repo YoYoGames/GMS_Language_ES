@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_seek</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_seek" />
+  <meta name="rh-index-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
+  <meta name="search-keywords" content="buffer_seek,buffer_seek_start,buffer_seek_relative,buffer_seek_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_seek</h1>
+  <p>Esta función se puede utilizar para desplazarse por un búfer, encontrando el inicio, el final o una posición relativa a la que se utilizó por última vez al leer o escribir datos. El valor &quot;offset&quot; es el desplazamiento (en bytes) que se debe añadir a la posición de búsqueda dada,
+    por ejemplo, si la base es relativa y el offset es 4, entonces la posición del buffer se moverá a lo largo de 4 bytes desde su posición actual. Tenga en cuenta lo siguiente:</p>
+  <ul class="colour">
+    <li>Puede utilizar valores negativos para el desplazamiento para buscar hacia atrás a través del buffer, así como valores positivos.</li>
+    <li>Si el búfer es del tipo &quot;envolvente&quot; y se desplaza más allá del final del búfer, la posición de búsqueda también se envolverá.</li>
+    <li>Si el búfer no es del tipo &quot;envolvente&quot;, la búsqueda se sujetará al principio o al final del búfer, incluso cuando el desplazamiento lleve la búsqueda fuera de los límites del búfer.</li>
+  </ul>
+  <p>Se aceptan las siguientes constantes como argumento &quot;base&quot; para buscar:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer_seek_start</td>
+        <td>El inicio del buffer</td>
+      </tr>
+      <tr>
+        <td>buffer_seek_relative</td>
+        <td>Una posición relativa a la posición actual de lectura/escritura</td>
+      </tr>
+      <tr>
+        <td>buffer_seek_end</td>
+        <td>El final del buffer</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_seek(buffer, base, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+      <tr>
+        <td>base</td>
+        <td>La posición base a buscar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El valor del desplazamiento de los datos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_write(buff, buffer_s16, 0);<br> buffer_write(buff, buffer_s16, x);<br> buffer_write(buff, buffer_s16, y);</p>
+  <p>El código anterior encuentra el inicio del buffer con el id almacenado en la variable &quot;buff&quot; y escribe en él una serie de valores enteros de 16 bits con signo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_tell.htm">buffer_tell</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_seek
+buffer_seek_start
+buffer_seek_relative
+buffer_seek_end
+-->
+  <!-- TAGS
+buffer_seek
+-->
+</body>
+</html>

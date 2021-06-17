@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_format_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_format_begin" />
+  <meta name="rh-index-keywords" content="vertex_format_begin" />
+  <meta name="search-keywords" content="vertex_format_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_format_begin</h1>
+  <p>Antes de que puedas definir tu nuevo formato de vértices debes decirle a <span class="notranslate">GameMaker Studio 2</span> que lo estás haciendo usando esta función. Debes llamarla primero, luego definir los valores del formato usando las funciones apropiadas, y finalmente llamar a <a href="vertex_format_end.htm"><tt>vertex_format_end()</tt></a>    para terminar la definición y devolver el nuevo formato &quot;handle&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_format_begin();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_colour();
+    <br> vertex_format_add_position();
+    <br> my_format = vertex_format_end();</p>
+  <p>El código anterior creará un nuevo formato de vértice con sólo los valores de color y posición y luego almacenará el id del formato en la variable &quot;mi_formato&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_format_add_colour.htm">vertex_format_add_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_format_begin
+-->
+  <!-- TAGS
+vertex_format_begin
+-->
+
+</body></html>

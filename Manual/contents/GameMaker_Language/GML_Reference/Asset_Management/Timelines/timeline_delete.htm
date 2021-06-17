@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>borrar_temporal</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_delete" />
+  <meta name="rh-index-keywords" content="timeline_delete" />
+  <meta name="search-keywords" content="timeline_delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>borrar_temporal</h1>
+  <p>Con esta función puede eliminar cualquier línea de tiempo de su juego. si esta línea de tiempo fue creada en el Navegador de Activos de <span class="notranslate">GameMaker Studio 2</span>, por favor tenga en cuenta que se elimina completamente del juego y tratar de llamar a la línea de tiempo indexada
+    después de usar esta función causará un error. Si la línea de tiempo fue creada dinámicamente utilizando la función <a href="timeline_add.htm"><tt>timeline_add()</tt></a> entonces esta función debe usarse en el momento
+    que la línea de tiempo ya no es necesaria para evitar cualquier fuga de memoria que podría ralentizar (y eventualmente colapsar) su juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">timeline_delete(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la línea de tiempo a eliminar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if timeline_exists(global.tl)<br> {<br> timeline_delete(global.tl);<br> }</p>
+  <p>El código anterior comprueba si existe una línea de tiempo y está indexada en la variable global &quot;tl&quot; y, si es así, borra esa línea de tiempo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timelines.htm">Líneas de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="timeline_moment_add_script.htm">timeline_moment_add_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_delete
+-->
+  <!-- TAGS
+timeline_delete
+-->
+</body>
+</html>

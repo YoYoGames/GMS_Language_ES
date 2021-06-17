@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_linear_path_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_linear_path_object" />
+  <meta name="rh-index-keywords" content="mp_linear_path_object" />
+  <meta name="search-keywords" content="mp_linear_path_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_linear_path_object</h1>
+  <p>Esta función calcula una trayectoria en línea recta desde la posición actual de la instancia hasta el punto especificado por los valores &quot;xgoal&quot; y &quot;ygoal&quot;. Utiliza el tamaño de paso indicado, el mismo que en la función <a href="mp_linear_step.htm"><tt>mp_paso_lineal()</tt></a>.
+    El camino indicado debe existir ya y será sobrescrito por el nuevo camino y la función devolverá si se encontró un camino completo (true) o no (false). Si se encuentra una ruta completa sólo es que no hubo colisión con el objeto o instancia especificada y
+    si se devuelve false, se sigue generando una trayectoria, pero sólo llegará hasta la posición en la que se bloqueó la trayectoria.</p>
+  <p class="note"><b>NOTA</b>: Esta función no mueve la instancia. Sólo establece una ruta, y debe utilizar las funciones de <a href="../../Asset_Management/Paths/Paths.htm">ruta</a> para el movimiento.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_linear_path_object(path, xgoal, ygoal, stepize, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camino</td>
+        <td>El índice de la ruta a utilizar</td>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>La posición x del objetivo.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>La posición y del objetivo.</td>
+      </tr>
+      <tr>
+        <td>tamaño del paso</td>
+        <td>La velocidad a la que se mueve la instancia en píxeles por paso.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que debe bloquear la ruta. Puede ser un índice de objeto, un id de instancia o la palabra clave especial<b>,all</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mp_linear_path_object(path, mouse_x, mouse_y, 4, obj_Wall)<br> {<br> path_start(path, 4, 0, 0);<br> }</p>
+  <p>El código anterior comprueba si hay una colisión con &quot;obj_Wall&quot; a lo largo de la trayectoria entre el objeto que ejecuta el código y la posición x/y del ratón. Si no hay colisión y se genera la trayectoria completa, entonces iniciará el objeto a lo largo de la
+    ruta generada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_potential_settings.htm">mp_potential_settings</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_linear_path_object
+-->
+  <!-- TAGS
+mp_linear_path_object
+-->
+</body>
+</html>

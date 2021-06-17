@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>La estructura de los objetos de la secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Sequence Object Struct" />
+  <meta name="rh-index-keywords" content="Sequence Object Struct" />
+  <meta name="search-keywords" content="The Sequence Object Struct,seqplay_oneshot,seqplay_loop,seqplay_pingpong,spritespeed_framespersecond,spritespeed_framespergameframe,name,loopmode,playbackSpeed,playbackSpeedType,length,volume,xorigin,yorigin,messageEventKeyframes,momentKeyframes,tracks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>La estructura de los objetos de la secuencia</h1>
+  <p>Un objeto de secuencia es el nombre dado a la estructura recuperada del activo de secuencia como se define en el navegador de activos para su juego. Esta <a href="../../../../GML_Overview/Structs.htm">estructura</a> tendrá las siguientes propiedades que pueden ser cambiadas:</p>
+  <ul class="colour">
+    <li><tt>name</tt>: Es el nombre de la secuencia en forma de cadena y puede obtener o establecer este valor según sea necesario. Tenga en cuenta que las secuencias creadas con la función <a href="../sequence_create.htm"><tt>sequence_create()</tt></a> no tendrán un nombre y este
+      será simplemente una cadena vacía &quot;&quot;.<tt></tt></li>
+    <li><tt>Modo de bucle</tt>: Es el modo de reproducción del objeto de la secuencia y se puede obtener o establecer. Devolverá (o se puede establecer) las siguientes constantes:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td><tt>seqplay_oneshot</tt></td>
+        <td>La secuencia se reproducirá una vez y se detendrá al terminar.</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_loop</tt></td>
+        <td>La secuencia se reproducirá en bucle, y el cabezal de reproducción volverá al principio cuando llegue al final de la región de reproducción.</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><tt>seqplay_pingpong</tt></td>
+        <td>La secuencia se reproducirá en bucle, y el cabezal de reproducción invertirá su dirección cuando llegue al final de la región de reproducción.</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>playbackSpeed</tt>: Especifica la velocidad de reproducción de la secuencia, que se interpreta como fotogramas por segundo o fotogramas por partida, dependiendo del <tt>playbackSpeedType</tt> (ver más abajo). Puedes obtener o establecer este valor.</li>
+    <li><tt>playbackSpeedType</tt>: Especifica cómo debe interpretarse el <tt>playbackSpeed</tt> y puedes obtener o establecer este valor. Puede utilizar una de las siguientes constantes para establecer el valor (o una de estas constantes será devuelta si se comprueba
+      la propiedad):</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespersecond</tt></td>
+        <td>Especifica que <tt>playbackSpeed</tt> debe interpretarse como fotogramas por segundo</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td><tt>spritespeed_framespergameframe</tt></td>
+        <td>Especifica que <tt>playbackSpeed</tt> debe ser interpretado como frames-per-game-frame.</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <ul class="colour">
+    <li><tt>longitud</tt>: La longitud de la secuencia en fotogramas. Puedes obtener o establecer este valor, pero ten en cuenta que hacer una secuencia más corta puede causar problemas si una instancia de la secuencia que hace referencia a esta secuencia tiene su cabezal de reproducción establecido más allá de la nueva longitud.</li>
+    <li><tt>volumen</tt>: Es un valor escalar de 0 a 1 que se utiliza para escalar el volumen de todas las pistas de audio de la secuencia. Puede obtener o establecer este valor y modificará la salida de audio global para todas las pistas - por ejemplo, si tiene una pista de audio
+      con un volumen de 0,8 y luego establece la propiedad de <tt>volumen</tt> de la secuencia a 0,5, la pista de audio tendrá un volumen final de 0,4.</li>
+    <li><tt>xorigin</tt>: Es el origen de la secuencia a lo largo del eje X. Puedes obtener o establecer este valor.</li>
+    <li><tt>yorigin</tt>: Es el origen de la secuencia a lo largo del eje Y. Puedes obtener o establecer este valor.</li>
+    <li><tt>messageEventKeyframes</tt>: Permite acceder a los <span class="notranslate">fotogramas</span> clave de los eventos de mensaje de la secuencia. Puedes obtener o establecer estos eventos de mensaje, y al obtener esta propiedad se devuelve un array de structs de <span class="notranslate">fotogramas</span> clave, y para establecer la propiedad debes
+      para establecer la propiedad se debe suministrar un array de structs de <span class="notranslate">fotogramas</span> clave. Para más información, consulte la página sobre Eventos <a href="../Sequence_Events_Moments_Broadcast.htm">y Momentos</a> de la Secuencia.</li>
+    <li><tt>momentKeyframes</tt>: Permite acceder a los <span class="notranslate">fotogramas</span> clave de los eventos de momento de la secuencia. Puedes obtener o establecer estos eventos de momento, y al obtener esta propiedad se devuelve un array de structs de <span class="notranslate">fotogramas</span> clave, y para establecer la propiedad debes proporcionar
+      un array de structs de <span class="notranslate">fotogramas</span> clave. Para más información, consulte la página sobre Eventos de <a href="../Sequence_Events_Moments_Broadcast.htm">secuencia y</a> momentos.</li>
+    <li><tt>pistas</tt>: Permite acceder a la lista de pistas de <b>activos</b> en el nivel superior de la secuencia. Se puede obtener o establecer esta propiedad, y cuando se obtiene esta propiedad se devuelve un array de structs de pistas, y para establecer la propiedad se debe
+      para establecer la propiedad se debe suministrar un array de structs de pistas. Para más información, consulte la sección <a href="The_Track_Struct.htm"><b>Estructuras de las pistas</b></a>.</li>
+  </ul>
+  <p>Tenga en cuenta que si quiere acceder a las propiedades de una secuencia que ha sido creada en el navegador de activos, debe llamar primero a la función <a href="../sequence_get.htm"><tt>sequence_get()</tt></a> en el índice del activo para recuperar la estructura del objeto de la secuencia.
+    También tenga en cuenta que cualquier cambio realizado en esta estructura de secuencia significará que todas las instancias posteriores de este activo de secuencia también tendrán estos cambios, y se mantendrán mientras el juego se esté ejecutando, incluso si llama a la función <span class="inline">game_restart()</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="The_Sequence_Instance_Struct.htm">La estructura de la instancia de la secuencia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Sequence Object Struct
+seqplay_oneshot
+seqplay_loop
+seqplay_pingpong
+spritespeed_framespersecond
+spritespeed_framespergameframe
+name
+loopmode
+playbackSpeed
+playbackSpeedType
+length
+volume
+xorigin
+yorigin
+messageEvent<span class="notranslate">Keyframes</span>
+moment<span class="notranslate">Keyframes</span>
+tracks
+-->
+  <!-- TAGS
+sequence_object
+-->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>aplicación_superficie_habilitada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for application_surface_enable" />
+  <meta name="rh-index-keywords" content="application_surface_enable" />
+  <meta name="search-keywords" content="application_surface_enable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>aplicación_superficie_habilitada</h1>
+  <p>Con esta función puedes habilitar o deshabilitar la superficie de la aplicación. Por defecto, la superficie de la aplicación está habilitada y todo el dibujo de los eventos de Dibujo se hará en ella y la superficie se dibujará en la pantalla. Sin embargo, en algunos dispositivos antiguos y conjuntos de
+    esto puede resultar en un menor rendimiento. En esos casos puedes desactivar el dibujo en la superficie de la aplicación y todo el dibujo de los eventos Draw se hará directamente en el buffer de la pantalla.</p>
+  <p>Puedes utilizar esta función para activar o desactivar la superficie de aplicación en cualquier momento del juego, pero debes tener en cuenta que se necesita al menos un fotograma (paso) para que los cambios surtan efecto. Si <span class="notranslate">se</span>desactiva <i><b>desactivará toda la corrección de la relación de aspecto</b></i>,
+    según lo establecido en las <i>Opciones de Juego</i> para la plataforma de destino. Esto significa que debes tener algún método en el lugar que escala el juego a las dimensiones del dispositivo, la ventana o la pantalla requerida. Si lo vuelves a activar, las Opciones de <i>Juego</i> volverán a tener efecto en el siguiente paso.</p>
+  <p>Se recomienda utilizar esta función con cuidado, ya que tendrá un impacto en cómo se dibuja todo en la pantalla. En general, usted querría tenerlo como una opción en un menú de su juego, o llamarlo sólo una vez al comienzo de su juego y escribir su
+    código en torno a si usted tiene activado o desactivado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">application_surface_enable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Permite activar<tt>(true</tt>) o desactivar<tt>(false</tt>) la superficie de la aplicación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> si application_surface_is_enabled()<br> {
+    <br> application_surface_enable(false);
+    <br> }
+    <br> else
+    <br> {
+    <br> application_surface_enable(true);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba si se pulsa una tecla y activa o desactiva la superficie de la aplicación en función de su estado (como en un menú de opciones).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="application_surface_is_enabled.htm">application_surface_is_enabled</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+application_surface_enable
+-->
+  <!-- TAGS
+application_surface_enable
+-->
+</body>
+</html>

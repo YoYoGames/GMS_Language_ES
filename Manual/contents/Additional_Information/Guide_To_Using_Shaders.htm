@@ -27,7 +27,7 @@
     sprite, dándote información como la ubicación y el color de ese píxel. En el código del fragment <span class="notranslate">shader</span>, realizas operaciones y cálculos para determinar el color de ese píxel y conseguir el efecto que quieres. Por ejemplo, si quieres que un <span class="notranslate">shader</span> haga que
     tu sprite sea blanco y negro, entonces calcularías qué tono de gris debe tener cada píxel para crear el efecto.</p>
   <p>Sería algo así:</p>
-  <p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif">La razón por la que el código <span class="notranslate">de sombreado</span> suele ser ejecutado por la GPU es que es más eficiente en ello. Las CPUs modernas suelen tener
+  <p><img alt="Shader Fragments" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Shader_Fragments.gif">La razón por la que el código <span class="notranslate">de sombreado</span> suele ser ejecutado por la GPU es que es más eficiente en este sentido. Las CPUs modernas suelen tener
     entre dos y ocho núcleos. Cada núcleo puede realizar una tarea a la vez, por lo que al aprovechar varios núcleos, podemos realizar esa cantidad de tareas simultáneamente. En cambio, las GPUs modernas pueden realizar miles, e incluso decenas de miles, de tareas ejecutadas
     al mismo tiempo. Esto es útil para <span class="notranslate">los sombreadores</span>, ya que podemos ejecutar el código de <span class="notranslate">sombreado</span> de miles de píxeles de forma concurrente. La limitación es que sólo tenemos acceso al estado inicial del sprite, por lo que no conocemos las modificaciones realizadas
     a otros píxeles ya que no podemos saber con seguridad que el código se ha ejecutado en ellos todavía.</p>
@@ -72,7 +72,7 @@
   <p>Por último, hemos estado utilizando <span class="inline">xyzw</span> como nuestra máscara de swizzle, lo que suele ser el caso cuando se trata de posiciones. Hay dos conjuntos más de máscaras que puede utilizar: <span class="inline">rgba</span> (utilizado para los colores), o <span class="inline">stpq</span> (utilizado para las coordenadas de la textura). Internamente, no hay ninguna diferencia entre estas máscaras, y sólo las usamos para que el código sea más claro en cuanto a lo que el vector representa en esa instancia. Además, no podemos combinar máscaras de swizzle en la misma operación, por lo que
     esto no es válido:</p>
   <p class="code"><span class="inline"></span>myVec = otherVec.ybp;</p>
-  <p>Han sido muchas definiciones e información, pero conocer estas cosas es necesario para entender <span class="notranslate">los</span> propios <span class="notranslate">sombreadores</span>.</p>
+  <p>Han sido muchas definiciones e información, pero conocer estas cosas es necesario para entender <span class="notranslate">los</span> propios <span class="notranslate">shaders</span>.</p>
   <p> </p>
   <h2>Creación de un <span class="notranslate">sombreado</span></h2>
   <p>Cuando creas un <span class="notranslate">sombreador</span> en <span class="notranslate">GameMaker Studio 2</span>, te abrirá dos archivos: un <span class="notranslate">sombreador de</span> vértices (<span class="inline">.vsh</span>) y un <span class="notranslate">sombreador de</span> fragmentos (<span class="inline">.fsh</span>). Este es el <span class="notranslate">sombreador</span> más básico que puede hacer, que toma un sprite,
@@ -207,7 +207,7 @@
     </p>
     <p class="dropspot">Aquí hay un poco más que en los ejemplos anteriores, pero la mayor parte debería ser bastante obvia para ti ahora. En primer lugar, está nuestra función <span class="inline">hsv2rgb</span>, que toma un <span class="inline">vec3</span> con nuestro color HSV
       y devuelve otro <span class="inline">vec3</span> con nuestra conversión RGB. En la función principal, empezamos creando nuestro color HSV, donde el tono es nuestra posición x, y dejaremos la saturación y el brillo como 1.0 por ahora. A continuación, obtenemos
-      el alfa de la textura para que sólo coloree nuestro personaje del sprite y no todo el rectángulo del sprite (como hicimos en el ejemplo de superposición de colores, arriba). Por último, establecemos el color de nuestro fragmento para que sea nuestro color HSV convertido a RGB con el alfa, multiplicado
+      el alfa de la textura para que sólo coloree nuestro personaje del sprite y no todo el rectángulo del sprite (como hicimos en el ejemplo de superposición de color, arriba). Por último, establecemos el color de nuestro fragmento para que sea nuestro color HSV convertido a RGB con el alfa, multiplicado
       por el color del vértice (es una buena práctica hacer esto siempre).</p>
     <p class="dropspot">En cuanto a nuestro código de sorteo, es trivial por el momento:</p>
     <p class="code">// Evento de dibujo<br> <span class="notranslate">shader_set</span>(shdrRainbow);

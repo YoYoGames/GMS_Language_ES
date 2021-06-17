@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_load_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_load_async" />
+  <meta name="rh-index-keywords" content="buffer_load_async" />
+  <meta name="search-keywords" content="buffer_load_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_load_async</h1>
+  <p>Con esta función puedes cargar en un buffer un archivo que hayas creado previamente con la función <a href="buffer_save.htm"><tt>buffer_save()</tt></a> (o cualquiera de las otras funciones para guardar buffers) en un buffer. El &quot;offset&quot; define la posición inicial
+    dentro del buffer para la carga (en bytes), y el &quot;tamaño&quot; es el tamaño del área del buffer que se cargará a partir de ese offset (también en bytes). Puede proporcionar un valor de -1 para el argumento de tamaño y se cargará todo el buffer.
+    Tenga en cuenta que la función cargará desde una carpeta &quot;por defecto&quot;, que no <i>necesita</i> ser incluida como parte de la ruta de archivo que usted proporcione. Esta carpeta se creará si no existe o cuando guarde un archivo usando <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a>.</p>
+  <p>La función devuelve un valor de ID único que puede ser utilizado en el <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">evento asíncrono Save /</a> Load para comprobar el  <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    valor de ID, como se muestra en el ejemplo extendido a continuación. El mapa <tt>async_load</tt> en el evento tendrá los siguientes dos pares clave/valor:</p>
+  <ul class="colour">
+    <li><b>&quot;id&quot;: el ID de </b>la función asíncrona devuelto por la función de guardar.</li>
+    <li><b>&quot;status&quot;: </b>devolverá true si <tt>los</tt> datos se han guardado/cargado correctamente, y false <tt>en caso contrario</tt>.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: En <b>HTML5</b>, este es el método preferido para cargar un archivo si se está cargando desde un servidor y no desde el almacenamiento local, ya que la carga sincrónica ha quedado obsoleta en la mayoría de los navegadores y con el tiempo lo será.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_load_async(buffer, filename, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a cargar.</td>
+      </tr>
+      <tr>
+        <td>nombre de archivo</td>
+        <td>El nombre del archivo a cargar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El desplazamiento dentro del búfer para cargar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño del área del buffer a cargar (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>La función <tt>buffer_load_async(</tt> ) puede ser llamada desde cualquier evento, y como es asíncrona la llamada de retorno puede ser casi instantánea o puede tardar varios segundos. Llamar a la función es sencillo y sería algo así:</p>
+  <p class="code">loadid = buffer_load_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>El código anterior carga el contenido del archivo &quot;<i>Player_Save.sav&quot; en</i> el buffer dado, almacenando el ID de la llamada a la función en la variable &quot;loadid&quot;. Cuando la carga esté completa, el evento asíncrono Save/Load será
+    y puedes analizar el mapa <tt>async_load</tt> para encontrar el ID correcto de la función, así:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == loadid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;¡Carga fallida!&quot;);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará primero el ID del mapa DS que se ha creado, y luego comprobará el estado de la llamada de retorno, publicando un mensaje de depuración si ha habido algún problema.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_load_partial.htm">buffer_load_partial</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_load_async
+-->
+  <!-- TAGS
+buffer_load_async
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_is_ancestor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_is_ancestor" />
+  <meta name="rh-index-keywords" content="object_is_ancestor" />
+  <meta name="search-keywords" content="object_is_ancestor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_is_ancestor</h1>
+  <p>Esta función se puede utilizar para comprobar un objeto y ver si es un ancestro o no de otro objeto. Por lo tanto, ambos argumentos deben ser índices de objetos y <i>no</i> los ids de instancia, y el primero es siempre el objeto que se quiere
+    quiere averiguar si es hijo del segundo argumento, que siempre es el objeto que quiere comprobar como ancestro (padre).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">object_is_ancestor(obj, par);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que se está comprobando como hijo.</td>
+      </tr>
+      <tr>
+        <td>par</td>
+        <td>El objeto que se está comprobando como antecesor (padre).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if object_is_ancestor(object_index, obj_Enemy)<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior comprueba si la instancia que ejecuta el código es hija del objeto &quot;obj_Enemigo&quot;, y si es así se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Siguiente: <a href="object_set_mask.htm">object_set_mask</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_is_ancestor
+-->
+  <!-- TAGS
+object_is_ancestor
+-->
+</body>
+</html>

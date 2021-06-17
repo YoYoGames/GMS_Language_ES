@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_sleeping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_sleeping" />
+  <meta name="rh-index-keywords" content="phy_sleeping" />
+  <meta name="search-keywords" content="phy_sleeping" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_sleeping</h1>
+  <p>Esta variable <b>de sólo</b> lectura devuelve si la instancia está actualmente &quot;dormida&quot; (true) o<tt>no (</tt>false), Una instancia<tt>&quot;</tt>dormida&quot; es aquella que no está activamente involucrada en ninguna simulación física. <span class="notranslate">GameMaker Studio 2</span> pondrá los objetos en reposo para ahorrar ciclos de simulación cuando una instancia esté en reposo y no entre en colisión con otra instancia</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">phy_sleeping;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano (o <tt>indefinido</tt> si la instancia no tiene activada la física)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si phy_sleeping<br> {
+    <br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el objeto está siendo simulado activamente o no y si no lo está se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics_Variables.htm">Variables físicas</a></div>
+        <div style="float:right">Siguiente: <a href="phy_collision_points.htm">phy_collision_points</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_sleeping
+-->
+  <!-- TAGS
+phy_sleeping
+-->
+</body>
+</html>

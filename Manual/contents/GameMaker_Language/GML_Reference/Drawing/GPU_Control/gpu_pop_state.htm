@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_pop_state</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_pop_state" />
+  <meta name="rh-index-keywords" content="gpu_pop_state" />
+  <meta name="search-keywords" content="gpu_pop_state" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_pop_state</h1>
+  <p>Esta función saca el estado anterior de la GPU de la pila y lo aplica. Ver <a href="gpu_push_state.htm"><tt>gpu_push_state()</tt></a> para más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_pop_state();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gpu_push_state();<br> gpu_set_blendmode(bm_add);
+    <br> gpu_set_blendenable(false);
+    <br> gpu_set_cullmode(true);
+    <br> with (obj_Effect_Parent)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_pop_state();
+  </p>
+  <p>El código anterior &quot;guardará&quot; el estado actual de la GPU en la pila, luego cambiará ciertos ajustes de la GPU y dibujará un grupo de instancias antes de restablecer el estado de la GPU a lo que era anteriormente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_get_state.htm">gpu_get_state</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_pop_state
+-->
+  <!-- TAGS
+gpu_pop_state
+-->
+</body>
+</html>

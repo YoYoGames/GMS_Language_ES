@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>La ventana de salida</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Debugging Projects In GMS2" />
+  <meta name="rh-index-keywords" content="Output Window,Search Results,Breakpoints" />
+  <meta name="search-keywords" content="search results,source control,breakpoints,syntax errors,compile errors,output,compiler output" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>La ventana de salida</h1>
+  <p><img alt="The Output Dock" class="center" src="../assets/Images/Introduction/Output_General.png" /></p>
+  <p>Cuando abra un proyecto en <span class="notranslate">GameMaker Studio 2</span> por primera vez, se le presentará la ventana <strong>de salida </strong>anclada en la parte inferior de la pantalla. Esta ventana acoplada contiene varias pestañas que muestran la diferente información de salida para
+    su proyecto, dependiendo de ciertas circunstancias. El dock puede cerrarse haciendo clic en el botón de la parte inferior del <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>, y puede hacer clic en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrar cualquier pestaña de la ventana acoplada a otro dock para cambiar su posición, o puede hacer clic en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en la barra de contenidos del dock y arrastrarla
+    al espacio de trabajo para crear una ventana independiente:</p>
+  <p><img alt="Docking / Undocking The Output Window" class="center" src="../assets/Images/Introduction/Output_Window.gif">También puede hacer clic en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrar
+    una salida acoplada dentro de otra para crear una ventana de salida de vista dividida, como se muestra en el ejemplo siguiente, donde las dos salidas de error se han colocado dentro de la misma pestaña (puede hacer clic lentamente en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en una pestaña para cambiar su nombre también):</p>
+  <p><img alt="Split Output Window" class="center" src="../assets/Images/Introduction/Output_SplitWindow.gif">Puede recuperar el estado predeterminado del IDE en cualquier momento seleccionando <em>Restablecer diseño</em> en la <a href="../IDE_Navigation/Menus/The_Layouts_Menu.htm">ventana de diseños</a> y
+    puede volver a abrir cualquier pestaña cerrada desde el <a href="../IDE_Navigation/Menus/The_Windows_Menu.htm">Menú Ventana</a>. También puede cambiar la forma en que se muestra el contenido de cada una de las ventanas de salida editando las Preferencias de las Ventanas de Salida.</p>
+  <p>A continuación se explican las pestañas ancladas por defecto:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">Salida</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot"><img alt="The Output Window" class="center" src="../assets/Images/Introduction/Output_Output.png">La ventana de <strong>salida </strong>general es donde se muestra toda la salida del compilador, así como cualquier mensaje que pueda haber añadido a su juego usando
+      la función <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message()</span></a> . La mayor parte de la información inicial mostrada es simplemente información de depuración sobre cómo se está construyendo el juego y
+      como tal, generalmente puede ser ignorada. Sin embargo, si usted tiene un problema de construcción de su proyecto para una plataforma de destino puede ser útil en la búsqueda de la causa, así como proporcionar información para el apoyo si se pone en contacto con ellos. Tenga en cuenta que puede cambiar la
+      cantidad de información que se muestra aquí desde la sección de <a href="../Setting_Up_And_Version_Information/IDE_Preferences/General_Preferences.htm">Compilación</a> de las <a href="../Setting_Up_And_Version_Information/IDE_Preferences.htm">Preferencias</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">Resultados de la búsqueda</a></p>
+  <div class="droptext" data-targetname="drop_down1">
+    <p class="dropspot"><img alt="Search Results" class="center" src="../assets/Images/Introduction/Output_Search.png">Puede abrir la <strong>ventana de buscar y reemplazar</strong> utilizando el atajo de teclado <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot; F&quot;,
+      o ir al <a href="../IDE_Navigation/Menus/The_Edit_Menu.htm">menú Edición</a>. Una vez introducidos los términos de búsqueda, los resultados se mostrarán en esta ventana con el formato:</p>
+    <p class="code">[objeto] - [evento] - [número de línea]: [cadena de búsqueda]</p>
+    <p class="dropspot">Si el término de búsqueda se encuentra en una secuencia de comandos, entonces será simplemente:</p>
+    <p class="code">[script] - [Número de línea]: [cadena de búsqueda]</p>
+    <p class="dropspot">A continuación, puede hacer doble clic en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquiera de las entradas devueltas para abrir el activo dado en la posición correcta para su edición.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">Control de la fuente</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot"><img alt="Source Control Output" class="center" src="../assets/Images/Introduction/Output_SourceControl.png">Esta ventana mostrará toda la salida de su plugin <a class="glossterm" data-glossterm="SCM" href="#">SCM</a>. Puede encontrar más información sobre
+      la configuración de Source Control <a href="../IDE_Tools/Source_Control.htm">aquí</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">Puntos de interrupción</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot"><img alt="Breakpoints Output" class="center" src="../assets/Images/Introduction/Output_Breakpoints.png">Los puntos de interrupción son lugares en el código de su juego o <span class="notranslate">DnD™</span>en los que ha indicado a <span class="notranslate">GameMaker Studio 2</span> que detenga la ejecución del proyecto mientras está en
+     <a href="Debugging.htm">modo de depuración</a>. Puedes añadir un punto de interrupción en cualquier lugar del bucle del juego utilizando la tecla &quot; F9&quot;, y cuando lo hagas aparecerá en esta pestaña de salida. Puedes habilitarlos y deshabilitarlos (sin eliminarlos)
+      haciendo clic en la casilla de verificación de la izquierda y si usas el botón derecho del ratón <img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en uno entonces obtienes un pequeño menú que te permite eliminar el punto de ruptura o abrir el código/DnD™
+      donde se encuentra el punto de interrupción.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">Errores de sintaxis</a></p>
+  <div class="droptext" data-targetname="drop_down4">
+    <p class="dropspot"><img alt="Syntax Errors Output" class="center" src="../assets/Images/Introduction/Output_SyntaxErrors.png">Los errores de sintaxis son aquellos errores en su código que el comprobador de <a class="glossterm" data-glossterm="sintaxis" href="#">sintaxis</a> de <span class="notranslate">GameMaker Studio 2</span> 
+      ha detectado. Hay muchas razones por las que puedes obtener un error de sintaxis - como tener un &quot;;&quot; en tu código cuando se espera un &quot;:&quot; - y estos deben ser corregidos antes de intentar probar o compilar tu juego. Cada entrada de error de sintaxis en
+      la ventana de salida se puede hacer doble clic con el botón izquierdo del ratón <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> para abrir una ventana en la posición marcada para que se pueda resolver.</p>
+    <p class="dropspot">Los errores de sintaxis se actualizarán a medida que escriba su código (habrá una breve pausa entre el momento en que escriba algo y los errores que aparezcan en esta ventana para evitar que se informen errores por código inacabado), y seguirán el formato:</p>
+    <p class="code">[objeto] - [evento] - [número de línea] - [posición en la línea]: [cadena de error]</p>
+    <p class="dropspot">O si el error está en un script, lo será:</p>
+    <p class="code">[script] - [Número de línea] - [Posición en la línea]: [cadena de error]</p>
+    <p class="dropspot">Ten en cuenta que los errores de sintaxis normalmente impedirán que el juego se compile, sin embargo hay errores que se marcarán y que no impedirán la compilación, pero que, no obstante, deberían resolverse. Los errores en cuestión son:</p>
+    <ul class="colour">
+      <li class="dropspot">para las variables declaradas que no se utilizan en ninguna parte</li>
+      <li class="dropspot">para las variables utilizadas en algún lugar que aún no han sido declaradas</li>
+    </ul>
+    <p class="dropspot">En general, cualquiera de estos casos sugiere un <a class="glossterm" data-glossterm="error tipográfico" href="#">error de escritura</a> en el nombre de una variable, o algún otro tipo de error fácil de cometer - y por lo tanto se marcan para que usted revise - pero también puede ser intencional, ya que usted
+      puede haber declarado la variable para su uso futuro, pero aún no ha llegado a utilizarla. Por ello, estos errores permitirán que tu juego se compile. Para una lista completa de posibles mensajes de error de sintaxis, por favor, vea <a href="../Additional_Information/Errors/Syntax_Errors.htm">aquí</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down5" href="#">Errores de compilación</a></p>
+  <div class="droptext" data-targetname="drop_down5">
+    <p class="dropspot"><img alt="Compile Error Output" class="center" src="../assets/Images/Introduction/Output_CompileErrors.png">Un error de compilación ocurre cuando su juego encuentra algún tipo de error que el comprobador de sintaxis no ha podido detectar, o cuando un
+      error está relacionado con la configuración de las opciones de compilación. Cuando esto ocurre, tu juego te dará un error de compilación y dejará de ejecutarse. Cualquier error de compilación se mostrará también en la ventana de Salida General, pero también se listarán aquí por separado
+      (ya que pueden &quot;perderse&quot; en el resto de la salida general).</p>
+    <p class="dropspot">Los mensajes de error del compilador seguirán todos el mismo formato:</p>
+    <p class="code">[objeto] - [evento] - [Número de línea]: [cadena de error]</p>
+    <p class="dropspot">Si el error se encuentra en una secuencia de comandos, será simplemente:</p>
+    <p class="code">[script] - [Número de línea]: [cadena de error]</p>
+    <p class="dropspot">A continuación, puede hacer doble clic en <img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquiera de las entradas de error del compilador para abrir el activo en cuestión en la posición marcada como error. Para obtener una lista completa
+      de posibles mensajes de error, consulte <a href="../Additional_Information/Errors/Compiler_Errors.htm">aquí</a>.</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Introduction_To_GameMaker_Studio_2.htm">Introduction To <span class="notranslate">GameMaker Studio 2</span></a></div>
+        <div style="float:right">Siguiente: <a href="The_Marketplace.htm">El <span class="notranslate">mercado</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Compiler Error Output
+Syntax Error Output
+Output <span class="notranslate">Windows</span>
+Search Results Output
+Source Control Output
+Breakpoint Output
+-->
+  <!-- TAGS
+compiler
+output_window
+-->
+
+</body></html>

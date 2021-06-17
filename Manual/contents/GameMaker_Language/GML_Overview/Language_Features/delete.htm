@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>borrar</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the delete function" />
+  <meta name="rh-index-keywords" content="delete" />
+  <meta name="search-keywords" content="delete" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>borrar</h1>
+  <p>El operador <span class="inline">delete</span> se utiliza para <strong>desreferenciar</strong> una <a href="../Structs.htm">estructura</a>, y tiene la siguiente sintaxis:</p>
+  <p class="code">borrar &lt;variable&gt;;</p>
+  <p>Esto significa que se llama al operador delete junto con la variable que contiene una estructura y se eliminará la <em>referencia </em>específica a la estructura almacenada en la variable dada (una referencia es simplemente un valor que apunta al área de memoria
+    que almacena la estructura y su contenido). Si esta referencia fue la última referencia a la estructura en tu juego, entonces el <a class="glossterm" data-glossterm="recolector de basura" href="#">recolector de basura</a> eliminará la estructura de la memoria en
+    una siguiente <a class="glossterm" data-glossterm="iteración" href="#">iteración</a>, normalmente al comienzo del siguiente paso.</p>
+  <p class="note"><strong>NOTA</strong>: <tt>la supresión</tt> sólo puede utilizarse junto con variables, y <i>no</i> con expresiones</p>
+  <p>Por defecto, los structs que no tengan más referencias en el código serán recolectados automáticamente en los pasos siguientes a su uso, pero es una buena práctica utilizar este operador para marcarlos explícitamente para que el recolector de basura los elimine de la memoria al
+    al inicio del siguiente paso, liberando la memoria de forma más rápida y eficiente.</p>
+  <p>El siguiente ejemplo muestra la creación de una estructura, por ejemplo en el evento de creación de una instancia:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 0,<br> b : 100,<br> c : &quot;Hello World&quot;<br> }
+  </p>
+  <p>Esta estructura se utilizará entonces en los eventos de instancia como de costumbre, antes de ser finalmente marcada para la recolección de basura en el evento de <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm">limpieza</a>, así:</p>
+  <p class="code">borrar mystruct;</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="If_Else_and_Conditional_Operators.htm">if / else y operadores condicionales</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+delete
+-->
+  <!-- TAGS
+delete
+-->
+
+</body></html>

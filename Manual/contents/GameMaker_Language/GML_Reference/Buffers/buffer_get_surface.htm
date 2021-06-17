@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_get_surface</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_surface" />
+  <meta name="rh-index-keywords" content="buffer_get_surface,buffer_surface_copy (Deprecated)" />
+  <meta name="search-keywords" content="buffer_get_surface,buffer_surface_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_surface</h1>
+  <p>Con esta función puedes escribir la información de una superficie en un buffer determinado. El búfer debe haber sido creado previamente y debe ser un búfer de <i>crecimiento</i> alineado a 1byte de un tamaño aproximado (en bytes) de la superficie que vas a escribir.
+    La información de la superficie siempre se escribirá al principio del buffer (independientemente de la posición de búsqueda), pero puede elegir un valor de desplazamiento (en bytes) para mover la posición de escritura a cualquier lugar que necesite desde el inicio del buffer.
+    Tenga en cuenta que la función escribe cada píxel de la superficie en el búfer utilizando un formato <b>BGRA</b> en el objetivo de <span class="notranslate">Windows</span>, pero en otros objetivos puede ser diferente dependiendo del sistema operativo o incluso del dispositivo.</p>
+  <p class="note"><strong>NOTA</strong>: Esta función ha cambiado a partir de la actualización 2.3.1 de <span class="notranslate">GameMaker Studio</span>. Las versiones anteriores utilizaban la constante <span class="inline">buffer_surface_copy</span>, que ahora
+    ahora está obsoleta.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_get_surface(buffer, surface, offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+      <tr>
+        <td>superficie</td>
+        <td>El índice de la superficie a utilizar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El valor del desplazamiento de los datos (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_get_surface(buff, application_surface, 0);</p>
+  <p>El código anterior copiará los datos almacenados en la superficie de la aplicación al buffer indexado en la variable &quot;buff&quot; sin desplazamiento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_set_surface.htm">buffer_set_surface</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_surface
+buffer_surface_copy
+-->
+  <!-- TAGS
+buffer_get_surface
+-->
+</body>
+</html>

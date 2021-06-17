@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_listener_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_listener_info" />
+  <meta name="rh-index-keywords" content="audio_get_listener_info" />
+  <meta name="search-keywords" content="audio_get_listener_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_listener_info</h1>
+  <p>Esta función creará un <a href="../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> y lo rellenará con información para el oyente dado.</p>
+  <p class="note"><b>NOTA: </b>Usted es responsable de la destrucción del <tt>Mapa DS</tt> devuelto utilizando la función apropiada.</p>
+  <p>El mapa DS contendrá las siguientes claves:</p>
+  <ul class="colour">
+    <li>&quot; nombre&quot;<strong>-</strong> El nombre de la escucha, como una cadena, siendo &quot;default&quot; el nombre estándar de la escucha en la mayoría de las plataformas de destino</li>
+    <li>&quot;máscara&quot;<strong>-</strong> La máscara de bits para el oyente</li>
+    <li>&quot; índice<strong>&quot; -</strong> El valor del índice único del oyente</li>
+  </ul>
+  <p>El valor de la máscara se puede utilizar para configurar un sonido o emisor para que se reproduzca desde varios oyentes a la vez, simplemente utilizando el bitwise <tt>o</tt> &quot;|&quot; para generar una máscara para el sonido (ver el código de ejemplo más abajo), mientras que el índice se utiliza para establecer las propiedades
+    como la posición o la velocidad para un determinado oyente utilizando funciones como <a href="audio_listener_set_position.htm"><tt>audio_listener_set_position()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_get_listener_info(num);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>num</td>
+        <td>El número de oyente para el que hay que obtener los datos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ds_map</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var num = audio_get_listener_count();<br> var mask = 0; for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var m = audio_listener_get_data(info[? &quot;mask&quot;]);<br> mask = mask | m;<br> ds_map_destroy(info);
+    <br> }
+    <br> audio_set_listener_mask(mask);
+  </p>
+  <p>El código anterior comprueba el número de oyentes disponibles y luego hace un bucle a través de ellos para obtener sus bits de máscara, que luego se combinan para crear una única máscara de bits que se aplica al oyente global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_get_listener_mask.htm">audio_get_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_listener_info
+-->
+  <!-- TAGS
+audio_get_listener_info
+-->
+</body>
+</html>

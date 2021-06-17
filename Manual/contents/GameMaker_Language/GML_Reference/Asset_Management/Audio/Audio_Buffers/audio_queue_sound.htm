@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_queue_sound</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_queue_sound" />
+  <meta name="rh-index-keywords" content="audio_queue_sound" />
+  <meta name="search-keywords" content="audio_queue_sound" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_queue_sound</h1>
+  <p>Esta función añadirá los datos de un búfer a la cola de audio que se creó previamente con la función <a href="audio_create_play_queue.htm"><tt>audio_create_play_queue()</tt></a>. Se especifica el índice de la cola a la que se va a añadir, y el
+    ID del búfer del que se van a obtener los datos, así como la posición (offset) dentro del búfer y el número de bytes que se van a añadir. Una vez que haya añadido audio de un búfer a una cola, el búfer no podrá ser eliminado hasta que haya liberado primero la cola utilizando la función 
+    <a href="audio_free_play_queue.htm"><tt>audio_free_play_queue()</tt></a>y las propiedades del búfer deben coincidir con las de la cola a la que estás añadiendo el sonido.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>queueIndex</td>
+        <td>El índice de la cola a la que hay que añadir.</td>
+      </tr>
+      <tr>
+        <td>bufferId</td>
+        <td>El búfer a añadir a la cola.</td>
+      </tr>
+      <tr>
+        <td>bufferOffset</td>
+        <td>El desplazamiento dentro del búfer de origen desde el que se debe comenzar.</td>
+      </tr>
+      <tr>
+        <td>bufferLength</td>
+        <td>La longitud del búfer (el número de bytes del búfer).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">len = async_load[? &quot;data_len&quot;];<br> audio_buff = buffer_create(len, buffer_fast, 1);<br> buffer_copy(async_load[? &quot;buffer_id&quot;], 0, len, buff, 0);<br> audio_queue_sound(audio_queue, audio_buff, 0, len);<br> audio_play_sound(audio_queue,
+    10, 0);</p>
+  <p>El código anterior sería llamado en el evento asíncrono de <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">grabación de audio</a> y asigna algunos datos grabados a un buffer, que es
+    que se añade a una cola de audio. A continuación, se reproduce.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Audio.htm">Buffer de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_start_recording.htm">audio_start_recording</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_queue_sound
+-->
+  <!-- TAGS
+audio_queue_sound
+-->
+</body>
+</html>

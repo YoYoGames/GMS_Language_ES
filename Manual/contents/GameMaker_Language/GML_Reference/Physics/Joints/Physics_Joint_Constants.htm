@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Constantes de unión física</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Joint Constants" />
+  <meta name="rh-index-keywords" content="phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length" />
+  <meta name="search-keywords" content="Joint Constants,phy_joint_anchor_1_x,phy_joint_anchor_1_y,phy_joint_anchor_2_x,phy_joint_anchor_2_y,phy_joint_reaction_force_x,phy_joint_reaction_force_y,phy_joint_reaction_torque,phy_joint_max_motor_force,phy_joint_max_motor_torque,phy_joint_motor_force,phy_joint_motor_speed,phy_joint_motor_torque,phy_joint_angle,phy_joint_angle_limits,phy_joint_upper_angle_limit,phy_joint_lower_angle_limit,phy_joint_translation,phy_joint_speed,phy_joint_damping_ratio,phy_joint_frequency,phy_joint_length_1,phy_joint_length_2,phy_joint_max_torque,phy_joint_max_force,phy_joint_max_length" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Constantes de unión física</h1>
+  <p>Hay un gran número de constantes incluidas en el <span class="notranslate">GML</span> de <span class="notranslate">GameMaker Studio 2</span> que son específicas para las <i>uniones</i> entre accesorios en el mundo de la física. Estos pueden ser utilizados en conjunción con
+    muchas de las diferentes funciones de articulación para establecer u obtener información de ellas en tiempo real mientras se ejecuta la simulación de física. Sin embargo, debes tener en cuenta que se realizan cálculos complejos cuando las llamas, por lo que deben utilizarse con cuidado
+    y sólo cuando sea necesario y tenga en cuenta que <i>muchos son únicos para un tipo específico de articulación</i>. Ten en cuenta también que, aunque puedes obtener todos estos valores con la función apropiada, sólo puedes establecer aquellos que están marcados como de no lectura.</p>
+  <p>En general, estas constantes se utilizarían junto con las siguientes funciones:</p>
+  <ul class="colour">
+    <li><a href="physics_joint_get_value.htm">physics_joint_get_value</a></li>
+    <li><a href="physics_joint_set_value.htm">physics_joint_set_value</a></li>
+  </ul>
+  <p> </p>
+  <h2><label for="one">General</label></h2>
+  
+    <p>Las siguientes constantes pueden aplicarse a cualquiera de los tipos de juntas disponibles:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_1_x</td>
+          <td>La coordenada x del primer punto de anclaje de la junta <i>en la sala</i></td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_1_y</td>
+          <td>La coordenada y del primer punto de anclaje de la junta <i>en la sala</i></td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_2_x</td>
+          <td>La coordenada x del segundo punto de anclaje de la junta <i>en la sala</i></td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_anchor_2_y</td>
+          <td>La coordenada y del segundo punto de anclaje de la junta <i>en la sala</i></td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_force_x</td>
+          <td>Es la fuerza de reacción que se aplica a la segunda instancia en una articulación en la posición de anclaje x</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_force_y</td>
+          <td>Es la fuerza de reacción que se aplica a la segunda instancia en una articulación en la posición de anclaje y</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_reaction_torque</td>
+          <td>Es el par que se aplica a la segunda instancia en una articulación en la posición de anclaje</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="two">Motores</label></h2>
+  
+    <p>Estas constantes son para aquellas articulaciones que tienen un <i>motor</i> acoplado (revoluta, prismática, rueda):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_motor_force</td>
+          <td>El valor especificado al crear la junta para la fuerza máxima del motor</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_max_motor_torque</td>
+          <td>El valor especificado al crear la junta para el par máximo del motor</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_force</td>
+          <td>La fuerza actual del motor</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_speed</td>
+          <td>La velocidad actual del motor</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_motor_torque</td>
+          <td>El par motor actual</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="three">Juntas Revolutas</label></h2>
+  
+    <p>Para una junta revolutiva se puede utilizar la siguiente constante (así como las constantes <i>del motor</i> si se ha añadido una):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_angle</td>
+          <td>El ángulo que forma una línea entre los dos puntos de anclaje de la articulación. Esto se calcula utilizando las coordenadas <i>del mundo de la física</i><br> ( <b>no</b> las coordenadas de la sala de <span class="notranslate">GameMaker Studio 2</span> 
+            ) en radianes.</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_angle_limits</td>
+          <td>Activa o desactiva la limitación de ángulos para la articulación. Establezca el valor en <tt>true</tt> para activar o <tt>false</tt> para desactivar.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_upper_angle_limit</td>
+          <td>El límite superior del ángulo para la articulación en grados.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_lower_angle_limit</td>
+          <td>El límite inferior del ángulo para la articulación en grados.</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="four">Juntas prismáticas</label></h2>
+  
+    <p>Para una junta prismática se puede utilizar la siguiente constante:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_translation</td>
+          <td>Obtiene la distancia entre las coordenadas x/y del ancla y las coordenadas x/y locales.</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_speed</td>
+          <td>La velocidad actual del movimiento de la articulación.</td>
+          <td>Sí</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="six">Juntas de distancia, juntas de soldadura y juntas de rueda</label></h2>
+  
+    <p>Para las uniones de distancia, soldadura y rueda se pueden utilizar las siguientes constantes (al igual que las de las uniones de poleas):</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_damping_ratio</td>
+          <td>La relación de amortiguación es adimensional y define la &quot;elasticidad&quot; de la junta. El valor de esta constante suele estar entre 0 y 1, pero puede ser mayor, y a 1, la amortiguación es crítica, lo que significa que todas las oscilaciones deberían desaparecer.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_frequency</td>
+          <td>Esto devolverá (o establecerá) la frecuencia de oscilación de la articulación, en hertzios, y normalmente la frecuencia debe ser inferior a la mitad de la frecuencia del paso de tiempo, tal y como se establece en la función <a href="../The_Physics_World/physics_world_update_speed.htm"><tt>physics_world_update_speed()</tt></a>.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_length_1</td>
+          <td>Esto devolverá la longitud de la junta desde las primeras coordenadas locales x/y hasta las primeras coordenadas de anclaje x/y (sólo juntas de distancia, sólo se puede leer desde)</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>phy_joint_length_2</td>
+          <td>Esto devolverá la longitud de la articulación desde las segundas coordenadas locales x/y hasta las segundas coordenadas de anclaje x/y (sólo articulaciones de distancia, sólo se puede escribir en ellas)</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="seven">Juntas de fricción</label></h2>
+  
+    <p>Para una junta de fricción se pueden utilizar las siguientes constantes:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_torque</td>
+          <td>El valor del par máximo de la articulación.</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>phy_joint_max_force</td>
+          <td>El valor de la fuerza máxima de la articulación.</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <h2><br>
+    <label for="eight">Juntas de cuerda</label></h2>
+  
+    <p>Para una unión de cuerda se puede utilizar la siguiente constante:</p>
+    <table>
+      <tbody>
+        <tr>
+          <th>Constante</th>
+          <th>Descripción</th>
+          <th>Sólo lectura</th>
+        </tr>
+        <tr>
+          <td>phy_joint_max_length</td>
+          <td>La extensión máxima de la conexión entre los dos puntos de anclaje.</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Joints
+phy_joint_anchor_1_x
+phy_joint_anchor_1_y
+phy_joint_anchor_2_x
+phy_joint_anchor_2_y
+phy_joint_reaction_force_x
+phy_joint_reaction_force_y
+phy_joint_reaction_torque
+phy_joint_max_motor_force
+phy_joint_max_motor_torque
+phy_joint_motor_force
+phy_joint_motor_speed
+phy_joint_motor_torque
+phy_joint_angle
+phy_joint_angle_limits
+phy_joint_upper_angle_limit
+phy_joint_lower_angle_limit
+phy_joint_translation
+phy_joint_speed
+phy_joint_damping_ratio
+phy_joint_frequency
+phy_joint_length_1
+phy_joint_length_2
+phy_joint_max_torque
+phy_joint_max_force
+phy_joint_max_length
+-->
+  <!-- TAGS
+physics_joint_functions
+-->
+</body>
+</html>

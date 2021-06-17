@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>script_execute</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function script_execute" />
+  <meta name="rh-index-keywords" content="script_execute" />
+  <meta name="search-keywords" content="script_execute" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>script_execute</h1>
+  <p>Esta función se diseñó originalmente para llamar a <i>los activos de</i> los scripts de forma dinámica, pero con la introducción de las funciones definidas por el usuario ahora puede utilizarse de dos maneras:</p>
+  <ul class="colour">
+    <li>La primera forma es apoyar los scripts <b>heredados</b>, donde cada script era una sola función y el título del script era también el nombre de la función. Usado de esta manera, funcionará como antes y ejecutará un activo de script creado por el usuario y pasará
+      los argumentos dados en él. Tenga en cuenta que <i>en</i> realidad no está llamando al <i>script en</i> este caso sino, a la función <i>del script</i> del mismo nombre dentro del script. <span style="text-align: justify;"></span></li>
+    <li><span style="text-align: justify;">La segunda forma es llamar a una función desde un activo de script que contiene múltiples funciones o definiciones de variables. En este caso, deberá proporcionar el nombre de la función y los argumentos que requiere en lugar del nombre del activo de script. Tenga en cuenta que esto sólo funcionará para las funciones de <a href="../../../GML_Overview/Script_Functions.htm">script</a> y no para <a href="../../../GML_Overview/Method_Variables.htm">los métodos</a>, ya que sólo las funciones de script tienen un ID de script asignado.</span></li>
+  </ul>
+  <p><span style="text-align: justify;"></span>Aunque esta función está diseñada principalmente para el soporte de legado, no está obsoleta, ya que todavía tiene su lugar en situaciones de red y de llamadas a procedimientos remotos. También hay que tener en cuenta que esta función
+    es lenta, y usarla mucho puede afectar negativamente al rendimiento.</p>
+  <p class="note"><b>NOTA</b>: Esta función no se puede utilizar con las funciones incorporadas.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">script_execute(scr, arg0, arg1, arg2..., etc...);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>scr</td>
+        <td>El nombre de la función/script que quiere llamar</td>
+      </tr>
+      <tr>
+        <td>arg0, arg1, arg2..., etc...</td>
+        <td>Los diferentes argumentos que quieres pasar a la función/script</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Dependerá del valor de retorno del script/función que se llame</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">script_execute(choose(move_up, move_down, move_left, move_right), irandom(5));</p>
+  <p>El código de ejemplo anterior utilizará <tt>script_execute</tt> para elegir una de las cuatro funciones definidas por el usuario (en este caso relacionadas con el movimiento) y le pasará un número entero aleatorio como primer argumento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Scripts.htm">Guiones</a></div>
+        <div style="float:right">Siguiente: <a href="script_execute_ext.htm">script_execute_ext</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+script_execute
+-->
+  <!-- TAGS
+script_execute
+-->
+</body>
+</html>

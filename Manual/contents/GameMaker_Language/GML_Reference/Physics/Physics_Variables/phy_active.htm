@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_active</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_active" />
+  <meta name="rh-index-keywords" content="phy_active" />
+  <meta name="search-keywords" content="phy_active" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_active</h1>
+  <p>Esta variable controla si la instancia está actualmente &quot;activa&quot; o no. Si se establece en <tt>false</tt>, la instancia no participará en el mundo de la física, y si se establece en <tt>true</tt>, volverá a participar. Por favor,
+    Tenga en cuenta que esto no es lo mismo que <a href="../../Asset_Management/Instances/Deactivating_Instances/Deactivating_Instances.htm">desactivar la</a> instancia, ya que la instancia sigue siendo visible en la pantalla y todavía se puede cambiar a través de código, más bien
+    esta función sólo impide que participe en la simulación física</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">phy_active;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano (o <tt>indefinido</tt> si la instancia no tiene activada la física)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check_pressed(ord &quot;P&quot;)<br> {
+    <br> global.Pause = !global.Pause<br> with (obj_Parent)<br> {
+    <br> phy_active = !global.Pause;<br> }
+    <br> }
+  </p>
+  <p>El código anterior detectará una pulsación de la letra &quot;P&quot; y entonces cambiará la variable global &quot;Pausa&quot; de verdadero a falso y <tt>viceversa</tt> <tt>.</tt> Esta variable se utiliza entonces para establecer si la física está activa o no en los hijos
+    del objeto indexado en la variable &quot;obj_Parent&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics_Variables.htm">Variables físicas</a></div>
+        <div style="float:right">Siguiente: <a href="phy_angular_velocity.htm">phy_angular_velocidad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_active
+-->
+  <!-- TAGS
+phy_active
+-->
+</body>
+</html>

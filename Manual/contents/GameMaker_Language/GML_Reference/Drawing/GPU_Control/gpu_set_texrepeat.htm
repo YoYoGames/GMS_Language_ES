@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_texrepeat</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_texrepeat" />
+  <meta name="rh-index-keywords" content="gpu_set_texrepeat" />
+  <meta name="search-keywords" content="gpu_set_texrepeat" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_texrepeat</h1>
+  <p>Esta función se puede utilizar para indicar a <span class="notranslate">GameMaker Studio 2</span> si las texturas deben repetirse<tt>(true</tt>) o no<tt>(false</tt>) cuando se utilizan para modelos y primitivas. Normalmente las anchuras y alturas de las texturas se encuentran en el rango 0 - 1, pero si se especifica
+    un valor mayor que 1 por defecto el resto no se dibuja (toda la textura se dibujará con una sección &quot;vacía&quot; correspondiente al porcentaje sobre 1 que se utiliza. Así que un valor de 2 para el ancho o alto de una textura dibujaría la textura en
+    la mitad del espacio y dejaría la otra mitad vacía). Sin embargo, al utilizar esta función para establecer la repetición a true, la textura se repite automáticamente en todos los modelos y primitivas. El caso de uso probable para estas funciones es para repetir una textura en 3D pero
+    para que funcione y no saque imágenes del resto de la página de texturas, el sprite utilizado tendrá que ser marcado como en una &quot;Página de Textura Separada&quot; en el Editor de Sprite.</p>
+  <p class="note"><b>NOTA</b>: Los sprites y los fondos se dibujan siempre sin repetirse, por lo que una vez que se dibuja un sprite o un fondo este valor se restablece a <tt>false</tt>. Este comportamiento por defecto no afectará a la configuración del escenario de la textura (es decir, llamar a la función lo hará, pero
+    el ajuste interno a false no lo hará).</p>
+  <p class="note"><b>NOTA</b>: Este ajuste anulará cualquier repetición de etapa de textura establecida para <span class="notranslate">los sombreadores</span> cuando se utilice la función <a href="gpu_set_texrepeat_ext.htm"><tt>gpu_set_texrepeat_ext()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_texrepeat(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Activar o desactivar el filtrado de texturas<tt>(verdadero</tt> / <tt>falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gpu_get_texrepeat()<br> {
+    <br> gpu_set_texrepeat(false);
+    <br> }
+    <br> si no
+    <br> {
+    <br> gpu_set_texrepeat(true);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si la repetición de la textura está activada o desactivada y la cambia en consecuencia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_texrepeat_ext.htm">gpu_set_texrepeat_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_texrepeat
+-->
+  <!-- TAGS
+gpu_set_texrepeat
+-->
+</body>
+</html>

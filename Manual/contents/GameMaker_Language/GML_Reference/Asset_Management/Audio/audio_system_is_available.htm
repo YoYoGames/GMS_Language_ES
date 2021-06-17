@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sistema_de_audio_está_disponible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_system_is_available" />
+  <meta name="rh-index-keywords" content="audio_system_is_available" />
+  <meta name="search-keywords" content="audio_system_is_available" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sistema_de_audio_está_disponible</h1>
+  <p>Esta función se puede utilizar para comprobar y ver si el sistema de audio se ha inicializado, o si el contexto de audio se está ejecutando. En todas las plataformas, esta función devolverá true inmediatamente después de Game Start cuando el motor de audio se inicialice, <i>excepto en el objetivo <b>HTML5</b></i>.
+    En HTML5, el estado del contexto de audio puede cambiar en cualquier momento dependiendo de la entrada del usuario, del navegador que se esté utilizando y de su versión, por lo que esta función se puede utilizar para comprobar si el audio se puede reproducir o no. Si la función devuelve <tt>false</tt> (es decir
+    el estado del contexto de audio no se está ejecutando), entonces sólo se <i>podrán</i> reproducir los sonidos no transmitidos (pero no está garantizado, y debes asumir que no se puede reproducir ningún audio), mientras que si devuelve true entonces
+    todo el audio se reproducirá.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_system_is_available();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if audio_system_is_available()<br> {
+    <br> if audio_is_paused(global.Music)<br> {
+    <br> audio_resume_sound(global.Music)
+    <br> }
+    <br> else
+    <br> {
+    <br> if !audio_is_playing(global.Music)<br> {
+    <br> global.Music = audio_play_sound(snd_Music, 0, true);<br> }
+    <br> }
+    <br> }
+    <br> else
+    <br> {
+    <br> if audio_is_playing(global.Music)<br> {
+    <br> audio_pause_sound(global.Music);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior pondrá en pausa/despacio una pista de audio dependiendo de si el sistema de audio está inicializado y disponible o no.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_exists.htm">audio_exists</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_system_is_available
+-->
+  <!-- TAGS
+audio_system_is_available
+-->
+</body>
+</html>

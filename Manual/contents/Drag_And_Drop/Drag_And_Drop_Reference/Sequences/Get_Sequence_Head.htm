@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Obtener la cabeza de la secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet Matharoo" />
+  <meta name="topic-comment" content="Page that explains the Get Sequence Head action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Sequence Head" />
+  <meta name="search-keywords" content="Get Sequence Head" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/i_sequence_get_head.png"> Obtener la cabeza de la secuencia</h1>
+  <p>Con esta acción puede recuperar la posición actual <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">del cabezal de reproducción</a> del elemento de secuencia dado en la sala. Se suministra el ID del elemento de la secuencia (tal y como lo devuelve la acción <a href="Create_Sequence_Element.htm">Crear Secuencia</a>),
+    y esta acción devolverá el fotograma actual en el que se encuentra el cabezal de reproducción de la secuencia, en la variable de destino. Para obtener información sobre el cabezal de reproducción, consulte <a href="../../../The_Asset_Editors/Sequence_Properties/Using_The_Dope_Sheet.htm">Uso de la <span class="notranslate">hoja de cálculo</span></a>.</p>
+  <p>Tenga en cuenta que la variable de destino se puede marcar como temporal (local), que se creará para la acción y se puede utilizar en todas las acciones posteriores para el evento en el que se encuentra la acción.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/a_sequence_get_head.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Variable</td>
+        <td>El ID del elemento de la secuencia para obtener la posición de la cabeza.</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable objetivo para mantener la posición de la cabeza.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Sequences/e_sequence_head.png" style="cursor: nwse-resize;">El bloque de acción anterior recupera la posición actual de la cabeza del elemento de secuencia ID almacenado en
+    la variable &quot;<span class="inline">seq_id</span>&quot;. Ese valor se utiliza entonces para fijar la posición de la cabeza del mismo elemento de la secuencia, adelantándolo 4 fotogramas.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Actions_Library.htm">Secuencia de acciones</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Sequence_Head.htm">Fijar la cabeza de la secuencia</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Sequence Head
+-->
+  <!-- TAGS
+action_get_sequence_head
+-->
+
+</body></html>

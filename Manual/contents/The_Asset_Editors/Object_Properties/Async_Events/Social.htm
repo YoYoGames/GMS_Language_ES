@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Social</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Social async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Social Event" />
+  <meta name="search-keywords" content="Social,ev_social" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Social</h1>
+  <p><img alt="Social Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Social.png">Este evento sólo puede ser activado por las <a class="glossterm" data-glossterm="llamada de retorno" href="#">devoluciones de llamada</a>de varias
+    funciones <strong>sociales</strong> específicas y <strong>funciones UWP Xbox Live</strong> y devolverá un <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">mapa DS</a> almacenado en la variable <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>,
+    que contiene diferentes pares clave/valor dependiendo de la llamada de retorno de la función que ha activado el evento.</p>
+  <p>El mapa DS contendrá una serie de claves, la más importante de las cuales es la clave &quot;<span class="inline">id</span>&quot;. Ésta devolverá una constante que puede ser comprobada en el código para determinar cuál de las muchas devoluciones de llamada ha recibido el evento.
+    Una vez que hayas analizado esta clave y comparado el valor devuelto con las constantes disponibles, puedes continuar extrayendo el resto de la información del mapa.</p>
+  <p>Las páginas de funciones sobre <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Achievements_And_Leaderboards/Achievements_And_Leaderboards.htm">Logros y Tablas de Clasificación</a> en la sección de Referencia detallan las funciones y devoluciones de llamada
+    así como las constantes utilizadas para activar este evento, pero también hay ciertas circunstancias en las que se activará sin una llamada a la función desde el juego que se está ejecutando:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">cuando el juego se lanza desde el tablero del sistema operativo</li>
+    <li class="dropspot">al completar un reto</li>
+    <li class="dropspot">cuando otro jugador completa un reto</li>
+    <li class="dropspot">cuando se inicia el juego desde el tablero del sistema operativo seleccionando un reto</li>
+  </ul>
+  <p>Cualquiera de los callbacks anteriores activará el Evento Social y se generará un mapa <span class="inline">async_load</span> con los siguientes detalles (nótese que hay un valor clave diferente &quot;<span class="inline">id</span>&quot; para definir cada
+    de las diferentes razones por las que se llamó al evento, pero todos los demás contenidos del mapa son los mismos):</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">id</span>&quot; - El valor de esta clave dependerá del tipo de callback que desencadene el evento. puede ser una de estas constantes:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_received</span></td>
+        <td>Se ha recibido una impugnación</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed</span></td>
+        <td>Se ha completado un reto.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_completed_by_remote</span></td>
+        <td>El otro jugador ha completado un desafío.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_challenge_launched</span></td>
+        <td>El juego se lanzó desde el tablero del sistema operativo con el desafío dado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">playerid</span>&quot; - La identificación del jugador para el desafío.</li>
+    <li class="dropspot">&quot;<span class="inline">issuerid</span>&quot; - La identificación de la persona que emitió el desafío.</li>
+    <li class="dropspot">&quot;<span class="inline">state</span>&quot; - El estado del desafío, que tendrá un valor de 0 a 3 (como una cadena) para inválido, pendiente, completado o rechazado.</li>
+    <li class="dropspot">&quot;<span class="inline">message</span>&quot; - El mensaje de texto para el desafío.</li>
+    <li class="dropspot">&quot;<span class="inline">issueddate</span>&quot; - La fecha de emisión de la impugnación</li>
+    <li class="dropspot">&quot;<span class="inline">completeddate</span>&quot; - La fecha de finalización del desafío.</li>
+    <li class="dropspot">&quot;<span class="inline">type</span>&quot; - El tipo de desafío dado. Puede ser una de las dos constantes:</li>
+  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_score_challenge</span></td>
+        <td>Un desafío basado en el valor de la puntuación.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">achievement_type_achievement_challenge</span></td>
+        <td>Un reto basado en un logro.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dropspot"> </p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">identifier</span>&quot; - La cadena de identificación del desafío.</li>
+    <li class="dropspot">&quot;<span class="inline">score</span>&quot; - El marcador empatado con el desafío.</li>
+  </ul>
+  <p>A continuación puede encontrar un pequeño fragmento de código como ejemplo de uso:</p>
+  <p class="code">var ident = ds_map_find_value(async_load, &quot;id&quot; );<br> if ident == achievement_challenge_completed;<br> {<br> player_id = ds_map_find_value(async_load, &quot;playerid&quot;);<br> issuer_id = ds_map_find_value(async_load, &quot;issuerid&quot;); <br> state = ds_map_find_value(async_load, &quot;state&quot;);<br> date_completed = ds_map_find_value(async_load, &quot;completeddate&quot;);<br> date_issued = ds_map_find_value(async_load, &quot;issueddate&quot;);<br> ach_type = ds_map_find_value(async_load,
+    &quot;type&quot;);<br> ach_ident = ds_map_find_value(async_load, &quot;identifier&quot;);<br> ach_score = ds_map_find_value(async_load, &quot;score&quot;);<br> }</p>
+  <p>Para obtener información sobre este evento junto con el objetivo UWP y las funciones de XBox Live, consulte la siguiente página:</p>
+  <ul class="colour">
+    <li><a href="../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Match_Making/Match_Making.htm">UWP y XBox Live - Creación de partidos</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Async_Events.htm">Eventos asíncronos</a></div>
+        <div style="float:right">Siguiente: <a href="Steam.htm"><span class="notranslate">Vapor</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Social Event
+achievement_challenge_received
+achievement_challenge_completed_by_remote
+achievement_challenge_completed
+achievement_challenge_launched
+achievement_type_score_challenge
+achievement_type_achievement_challenge
+ev_social
+-->
+  <!-- TAGS
+ev_social
+-->
+
+</body></html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_texto_transformado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_transformed" />
+  <meta name="rh-index-keywords" content="draw_text_transformed" />
+  <meta name="search-keywords" content="draw_text_transformed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_texto_transformado</h1>
+  <p>Esta función dibujará el texto de forma similar a <a href="draw_text.htm"><tt>dibujar_texto</tt><tt>()</tt><tt></tt></a> sólo que ahora puede elegir escalar el texto a lo largo del eje horizontal o vertical (efectivamente estirándolo o encogiéndolo) y también hacer que
+   <span class="notranslate">GameMaker Studio 2</span> lo dibuje en un ángulo (donde 0 es normal y cada grado por encima de 0 gira el texto en sentido contrario a las agujas del reloj).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_text_transformed(x, y, string, xscale, yscale, angle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>El cordón a dibujar.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal (por defecto 1).</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical (por defecto 1).</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El ángulo del texto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_halign(fa_center);<br> draw_set_valign(fa_middle);
+    <br> image_angle += 1;<br> draw_text_transformed(room_width / 2, room_height / 2, &quot;GAME OVER!&quot;, 2, 2, image_angle);</p>
+  <p>El código anterior dibujará el texto dado en el centro de la habitación, dando vueltas y escalado al doble de su tamaño original.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Siguiente: <a href="draw_text_ext_colour.htm">dibujar_texto_ext_color</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_transformed
+-->
+  <!-- TAGS
+draw_text_transformed
+-->
+</body>
+</html>

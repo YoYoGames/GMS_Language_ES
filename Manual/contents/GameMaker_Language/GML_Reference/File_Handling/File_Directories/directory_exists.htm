@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>directorio_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for directory_exists" />
+  <meta name="rh-index-keywords" content="directory_exists" />
+  <meta name="search-keywords" content="directory_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>directorio_existe</h1>
+  <p>Esta función devolverá <tt>true</tt> si el directorio indicado existe o <tt>false</tt> si no existe. El nombre especificado debe incluir la ruta completa, no una ruta relativa y por defecto no se puede acceder a ningún directorio desde fuera del paquete de juegos
+    ya que todos los juegos están protegidos por una caja de arena (véase la sección sobre el <a href="../../../../Additional_Information/The_File_System.htm">sistema de</a> archivos para más información).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">directorio_existe(nombre_d)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dname</td>
+        <td>El nombre del directorio a buscar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if directory_exists(directorio_de_trabajo + &quot;Saves/&quot;)<br> {
+    <br> file = file_find_first(working_directory + &quot;Saves/*.doc&quot;, fa_readonly);<br> }
+  </p>
+  <p>Esto comprobará si el directorio especificado existe y, si lo hace, irá allí y devolverá el primer archivo doc de &quot;sólo lectura&quot; encontrado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_Directories.htm">Directorios de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="directory_create.htm">directory_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+directory_exists
+-->
+  <!-- TAGS
+directory_exists
+-->
+</body>
+</html>

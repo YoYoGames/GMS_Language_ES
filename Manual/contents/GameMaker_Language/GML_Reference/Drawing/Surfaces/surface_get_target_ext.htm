@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_obtener_objetivo_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target_ext" />
+  <meta name="rh-index-keywords" content="surface_get_target_ext" />
+  <meta name="search-keywords" content="surface_get_target_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_obtener_objetivo_ext</h1>
+  <p>Esta función recuperará el ID de la superficie asignada a uno de los 4 objetivos de renderización disponibles para las superficies. Se suministra el índice del objetivo de renderizado a comprobar, y la función devolverá -1 si no hay ninguna superficie asignada, o un valor entero &gt;= 0, que representa
+    el ID de la superficie asignada (devuelto por la función <a href="surface_create.htm"><tt>surface_create()</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_get_target_ext(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del objetivo de renderizado a comprobar (de 0 a 3).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (-1 para ningún objetivo de superficie, o un valor de ID de superficie)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if surface_get_target_ext(0) == -1<br> {
+    <br> surface_set_target_ext(0, global.Surf);<br> }
+  </p>
+  <p>El código anterior primero comprobará si el objetivo de renderizado <span class="notranslate">del sombreador</span> 0 ha sido establecido a una superficie, y si no, entonces se le asigna una.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_reset_target.htm">surface_reset_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target_ext
+-->
+  <!-- TAGS
+surface_get_target_ext
+-->
+</body>
+</html>

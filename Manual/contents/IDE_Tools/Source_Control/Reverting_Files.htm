@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Revertir archivos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control reverting files" />
+  <meta name="rh-index-keywords" content="Source Control - Reverting Files" />
+  <meta name="search-keywords" content="revert files" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Revertir archivos</h1>
+  <p>En las secciones anteriores has visto cómo <a href="Repository_Options.htm">crear un repositorio y</a> <a href="Standard_Workflow.htm">confirmar cosas en él,</a> pero ¿qué pasa si cometes un error y quieres &quot;volver&quot; a un commit anterior?
+    anterior? Vamos a cometer un error deliberado y ver cómo podemos tratar con él entonces...</p>
+  <p>En primer lugar, cree un nuevo recurso - en este ejemplo haremos un recurso Script - e inicialmente no verá ningún icono de estado, ya que en lo que respecta al control de origen aún no existe. En el recurso Script añade una simple línea
+    de código, como</p>
+  <p class="code">show_debug_message(&quot;Hola Mundo&quot;);</p>
+  <p>Si ahora cierra el editor de código, el script se guardará y el icono del archivo modificado <img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png"> aparecerá junto a él en el <a href="../../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>.
+    Ahora, abra la ventana de <strong>confirmación </strong>y verá que hay cuatro cambios por etapas, ya que los nuevos recursos se añaden automáticamente:</p>
+  <p><img alt="Source Control Staged Changes" class="center" src="../../assets/Images/IDE Tools/SCM_StagedChanges.png">Los cambios que se han puesto en marcha serán:</p>
+  <ul class="colour">
+    <li>el archivo del proyecto <span class="inline">.yyp</span> </li>
+    <li>un archivo de vista</li>
+    <li>el propio script <span class="notranslate">GML</span> </li>
+    <li>el archivo <span class="inline">.yy</span> que hace referencia a él</li>
+  </ul>
+  <p>Debes escribir un mensaje de confirmación y luego hacer clic en el botón <strong>Confirmar </strong>, tal y como hemos explicado anteriormente. Ahora, volvemos a nuestro script y cambiamos la línea de código a (por ejemplo):</p>
+  <p class="code">show_debug_message(&quot;Hola mundo, ¿cómo estás?&quot;);</p>
+  <p>Cuando cerremos el editor de código, de nuevo aparecerá un icono rojo <img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png"> junto al script, pero nos hemos dado cuenta de que hemos cometido un error con nuestro código y queremos
+    volver a una versión anterior para arreglarlo (obviamente, podrías abrir el script y arreglarlo fácilmente, ya que el ejemplo es muy simple, pero en proyectos grandes eso no es normalmente un enfoque factible). Lo que tenemos que hacer es <strong>revertir </strong>nuestros
+    cambios.</p>
+  <p>Para revertir un cambio primero tenemos que abrir la ventana de confirmación de nuevo, así que vamos a <strong>Source Control</strong> &gt; <strong>Commit Changes</strong> una vez más. Nuestro archivo modificado volverá a estar preparado para la confirmación, pero esto no es lo que queremos
+    así que hacemos clic en el botón <strong>Unstage All</strong> para sacarlo del área de preparación.</p>
+  <p>Si ahora hacemos clic con el botón derecho <strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"></strong> sobre el archivo que hemos cambiado obtendremos un menú contextual con la opción de Revertir <strong>ruta:</strong></p>
+  <p><img alt="Source Control Revert Path" class="center" src="../../assets/Images/IDE Tools/SCM_RevertPath.png">Al seleccionar esta opción, se revertirán los archivos al estado anterior en el que se encontraban.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Cuando revierta recibirá un mensaje pidiéndole que recargue o guarde el proyecto actual debido a que el comprobador de archivos ha detectado cambios en el disco:<br>
+    <img alt="Source Control Warning" class="center" src="../../assets/Images/IDE Tools/SCM_Warning.png">Debe pulsar Recargar y no guardar, ya que al guardar se guardará lo que hay en la memoria en lugar de recargar los archivos revertidos.</p>
+  <p>Todo esto está muy bien para cuando editas algo y quieres volver a cambiar sin haber realizado una confirmación, pero ¿qué pasa cuando has confirmado uno o más cambios y quieres volver a una confirmación <em>anterior </em>? Bueno, vamos a editar
+    nuestro script de nuevo para decir:</p>
+  <p class="code">show_debug_message(&quot;Esto es una mala idea&quot;);</p>
+  <p>Ahora lo confirmamos como antes para tenerlo bajo control de fuentes. Entonces, esto fue una mala idea y queremos retroceder, lo que significa que para empezar necesitamos abrir la ventana de <strong>Source Control</strong> &gt; <strong>View History</strong>. Aquí veremos una
+    lista de todos los commits anteriores ahora en esta ventana, empezando por el commit inicial, el commit para el script, y luego el commit para el script que hemos editado como &quot;mala idea&quot;:</p>
+  <p><img alt="Source Control Bad Idea History" class="center" src="../../assets/Images/IDE Tools/SCM_BadIdea.png">Ahora tenemos dos opciones. Podemos revertir una revisión entera - que revertirá todos los archivos que fueron cambiados a los de la confirmación elegida -
+    o podemos elegir revertir una ruta - que simplemente revertirá un solo archivo. Vamos a hacer la primera opción para empezar:</p>
+  <ul class="colour">
+    <li>Haga clic con el botón derecho <strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"></strong> en nuestra segunda confirmación en el panel <strong>del historial de confirmaciones</strong> (la confirmación &quot;Hello World&quot;).</li>
+    <li>Seleccione <strong>Revertir a esta revisión</strong> y luego elija <strong>ReLoad</strong> en el mensaje de advertencia.</li>
+  </ul>
+  <p>Debería ver que el script tiene ahora un icono de estado rojo <img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png">, y si lo abrimos, tendremos lo siguiente:</p>
+  <p><img alt="Source Control Revert To Revision" class="center" src="../../assets/Images/IDE Tools/SCM_RevertToRevision.png">Podemos entonces hacer un commit en el proyecto y volveremos a estar como antes. Sin embargo, también podemos deshacer esa acción
+    para el archivo y recuperar nuestro commit de &quot;mala idea&quot; haciendo lo siguiente:</p>
+  <ul class="colour">
+    <li>Abra la ventana <strong>Confirmar cambios</strong>.</li>
+    <li>Desmonta el script con el código &quot;Hello World&quot; en él.</li>
+    <li>Haga clic con el botón derecho <strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"></strong> y <strong>revertir la ruta</strong>.</li>
+  </ul>
+  <p>Ahora volvemos a tener el archivo erróneo en el proyecto. Bien, podemos aprovechar esta oportunidad para revertir sólo esa ruta de archivo en lugar de revertir todo a una revisión anterior. Para ello tenemos que hacer lo siguiente:</p>
+  <ul class="colour">
+    <li>Abrir la ventana de <strong>ver el historial</strong>.</li>
+    <li>Haz clic en la segunda confirmación (la de &quot;Hola Mundo&quot;).</li>
+    <li>Haga clic con el botón derecho <strong><img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"></strong> en nuestro script <span class="notranslate">GML</span> en el panel de Archivos y seleccione <strong>Revertir Ruta</strong>.</li>
+  </ul>
+  <p>Deberíamos volver a tener nuestro código &quot;Hola Mundo&quot; y podemos entonces hacer un nuevo commit para actualizar el control de fuentes de nuevo con el archivo corregido.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Source_Control.htm">Control de la fuente</a></div>
+        <div style="float:right">Siguiente: <a href="Cloning_A_Repository.htm">Clonación de un repositorio</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Reverting Files
+reverting files
+-->
+  <!-- TAGS
+source_control_revert
+-->
+</body>
+</html>

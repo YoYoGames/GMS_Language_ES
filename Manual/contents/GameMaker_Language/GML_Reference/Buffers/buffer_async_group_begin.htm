@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_begin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_begin" />
+  <meta name="rh-index-keywords" content="buffer_async_group_begin" />
+  <meta name="search-keywords" content="buffer_async_group_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_begin</h1>
+  <p>Esta función se llama cuando se quiere comenzar a guardar varios buffers en varios archivos. El &quot;nombre del grupo&quot; es una cadena y se utilizará como el nombre del directorio donde se guardarán los archivos, y debe utilizarse como parte de la ruta del archivo
+    cuando se carguen los archivos en el IDE más tarde (usando cualquiera de las funciones <a href="buffer_load.htm"><tt>buffer_load()</tt></a> ). Esta función <i>sólo</i> se puede utilizar con la función <a href="buffer_save_async.htm"><tt>buffer_save_async()</tt></a> función
+    y también debe terminar la definición de guardado llamando a la función <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a> de lo contrario los archivos no se guardarán.</p>
+  <p>Ten en cuenta que para las plataformas de consola (como PS4, por ejemplo), el &quot;nombre del grupo&quot; se utilizará como la descripción de la ranura de guardado, y el uso de esta función puede ayudarte a evitar que se muestre la interfaz de usuario para cada archivo que se está guardando. También tenga en cuenta que cuando
+    UWP, puedes mover tus partidas guardadas entre las ventanas nativas de XBox y de la tienda de Microsoft creando un grupo que sea el mismo que un grupo de ERA Xbox, por ejemplo:</p>
+  <p class="code">si os_type == os_uwp<br> {
+    <br> buffer_async_group_begin(&quot;root/nombre_del_grupo&quot;);
+    <br> }
+    <br> else
+    <br> {
+    <br> buffer_async_group_begin(&quot;yourgroupname&quot;);
+    <br> }
+  </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_async_group_begin(groupname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre del grupo</td>
+        <td>El nombre del grupo (como cadena).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_async_group_begin(&quot;SaveGame&quot;);<br> save1 = buffer_save_async(buff1, &quot;Player_Save1.sav&quot;, 0, 16384);<br> save2 = buffer_save_async(buff2, &quot;Player_Save2.sav&quot;, 0, 16384);<br> save3 = buffer_save_async(buff3, &quot;Player_Save3.sav&quot;,
+    0, 16384);<br> save4 = buffer_save_async(buff4, &quot;Player_Save4.sav&quot;, 0, 16384);<br> buffer_async_group_end();
+  </p>
+  <p>El código anterior inicia un grupo de búferes y lo configura para guardar 4 archivos de forma asíncrona. A continuación, se finaliza la definición del grupo (momento en el que comenzará el guardado).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_async_group_option.htm">buffer_async_group_option</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_begin
+-->
+  <!-- TAGS
+buffer_async_group_begin
+-->
+</body>
+</html>

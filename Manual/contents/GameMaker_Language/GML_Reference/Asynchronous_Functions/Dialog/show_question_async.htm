@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>show_question_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for show_question_async" />
+  <meta name="rh-index-keywords" content="show_question_async" />
+  <meta name="search-keywords" content="show_question_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>show_question_async</h1>
+  <p>Esta función abre una ventana y muestra al usuario la pregunta que se define en la función. Esta es una función asíncrona, y como tal <span class="notranslate">GameMaker Studio 2</span> <i>no</i> bloquea el dispositivo en el que se está ejecutando mientras se espera una respuesta, sino que
+    sigue ejecutando los eventos con normalidad. La función tiene dos botones que muestran &quot;Sí&quot; y &quot;No&quot;, y una vez que el usuario ha pulsado uno, se <b>dispara</b> un evento asíncrono de Diálogo que, sólo mientras dure ese evento, tendrá
+    tendrá un mapa DS almacenado en la variable <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Este mapa contendrá las dos claves, &quot;id&quot;, y &quot;status&quot;. &quot;id&quot;<strong>es el</strong> valor que fue devuelto por la función cuando se llamó, mientras que el &quot;status&quot; será verdadero o falso para &quot;Sí&quot; y &quot;No&quot; respectivamente <tt>.</tt> </p>
+  <p class="note"><strong><em>NOTA:</em></strong><em> Esta función es <span data-keyref="Dialog for debug only"> <strong>sólo</strong> para <strong>uso de depuración y pruebas</strong></span>y no debe ser utilizada en juegos lanzados. Para ello, debe crear una interfaz de usuario personalizada para recibir las entradas de los jugadores, de modo que tenga un control completo sobre el aspecto y el comportamiento de los diálogos.</em></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">show_question_async(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Cadena</td>
+        <td>La pregunta que hay que hacer al usuario.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>El <b>evento de pulsación del ratón izquierdo</b> (por ejemplo) del objeto que está mostrando el mensaje tendría el siguiente código:</p>
+  <p class="code">msg = show_question_async(&quot;¿Quieres comprar una armadura por &quot; + string(armadura[0, 5]) + &quot;monedas?&quot;);</p>
+  <p>Lo anterior mostrará una pregunta con la cadena dada, solicitando que el usuario presione &quot;sí&quot; o &quot;no&quot;. El id de la función se almacena en la variable &quot;msg&quot; y se utilizará en el <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">evento de diálogo</a> asíncrono <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">como</a> se muestra a continuación:</p>
+  <p class="code">var i_d, stat;<br> i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> coins -= armadura[0,5];<br> global.protection += armadura[0,0];<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba la clave &quot;id&quot; del Mapa DS devuelto <tt>contra</tt> el valor almacenado en la variable &quot;msg&quot;. Si son iguales, entonces comprueba si uno de los dos botones fue presionado y si devuelve <tt>true</tt> entonces deducirá un valor de una variable y añadirá un valor a una variable global también.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Dialog.htm">Diálogo</a></div>
+        <div style="float:right">Siguiente: <a href="shop_leave_rating.htm">shop_leave_rating</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+show_question_async
+-->
+  <!-- TAGS
+show_question_async
+-->
+</body>
+</html>

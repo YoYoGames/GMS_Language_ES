@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_de_capas_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_x" />
+  <meta name="rh-index-keywords" content="layer_sequence_x" />
+  <meta name="search-keywords" content="layer_sequence_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_de_capas_x</h1>
+  <p>Con esta función puede establecer la posición a lo largo del eje X (horizontal) de la sala para el elemento de secuencia dado. Se suministra el ID del elemento de secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> o por una de las funciones
+    de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones</a> del elemento de capa junto con la posición X a establecer y la secuencia se moverá a la nueva posición.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">capa_secuencia_x(secuencia_elemento_id, pos_x)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>pos_x</td>
+        <td>La posición X a la que mover el elemento de la secuencia</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if layer_sequence_exists(my_seq)<br> {
+    <br> layer_sequence_x(my_seq, x);<br> layer_sequence_y(my_seq, y);<br> }
+  </p>
+  <p>El código anterior comprueba si el elemento de la secuencia al que se hace referencia en la variable &quot;mi_secuencia&quot; existe, y si lo hace establece la posición x/y a la de la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_y.htm">capa_secuencia_y</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_x
+-->
+  <!-- TAGS
+layer_sequence_x
+-->
+</body>
+</html>

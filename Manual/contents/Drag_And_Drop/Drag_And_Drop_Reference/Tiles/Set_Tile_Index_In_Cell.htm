@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer el índice de la baldosa en la celda</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Index In Cell action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Index In Cell" />
+  <meta name="search-keywords" content="Set Tile Index In Cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Index In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_In_Cell.png"> Establecer el índice de la baldosa en la celda</h1>
+  <p>Con esta acción puede establecer un azulejo en una capa dada a un nuevo índice. La capa se especifica a partir del nombre de la capa dado (una cadena, como la que se utiliza para nombrar la capa en el Editor de Salas), y luego se da la fila y la columna de la celda dentro de la capa para obtener
+    el azulejo a fijar. Por último, se proporciona el índice de la baldosa para establecerla (las baldosas se indexan de izquierda a derecha, de arriba a abajo, con el 0 en la parte superior izquierda). Tenga en cuenta que siempre puede poner el índice de la baldosa a 0 para borrar la baldosa.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Tile Index In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_In_Cell.png" /></p>
+  <h4>Argumentos:</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td>Capa</td>
+          <td>La capa en la que se va a colocar el azulejo</td>
+        </tr>
+        <tr>
+          <td>Columna</td>
+          <td>La columna (de izquierda a derecha) de la celda</td>
+        </tr>
+        <tr>
+          <td>Fila</td>
+          <td>La fila (de arriba a abajo) de la celda</td>
+        </tr>
+        <tr>
+          <td>Azulejos</td>
+          <td>El índice de la baldosa para establecer la celda</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Tile Index In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_In_Cell.png">El código del bloque de acción anterior crea un bucle para recorrer la fila superior
+    de la capa de la habitación dada, y mientras lo hace comprueba si el azulejo indexado en la celda de la columna está a 0. Si no lo está, el índice del azulejo para esa celda se pone a 0 y la variable temporal (local) se incrementa antes de que el bucle haga otra
+    conjunto de comprobaciones.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Actions.htm">Acciones de la baldosa</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Tile_Index_In_Cell.htm">Obtener el índice de azulejos en la celda</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Index In Cell
+-->
+  <!-- TAGS
+action_tile_set_in_cell
+-->
+</body>
+</html>

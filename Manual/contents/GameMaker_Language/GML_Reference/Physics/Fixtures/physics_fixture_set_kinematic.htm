@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_set_kinematic</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_set_kinematic" />
+  <meta name="rh-index-keywords" content="physics_fixture_set_kinematic" />
+  <meta name="search-keywords" content="physics_fixture_set_kinematic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_set_kinematic</h1>
+  <p>Habrá ciertos casos en un juego basado en la física en los que quieras moverte pero no desees que actúen fuerzas como la gravedad, ni fuerzas incurridas por colisiones con objetos dinámicos (piensa en plataformas en movimiento en un juego de plataformas, por
+    ejemplo). Para este tipo de objetos, el simple hecho de establecer la densidad de un accesorio en 0 significará que la física asumirá que el objeto está destinado a ser estático. Sin embargo, si se establece la densidad <a href="../Physics_Variables/phy_speed_x.htm"><tt>phy_speed_x</tt></a>,
+    <a href="../Physics_Variables/phy_speed_y.htm"><tt>phy_speed_y</tt></a> o <a href="../Physics_Variables/phy_angular_velocity.htm"><tt>phy_velocidad_angular</tt></a> de una instancia a la que se ha vinculado una fijación de este tipo, se convertirá en un objeto cinemático y comenzará a moverse.
+    en un objeto cinemático y comenzará a moverse. Cambiar la instancia de estática a cinemática a mitad de la simulación puede ser costoso en términos de procesamiento (dependiendo del estado de las instancias en el mundo de la física) y por lo tanto se recomienda establecer el
+    para que sea cinemático utilizando esta función antes de vincularlo a una instancia, para que no se vea afectado por las colisiones y las fuerzas (como la gravedad), pero pueda moverse con una velocidad lineal y/o angular constante.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_set_kinematic(fixture)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>el índice de la luminaria</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_fixture_set_kinematic(fix_Cloud);</p>
+  <p>El código anterior indicará que la fijación indexada en &quot;fix_Cloud&quot; debe ser marcada como cinemática.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_set_kinematic
+-->
+  <!-- TAGS
+physics_fixture_set_kinematic
+-->
+</body>
+</html>

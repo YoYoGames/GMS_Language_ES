@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_damping</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_damping" />
+  <meta name="rh-index-keywords" content="physics_particle_set_damping" />
+  <meta name="search-keywords" content="physics_particle_set_damping" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_set_damping</h1>
+  <p>Con esta función puede establecer la amortiguación lineal de las partículas en la simulación. La amortiguación se utiliza para reducir la velocidad de la simulación física de las instancias en el tiempo, de forma muy parecida a la resistencia del aire en el mundo real. Esta función es de alcance <i>global</i>,
+    en el sentido de que cambiará la amortiguación no sólo para las nuevas partículas creadas después del cambio, sino también para las ya presentes en la simulación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_set_damping(damping)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>amortiguación</td>
+        <td>La amortiguación lineal que se aplicará a la fijación de partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_particle_set_radius(15);<br> physics_particle_set_density(0.5);
+    <br> physics_particle_set_damping(1);
+    <br> physics_particle_set_gravity_scale(1);
+  </p>
+  <p>El código anterior establecerá las propiedades base para todas las partículas de la simulación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_set_gravity_scale.htm">physics_particle_set_gravity_scale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_damping
+-->
+  <!-- TAGS
+physics_particle_set_damping
+-->
+</body>
+</html>

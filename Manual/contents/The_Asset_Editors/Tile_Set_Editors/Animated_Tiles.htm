@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Azulejos animados</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor animated tiles works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Animated Tiles" />
+  <meta name="search-keywords" content="animated tiles,tile animation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Azulejos animados</h1>
+  <p>Los azulejos se consideran generalmente como celdas estáticas dentro de la sala de juego, sin embargo, con <span class="notranslate">GameMaker Studio 2</span> es posible animarlos, al igual que un sprite. ¿Por qué no usar sprites, te preguntarás? Bueno, los sprites tienen una cierta sobrecarga de procesamiento debido
+    debido a que están asociados a un cuadro delimitador y a la forma en que se renderizan, pero los azulejos tienen una sobrecarga de procesamiento mucho menor y, por lo tanto, son más rápidos de renderizar. Sin embargo, esto tiene un precio, ya que con las animaciones de conjuntos de mosaicos estás limitado a
+    crear animaciones que deben ser una potencia de dos en longitud - es decir: de 2, 4, 8, 16, etc... fotogramas - y, obviamente, deben ser creados dentro de la cuadrícula de azulejos, <em>y </em>todos deben animar a la misma velocidad (sobre una base de conjunto de azulejos). Sin embargo, incluso
+    con estas limitaciones, las baldosas animadas son una característica poderosa que puede ser utilizada para añadir vida y color a entornos y fondos que de otra manera serían estáticos.</p>
+  <p>Para crear una animación de azulejos, primero debes tener un conjunto de azulejos que tenga todos los azulejos requeridos dentro de una imagen de sprite (pero no como marcos de sprite, así que un solo marco de sprite grande con todas las imágenes de animación dentro de él), y luego en el <a href="../Tile_Sets.htm">Editor de Conjunto de Azulejos</a> haces clic en el botón de <strong>Animación de Azulejos</strong> para que aparezca el Editor de Animación:</p>
+  <p><img alt="Tile Animation Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Animations.png">La imagen de ejemplo anterior es una sola imagen con todos los cuadros de animación contenidos en ella, pero debe tenerse en cuenta que la imagen podría
+    contener también otros mosaicos que no sean de animación, ya que se puede utilizar un único conjunto de mosaicos masivo y luego &quot;elegir&quot; las partes del mismo de las que se quiere crear la animación. Por ejemplo, podrías tener un gran conjunto de azulejos de paisaje con árboles,
+    tierra y agua, y dentro del conjunto de azulejos tener múltiples azulejos para ser animados para hacer que el agua ondule.</p>
+  <p>Para crear una animación de azulejos, primero tiene que añadir una animación a la biblioteca de animaciones haciendo clic en el botón <strong>Añadir animación </strong> <img alt="Add Animation Icon" class="icon" src="../../assets/Images/Icons/Icon_AddArgument.png">, que
+    añadirá una tira de animación vacía a la biblioteca y te pedirá que selecciones un número de fotogramas a utilizar:</p>
+  <p><img alt="Add Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AnimationAdd.png">A continuación, se le presentará una vista de cada fotograma de animación vacío, con el fotograma inicial resaltado para usted:</p>
+  <p><img alt="An Empty Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_EmptyAnim.png">Si luego vuelves a la imagen del conjunto de baldosas a la izquierda del editor, puedes hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquier baldosa para añadirla a la animación y el fotograma avanzará al siguiente. Haciendo clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en los azulejos sucesivos se llenará la
+    animación, que puedes previsualizar haciendo clic en el botón &quot;play&quot; junto a los fotogramas:</p>
+  <p><img alt="Add Animation Frames" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AddFrames.gif">Una vez que hayas hecho esto, tu animación pasará a formar parte de la biblioteca de animaciones y cuando entres en el <a href="../Rooms.htm">Editor de Habitaciones</a> podrás seleccionarla y colocarla dentro de la habitación. Ten en cuenta que si seleccionas cualquiera de las fichas de una animación para colocarla en una habitación, esa ficha se animará a partir de la ficha seleccionada, por lo que puedes &quot;desincronizar&quot; una animación colocando cuadros separados
+    cuadros dentro de la habitación y todos ellos se animarán. La única advertencia es que la velocidad de la animación será siempre la misma, ya que se define para todo el conjunto de baldosas y no para las animaciones individuales dentro de la biblioteca.</p>
+  <p>Hay que tener en cuenta algunas cosas sobre los azulejos que se utilizan en las animaciones:</p>
+  <ul class="colour">
+    <li>Si el azulejo tiene su propia animación especificada (por lo que hay una animación en la que se establece como el primer azulejo) entonces utilizará esa animación.</li>
+    <li>Si el azulejo no tiene su propia animación, pero se utiliza en otra animación, entonces se utilizará esa animación a partir de la primera posición en la que ese azulejo esté presente en la animación.</li>
+    <li>Si la baldosa no tiene su propia animación y se utiliza en otras múltiples animaciones, entonces no se animará en absoluto. Tendrás que especificar explícitamente una animación con él como primer azulejo.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Tile_Sets.htm">Juegos de baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="Auto_Tiles.htm">Baldosas para automóviles</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Animated Tiles
+-->
+  <!-- TAGS
+tile_set_editor_animated_tiles
+-->
+</body>
+</html>

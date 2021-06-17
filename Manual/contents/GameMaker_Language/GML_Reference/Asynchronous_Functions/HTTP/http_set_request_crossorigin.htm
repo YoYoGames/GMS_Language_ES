@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>http_set_request_crossorigin</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for http_set_request_crossorigin" />
+  <meta name="rh-index-keywords" content="http_set_request_crossorigin" />
+  <meta name="search-keywords" content="http_set_request_crossorigin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>http_set_request_crossorigin</h1>
+  <p>Con esta función se puede establecer el tipo de origen cruzado a utilizar cuando se cargan imágenes desde un archivo. La función es exclusiva para la plataforma HTML5 y sólo es útil cuando se cargan sprites desde un archivo utilizando la función <tt><a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm">sprite_add()</a></tt> función.
+    Tenga en cuenta que cuando se establece como &quot;use-credentials&quot; ya no es necesario dar una ruta absoluta al sprite que se está cargando, sino que se debe dar una <i>ruta</i> relativa <i>(como</i> se muestra en el ejemplo siguiente). Por defecto, el tipo de origen cruzado se establece como &quot;anónimo&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">http_set_request_crossorigin(origin_type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo_de_origen</td>
+        <td>El tipo de origen cruzado a utilizar (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if string_lower(http_get_request_crossorigin()) != &quot;use-credentials&quot;<br> {
+    <br> http_set_request_crossorigin(&quot;use-credentials&quot;);
+    <br> }
+    <br> sprite_add(&quot;sprites/player_outfit_1.png&quot;, 0, false, false, 0, 0);</p>
+  <p>El código anterior comprobará primero el tipo de origen cruzado actualmente establecido y si no es &quot;use-credentials&quot; entonces se establece como &quot;use-credentials&quot; y luego se añade un sprite desde un archivo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="HTTP.htm">HTTP</a></div>
+        <div style="float:right">Siguiente: <a href="http_request.htm">http_request</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+http_set_request_crossorigin
+-->
+  <!-- TAGS
+http_set_request_crossorigin
+-->
+</body>
+</html>

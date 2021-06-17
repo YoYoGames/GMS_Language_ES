@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lugar_secuestrado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function place_snapped" />
+  <meta name="rh-index-keywords" content="place_snapped" />
+  <meta name="search-keywords" content="place_snapped" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lugar_secuestrado</h1>
+  <p>Con esta función puedes comprobar y ver si el origen de una instancia (su posición x e y) está alineado a una cuadrícula con los valores hsnap y vsnap especificados por ti.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">place_snapped(hsnap, vsnap);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>hsnap</td>
+        <td>El encaje horizontal para comprobar.</td>
+      </tr>
+      <tr>
+        <td>vsnap</td>
+        <td>El encaje vertical para comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">con (obj_Piezas)<br> {
+    <br> if !place_snapped(32, 32)<br> {
+    <br> move_snap(32, 32);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba todas las instancias de &quot;obj_Pieces&quot; para ver si están ajustadas a una cuadrícula de 32x32 píxeles, y si no lo están las ajusta a la posición más cercana de esa cuadrícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="motion_add.htm">motion_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_snapped
+-->
+  <!-- TAGS
+place_snapped
+-->
+</body>
+</html>

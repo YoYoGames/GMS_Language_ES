@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_sprite_add_from_gamerpicture</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_sprite_add_from_gamerpicture" />
+  <meta name="rh-index-keywords" content="xboxlive_sprite_add_from_gamerpicture" />
+  <meta name="search-keywords" content="xboxlive_sprite_add_from_gamerpicture" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_sprite_add_from_gamerpicture</h1>
+  <p>Con esta función puedes obtener la imagen del jugador para un puntero de ID de usuario dado. La función funciona de forma asíncrona, y lanzará un evento asíncrono <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Image_Loaded.htm">Image Loaded</a> 
+    para informarle de que la función ha finalizado (como con las llamadas HTML5/URL a <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_add.htm"><tt>sprite_add()</tt></a>). El evento asíncrono Image Loaded tendrá un mapa DS almacenado en
+    la variable incorporada <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>. El mapa contiene la siguiente información:</p>
+  <ul class="colour">
+    <li>&quot; nombre del archivo<b>&quot;:</b> La ruta completa del archivo solicitado.</li>
+    <li>&quot; id&quot;: El ID del recurso que has cargado. Será el mismo que la variable a la que has asignado el recurso.</li>
+    <li>&quot;<b>estado&quot;:</b> Devuelve un valor inferior a 0 para un error.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: Cuando cargues dinámicamente un sprite en tu juego en <span class="notranslate">tiempo de ejecución</span>, debes recordar eliminarlo de nuevo usando <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_delete.htm"><tt>sprite_delete()</tt></a> cuando ya no lo necesites,
+    de lo contrario existe el riesgo de una fuga de memoria que ralentizará y eventualmente bloqueará tu juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_sprite_add_from_gamerpicture(user_id, imagesize, xorig, yorig);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El ID del usuario (un puntero) para obtener la imagen del jugador para</td>
+      </tr>
+      <tr>
+        <td>tamaño de las imágenes</td>
+        <td>Tamaño en píxeles del sprite a devolver</td>
+      </tr>
+      <tr>
+        <td>xorig</td>
+        <td>Indica la posición x del origen en el sprite</td>
+      </tr>
+      <tr>
+        <td>yorig</td>
+        <td>Indica la posición y del origen en el sprite</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _a = 0;<br> var _num = xboxlive_get_user_count();<br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> var _uid = xboxlive_get_user(i);<br> if _uid != pointer_null<br> {
+    <br> global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);<br> global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);<br> global.UserRep[_a] = xboxlive_reputation_for_user(_uid);<br> global.UserAvatar[_a]
+    = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);<br> ++a;
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior recorre los usuarios registrados y almacena sus datos de jugador en varias matrices globales.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_generate_player_session_id.htm">xboxlive_generate_player_session_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_sprite_add_from_gamerpicture
+-->
+  <!-- TAGS
+xboxlive_sprite_add_from_gamerpicture
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_surface_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_surface_id" />
+  <meta name="rh-index-keywords" content="view_surface_id" />
+  <meta name="search-keywords" content="view_surface_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>view_surface_id</h1>
+  <p>Con esta variable puedes establecer el contenido de un puerto de vista dado para dibujar en una superficie, u obtener el id de la superficie actual si se ha asignado uno a un puerto de vista. Cuando se trabaja con superficies, a menudo se requiere que se capture <i>toda</i> la región visible
+    de la pantalla a la superficie, por lo que se asignaría a un puerto de vista utilizando esta variable. Esto significa que todo lo que se muestra en la vista elegida se dibujará ahora en la superficie asignada. La vista ahora <i>no</i> se dibujará en la pantalla
+    pantalla, lo que significa que tendrá que</p>
+  <ul class="colour">
+    <li>Habilitar una nueva vista y dibujar la superficie sólo en esa vista (utilizando <a href="view_current.htm"><tt>vista_actual</tt></a> para comprobar qué vista se está dibujando)</li>
+    <li>Dibuja la superficie en el evento Draw GUI de una instancia, ya que la capa GUI es independiente de las vistas.</li>
+  </ul>
+  <p>También puedes leer esta variable para obtener el índice de la superficie que se ha asignado a la vista elegida o devolverá -1 si no se ha asignado ninguna superficie, y generalmente la superficie utilizada para esta función debe ser el tamaño de la propia cámara de la vista
+    (no el puerto de vista). El ejemplo extendido de abajo muestra una configuración básica para capturar una vista y dibujarla en el evento <b>Draw GUI</b>, y para más información sobre superficies vea la sección <a href="../../Drawing/Surfaces/Surfaces.htm">Superficies</a>.</p>
+  <p>Tenga en cuenta que también puede establecer un puerto de vista a una superficie utilizando la función <a href="view_set_surface_id.htm"><tt>view_set_surface_id()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">view_surface_id[0...7];</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (índice de superficie o -1 si no se ha asignado ninguna superficie)</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo extendido, crearemos una superficie y la asignaremos al puerto de vista[0] para que capture la vista de la cámara asignada a ese puerto, y luego la dibujaremos en la pantalla en el evento Draw GUI. Para empezar necesitamos inicializar nuestra variable surface en el evento
+   <b>Create Event</b> de una instancia del controlador:</p>
+  <p class="code">surf = -1;</p>
+  <p>Establecemos la variable de superficie a -1, ya que todas las funciones de superficie deberían usarse realmente en los eventos <b>Draw</b> para evitar errores extraños o comportamientos indefinidos. Así, con esto hecho, tendríamos esto en el evento principal de <b>Draw</b>:</p>
+  <p class="code">if !surface_exists(surf)<br> {
+    <br> surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));<br> view_surface_id[0] = surf;<br> }
+  </p>
+  <p>Las superficies son <i>volátiles</i>, lo que significa que pueden ser eliminadas de la memoria en cualquier momento debido a la gestión de la memoria del sistema operativo y otras cosas, así que aquí comprobamos si nuestra superficie existe y, si no existe, la creamos y la asignamos a la vista 0. Con
+    hecho esto, todo lo que aparecería en la vista 0 se dibujará ahora en la superficie que hemos creado. Si no haces nada más en este punto, cuando ejecutes tu juego simplemente obtendrás una pantalla en blanco ya que todo el dibujo se está haciendo en la superficie,
+    pero la superficie en sí no se está dibujando en ninguna parte. Por lo tanto, ahora tenemos que dibujar la superficie a la pantalla en el evento <b>Draw GUI</b> así:</p>
+  <p class="code">if surface_exists(surf)<br> {
+    <br> draw_surface_stretched(surf, 0, 0, display_get_gui_width(), display_get_gui_height());<br> }
+  </p>
+  <p>Este código dibujará ahora la superficie que hemos creado a partir de la vista de la cámara estirada para llenar toda la capa de la GUI.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="view_get_camera.htm">view_get_camera</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_surface_id
+-->
+  <!-- TAGS
+view_surface_id
+-->
+</body>
+</html>

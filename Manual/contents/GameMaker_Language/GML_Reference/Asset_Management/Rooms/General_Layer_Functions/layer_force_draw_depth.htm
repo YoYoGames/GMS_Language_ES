@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fuerza_de_dibujo_de_capas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_force_draw_depth" />
+  <meta name="rh-index-keywords" content="layer_force_draw_depth" />
+  <meta name="search-keywords" content="layer_force_draw_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fuerza_de_dibujo_de_capas</h1>
+  <p>Esta función fuerza a <i>todas las</i> capas a ser dibujadas en la profundidad z especificada. Esto <b>no cambia el orden en el que las capas se renderizan</b> y seguirán siendo dibujadas en orden de profundidad, simplemente cambia el valor de z que se utiliza. En general, no es necesario
+    necesita preocuparse por esto, pero si tiene capas que tienen una profundidad fuera del rango legal (-16000 a 16000) entonces no se renderizarán, así que puede forzar la profundidad Z a un valor razonable - 0 por ejemplo - y todas se renderizarán bien.
+    Tenga en cuenta que esto es generalmente sólo para su uso con proyectos heredados de la versión anterior de <i><span class="notranslate">GameMaker</span></i> en los que se podían tener profundidades de dibujo superiores o inferiores al rango de capas permitido.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">capa_fuerza_dibujo_profundidad(fuerza, profundidad)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fuerza</td>
+        <td>Si se activa (se establece en <tt>true</tt> o se desactiva (se establece en <tt>false</tt>) el forzamiento de la profundidad Z</td>
+      </tr>
+      <tr>
+        <td>profundidad</td>
+        <td>La nueva profundidad Z</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !layer_is_draw_depth_forced()<br> {
+    <br> layer_force_draw_depth(true, 0);<br> }
+  </p>
+  <p>El código anterior comprueba si la profundidad Z de la capa está forzada o no y si no lo está, establece la profundidad Z a 0 y la habilita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_is_draw_depth_forced.htm">layer_is_draw_depth_forced</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_force_draw_depth
+-->
+  <!-- TAGS
+layer_force_draw_depth
+-->
+</body>
+</html>

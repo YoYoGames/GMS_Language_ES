@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_channel_evaluate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_channel_evaluate" />
+  <meta name="rh-index-keywords" content="animcurve_channel_evaluate" />
+  <meta name="search-keywords" content="animcurve_channel_evaluate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_channel_evaluate</h1>
+  <p>Esta función se puede utilizar para obtener el valor en un punto específico en el tiempo de una estructura <a href="../../../GML_Overview/Structs.htm">de</a> canal. Se suministra el puntero de la estructura del canal (devuelto por la función <a href="animcurve_get_channel.htm"><tt>animcurve_get_channel()</tt></a>,
+    o como se devuelve en la estructura de la curva de animación desde la función <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a>) y la posición &quot;x&quot; (tiempo) a lo largo del canal de la curva a evaluar. Esta posición debe estar entre 0 y
+    1, y la función devolverá el valor de la curva en esa posición, o devolverá 0 si la estructura del canal suministrada no es válida.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis: </h4>
+  <p class="code">animcurve_channel_evaluate(channel_struct, posx);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>estructura_de_canal</td>
+        <td>El puntero de la estructura del canal a evaluar.</td>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>La posición en el tiempo para comprobar (de 0 a 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve: </h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo: </h4>
+  <p class="code">var _channel = animcurve_get_channel(ac_AlphaCurve, 0);<br> var _val = animcurve_channel_evaluate(_channel, sin(current_time/1000));<br> image_alpha = _val;</p>
+  <p>El código anterior obtiene la estructura del canal para el activo de la curva de animación &quot;ac_AlphaCurve&quot;. A continuación, utiliza el valor de evaluación devuelto para establecer el alfa de la imagen para la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation_Curves.htm">Curvas de animación</a></div>
+        <div style="float:right">Siguiente: <a href="animcurve_create.htm">animcurve_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_channel_evaluate
+-->
+  <!-- TAGS
+animcurve_channel_evaluate
+-->
+</body>
+</html>

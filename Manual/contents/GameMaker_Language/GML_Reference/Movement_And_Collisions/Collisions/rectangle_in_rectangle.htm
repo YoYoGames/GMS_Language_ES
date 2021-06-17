@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>rectángulo_en_rectángulo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_rectangle" />
+  <meta name="rh-index-keywords" content="rectangle_in_rectangle" />
+  <meta name="search-keywords" content="rectangle_in_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>rectángulo_en_rectángulo</h1>
+  <p>Esta función comprobará dos áreas rectangulares que usted defina para ver si el rectángulo de origen no está en colisión, está completamente dentro de los límites del rectángulo de destino, o si simplemente se tocan. Si no se tocan, la función
+    devolverá 0, si el origen está completamente dentro del destino devolverá 1, y si simplemente se superponen entonces devolverá 2. La imagen siguiente lo ilustra:</p>
+  <p><img alt="Rectangle rectangle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_rectangle.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">rectangle_in_rectangle(sx1, sy1, sx2, sy2, dx1, dy1, dx2, dy2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>La coordenada x del lado izquierdo del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sy1</td>
+        <td>La coordenada y del lado superior del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>La coordenada x del lado derecho del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sy2</td>
+        <td>La coordenada y del lado inferior del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>dx1</td>
+        <td>La coordenada x del lado izquierdo del rectángulo de destino a comprobar.</td>
+      </tr>
+      <tr>
+        <td>dy1</td>
+        <td>La coordenada y del lado superior del rectángulo de destino para comprobarlo.</td>
+      </tr>
+      <tr>
+        <td>dx2</td>
+        <td>La coordenada x del lado derecho del rectángulo de destino a comprobar.</td>
+      </tr>
+      <tr>
+        <td>dy2</td>
+        <td>La coordenada y del lado inferior del rectángulo de destino para comprobarlo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">switch(rectangle_in_rectangle(x - 50, y - 50, x + 50, y + 50, mouse_x - 50, mouse_y - 50, mouse_x + 50, mouse_y + 50))<br> {
+    <br> case 0: image_blend = c_yellow; break;<br> case 1: image_blend = c_red; break;<br> case 2: image_blend = c_orange; break;<br> }
+  </p>
+  <p>El código anterior comprueba la colisión de dos áreas rectangulares, y establecerá la instancia <tt>image_blend</tt> basándose en el valor de retorno.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="rectangle_in_triangle.htm">rectángulo_en_triángulo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+rectangle_in_rectangle
+-->
+  <!-- TAGS
+rectangle_in_rectangle
+-->
+</body>
+</html>

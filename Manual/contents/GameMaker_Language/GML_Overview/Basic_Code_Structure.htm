@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estructura básica del código</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the basic code structure when using GML" />
+  <meta name="rh-index-keywords" content="Code Structure" />
+  <meta name="search-keywords" content="Code Structure,begin,end,statement" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Estructura básica del código</h1>
+  <p>El código se escribe en <em>bloques</em> y un bloque de código típico consiste en un conjunto de instrucciones, llamadas<span class="glossextra">sentencias</span>, que luego son interpretadas por <span class="notranslate">GameMaker Studio</span>
+    2 y se utiliza para hacer algo dentro de su juego. Ese &quot;algo&quot; puede ser tan simple como sumar 2 y 2 para obtener 4, o tan complejo como hacer que un enemigo huya cuando su salud esté por debajo de un determinado valor. La estructura real del programa
+    puede variar en gran medida, dependiendo de las funciones que utiliza, pero desglosado a lo básico sólo se parece a esto:</p>
+  <p class="code">&lt;declaración&gt;;<br> &lt;declaración&gt;;
+    <br> ...
+  </p>
+  <p>Las declaraciones deben estar separadas con un símbolo ';' para evitar errores con las <a class="glossterm" data-glossterm="variable" href="#">declaraciones de</a> variables y para mantener su código limpio y ordenado, y pueden consistir en declaraciones de variables,
+   <span class="glossextra">expresiones</span> y llamadas a <strong>funciones</strong> específicas. También puede &quot;agrupar&quot; las sentencias como un bloque utilizando las llaves {} para que se ejecuten juntas, como en el siguiente
+      ejemplo <a class="glossterm" data-glossterm="condicional" href="#">condicional</a>:</p>
+  <p class="code">if (&lt;condicional&gt;)<br> {
+    <br> &lt;declaración&gt;;
+    <br> &lt;declaración&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p class="note"><b>NOTA</b>: El <span class="notranslate">Lenguaje GameMaker</span> también acepta el <tt>inicio</tt><span>  </span>y el <tt>final</tt><span>  </span>en lugar de los corchetes <tt>{}</tt>, aunque esta no es la forma más común de hacerlo:</p>
+  <p class="code">if (&lt;condicional&gt;)<br> begin
+    <br> &lt;declaración&gt;;
+    <br> &lt;declaración&gt;;
+    <br> ...
+    <br> end
+  </p>
+  <p><br> Aquí hay una representación más visual de cómo puede ser un bloque de código, esta vez creado como un <b>script</b> en el <a href="../../The_Asset_Editors/Scripts.htm">Editor de Script</a> de <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p><img alt="Program Example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/ProgramExample.png" style="cursor: nwse-resize;" /></p>
+  <p>Existen diferentes tipos de sentencias, expresiones, condicionales y funciones, todas ellas tratadas en profundidad en secciones posteriores del manual.</p>
+  <p class="note"><strong>NOTA</strong>: Si usted es nuevo en la programación, es posible que desee consultar la <a href="../../Quick_Start_Guide/Quick_Start_Guide.htm">Guía de Inicio Rápido</a> antes de continuar.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Runtime_Functions.htm">Funciones de<span class="notranslate">tiempo de ejecución</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Basic Code Structure
+code structure
+code block
+statements
+statement separator
+begin
+end
+-->
+  <!-- TAGS
+structure
+-->
+
+</body></html>

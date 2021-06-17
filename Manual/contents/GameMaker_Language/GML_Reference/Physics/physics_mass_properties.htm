@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_mass_properties</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_mass_properties" />
+  <meta name="rh-index-keywords" content="physics_mass_properties" />
+  <meta name="search-keywords" content="physics_mass_properties" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_mass_properties</h1>
+  <p>Esta función puede utilizarse para establecer valores de masa e inercia personalizados para una instancia habilitada para la física. Normalmente, la masa, el centro de masa y la inercia de una instancia se calculan utilizando una combinación de la superficie de los accesorios vinculados y su densidad.
+    Sin embargo, en ocasiones muy especiales puede ser necesario desplazar el centro de masa o cambiar la inercia y es entonces cuando se utiliza esta función. Tenga en cuenta que la masa se calcula en peso del mundo real (es decir, en kilogramos) y siempre debe intentar
+    y mantener valores realistas para lo que estás modelando. Así que si tu objeto físico está destinado a representar a una persona, su masa sería de aproximadamente 70 kilos.</p>
+  <p>El centro de masa se calcula automáticamente en función de la forma del dispositivo (o dispositivos) que hayas definido. Para tener una idea general de dónde podría estar, si tienes un sprite que tiene la misma forma que los accesorios que deseas crear, entonces
+    seleccione la opción &quot;origen central&quot; verá aproximadamente dónde estará también el centro de masa. Sin embargo, esto puede no ser correcto o puede estar buscando un efecto específico de su objeto de física, en cuyo caso esta función también puede
+    para cambiar las coordenadas x e y del centro de masa. Estos son valores <b>locales</b>, por lo que 0,0 es el punto en el que los accesorios están vinculados a la instancia (el origen de la instancia). Así que un centro de masa de -4,0
+    desplazaría el centro de masa a la izquierda del origen.</p>
+  <p>En cuanto a la inercia, ésta define básicamente la resistencia de la instancia a los cambios en su dirección y velocidad, por lo que una inercia más alta la hace más resistente y una inercia baja la hace menos resistente (¡la inercia y la masa no pueden ser valores negativos!).</p>
+  <p class="note"><b>NOTA</b>: Esta función no establece la masa y la inercia para los dispositivos individuales, sino para toda la instancia habilitada por la física, sin importar cuántos dispositivos estén vinculados a ella.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo debe utilizarse cuando sea necesario, ya que la simulación física está diseñada para que la masa y la inercia sean óptimas en función de la densidad y el tamaño del aparato. La modificación de estos valores puede tener efectos imprevistos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_mass_properties(mass, local_center_x, local_center_y, inertia)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>masa</td>
+        <td>La nueva masa que quieres que tenga la luminaria.</td>
+      </tr>
+      <tr>
+        <td>local_center_x</td>
+        <td>La coordenada local x del nuevo centro de masa.</td>
+      </tr>
+      <tr>
+        <td>local_center_y</td>
+        <td>La coordenada local y del nuevo centro de masa.</td>
+      </tr>
+      <tr>
+        <td>inercia</td>
+        <td>Ajuste la inercia de la fijación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_mass_properties(phy_mass, -10, -10, phy_inertia);</p>
+  <p>El código anterior desplazará el centro de masa del cuerpo físico hacia la izquierda.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics.htm">Física</a></div>
+        <div style="float:right">Siguiente: <a href="physics_test_overlap.htm">physics_test_overlap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_mass_properties
+-->
+  <!-- TAGS
+physics_mass_properties
+-->
+
+</body></html>

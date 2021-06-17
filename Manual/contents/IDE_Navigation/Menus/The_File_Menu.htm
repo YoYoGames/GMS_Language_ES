@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>El menú Archivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section on the File Menu" />
+  <meta name="rh-index-keywords" content="Menu - File" />
+  <meta name="search-keywords" content="load,save,export,import,file menu,preferences,logout" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El menú Archivo</h1>
+  <p><img alt="The File Menu" class="center" src="../../assets/Images/IDE_Input/File_Menu.png" /></p>
+  <p>El menú de archivo es el lugar donde puede elegir cambiar, guardar o importar proyectos, así como establecer las preferencias del IDE de <span class="notranslate">GameMaker Studio 2</span>. Las opciones disponibles son:</p>
+  <ul class="colour">
+    <li><strong>Nuevo proyecto </strong>: sirve para crear un nuevo proyecto desde cero en <span class="notranslate">GameMaker Studio 2</span>. Se abrirá el diálogo &quot;Guardar&quot; y te pedirá que elijas una ubicación para guardar el nuevo proyecto. Una vez que haya dado un nombre al proyecto
+      y una ubicación para guardarlo, se le llevará a un nuevo <a href="../../Introduction/Workspaces.htm">espacio de trabajo</a> en blanco para empezar a trabajar en él. Los archivos del proyecto se guardan con la extensión <span class="inline">*.yyp</span>.</li>
+    <li><strong>Abrir Proyecto</strong> - Esto abrirá un explorador de archivos para que usted seleccione un archivo de proyecto creado previamente en <span class="inline">*.yyz</span> para cargarlo. Tenga en cuenta que en la importación, si el proyecto fue creado con una versión inferior a la 2.3.0,
+      recibirá el siguiente mensaje de advertencia: <img alt="Open old project warning message" class="center" src="../../assets/Images/IDE_Input/Open_OldProject_Warning.png">. Si decide continuar, se abrirá un explorador de archivos y podrá
+      dar al proyecto un nombre actualizado y una ubicación para guardarlo, de modo que el proyecto original no se sobreescriba. Una vez que el proyecto se haya convertido al nuevo formato 2.3.0+, se abrirá en el IDE y recibirá un mensaje diciendo que la conversión
+      se ha realizado con éxito. Deberá proceder a comprobar el informe de compatibilidad que ha generado el proceso de conversión y ver si hay algo que deba corregir antes de intentar ejecutar o compilar el proyecto. Tenga en cuenta que si obtiene errores repetidos
+      al intentar abrir un proyecto realizado con una versión anterior a la 2.3.0, debes ponerte en contacto con <span class="notranslate">YoYo Games</span> (utilizando la opción &quot;Informar de un error&quot; del Menú de Ayuda) <a href="The_Help_Menu.htm">, proporcionando</a> el archivo original <span class="inline">*.yyp</span> que estás intentando convertir.</li>
+    <li><strong>Importar Proyecto</strong> - Aquí puede importar proyectos que han sido previamente exportados como un archivo <span class="inline">*.yyz</span> (ver &quot;Exportar Proyecto&quot;, abajo), o - si tiene un proyecto hecho con el GameMaker: Studio 1.4
+      de <span class="notranslate">YoYo</span> Games, puede seleccionar esta opción para importar el archivo <span class="inline">*.gmx</span> o <span class="inline">*.gmz</span> de esa línea de productos. Al igual que al abrir un proyecto, si el <span class="inline">*.yyz</span> fue creado con una versión de <span class="notranslate">GameMaker Studio 2</span> anterior a la actualización 2.3.0, será necesario convertirlo, ya que el formato de los archivos del proyecto cambió con dicha actualización.</li>
+  </ul>
+  <p class="note"><strong>NOTA</strong>: Para importar un proyecto anterior de <span class="notranslate">GameMaker</span> a <span class="notranslate">GameMaker</span> Studio 2 debe haber sido creado con la versión 1.4, e incluso entonces puede que no funcione directamente al importarlo. Hay muchas cosas diferentes entre <span class="notranslate">GameMaker</span> Studio 2 y
+   <span class="notranslate">GameMaker</span>: Studio 1.4, por lo que sus proyectos más antiguos pueden necesitar algunos ajustes para que funcionen. Por favor, consulta el artículo <a href="https://help.yoyogames.com/hc/en-us/articles/231719468">Porting A GM:S 1.4 Game To <span class="notranslate">GameMaker Studio 2</span></a> en la Base de Conocimiento de <span class="notranslate">YoYo Games</span>
+    Knowledge Base y la sección del manual que cubre las funciones obsoletas y los <a href="../../Additional_Information/Compatibility_Scripts.htm">scripts de compatibilidad</a>.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> La importación de un proyecto de <span class="inline">*.yyz</span> que contenga recursos de fuentes puede requerir que &quot;regenere&quot; las fuentes eliminándolas/añadiéndolas, o cambiando la fuente en el editor de fuentes y volviéndola a establecer
+    de nuevo. Esto se debe a que la información de las fuentes existentes es retenida por <span class="inline">*.yyz</span> cuando se exporta, y, al importarlo posteriormente o en otra máquina, el proyecto puede no tener ya instaladas las fuentes necesarias (o puede
+    tener una fuente diferente con el mismo nombre). Esto sólo debe hacerse si se observan problemas con la representación de la fuente después de la importación.</p>
+  <ul class="colour">
+    <li><strong>Proyectos recientes</strong> - Puede utilizar esta opción para ver los proyectos utilizados recientemente. Al seleccionarla, se reabrirá la <a href="../../Introduction/The_Start_Page.htm">página de inicio</a> (en caso de que la haya cerrado) y podrá seleccionar un proyecto utilizado recientemente de la lista que se encuentra allí.
+      proyecto utilizado recientemente de la lista que se encuentra allí.</li>
+    <li><strong>Guardar Proyecto</strong> - Esto guardará su juego en la misma ubicación que definió cuando creó el proyecto (o desde donde lo abrió).</li>
+    <li><strong>Guardar proyecto como</strong> - Igual que el anterior, sólo que se especifica la ubicación y el nuevo nombre del proyecto.</li>
+    <li><strong>Exportar proyecto </strong>- Esto exportará el proyecto como un único archivo <span class="inline">*.yyz</span>. Muy útil para enviar copias a la gente o para guardar copias de seguridad.</li>
+    <li><strong>Preferencias </strong>- Al seleccionar esta opción, accederás a la <a href="../../Setting_Up_And_Version_Information/IDE_Preferences.htm">ventana de preferencias</a>, donde podrás configurar el aspecto y la sensación de <span class="notranslate">GameMaker Studio 2</span>.</li>
+    <li><strong>Nuevo IDE</strong> - Al seleccionar esta opción, se abrirá una nueva instancia del IDE para su uso (se abrirá en la página de inicio).</li>
+    <li><strong>Mi cuenta</strong> - Esta opción abrirá tu navegador web predeterminado y te llevará a la página de tu cuenta de <span class="notranslate">YoYo</span>.</li>
+    <li><strong>Cierre de sesión</strong>: al seleccionar esta opción, se cerrará la sesión de <span class="notranslate">GameMaker Studio 2</span>. Tendrás que volver a iniciar sesión con la misma licencia (o cualquier otra) para poder utilizar el producto más adelante.</li>
+  </ul>
+  <p class="note"><strong>IMPORTANTE!</strong> Si ha estado utilizando una licencia de prueba para <span class="notranslate">GameMaker Studio 2</span> y luego compra una de las otras licencias (escritorio, móvil, UWP, web o consola), es posible que tenga que cerrar la sesión del IDE y luego reiniciar <span class="notranslate">GameMaker Studio 2</span> y
+   <a href="../../Setting_Up_And_Version_Information/Licencing_Information.htm">volver a iniciar sesión</a> para asegurarse de que la nueva licencia se aplica correctamente (aunque esto debería ocurrir automáticamente).</p>
+  <ul class="colour">
+    <li><strong>Salir </strong>- Salir de <span class="notranslate">GameMaker Studio 2</span> al escritorio.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Menus.htm">Menús</a></div>
+        <div style="float:right">Siguiente: <a href="The_Edit_Menu.htm">El menú de edición</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The File Menu
+-->
+  <!-- TAGS
+file_menu
+-->
+</body>
+</html>

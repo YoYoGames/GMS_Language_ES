@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_pos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_pos" />
+  <meta name="rh-index-keywords" content="string_pos" />
+  <meta name="search-keywords" content="string_pos" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_pos</h1>
+  <p>Esta función devolverá la posición de los caracteres de una instancia de una subcadena dentro de una cadena, buscando desde el principio de la cadena (para buscar desde el final, utilice la función <a href="string_last_pos.htm"><tt>string_last_pos()</tt></a>). La función
+    devolverá 0 si no se encuentra, o la posición del primer carácter de la subcadena si se encuentra. Tenga en cuenta que para el soporte de legado las cadenas están indexadas desde 1, por lo que 1 es la primera posición de la cadena, no 0 como puede
+    esperar. Un uso de esto es para filtrar palabras que pueden ser consideradas ofensivas, o para encontrar el lugar correcto para insertar algún texto en otra cadena.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string_pos(substr, str);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sustrato</td>
+        <td>La subcadena a buscar en la cadena.</td>
+      </tr>
+      <tr>
+        <td>str</td>
+        <td>La cadena.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (string_pos(&quot;,&quot;, text) != 0)<br> {
+    <br> string_insert(nombre, texto, string_pos(&quot;,&quot;, texto));<br> }
+  </p>
+  <p>El código anterior busca una coma en la cadena almacenada en la variable &quot;texto&quot; y, si la encuentra, inserta la subcadena &quot;nombre&quot; en esa posición.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_pos_ext.htm">string_pos_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_pos
+-->
+  <!-- TAGS
+string_pos
+-->
+
+</body></html>

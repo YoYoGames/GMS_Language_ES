@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_blendmode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_blendmode" />
+  <meta name="rh-index-keywords" content="gpu_get_blendmode,bm_normal,bm_add,bm_subtract,bm_max" />
+  <meta name="search-keywords" content="gpu_get_blendmode,bm_normal,bm_add,bm_subtract,bm_max" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_blendmode</h1>
+  <p>Esta función se puede utilizar para recuperar el modo de mezcla actual que se está utilizando para el dibujo. El valor devuelto será una de las siguientes constantes (el valor por defecto es <tt>bm_normal</tt>):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+        <th>Modo de fusión ampliado</th>
+      </tr>
+      <tr>
+        <td><tt>bm_normal</tt></td>
+        <td>Mezcla normal (el modo de mezcla por defecto).</td>
+        <td><tt>(bm_src_alpha</tt>, <tt>bm_inv_src_alpha</tt>)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_add</tt></td>
+        <td>Mezcla aditiva. Se añaden los valores de luminosidad de las áreas luminosas.</td>
+        <td><tt>(bm_src_alpha</tt>, <tt>bm_one</tt>)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_subtract</tt></td>
+        <td>Mezcla sustractiva. Se restan los valores de luminosidad de las zonas claras.</td>
+        <td><tt>(bm_zero</tt>, <tt>bm_inv_src_colour</tt>)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_max</tt></td>
+        <td>Mezcla máxima. Similar a la mezcla aditiva.</td>
+        <td><tt>(bm_src_alpha</tt>, <tt>bm_inv_src_colour</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_get_blendmode();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Constante (ver arriba las constantes)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gpu_get_blendmode() != bm_normal<br> {
+    <br> gpu_set_blendmode(bm_normal);
+    <br> }
+  </p>
+  <p>El código anterior obtiene el modo de mezcla actual y si no es <tt>bm_normal</tt> se establece a esa constante.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_get_blendmode_ext.htm">gpu_get_blendmode_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_blendmode
+bm_normal
+bm_add
+bm_subtract
+bm_max
+-->
+  <!-- TAGS
+gpu_get_blendmode
+-->
+</body>
+</html>

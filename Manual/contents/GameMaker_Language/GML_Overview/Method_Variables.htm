@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variables del método</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Method Variables" />
+  <meta name="rh-index-keywords" content="Method Variables" />
+  <meta name="search-keywords" content="Method Variables,methods,method" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Variables del método</h1>
+  <p>Una variable de método es esencialmente una variable a la que se le ha asignado una función, &quot;vinculando&quot; la función a una instancia y permitiéndole utilizar la variable para referirse a la función, de forma similar a como se utiliza un <a href="Runtime_Functions.htm">nombre de<span class="notranslate">función</span></a> en tiempo de ejecución para referirse a una <span class="notranslate">función</span> incorporada en GML <span class="notranslate">.</span> La variable utilizada puede ser de ámbito <em>local</em>, de <em>instancia</em> o <em>global</em> (para más información sobre el ámbito de las variables, consulte <a href="Variables_And_Variable_Scope.htm">aquí</a> ).</p>
+  <p>La sintaxis para crear una variable de método es la siguiente:</p>
+  <p class="code">&lt;nombredevariable&gt; = function(&lt;parámetro1&gt;, &lt;parámetro2&gt;, etc... )<br> {
+    <br> &lt;declaración1&gt;;<br> &lt;declaración1&gt;;<br>...<br> }
+  </p>
+  <p>o</p>
+  <p class="code">function &lt;variablename&gt;(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br> {
+    <br> &lt;declaración1&gt;;<br> &lt;declaración1&gt;;<br>...<br> }
+  </p>
+  <p>En general, sin embargo, se utilizaría la <em>primera </em>forma para los métodos, y la segunda para definir funciones de <a href="Script_Functions.htm">script</a>, ya que la segunda forma también asignará un índice de script al nombre de la función mientras que la primera
+    será un método &quot;verdadero&quot; (y requerirá el uso del <a href="Variables/Global_Variables.htm">prefijo</a> global <a href="Variables/Global_Variables.htm">si</a> se utiliza para definir una función de script).</p>
+  <p class="note"><strong>NOTA</strong>: Puede comprobarlo utilizando ambos formularios en el proyecto y llamando a la función <span class="notranslate">en tiempo de ejecución</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a> en cada uno de ellos. Uno será clasificado como un &quot;número&quot; - ya que
+    devuelve un ID de índice de script - y el otro será clasificado como un &quot;método&quot;.</p>
+  <p>Por lo tanto, ten en cuenta que -en general- siempre nos referiremos a funciones que <em>no </em>han sido definidas con un índice de script cuando hablemos de métodos y variables de métodos. </p>
+  <p>A continuación puedes ver tres ejemplos sencillos de creación de una variable de método utilizando diferentes ámbitos:</p>
+  <p class="code">// Local<br> var _debug = function(message)<br> {
+    <br> show_debug_message(mensaje);<br> }
+    <br>
+    <br> // Instancia<br> do_maths = function(val1, val2, val3)<br> {
+    <br> return (val1 * val2) - val3;<br> }
+    <br>
+    <br> // Global<br> global.pd = function(_x1, _y1, _x2, _y2);<br> {
+    <br> return punto_distancia(_x1, _y1, _x2, _y2);<br> }
+  </p>
+  <p>Observe que en el código anterior, los diversos parámetros que se dan como entradas para la función tienen todos nombres y estos nombres son los que deben usarse dentro de la función para referirse a las diferentes entradas. Observe también que puede utilizar la sentencia <span class="inline"><a href="Language_Features/return.htm">return</a></span> para devolver un valor de una función para utilizarlo en otra parte de su código, y que una función <em>sin</em> valor de retorno definido, devolverá <span class="inline">undefined</span>.por defecto.</p>
+  <p class="note"><strong>NOTA</strong>: Mientras que la variable estará en el ámbito elegido, la función real estará ligada al ámbito en el que se definió inicialmente. Por ejemplo, <a href="Script_Functions.htm">las</a> funciones de script son todas de ámbito global y &quot;no vinculadas&quot;
+    (es decir, no están asociadas a ninguna instancia), pero si tienes una función de script que crea otra función como una variable de método dentro de ella y luego llamas a esta función de script desde una instancia, la función utilizada dentro del script <strong>estará vinculada a la variable de instancia como un método</strong>.
+    En general, esto no es algo en lo que tengas que pensar, pero para operaciones más complejas con variables de método vale la pena tenerlo en cuenta. Esto también se aplica cuando se utilizan otras construcciones como <a href="Language_Features/with.htm"><span class="inline">with</span></a>    - cuando se crea una variable de método dentro de un with, la función se vinculará a la instancia que esté actualmente en el ámbito.</p>
+  <p>Una vez creada, la variable de método se puede utilizar igual que una función <span class="notranslate">en tiempo de ejecución</span> o una función de script, por ejemplo:</p>
+  <p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br> {
+    <br> var _array;<br> _array[0] = punto_distancia(_x1, _y1, _x2, _y2);<br> _array[1] = punto_dirección(_x1, _y1, _x2, _y2);<br> return _array;<br> }
+    <br>
+    <br> vec = create_vec(x, y, mouse_x, mouse_y);</p>
+  <p>Las variables creadas dentro de una función seguirán las mismas reglas que las normales y tendrán un ámbito de acuerdo con la palabra clave utilizada o el ámbito de la llamada a la función. En el ejemplo anterior, utilizamos <span class="inline">var</span>, por lo que la variable del array está en el
+    ámbito <em>local </em>de la función. Si no hubiéramos utilizado la palabra clave, la variable se habría creado en el ámbito de la instancia que llamó a la función.</p>
+  <p>Los métodos, al igual que las funciones de script, también pueden tomar argumentos opcionales que tienen valores por defecto para cuando no se pasan:</p>
+  <p class="code">create_attachment = function(_attachment, <strong>_x = x</strong>, <strong>_y = y</strong>)<br> {
+    <br> return instance_create_layer(_x, _y, layer, _attachment);<br> }
+  </p>
+  <p>La función anterior toma tres argumentos, siendo los dos últimos opcionales. Si no se pasan cuando se llama a la función, entonces se utilizarán las <tt>coordenadas</tt> x e y de la instancia por defecto.</p>
+  <p>Tenga en cuenta que si un argumento no se pasa, y no tiene un valor por defecto, entonces será igual a <tt>indefinido</tt>.</p>
+  <p>Los métodos también pueden hacer uso de variables estáticas, que mantienen sus valores a lo largo de cada llamada a la función. Por favor, <a href="Functions/Static_Variables.htm">lee esta página</a> para más información.</p>
+  <p>A continuación enumeramos algunas funciones de ayuda asociadas a las variables del método:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/is_method.htm">es_método</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method.htm">método</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_self.htm">method_get_self</a></li>
+    <li><a href="../GML_Reference/Variable_Functions/method_get_index.htm">method_get_index</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Structs.htm">Estructuras</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Script Functions
+User Defined Functions
+-->
+  <!-- TAGS
+method_variables
+-->
+</body>
+</html>

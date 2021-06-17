@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_length_1d</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_length_1d" />
+  <meta name="rh-index-keywords" content="array_length_1d (Deprecated)" />
+  <meta name="search-keywords" content="array_length_1d" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_length_1d<em>(Descatalogado</em>)</h1>
+  <h3><b>ATENCIÓN!</b> Esta función está obsoleta, ya que los arrays ya no están limitados a sólo 1 o 2 dimensiones, y como tal esta función sólo se suministra para el apoyo de los proyectos heredados. Todos los nuevos proyectos deben utilizar la forma actual de crear y acceder a arrays multidimensionales
+    (ver <a href="../../GML_Overview/Arrays.htm">aquí</a> para más información).</h3>
+  <p>Con esta función puedes obtener la longitud (número de entradas) de un array 1D. Para matrices 2D deberías utilizar las funciones <a href="array_height_2d.htm"><tt>altura_de_array_2d</tt></a> y <a href="array_length_2d.htm"><tt>array_length_2d</tt></a> para obtener la longitud de un array 1D.</p>
+  <p class="note"><b>IMPORTANTE!!! </b>Si el array tiene más de 32.000 entradas esta función devolverá un valor erróneo y no debe ser utilizada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">array_length_1d(array_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>array_index</td>
+        <td>El índice del array a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = array_length_1d(a) - 1; i &gt; -1; i--;) <br> {
+    <br> a[i] = -1;<br> }
+  </p>
+  <p>El código anterior hará un bucle a través de una matriz y establecerá cada entrada a -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_length_2d.htm">array_length_2d</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_length_1d (deprecated)
+-->
+  <!-- TAGS
+array_length_1d
+-->
+</body>
+</html>

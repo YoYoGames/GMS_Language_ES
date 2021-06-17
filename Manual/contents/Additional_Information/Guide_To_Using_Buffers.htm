@@ -50,7 +50,7 @@
   </table>
   <p> </p>
   <p>Estos son los tipos de búferes que tienes a tu disposición cuando utilizas <span class="notranslate">GameMaker Studio 2</span>, y el que elijas dependerá en gran medida del uso que quieras darle. Por ejemplo, un búfer de crecimiento se utilizaría para almacenar una &quot;instantánea&quot; de datos para crear una
-    por ejemplo, para almacenar una "instantánea" de datos para crear una partida guardada, ya que no se sabe la cantidad real de datos que se van a colocar en ella, o un búfer rápido se utilizaría cuando se sabe que los valores con los que se está trabajando están todos entre 0 y 255 o -128 y 127, por ejemplo, cuando se procesan datos ARGB de una imagen.
+    por ejemplo, para almacenar una "instantánea" de datos para crear una partida guardada, ya que no se sabe la cantidad real de datos que se van a colocar en ella, o un búfer rápido se utilizaría cuando se sabe que los valores con los que se está trabajando están todos entre 0 y 255 o -128 y 127, por ejemplo cuando se procesan datos ARGB de una imagen.
     datos <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> de una imagen.</p>
   <p><img alt="Buffer Types" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Buffer_Types.png">Al crear un búfer, siempre hay que intentar crearlo con un tamaño adecuado al tipo, siendo la regla general
     que debe crearse para acomodar el tamaño máximo de los datos que va a almacenar, y en caso de duda, utilizar un buffer de crecimiento para evitar errores de sobreescritura.</p>
@@ -127,7 +127,7 @@
       <tr>
         <td><span class="inline">buffer_string</span></td>
         <td>N/A</td>
-        <td><br> Esta es una cadena UTF-8 terminada en cero (0x00). Básicamente se vuelca una cadena de <span class="notranslate">GameMaker</span> en el buffer, y se pone un 0 al final.</td>
+        <td><br> Es una cadena UTF-8 con terminación nula (0x00). Básicamente se vuelca una cadena de <span class="notranslate">GameMaker</span> en el buffer, y se pone un 0 al final.</td>
       </tr>
     </tbody>
   </table>

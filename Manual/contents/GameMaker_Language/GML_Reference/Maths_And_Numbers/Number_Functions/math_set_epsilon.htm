@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>math_set_epsilon</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for math_set_epsilon" />
+  <meta name="rh-index-keywords" content="math_set_epsilon" />
+  <meta name="search-keywords" content="math_set_epsilon" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>math_set_epsilon</h1>
+  <p>Epsilon es un valor que se utiliza para determinar si dos números sujetos a errores de redondeo están lo suficientemente cerca como para ser considerados &quot;iguales&quot;. Es útil cuando se trata de matemáticas en coma flotante, ya que puede reducir los &quot;errores de redondeo&quot; que hacen que ciertas
+    operaciones devuelvan valores que parecen incorrectos o contrarios a lo que esperamos. Por ejemplo, podemos haber añadido un valor al índice de la imagen de un sprite y esperar que el resultado sea un único entero, pero debido a la naturaleza de las matemáticas en coma flotante, el valor final real
+    valor final acaba siendo algo así como 5,0000002, por lo que cuando tenemos la siguiente comprobación</p>
+  <p class="code">si image_index == 5<br> {
+    <br> //hacer algo<br> }
+  </p>
+  <p>El código no se comporta como se esperaba y devuelve <tt>false</tt>. Sin embargo, si establecemos el valor de épsilon en 0,000001, el valor de <span class="inline">image_index</span> se redondeará al número real más cercano que sea +/- 0,000001 del valor original,
+    haciendo que la comparación anterior sea verdadera.</p>
+  <p>El valor épsilon se utilizará para todos los <a href="../../../GML_Overview/Expressions_And_Operators.htm">operadores</a> enteros siguientes:</p>
+  <ul class="colour">
+    <li><span class="inline">&lt; </span>: Menos de</li>
+    <li><span class="inline">&gt; </span>: Mayor que</li>
+    <li><span class="inline">== </span>: Igual a</li>
+    <li><span class="inline">&lt;= </span>: Menor o igual que</li>
+    <li><span class="inline">&gt;= </span>: Mayor o igual que</li>
+    <li><span class="inline">!= </span>: No es igual a</li>
+  </ul>
+  <p>Tenga en cuenta que si se establece un valor de épsilon de 0 se desactivará todo el redondeo, y si se utiliza un valor de 1 se producirá un error.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">math_set_epsilon(epsilon);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>epsilon</td>
+        <td>El nuevo valor de épsilon (de 0 a 0,999999999).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">math_set_epsilon(0.0001);</p>
+  <p>Esto establecerá el valor de épsilon para todas las operaciones posteriores de punto flotante.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="math_get_epsilon.htm">math_get_epsilon</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+math_set_epsilon
+-->
+  <!-- TAGS
+math_set_epsilon
+-->
+
+</body></html>

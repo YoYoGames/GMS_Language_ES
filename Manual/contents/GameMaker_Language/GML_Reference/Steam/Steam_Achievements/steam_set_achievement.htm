@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title> steam_set_achievement</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_set_achievement" />
+  <meta name="rh-index-keywords" content="steam_set_achievement" />
+  <meta name="search-keywords" content="steam_set_achievement" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_set_achievement</span></h1>
+  <p>Con esta función puedes indicar a la API de <span class="notranslate">Steam</span> que conceda (&quot;establezca&quot;) un logro para el jugador. Estos logros deben haber sido definidos en la página de cuentas del panel de control <span class="notranslate">de Steamworks</span>para tu juego y la cadena que se pasa a la función
+    debe coincidir con la utilizada como <b>nombre de la</b> API en el panel de control. El <span class="notranslate">Steam</span> Game Overlay mostrará un panel de notificación al usuario informándole del logro que ha recibido, a menos que el logro ya haya sido concedido, en
+    en cuyo caso no ocurrirá nada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_set_achievement</span>(ach_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_la_actividad</td>
+        <td>El nombre del logro a establecer (cadena).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si hp &lt;= 0<br> {
+    <br> global.Muertes += 1;<br> if global.Muertes == 10<br> {
+    <br> if !<span class="notranslate">steam_get_achievement</span>(&quot;ach_Player_Dies_Ten_Times&quot;) steam_set_achievement(&quot;ach_Player_Dies_Ten_Times&quot;);<br> }
+    <br> }
+  </p>
+  <p>El código anterior premiará al jugador con un logro si la variable global &quot;Muertes&quot; es igual a 10 y si el logro no ha sido ya concedido.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_Achievements.htm">Logros y estadísticas</a></div>
+        <div style="float:right">Siguiente: <a href="steam_get_achievement.htm"><span class="notranslate">steam_get_achievement</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_set_achievement
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_set_achievement
+-->
+</body>
+</html>

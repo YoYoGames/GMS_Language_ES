@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_sort</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_sort" />
+  <meta name="rh-index-keywords" content="array_sort" />
+  <meta name="search-keywords" content="array_sort" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>array_sort</span></h1>
+  <p>Con esta función puede ordenar un array en orden ascendente o descendente o utilizando una función personalizada para definir el orden de ordenación. La función requiere que proporcione el array a ordenar y, a continuación, cualquiera de las siguientes opciones:</p>
+  <ul class="colour">
+    <li>Las constantes <span class="inline">true</span> o <span class="inline">false</span> para indicar el <span>orden ascendente (<span class="inline">true</span>) o descendente (<span class="inline">false</span>)</span>
+    </li>
+    <li>Una función personalizada para definir el orden de clasificación</li>
+  </ul>
+  <p>Si utiliza una función personalizada para ordenar, debe tomar 2 argumentos que recibirán los valores del elemento actual y del siguiente elemento respectivamente. La función debe devolver cualquiera de los siguientes valores para afectar al orden de clasificación (donde <tt>elm1</tt> es
+    el elemento actual y <tt>elm2</tt> es el siguiente elemento):</p>
+  <ul class="colour">
+    <li><tt>0</tt>: si <tt>elm1</tt> y <tt>elm2</tt> son iguales</li>
+    <li><tt>&lt;0 (</tt> número negativo): si elm1 va antes que elm2</li>
+    <li><tt>&gt;0 (</tt> número positivo): si elm1 va después de elm2</li>
+  </ul>
+  <p>Si el array contiene un conjunto de cadenas, éstas se ordenarán alfabéticamente según el alfabeto inglés cuando se utilice el tipo de ordenación ascendente/descendente por defecto. Todos los demás tipos de datos se ordenarán en función de su valor numérico, cuyos valores exactos dependerán del tipo de ordenación ascendente/descendente.
+    dependerá del propio tipo de datos (por ejemplo, un array de buffers se ordenará según el valor numérico de sus direcciones de memoria).</p>
+  <p>Tenga en cuenta que esta función modificará el contenido de la matriz original que se suministró. Para crear una copia ordenada, utilice <tt><a href="array_copy.htm">array_copy()</a></tt> para duplicar el array primero, y luego pasarlo a esta función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">array_sort(variable, sorttype_or_function);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>variable</td>
+        <td>La variable que contiene el array.</td>
+      </tr>
+      <tr>
+        <td><span>sorttype_or_function<span> </span></span>
+        </td>
+        <td>El tipo de<span>ordenación<span class="inline">true</span> (</span><span>para ascendente o <span class="inline">false</span> para descendente) o una referencia a la función que se utilizará para la ordenación.</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _a = [10, 9, 8, 7, 6, 5];<br>
+    <br> array_sort(_a, function(elm1, elm2)<br> {<br> return elm1 - elm2;<br> });</p>
+  <p>El código anterior utiliza una función de ordenación personalizada para ordenar el array en orden ascendente. La función de ordenación toma los dos elementos del array como <tt>elm1</tt> y <tt>elm2</tt> y realiza una resta sobre ellos. Si <tt>elm1</tt> es mayor que <tt>elm2</tt>,
+    la resta resulta en un número positivo que empuja a <tt>elm1</tt> a estar después de <tt>elm2</tt>, por lo que los pone en un orden ascendente.</p>
+  <p>He aquí un ejemplo ampliado:</p>
+  <p class="code">var _xx, _yy, _a;<br> for (var i = 0; i &lt; 10; i++)<br> {<br> _xx = irandom(room_width);<br> _yy = irandom(room_height);<br> _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);<br> } <br>
+    <br> show_debug_message(_a);
+    <br>
+    <br> var _f = function(inst1, inst2)<br> {<br> return inst1.x - inst2.x;<br> } <br>
+    <br> array_sort(_a, _f);<br> show_debug_message(_a);
+  </p>
+  <p>El código anterior creará un array de 10 instancias colocadas en posiciones aleatorias dentro de la sala. El mensaje de depuración mostrará algo como lo siguiente:</p>
+  <p class="code">[ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]</p>
+  <p>A continuación, el código crea un método que se utilizará en la función <span class="inline">array_sort()</span> que devuelve la diferencia entre cada una de las posiciones X de las instancias de la sala. Luego se ejecuta la función <span class="inline">array_sort()</span> 
+    se ejecuta usando ese método, ordenando las instancias por X de menor a mayor. La salida de la matriz sería entonces algo así:</p>
+  <p class="code">[ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_length.htm">array_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_sort
+-->
+  <!-- TAGS
+array_sort
+-->
+</body>
+</html>

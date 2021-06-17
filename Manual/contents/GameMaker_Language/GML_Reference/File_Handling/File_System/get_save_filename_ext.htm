@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_save_filename_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_save_filename_ext" />
+  <meta name="rh-index-keywords" content="get_save_filename_ext" />
+  <meta name="search-keywords" content="get_save_filename_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_save_filename_ext</h1>
+  <p>Esta función abre un diálogo y pide al jugador un nombre de archivo para guardar con el filtro dado. El filtro tiene la forma &quot; nombre1|máscara1|nombre2|máscara2|.<i>.. &quot;,</i> donde la máscara puede contener las diferentes opciones con un punto y coma entre ellas
+    y también se puede utilizar un &quot;*&quot; para significar cualquier cadena. Por ejemplo: &quot; bitmaps|*<i>.bmp;*.wmf&quot;,</i> pediría al usuario que seleccionara el nombre de un archivo de mapa de bits del sistema, pero sólo los que tienen las dos extensiones especificadas (bmp y<tt>png</tt> ). ¡esta función no guarda <b>el</b> archivo en sí! Sólo devuelve una cadena con el nombre completo y la ruta del archivo. Si el usuario pulsa &quot;<b>Cancelar&quot;</b> se devuelve una cadena vacía &quot;&quot;. También puede añadir un
+    directorio para iniciar la búsqueda, y un título que se mostrará en la parte superior de la ventana en lugar del predeterminado.</p>
+  <p>Una cosa importante a tener en cuenta cuando se utiliza esta función es que le otorga ciertos permisos para ese archivo, durante la duración de su juego. Así, una vez que obtengas la ruta del archivo del usuario, podrás acceder a él una y otra vez sin tener que preguntar, y el
+    permiso se aplica a la lectura <i>y la</i> escritura por igual.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo es válida en los objetivos de <span class="notranslate">Windows</span> y <span class="notranslate">macOS</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">get_save_filename_ext(filter, fname, directory, caption);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>filtrar</td>
+        <td>El filtro del tipo de archivo y/o el nombre.</td>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>El nombre de archivo que se sugiere utilizar.</td>
+      </tr>
+      <tr>
+        <td>directorio</td>
+        <td>El directorio desde el que se inicia la búsqueda.</td>
+      </tr>
+      <tr>
+        <td>título</td>
+        <td>El título de la ventana.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var file;<br> file = get_save_filename_ext(&quot;screenshot|*.png&quot;, &quot;&quot;, working_directory, &quot;Save a level here&quot;);<br> if file != &quot;&quot;<br> {
+    <br> screen_save(archivo);
+    <br> }
+  </p>
+  <p>El código anterior pedirá al usuario que seleccione un nombre de archivo de imagen para guardarlo en el directorio de trabajo y, a continuación, comprobará el nombre de archivo devuelto y la ruta Si no es una cadena vacía, toma una captura de pantalla y la guarda utilizando el nombre dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_System.htm">Sistema de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="file_exists.htm">file_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_save_filename_ext
+-->
+  <!-- TAGS
+get_save_filename_ext
+-->
+</body>
+</html>

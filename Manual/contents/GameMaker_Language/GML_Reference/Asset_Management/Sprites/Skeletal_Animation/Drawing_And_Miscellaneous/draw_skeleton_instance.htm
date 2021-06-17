@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_esqueleto_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_instance" />
+  <meta name="rh-index-keywords" content="draw_skeleton_instance" />
+  <meta name="search-keywords" content="draw_skeleton_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_esqueleto_instancia</h1>
+  <p>Esta función es <i>sólo</i> para usar con instancias que tienen sprites asignados creados con el programa de animación esquelética Spine. Aunque se pueden dibujar estos sprites utilizando las funciones normales de dibujo (como <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>),
+    hay ocasiones en las que puede querer dibujar un solo fotograma o mostrar un cambio en la textura de la piel sin cambiar realmente las propiedades de los sprites de una instancia. En estos casos puedes dibujar el sprite que ha sido asignado a la instancia con esta función,
+    en la que se da el ID de la instancia y el nombre de la animación de la que se va a obtener el fotograma (una cadena, tal y como se ha establecido en el programa utilizado para crear el sprite). A continuación se da el nombre del skin a utilizar (de nuevo, tal y como se estableció cuando se hizo el sprite), y un valor de
+    valor de fotograma. El valor del marco es para decirle a <span class="notranslate">GameMaker Studio</span> 2 qué parte de la animación mostrar y es un valor entre 0 y el <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>número_de_imagen</tt></a>. El resto de los argumentos son
+    los mismos que se utilizan para el dibujo normal de sprites y cambiarán la escala, el ángulo, el color de fusión y el alfa del fotograma final de la animación que se está dibujando.</p>
+  <p class="note"><b>ADVERTENCIA</b> Debido a la forma en que las animaciones de esqueletos se interpolan entre varios fotogramas &quot;clave&quot;, hay una sobrecarga adicional asociada a esta llamada y, por lo tanto, se recomienda evitar dibujar sprites basados en esqueletos utilizando
+    este método a menos que sea absolutamente necesario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_skeleton_instance(instance, animname, skinname, frame, x, y, xscale, yscale, rot, colour, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>instancia</td>
+        <td>El índice de la instancia para dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>El nombre de la animación de la que se va a obtener el fotograma (una cadena).</td>
+      </tr>
+      <tr>
+        <td>nombre de la piel</td>
+        <td>El nombre del skin a utilizar (una cadena).</td>
+      </tr>
+      <tr>
+        <td>marco</td>
+        <td>El cuadro de animación a dibujar (de 0 a número_de_imagen - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>pudrirse</td>
+        <td>La rotación del sprite. 0=normal, 90=girado 90 grados en sentido contrario a las agujas del reloj, etc.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color con el que se mezclará el sprite.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa del sprite (de 0 a 1 donde 0 es transparente y 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_skeleton_instance(obj_Player, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, 1, 1, 0, c_white, 1);</p>
+  <p>El código anterior dibujará el primer fotograma del sprite de animación esquelético asignado a la instancia dada, utilizando el conjunto de animación &quot;salto&quot; y el skin definido como &quot;skin1&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_And_Miscellaneous.htm">Dibujo y Varios</a></div>
+        <div style="float:right">Siguiente: <a href="draw_skeleton_collision.htm">draw_skeleton_collision</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_instance
+-->
+  <!-- TAGS
+draw_skeleton_instance
+-->
+</body>
+</html>

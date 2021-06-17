@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mientras que</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the while function" />
+  <meta name="rh-index-keywords" content="while" />
+  <meta name="search-keywords" content="while" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mientras que</h1>
+  <p>El <span class="notranslate">Lenguaje GameMaker</span> tiene un número de formas en las que puedes realizar <i>bucles</i>, uno de los más importantes es el bucle <tt>while</tt>. Esta función de bucle tiene la forma</p>
+  <p class="code">while (&lt;expresión&gt;)<br> {<br> &lt;expresión&gt;;<br> &lt;expresión&gt;;<br>...<br> }</p>
+  <p>Aquí tiene una <a class="glossterm" data-glossterm="declaración" href="#">sentencia</a> que se itera una y otra vez en función de los resultados de la evaluación de una <a class="glossterm" data-glossterm="expresión" href="#">expresión</a>, es decir: con
+    un bucle <span class="inline">while</span>, mientras la expresión se evalúe como <span class="inline">true</span>, la sentencia (que también puede ser un bloque de código de múltiples sentencias con llaves <tt>{}</tt>) se ejecuta. A continuación puede encontrar
+    un ejemplo de una forma típica de utilizar &quot;while&quot;:</p>
+  <p class="code">while (place_meeting(x, y, obj_Wall))<br> {
+    <br> x -= 1;<br> }
+  </p>
+  <p>El código anterior está comprobando si hay una colisión entre la instancia que llama y una instancia &quot;muro&quot;, y realizará múltiples iteraciones <a class="glossterm" data-glossterm="iteración" href="#">mientras</a>se produce<span class="glossextra">una</span> 
+    mientras se produce una colisión - moviendo la instancia a la izquierda un píxel - hasta que la instancia ya no esté en colisión.</p>
+  <p><strong>¿Cuándo debe utilizar un bucle <span class="inline">while</span>?</strong> Debe usarse cada vez que quiera repetir una o más sentencias, pero no sabe realmente -o no le importa- cuántas veces tiene que repetirse, teniendo en cuenta que si la
+    evaluación inicial es <span class="inline">false</span>, las sentencias pueden ni siquiera ejecutarse.</p>
+  <p>Por favor, ten en cuenta que debes <strong>tener mucho cuidado con tus bucles <tt>while</tt></strong>. Puedes hacer fácilmente bucles <i>infinitos</i>, en cuyo caso tu juego se colgará y no reaccionará a ninguna entrada del usuario y necesitará ser cerrado a la fuerza. Por ejemplo:</p>
+  <p class="code">while (!place_free(x, y))<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> }
+  </p>
+  <p>Ahora bien, el código anterior puede funcionar bien, pero también puede causar un bucle infinito si la instancia es incapaz de encontrar una posición vacía a la que moverse, y esto hará que el juego se cuelgue. Si usted se encuentra en una posición donde este tipo de cosas es una posibilidad,
+    entonces deberías usar un tipo de bucle diferente que no sea de bloqueo, o usar una comprobación de variables adicional en la expresión (puedes usar múltiples expresiones junto con el <a href="../Expressions_And_Operators.htm"><span class="inline">and</span> (&amp;<span class="inline">&amp;</span>),</a>
+    <a href="../Expressions_And_Operators.htm"><span class="inline">or</span> (<span class="inline">||</span>)</a> y <a href="../Expressions_And_Operators.htm"><span class="inline">xor</span> (<span class="inline">^^</span>)</a> para la comprobación):</p>
+  <p class="code">var _check = 0;<br> while ((!place_free(x, y)) &amp;&amp; (_check &lt; 100))<br> {
+    <br> x = random(room_width);<br> y = random(room_height);<br> _check += 1;<br> }
+    <br> if _check &gt;= 100<br> {<br> // el código ha fallado, así que ocúpate de ello<br> }</p>
+  <p>También puede utilizar la sentencia <span class="inline"><a href="break.htm">break</a></span> para salir del bucle, por ejemplo, el siguiente código generará 100 números aleatorios y luego continuará, aunque la evaluación de <span class="inline">while</span> <em>siempre</em> será <span class="inline">true</span>:</p>
+  <p class="code">var i = 0;<br> while (true)<br> {
+    <br> x[i] = random(room_width);<br> y[i] = random(room_height);<br> if ((i++) &gt;= 100)<br> {<br> break;<br> } <br> }
+  </p>
+  <p>También puede utilizar la sentencia <a href="continue.htm">continue</a> en un bucle <span class="inline">while</span>. Al usarla, se terminará la iteración actual del bucle y se reiniciará el bucle de nuevo en una nueva iteración, por ejemplo:</p>
+  <p class="code">var file = file_text_open_read(&quot;Game_Data.txt&quot;);<br> var _num = 0;<br> while (!file_text_eof(file))<br> {<br> var _s = file_text_readln(file);<br> if (_s == &quot;&quot;)<br> {<br> continue;<br> } <br> str[num++] = _s;<br> } <br> file_text_close(file);
+  </p>
+  <p>Este código abrirá un archivo y leerá una línea del mismo en cada iteración del bucle hasta llegar al final del contenido del archivo. Si la línea que se lee es una cadena vacía, la iteración actual del bucle se termina utilizando la sentencia <span class="inline">continue</span> y se inicia una nueva iteración, de lo contrario la cadena se añade a un <a href="../Arrays.htm">array</a> y la posición del array se incrementa.</p>
+  <p>Para más ejemplos de funciones de bucle, consulte las secciones <a href="repeat.htm"><tt>repetir</tt></a>, <a href="do___until.htm"><tt>hacer... hasta</tt></a>y <a href="for.htm"><tt>para</tt></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="do___until.htm">hacer / hasta</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+while
+-->
+  <!-- TAGS
+while
+-->
+
+</body></html>

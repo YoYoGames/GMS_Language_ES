@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>escala_de_secuencia_de_velocidad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_speedscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_speedscale" />
+  <meta name="search-keywords" content="layer_sequence_speedscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>escala_de_secuencia_de_velocidad</h1>
+  <p>Con esta función puede cambiar la velocidad de reproducción de la secuencia dada. Se suministra el ID del elemento de la secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones de</a> los elementos de la capa y luego un valor de escala de velocidad. Este valor es un <i>multiplicador</i>, donde 1 es la velocidad de reproducción por defecto y los valores menores que 1 ralentizarán la reproducción y los valores mayores que 1 la acelerarán, por ejemplo: un valor de 0,5 sería la mitad de la velocidad de reproducción, mientras que
+    un valor de 2 sería el doble de velocidad de reproducción.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sequence_speedscale(sequence_element_id, speedscale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>escala de velocidad</td>
+        <td>La escala de velocidad a utilizar (un multiplicador), por defecto es 1</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> layer_sequence_speedscale(_seq, 0.75);</p>
+  <p>El código anterior crea una nueva secuencia en la capa de la instancia de llamada y luego establece su valor de escala de velocidad a 0,75 (tres cuartos de la velocidad de reproducción por defecto).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_get_x.htm">layer_sequence_get_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_speedscale
+-->
+  <!-- TAGS
+layer_sequence_speedscale
+-->
+</body>
+</html>

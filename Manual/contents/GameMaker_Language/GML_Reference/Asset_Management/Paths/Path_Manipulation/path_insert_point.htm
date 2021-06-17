@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>punto_de_inserción_de_la_senda</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_insert_point" />
+  <meta name="rh-index-keywords" content="path_insert_point" />
+  <meta name="search-keywords" content="path_insert_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>punto_de_inserción_de_la_senda</h1>
+  <p>Con esta función puede insertar un nuevo punto en una ruta (la ruta puede haber sido creada en el editor de rutas o a través de código usando <a href="path_add.htm"><tt>path_add()</tt></a>). El punto se añadirá a la trayectoria antes del punto &quot;n&quot;
+    que se especifica en la función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_insert_point(index, n, x, y, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta en la que se insertará el punto.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>El punto de definición para insertar el nuevo punto ANTES.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x (relativa a la trayectoria) del nuevo punto.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y (relativa a la trayectoria) del nuevo punto.</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>El factor de velocidad del punto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path_insert_point(mypath, 0, 50, 50, 100);</p>
+  <p>Esto insertará un punto al principio de la ruta indexada en la variable &quot;mypath&quot;, en (50,50), con un factor de velocidad del 100%.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_delete_point.htm">path_delete_point</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_insert_point
+-->
+  <!-- TAGS
+path_insert_point
+-->
+</body>
+</html>

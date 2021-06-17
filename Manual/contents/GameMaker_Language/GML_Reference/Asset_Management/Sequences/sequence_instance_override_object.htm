@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_instancia_sobrecarga_objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_instance_override_object" />
+  <meta name="rh-index-keywords" content="sequence_instance_override_object" />
+  <meta name="search-keywords" content="sequence_instance_override_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_instancia_sobrecarga_objeto</h1>
+  <p>Con esta función puede anular (reemplazar) todas las instancias de un objeto utilizado en una secuencia por otro. Debe proporcionar el ID de la estructura de la instancia de la secuencia (tal como se devolvió cuando se creó la instancia de la secuencia en la sala o utilizando una de las funciones de la capa de la sala
+    véase <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">aquí</a>), así como el índice del objeto (tal y como se define en el navegador de activos) para el objeto que desea sustituir. Por último, se da un índice de objeto o un ID de instancia para utilizar como
+    el objeto que va a anular la secuencia (si se proporciona un ID de instancia, se utilizará simplemente el objeto del que se creó la instancia como anulación). Tenga en cuenta que esto sólo puede hacerse en las instancias de la secuencia (no en los objetos de la secuencia) y debe hacerse
+    antes de que la secuencia comience a reproducirse, de lo contrario no funcionará.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>estructura_de_secuencia</td>
+        <td>La estructura de la instancia de la secuencia a modificar.</td>
+      </tr>
+      <tr>
+        <td>object_id</td>
+        <td>El índice del objeto dentro de la secuencia a anular.</td>
+      </tr>
+      <tr>
+        <td>instance_or_object_id</td>
+        <td>El índice del objeto o el ID de la instancia que se utilizará para anular los objetos de la secuencia.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _seq = layer_sequence_create(&quot;Background&quot;, 0, 0, seq_AnimatedBackground);<br> var _seq_inst = layer_sequence_get_instance(_seq); sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);</p>
+  <p>El código anterior crea una nueva instancia de secuencia en la capa dada y luego la modifica para que todas las instancias del objeto &quot;obj_Árboles_Invierno&quot; sean reemplazadas por instancias del objeto &quot;obj_Árboles_Verano&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="in_sequence.htm">in_sequence</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance_override_object
+-->
+  <!-- TAGS
+sequence_instance_override_object
+-->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>región_emisora_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_region" />
+  <meta name="rh-index-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+  <meta name="search-keywords" content="part_emitter_region,ps_shape_rectangle,ps_shape_ellipse,ps_shape_diamond,ps_shape_line,ps_distr_linear,ps_distr_gaussian,ps_distr_invgaussian" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>región_emisora_parte</h1>
+  <p>Esta función se utiliza para establecer la posición de un emisor de partículas dentro de la sala actual. Se especifica la caja delimitadora del área dentro de la función y luego se utiliza cualquiera de una serie de constantes para definir la forma final del emisor dentro de esta caja delimitadora, así como la distribución de las partículas dentro de la misma.
+    así como la distribución de las partículas dentro de la forma. Las constantes disponibles para las formas de distribución se enumeran a continuación:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps_shape_rectangle</td>
+        <td>Una forma rectangular que llena el área dada.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_ellipse</td>
+        <td>Una elipse, con la anchura y la altura definidas por el área.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_diamond</td>
+        <td>Una forma de diamante con las puntas a media anchura y media altura.</td>
+      </tr>
+      <tr>
+        <td>ps_shape_line</td>
+        <td>Una sola línea, en la que el punto inicial es la izquierda y la parte superior y el punto final es la derecha y la parte inferior.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Shapes" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Shapes.png">Además de las formas de distribución, también se puede definir la curva de distribución de las partículas que se van a
+    emitidas. Las constantes disponibles para las curvas de distribución se enumeran a continuación:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps_distr_lineal</td>
+        <td>Una distribución lineal en la que todas las partículas tienen la misma probabilidad de aparecer en cualquier parte del área.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_gaussian</td>
+        <td>Una distribución gaussiana en la que se generan más partículas en el centro que en los bordes.</td>
+      </tr>
+      <tr>
+        <td>ps_distr_invgaussian</td>
+        <td>Una distribución gaussiana inversa en la que se generan más partículas en los bordes que en el centro.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p><img alt="Emitter Distribution" class="center" height="321" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Emitter_Distribution.png" width="848" /></p>
+  <p class="note"><b>NOTA</b>: Si necesitas que el emisor se mueva con una instancia, tendrás que usar esta función en el evento de paso y actualizar la posición del emisor de esa manera. También vale la pena señalar que para las emisiones puntuales en las que no se necesita crear partículas
+    sobre un área o con una distribución específica, a menudo es más fácil utilizar <span style="font-size:1px;"><a href="../Particle_Systems/part_particles_create.htm"><tt style="font-size: 14px">part_particles_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_emitter_region(ps, ind, xmin, xmax, ymin, ymax, shape, distribution);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El sistema de partículas en el que se encuentra el emisor.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del emisor a fijar.</td>
+      </tr>
+      <tr>
+        <td>xmin</td>
+        <td>La coordenada x del lado izquierdo de la región.</td>
+      </tr>
+      <tr>
+        <td>xmax</td>
+        <td>La coordenada x del lado derecho.</td>
+      </tr>
+      <tr>
+        <td>ymin</td>
+        <td>La coordenada y de la parte superior de la región.</td>
+      </tr>
+      <tr>
+        <td>ymax</td>
+        <td>La coordenada y del fondo de la región.</td>
+      </tr>
+      <tr>
+        <td>forma</td>
+        <td>La forma de la región.</td>
+      </tr>
+      <tr>
+        <td>distribución</td>
+        <td>El estilo de distribución de las partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_emitter_region(global.Sname , emit_1, x - 50, x + 50, y - 50, y + 50, ps_shape_ellipse, ps_distr_linear);</p>
+  <p>El código anterior establecerá un emisor con una forma elíptica de 100px de alto y 100px de ancho alrededor de la posición actual (x,y) de la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Emitters.htm">Emisores de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_emitter_burst.htm">part_emitter_burst</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_region
+ps_shape_rectangle
+ps_shape_ellipse
+ps_shape_diamond
+ps_shape_line
+ps_distr_linear
+ps_distr_gaussian
+ps_distr_invgaussian
+-->
+  <!-- TAGS
+part_emitter_region
+-->
+</body>
+</html>

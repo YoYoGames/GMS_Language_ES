@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_duplicate</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_duplicate" />
+  <meta name="rh-index-keywords" content="sprite_duplicate" />
+  <meta name="search-keywords" content="sprite_duplicate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_duplicate</h1>
+  <p>Esta función devolverá el índice de un sprite recién creado que es un duplicado (copia) del introducido como argumento &quot;índice&quot;. Si la función falla, se devuelve -1. Esta función <i>debe</i> utilizarse para copiar cualquier
+    sprites de los activos originales antes de poder realizar cualquier transformación en ellos. Por ejemplo, si desea cambiar el cuadro delimitador de un sprite, o establecer su alfa desde otro sprite, primero debe duplicarlo, luego realizar la operación en el
+    duplicado y utilizarlo. Un sprite duplicado se colocará en su propia página de textura única cuando se cree, lo que significa que la duplicación de múltiples sprites creará múltiples páginas de textura y tendrá un impacto en el rendimiento, por lo que utilice esta función sólo
+    cuando sea necesario.</p>
+  <p class="note"><b>NOTA</b>: Cuando duplicas un sprite en <span class="notranslate">GameMaker Studio 2</span> debes recordar eliminarlo de nuevo (con <span style="font-size:1px;"><a href="sprite_delete.htm"><tt style="font-size: 14px">sprite_delete()</tt></a></span>)
+    cuando ya no lo necesites, de lo contrario existe el riesgo de que se produzca una fuga de memoria que ralentizará y eventualmente bloqueará tu juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_duplicate(índice);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sprite a duplicar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Real (valor único de identificación del sprite)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">new_spr = sprite_duplicate(sprite_index)</p>
+  <p>El código anterior duplica el sprite que se está utilizando actualmente como índice del sprite de la instancia y almacena el índice de este nuevo sprite en la variable &quot;new_spr&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_assign.htm">sprite_assign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_duplicate
+-->
+  <!-- TAGS
+sprite_duplicate
+-->
+</body>
+</html>

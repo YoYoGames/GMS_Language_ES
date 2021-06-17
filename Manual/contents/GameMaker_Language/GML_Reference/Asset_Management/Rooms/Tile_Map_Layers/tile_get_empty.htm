@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tile_get_empty</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tile_get_empty" />
+  <meta name="rh-index-keywords" content="tile_get_empty" />
+  <meta name="search-keywords" content="tile_get_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tile_get_empty</h1>
+  <p>Esta función puede utilizarse para comprobar si un conjunto de datos de baldosas dado es para una baldosa vacía o no. Se dan los datos de la baldosa, que pueden ser recuperados usando la función <a href="tilemap_get.htm"><tt>tilemap_get()</tt></a>y la función devolverá <tt>true</tt> si el mosaico está vacío, o <tt>false</tt> si hay un índice de mosaico.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tile_get_empty(tiledata)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>los datos de las baldosas que se van a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> for (var i = 0; i &lt; tilemap_get_width(map_id); i++;) <br> {
+    <br> for (var j = 0; j &lt; tilemap_get_height(map_id); j++;) <br> {
+    <br> var data = tilemap_get(map_id, i, j);<br> if !tile_get_empty(data)<br> {
+    <br> data = tile_set_empty(data)<br> tilemap_set(map_id, data, i, j);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior obtiene el ID del mapa de baldosas de la capa dada y luego procede a comprobar cada celda de baldosa en el mapa para ver si tiene datos o no. En caso de tenerlos, el mosaico se establece como vacío.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tile_get_index.htm">tile_get_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tile_get_empty
+-->
+  <!-- TAGS
+tile_get_empty
+-->
+</body>
+</html>

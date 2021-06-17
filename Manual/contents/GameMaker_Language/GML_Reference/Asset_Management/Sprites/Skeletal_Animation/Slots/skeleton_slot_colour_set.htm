@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_slot_colour_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_colour_set" />
+  <meta name="rh-index-keywords" content="skeleton_slot_colour_set" />
+  <meta name="search-keywords" content="skeleton_slot_colour_set,skeleton_slot_color_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_slot_colour_set</h1>
+  <p>Con esta función puedes establecer el color y el alfa de una ranura adjunta para que todos los sprites adjuntos a ella se dibujen con estos valores de mezcla. Tenga en cuenta que el sprite de instancia puede tener un color de mezcla y un ajuste de alfa (<a href="../../Sprite_Instance_Variables/image_blend.htm"><tt>mezcla_de_imagen</tt></a> y
+    <a href="../../Sprite_Instance_Variables/image_angle.htm"><tt>image_alpha</tt></a>), al igual que el adjunto (ver la función <a href="../Attachments/skeleton_attachment_create_colour.htm"><tt>esqueleto_adjunto_crear_color()</tt></a>), por lo que el
+    color y alfa finales que tendrá el sprite adjunto asignado para la ranura serán un compuesto de todos estos valores.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_slot_colour_set(slot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ranura</td>
+        <td>El nombre de la ranura a establecer, una cadena</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color a establecer, ya sea un entero, una constante o un valor hexadecimal.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa a establecer de 0 a 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br> if !ds_list_empty(slot_list)<br> {
+    <br> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;) <br> {
+    <br> if skeleton_slot_colour_get(slot_list[| i]) != c_white<br> {
+    <br> skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior crea una lista DS y luego la rellena con los nombres de las ranuras encontradas en la posición del ratón en la sala. Luego recorre la lista de ranuras y restablece el color de las ranuras encontradas a blanco con un alfa de 1 si el color no es
+    ya es blanco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Slots.htm">Ranuras</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_slot_colour_get.htm">skeleton_slot_colour_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_colour_set
+skeleton_slot_color_set
+-->
+  <!-- TAGS
+skeleton_slot_colour_set
+-->
+</body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Notificaciones Push</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Push Notification async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Push Notification Event" />
+  <meta name="search-keywords" content="push notifications,push,ev_push_notification" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Notificaciones Push</h1>
+  <p><img alt="Push Notification Event" class="center" src="../../../assets/Images/Asset_Editors/Async_Push.png">El Evento de Notificación Push es aquel que se desencadena por la <a class="glossterm" data-glossterm="llamada de retorno" href="#">devolución de llamada</a> de <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/Push_Notifications.htm"><strong>notificaciones push</strong></a>    en el SO del dispositivo, ya sea desde una fuente local utilizando la función <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/push_local_notification.htm"><span class="inline">push_local_notification()</span></a>, o
+    desde una fuente remota (es decir, su servidor). Genera un <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a> que es exclusivo de este evento y se almacena en la variable especial <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span> </a>    (por favor, consulte las funciones individuales que activan eventos asíncronos para ver ejemplos de código que explican el uso de este evento con más detalle). Este mapa DS tiene las siguientes claves:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">type</span>&quot;: El valor puede ser &quot;local&quot; para una notificación local del dispositivo, &quot;remoto&quot; para una notificación remota, o &quot;registrar&quot; para el registro de una notificación remota.</li>
+    <li class="dropspot">&quot;<span class="inline">status</span>&quot;: El valor será &quot;1&quot; para el éxito o &quot;0&quot; para un error.</li>
+  </ul>
+  <p>Puede haber entradas clave adicionales basadas en el &quot;tipo&quot; devuelto y el valor de &quot;estado&quot;. Para el &quot;estado&quot;, si se ha devuelto un error (&quot;0&quot;), entonces también tendrá la siguiente clave:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">error</span>&quot;: Contiene los detalles del error recibido.</li>
+  </ul>
+  <p>Si el valor de &quot;estado&quot; es 1 (es decir, sin errores), el mapa DS contendrá los siguientes valores adicionales, en función del valor de la clave &quot;tipo&quot;:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">reg_id</span>&quot;: Si el &quot;tipo&quot; recibido fue &quot;registro&quot;, esta clave contendrá el id de registro del dispositivo para las notificaciones remotas.</li>
+    <li class="dropspot">&quot;<span class="inline">data</span>&quot;: Si el &quot;tipo&quot; recibido fue &quot;local&quot; o &quot;remoto&quot;, entonces esta clave contendrá la cadena de carga útil que definió cuando llamó a la función de notificación.</li>
+  </ul>
+  <p>Para entenderlo mejor, hemos creado un pequeño fragmento de ejemplo para que lo veas. En este ejemplo enviaremos una notificación push local utilizando el siguiente código:</p>
+  <p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br> var data = &quot;daily_reward&quot;;<br> push_local_notification(fireTime, &quot;Ahoy!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p>
+  <p>Esto establecerá un temporizador para &quot;empujar&quot; una notificación al dispositivo cuando haya pasado un día. Cuando el día haya pasado, si su juego está en segundo plano o no se está ejecutando, se mostrará una notificación al usuario con el título y el mensaje dados (en
+   <span class="notranslate">iOS</span>, se muestra el nombre del juego y se ignora el título), y luego se llamará a un Evento de Notificación Push asíncrono. Ten en cuenta que si el juego está en primer plano cuando llega el momento de la notificación, <em>no </em>se mostrará, <strong>pero el evento asíncrono se disparará igualmente</strong>.
+    En el evento mismo se manejaría el callback algo así:</p>
+  <p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br> var status = ds_map_find_value(async_load, &quot;status&quot;); <br> if status == 0<br> {<br> //error de algún tipo<br> var error = ds_map_find_value(async_load, &quot;error&quot;);<br> show_debug_message(&quot;error=&quot; + string(error));<br> } <br> else
+    <br> {<br> if type == &quot;register&quot;<br> {<br> global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br> } <br> else<br> {<br> var data = ds_map_find_value(async_load, &quot;data&quot;);<br> if data == &quot;daily_reward&quot;<br> {<br> global.Gold += 1000;<br> } <br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Async_Events.htm">Eventos asíncronos</a></div>
+        <div style="float:right">Siguiente: <a href="Save_Load.htm">Guardar / Cargar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Push Notification Event
+ev_push_notification
+-->
+  <!-- TAGS
+ev_push_notification
+-->
+
+</body></html>

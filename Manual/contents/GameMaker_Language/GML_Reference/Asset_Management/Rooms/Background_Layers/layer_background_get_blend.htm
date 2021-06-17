@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_get_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_get_blend" />
+  <meta name="rh-index-keywords" content="layer_background_get_blend" />
+  <meta name="search-keywords" content="layer_background_get_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_get_blend</h1>
+  <p>Esta función puede utilizarse para obtener el color de mezcla del elemento de fondo. Se le da el ID del elemento de fondo (que se obtiene cuando se crea un elemento de fondo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> o
+    cuando se utiliza la función <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), y la función devolverá un valor real que representa el color asignado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_background_get_blend(background_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>El valor de identificación único del elemento de fondo para obtener la información</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del color (real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> if layer_background_get_blend(back_id) == c_white<br> {
+    <br> layer_background_blend(back_id, make_colour_rgb(random(255), random(255), 255));<br> }
+  </p>
+  <p>El código anterior obtendrá el ID de la capa llamada &quot;Background_sky&quot; y luego lo utilizará para obtener el ID del elemento de fondo en esa capa. Este ID se utiliza para comprobar el color de fusión del elemento y si es equivalente a la constante
+   <tt>c_white</tt>, entonces la mezcla de la capa se establece en un color aleatorio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Background_Layers.htm">Capas de fondo</a></div>
+        <div style="float:right">Siguiente: <a href="layer_background_get_alpha.htm">layer_background_get_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_get_blend
+-->
+  <!-- TAGS
+layer_background_get_blend
+-->
+</body>
+</html>

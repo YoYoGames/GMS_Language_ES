@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ángulo_de_espiga_de_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_angle" />
+  <meta name="rh-index-keywords" content="layer_sprite_angle" />
+  <meta name="search-keywords" content="layer_sprite_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ángulo_de_espiga_de_capa</h1>
+  <p>Con esta función puede cambiar el ángulo del elemento sprite dado en una capa. Se le da el ID del elemento sprite (que se obtiene cuando se crea un elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> o cuando
+    utilizar la función <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), y luego establece el valor del ángulo, de 0 a 359 en sentido contrario a las agujas del reloj, donde 0 es a la derecha, 90 es a la parte superior, 180 es a la izquierda y 270 es a la parte inferior. Si establece
+    un valor superior a 360, éste será puesto en bucle para situarlo en el rango de 0 a 359.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_angle(sprite_element_id, angle);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del elemento del sprite que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El ángulo del sprite (por defecto es 0)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br> if layer_sprite_get_angle(asset_sprite) != 0<br> {
+    <br> layer_sprite_angle(asset_sprite, 0);<br> }
+  </p>
+  <p>El código anterior comprobará el elemento sprite asignado a la capa en la que se encuentra la instancia que ejecuta el código y si su ángulo no es 0 lo pondrá a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_blend.htm">layer_sprite_blend</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_angle
+-->
+  <!-- TAGS
+layer_sprite_angle
+-->
+</body>
+</html>

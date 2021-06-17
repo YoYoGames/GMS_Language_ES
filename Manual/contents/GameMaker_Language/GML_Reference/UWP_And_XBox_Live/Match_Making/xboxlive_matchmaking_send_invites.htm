@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_matchmaking_send_invites</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_matchmaking_send_invites" />
+  <meta name="rh-index-keywords" content="xboxlive_matchmaking_send_invites" />
+  <meta name="search-keywords" content="xboxlive_matchmaking_send_invites" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_matchmaking_send_invites</h1>
+  <p>Esta función hace aparecer el diálogo del sistema de Xbox Live para permitir a un usuario enviar invitaciones a su juego. Se especifica el usuario local que debe controlar el diálogo (y cuya lista de amigos será utilizada por el diálogo), el valor de ID de sesión único para
+    de la sesión a la que quieren invitar a la gente, y algún texto por defecto para mostrar en el diálogo. El ID de sesión se obtiene del mapa <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> DS generado por la función
+    función <span class="inline"><a href="xboxlive_matchmaking_create.htm">xboxlive_matchmaking_create()</a></span>.</p>
+  <p>La función devolverá -1 si los argumentos no son válidos o el usuario no ha iniciado sesión en Xbox Live, o un valor superior a 0 en caso contrario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_matchmaking_send_invites(from_user, session_to_invite_into, text_to_add_to_invite);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>de_usuario</td>
+        <td>El ID de usuario local para controlar el diálogo.</td>
+      </tr>
+      <tr>
+        <td>sesión_para_invitar_en</td>
+        <td>El ID de sesión único para la sesión a la que se va a unir.</td>
+      </tr>
+      <tr>
+        <td>text_to_add_to_invite</td>
+        <td>Un breve texto para añadir a la invitación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if gamepad_button_check_pressed(0, gp_face1)<br> {<br> var _uid = xboxlive_user_for_pad(0);<br> xboxlive_matchmaking_send_invites(_uid, global.session_ID, &quot;¡Ven y únete a mi partida!&quot;);<br> }</p>
+  <p>El código anterior comprueba si se ha pulsado un botón del gamepad y, si se detecta uno, se abrirá el diálogo de Xbox Live para invitar a la sesión.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Match_Making.htm">La creación de partidos</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_matchmaking_set_joinable_session.htm">xboxlive_matchmaking_set_joinable_session</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_matchmaking_send_invites
+-->
+  <!-- TAGS
+xboxlive_matchmaking_send_invites
+-->
+</body>
+</html>

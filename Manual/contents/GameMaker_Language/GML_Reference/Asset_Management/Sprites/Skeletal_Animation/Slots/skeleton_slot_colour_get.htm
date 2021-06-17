@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_slot_colour_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_colour_get" />
+  <meta name="rh-index-keywords" content="skeleton_slot_colour_get" />
+  <meta name="search-keywords" content="skeleton_slot_colour_get,skeleton_slot_color_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_slot_colour_get</h1>
+  <p>Con esta función puede obtener el color de la ranura de un accesorio. Usted proporciona el nombre de la ranura (una cadena) y la función devolverá un valor entero para el color.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_slot_colour_get(slot);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ranura</td>
+        <td>El nombre de la ranura a comprobar, una cadena</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">slot_list = ds_list_create();<br> skeleton_find_slot(mouse_x, mouse_y, slot_list);<br> if !ds_list_empty(slot_list)<br> {
+    <br> for (var i = 0; i &lt; ds_list_size(slot_list); ++i;) <br> {
+    <br> if skeleton_slot_colour_get(slot_list[| i]) != c_white<br> {
+    <br> skeleton_slot_colour_set(slot_list[| i], c_white, 1);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior crea una lista DS y luego la rellena con los nombres de las ranuras encontradas en la posición del ratón en la sala. Luego recorre la lista de ranuras y restablece el color de las ranuras encontradas a blanco con un alfa de 1 si el color no es
+    ya es blanco.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Slots.htm">Ranuras</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_slot_alpha_get.htm">skeleton_slot_alpha_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_colour_get
+skeleton_slot_color_get
+-->
+  <!-- TAGS
+skeleton_slot_colour_get
+-->
+</body>
+</html>

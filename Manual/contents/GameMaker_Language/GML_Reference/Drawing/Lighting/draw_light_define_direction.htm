@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_luz_definir_dirección</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_light_define_direction" />
+  <meta name="rh-index-keywords" content="draw_light_define_direction" />
+  <meta name="search-keywords" content="draw_light_define_direction" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_luz_definir_dirección</h1>
+  <p>Esta función sirve para definir una luz direccional, en la que la dirección y la intensidad se establecen mediante los valores introducidos para el vector unitario x, y y z (lo que significa que deben estar entre -1 y 1, donde 1 o -1 es la intensidad total, y 0 es la ausencia de intensidad). Las luces de
+    luces también pueden recibir un color, que también afectará a la intensidad percibida de la luz, ya que ciertos colores parecen más &quot;oscuros&quot; que otros. También hay que dar a la luz un número de índice que es lo que se utilizará en otras funciones para referirse a ella.
+    a ella.</p>
+  <p class="note"><b>NOTA</b>: Sólo hay 8 luces de hardware disponibles, por lo que sólo se pueden activar 8 luces definidas a la vez (aunque se pueden definir más).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">dibujar_luz_definir_dirección(ind, x, y, z, col);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El número de índice de la luz (arbitrario)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La componente x del vector luz</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La componente y del vector luz</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La componente z del vector luz</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>El color a utilizar para la luz (ya sea una constante, un real o un valor hexadecimal).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_lighting(true);<br> draw_light_define_direction(1, 0, 1, 0, c_white);<br> draw_light_enable(1, true);</p>
+  <p>El código anterior habilitará la iluminación para toda la escena, luego definirá una luz blanca direccional en el espacio de la habitación, y finalmente encenderá esa luz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Lighting.htm">Iluminación</a></div>
+        <div style="float:right">Siguiente: <a href="draw_light_enable.htm">draw_light_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_light_define_direction
+-->
+  <!-- TAGS
+draw_light_define_direction
+-->
+</body>
+</html>

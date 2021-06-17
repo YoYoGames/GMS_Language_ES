@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_get_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_get_persistent" />
+  <meta name="rh-index-keywords" content="object_get_persistent" />
+  <meta name="search-keywords" content="object_get_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_get_persistent</h1>
+  <p>Esta función le dirá si el objeto que está comprobando ha sido marcado como &quot;persistente&quot; o no. Un objeto persistente es uno que hará que cualquier instancia del mismo sea llevada de sala en sala a menos que sea explícitamente destruida.
+    Tenga en cuenta que esta no es una función de instancia. Por lo tanto, puedes tener un objeto persistente y una instancia no persistente del mismo objeto y viceversa. Puedes establecer la bandera de persistencia de una instancia individual utilizando la función <a href="../Instances/Instance_Variables/persistent.htm"><tt>persistente</tt></a> instancia
+    .</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">object_get_persistent(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El índice del objeto a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (!persistent) &amp;&amp; (object_get_persistent(object_index))<br> {<br> persistent = true;<br> }</p>
+  <p>El código anterior comprobará la instancia que se está ejecutando para ver si es persistente o no, así como comprobará el índice del objeto de la instancia para ver si está marcado como persistente o no. Si la instancia <i>no</i> es persistente pero el índice del objeto está marcado
+    como persistente, establecerá &quot;persistente&quot; como verdadero para esa instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Siguiente: <a href="object_get_solid.htm">object_get_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_get_persistent
+-->
+  <!-- TAGS
+object_get_persistent
+-->
+</body>
+</html>

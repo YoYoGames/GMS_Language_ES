@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_stream</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_stream" />
+  <meta name="rh-index-keywords" content="part_emitter_stream" />
+  <meta name="search-keywords" content="part_emitter_stream" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_stream</h1>
+  <p>Esta función le permite establecer un emisor para transmitir un tipo específico de partícula y se utiliza típicamente el evento de creación, ya que es un código único que establece el emisor para generar el número de partículas especificado cada paso del juego a partir de entonces. Las partículas de
+    partículas se emiten siguiendo la distribución, la forma y la posición establecidas por la función <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>. Puedes poner a cero el número de partículas que se emiten y volver a llamar a esta función
+    para &quot;apagar&quot; el flujo de partículas, y la función también aceptará números negativos para la cantidad, en cuyo caso el emisor producirá partículas basadas en el azar. Por ejemplo, si tienes el número de partículas establecido en -5, hay
+    hay una probabilidad de 1:5 de que se produzca una partícula en cada paso. Si necesitas que las partículas aparezcan todas a la vez en lugar de cada paso, deberás utilizar la función <a href="part_emitter_burst.htm"><tt>part_emitter_burst()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_emitter_stream(ps, ind, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El sistema de partículas en el que se encuentra el emisor.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del emisor desde el que se produce la explosión.</td>
+      </tr>
+      <tr>
+        <td>tipo de pieza</td>
+        <td>El índice (tipo) de las partículas a crear.</td>
+      </tr>
+      <tr>
+        <td>número</td>
+        <td>El número de partículas a crear por paso.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_emitter_stream(global. Sname, p_emit1, p1, 1);</p>
+  <p>El código anterior transmitirá 1 partícula en cada paso del juego hasta que el emisor sea destruido o el flujo se ponga a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Emitters.htm">Emisores de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_emitter_destroy.htm">part_emitter_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_stream
+-->
+  <!-- TAGS
+part_emitter_stream
+-->
+</body>
+</html>

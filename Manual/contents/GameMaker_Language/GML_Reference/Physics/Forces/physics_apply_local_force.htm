@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_local_force</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_local_force" />
+  <meta name="rh-index-keywords" content="physics_apply_local_force" />
+  <meta name="search-keywords" content="physics_apply_local_force" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_local_force</h1>
+  <p>Otra forma de utilizar la fuerza en el mundo de la física es aplicarla <i>localmente</i> a una instancia. Lo que esto significa es que la fuerza y la dirección de la misma se calculan en base al origen (o la posición si no tiene sprite) de la instancia, sin
+    teniendo en cuenta la dirección o rotación que pueda tener en la sala de juego o en el mundo de la física. Hay que tener en cuenta que con esta función, las fuerzas no se aplican al centro de masa del objeto, sino a un punto relativo a la instancia
+    y no se aplicarán instantáneamente ya que dependen de cualquier otra fuerza que esté actuando sobre el objeto (como la gravedad). Esta ilustración muestra cómo funciona una fuerza local:</p>
+  <p><img alt="Apply local physics force illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_force_image.png">Como puede ver, las coordenadas xlocal e ylocal se calculan basándose en
+    la posición del eje <i>siempre</i> se considera como el origen de la instancia (0,0), por lo que no importa en qué parte de la habitación se encuentre el objeto, xlocal e ylocal siempre van a ser las mismas. Luego hay que decidir dónde deben estar los componentes vectoriales de la fuerza
+    (xfuerza e yfuerza) en relación con la posición xlocal/ylocal. La fuerza exacta está definida por el vector que obtenemos de las componentes xforce/yforce en relación a esas coordenadas - lo que significa simplemente que la fuerza se calcula como
+    la distancia de xlocal/ylocal a xforce/yforce en Newtons, y la dirección es el ángulo que obtenemos de xlocal/ylocal a xforce/yforce. Esto puede parecer un poco confuso, pero basta con mirar la ilustración para ver cómo funciona, y
+    y te ahorras unas matemáticas complicadas.</p>
+  <p class="note"><b>NOTA</b>: El mundo de la física utiliza metros para todos sus cálculos, y la proporción de píxeles por metro se define en el editor de salas o utilizando <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_apply_local_force(xlocal, ylocal, xforce, yforce)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xlocal</td>
+        <td>La coordenada x <i>relativa al origen</i> donde se aplicará la fuerza</td>
+      </tr>
+      <tr>
+        <td>ylocal</td>
+        <td>La coordenada y <i>relativa al origen</i> donde se aplicará la fuerza</td>
+      </tr>
+      <tr>
+        <td>xforce</td>
+        <td>la componente x del vector fuerza</td>
+      </tr>
+      <tr>
+        <td>yforce</td>
+        <td>la componente y del vector fuerza</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check(vk_right)<br> {
+    <br> physics_apply_local_force(-25, 0, -50, 0);<br> }
+  </p>
+  <p>El código anterior aplicará una fuerza a la instancia de 50 Newtons de izquierda a derecha en <i>relación</i> con el origen mientras se presiona la tecla de flecha derecha.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Forces.htm">Fuerzas</a></div>
+        <div style="float:right">Siguiente: <a href="physics_apply_local_impulse.htm">physics_apply_local_impulse</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_local_force
+-->
+  <!-- TAGS
+physics_apply_local_force
+-->
+</body>
+</html>

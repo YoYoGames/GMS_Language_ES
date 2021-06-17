@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Accesos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different Accessors" />
+  <meta name="rh-index-keywords" content="Accessors" />
+  <meta name="search-keywords" content="Accessors,@,[| ],[@ ],[# ],[? ],grid accessor,list accessor,map accessor,array accessor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Accesos</h1>
+  <p>El <span class="notranslate">Lenguaje GameMaker</span><span class="notranslate">(GML</span>) también le permite acceder a ciertas <a href="../GML_Reference/Data_Structures/Data_Structures.htm">Estructuras de Datos</a> y <a href="Arrays.htm">Arreglos</a> a través del uso de expresiones lógicas denominadas <b>accesores</b>. Este
+    está estructurado de forma similar a cuando se trabaja normalmente con un array, sólo que utilizamos un <em>símbolo identificador</em> antes del primer argumento para indicar a <span class="notranslate">GameMaker Studio</span> 2 que se está trabajando en una estructura de datos (previamente creada) o en el array
+    literal.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Listas DS [| ]</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot">La sintaxis de las <a href="../GML_Reference/Data_Structures/DS_Lists/DS_Lists.htm">listas DS</a> es:</p>
+    <p class="code">list_index[| index]</p>
+    <p class="dropspot">Así que cuando haya utilizado <tt>ds_list_create()</tt> para crear su lista, utilizaría el índice de la lista (que ha almacenado en una variable) para referenciarla, siendo el valor del &quot;índice&quot; la posición en la lista que hay que fijar o añadir. Por ejemplo, el
+      siguiente código crea una lista y luego añade 10 entradas, estableciendo cada entrada como un número aleatorio de 0 a 9:</p>
+    <p class="code">ds = ds_list_create();<br> var index = 0;<br> repeat(10)
+      <br> {
+      <br> ds[| index++] = irandom(9);<br> }
+    </p>
+    <p class="dropspot">Tenga en cuenta que si utiliza una expresión para añadir una referencia a un índice que ya tiene un valor, el valor anterior será reemplazado en lugar de añadir otro índice a la lista. Para añadir más entradas necesitaría conocer el tamaño de ds_list
+      y añadirlas al final. También vale la pena señalar que se puede establecer un índice de lista que sea <i>mayor</i> que el tamaño de la lista a la que se hace referencia, y esto establecerá ese valor, expandiendo la lista al mismo tiempo e inicializando todas las posiciones
+      en la lista hasta el índice dado como 0.</p>
+    <p class="dropspot">Una vez que hayas creado tu estructura de lista y la hayas llenado de datos, para obtener valores de la lista tendrías algo como</p>
+    <p class="code">valor = ds[| 5];</p>
+    <p class="dropspot">Lo anterior obtendrá el valor de la posición 5 (el sexto índice, ya que las listas comienzan en 0) y lo almacenará en una variable. Si proporciona una posición que está fuera del tamaño de la lista, entonces se devolverá el valor <tt>indefinido</tt>, que puede comprobar
+      utilizando la función <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down13" href="#">DS Maps [? ]</a></p>
+  <div class="droptext" data-targetname="drop-down13">
+    <p class="dropspot">La sintaxis de los <a href="../GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">mapas DS</a> es:</p>
+    <p class="code">map_index[? key]</p>
+    <p class="dropspot">Después de crear su mapa con <tt>ds_map_create()</tt>, usaría el índice del mapa que ha almacenado en una variable para referenciarlo, siendo el valor &quot;key&quot; la clave del mapa a establecer u obtener. Por ejemplo, el siguiente código crea un mapa y
+      luego agrega algunas entradas al mismo utilizando esta sintaxis:</p>
+    <p class="code">ds = ds_map_create();<br> ds[? &quot;Name&quot;] = &quot;Hamish&quot;;<br> ds[? &quot;Company&quot;] = &quot;MacSeweeny Games&quot;;<br> ds[? &quot;Game&quot;] = &quot;Catch The Haggis&quot;;</p>
+    <p class="dropspot">Tenga en cuenta que si el mapa ya contiene el mismo valor de la clave que está intentando añadir, no creará una clave duplicada con el nuevo valor, sino que se sustituirá el valor anterior.</p>
+    <p class="dropspot">Una vez que hayas creado tu estructura de mapa y la hayas llenado de datos, para obtener los valores de una clave de mapa específica tendrías algo como esto:</p>
+    <p class="code">valor = ds[? &quot;Nombre&quot;];</p>
+    <p class="dropspot">Lo anterior obtendrá el valor de la clave &quot;Nombre&quot; y lo almacenará en una variable, pero tenga en cuenta que si la clave dada no existe en el mapa DS, entonces el valor devuelto será indefinido. Esto puede comprobarse utilizando la función
+      <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down14" href="#">Rejillas DS [# ]</a></p>
+  <div class="droptext" data-targetname="drop-down14">
+    <p class="dropspot">La sintaxis de <a href="../GML_Reference/Data_Structures/DS_Grids/DS_Grids.htm">la red DS</a> es:</p>
+    <p class="code">grid_index[# xpos, ypos]</p>
+    <p class="dropspot">Después de crear su rejilla con la función <tt>ds_grid_create()</tt>, usted utilizaría el índice de la rejilla que ha almacenado en una variable para referenciarla, siendo &quot;xpos&quot; e &quot;ypos&quot; la posición dentro de la rejilla para obtener o establecer
+      un valor. Por ejemplo, el siguiente código crea una rejilla, la borra a 0, y luego añade algunas entradas a la misma:</p>
+    <p class="code">ds = ds_grid_create();<br> ds_grid_clear(ds, 0);<br> var gw = ds_grid_width(ds) - 1;<br> var gh = ds_grid_height(ds) - 1;<br> repeat(10)
+      <br> {
+      <br> var xx = irandom(gw);<br> var yy = irandom(gh);<br> if (ds[# xx, yy] == 0)<br> {
+      <br> ds[# xx, yy] = 1;<br> }
+      <br> }
+    </p>
+    <p class="dropspot">Una vez que hayas creado tu estructura de cuadrícula y la hayas llenado de datos, para obtener los valores de una posición específica de la cuadrícula tendrías algo como</p>
+    <p class="code">valor = ds[# mouse_x div 16, mouse_y div 16];</p>
+    <p class="dropspot">Lo anterior obtendrá el valor de la ds_grid dada en base a la posición del ratón (dividida por el ancho de la &quot;celda&quot; en la sala para obtener la ubicación correcta). Si proporcionas una posición que está fuera de los límites de la cuadrícula entonces se devolverá el valor <tt>undefined</tt>, que puedes comprobar utilizando la función <a href="../GML_Reference/Variable_Functions/is_undefined.htm"><tt>is_undefined()</tt></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">Matrices [@ ]</a></p>
+  <div class="droptext" data-targetname="drop-down15">
+    <p class="dropspot">Los arrays también tienen sus propios accesos que funcionan de forma similar a los mencionados anteriormente para las estructuras de datos. Sin embargo, los accesos a los arrays tienen una propiedad interesante y es la de permitirte modificar un array desde una <a href="Script_Functions.htm">función</a> o <a href="Method_Variables.htm">método</a> <a href="Script_Functions.htm">del script</a> sin tener que copiarlo. Cuando pasas un array a una función, se <strong>pasa por referencia</strong>, lo que significa que el array en sí no se está dando en el script sino que simplemente se está
+      sino que simplemente se hace referencia a él para obtener los datos. Normalmente, si necesitas cambiar el array, se <em>copiará </em>en el script y entonces necesitarás pasar de vuelta (devolver) el array copiado para que el array original se actualice. Esto puede tener costosos
+      Esto puede tener costosos gastos de procesamiento, por lo que puedes usar el accesorio en su lugar, ya que cambiará el array original <em>directamente </em>sin necesidad de copiarlo. Puedes ver cómo funciona esto en los siguientes ejemplos.</p>
+    <p class="dropspot">La sintaxis de las matrices es:</p>
+    <p class="code">array[@ xpos]</p>
+    <p class="dropspot">Después de haber creado tu array en una instancia, puedes pasarlo a un script por referencia y usar el accesorio <span class="inline">@</span> para cambiarlo directamente. Por ejemplo, puedes crear el array y llamar a la función así:</p>
+    <p class="code">array[99] = 0;<br> array_populate(array);
+    </p>
+    <p class="dropspot">La función en sí tendría algo así:</p>
+    <p class="code">function array_populate(_array)<br> {<br> var a = _array; var i = 0; repeat(25)<br> {<br> i = irandom(99);<br> while (a[i] != 0)<br> {<br> i = irandom(99);<br> } <br> 
+        a[@ i] = 100;<br> } <br> }</p>
+    <p class="dropspot">Lo único que hace esta función es seleccionar 25 posiciones aleatorias en el array y establecer el valor de la posición del array elegida en 100.</p>
+    <p class="note">NOTA: No se puede utilizar el accesorio de matriz <span class="inline">@</span> cuando se trabaja con la matriz <span class="inline">argument[n]</span> en funciones de script.</p>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down16" href="#">Estructuras [$ ]</a></p>
+  <div class="droptext" data-targetname="drop-down16">
+    <p class="dropspot"><span>La sintaxis de <a href="Structs.htm">los structs</a> es</span></p>
+    <p class="code">estructura[$ &quot;nombre&quot;]</p>
+    <p class="dropspot">Este accesorio es esencialmente una envoltura para las funciones <span><a href="../GML_Reference/Variable_Functions/variable_struct_get.htm"><span class="inline">variable_struct_get()</span></a> y <a href="../GML_Reference/Variable_Functions/variable_struct_set.htm"><span class="inline">variable_struct_set()</span></a>,
+      y lo usarías de forma muy parecida al accesor de un mapa DS. Por ejemplo, si has creado una estructura y quieres recuperar un valor de una variable llamada &quot;mi_salud&quot; entonces harías:</span>
+    </p>
+    <p class="code">var _hp = struct[$ &quot;mi_salud&quot;];</p>
+    <p class="dropspot">Como puede ver, no se suministra la variable en sí, sino una <em>cadena</em> con la variable. Tenga en cuenta que si la estructura no tiene una variable con el nombre dado, entonces el accesorio devolverá <span class="inline">undefined</span> como
+      el valor.</p>
+    <p class="dropspot">Para establecer una variable en una estructura se debe hacer lo siguiente</p>
+    <p class="code">struct[$ &quot;my_score&quot;] = 100;</p>
+    <p class="dropspot">Al igual que con la obtención de un valor, se suministra el nombre de la variable a establecer como una cadena, y se establecerá al valor dado. Si el nombre de la variable utilizada no existe en la estructura, se creará y establecerá el valor dado.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p>Una característica importante de los accesores es el hecho de que se pueden <i>encadenar</i>. Esto significa que si tienes varias estructuras de datos anidadas y/o arrays, ya no hay necesidad de usar varias funciones para acceder a un valor que
+    se encuentra en la profundidad de la estructura anidada. Por ejemplo, digamos que tienes un array, y cada elemento del array es una lista DS, así:</p>
+  <p class="code">array = array_create(3);<br> for (var i = 0; i &lt; 3; ++i;)<br> {
+    <br> array[i] = ds_list_create();<br> switch(i)
+    <br> {
+    <br> caso 0:<br> con (obj_Wall) ds_list_add(array[i], id);<br> break;
+    <br> case 1:<br> with (obj_Door) ds_list_add(array[i], id);<br> break;
+    <br> caso 2:<br> con (obj_Pecho) ds_list_add(array[i], id);<br> break;
+    <br> }
+    <br> }
+  </p>
+  <p>En el código anterior hemos creado un array de 3 elementos y hemos asignado una lista DS a cada uno de ellos, y luego hemos poblado las diferentes listas con los IDs de instancia de varios objetos del juego. Ahora, para acceder a un ID en una de las listas podemos hacer lo siguiente
+    siguiente:</p>
+  <p class="code">var _list = array[0];<br> var _id = ds_list_find_value(_list, 0);</p>
+  <p>Sin embargo, se puede hacer lo mismo utilizando accesores encadenados de una manera mucho más limpia y que utiliza menos código:</p>
+  <p class="code">var _id = array[0][| 0];</p>
+  <p>Se pueden encadenar múltiples accesores de esta manera y pueden ser de múltiples tipos para acceder a la información almacenada en cada parte de la estructura anidada. Aquí hay algunos ejemplos más:</p>
+  <p class="code">// Acceder a una rejilla que se ha añadido a una lista que forma parte de un mapa:<br> var _a = data[? &quot;listas&quot;][| 0][# 0, 0];<br>
+    <br> // Acceder a un array anidado en una lista desde un script y modificarlo:<br> data[| 0][@ 10] = 100;<br>
+    <br> // Acceder a un mapa anidado en una rejilla anidada en una lista anidada en un array:<br> data[0][| 10][# 3, 4][? &quot;key&quot;] = &quot;hello world&quot;;</p>
+  <p>El uso de accesos encadenados para las cosas no sólo significa que puedes escribir un código más compacto, sino que también te permitirá utilizar la iteración (por ejemplo, utilizando un <a href="Language_Features/for.htm"><tt>para</tt></a> bucle) y otras técnicas para acceder a sus datos de
+    una manera más limpia e intuitiva.</p>
+  <p>Vale la pena señalar que, cuando se utilizan los accesores de esta manera, siempre se debe utilizar el accesor <span class="inline">@</span> para los arrays, ya que de lo contrario se estará añadiendo una sobrecarga adicional a cualquier acción que se realice. Como se mencionó anteriormente, por defecto los arrays
+    se pasan por referencia a las funciones y luego utilizan el comportamiento de &quot;copia en escritura&quot; cuando se modifican. Sin embargo, si el array forma parte de una cadena, el elemento anterior de la cadena se actualizará con el array copiado y el &quot;original&quot;
+    original será eliminado. Por ejemplo, haciendo algo como esto</p>
+  <p class="code">// En un evento de objeto<br> data[| 0][0] = 100;<br>
+    <br> // En una función<br> data[| 0][0] = 200;</p>
+  <p>consigue los mismos resultados que haciendo esto:</p>
+  <p class="code">// En un evento de objeto<br> data[| 0][0] = 100;<br>
+    <br> // En una función<br> data[| 0][@ 0] = 200;</p>
+  <p>Sin embargo, el segundo ejemplo es mejor, ya que funciona sin la sobrecarga innecesaria de copiar primero toda la matriz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Script_Functions.htm">Funciones y Variables del Script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+div
+mod
+bitwise operators
+bitshift
+and
+or
+xor 
+&amp;&amp;
+||
+^^
+%
+|
+&amp;
+^
+&lt;&lt;
+&gt;&gt;
+bitwise or
+bitwise and
+bitwise xor
+bitshift left
+bitshift right
+&lt;
+&lt;=
+==
+!=
+&gt;
+&gt;=
+++
+$
+hexadecimal
+-->
+  <!-- TAGS
+expressions_operators
+-->
+</body>
+</html>

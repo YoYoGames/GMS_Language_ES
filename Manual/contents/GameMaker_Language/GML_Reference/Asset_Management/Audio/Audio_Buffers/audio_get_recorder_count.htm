@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_recorder_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_recorder_count" />
+  <meta name="rh-index-keywords" content="audio_get_recorder_count" />
+  <meta name="search-keywords" content="audio_get_recorder_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_recorder_count</h1>
+  <p>Esta función devolverá el número de fuentes de grabación de audio (como micrófonos, etc...) actualmente disponibles para su juego. Así, si tiene un valor de retorno de, por ejemplo, cuatro, entonces tendrá entrada de audio en las fuentes 0, 1, 2 y 3, con uno
+    de estos valores es el que utilizas para empezar a grabar desde la función <a href="audio_start_recording.htm"><tt>audio_start_recording()</tt></a>. Este valor puede cambiar en cualquier momento a medida que se conectan/desconectan micrófonos u otras
+    fuentes de entrada al dispositivo. Tenga en cuenta que puede utilizar la función <a href="audio_get_recorder_info.htm"><tt>audio_get_recorder_info()</tt></a> para obtener información sobre cada dispositivo conectado.</p>
+  <p class="note"><b>IMPORTANTE!</b> Esta función siempre devolverá 0 cuando se utilice en el objetivo HTML5.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_get_recorder_count();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si audio_get_recorder_count() &gt; 0<br> {
+    <br> channel_index = audio_start_recording(0);<br> }
+  </p>
+  <p>El código anterior comprueba las grabadoras de audio disponibles y si hay 1 o más, comienza a grabar desde la primera indexada (fuente 0).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Audio.htm">Buffer de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_get_recorder_info.htm">audio_get_recorder_info</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_recorder_count
+-->
+  <!-- TAGS
+audio_get_recorder_count
+-->
+</body>
+</html>

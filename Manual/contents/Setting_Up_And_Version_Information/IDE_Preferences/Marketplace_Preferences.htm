@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Preferencias del mercado</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="The Marketplace Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Marketplace" />
+  <meta name="search-keywords" content="Marketplace Prefs,Marketplace Preferences,Marketplace Certificate,Certificate,Create Certificate" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Preferencias<span class="notranslate">del mercado</span> </h1>
+  <p><img alt="The Marketplace Preferences" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Prefs.png" /></p>
+  <p>Las <strong>Preferencias</strong> <strong><span class="notranslate">del</span></strong> Mercado se utilizan para configurar el Certificado <strong><span class="notranslate">del Mercado</span></strong> para subir o comprar activos. El formulario del certificado consta de las siguientes secciones para cuando ya haya creado un certificado (véase
+    más abajo en esta página para ver los detalles sobre cómo crear un certificado):</p>
+  <ul class="colour">
+    <li><strong>Archivo de certificado</strong>: En esta sección se especifica el archivo <span class="inline">*.pem</span> que el <span class="notranslate">Marketplace</span> utiliza para la certificación de los activos. Si tienes un certificado previamente creado, puedes hacer clic en el botón del explorador de archivos
+      y añadirlo al foro, pero si no tienes un certificado y deseas crear uno, entonces debes omitir cualquier información aquí y en su lugar hacer clic en el botón <strong>Crear nuevo certificado</strong> (explicado más abajo).</li>
+    <li><strong>Contraseña del certificado</strong>: Aquí debe introducir la contraseña del certificado para el archivo seleccionado anteriormente. La contraseña se crea cuando se crea por primera vez el archivo <span class="inline">*.pem</span> (véase <strong>Crear un nuevo</strong> certificado,
+      más adelante) y se vinculará de forma irreversible al archivo de certificado creado.</li>
+    <li><strong>Comprobar</strong>: Una vez que haya rellenado los campos anteriores, debe hacer clic en este botón para asegurarse de que la contraseña y la selección de archivos son correctas y funcionan juntas.</li>
+  </ul>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Confirmar diálogos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">
+      <img data-cke-saved-src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Confirm_Prefs.png" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_Confirm_Prefs.png" class="center" alt="The Marketplace Confirm Dialog Preferences" width="716" height="463"> Aquí puede seleccionar el comportamiento de los diálogos de confirmación cuando se trabaja con un recurso desde el Navegador de Activos. Las opciones disponibles son:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">
+       <strong>Respuesta automática a la eliminación de contenidos</strong> sin conexión: Cuando eliminas un activo del mercado de tu biblioteca sin conexión a la web, normalmente recibes una advertencia preguntando si estás seguro de que quieres proceder. Al establecer esta opción en &quot;Aceptar&quot;
+        el mensaje se suprimirá como si hubieras pulsado el botón &quot;Aceptar&quot; para proceder. El valor por defecto es &quot;Mostrar mensaje&quot;.</li>
+    </ul>
+    <p class="dropspot"></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h1>Crear un nuevo certificado</h1>
+  <p>Si no ha creado previamente un archivo de certificado para utilizar el <span class="notranslate">Mercado</span>, deberá hacer clic en el botón denominado <strong>Crear nuevo certificado</strong>, situado en la parte inferior de este formulario. Al hacerlo, se abrirá una nueva ventana en la que se le pedirá que
+    que introduzca la siguiente información:</p>
+  <ul class="colour">
+    <li><strong>Nombre del editor</strong>: Este es el nombre que se utilizará como nombre del editor para el activo. En el panel de control <span class="notranslate">de Marketplace</span> puede configurar diferentes editores si lo desea y cada uno debe tener su propio archivo de certificado *.pem
+      correspondiente.</li>
+    <li><strong>Contraseña del certificado</strong>: Aquí debe dar una contraseña única para el archivo del certificado que se va a crear. Tenga cuidado con lo que elija ya que no podrá cambiarlo más tarde y si no tiene la contraseña correcta para el archivo de certificado en
+      las secciones anteriores no podrá actualizar ningún activo <span class="notranslate">del Mercado</span> existente (ni subir nuevos).</li>
+  </ul>
+  <p><img alt="The Marketplace New Certificate Window" class="center" src="../../assets/Images/Setup_And_Version/Preferences/Marketplace_NewCert_Prefs.png">Con estos datos, puede hacer clic en el botón <strong>Crear certificado</strong> para
+    generar el archivo <span class="inline">*.pem</span>. Se le pedirá que indique una ubicación de almacenamiento y un nombre para el archivo, y deberá tomar nota de ello para futuras referencias. Una vez hecho esto, el nuevo archivo y la contraseña se añadirán automáticamente
+    en los campos del formulario que aparecen más arriba y podrá hacer clic en el botón <strong>Comprobar </strong>para comprobar que el certificado se ha generado correctamente.</p>
+  <p class="note"><strong>NOTA</strong>: Le recomendamos que haga una captura de pantalla de la configuración actual, así como una copia del archivo <span class="inline">*.pem </span>. Ambos deben guardarse juntos en una ubicación segura para futuras referencias, o en caso de que tenga que
+    volver a instalar <span class="notranslate">GameMaker Studio 2</span> en algún momento. No puede actualizar los activos que ya se han cargado a menos que el paquete actualizado esté firmado con el mismo certificado con el que se creó el original.<br>
+  </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="../IDE_Preferences.htm">IDE Preferences</a></div>
+        <div style="float:right">Siguiente: <a href="Plugin_Preferences.htm">Preferencias de los plugins</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - <span class="notranslate">Marketplace</span>
+-->
+  <!-- TAGS
+prefs_marketplace
+-->
+</body>
+</html>

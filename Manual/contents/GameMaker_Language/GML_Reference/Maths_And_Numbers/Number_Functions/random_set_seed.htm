@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>random_set_seed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for random_set_seed" />
+  <meta name="rh-index-keywords" content="random_set_seed" />
+  <meta name="search-keywords" content="random_set_seed" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>random_set_seed</h1>
+  <p>Para generar un número aleatorio <span class="notranslate">GameMaker Studio 2</span> comienza con un número semilla aleatorio. Con esta función puedes establecer esa semilla a un valor conocido y así &quot;forzar&quot; que el resultado de todos los eventos aleatorios posteriores sea el mismo cada vez que el programa se
+    se ejecute el programa. Por ejemplo, esta función puede utilizarse junto con <a href="random_get_seed.htm"><tt>random_get_seed()</tt></a> para crear contenidos generados procedimentalmente y guardar los resultados sin tener enormes partidas guardadas (sólo se guarda la semilla, sin necesidad de
+    para nada más). Si necesitas resultados verdaderamente aleatorios para todo, deberías usar la función <a href="randomise.htm"><tt>aleatorizar()</tt></a> función.</p>
+  <p class="note"><b>NOTA</b>: Aunque esta semilla dará resultados consistentes en cada plataforma de destino, los resultados pueden variar entre las plataformas debido a la forma diferente en que cada objetivo funciona.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">random_set_seed(val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>La semilla a cuajar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if debug<br> {<br> random_set_seed(1);<br> }</p>
+  <p>El código anterior establece la semilla aleatoria a 1 sólo si la variable &quot;debug&quot; es verdadera.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="random_get_seed.htm">random_get_seed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+random_set_seed
+-->
+  <!-- TAGS
+random_set_seed
+-->
+
+</body></html>

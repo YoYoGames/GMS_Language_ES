@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>clickable_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for clickable_add" />
+  <meta name="rh-index-keywords" content="clickable_add" />
+  <meta name="search-keywords" content="clickable_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>clickable_add</h1>
+  <p>Con esta función se puede crear un icono personalizado, sobre el que se puede hacer clic, que actúa como un &quot;botón&quot; fuera del lienzo del juego, pero dentro de la propia ventana del navegador. La función devolverá un valor de identificación que debe ser almacenado en una variable para ser utilizado en todas
+    funciones de botón posteriores que hagan referencia al nuevo icono. Esta función es muy útil para evitar que el navegador cree una ventana emergente al hacer clic en el botón, ya que todo se hace a través del propio <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Primero debes establecer la posición, que es relativa al (0,0) de la ventana del navegador (esquina superior izquierda) y luego dar la entrada de la página de textura para el sprite que deseas que tenga el icono del botón (ver: <a href="../Asset_Management/Sprites/Sprite_Information/sprite_get_tpe.htm"><tt>sprite_get_tpe()</tt></a>).
+    A continuación, puede especificar una URL para abrir o un script (desde el Navegador de Activos de <span class="notranslate">GameMaker Studio 2</span>) para ser abierto o ejecutado. El parámetro &quot;target&quot; que se especifica es el mismo que el valor &quot;name&quot; estándar de JavaScript cuando se
+    utilizar el método <tt>open()</tt> (tenga en cuenta que todo menos '_self' puede dar lugar a que el navegador se bloquee, o pregunte al usuario si desea permitirlo) y el argumento &quot;params&quot; es el mismo que el parámetro &quot;specs&quot; de JavaScript para
+    controlar qué propiedades debe mostrar la nueva ventana/pestaña (puede que no todos los navegadores soporten todas las características). Si está utilizando el icono para ejecutar un script interno, estos dos últimos argumentos pueden dejarse como cadenas vacías &quot;&quot;.</p>
+  <p>Los objetivos válidos son:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Objetivo</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>En blanco</td>
+        <td>Abre el documento vinculado en una nueva ventana o pestaña.</td>
+      </tr>
+      <tr>
+        <td>_self</td>
+        <td>Abre el documento vinculado en el mismo marco en el que se ha hecho clic (es el predeterminado).</td>
+      </tr>
+      <tr>
+        <td>_padre</td>
+        <td>Abre el documento vinculado en el marco principal.</td>
+      </tr>
+      <tr>
+        <td>Arriba</td>
+        <td>Abre el documento vinculado en el cuerpo completo de la ventana.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Los parámetros válidos son:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Parámetros</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><b>'height=[px]'</b></td>
+        <td>La altura de la ventana, siendo el valor mínimo 100.</td>
+      </tr>
+      <tr>
+        <td><b>'width=[px]'</b></td>
+        <td>La anchura de la ventana, siendo el valor mínimo 100.</td>
+      </tr>
+      <tr>
+        <td><b>'left=[px]'</b></td>
+        <td>La posición izquierda de la ventana.</td>
+      </tr>
+      <tr>
+        <td><b>'top=[px]'</b></td>
+        <td>La posición superior de la ventana (sólo en IE).</td>
+      </tr>
+      <tr>
+        <td><b>'location=[boolean</b>]'</td>
+        <td>Mostrar o no el campo de la dirección (por defecto es 1).</td>
+      </tr>
+      <tr>
+        <td><b>'menubar=[boolean</b>]'</td>
+        <td>Mostrar o no la barra de menús (por defecto es 1).</td>
+      </tr>
+      <tr>
+        <td><b>'resizable=[boolean</b>]'</td>
+        <td>Si la ventana es redimensionable o no (por defecto es 1).</td>
+      </tr>
+      <tr>
+        <td><b>'scrollbars=[boolean</b>]'</td>
+        <td>Si se muestran o no las barras de desplazamiento (por defecto es 1).</td>
+      </tr>
+      <tr>
+        <td><b>'status=[boolean</b>]'</td>
+        <td>Añadir o no una barra de estado (por defecto es 1).</td>
+      </tr>
+      <tr>
+        <td><b>'titlebar=[boolean</b>]'</td>
+        <td>Mostrar o no la barra de título. Esto se ignora a menos que la aplicación que llama sea una aplicación HTML o un cuadro de diálogo de confianza (por defecto es 1);</td>
+      </tr>
+      <tr>
+        <td><b>'toolbar=[boolean</b>]'</td>
+        <td>Mostrar o no la barra de herramientas del navegador (por defecto, sí).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> También vale la pena señalar que si el argumento de la URL que se pasa es el nombre de una <a href="../../GML_Overview/Script_Functions.htm">función de script</a> (es decir, no comienza con &quot;http://&quot;) Y el script se llama <tt><b>gmcallback_*</b></tt>    entonces puedes obtener una alimentación directa en un evento html5. Los nombres de las funciones de script de <span class="notranslate">GameMaker Studio 2</span> <i>no</i> están ofuscados si comienzan con <tt>gmcallback_</tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">clickable_add(x, y, tpe, url, target, params);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x dentro de la <i>ventana</i>.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y dentro de la <i>ventana</i>.</td>
+      </tr>
+      <tr>
+        <td>tpe</td>
+        <td>La entrada de la página de textura para el sprite que se va a utilizar.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>La URL (dirección de la página web) a la que enlazar, o el script a ejecutar.</td>
+      </tr>
+      <tr>
+        <td>objetivo</td>
+        <td>Esta es la zona de destino para abrir la URL (ver descripción).</td>
+      </tr>
+      <tr>
+        <td>params</td>
+        <td>Los diferentes parámetros del icono (ver descripción).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);</p>
+  <p>El código anterior crea un icono DOM sobre el que se puede hacer clic en la posición (32, 32) de la página en la que se está ejecutando el lienzo del juego. El icono utiliza el sprite referenciado desde la página de la textura como &quot;spr_MS_Home&quot; y cuando se hace clic en el icono se abrirá una nueva ventana
+    para la URL especificada y con las propiedades definidas para esa ventana.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Web_And_HTML5.htm">Web y HTML5</a></div>
+        <div style="float:right">Siguiente: <a href="clickable_add_ext.htm">clickable_add_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+clickable_add
+-->
+  <!-- TAGS
+clickable_add
+-->
+</body>
+</html>

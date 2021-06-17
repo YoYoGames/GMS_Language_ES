@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_set_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_set_precision" />
+  <meta name="rh-index-keywords" content="path_set_precision" />
+  <meta name="search-keywords" content="path_set_precision" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_set_precision</h1>
+  <p>Con esta función puede cambiar la &quot;suavidad&quot; de un camino. Este valor debe estar entre 1 y 8, con un valor bajo creando bordes más rectos con curvas más pronunciadas entre los puntos, mientras que un valor más alto redondeará los puntos y hará que el camino sea mucho más "curvo".
+    mucho más &quot;curvo&quot;. Tenga en cuenta que esta función no tendrá ningún efecto visible si el trazado no ha sido configurado como suave en el editor de trazados o utilizando la función <a href="path_set_kind.htm"><tt>path_set_kind()</tt></a>. <strong>Esta función cambia el activo real de</strong> la ruta,
+    y por lo tanto afectará permanentemente a la forma en que el camino es utilizado por todas las instancias en el juego desde el momento en que la función se utiliza hasta el final del juego. Si esto no es lo que usted requiere, entonces debería usar una función como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para crear una copia del camino primero, luego llamar a esta función en el activo duplicado (no olvide llamar a <span class="inline"><a href="path_delete.htm">path_delete()</a></span> en el activo cuando ya no sea necesario).</p>
+  <p><img alt="Path Precision differences example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/setprecision.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_set_precision(index, prec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a cambiar.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>La precisión de la ruta. Debe ser un número entero entre 1 y 8.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path_set_precision(pth_Patrol, 2);</p>
+  <p>Esto establecerá la precisión de la ruta dada a 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_shift.htm">path_shift</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_set_precision
+-->
+  <!-- TAGS
+path_set_precision
+-->
+</body>
+</html>

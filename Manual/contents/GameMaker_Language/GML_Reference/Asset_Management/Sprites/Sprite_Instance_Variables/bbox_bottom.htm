@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>bbox_bottom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable bbox_bottom" />
+  <meta name="rh-index-keywords" content="bbox_bottom" />
+  <meta name="search-keywords" content="bbox_bottom" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>bbox_bottom</h1>
+  <p>Esta variable de <b>sólo</b> lectura devuelve la posición y (dentro de la habitación) de la parte inferior del cuadro delimitador para la instancia, donde el cuadro delimitador está definido por la anchura y la altura máximas de la máscara para la instancia (como
+    definidos por <span class="inline"><a href="sprite_index.htm">sprite_index</a></span> o por <span class="inline"><a href="mask_index.htm">mask_index</a></span>). Incluso cuando un sprite tiene una máscara de colisión precisa, el cuadro delimitador existe y se utiliza
+    para ciertas cosas, por lo que puedes usar esta variable para encontrarla. Ten en cuenta que cuando la instancia no tiene ningún sprite asignado el valor devuelto será el mismo que la posición Y de la instancia.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">bbox_bottom;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (entero)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si bbox_bottom &gt; room_height<br> {
+    <br> y = room_height - sprite_yoffset;<br> }
+  </p>
+  <p>El código anterior comprueba si el cuadro delimitador de la instancia está fuera de la habitación y, si lo está, coloca la instancia en una nueva posición.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="bbox_right.htm">bbox_right</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+bbox_bottom
+-->
+  <!-- TAGS
+bbox_bottom
+-->
+</body>
+</html>

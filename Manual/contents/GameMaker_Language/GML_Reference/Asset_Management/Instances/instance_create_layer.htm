@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_create_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_layer" />
+  <meta name="rh-index-keywords" content="instance_create_layer" />
+  <meta name="search-keywords" content="instance_create_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_create_layer</h1>
+  <p>Con esta función se puede crear una nueva instancia del objeto especificado en cualquier punto de la sala y en la capa especificada. La capa puede identificarse mediante el valor de ID de la capa (devuelto por la función <a href="../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    o por el nombre de la capa (como una cadena, por ejemplo &quot;instance_layer&quot;) tal y como se define en el <a href="../../../../The_Asset_Editors/Rooms.htm">editor de la sala.</a></p>
+  <p>Esta función devuelve el <a href="Instance_Variables/id.htm"><tt>id</tt></a> de la nueva instancia que puede ser almacenada en una variable o usada para acceder a esa instancia. Tenga en cuenta que esta función también llamará al <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento Create</a> de la instancia que se está creando <i>antes de</i> continuar con el código o las acciones del evento que llamó a la función.</p>
+  <p class="note"><b>IMPORTANTE!</b> Hay una profundidad de capa mínima y máxima de -16000 a 16000. Todo lo que se coloque en una capa fuera de ese rango <b>no se dibujará</b> aunque todos los eventos se seguirán ejecutando normalmente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_create_layer(x, y, layer_id, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x en la que se creará el objeto</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y en la que se creará el objeto</td>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El ID (o nombre) de la capa a la que se asigna la instancia creada</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El índice del objeto para crear una instancia de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de identificación de la instancia)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var inst = instance_create_layer(x, y, &quot;instance_layer&quot;, obj_Bullet);<br> with (inst)<br> {
+    <br> velocidad = otra.velocidad_de_disparo;<br> dirección = otra.ángulo_de_imagen;<br> }
+  </p>
+  <p>El código anterior crea una nueva instancia del objeto &quot;obj_Bullet&quot; y almacena el id de la instancia en una variable. Esta variable se utiliza entonces para asignar la <tt>velocidad</tt> y la <tt>dirección</tt> a la nueva instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_create_depth.htm">instance_create_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_layer
+-->
+  <!-- TAGS
+instance_create_layer
+-->
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sombreadores</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the shader editor works" />
+  <meta name="rh-index-keywords" content="Shader Editor" />
+  <meta name="search-keywords" content="shaders,shader,open GL,open GL ES" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de <span class="notranslate">sombreado</span> </h1>
+  <p><img alt="Shader Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Shaders.png"><span class="notranslate">Los sombreadores</span> son una herramienta muy poderosa que se puede utilizar para manipular los gráficos que su juego renderiza en la pantalla, permitiendo efectos increíblemente rápidos que
+    pueden ir desde, por ejemplo, añadir un sutil matiz de color a un sprite, hasta efectos de distorsión en toda la pantalla. ¿Pero qué es un <span class="notranslate">sombreador</span>?</p>
+  <p>Un <span class="notranslate">sombreador</span> es básicamente un programa de dos partes que se ejecuta directamente en la propia tarjeta gráfica, lo que lo hace muy rápido, ya que la GPU está haciendo todo el trabajo y libera ciclos de la CPU para el código del juego. El <span class="notranslate">sombreador</span> completo se compone de un programa <span class="notranslate">de sombreado de</span> vértices y
+    un programa de <span class="notranslate">sombreado</span> de fragmentos (también conocido como <span class="notranslate">sombreado de</span> píxeles). Estos dos pequeños programas trabajan juntos para manipular lo que la tarjeta gráfica muestra en la pantalla. Esto le permite manipular en tiempo real, la posición, el color y los valores alfa
+    que se <a class="glossterm" data-glossterm="renderizado" href="#">renderizan</a> en el <a class="glossterm" data-glossterm="búfer de visualización" href="#">búfer de</a> la pantalla.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"> <span class="notranslate">Sombreador</span>de vértices</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">El <span class="notranslate">sombreador</span> de vértices es la etapa de <span class="notranslate">sombreado</span> programable en el pipeline de renderizado que maneja el procesamiento de vértices individuales (los puntos de los triángulos utilizados para renderizar cualquier imagen), y cuando estás renderizando una geometría - como un sprite o una superficie
+      - <span class="notranslate">GameMaker Studio 2</span> crea un flujo de vértices - llamado <strong>Vertex Buffer </strong>- que define la geometría de estos triángulos. Un sprite, por ejemplo, tendría una geometría de dos triángulos (normalmente llamados <em>polígonos</em>) renderizados
+      juntos para formar un &quot;quad&quot;. Este flujo de vértices desde el Buffer de Vértices se alimenta como entrada al Vertex <span class="notranslate">Shader</span>, que puede procesar los datos de los vértices de forma programable. La salida del Vertex <span class="notranslate">Shader</span> es utilizada por la GPU para ensamblar triángulos,
+      que luego se recortan y recortan adecuadamente para el puerto de vista y la cámara de vista, y luego se envían al bloque rasterizador de la GPU que genera un nuevo flujo de salida, constituido por algo llamado <strong>Fragmentos</strong>. Se trata de pequeñas estructuras de datos
+      estructuras de datos, cada una de las cuales es relativa a un único píxel que aparece en la pantalla.</p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"> <span class="notranslate">Sombreado de</span>fragmentos</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">El <span class="notranslate">sombreador</span> de fragmentos es la etapa del <span class="notranslate">sombreador</span> programable en el proceso de renderizado que se ocupa de los &quot;fragmentos&quot; - los píxeles interpolados utilizados para texturizar cualquier polígono - y son responsables de la salida del color final de cada píxel
+      de cada píxel del triángulo renderizado. Básicamente funciona así: el Fragment <span class="notranslate">Shader</span> recibe como entrada todos los fragmentos (los píxeles individuales del triángulo que se está renderizando) que han sido pasados a lo largo del pipeline por el Vertex <span class="notranslate">Shader</span>. Entonces puede
+      procesar estos fragmentos para cambiar el color y el alfa del píxel de destino final que se dibujará en la pantalla.</p>
+  </div>
+  <p> </p>
+  <p>Una visión completa de cómo funcionan realmente <span class="notranslate">los sombreadores</span> y qué lugar ocupan en la cadena de producción de gráficos está fuera del alcance de este artículo, pero puedes encontrar una guía resumida aquí:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../Additional_Information/Guide_To_Using_Shaders.htm">Guía para el uso de <span class="notranslate">sombreadores</span></a></li>
+  </ul>
+  <p> </p>
+  <p>Además, hay varios artículos en el blog <span class="notranslate">YoYo Games</span> Tech que entran en mucho más detalle, a los que puedes acceder desde los siguientes enlaces:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="https://www.yoyogames.com/blog/14/shaders-overview-part-1"><span class="notranslate">Sombreadores</span> Parte 1</a></li>
+    <li><a href="https://www.yoyogames.com/blog/16/shaders-overview-part-2"><span class="notranslate">Sombreadores</span> Parte 2</a></li>
+    <li><a href="https://www.yoyogames.com/blog/17/shaders-overview-part-3"><span class="notranslate">Sombreadores</span> Parte 3</a></li>
+    <li><a href="https://www.yoyogames.com/blog/18/shaders-overview-part-4"><span class="notranslate">Sombreadores</span> Parte 4</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> es compatible con los siguientes lenguajes de <span class="notranslate">sombreado</span>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Lenguaje de<span class="notranslate">sombreado</span> </th>
+        <th>Plataforma de destino</th>
+      </tr>
+      <tr>
+        <td><strong>GLSL ES</strong></td>
+        <td>Todas las plataformas de destino</td>
+      </tr>
+      <tr>
+        <td><strong>GLSL</strong></td>
+        <td>Mac y <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+      </tr>
+      <tr>
+        <td><strong>HLSL 11</strong></td>
+        <td><span class="notranslate">Windows</span>, UWP, XboxOne</td>
+      </tr>
+      <tr>
+        <td><strong>PSSL</strong></td>
+        <td><span class="notranslate">Playstation 4</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Para crear un recurso de <span class="notranslate">sombreado</span>, simplemente haga clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en <a href="../Introduction/The_Asset_Browser.htm">el Navegador de Activos</a> y seleccione <em>Crear <span class="notranslate">Sombreado</span></em>. Una vez que haya creado
+    el <span class="notranslate">sombreador</span> base, puede utilizar el menú del botón derecho del ratón <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png"> en el nuevo recurso para seleccionar el tipo de <span class="notranslate">sombreador</span> antes de continuar editando el código:</p>
+  <p><img alt="Shader Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Shader_RMBMenu.png">El editor de código en sí se divide en dos los &quot;programas&quot; - Vértice y Fragmento - cuando se crea un nuevo sombreador, <span class="notranslate">con</span> cada uno siendo
+    disponible desde las pestañas en la parte superior del editor. Ambos se crean a la vez porque <em>no se puede crear un <span class="notranslate">shader</span></em> sin ambas partes. Incluso si desea utilizar sólo el <span class="notranslate">sombreador</span> de fragmentos tendrá que haber creado un sombreador de vértices &quot;de paso&quot; primero, por lo que al
+    por lo que, por defecto, cualquier <span class="notranslate">sombreador</span> que se cree tendrá un <span class="notranslate">sombreador</span> de vértices y de fragmentos ya codificado (en la captura de pantalla de la parte superior de la página, se puede ver que hemos utilizado la vista del panel del editor de código para mostrar
+    para mostrar los dos lado a lado ... útil cuando se trabaja en los dos programas de <span class="notranslate">sombreado</span> juntos).</p>
+  <p>Vale la pena señalar que puedes utilizar <span class="notranslate">shaders</span> GLSL ES en <em>todas las </em>plataformas de destino, pero para que funcionen en la plataforma de destino <strong>HTML5 </strong>debes haber habilitado WebGL en las <a href="../Settings/Game_Options/HTML5.htm">opciones de juego HTML5</a>, de lo contrario
+    no funcionarán.</p>
+  <p>Para obtener más detalles sobre las funciones <span class="notranslate">de sombreado</span> y su uso en <span class="notranslate">GameMaker Studio</span> 2, consulta las siguientes páginas:</p>
+  <ul class="colour">
+    <li><a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shaders.htm">Funciones</a> de<a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shaders.htm"><span class="notranslate">sombreado</span></a> - La sección de referencia <span class="notranslate">GML</span> para <span class="notranslate">sombreadores</span>.</li>
+    <li><a href="../GameMaker_Language/GML_Reference/Asset_Management/Shaders/Shader_Constants.htm">Constantes de<span class="notranslate">sombreado</span></a> - Las constantes incorporadas a <span class="notranslate">GameMaker Studio 2</span> que se pueden utilizar al escribir <span class="notranslate">sombreadores</span>.</li>
+    <li><a href="http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf">Especificaciones GLSL ES</a> - Archivo PDF de las especificaciones del lenguaje de <span class="notranslate">sombreado</span> Open GL ES que utiliza <span class="notranslate">GameMaker Studio 2</span>.</li>
+    <li><a href="https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-reference">Referencia del lenguaje HLSL</a> - Las páginas de referencia de Microsoft para utilizar HLSL.</li>
+    <li><a href="http://twvideo01.ubm-us.net/o1/vault/gdceurope2013/Presentations/825424RichardStenson.pdf">Presentación del</a> lenguaje PSSL - Visión general del lenguaje PSSL en formato de presentación.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Asset_Editors.htm">Los editores de activos</a></div>
+        <div style="float:right">Siguiente: <a href="Sounds.htm">Suena</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Shader</span> Editor
+<span class="notranslate">Shaders</span>
+OpenGL ES
+HLSL
+PSSL
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_editor
+-->
+
+</body></html>

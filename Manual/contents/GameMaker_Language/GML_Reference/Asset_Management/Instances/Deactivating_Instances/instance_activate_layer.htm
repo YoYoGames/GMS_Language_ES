@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instancia_activar_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_layer" />
+  <meta name="rh-index-keywords" content="instance_activate_layer" />
+  <meta name="search-keywords" content="instance_activate_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instancia_activar_capa</h1>
+  <p>Con esta función puede activar una capa que ha sido desactivada previamente. Es necesario proporcionar el <b>ID de</b> la capa, que puede ser el nombre de la capa tal como está escrito en el editor de código (como una cadena) o el valor real del ID de la capa devuelto
+    por el <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> y todas las instancias desactivadas en esa capa se activarán de nuevo. Tenga en cuenta que si ha desactivado una capa que tiene instancias persistentes, deberá
+    deberá reactivar la capa de nuevo con esta función antes de cambiar de sala, de lo contrario las instancias persistentes <i>no</i> se trasladarán y serán descartadas. Tenga en cuenta también que la activación no es instantánea, y una instancia que haya sido activada
+    de esta manera no se considerará activa hasta el final del evento en el que se llamó a la función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_activate_layer(layer_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>La cadena de ID de capa (o valor) que se utilizará</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">instance_activate_all();<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> instance_deactivate_region(view_xview[0] - 64, view_yview - 64, _vx + 128, _vy + 128, false, false);<br> instance_activate_layer(&quot;Player_Layer&quot;);
+  </p>
+  <p>El código anterior activa todas las instancias dentro de la sala y luego desactiva las que están fuera de los límites de la vista de la cámara actual, excepto las instancias de la capa &quot;Player_Layer&quot; que se vuelven a activar al final.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Deactivating_Instances.htm">Desactivación de instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_deactivate_all.htm">instance_deactivate_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_activate_layer
+-->
+  <!-- TAGS
+instance_activate_layer
+-->
+</body>
+</html>

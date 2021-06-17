@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_versión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_version" />
+  <meta name="rh-index-keywords" content="os_version" />
+  <meta name="search-keywords" content="os_version" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_versión</h1>
+  <p>Esta variable te dirá el número de versión del sistema operativo que está ejecutando tu juego. Por ejemplo, si lo estás ejecutando en <span class="notranslate">Windows 10</span>, <tt>os_version</tt> será igual a 655360.</p>
+  <p>En la siguiente tabla se indican los valores que se devuelven para las versiones más recientes de los diferentes SO:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Sistema operativo</th>
+        <th>Nombre de la versión<br> (número de versión)</th>
+        <th>Valor de retorno (ejemplos)</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Android</span></td>
+        <td>Nougat (7.0 - 7.11)<br> Oreo (8.0 - 8.11)<br> Pie (9.0)<br> <span class="notranslate">Android</span> X (10.0)</td>
+        <td>24 - 25<br> 26 - 27<br> 28
+          <br> 29
+        </td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">iOS</span><br> El valor de retorno se calcula como: <br> (major_version * 16777216) + (minor_version * 4096) + build_number</td>
+        <td><span class="notranslate">iOS</span> 10 (10.3)<br> <span class="notranslate">iOS</span> 11 (11.4)<br> <span class="notranslate">iOS</span> 12 (12.0)<br> <span class="notranslate">iOS</span> 13 (13.0) iPhone<br> <span class="notranslate">iOS</span> 13 (13.5) iPhone/Ipad</td>
+        <td>167784448<br> 184565760
+          <br> 201326592
+          <br> 218103808
+          <br>
+          <br> 218124288
+        </td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span> X<br> El valor de retorno se calcula como: <br> (major_version * 16777216) + (minor_version * 4096) + build_number</td>
+        <td>El Capitan (10.11)<br> Sierra (10.12)<br> High Sierra (10.13)<br> Mojave (10.14)<br> Catalina (10.15)</td>
+        <td>167817216<br> 167821312
+          <br> 167825408
+          <br> 167829504
+          <br> 167833600
+        </td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows</span><br> (el valor de retorno se calcula como: <br> majorVersion * 65536 + minorVersion)</td>
+        <td>Windows<span class="notranslate">7</span> (6.1)<br> <span class="notranslate">Windows 8</span> (6.2)<br> <span class="notranslate">Windows 8.1</span> (6.3)<br> <span class="notranslate">Windows 10</span> (10.0)</td>
+        <td>393217<br> 393218
+          <br> 393219
+          <br> 655360
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>NOTA</b>: Si necesita más información sobre el sistema operativo <span class="notranslate">Windows</span>, puede utilizar la página <span style="font-size:1px;"><a href="environment_get_variable.htm"><tt style="font-size: 14px">environment_get_variable()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">os_versión</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (os_type == os_android) &amp;&amp; (os_version &gt; 10)<br> {
+    <br> global.GFX = 1;<br> }
+  </p>
+  <p>El código anterior comprueba el tipo de sistema operativo y el número de versión y ambos son correctos, entonces la variable global se establece en 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="os_is_paused.htm">os_is_paused</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_version
+-->
+  <!-- TAGS
+os_version
+-->
+</body>
+</html>

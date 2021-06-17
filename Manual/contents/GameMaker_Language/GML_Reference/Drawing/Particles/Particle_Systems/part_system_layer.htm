@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa_sistema_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_layer" />
+  <meta name="rh-index-keywords" content="part_system_layer" />
+  <meta name="search-keywords" content="part_system_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa_sistema_parte</h1>
+  <p>Esta función puede utilizarse para cambiar un sistema de partículas de su capa actual a una nueva. Se suministra el valor del ID del sistema de partículas (devuelto por la función <a href="part_system_create_layer.htm"><tt>part_system_create_layer()</tt></a>) y luego
+    el ID único de la capa (devuelto por la función <a href="../../../Asset_Management/Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> o el nombre de la capa a utilizar como una cadena - por ejemplo &quot;instance_layer&quot; -.
+    tal y como se define en el editor de salas), y el sistema se moverá a la nueva capa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_system_layer(ps, layer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El ID del sistema de partículas</td>
+      </tr>
+      <tr>
+        <td>capa</td>
+        <td>El nuevo ID de la capa</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (part_system_get_layer(global.p_sys) != &quot;effects_layer&quot;)<br> {
+    <br> part_system_layer(global.p_sys, &quot;effects_layer&quot;;<br> }
+  </p>
+  <p>El código anterior comprobará un sistema de partículas para ver en qué capa está y si no está en la capa dada se cambiará.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Systems.htm">Sistemas de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_system_depth.htm">part_system_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_layer
+-->
+  <!-- TAGS
+part_system_layer
+-->
+</body>
+</html>

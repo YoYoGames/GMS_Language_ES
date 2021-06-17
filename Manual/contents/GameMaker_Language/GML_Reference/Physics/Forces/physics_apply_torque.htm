@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_torque</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_torque" />
+  <meta name="rh-index-keywords" content="physics_apply_torque" />
+  <meta name="search-keywords" content="physics_apply_torque" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_torque</h1>
+  <p>Cuando hablamos de par de torsión, generalmente nos referimos a la tendencia de una fuerza o impulso a girar una instancia alrededor de su centro de masa, pero en <span class="notranslate">GameMaker Studio 2</span> también puedes aplicar un par de torsión de forma independiente a una instancia, haciendo que gire
+    en una dirección determinada. La cantidad de par que apliques para conseguir la rotación deseada depende del tamaño y la densidad del accesorio que asignes a tu instancia, ya que ambas propiedades sirven para definir su masa, que define su inercia, que afecta al
+    el par de torsión. La regla general es que si una instancia tiene mucha inercia, necesitarás mucho par para que empiece a girar. También hay que tener en cuenta que otros factores como la gravedad y las colisiones también pueden afectar al par de una instancia.
+    Aquí hay una imagen para ayudar a explicar:</p>
+  <p><img alt="Appply physics torque illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_torque_image.png">Como puede ver, la cantidad de par que necesita para girar el objeto depende de la
+    masa subyacente y la inercia que da. Todo esto es calculado por usted por <span class="notranslate">GameMaker Studio 2</span> basado en el tamaño y la densidad de la fijación que se asigna a la instancia cuando se crea. Tenga en cuenta también que para la rotación en sentido contrario a las agujas del reloj, el valor
+    debe ser negativo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_apply_torque(torque)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>par de torsión</td>
+        <td>El par de torsión (en Newton metros) que debe aplicarse</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {<br> physics_apply_torque(-100);<br> }</p>
+  <p>El código anterior girará la instancia en sentido contrario a las agujas del reloj (hacia la izquierda) con un par de 100Nm cuando se pulse la tecla de flecha izquierda.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Forces.htm">Fuerzas</a></div>
+        <div style="float:right">Siguiente: physics_apply_angular_impulse</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_torque
+-->
+  <!-- TAGS
+physics_apply_torque
+-->
+</body>
+</html>

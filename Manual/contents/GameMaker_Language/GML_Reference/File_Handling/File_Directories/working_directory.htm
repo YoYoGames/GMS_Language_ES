@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>directorio_de_trabajo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for working_directory" />
+  <meta name="rh-index-keywords" content="working_directory" />
+  <meta name="search-keywords" content="working_directory" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>directorio_de_trabajo</h1>
+  <p><tt>Working_directory</tt> puede en realidad devolver dos valores diferentes dependiendo de para qué lo estés usando. Si está escribiendo un archivo en el disco, <tt>working_directory</tt> apunta al área de almacenamiento local que está reservada para su juego en el dispositivo de destino
+    (en Windows es &quot;<span class="inline">%LOCALAPPDATA%/gamedir/</span>&quot; donde &quot;gamedir&quot; es el directorio con el nombre de tu juego). Sin embargo, cuando se lee desde el disco, <tt>working_directory</tt> puede ser <i>tanto</i> el almacenamiento local <i>como</i> el área donde se almacenan los archivos incluidos.</p>
+  <p class="note"><b>NOTA</b>: La variable <tt>working_directory</tt> devolverá la ruta <b>incluyendo</b> la barra invertida final.</p>
+  <p>Por ejemplo, si tienes un archivo <tt>*.txt</tt> por defecto incluido con tu juego y lo lees en la memoria usando <tt>working_directory</tt>, entonces ese archivo será tomado del área donde se almacenan los archivos incluidos. Si luego elige escribir esa
+    información en un archivo de texto utilizando <tt>working_directory</tt>, esto escribirá el archivo en el almacenamiento local de las plataformas de destino, desde donde se leerá la próxima vez a menos que indique a <span class="notranslate">GameMaker Studio</span> 2 que elimine el archivo, en cuyo caso <tt>working_directory</tt> volverá a apuntar al área donde se almacenan los archivos incluidos.</p>
+  <p>Vale la pena señalar que <em>, en general</em>, no es necesario utilizar esto y simplemente llamar al nombre del archivo (más cualquier información adicional de la ruta) es suficiente, por ejemplo esto:</p>
+  <p class="code">file_text_open_read(working_directory + &quot;my_file.txt&quot;);</p>
+  <p>sería mejor hacerlo así:</p>
+  <p class="code">file_text_open_read(&quot;mi_fichero.txt&quot;);</p>
+  <p class="note"><b>ATENCIÓN!</b> Esta función puede no funcionar como se espera debido a que <span class="notranslate">GameMaker Studio 2</span> está en un entorno aislado. Por favor, consulte la sección sobre el <a href="../../../../Additional_Information/The_File_System.htm">sistema de archivos</a> para obtener más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">directorio_de_trabajo</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ini_open(directorio_de_trabajo + &quot;temp_ini.ini&quot;);</p>
+  <p>Esto abrirá un archivo ini desde el directorio de trabajo del juego (creándolo si no existe ya). Este puede ser el almacenamiento local, o el área donde están los archivos incluidos dependiendo de si el archivo que se busca existe en cualquiera de los dos lugares.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_Directories.htm">Directorios de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="program_directory.htm">directorio_de_programa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+working_directory
+-->
+  <!-- TAGS
+working_directory
+-->
+</body>
+</html>

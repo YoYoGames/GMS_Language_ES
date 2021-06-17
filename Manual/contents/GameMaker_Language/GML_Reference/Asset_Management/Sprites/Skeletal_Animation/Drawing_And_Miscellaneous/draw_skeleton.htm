@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_esqueleto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton" />
+  <meta name="rh-index-keywords" content="draw_skeleton" />
+  <meta name="search-keywords" content="draw_skeleton" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_esqueleto</h1>
+  <p>Esta función es <i>sólo</i> para usar con sprites que han sido creados usando un programa de animación esquelética como Spine. Aunque puedes dibujar estos sprites usando las funciones normales de dibujo (como <a href="../../../../Drawing/Sprites_And_Tiles/draw_self.htm"><tt>draw_self()</tt></a>),
+    hay ocasiones en las que puede querer dibujar un solo fotograma o mostrar un cambio de textura de la piel sin cambiar realmente las propiedades del sprite. En estos casos puedes dibujar el sprite con esta función, donde das el índice del sprite y luego el nombre
+    de la animación para obtener el fotograma (una cadena, como se establece en el programa utilizado para hacer el sprite). A continuación, se da el nombre de la piel a utilizar (de nuevo, como se establece cuando el sprite se hizo), y un valor de marco. El valor del marco es para decirle a <span class="notranslate">GameMaker Studio</span>
+    2 qué parte de la animación mostrar y es un valor entre 0 y el <a href="../../Sprite_Instance_Variables/image_number.htm"><tt>número_de_imagen</tt></a>. El resto de los argumentos son los mismos que los utilizados para el dibujo normal de sprites y cambiarán
+    la escala, el ángulo, el color de fusión y el alfa del fotograma final de la animación que se está dibujando.<b></b></p>
+  <p class="note"><b>ADVERTENCIA</b> Debido a la forma en que las animaciones de esqueletos se interpolan entre varios fotogramas &quot;clave&quot;, hay una sobrecarga adicional asociada a esta llamada y, por lo tanto, se recomienda evitar dibujar sprites basados en esqueletos utilizando
+    este método a menos que sea absolutamente necesario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_skeleton(sprite, animname, skinname, frame, x, y, xscale, yscale, rot, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>El nombre de la animación de la que se va a obtener el fotograma (una cadena).</td>
+      </tr>
+      <tr>
+        <td>nombre de la piel</td>
+        <td>El nombre del skin a utilizar (una cadena).</td>
+      </tr>
+      <tr>
+        <td>marco</td>
+        <td>El cuadro de animación a dibujar (de 0 a número_de_imagen - 1).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical del sprite, como un multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>pudrirse</td>
+        <td>La rotación del sprite. 0=normal, 90=girado 90 grados en sentido contrario a las agujas del reloj, etc.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color con el que se mezclará el sprite.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa del sprite (de 0 a 1 donde 0 es transparente y 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p> </p>
+  <p class="code">draw_skeleton(spr_Jump, &quot;jump&quot;, &quot;skin1&quot;, 0, x, y, image_xscale, image_yscale, image_angle, c_white, 0.5);</p>
+  <p>El código anterior dibujará el primer fotograma del sprite de animación esquelético dado, utilizando el conjunto de animación &quot;salto&quot;, la piel definida como &quot;skin1&quot; y en la misma escala y posición que definen las propiedades de la instancia, pero con un alfa
+    de 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_And_Miscellaneous.htm">Dibujo y Varios</a></div>
+        <div style="float:right">Siguiente: <a href="draw_skeleton_instance.htm">draw_skeleton_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton
+-->
+  <!-- TAGS
+draw_skeleton
+-->
+</body>
+</html>

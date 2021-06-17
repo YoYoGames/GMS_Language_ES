@@ -5,9 +5,9 @@
     el recurso (sólo la forma en que se dibuja), y puede utilizar cualquiera de las variables de propiedades del sprite disponibles en lugar de valores directos para todos los argumentos de la función. La imagen siguiente ilustra
     cómo los diferentes valores afectan al dibujo del sprite:
   
-  NOTA: La mezcla de colores sólo se recomienda para el objetivo HTML5 cuando WebGL está habilitado, aunque se puede establecer el color de mezcla si no está habilitado y se mezclará el sprite de forma normal. Sin embargo, toda mezcla de este modo crea un sprite duplicado
+  NOTA: La mezcla de colores sólo se recomienda para el objetivo HTML5 cuando WebGL está habilitado, aunque todavía se puede establecer el color de mezcla si no está habilitado y se mezclará el sprite de forma normal. Sin embargo, toda mezcla de este modo crea un sprite duplicado
     sprite que se almacena en la caché y se utiliza cuando se requiere. Esto está lejos de ser óptimo y si se utilizan múltiples cambios de color, se ralentizará el rendimiento de los juegos a menos que se active WebGL.
-    el tamaño de la caché de la fuente para tratar de limitar esto si es necesario utilizando la función sprite_set_cache_size().
+    el tamaño de la caché de la fuente para tratar de limitar esto si es necesario usando la función sprite_set_cache_size().
   NOTA: Esta acción es sólo para su uso en los diversos eventos de sorteo, y no dibujará nada si se utiliza en otro lugar.
    
   Sintaxis de la acción:

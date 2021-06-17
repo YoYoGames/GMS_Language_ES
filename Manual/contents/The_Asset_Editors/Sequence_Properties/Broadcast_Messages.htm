@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Mensajes de difusión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the dope sheet" />
+  <meta name="rh-index-keywords" content="Sequences - Broadcast Messages" />
+  <meta name="search-keywords" content="broadcast,messages,broadcast messages" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Mensajes de difusión</h1>
+  <p>Tanto las <a href="../Sequences.htm">secuencias</a> como los <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">sprites</a> pueden generar lo que se llama <strong>mensajes de difusión</strong> en cualquier punto de su longitud. Estos mensajes
+    mensajes son simples cadenas que se añaden a fotogramas específicos a lo largo de la línea de tiempo de la animación, y cuando se alcanza ese punto en la línea de tiempo, entonces la cadena se transmitirá a todas las instancias que lo escuchen. Cualquier instancia que tenga un <a href="../Object_Properties/Other_Events.htm">evento de emisión de mensajes</a> (que se encuentra en la categoría de eventos &quot;Otros<strong>&quot;</strong>) recibirá la cadena de mensajes cuando se alcance en la línea de tiempo, momento en el que depende de ti tener algún código que lo analice y reaccione en consecuencia. Ten en cuenta también que las secuencias
+    también pueden escuchar mensajes de difusión, pero esto requiere que primero se configure el método de escucha mediante código (véase la sección <span class="notranslate">GML</span> sobre <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">Eventos y momentos de secuencia</a> para
+    más información).</p>
+  <p class="note"><strong>NOTA:</strong> Si se establece el <strong>image_index </strong>de una instancia directamente en un fotograma, <em>no</em> se activará ningún mensaje de difusión que pueda estar presente en ese fotograma del sprite del objeto.</p>
+  <p>Para añadir un mensaje de difusión a la secuencia o a la línea de tiempo de los sprites, basta con hacer clic en el botón <img alt="Broadcast Message Button Icon" class="icon" src="../../assets/Images/Icons/Icon_Broadcast.png">. Se abrirá un cuadro de diálogo en el que podrás añadir el mensaje
+    que se va a emitir:</p>
+  <p class="dropspot"><img alt="Add A broadcast message to a sequence" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_Broadcast.gif" style="cursor: nesw-resize;" /></p>
+  <p>Una vez añadido, el mensaje se mostrará en la <span class="notranslate">Hoja de Claves</span> (o en la vista del marco de sprites). Para editarlo, debe pulsar el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> en el icono del mensaje
+    para abrir una lista de todos los mensajes que se superponen al fotograma (sólo puede haber un mensaje en un fotograma, pero si se colocan varios mensajes en fotogramas consecutivos se superpondrán visualmente, lo que dificultará la selección del que quieras y
+    puede tener un mensaje y un <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sequences/Sequence_Events_Moments_Broadcast.htm">momento</a> en el mismo fotograma), y luego seleccionando uno de esta lista se abrirá el diálogo del mensaje donde
+    puede editarlo o eliminarlo.</p>
+  <p>Cuando se dispara un evento de Mensaje de Difusión, habrá un Mapa <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS</a> especial creado y almacenado en la variable incorporada <span class="inline">event_data</span>.
+    Esta variable ID es una variable incorporada de ámbito <em>global </em>, pero sólo contendrá los datos del mapa DS en el evento que lo activó - en este caso el evento de Mensaje de Difusión - y devolverá -1 en el resto de ocasiones. Las claves que tendrá el evento son
+    las siguientes:</p>
+  <ul class="colour">
+    <li>&quot;<span class="inline">event_type</span>&quot;: Para un mensaje de difusión será la cadena &quot;<span class="inline">sequence event</span>&quot; para un mensaje enviado desde una secuencia y &quot;<span class="inline">sprite event</span>&quot;
+      para un mensaje enviado desde un sprite.</li>
+    <li>&quot;<span class="inline">message</span>&quot;: Esta clave contiene la cadena de mensajes que se ha recibido.</li>
+    <li>&quot;<span class="inline">element_id</span>&quot;: Esta tecla devuelve el ID del elemento (secuencia/sprite/instancia) en una capa del editor de salas. A continuación, puede utilizar este valor de ID para averiguar qué tipo de elemento ha generado el mensaje mediante la función
+      <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_get_element_type.htm"><span class="inline">layer_get_element_type()</span></a> y utilizar las otras funciones pertinentes para dirigirlo, o realizar
+      una acción como reproducir un sonido, según sea necesario.</li>
+  </ul>
+  <p>Ten en cuenta que el evento de mensaje de difusión de una instancia recibirá múltiples cadenas por cada una de las veces que se envíe un mensaje de difusión. No es necesario que actúe sobre todas ellas, y puede tener diferentes instancias escuchando diferentes cadenas de difusión.
+    Sin embargo, puedes tener una instancia que esté escuchando mensajes que pueden ser recibidos al mismo tiempo. Cuando esto ocurra, el evento se activará varias veces, <em>una por cada</em> cadena de mensajes.</p>
+  <p>A continuación se muestra un breve ejemplo de cómo se puede comprobar este evento:</p>
+  <p class="code">si event_data[? &quot;event_type&quot;] == &quot;sequence event&quot;<br> {
+    <br> switch (event_data[? &quot;message&quot;])<br> {<br> case &quot;hit&quot;:<br> audio_play_sound(snd_hit, 0, false);<br> break;<br> case &quot;destroy&quot;:<br> sequence_destroy(event_data[? &quot;element_id&quot;]);<br> break;<br> } <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="The_Sequence_Canvas.htm">El lienzo de la secuencia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences - Broadcast Messages
+Broadcast Messages
+-->
+  <!-- TAGS
+sequences_broadcast_messages
+-->
+</body>
+</html>

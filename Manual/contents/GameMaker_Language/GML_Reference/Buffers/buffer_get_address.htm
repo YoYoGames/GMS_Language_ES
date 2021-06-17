@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_get_address</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_address" />
+  <meta name="rh-index-keywords" content="buffer_get_address" />
+  <meta name="search-keywords" content="buffer_get_address" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_address</h1>
+  <p>Con esta función puedes obtener un <i>puntero</i> a la dirección del buffer <i>alineado</i>. Esto es principalmente para su uso con extensiones, ya que puede pasar este valor a través de ellos, lo que les permite acceder a los datos del búfer. Tenga en cuenta que hay algunas cosas
+    que no puedes hacer con el buffer cuando accedes desde una extensión:</p>
+  <ul class="colour">
+    <li>No puedes liberar la memoria.</li>
+    <li>No se puede cambiar el tamaño de la memoria.</li>
+    <li>No puede escribir más allá de la dirección del buffer más el tamaño del buffer (puede usar la función <a href="buffer_get_size.htm"><tt>buffer_get_size()</tt></a> para esto) o obtendrá un error por exceso de límites.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_get_address(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var b_address = buffer_get_address(buff_model);<br> var b_end_address = b_address + buffer_get_size(buff_model);</p>
+  <p>El código anterior obtendrá la dirección de memoria del buffer indexado en la variable &quot;buff_model&quot; y luego obtendrá la dirección de memoria para el final del buffer utilizando la <tt>función</tt> buffer_get_size <tt>(),</tt> almacenando ambos valores en variables locales para
+    para su uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_get_size.htm">buffer_get_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_address
+-->
+  <!-- TAGS
+buffer_get_address
+-->
+</body>
+</html>

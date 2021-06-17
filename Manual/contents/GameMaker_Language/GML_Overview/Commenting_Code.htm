@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Código de comentarios</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the use of comments in code" />
+  <meta name="rh-index-keywords" content="Commenting Code" />
+  <meta name="search-keywords" content="Comments,region,endregion,regions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Código de comentarios</h1>
+  <p>Cuando se trabaja en colaboración con otras personas, cuando se trata de un proyecto grande, o incluso sólo para su propia referencia y depuración, dejar comentarios en su código de eventos y scripts es muy importante. En <span class="notranslate">GameMaker Studio</span> 2 tienes varios mecanismos
+    para ayudarte a dejar notas y comentarios sobre secciones de código e incluso bloques enteros de código que pueden verse en la lista de eventos del objeto que estás editando en ese momento. De este modo, puedes dejar notas para ti mismo y para tus colegas, o para explicar
+    un trozo de código especialmente complicado, o incluso dejar un recordatorio sobre lo que hace algo, o lo que quieres que haga algo en el futuro.</p>
+  <p>Para dejar un simple comentario de una línea, lo primero que puede hacer es utilizar <span class="inline"><b><tt>//</tt></b></span> antes del texto. Por ejemplo:</p>
+  <p class="code">//Inicializar variables<br> sr = 10;<br> hp = 100;</p>
+  <p>También puede dejar comentarios de varias líneas, para dar crédito, para omitir una sección completa de código para la depuración, o incluso para dejar notas sobre cómo quiere cambiar el código en el futuro. Para ello puede utilizar <b><tt>/* ... */</tt></b> como este:</p>
+  <p class="code">/*<br> Configurar las variables del GIF a los valores iniciales (estos pueden ser editados para que no sea necesario usar las funciones setter todo el tiempo si siempre está usando los mismos valores)<br>
+    <br> ¡IMPORTANTE! Por favor, vea los scripts individuales de &quot;set&quot; para una información más extensa sobre cada una de las diferentes variables.<br> */
+    <br>
+    <br> frame_num = 30;<br> frame_steps = 5;<br> frame_width = 256;<br> frame_height = 256;<br> frame_quality = gifcam_quality_high;</p>
+  <p>Además de los comentarios, también puede utilizar etiquetas especiales <tt>#region</tt> para marcar una sección de código para el <b>plegado de código</b>, y cada región puede contener un comentario. La forma en que funciona es añadiendo una etiqueta <tt>#region</tt> - junto con cualquier texto de comentario - en la parte superior de una sección de código y luego añadiendo la correspondiente etiqueta #endregion en la parte inferior.
+    de una sección de código y luego añadir una etiqueta <tt>#endregion</tt> correspondiente a la parte inferior de la sección y entonces usted puede &quot;doblar&quot; el código, es decir, ocultarlo para que pueda reducir el número de líneas de código visible en el editor en cualquier
+    en cualquier momento:</p>
+  <p><img alt="Code Regions example" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/editor_scripts_coderegion.gif">El código real es algo así:</p>
+  <p class="code">#región Esta es una región de ejemplo<br>
+    <br> width = sprite_get_width(sprite);<br> height = sprite_get_height(sprite);<br> xoff = sprite_get_xoffset(sprite);<br> yoff = sprite_get_yoffset(sprite);<br>
+    <br> #endregion Comente más aquí si es necesario</p>
+  <p>Por último, vale la pena mencionar que cuando se trabaja con eventos en el Editor de Objetos <a href="../../The_Asset_Editors/Objects.htm">,</a> se puede utilizar un comentario especial &quot;<span class="inline">description</span>&quot; al comienzo del evento para decir
+    cuál es el contenido general del evento, y esto se mostrará en la ventana de eventos del Editor de Objetos. Esto debe ir en la primera línea del editor de código, y tiene el siguiente formato:</p>
+  <p class="code">/// @description &lt;Esta es una descripción del evento&gt;</p>
+  <p>Esto se mostrará ahora en la ventana de eventos, por ejemplo</p>
+  <p><img alt="Event Title Comment" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Event_Comment.png">Tenga en cuenta que puede definir un comentario por defecto que se creará para todos los eventos desde <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Object_Editor_Preferences.htm">las Preferencias del Editor de Objetos</a>.</p>
+  <p>Finalmente, si está escribiendo <a href="Script_Functions.htm">funciones de script</a> y quiere tener algún control sobre cómo son tratadas por el IDE (por ejemplo: tener autocompletado o mostrar los parámetros del script) entonces debería escribir sus comentarios usando
+    JSDoc como se explica <a href="../../The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm">aquí</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Variables_And_Variable_Scope.htm">Variables y alcance de las variables</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Comments
+-->
+  <!-- TAGS
+comments
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_add_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_add_instance" />
+  <meta name="rh-index-keywords" content="layer_add_instance" />
+  <meta name="search-keywords" content="layer_add_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_add_instance</h1>
+  <p>Esta función se puede utilizar para mover una instancia dada de la capa en la que se encuentra actualmente a otra capa. Se proporciona el ID de la capa (que se obtiene al crear la capa con <a href="layer_create.htm"><tt>layer_create()</tt></a>) o el nombre de la capa (como
+    una cadena - esto tendrá un impacto en el rendimiento) y el ID de la instancia a mover entre capas. Por ejemplo, digamos que su reproductor está en una capa que está a una profundidad menor que otra capa y quiere que aparezca detrás de las capas entre
+    las dos. Puede utilizar esta función para cambiar el reproductor de la capa de primer plano a la capa de fondo y hacer que aparezca detrás de las otras capas que se están dibujando.</p>
+  <p class="note"><b>NOTA:</b> Esta función no puede utilizarse para añadir una nueva instancia a una capa. <b>Debe</b> haber creado la instancia previamente y haber almacenado su ID en una variable.</p>
+  <p class="note"><strong>NOTA</strong>: Esta función sólo es válida dentro del ámbito de la sala actual y no puede utilizarse cuando el ámbito ha sido modificado mediante la función <span class="inline"><a href="layer_set_target_room.htm" style="font-size: 14px">layer_set_target_room()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_add_instance(layer_id, instance_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de ID único de la capa de instancia a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>El valor del ID de instancia único de la instancia que se va a trasladar a la capa de destino</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var near = instance_nearest(x, y, obj_Tree);<br> var layer_id = layer_get_id(&quot;Instances Front&quot;);<br> layer_add_instance(layer_id, near);</p>
+  <p>El código anterior obtendrá primero el índice de la instancia más cercana a la posición x/y dada y lo almacenará en una variable local. A continuación, obtiene el ID de la capa de instancia única para la capa llamada &quot;Frente de Instancias&quot;, y mueve la instancia encontrada a
+    a esa capa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_has_instance.htm">layer_has_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_add_instance
+-->
+  <!-- TAGS
+layer_add_instance
+-->
+</body>
+</html>

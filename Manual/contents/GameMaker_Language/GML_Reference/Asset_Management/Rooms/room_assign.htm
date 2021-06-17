@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asignación_de_habitaciones</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_assign" />
+  <meta name="rh-index-keywords" content="room_assign" />
+  <meta name="search-keywords" content="room_assign" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asignación_de_habitaciones</h1>
+  <p>Esta función copiará una habitación a otra, eliminando todas las instancias, baldosas, etc... de la habitación a la que se está copiando y reemplazándolas completamente con el contenido de la nueva habitación. Se proporciona el índice de la sala a copiar (ya sea como se define en el
+    en el navegador de activos o como lo devuelve la función <a href="room_add.htm"><tt>room_add()</tt></a>) así como el índice de la sala de origen. Tenga en cuenta que llamar a esta función en un activo de sala creado en el navegador de activos <strong>cambiará permanentemente el contenido de la</strong> sala,
+    e incluso llamando a <span class="inline">game_restart()</span> no devolverá la sala a su estado original (sólo terminando el juego y abriéndolo de nuevo comenzará con la sala en su estado original de nuevo).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">room_assign(ind, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la sala a <i>copiar</i>.</td>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>El índice de la sala <i>de la que se va a copiar</i>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.rm = room_add();<br> room_assign(global.rm, rm_Base);</p>
+  <p>El código anterior añadirá una nueva sala al juego y luego copiará el contenido de la sala indexada como &quot;rm_Base&quot; en ella.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room_instance_add.htm">room_instance_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_assign
+-->
+  <!-- TAGS
+room_assign
+-->
+</body>
+</html>

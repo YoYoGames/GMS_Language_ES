@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_replace_sprite_ext" />
+  <meta name="rh-index-keywords" content="font_replace_sprite_ext" />
+  <meta name="search-keywords" content="font_replace_sprite_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace_sprite_ext</h1>
+  <p>Esta función reemplazará una fuente de sprite que hayas creado previamente usando la función <a href="font_add_sprite_ext.htm"><tt>font_add_sprite_ext()</tt></a>. Utiliza una &quot;tira de sprites&quot;, donde cada sub-imagen es un símbolo o letra individual,
+    y las imágenes son mapeadas a letras basándose en el argumento &quot;string_map&quot; de la función. Este argumento es una cadena que puede usar para decirle a <span class="notranslate">GameMaker Studio</span> 2 en qué orden están las sub-imágenes de la fuente sprite y las mapeará automáticamente
+    al escribir el texto. Así, por ejemplo, si tienes una cadena-mapa de &quot;AaBbCcDdEeFfGgHh&quot;, tu fuente sprite debe tener <i>las</i> sub-imágenes ordenadas de esta manera.</p>
+  <p>También puede establecer que el espaciado de la fuente sea proporcional<tt>(verdadero</tt>) o no<tt>(falso</tt>), donde una fuente proporcional se espacia en base a la anchura real de las letras (por lo que la letra &quot;i&quot; ocupa menos espacio que la letra &quot;w&quot;,
+    por ejemplo) mientras que una fuente no proporcional se espaciará en base al ancho de la sub-imagen, como una fuente monoespaciada. Por último, puede definir el espacio que se dejará entre cada letra al escribir, y esto puede ser cualquier valor entero, siendo 0 sin espacio (las
+    letras se &quot;tocarán&quot; si son proporcionales). La función devuelve un valor de <i>índice</i> que debe almacenarse en una variable, ya que se necesitará en todos los códigos posteriores que hagan referencia a esta fuente.</p>
+  <p>Si la función falla, entonces fallará silenciosamente sin reemplazar la fuente sprite dada.</p>
+  <p class="note"><b>NOTA: </b>Esta función requiere que se haya añadido previamente una fuente de sprite utilizando <span style="font-size:1px;"><a href="font_add_sprite.htm"><tt style="font-size: 14px">font_add_sprite()</tt></a></span>ya que la reemplazará y no se puede utilizar
+    en fuentes que se incluyen como parte de los recursos del juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">font_replace_sprite_ext(font, spr, string_map, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>El tipo de letra a sustituir.</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>El sprite en el que se basará la fuente.</td>
+      </tr>
+      <tr>
+        <td>mapa_de_cadenas</td>
+        <td>Cadena de la que se toma el orden de las subimágenes de los sprites.</td>
+      </tr>
+      <tr>
+        <td>puntal</td>
+        <td>Establecer como fuente proporcional o no.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>El espacio que hay que dejar entre cada letra.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p> </p>
+  <p class="code">font_replace_sprite_ext(global.Font, spr_CalcFont, &quot;0123456789+-*/=&quot;, true, 2);</p>
+  <p>El código anterior reemplazará un activo de fuente sprite que está indexado en la variable &quot;global.Font&quot; con imágenes sprite indexadas en la variable &quot;spr_CalcFont&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fonts.htm">Fuentes</a></div>
+        <div style="float:right">Siguiente: <a href="font_delete.htm">font_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite_ext
+-->
+  <!-- TAGS
+font_replace_sprite_ext
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posición_sistema_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_position" />
+  <meta name="rh-index-keywords" content="part_system_position" />
+  <meta name="search-keywords" content="part_system_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posición_sistema_parte</h1>
+  <p>Con esta función puedes establecer la posición base para el sistema de partículas en relación con la posición (0,0) de la habitación, lo que significa que todas las funciones de partículas posteriores relacionadas con este sistema se dibujarán ahora en relación con la nueva posición. Por defecto esta
+    posición es siempre (0,0), pero en algunas circunstancias muy especiales es posible que desee cambiar esto a otra cosa.</p>
+  <p class="note"><b>NOTA</b>: Esta función cambiará <b>todo</b> dentro del sistema de partículas, así que si tienes un emisor en la posición (100,100) y luego estableces la posición del sistema de partículas en (0,100), el emisor ahora se dibujará en (100,200). Lo mismo ocurre si desplazas
+    el sistema y luego creas el emisor, ya que aunque lo crees en (100,100) se dibujará en (100,200).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_system_position(ind, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sistema de partículas a cambiar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La nueva coordenada x del sistema de partículas.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La nueva coordenada y del sistema de partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> part_system_position(global.Sname, mouse_x, mouse_y);<br> }
+  </p>
+  <p>El código anterior comprobará si se pulsa el botón del ratón y, si lo detecta, el sistema de partículas indexado en la variable global &quot;Sname&quot; se desplaza a la posición x/y del ratón</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Systems.htm">Sistemas de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_system_clear.htm">part_system_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_position
+-->
+  <!-- TAGS
+part_system_position
+-->
+</body>
+</html>

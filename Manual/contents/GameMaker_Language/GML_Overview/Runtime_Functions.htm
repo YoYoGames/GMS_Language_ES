@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funciones de tiempo de ejecución</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the use of runtime functions" />
+  <meta name="rh-index-keywords" content="Runtime Functions" />
+  <meta name="search-keywords" content="functions,built-in functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Funciones de<span class="notranslate">tiempo de ejecución</span> </h1>
+  <p>La definición general de una función es algo así:</p>
+  <p><i>Una función tiene una entrada y una salida, y la salida está relacionada de alguna manera con la entrada.</i></p>
+  <p>En <span class="notranslate">GameMaker Studio</span> 2 esto se traduce en dos cosas diferentes, pero ambas funcionan de la misma manera:</p>
+  <ul class="colour">
+    <li><b>Funciones<span class="notranslate">en tiempo de ejecución</span></b> - Una <i><span class="notranslate">tiempo de ejecución</span></i> función es aquella que se suministra como parte del <b><span class="notranslate">Lenguaje GameMaker</span></b><span class="notranslate">(GML</span>). Están incorporadas al lenguaje y pueden utilizarse para hacer que ocurran cosas en tus juegos y hay un gran número de funciones de tiempo de ejecución de <span class="notranslate">GML</span>
+      disponibles, todas ellas explicadas en la sección de <a href="../GML_Reference/GML_Reference.htm">Referencia del Lenguaje</a> del manual.</li>
+    <li><b>Funciones y métodos de script </b>- <a href="Script_Functions.htm"><em>Script </em><em>funciones</em></a> y <a href="Method_Variables.htm"><em>M</em><i>etos Variables</i></a> son funciones que has creado tú mismo usando los bloques básicos de
+      bloques de la <b><span class="notranslate">Lenguaje GameMaker</span></b><span class="notranslate">(GML</span>), y pueden incluir funciones de <span class="notranslate">ejecución</span> como parte de su código.</li>
+  </ul>
+  <p>En ambos casos, una función tiene la forma de un <i>nombre de</i> función, seguido de los <i><span class="glossextra">argumentos</span></i> de <i>entrada</i> entre corchetes <tt>()</tt> y separados
+    por comas (si la función no tiene argumentos de entrada entonces sólo se utilizan los corchetes). Esta página se concentra en las <strong>funciones<span class="notranslate">de tiempo de ejecución</span></strong> (es decir, las que están incorporadas a <span class="notranslate">GameMaker</span> para formar el <span class="notranslate">Lenguaje GameMaker</span>), pero las reglas generales mostradas
+    abajo siguen para todos los tipos de funciones.</p>
+  <p>A continuación se presenta un esquema de la estructura de una función:</p>
+  <p class="code">&lt;función&gt;(&lt;carga0&gt;, &lt;carga1&gt; ,... &lt;cargaN&gt;);</p>
+  <p>Algunas funciones pueden devolver valores y pueden utilizarse en<span class="glossextra">expresiones</span>, mientras que otras simplemente ejecutan comandos, como se ilustra en los dos siguientes ejemplos de funciones <span class="notranslate">en tiempo de ejecución</span> 
+    en tiempo de ejecución:</p>
+  <p class="code">// Destruye la instancia que llama<br> // No requiere argumentos y no devuelve nada<br> instance_destroy();
+    <br>
+    <br> // Obtiene la distancia desde la posición actual de la instancia a la posición del ratón<br> // Toma cuatro argumentos y devuelve un valor real<br> dist = point_distance(x, y, mouse_x, mouse_y);</p>
+  <p class="note"><strong>NOTA</strong>: En cualquier lugar del manual donde aparezca &quot;N/A&quot; como valor de retorno de una función, significa que la función no está destinada a devolver ningún valor como parte de su operación. Si intenta comprobar el valor de retorno de estas funciones, obtendrá el valor
+    obtendrá el valor <span class="inline">undefined</span>. </p>
+  <p>A veces, el valor de retorno de una función puede ser un valor que se quiere utilizar en una <a class="glossterm" data-glossterm="asignación" href="#">asignación</a>, pero hay que tener en cuenta que es imposible utilizar cualquier función <em>directamente</em> como el lado izquierdo de una asignación.
+    de una asignación. Por ejemplo, el siguiente código para establecer la velocidad en una instancia le daría un error:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>El valor de retorno de la expresión en ese ejemplo de código es un número entero (el valor de identificación único para la instancia más cercana) y por lo tanto debe ser encerrado entre paréntesis para ser utilizado de esta manera y dirigirse correctamente a la instancia requerida (ver <a href="Addressing_Variables_In_Other_Instances.htm">Direccionamiento de variables en otras instancias</a> para más información). El código anterior se escribiría correctamente como</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> /o más correctamente aún<br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>La sección de <a href="../GML_Reference/GML_Reference.htm">Referencia del Lenguaje</a> del manual enumera todas las funciones de <span class="notranslate">tiempo de ejecución</span> disponibles y da ejemplos de cómo se pueden utilizar, así como otra información importante sobre lo que pueden devolver
+    o los eventos que pueden desencadenar, etc... Para más información sobre las funciones y métodos de script definidos por el usuario, vea la sección sobre <a href="Script_Functions.htm">Funciones de Script</a> y la sección sobre <a href="Method_Variables.htm">Variables de Métodos</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Commenting_Code.htm">Comentar el código</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Runtime</span> Functions
+-->
+  <!-- TAGS
+<span class="notranslate">runtime</span>_functions
+-->
+
+</body></html>

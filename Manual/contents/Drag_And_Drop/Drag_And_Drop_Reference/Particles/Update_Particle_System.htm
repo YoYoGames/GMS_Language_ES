@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Actualizar el sistema de partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Update Particle System action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Update Particle System" />
+  <meta name="search-keywords" content="Update Particle System" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Update Particle System Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Update_Particle_System.png"> Actualizar el sistema de partículas</h1>
+  <p>Esta acción forzará al sistema de partículas dado a actualizar la posición, el color, el alfa, etc... Usted suministra el valor de ID único para el sistema a actualizar (como se devuelve cuando usted creó el sistema con la acción <a href="Create_Particle_System.htm">Crear Sistema de Partículas</a>),
+    y cada vez que llames a la acción el sistema dado se actualizará <b>un frame del</b> juego, lo que significa que puedes - por ejemplo - llamar a esta acción dentro de un bucle de <a href="../Loops/Repeat.htm">repetición</a> y hacer que el sistema de partículas se actualice varias veces en
+    un solo fotograma del juego (útil para cuando quieras que un nivel tenga algún efecto que requiera que las partículas estén presentes al principio, como la nieve o la lluvia). También puedes usar esta acción cuando el sistema de partículas ha sido pausado usando el <a href="Pause_Particle_System.htm">Sistema de Partículas Pausado</a> para actualizar manualmente las partículas en el sistema.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Update Particle System Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Update_Particle_System.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Sistema</td>
+        <td>El valor de identificación único para el sistema que se va a actualizar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Update Particle System Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Update_Particle_System.png">El código del bloque de acción anterior creará un bucle que actualizará
+    el sistema de partículas dado 200 veces antes de continuar.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Create_Particle_Type.htm">Crear tipo de partícula</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Update Particle System
+-->
+  <!-- TAGS
+action_refresh_particles
+-->
+</body>
+</html>

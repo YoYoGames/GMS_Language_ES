@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Extensiones para iOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how iOS extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating iOS / tvOS Extensions" />
+  <meta name="search-keywords" content="iOS Extensions,iOS, tvOS Extensions, tvOS" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Extensiones<span class="notranslate">iOS</span> / <span class="notranslate">tvOS</span> </h1>
+  <p>Para crear una extensión para <span class="notranslate">iOS</span> o <span class="notranslate">tvOS</span> hay que hacerlo en dos partes. La primera parte sería añadir la extensión en sí, junto con los archivos necesarios, etc... y la segunda es crear las funciones y macros/constantes que la extensión requiere.
+    Las funciones y constantes se añaden utilizando archivos de <strong>marcadores de posición </strong>para agruparlos, por lo que añadirías un marcador de posición y luego definirías las funciones y macros como se explica en la sección aquí <a href="Creating_An_Extension.htm">.</a>
+    Sin embargo, para añadir el resto de los archivos es necesario marcar primero el <em><span class="notranslate">iOS</span> </em>y/o la casilla <em><span class="notranslate">tvOS</span> </em>en la sección de <strong>Características Adicionales</strong> del editor para abrir la ventana de <strong>Propiedades de la Extensión</strong> correspondiente (la
+    imagen de abajo muestra la ventana de propiedades de <span class="notranslate">iOS</span>, pero la ventana de <span class="notranslate">tvOS</span> es exactamente igual):</p>
+  <p class="dropspot"><img alt="iOS Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_iOS.png" /></p>
+  <p>Aquí se dan los siguientes datos:</p>
+  <ul class="colour">
+    <li class="dropspot">Banderas del enlazador<strong>/ Band</strong>eras del compilador: Algunos frameworks y SDKs de terceros requieren la adición de banderas extra del enlazador y banderas del compilador para funcionar, las cuales pueden ser especificadas aquí (ver la documentación que acompaña al SDK o framework en
+      en cuestión para más detalles).</li>
+    <li class="dropspot"><strong>Nombre de la</strong> clase: Su extensión puede tener varias clases, y cada una de ellas tiene sus propias funciones y constantes, por lo que debe darle un nombre que refleje su propósito</li>
+    <li class="dropspot"><strong>App Delegate Class Name</strong>: El nombre de su clase delegada de aplicación personalizada. Si se establece esto, la extensión puede anular/extender la funcionalidad principal de la aplicación. Para utilizar esta función es necesario hacer lo siguiente:
+      <ol>
+        <li>Asegúrese de que los archivos fuente del delegado tienen el mismo nombre que la clase del delegado (por ejemplo, <span class="inline">@interface MyCustomAppDelegate</span> debe definirse en &quot; <span class="inline">MyCustomAppDelegate.h</span>&quot;)</li>
+        <li>Añade la variable de entorno <span class="inline">${YYExtAppDelegateIncludes}</span> en la parte superior del archivo de cabecera del delegado de tu aplicación. Ésta será sustituida en tiempo de compilación por los archivos de inclusión pertinentes para la clase de delegado principal.</li>
+        <li>Utiliza la variable de entorno <span class="inline">${YYExtAppDelegateBaseClass}</span> como clase base para tu delegado de aplicación personalizado. Esto será reemplazado en tiempo de compilación con la clase base de delegado correcta.<br>
+          <br> Para asegurar que tu extensión funciona con cualquier otra extensión que utilice delegados de aplicación personalizados, debes llamar a cualquier método de la clase base desde métodos sobrescritos en tu clase hija. Antes de llamar al método de la superclase, debes asegurarte de que
+          está implementado en la jerarquía de clases para evitar errores, por ejemplo</li>
+      </ol>
+     <p class="code">- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions<br> {
+        <br> // Comprueba si alguna superclase implementa este método y lo llama<br> if([[self superclass] instancesRespondToSelector:@selector(application:willFinishLaunchingWithOptions:)])<br> return [super application:application willFinishLaunchingWithOptions:launchOptions];<br> else<br> return TRUE;<br> }
+     </p>
+    </li>
+    <li class="dropspot"><strong>Frameworks del</strong> sistema: Aquí puedes añadir cualquier <a class="glossterm" data-glossterm="marco" href="#">framework</a>del sistema <span class="notranslate">iOS</span> a tu extensión. Estos se añaden haciendo clic en el botón <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> que añadirá un marco de trabajo de marcador de posición, que luego se puede editar haciendo clic lento <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en él. Puedes encontrar más información sobre los frameworks de sistema disponibles <a href="https://developer.apple.com/documentation/">aquí</a>. Para eliminar un marco del sistema, simplemente selecciónalo y haz clic en el botón <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">.</li>
+    <li class="dropspot"><strong>Inyectar a Info.plist</strong>: Aquí puede añadir cualquier código que se inyecte en el archivo <span class="inline">info.plist</span>.</li>
+    <li class="dropspot"><strong>Frameworks y paquetes</strong> de terceros: Esta sección es para añadir paquetes de terceros y SDK. Al igual que con los trabajos de marco del sistema, haga clic en el botón <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> para añadirlos y luego haga clic lentamente en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para editarlos, y seleccionándolos y haciendo clic en <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png"> los eliminará (consulte la documentación que viene con su SDK elegido para obtener información sobre el nombre del marco). Si el paquete del framework/SDK está en tu Mac de desarrollo, entonces necesitas añadir la ruta en &quot; Enter <em>framework path on Mac&quot;</em>
+      y hacer clic en el botón <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18">, o si el SDK o el código fuente está en su PC, utilice el botón <em>Añadir Fuente</em>.</li>
+    <li class="dropspot"><strong><span class="notranslate">CocoaPods</span></strong>: Aquí puede dar el nombre de cualquier <span class="notranslate">CocoaPods</span> que la extensión va a utilizar en lugar de (o así como) cualquier SDK y frameworks que se han añadido. Tenga en cuenta que hay una opción de juego <a href="../../Settings/Game_Options/iOS.htm">para <span class="notranslate">iOS</span></a> y <a href="../../Settings/Game_Options/tvOS.htm">para <span class="notranslate">tvOS</span></a> para agregar un Podfile a <span class="notranslate">GameMaker Studio2</span>que se requiere si usted está agregando <span class="notranslate">CocoaPods</span> en esta sección.</li>
+    <li class="dropspot"><strong>Dependencias de<span class="notranslate">CocoaPods</span></strong>: Esta sección es donde puedes listar las diferentes dependencias requeridas por los <span class="notranslate">CocoaPods</span> añadidos en la sección anterior. Tenga en cuenta que hay una opción de juego <a href="../../Settings/Game_Options/iOS.htm">para <span class="notranslate">iOS</span></a> y <a href="../../Settings/Game_Options/tvOS.htm">para <span class="notranslate">tvOS</span></a> para añadir un Podfile.lock a <span class="notranslate">GameMaker Studio2</span>que se requiere si usted está agregando dependencias CocoaPod en esta sección.</li>
+  </ul>
+  <p>Si su extensión ha tenido algún System Frameworks o 3rd Party Frameworks añadido, estos aparecerán ahora en la ventana de <strong>Propiedades de la Extensión </strong>, con cada uno de ellos con una casilla de verificación al lado. Si marca la casilla, estará habilitando la vinculación débil
+    lo cual es útil si necesita &quot;anular&quot; algún símbolo de la biblioteca incluida con su propio valor, pero debe tenerse en cuenta que al hacerlo se ralentizará la vinculación.</p>
+  <p>Para más información sobre la creación de extensiones <span class="notranslate">para iOS</span> y <span class="notranslate">tvOS</span>, consulta la <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension">Base de conocimientos de<span class="notranslate">YoYo</span></a> Games, y para información sobre el uso de <span class="notranslate">CocoaPods</span>
+    en las extensiones, consulta la siguiente guía:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858"><span class="notranslate">iOS</span> y <span class="notranslate">tvOS</span>: Uso de Cocoa Pods</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Extensions.htm">El editor de extensiones</a></div>
+        <div style="float:right">Siguiente: <a href="Creating_An_Extension.htm">Creación de una extensión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">iOS</span> Extensions
+<span class="notranslate">tvOS</span> Extensions
+-->
+  <!-- TAGS
+extensions_ios
+-->
+
+</body></html>

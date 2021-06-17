@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Listas DS</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for DS Lists" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="DS Lists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Listas DS</h1>
+  <p>Una lista DS es una estructura de datos que almacena información de forma secuencial a medida que se va añadiendo (de forma muy parecida a un <a href="../../../GML_Overview/Arrays.htm">array</a>). Las listas DS son estructuras de datos muy flexibles que permiten añadir valores al final o insertarlos
+    al final o insertarlos en algún lugar en el medio de la lista, así como la capacidad de barajar el orden (para aleatorizar los valores) o de ordenarlos en forma ascendente o descendente.</p>
+  <p>Cuando se accede a las estructuras de datos de la lista DS, siempre se debe tratar de utilizar <b>valores enteros</b> para la posición de la lista, y todos los índices no enteros serán floteados por <span class="notranslate">GameMaker Studio 2</span> si no lo hace. Si esto no es lo que necesitas, entonces tendrás que
+    hacer el redondeo usted mismo previamente antes de pasar el índice que desea comprobar.</p>
+  <p class="note"><b>NOTA</b>: Como todos los recursos dinámicos, las estructuras de datos ocupan memoria, por lo que <b>siempre</b> deben ser destruidas cuando ya no se necesiten para evitar fugas de memoria que ralentizarán y eventualmente bloquearán tu juego.</p>
+  <p class="note"><b>NOTA</b>: si necesita comprobar si una estructura de datos existe, puede utilizar la función <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> función.</p>
+  <p>Aparte de las funciones específicas que se enumeran a continuación, todos pueden utilizar una <a class="tooltip" title="An expression is a combination of one or more constants, variables, operators, and/or functions that are interpreted according to particular rules of precedence and association to return another value. A simple expression would be (5 + 5), which returns 10.">expresión</a> (llamada <i>accesor</i>) para añadir o modificar el contenido de su lista DS. Este accesor se parece a un array 1D con la siguiente sintaxis:</p>
+  <p class="code">list_index[| index]</p>
+  <p>Puede encontrar más información, además de ejemplos, en la página de descripción general de <span class="notranslate">GML</span> sobre <a href="../../../GML_Overview/Accessors.htm">los accesorios</a>.</p>
+  <p>Existen las siguientes funciones que se ocupan de las listas DS.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_list_create.htm">ds_list_create</a></li>
+    <li><a href="ds_list_destroy.htm">ds_list_destroy</a></li>
+    <li><a href="ds_list_clear.htm">ds_list_clear</a></li>
+    <li><a href="ds_list_empty.htm">ds_list_empty</a></li>
+    <li><a href="ds_list_size.htm">ds_list_size</a></li>
+    <li><a href="ds_list_add.htm">ds_list_add</a></li>
+    <li><a href="ds_list_set.htm">ds_list_set</a></li>
+    <li><a href="ds_list_delete.htm">ds_list_delete</a></li>
+    <li><a href="ds_list_find_index.htm">ds_list_find_index</a></li>
+    <li><a href="ds_list_find_value.htm">ds_list_find_value</a></li>
+    <li><a href="ds_list_insert.htm">ds_list_insert</a></li>
+    <li><a href="ds_list_replace.htm">ds_list_replace</a></li>
+    <li><a href="ds_list_shuffle.htm">ds_list_shuffle</a></li>
+    <li><a href="ds_list_sort.htm">ds_list_sort</a></li>
+    <li><a href="ds_list_copy.htm">ds_list_copy</a></li>
+    <li><a href="ds_list_read.htm">ds_list_read</a></li>
+    <li><a href="ds_list_write.htm">ds_list_write</a></li>
+  </ul>
+  <p> </p>
+  <p>Las listas Ds pueden ser usadas para contener <a href="../DS_Maps/DS_Maps.htm">mapas DS</a> y otras listas DS también, y por ello tenemos algunas funciones especiales que se usan para &quot;marcar&quot; posiciones dentro de la lista como contenedoras de estas estructuras de datos. En
+    esto no es necesario, pero tiene la ventaja de recoger automáticamente la basura (destruir) las estructuras de datos marcadas cuando se destruye la lista padre, y también es necesario cuando se utiliza junto con la función <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>    para que la lista y sus datos se codifiquen correctamente. Las funciones para esto son:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_list_mark_as_list.htm">ds_list_mark_as_list</a></li>
+    <li><a href="ds_list_mark_as_map.htm">ds_list_mark_as_map</a></li>
+    <li><a href="ds_list_is_list.htm">ds_list_is_list</a></li>
+    <li><a href="ds_list_is_map.htm">ds_list_is_map</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Data_Structures.htm">Estructuras de datos</a></div>
+        <div style="float:right">Siguiente: <a href="../DS_Maps/DS_Maps.htm">Mapas DS</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+DS Lists
+-->
+  <!-- TAGS
+ds_list_functions
+-->
+</body>
+</html>

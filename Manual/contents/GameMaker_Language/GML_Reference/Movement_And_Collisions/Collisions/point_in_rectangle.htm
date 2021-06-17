@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>punto_en_rectángulo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion point_in_rectangle" />
+  <meta name="rh-index-keywords" content="point_in_rectangle" />
+  <meta name="search-keywords" content="point_in_rectangle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>punto_en_rectángulo</h1>
+  <p>Cuando se utiliza esta función, se define un área rectangular y <span class="notranslate">GameMaker Studio 2</span> calculará si el punto dado cae dentro de sus límites o no. Si el punto cae dentro del rectángulo definido, la función devolverá <tt>true</tt>, de lo contrario
+    la función devolverá <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">punto_en_rectángulo(px, py, x1, y1, x2, y2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>px</td>
+        <td>La coordenada x del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>py</td>
+        <td>La coordenada y del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La coordenada x del lado izquierdo del rectángulo a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La coordenada y del lado superior del rectángulo a comprobar.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La coordenada x del lado derecho del rectángulo a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La coordenada y del lado inferior del rectángulo a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if point_in_rectangle(mouse_x, mouse_y, x -10, y - 10, x + 10, y + 10)<br> {
+    <br> audio_play_sound(snd_click, 0, false);<br> }
+  </p>
+  <p>Este breve código comprueba la posición del ratón respecto al área rectangular definida y reproduce un sonido si cae dentro de los límites.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="point_in_triangle.htm">punto_en_triángulo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+point_in_rectangle
+-->
+  <!-- TAGS
+point_in_rectangle
+-->
+</body>
+</html>

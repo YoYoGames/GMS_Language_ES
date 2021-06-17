@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_tex_mip_bias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_tex_mip_bias" />
+  <meta name="rh-index-keywords" content="gpu_set_tex_mip_bias" />
+  <meta name="search-keywords" content="gpu_set_tex_mip_bias" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_tex_mip_bias</h1>
+  <p>Con esta función puedes establecer el valor de sesgo del mipmap, donde un valor de 0 equivale a ningún sesgo, 1 equivale al primer mipmap, 2 equivale al segundo mipmap, etc... Esto controla la velocidad a la que el mapa mip se intercambia y generalmente hará que las texturas renderizadas sean más borrosas
+    cuanto más alto sea el valor y mayor sea la &quot;distancia&quot; que se vea. Tenga en cuenta que esta función también puede tomar valores negativos, en cuyo caso las texturas renderizadas serán más nítidas a mayor distancia cuanto menor sea el valor.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_tex_mip_bias(bias);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sesgo</td>
+        <td>El valor de sesgo del mipmap que se utilizará (por defecto: 0)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si gpu_get_tex_mip_bias() != 0<br> {
+    <br> gpu_set_tex_mip_bias(0);
+    <br> }
+  </p>
+  <p>El código anterior comprobará el sesgo actual del mipmap y si no es 0 se pone a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mipmapping.htm">Mipmapping</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_tex_mip_bias_ext.htm">gpu_set_tex_mip_bias_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_tex_mip_bias
+-->
+  <!-- TAGS
+gpu_set_tex_mip_bias
+-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>color_vértice</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_colour" />
+  <meta name="rh-index-keywords" content="vertex_colour,vertex_color" />
+  <meta name="search-keywords" content="vertex_colour,vertex_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>color_vértice</h1>
+  <p>Si su formato de vértice definido toma un valor de color, puede utilizar esta función para añadir esos datos al vértice que se está definiendo para la primitiva actual. La función necesita un buffer para almacenar los datos y tomará una <a href="../Colour_And_Alpha/Colour_And_Alpha.htm">constante de</a> color
+    o un valor hexadecimal (utilizando el formato estándar de <span class="notranslate">GameMaker Studio 2</span> de BGR, por ejemplo: $FF0000 para el azul), así como un valor alfa de 0 (transparente) a 1 (totalmente opaco).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_colour(buffer, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El búfer en el que se escribirá la información.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color de este vértice (puede ser una constante o un valor hexadecimal).</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El valor alfa del vértice (de 0 a 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_colour(b, c_white, 1);</p>
+  <p>El código anterior establecerá el vértice que se está definiendo como blanco con un valor alfa de 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_normal.htm">vertex_normal</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_colour
+vertex_color
+-->
+  <!-- TAGS
+vertex_colour
+-->
+
+</body></html>

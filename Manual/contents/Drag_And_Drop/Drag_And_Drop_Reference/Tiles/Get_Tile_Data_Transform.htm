@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Obtenga la transformación de datos de los azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Tile Data Transform action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Get Tile Data Transform" />
+  <meta name="search-keywords" content="Get Tile Data Transform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Tile Data Transform" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Get_Tile_Data_Transform.png"> Obtener datos de baldosas Transformar</h1>
+  <p>Con esta acción puedes averiguar si los datos de la baldosa de un azulejo han sido transformados de una de estas tres maneras: volteados, reflejados o rotados. Los datos de la baldosa son simplemente un valor que refleja el índice de la baldosa junto con las transformaciones aplicadas, y usted
+    normalmente querrá obtener los datos del mosaico primero usando <a href="Get_Tile_Data_In_Cell.htm">Obtener datos del mosaico en la celda</a> o <a href="Get_Tile_Data_At_Pixel.htm">Obtener datos del mosaico en el píxel</a> antes de usar esta acción. La acción devolverá <tt>true</tt> si
+    la transformación elegida se ha aplicado a los datos del mosaico, o <tt>falso</tt> en caso contrario, y el valor devuelto se almacenará en la variable de destino que puede haber sido creada previamente o puede ser una nueva temporal (si marca la casilla &quot;Temp&quot;
+    ). Para más información sobre los datos de mosaico, consulte la sección de <span class="notranslate">GML</span> sobre <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Funciones de mapa de mosaico</a>.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Get Tile Data Transform Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Get_Tile_Data_Transform.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Azulejos</td>
+        <td>Los datos del azulejo para obtener la transformación</td>
+      </tr>
+      <tr>
+        <td>Transformar</td>
+        <td>La transformación para comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p> </p>
+  <p><img alt="Get Tile Data Transform Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_Transform.png">El código del bloque de acción anterior obtiene los datos del azulejo en la posición del ratón y luego
+    comprueba si el azulejo ha tenido una transformación de rotación aplicada. Si lo ha hecho, la transformación se restablece y los datos del azulejo vuelven a colocarlo en su posición.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Actions.htm">Acciones de la baldosa</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Tile_Index_At_Pixel.htm">Establecer el índice de azulejos en el píxel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Tile Data Transform
+-->
+  <!-- TAGS
+action_tile_get_transform
+-->
+</body>
+</html>

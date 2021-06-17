@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa_guión_final</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_script_end" />
+  <meta name="rh-index-keywords" content="layer_script_end" />
+  <meta name="search-keywords" content="layer_script_end" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa_guión_final</h1>
+  <p>Con esta función puedes asignar una función de <a href="../../../../GML_Overview/Script_Functions.htm">script</a> a una capa y será llamada después de que la capa sea renderizada. Cuando se añade una función a una capa de esta manera, se ejecutará al final de
+   <i>cada uno de los diferentes eventos de dibujo</i>, por lo que es posible que desee comprobar en la función asignada qué evento ha terminado de renderizarse y adaptar el código para ello. Esto se puede hacer comprobando el <a href="../../Objects/Object_Events/event_type.htm"><tt>tipo_de_evento</tt></a>    y/o el <a href="../../Objects/Object_Events/event_number.htm"><tt>número_de_evento</tt></a> (ver el ejemplo ampliado más abajo). Tenga en cuenta que la función <i>no</i> está destinada a ser llamada en cualquier evento de dibujo o eventos de paso, sino que sólo necesita ser llamada
+    al inicio de la sala en el <strong>código de creación de la sala</strong> o en el evento de <strong>creación </strong>/ <strong>inicio de la sala</strong> de una instancia.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_script_end(layer_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+      <tr>
+        <td>guión</td>
+        <td>El índice de la función de script para asignar a la capa</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo extendido, primero mostraremos cómo se estructura una simple función de script para establecer algunos datos uniformes <span class="notranslate">del sh</span> ader, de manera que cuando se dibuje la capa dada, esta función se ejecute y el <span class="notranslate">shader</span> funcione correctamente. En el ejemplo, vale la pena
+    observar cómo comprobamos a qué evento se está llamando para que el resto de la función sólo se ejecute en el evento específico en el que requerimos que trabaje, en este caso, sólo en el evento principal de dibujo:</p>
+  <p class="code">/// @function layer_shader_start();<br> function layer_shader_start()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> si event_number == 0<br> {
+    <br> colour_to_find = <span class="notranslate">shader_get_uniform</span>(sShaderDemo5, &quot;<span class="notranslate">f_Colour1</span>&quot;);<br> colour_to_set = shader_get_uniform(sShaderDemo5<span class="notranslate">, &quot;f_Colour2</span>&quot;);<br> shader_set(s_ColourChanger);
+    <br> <span class="notranslate">shader_set_uniform_f</span>(colour_to_find, 1,1,1 );<br> <span class="notranslate">shader_set_uniform_f</span>(colour_to_set, 1,0,0 );<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Entonces tendríamos una función complementaria para restablecer el <span class="notranslate">sombreador</span> después de que todo el dibujo esté hecho:</p>
+  <p class="code">/// @function layer_shader_end();<br> function layer_shader_end()
+    <br> {
+    <br> if event_type == ev_draw<br> {
+    <br> si event_number == 0<br> {
+    <br> <span class="notranslate">shader_reset</span>();
+    <br> }
+    <br> }
+    <br> }
+  </p>
+  <p>Ahora que hemos definido nuestras funciones de script para configurar el <span class="notranslate">shader</span>, tenemos que asignarlas a una capa específica para que la capa sepa que debe llamarlas. Esto se haría en el código de creación de la sala, o en el evento de creación o de inicio de la sala de algún objeto controlador.
+    de algún objeto controlador (no es necesario establecerlas en cada paso, sino una vez al inicio de la sala, o cuando la capa se crea inicialmente):</p>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_script_begin(lay_id, layer_shader_start<span class="notranslate">);</span><br> layer_script_end(lay_id, layer_shader_end<span class="notranslate">);</span></p>
+  <p>Este bloque de código final asigna los scripts a la capa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_shader.htm">layer_shader</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_script_end
+-->
+  <!-- TAGS
+layer_script_end
+-->
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_get_type</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_get_type" />
+  <meta name="rh-index-keywords" content="buffer_get_type" />
+  <meta name="search-keywords" content="buffer_get_type,buffer_fixed,buffer_grow,buffer_wrap,buffer_fast,buffer_vbuffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_get_type</h1>
+  <p>Con esta función se recupera el tipo de búfer al que se hace referencia mediante un valor de ID de búfer. El valor de retorno será una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer_fixed</td>
+        <td>Un buffer de tamaño fijo.</td>
+      </tr>
+      <tr>
+        <td>buffer_grow</td>
+        <td>Un búfer que &quot;crecerá&quot; dinámicamente a medida que se añadan datos</td>
+      </tr>
+      <tr>
+        <td>buffer_wrap</td>
+        <td>Un búfer donde los datos se &quot;envolverán&quot;. Cuando los datos que se añaden alcanzan el límite del tamaño del búfer, la sobreescritura se colocará de nuevo al principio del búfer, y la escritura posterior continuará desde ese punto.</td>
+      </tr>
+      <tr>
+        <td>buffer_fast</td>
+        <td>Buffer especial &quot;despojado&quot; que es extremadamente rápido para leer/escribir. Sólo se puede utilizar con <a href="buffer_read.htm">los tipos de datos</a> <tt>buffer_u8</tt>, y <i>debe</i> estar alineado a 1 byte.</td>
+      </tr>
+      <tr>
+        <td>buffer_vbuffer</td>
+        <td>Un búfer de vértices</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_get_type(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del búfer a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Constante</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">type = buffer_get_type(buff);</p>
+  <p>El código anterior obtendrá el tipo de buffer del valor indexado en la variable &quot;buff&quot; y lo almacenará en una variable.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_get_alignment.htm">buffer_get_alignment</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_get_type
+buffer_fixed
+buffer_grow
+buffer_wrap
+buffer_fast
+buffer_vbuffer
+-->
+  <!-- TAGS
+buffer_get_type
+-->
+</body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>inicio_de_la_caminata</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_start" />
+  <meta name="rh-index-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+  <meta name="search-keywords" content="path_start,path_action_stop,path_action_restart,path_action_continue,path_action_reverse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>inicio_de_la_caminata</h1>
+  <p>Una trayectoria se crea a partir de una serie de puntos definitorios que se enlazan entre sí y que luego se utilizan para planificar los movimientos de una instancia. Se pueden crear con código, <i>o</i> en el Path Editor y se asignan a una instancia
+    para utilizarla en el juego. Esta función sirve para indicar a la instancia qué trayectoria debe seguir, a qué velocidad (medida en píxeles por paso), cómo debe comportarse cuando llegue al final de la trayectoria y si debe seguir la posición <i>absoluta</i> o <i>relativa</i> de la trayectoria.
+    posición. Esta última parte significa que, o bien comienza y sigue la ruta exactamente como la diseñó y la colocó en el <a href="../../../../The_Asset_Editors/Paths.htm">Editor de rutas</a> (absoluta), o bien comienza y sigue la ruta desde la posición
+    en la que se creó la instancia (relativa).</p>
+  <p><img alt="Relative or Absolute path examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Paths/path_relative_image.png">Como puede ver en la imagen anterior, las dos instancias están siguiendo la misma ruta iniciada con <tt>path_start()</tt>,
+    pero una de las instancias está siguiendo la ruta absoluta mientras que la otra está siguiendo la ruta relativa. Debe tenerse en cuenta que cuando relative se establece en false (absoluto) la instancia &quot;saltará&quot; al inicio de la ruta sin importar en qué parte de la
+    la sala en la que se encuentre.</p>
+  <p>Las constantes utilizadas para definir el comportamiento de la instancia cuando llega al final del camino son las siguientes:<br>
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ruta_accion_stop</td>
+        <td>Finalizar el camino</td>
+      </tr>
+      <tr>
+        <td>path_action_restart</td>
+        <td>Continuar el camino desde el principio, saltando de nuevo a la posición inicial si el camino no está cerrado</td>
+      </tr>
+      <tr>
+        <td>path_action_continue</td>
+        <td>Continuar desde la posición actual</td>
+      </tr>
+      <tr>
+        <td>ruta_accion_inversa</td>
+        <td>Volver a retroceder por el camino (se consigue invirtiendo la velocidad de movimiento del camino)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_start(path, speed, endaction, absolute);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camino</td>
+        <td>El índice de la ruta para empezar.</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>La velocidad a la que se debe seguir el camino en píxeles por paso, negativo significa ir hacia atrás.</td>
+      </tr>
+      <tr>
+        <td>fin de la acción</td>
+        <td>Qué hacer cuando se alcanza el final de la ruta (ver las constantes que aparecen a continuación).</td>
+      </tr>
+      <tr>
+        <td>absoluto</td>
+        <td>Si la instancia que llama debe seguir la ruta absoluta tal y como está en el editor (true) o una ruta relativa a su posición actual (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path_start(path, 4, path_action_reverse, 0);</p>
+  <p>Esto hará que la instancia que llama siga el camino indexado en la variable &quot;path&quot; a una velocidad de 4 píxeles por paso. Seguirá el camino en relación con su propia posición, y cuando llegue al final invertirá la dirección y volverá por donde vino.
+    por donde vino.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Paths.htm">Caminos</a></div>
+        <div style="float:right">Siguiente: <a href="path_end.htm">path_end</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_start
+path_action_stop
+path_action_restart
+path_action_continue
+path_action_reverse
+-->
+  <!-- TAGS
+path_start
+-->
+</body>
+</html>

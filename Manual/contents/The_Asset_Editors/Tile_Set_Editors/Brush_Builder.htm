@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Constructor de cepillos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor brush builder works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Brush Builder" />
+  <meta name="search-keywords" content="brush builder,brushes,tile brushes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El constructor de pinceles para conjuntos de azulejos</h1>
+  <p>Por defecto, cuando se &quot;pintan&quot; azulejos en una <a class="glossterm" data-glossterm="mapa de azulejos" href="#">capa de</a> mapa de azulejos <a class="glossterm" data-glossterm="mapa de azulejos" href="#">en</a> el editor de habitaciones, se selecciona un solo azulejo y se pinta con él. Sin embargo, los conjuntos de azulejos están casi siempre diseñados para tener secciones
+    que encajan de diferentes maneras para formar áreas o elementos completos. Por ejemplo, un juego de baldosas de RPG puede tener baldosas de características del paisaje que pueden conectarse para crear características más grandes o más pequeñas - como árboles y edificios - dependiendo del número de baldosas
+    utilizadas. Ahora, la colocación de múltiples características como esta en una capa de habitación requeriría que usted vaya y venga muchas veces para cambiar de baldosa, lo cual no es bueno para su flujo de trabajo. Para resolver esto, <span class="notranslate">GameMaker Studio 2</span> le permite crear <strong>pinceles de </strong>azulejos en
+    el editor de conjuntos de azulejos, disponible al hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en el botón <strong>Brush Builder</strong>:</p>
+  <p><img alt="Brushes" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Brushes.png">En el <strong>Brush Builder</strong> tienes el conjunto de azulejos originales a la izquierda y un &quot;lienzo&quot; en blanco a la derecha. Ahora puede seleccionar
+    cualquier baldosa de la izquierda y pintarla en la derecha para crear &quot;pinceles&quot; personalizados que luego podrás utilizar en el editor de habitaciones. Ten en cuenta que puedes mantener pulsado el botón izquierdo del ratón <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y luego arrastrar el conjunto de baldosas para seleccionar varias baldosas para pintar en el lienzo del pincel y también puedes mantener pulsado <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> para añadir baldosas individuales específicas o mantener pulsado <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> para eliminar baldosas específicas.</p>
+  <p>La siguiente imagen muestra nuestras características de paisaje mencionadas anteriormente como ejemplo de tres pinceles personalizados realizados a partir de un único conjunto de azulejos:</p>
+  <p><img alt="Features As Brushes Example" class="center" height="534" src="../../assets/Images/Asset_Editors/Editor_Tilesets_FeaturesBrushes.png" width="940">A la derecha puedes ver tres características que hemos realizado (resaltadas con un recuadro naranja
+    en la imagen). Observe que hemos dejado un espacio de una baldosa entre cada característica - esto es porque cualquier <em>grupo de baldosas que se toquen serán tratadas como un solo pincel en</em> el editor de habitaciones, por lo que dejamos un espacio de una baldosa para mostrar que cada conjunto es un pincel distinto
+    pincel que queremos crear. Mientras creas tus pinceles, pintas con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y borras con el botón derecho <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. También puede ampliar la hoja de azulejos o el lienzo de pinceles utilizando <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y la rueda del ratón <img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> cuando el ratón
+    cuando el ratón está sobre una de las ventanas, o puede desplazarse utilizando <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> o
+    el botón central del ratón <img alt="MMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_MMB.png" width="21"> y arrastrando. Tenga en cuenta que también puede utilizar las herramientas de zoom en la <strong>caja de herramientas</strong> dentro de las ventanas del editor para cambiar
+    los niveles de zoom de cualquiera de las ventanas, así como para cambiar la visibilidad y el color de la cuadrícula.</p>
+  <p>En la parte superior derecha puedes ver la herramienta actualmente seleccionada, y también puedes establecer el tamaño del pincel con el que quieres pintar. El tamaño por defecto es 1, que es un solo azulejo, pero si lo ajustas a valores más altos entonces puedes pintar (y borrar) con un
+    pincel más grande compuesto por el azulejo seleccionado repetido, como se muestra en la imagen siguiente:</p>
+  <p><img alt="Tile Size Animation" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Tile_Size.gif">La caja de herramientas es donde puede seleccionar la herramienta a utilizar para muchas tareas diferentes en el editor de conjuntos de azulejos, algunas de las cuales dependerán de si
+    de si tiene algo definido en su biblioteca de azulejos <a href="Auto_Tiles.htm">automática</a>. A continuación se ofrece un breve resumen de cada herramienta (tenga en cuenta que cuando ha seleccionado una capa de baldosas en el Editor de habitaciones, esta caja de herramientas se muestra en la parte superior del espacio de trabajo de la habitación
+    junto con otras herramientas de dibujo):</p>
+  <table class="icons" style="margin-left: 32auto">
+    <tbody>
+      <tr>
+        <td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Lápiz</strong></td>
+        <td class="text">Esta es la herramienta lápiz. Utiliza el azulejo seleccionado para pintar en la ventana de Pinceles con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y puede borrar con el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Borrador</strong></td>
+        <td class="text">Con la herramienta de borrado puedes utilizar el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para borrar un azulejo determinado en la ventana de Pinceles. Esencialmente, todo lo que esto hace es poner el índice del azulejo a 0, que es
+          el azulejo reservado &quot;vacío&quot;.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24" /></td>
+        <td class="icons"><strong>Selección</strong></td>
+        <td class="text">Esta es la herramienta de selección, que se puede utilizar para definir un área de la ventana de Pinceles para trabajar en ella. Puede pulsar el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y luego arrastrar el ratón
+          para crear un área rectangular, o puede pulsar <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para añadir selecciones múltiples y <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para borrar una parte de la selección. Para borrar toda la selección puede pulsar <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55">. Cuando tienes un área de la ventana de Pinceles seleccionada, el resto de las herramientas (Lápiz, Voltear, Rotar, etc...) sólo funcionarán dentro del área seleccionada. Tenga en cuenta que también puede seleccionar mosaicos en la ventana y luego copiar ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">+ &quot;<span class="inline">C</span>&quot;), cortar ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;) y pegar
+          ( <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;
+          <font face="Lucida Console"><span style="font-size: 16px;"><b>V</b></span></font>&quot;), lo que cambiará la herramienta a Lápiz y le permitirá &quot;pintar&quot; con ellos.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>AutoTile</strong></td>
+        <td class="text">Al hacer clic en esta herramienta se activa el estilo de pintura Auto <strong>tiling</strong>. Cuando esto está activo, puede seleccionar cualquier azulejo de la ficha de Bibliotecas Autotile, y luego pintarlo en la ventana de Pinceles y <span class="notranslate">GameMaker Studio 2</span> lo cambiará automáticamente
+          para que coincida con los azulejos circundantes, siempre y cuando haya configurado correctamente la ficha Auto <a href="Auto_Tiles.htm">Tile</a>. Tenga en cuenta que la selección de un azulejo del conjunto de azulejos que no es parte de las bibliotecas autotile restablecerá la herramienta de dibujo a la estándar
+          Lápiz.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Flip</strong></td>
+        <td class="text">Haciendo clic en la herramienta Voltear con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot;<span class="inline">X</span>&quot; ) se volteará el azulejo o azulejos actualmente seleccionados para dibujar a lo largo del eje horizontal (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se volteará).
+          seleccionado para dibujar a lo largo del eje <em>horizontal </em>, sin cambiar la herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se volteará). Si no tiene ningún azulejo seleccionado para dibujar, pero tiene un grupo de azulejos seleccionados
+          en la ventana del pincel, entonces la herramienta de volteo volteará los azulejos seleccionados.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Espejo</strong></td>
+        <td class="text">Haciendo clic en la herramienta Espejo con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot; <span class="inline">Y</span>&quot; ) se reflejará la(s) baldosa(s) actualmente seleccionada(s) para dibujar a lo largo del eje vertical.
+          seleccionado para dibujar a lo largo del eje <em>vertical </em>, sin cambiar la herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se reflejará). Si no tiene ningún azulejo seleccionado para dibujar, pero tiene un grupo de azulejos seleccionados
+          en la ventana del pincel, la herramienta Espejo reflejará los azulejos seleccionados.</td>
+      </tr>
+      <tr>
+        <td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;" /></td>
+        <td class="icons"><strong>Girar</strong></td>
+        <td class="text">Haciendo clic en la herramienta Girar con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot; <span class="inline">Z</span>&quot; ) girará la(s) baldosa(s) actualmente seleccionada(s) para dibujar
+          seleccionado para dibujar 90° <em>en el sentido de las agujas del reloj</em>, sin cambiar de herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel girará). Si no tiene ningún azulejo seleccionado para dibujar, pero tiene un grupo de azulejos seleccionados en la ventana de
+          ventana del pincel, entonces la herramienta Rotar rotará los azulejos seleccionados.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Debajo de las herramientas, puede encontrar dos secciones diferentes para seleccionar cualquier <a href="Auto_Tiles.htm"><strong>auto azulejo</strong></a> o <a href="Animated_Tiles.htm">azulejos<strong>animados</strong></a> que se han creado utilizando la imagen del conjunto de azulejos actual.
+    Un solo sprite que se utiliza para un conjunto de baldosas puede tener muchas, muchas, imágenes de celdas individuales en él, y estas pueden ser combinadas en el editor de Animación o de Autobaldosas para crear pinceles personalizados que se mostrarán en estas secciones y pueden ser utilizados en conjunto con
+    azulejos estáticos regulares para crear pinceles (tenga en cuenta que un azulejo animado se animará independientemente de si lo ha seleccionado de la biblioteca o del conjunto de azulejos base).</p>
+  <p>Una vez que hayas configurado todos los pinceles que necesites, podrás utilizarlos para pintar azulejos en cualquier capa del mapa de azulejos dentro del <a href="../Rooms.htm">Editor de habitaciones</a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Tile_Sets.htm">Juegos de baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="Animated_Tiles.htm">Azulejos animados</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Tile Brushes
+Brush Builder
+-->
+  <!-- TAGS
+tile_set_editor_brushes
+-->
+
+</body></html>

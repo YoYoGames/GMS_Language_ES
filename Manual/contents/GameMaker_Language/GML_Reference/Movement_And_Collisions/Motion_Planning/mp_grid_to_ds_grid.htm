@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_to_ds_grid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_to_ds_grid" />
+  <meta name="rh-index-keywords" content="mp_grid_to_ds_grid" />
+  <meta name="search-keywords" content="mp_grid_to_ds_grid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_to_ds_grid</h1>
+  <p>Con esta función puedes copiar la rejilla MP dada en una <a href="../../Data_Structures/DS_Grids/DS_Grids.htm">rejilla</a> DS. La rejilla DS debe ser del mismo tamaño que la rejilla MP, aunque no tiene por qué serlo (se perderán datos si es más pequeña, y
+    si es más grande, todas las celdas de la rejilla extra serán 0). Las celdas de la rejilla DS contendrán el valor -1 si la celda de la rejilla MP fue marcada como ocupada, o será 0 en caso contrario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_grid_to_ds_grid(origen, destino);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>Índice del mp_grid que se va a utilizar</td>
+      </tr>
+      <tr>
+        <td>destino</td>
+        <td>Índice de la ds_grid que se va a utilizar para copiar los datos de la cuadrícula.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">motion_grid = ds_grid_create(room_width / 32, room_height / 32);<br> mp_grid_to_ds_grid(mp_grid, motion_grid);</p>
+  <p>El código anterior creará una nueva cuadrícula DS y luego copiará los datos de la cuadrícula MP contenidos en la variable &quot;mp_grid&quot; en la nueva cuadrícula DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_draw.htm">mp_grid_draw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_to_ds_grid
+-->
+  <!-- TAGS
+mp_grid_to_ds_grid
+-->
+</body>
+</html>

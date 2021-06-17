@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_exists" />
+  <meta name="rh-index-keywords" content="layer_exists" />
+  <meta name="search-keywords" content="layer_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa_existe</h1>
+  <p>Esta función puede utilizarse para comprobar si la <b>capa</b> dada existe. Se suministra el ID de la capa (que se obtiene cuando se crea la capa usando <a href="layer_create.htm"><tt>layer_create()</tt></a>) o el nombre de la capa (como una cadena - esto tendrá un impacto en el rendimiento
+    ) y la función devolverá un valor <i>booleano</i> de <tt>true</tt> si existe o <tt>false</tt> si no existe.</p>
+  <p class="note"><b>NOTA</b>: Esta función trabaja dentro del ámbito de la sala de destino actual -por defecto la sala en la que se llama a la función- que puede establecerse mediante la función <a href="layer_set_target_room.htm"><tt>layer_set_target_room()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_exists(layer_name)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_capa</td>
+        <td>El nombre de la capa (una cadena o un valor de identificación)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !layer_exists(global.tileLayer)<br> {
+    <br> global.tileLayer = layer_create(1000);<br> }
+  </p>
+  <p>El código anterior comprobará si la capa almacenada en la variable global existe realmente, y si no existe entonces se crea.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_id.htm">layer_get_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_exists
+-->
+  <!-- TAGS
+layer_exists
+-->
+</body>
+</html>

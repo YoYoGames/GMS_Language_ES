@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_borrar_punto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_delete_point" />
+  <meta name="rh-index-keywords" content="path_delete_point" />
+  <meta name="search-keywords" content="path_delete_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_borrar_punto</h1>
+  <p>Con esta función puedes eliminar un punto de la ruta especificada. Los puntos de la ruta están numerados desde 0, por lo que el primer punto es siempre el punto 0 y el último punto de la ruta será <a href="../path_get_number.htm"><tt>camino_obtener_número()</tt></a> - 1. Si usted
+    Si llama a esta función en un activo de la ruta, la <strong>eliminación del punto será permanente</strong> y todas las instancias asignadas a la ruta en el futuro carecerán del punto eliminado. Si esto no es lo que necesita, entonces debería utilizar
+    una función como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para crear primero una copia de la ruta, y luego llamar a esta función en el activo duplicado (no olvide llamar a <span class="inline"><a href="path_delete.htm">path_delete()</a></span> en el activo cuando ya no sea necesario).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">camino_borrar_punto(ind, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta de la que se va a borrar un punto.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>El punto definitorio a eliminar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _col = true;<br> while (_col)<br> {
+    <br> var _num = path_get_number(mypath) - 1;<br> if (_num &gt; 2)<br> {<br> var _x1 = path_get_point_x(my_path, _num);<br> var _y1 = path_get_point_y(my_path, _num);<br> var _x2 = path_get_point_x(my_path, _num -1);<br> var
+    _y2 = path_get_point_y(my_path, _num -1);<br> if collision_line(_x1, _y1, _x2, _y2, obj_Wall, true, false)<br> {<br> path_delete_point(mypath, _num);<br> _num -= 1;<br> } <br> else _col = false;<br> 
+      } <br> else _col = false;<br> }
+  </p>
+  <p>El código anterior genera un bucle que comprueba los puntos de una trayectoria hacia atrás desde el final para buscar una colisión con el objeto dado. Si se encuentra una colisión, se elimina un punto de la ruta, hasta que no haya colisión, o la ruta tenga sólo 2 puntos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_clear_points.htm">path_clear_points</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_delete_point
+-->
+  <!-- TAGS
+path_delete_point
+-->
+</body>
+</html>

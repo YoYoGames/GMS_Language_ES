@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_xoffset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable sprite_xoffset" />
+  <meta name="rh-index-keywords" content="sprite_xoffset" />
+  <meta name="search-keywords" content="sprite_xoffset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_xoffset</h1>
+  <p>Esta variable de <b>sólo</b> lectura devuelve el xoffset local (el componente x del origen definido en el editor de sprites) del sprite que ha sido asignado a la instancia. Este xoffset se devuelve en píxeles y dependerá de la variable <a href="image_xscale.htm"><tt>image_xscale</tt></a>,
+    de modo que (por ejemplo) si un sprite cuadrado de 32x32 se define con el origen x en 16, cuando ese sprite se escale en 2 esta variable devolverá 32. Si necesitas el origen x sin escalar debes usar <a href="../Sprite_Information/sprite_get_xoffset.htm"><tt>sprite_get_xoffset()</tt></a>.</p>
+  <p><img alt="X Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/xoffset_image.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_xoffset;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si x - sprite_xoffset &lt; 0<br> {
+    <br> x = sprite_xoffset;<br> }
+  </p>
+  <p>El código anterior comprueba si el borde izquierdo del sprite de la instancia está fuera de la habitación y si lo está mueve la instancia para que todo el sprite sea visible.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_yoffset.htm">sprite_yoffset</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_xoffset
+-->
+  <!-- TAGS
+sprite_xoffset
+-->
+</body>
+</html>

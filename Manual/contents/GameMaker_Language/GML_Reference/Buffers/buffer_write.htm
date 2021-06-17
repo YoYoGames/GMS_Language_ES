@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_write</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_write" />
+  <meta name="rh-index-keywords" content="buffer_write,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+  <meta name="search-keywords" content="buffer_write,buffer_u8,buffer_s8,buffer_u16,buffer_s16,buffer_u32,buffer_s32,buffer_u64,buffer_f16,buffer_f32,buffer_f64,buffer_bool,buffer_string,buffer_text" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_write</h1>
+  <p>Esta función puede utilizarse para escribir datos en un búfer previamente creado. Los datos que escriba deben estar de acuerdo con el argumento &quot;tipo&quot; de esta función, lo que significa que no puede intentar escribir una cadena como un entero de 16 bits sin signo, por ejemplo.
+    Las siguientes constantes pueden ser utilizadas para definir el tipo de datos:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer_u8</td>
+        <td>Un entero de 8 bits sin signo. Es un valor positivo de 0 a 255.</td>
+      </tr>
+      <tr>
+        <td>buffer_s8</td>
+        <td>Un entero de 8 bits con signo. Puede ser un valor positivo o negativo de -128 a 127 (0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u16</td>
+        <td>Un entero de 16 bits sin signo. Es un valor positivo entre 0 y 65.535.</td>
+      </tr>
+      <tr>
+        <td>buffer_s16</td>
+        <td>Un entero de 16 bits con signo. Puede ser un valor positivo o negativo entre -32.768 y 32.767 (el 0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u32</td>
+        <td>Un entero de 32 bits sin signo. Es un valor positivo de 0 a 4.294.967.295.</td>
+      </tr>
+      <tr>
+        <td>buffer_s32</td>
+        <td>Un entero de 32 bits con signo. Puede ser un valor positivo o negativo entre -2.147.483.648 y 2.147.483.647 (el 0 se considera positivo).</td>
+      </tr>
+      <tr>
+        <td>buffer_u64</td>
+        <td>Un entero de 64 bits sin signo.</td>
+      </tr>
+      <tr>
+        <td>buffer_f16</td>
+        <td>Un flotador de 16 bits. Puede ser un valor positivo o negativo dentro del mismo rango que un entero con signo de 16 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_f32</td>
+        <td>Un flotador de 32 bits. Puede ser un valor positivo o negativo dentro del mismo rango que un entero con signo de 32 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_f64</td>
+        <td>Un flotador de 64 bits.</td>
+      </tr>
+      <tr>
+        <td>buffer_bool</td>
+        <td>Un valor booleano. Sólo puede ser 1 o 0<tt>(verdadero</tt> o <tt>falso</tt>)</td>
+      </tr>
+      <tr>
+        <td>cadena_de_buffer</td>
+        <td>Una cadena de cualquier tamaño, finalizada con un carácter de terminación nulo.</td>
+      </tr>
+      <tr>
+        <td>texto_buffer</td>
+        <td>Una cadena de cualquier tamaño, sin el carácter final nulo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>La función devolverá 0 si tiene éxito o -1 si falla.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_write(buffer, type, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a escribir.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de datos que se va a escribir en el búfer (véase la lista de constantes anterior).</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>Los datos a escribir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">0 si tiene éxito, o -1 si falla</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_seek(buff, buffer_seek_start, 0);<br> buffer_write(buff, buffer_s16, 0);<br> buffer_write(buff, buffer_s16, x);<br> buffer_write(buff, buffer_s16, y);</p>
+  <p>El código anterior encuentra el inicio del buffer con el id almacenado en la variable &quot;buff&quot; y escribe en él una serie de valores enteros de 16 bits con signo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_fill.htm">buffer_fill</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_write
+buffer_u8
+buffer_s8
+buffer_u16
+buffer_s16
+buffer_u32
+buffer_s32
+buffer_u64
+buffer_f16
+buffer_f32
+buffer_f64
+buffer_bool
+buffer_string
+buffer_text
+-->
+  <!-- TAGS
+buffer_write
+-->
+</body>
+</html>

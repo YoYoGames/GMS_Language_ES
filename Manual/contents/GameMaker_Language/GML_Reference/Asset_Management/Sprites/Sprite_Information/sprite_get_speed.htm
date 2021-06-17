@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_speed" />
+  <meta name="rh-index-keywords" content="sprite_get_speed" />
+  <meta name="search-keywords" content="sprite_get_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_speed</h1>
+  <p>Esta función se puede utilizar para recuperar la velocidad del sprite tal y como se ha definido para el recurso sprite en el <a href="../../../../../The_Asset_Editors/Sprites.htm">Editor de Sprite</a>. El valor devuelto puede utilizarse, por ejemplo, para calcular cuántos
+    cuadros se pueden dibujar para diferentes <a href="../Sprite_Instance_Variables/image_speed.htm"><tt>velocidad_de_imagen</tt></a>. Tenga en cuenta que el valor devuelto será muy diferente dependiendo del <i>tipo</i> de velocidad
+    que se haya aplicado en el Editor de Sprite, ya sea <i>Fotogramas por Segundo</i>, o <i>Fotogramas por Cuadro de Juego</i>. Los siguientes dos ejemplos ilustran esto:</p>
+  <ul class="colour">
+    <li>Si tienes un sprite que dibuja 1 fotograma por <i>segundo</i> y estableces la velocidad de la imagen en 0,5, se dibujará a 0,5 fotogramas por segundo. Si la velocidad de fotogramas del juego es de 60 fotogramas por segundo, el sprite dibujará 1 fotograma por cada 120
+      fotogramas del juego.</li>
+    <li>Si tienes un sprite que dibuja 1 fotograma por <i>fotograma del</i> juego y estableces la velocidad de la imagen en 0,5, dibujará 0,5 fotogramas por fotograma del juego. Si la velocidad de fotogramas del juego es de 60 fotogramas por segundo, el sprite dibujará 30 fotogramas por
+      cada 60 fotogramas del juego.</li>
+  </ul>
+  <p>Puedes averiguar qué tipo de velocidad de animación se utilizó al definir el sprite mediante la función <a href="sprite_get_speed_type.htm"><tt>sprite_get_speed_type()</tt></a>y puede establecer la velocidad <i>y el</i> tipo de animación
+    utilizando la función <a href="../Sprite_Manipulation/sprite_set_speed.htm"><tt>sprite_set_speed()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_get_speed(índice)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sprite para obtener la velocidad de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">s_speed = sprite_get_speed(sprite_index);<br> s_type = sprite_get_speed_type(sprite_index);</p>
+  <p>El código anterior obtiene la velocidad del sprite y el tipo de animación del sprite y los almacena en variables de instancia para su uso futuro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Information.htm">Información sobre el Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_get_speed_type.htm">sprite_get_speed_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_speed
+-->
+  <!-- TAGS
+sprite_get_speed
+-->
+</body>
+</html>

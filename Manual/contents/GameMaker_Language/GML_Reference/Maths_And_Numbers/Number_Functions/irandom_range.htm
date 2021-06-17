@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>rango_irandom</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for irandom_range" />
+  <meta name="rh-index-keywords" content="irandom_range" />
+  <meta name="search-keywords" content="irandom_range" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>rango_irandom</h1>
+  <p>Esta función es similar a <a href="random_range.htm"><tt>rango_aleatorio()</tt></a> sólo que con valores enteros como entrada. Se suministra el valor bajo para el rango así como el valor alto, y la función devolverá un valor entero aleatorio dentro de (y
+    incluyendo) el rango dado. Por ejemplo, <tt>irandom_range(10, 35)</tt> devolverá un entero entre 10 y 35 <i>inclusive</i>.</p>
+  <p>Al igual que con la función <a href="irandom.htm"><tt>irandom()</tt></a> se pueden utilizar números reales, en cuyo caso se redondearán al entero más cercano EG: irandom_range(6.2,9.9) dará un valor entre 6 y 9.</p>
+  <p class="note"><b>NOTA:</b> Esta función devolverá el mismo valor cada vez que el juego se ejecute de nuevo debido a que <span class="notranslate">GameMaker</span>: Studio genera la misma semilla aleatoria inicial cada vez para facilitar la depuración del código. Para evitar este comportamiento utilice
+    <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">aleatorizar()</tt></a></span> al inicio de su juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">irandom_range(n1, n2);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>n1</td>
+        <td>El extremo inferior del rango del que se seleccionará el número aleatorio.</td>
+      </tr>
+      <tr>
+        <td>n2</td>
+        <td>El extremo superior del rango del que se seleccionará el número aleatorio.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">puntuación += irandom_range(500, 600);</p>
+  <p>Esto añadirá un valor entero entre 500 y 600 (inclusive) a la puntuación total.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Number_Functions.htm">Funciones numéricas</a></div>
+        <div style="float:right">Siguiente: <a href="random_set_seed.htm">random_set_seed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+irandom_range
+-->
+  <!-- TAGS
+irandom_range
+-->
+
+</body></html>

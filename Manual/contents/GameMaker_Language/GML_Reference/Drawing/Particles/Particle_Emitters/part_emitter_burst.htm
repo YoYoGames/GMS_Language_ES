@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_emitter_burst</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_emitter_burst" />
+  <meta name="rh-index-keywords" content="part_emitter_burst" />
+  <meta name="search-keywords" content="part_emitter_burst" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_emitter_burst</h1>
+  <p>Esta función permite establecer un emisor para reventar un tipo específico de partícula y se utiliza normalmente en alarmas y eventos de destrucción, ya que es un código único que crea el número de partículas especificado de una sola vez siguiendo la distribución, forma y
+    posición establecidos por la función <a href="part_emitter_region.htm"><tt>part_emitter_region()</tt></a>. Si necesita que las partículas aparezcan en cada paso, debería utilizar la función <a href="part_emitter_stream.htm"><tt>part_emitter_stream()</tt></a>    en lugar de llamar a esta función en cada paso.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_emitter_burst(ps, ind, parttype, number);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ps</td>
+        <td>El sistema de partículas en el que se encuentra el emisor.</td>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del emisor desde el que se produce la explosión.</td>
+      </tr>
+      <tr>
+        <td>tipo de pieza</td>
+        <td>El índice (tipo) de las partículas a crear.</td>
+      </tr>
+      <tr>
+        <td>número</td>
+        <td>El número de partículas a crear.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));</p>
+  <p>El código anterior hará estallar un número aleatorio de partículas entre 30 y 60 del emisor elegido.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Emitters.htm">Emisores de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_emitter_stream.htm">part_emitter_stream</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_emitter_burst
+-->
+  <!-- TAGS
+part_emitter_burst
+-->
+</body>
+</html>

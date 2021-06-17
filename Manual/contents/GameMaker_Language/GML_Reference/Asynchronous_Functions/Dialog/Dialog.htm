@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Diálogo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for all the Dialog functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Dialog,Dialogue" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Diálogo</h1>
+  <p>A la mayoría de los ordenadores y dispositivos móviles modernos no les gusta que un juego se detenga mientras se muestra una ventana de diálogo. Tienden a interpretar esto como que el corredor del juego se ha detenido, y pueden considerarlo un error y cerrar la aplicación prematuramente. Para evitarlo, <span class="notranslate">GameMaker</span>
+    Studio 2 dispone de funciones de diálogo <strong>asíncronas</strong> que permiten solicitar ciertas formas de respuesta o entrada del usuario, pero sin bloquear el ejecutor del juego en ningún momento, lo que significa que -cuando se llama- el juego se ejecutará normalmente en segundo plano
+    mientras el usuario responde a la ventana de diálogo mostrada. Una vez que el usuario haya respondido, se llamará a un <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">Evento Asíncrono</a> de Diálogo para que puedas tratar los resultados.</p>
+  <p class="note"><strong>NOTA</strong>: Con la excepción de <a href="shop_leave_rating.htm"><tt>shop_leave_rating()</tt></a>estas funciones son <span data-keyref="Dialog for debug only"> <strong>sólo</strong> para <strong>uso de depuración y pruebas</strong></span>y no deben ser utilizadas en juegos lanzados. Para ello, debería crear una interfaz de usuario personalizada para recibir las entradas de los jugadores, de modo que tenga un control completo sobre el aspecto y el comportamiento de los diálogos.</p>
+  <p>A continuación se muestra una lista de todas las funciones de diálogo asíncronas disponibles:</p>
+  <ul class="colour">
+    <li><a href="get_login_async.htm">get_login_async</a></li>
+    <li><a href="get_string_async.htm">get_string_async</a></li>
+    <li><a href="get_integer_async.htm">get_integer_async</a></li>
+    <li><a href="show_message_async.htm">show_message_async</a></li>
+    <li><a href="show_question_async.htm">show_question_async</a></li>
+    <li><a href="shop_leave_rating.htm">shop_leave_rating</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Asynchronous_Functions.htm">Funciones asíncronas</a></div>
+        <div style="float:right">Siguiente: <a href="../Cloud_Saving/Cloud_Saving.htm">Ahorro en la nube</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Dialog Functions
+-->
+  <!-- TAGS
+dialog_functions
+-->
+</body>
+</html>

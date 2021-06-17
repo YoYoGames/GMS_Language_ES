@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buscar_instancias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_find" />
+  <meta name="rh-index-keywords" content="instance_find" />
+  <meta name="search-keywords" content="instance_find" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buscar_instancias</h1>
+  <p>Todas las instancias tienen un identificador único (<a href="Instance_Variables/id.htm"><tt>id</tt></a>) que se puede utilizar para modificar y manipular mientras se ejecuta un juego, pero no siempre se puede saber cuál es el identificador de una instancia específica, por lo que esta función
+    puede ayudarte, ya que puedes usarla para iterar a través de todas ellas para encontrar lo que necesitas. Especifica el objeto del que quieres encontrar la instancia y un número, y si hay una instancia en esa posición en la lista de instancias entonces la función devuelve
+    el id de esa instancia, y si no, devuelve la <a href="../../../GML_Overview/Instance_Keywords.htm">palabra</a> clave especial <span class="inline"><b>noone</b></span>. También puede utilizar la palabra clave <span class="inline"><b>all</b></span> para iterar a través de
+    todas las instancias de una habitación, así como un objeto padre para iterar por todas las instancias que forman parte de esa jerarquía padre / hijo, e incluso puede especificar una instancia (si tiene su <span class="inline">id</span>) como una comprobación para ver si
+    existe realmente en la sala actual. Tenga en cuenta que, como las instancias se ordenan de forma <i>arbitraria</i>, no hay un orden específico para la comprobación de las instancias por parte de esta función, y cualquier instancia puede estar en cualquier posición.</p>
+  <p>El valor máximo de &quot;n&quot; en esta función sería</p>
+  <ul class="colour">
+    <li>Para la palabra clave <span class="inline"><b>all</b></span>: <a href="instance_count.htm"><tt>conteo_de_instancias - 1</tt></a></li>
+    <li>Para un índice de objeto: <a href="instance_number.htm"><tt>número_de_instancia(OBJ) - 1</tt></a></li>
+  </ul>
+  <p> </p>
+  <h4><b>Sintaxis:</b></h4>
+  <p class="code">instance_find(obj, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto para encontrar la enésima instancia de</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>El número de la instancia a encontrar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (un valor de ID de instancia o la palabra clave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = 0; i &lt; instance_number(obj_Enemy); ++i;) <br> {
+    <br> enemy[i] = instance_find(obj_Enemy,i);<br> }
+  </p>
+  <p>El código anterior utilizará un bucle <tt>for</tt> para iterar a través de todas las instancias de &quot;obj_Enemigo&quot; y almacenar su id en el array &quot;enemigo[]&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_furthest.htm">instance_furthest</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_find
+-->
+  <!-- TAGS
+instance_find
+-->
+</body>
+</html>

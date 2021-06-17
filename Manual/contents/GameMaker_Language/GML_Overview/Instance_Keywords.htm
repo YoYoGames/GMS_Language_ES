@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Palabras clave de la instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different instance &quot;keywords&quot;" />
+  <meta name="rh-index-keywords" content="Instance Keywords,noone,self,other,all" />
+  <meta name="search-keywords" content="self,all,noone,other,instance keywords" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Palabras clave de la instancia</h1>
+  <p>Para facilitar ciertas cosas en <span class="notranslate">GameMaker Studio 2</span>, puedes utilizar una de varias <b>palabras clave</b> de instancia en tu código (ya sea <span class="notranslate">GML</span> o <span class="notranslate">Drag and Drop™</span>). Estas palabras clave se utilizan principalmente para identificar instancias -y en algunos casos structs- en diferentes
+    situaciones y cada una se explica en el texto siguiente. Tenga en cuenta que todas las palabras clave están representadas por un <strong>valor entero negativo</strong> internamente, por lo que debe tener cuidado al asignar o comprobar los valores de las variables contra o con estas palabras clave,
+    ya que puede obtener resultados inesperados más tarde como <span class="notranslate">GameMaker Studio 2</span> interpreta el valor que ha utilizado como otra cosa. También debe tener en cuenta que el uso de los valores en lugar de las palabras clave en su código <b>no</b> es <b>en absoluto recomendable</b> y podría causar problemas
+    más tarde.</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="inline">self</span></a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <table>
+      <tbody>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Descripción</th>
+          <th>valor</th>
+        </tr>
+        <tr>
+          <td><span class="inline">self</span></td>
+          <td>La instancia/estructura que está ejecutando el bloque de código actual.</td>
+          <td>   -1</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot"> </p>
+    <p class="dropspot"><span class="inline">self</span> puede utilizarse para identificar la estructura o instancia actual que está en el ámbito del bloque de código actual. Por ejemplo:</p>
+    <p class="code">var val = 100;<br> with (instance_create_layer(x, y, &quot;Instances&quot;, obj_Fire))<br> {
+      <br> self.val = val;<br> }
+    </p>
+    <p class="dropspot">En este ejemplo puedes ver que tenemos una variable <i>local</i> llamada <span class="inline">val</span> y queremos que establezca la variable de <i>instancia</i> con el mismo nombre en la nueva instancia del objeto creado. Para identificar correctamente la variable de instancia
+      y decirle a <span class="notranslate">GameMaker Studio 2</span> que la establezca en la instancia que llama al bloque de código, utilizamos la palabra clave <span class="inline">self</span>. En la mayoría de los casos también se puede utilizar la variable de instancia incorporada <span class="inline">id</span> en lugar de <span class="inline">self</span>,
+      pero <span class="inline">self</span> ofrece ciertas ventajas. Para empezar, es más rápido para el compilador identificar la instancia (o estructura) usando <span class="inline">self</span> en lugar de <span class="inline">id</span>, ya que el valor <tt>del id</tt> pasa por la tabla de búsqueda de la instancia mientras que <span class="inline">self</span> no lo hace. En segundo lugar, para aquellos que hacen extensiones, es muy útil asegurar el correcto alcance de las variables, ya que es posible que un proyecto que utiliza
+      una extensión pueda tener una variable de ámbito global o algo con el mismo nombre que una variable en la extensión.</p>
+    <p class="note"><strong>NOTA</strong>: La palabra clave <span class="inline">self</span> <strong>no </strong>es un atajo para el valor de ID real de una instancia o estructura y sólo debe utilizarse en el contexto explicado anteriormente. Si necesita el valor <strong>de </strong>ID de
+      de una instancia, debe utilizar <span class="inline">self.id</span>, por ejemplo:</p>
+    <p class="code">var myID = id;<br> with (all)<br> {
+      <br> if self.id == myID<br> {<br> // haz algo<br> } <br> }
+    </p>
+    <p class="dropspot">También vale la pena señalar que <span class="inline">self</span> también se puede utilizar dentro de <a href="Structs.htm">los structs</a> - en circunstancias muy específicas - para hacer referencia a las variables miembro del struct.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="inline">other</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <table>
+      <tbody>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Descripción</th>
+          <th>valor</th>
+        </tr>
+        <tr>
+          <td><span class="inline">other</span></td>
+          <td>La otra instancia involucrada en un evento de colisión, o la otra instancia o estructura de una función <tt>con.</tt> </td>
+          <td>   -2</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">La <i>palabra clave</i> especial <span class="inline">other</span> tiene dos formas diferentes de ser usada para referenciar una instancia específica (y en algunos casos, una estructura): cuando se usa en una función <span class="inline">with</span> (explicada <a href="Language_Features/with.htm">aquí</a>)
+      o cuando se utiliza en un <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento de colisión</a>, que es lo que se va a explicar en esta sección.</p>
+    <p class="dropspot">Un evento de colisión sólo puede ocurrir entre dos instancias. Usted <i>puede</i> tener múltiples colisiones entre varias instancias, pero todos ellos son resueltos por <span class="notranslate">GameMaker Studio</span> 2 en una base de 1 a 1, con la instancia que tiene el evento de colisión y la
+      &quot;otra&quot; instancia que está involucrada. Imagina que tienes un objeto jugador, múltiples objetos enemigos y múltiples objetos bala que el enemigo puede disparar contra ti. Puedes asignar a cada enemigo una única instancia de bala pero con una variable de daño diferente
+      asignada aleatoriamente cuando se crea, por ejemplo:</p>
+    <p class="code">var nnn;<br> nnn = instance_create_layer(x, y, &quot;Bullets&quot;, obj_Bullet);<br> nnn.damage = 5 + irandom(5);<br> nnn.speed = 8;<br> nnn.direction = point_direction(x, y, obj_Player.x, obj_Player.y);</p>
+    <p class="dropspot">Puede ver cómo establecemos sus variables utilizando el &quot;método del punto&quot; descrito en la sección sobre Cómo dirigir las <a href="Addressing_Variables_In_Other_Instances.htm">variables en otras instancias.</a> Esto dará a los objetos bala un valor de daño diferente
+      diferente. ¿Pero qué pasa con el objeto jugador? ¿Cómo detectará el daño que debe recibir? Utilizando <span class="inline">other</span> en el evento de colisión:</p>
+    <p class="code">hp -= otro.daño;<br> si hp &lt;= 0 instance_destroy();</p>
+    <p class="dropspot">El código anterior deducirá la cantidad almacenada en la <i>otra</i> instancia en la variable &quot;daño&quot; de las colisiones de la variable &quot;hp&quot; del jugador, luego comprobará si la &quot;hp&quot; es menor o igual a 0. Si lo es
+      entonces destruirá el objeto jugador. Por favor, ten en cuenta que el <b>otro</b> usado de esta manera <i>sólo funciona en el evento de</i> colisión y que la otra instancia debe tener la variable que se está comprobando o de lo contrario se lanzará un error. Sin embargo, puedes asignar
+      valores a las variables, o incluso crear nuevas, usando <span class="inline">other</span> en el evento de colisión también, así:</p>
+    <p class="code">//añadir diez a la variable &quot;mana&quot; de la otra instancia<br> other.mana += 10;<br> /poner la variable &quot;hit&quot; de la otra instancia a true, creándola si la variable no existe ya<br> other.hit = true;</p>
+    <p class="dropspot">También vale la pena señalar que <span class="inline">other</span> también se puede utilizar dentro de <a href="Structs.htm">los structs</a> - en circunstancias muy específicas - para hacer referencia a las variables miembro del struct. </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#"><span class="inline">all</span></a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <table>
+      <tbody>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Descripción</th>
+          <th>valor</th>
+        </tr>
+        <tr>
+          <td><span class="inline">all</span></td>
+          <td>Todas las instancias actualmente activas en la sala.</td>
+          <td>   -3</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Esta palabra clave se utiliza para indicar a <span class="notranslate">GameMaker Studio 2</span> que una función debe aplicarse, o para comprobar, todas las instancias activas dentro de una sala (las instancias desactivadas no se comprobarán ni se accederá a ellas). <b>No se puede</b> utilizar <span class="inline">all</span> para acceder a
+      o establecer variables en otras instancias utilizando el método de puntos (ver <a href="Addressing_Variables_In_Other_Instances.htm">aquí</a>), pero <strong>puede </strong>utilizarlo cuando llame a <a href="Language_Features/with.htm"><tt>con()</tt></a>por ejemplo:</p>
+    <p class="code">con (todos)<br> {
+      <br> velocidad = 0;<br> }
+    </p>
+    <p class="dropspot">El código anterior establecerá la velocidad de todas las instancias en la sala a 0. También puede utilizar <span class="inline">all</span> dentro de las funciones para apuntar o comprobar todas las instancias en la sala, por ejemplo:</p>
+    <p class="code">//Comprobar un punto para cualquier instancia activa en la sala<br> inst = instance_position(mouse_x, mouse_y, all); <br>
+      <br> //Comprobar todas las instancias para una colisión a lo largo de una línea<br> if collision_line(x, y, mouse_x, mouse_y, all, false, true) {}<br>
+      <br> /Agregar todas las instancias de la sala en una cuadrícula de planificación del movimiento<br> mp_grid_add_instances(grid, all, false);</p>
+    <p class="dropspot"><span class="inline">all</span> es una palabra clave muy útil y puede ser utilizada en numerosas situaciones dentro de su código y acciones, a menudo reduciendo la cantidad de código que necesita escribir para lograr un efecto deseado.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#"><span class="inline">noone</span></a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <table>
+      <tbody>
+        <tr>
+          <th>Palabra clave</th>
+          <th>Descripción</th>
+          <th>valor</th>
+        </tr>
+        <tr>
+          <td><span class="inline">noone</span></td>
+          <td>No hay ninguna instancia en absoluto.</td>
+          <td>   -4</td>
+        </tr>
+      </tbody>
+    </table>
+    <p> </p>
+    <p class="dropspot">Puede parecer extraño, pero muchas veces al programar tus juegos te encontrarás con la necesidad de comprobar si no se encuentran instancias en una ubicación, o en una colisión, etc... En esos casos usarás esta palabra clave para comprobar que no hay nada, algo así:</p>
+    <p class="code">if instancia_más_cercana(x, y, obj_enemigo) != nadie<br> {
+      <br> //hacer algo ya que hay una instancia enemiga cerca<br> }
+    </p>
+    <p class="dropspot">En este ejemplo, la función <span class="inline">instance_nearest()</span> devolverá <span class="inline">noone</span> o el ID único de la instancia encontrada más cercana. Básicamente, cada vez que necesites buscar una instancia, puedes esperar que
+      obtener <span class="inline">noone</span> o un ID de instancia único.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Addressing_Variables_In_Other_Instances.htm">Dirigirse a las variables en otras instancias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Instance Keywords
+self
+all
+noone
+other
+-->
+  <!-- TAGS
+instance_keywords
+-->
+</body>
+</html>

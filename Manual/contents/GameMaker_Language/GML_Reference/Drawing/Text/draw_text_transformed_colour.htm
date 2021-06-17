@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_texto_transformado_color</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_text_transformed_colour" />
+  <meta name="rh-index-keywords" content="draw_text_transformed_colour,draw_text_transformed_color" />
+  <meta name="search-keywords" content="draw_text_transformed_colour,draw_text_transformed_color" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_texto_transformado_color</h1>
+  <p>Esta función es una combinación de la función base <a href="draw_text.htm"><tt>dibujar_texto()</tt></a> con las funciones <a href="draw_text_transformed.htm"><tt>dibujar_texto_transformado()</tt></a> y <a href="draw_text_colour.htm"><tt>dibujar_texto_color()</tt></a>    que permite escalar y rotar el texto, así como colorearlo con un relleno de degradado y cambiar su valor alfa, ignorando los ajustes de alfa y color base para el dibujo.</p>
+  <p class="note"><b>NOTA: </b>La mezcla de gradientes no está disponible para el objetivo de HTML5 a menos que WebGL esté habilitado, aunque todavía puede establecer los colores de mezcla y se mezclará la fuente con el primer color dado. Sin embargo, todas las mezclas de este tipo crean un duplicado de la fuente
+    que se almacena en la caché y se utiliza cuando se requiere, lo que está lejos de ser óptimo y si se utilizan múltiples cambios de color se ralentizará el rendimiento de los juegos. Puedes establecer el tamaño de la caché de la fuente para tratar de limitar esto si es necesario
+    utilizando la función <a href="../../Asset_Management/Fonts/font_set_cache_size.htm"><tt style="font-size: 14px">font_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_text_transformed_colour(x, y, string, xscale, yscale, angle, c1, c2, c3, c4, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de la cadena dibujada.</td>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>El cordón a dibujar.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical.</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El ángulo del texto.</td>
+      </tr>
+      <tr>
+        <td>c1</td>
+        <td>El color para la parte superior izquierda del texto dibujado.</td>
+      </tr>
+      <tr>
+        <td>c2</td>
+        <td>El color para la parte superior derecha del texto dibujado.</td>
+      </tr>
+      <tr>
+        <td>c3</td>
+        <td>El color para la parte inferior derecha del texto dibujado.</td>
+      </tr>
+      <tr>
+        <td>c4</td>
+        <td>El color para la parte inferior izquierda del texto dibujado.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa del texto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_halign(fa_center);<br> draw_set_valign(fa_middle);
+    <br> image_angle += 1;<br> draw_text_transformed_colour(room_width / 2, room_height / 2, keyboard_string, 2, 2, image_angle, c_red, c_red, c_yellow, c_yellow, 0.5);</p>
+  <p>El código anterior dibujará el texto dado en el centro de la habitación, girando en redondo y escalado al doble de su tamaño original, con un gradiente de color que va del amarillo al rojo, así como un alfa de 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Siguiente: <a href="draw_text_ext_transformed_colour.htm">dibujar_texto_texto_transformado_color</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_text_transformed_colour
+draw_text_transformed_color
+-->
+  <!-- TAGS
+draw_text_transformed_colour
+-->
+</body>
+</html>

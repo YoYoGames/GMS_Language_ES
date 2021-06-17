@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rejillas DS</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for DS Grids" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="DS Grids" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Rejillas DS</h1>
+  <p>Una cuadrícula DS es básicamente un tipo de<span> <a href="../../../GML_Overview/Arrays.htm">matriz</a></span> con 2 dimensiones. Se define la rejilla estableciendo su anchura y altura enteras, lo que a su vez establece el número total de &quot;celdas&quot; dentro de la rejilla
+    (el ancho y el alto multiplicados) y estas celdas se utilizan para contener diferentes valores de datos (números reales o cadenas).</p>
+  <p><img alt="DS Grid Example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_basic.png">Este tipo de estructura permite establecer y recuperar el valor de las celdas de la cuadrícula dando el índice x e
+    y de la misma (que comienza con 0 tanto para el eje x como para el eje y y llega hasta el ancho - 1 y el alto -1). Pero también se puede establecer el valor en regiones específicas de la cuadrícula, añadir valores individuales y recuperar la suma, el máximo, el mínimo y el valor medio sobre
+    una región determinada, lo que hace que esta estructura de datos sea la más versátil de todas las disponibles.</p>
+  <p>Cuando se accede a las estructuras de datos de la cuadrícula DS, siempre se debe tratar de utilizar <b>valores enteros</b> para la posición de la celda, y todos los índices no enteros serán floteados por <span class="notranslate">GameMaker Studio 2</span> si no lo hace. Si esto no es lo que necesitas, entonces tendrás que
+    hacer el redondeo usted mismo previamente antes de pasar el índice que desea comprobar.</p>
+  <p class="note"><b>NOTA: </b>Como todos los recursos dinámicos, las estructuras de datos ocupan memoria, por lo que <b>siempre</b> deben ser destruidas cuando ya no se necesiten para evitar fugas de memoria que ralentizarán y eventualmente bloquearán tu juego.</p>
+  <p class="note"><b>NOTA:</b> si necesita comprobar si una estructura de datos existe, puede utilizar la función <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> función</p>
+  <p>Aparte de las funciones específicas que se enumeran a continuación, todos pueden utilizar una <a class="tooltip" title="An expression is a combination of one or more constants, variables, operators, and/or functions that are interpreted according to particular rules of precedence and association to return another value. A simple expression would be (5 + 5), which returns 10.">expresión</a> (llamada <i>accesorio</i>) para añadir o modificar el contenido de su cuadrícula DS. Este accesorio es similar a un array 2D
+    con la siguiente sintaxis:</p>
+  <p class="code">grid_index[# xpos, ypos]</p>
+  <p>Puede encontrar más información, además de ejemplos, en la página de descripción general de <span class="notranslate">GML</span> sobre <a href="../../../GML_Overview/Accessors.htm">los accesorios</a>.</p>
+  <p>Existen las siguientes funciones que se ocupan de las rejillas DS.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ds_grid_create.htm">ds_grid_create</a></li>
+    <li><a href="ds_grid_destroy.htm">ds_grid_destroy</a></li>
+    <li><a href="ds_grid_width.htm">ds_grid_width</a></li>
+    <li><a href="ds_grid_height.htm">ds_grid_height</a></li>
+    <li><a href="ds_grid_resize.htm">ds_grid_resize</a></li>
+    <li><a href="ds_grid_clear.htm">ds_grid_clear</a></li>
+    <li><a href="ds_grid_set.htm">ds_grid_set</a></li>
+    <li><a href="ds_grid_set_disk.htm">ds_grid_set_disk</a></li>
+    <li><a href="ds_grid_set_grid_region.htm">ds_grid_set_grid_region</a></li>
+    <li><a href="ds_grid_set_region.htm">ds_grid_set_region</a></li>
+    <li><a href="ds_grid_shuffle.htm">ds_grid_shuffle</a></li>
+    <li><a href="ds_grid_sort.htm">ds_grid_sort</a></li>
+    <li><a href="ds_grid_get.htm">ds_grid_get</a></li>
+    <li><a href="ds_grid_get_max.htm">ds_grid_get_max</a></li>
+    <li><a href="ds_grid_get_mean.htm">ds_grid_get_mean</a></li>
+    <li><a href="ds_grid_get_min.htm">ds_grid_get_min</a></li>
+    <li><a href="ds_grid_get_sum.htm">ds_grid_get_sum</a></li>
+    <li><a href="ds_grid_get_disk_max.htm">ds_grid_get_disk_max</a></li>
+    <li><a href="ds_grid_get_disk_mean.htm">ds_grid_get_disk_mean</a></li>
+    <li><a href="ds_grid_get_disk_min.htm">ds_grid_get_disk_min</a></li>
+    <li><a href="ds_grid_get_disk_sum.htm">ds_grid_get_disk_sum</a></li>
+    <li><a href="ds_grid_add.htm">ds_grid_add</a></li>
+    <li><a href="ds_grid_add_region.htm">ds_grid_add_region</a></li>
+    <li><a href="ds_grid_add_disk.htm">ds_grid_add_disk</a></li>
+    <li><a href="ds_grid_add_grid_region.htm">ds_grid_add_grid_region</a></li>
+    <li><a href="ds_grid_multiply.htm">ds_grid_multiply</a></li>
+    <li><a href="ds_grid_multiply_disk.htm">ds_grid_multiply_disk</a></li>
+    <li><a href="ds_grid_multiply_region.htm">ds_grid_multiply_region</a></li>
+    <li><a href="ds_grid_multiply_grid_region.htm">ds_grid_multiply_grid_region</a></li>
+    <li><a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></li>
+    <li><a href="ds_grid_value_disk_exists.htm">ds_grid_value_disk_exists</a></li>
+    <li><a href="ds_grid_value_x.htm">ds_grid_value_x</a></li>
+    <li><a href="ds_grid_value_y.htm">ds_grid_value_y</a></li>
+    <li><a href="ds_grid_value_disk_x.htm">ds_grid_value_disk_x</a></li>
+    <li><a href="ds_grid_value_disk_y.htm">ds_grid_value_disk_y</a></li>
+    <li><a href="ds_grid_copy.htm">ds_grid_copy</a></li>
+    <li><a href="ds_grid_read.htm">ds_grid_read</a></li>
+    <li><a href="ds_grid_write.htm">ds_grid_write</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Data_Structures.htm">Estructuras de datos</a></div>
+        <div style="float:right">Siguiente: <a href="../DS_Lists/DS_Lists.htm">Listas DS</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+DS Grids
+-->
+  <!-- TAGS
+ds_grid_functions
+-->
+
+</body></html>

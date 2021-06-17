@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_group_load</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_load" />
+  <meta name="rh-index-keywords" content="audio_group_load" />
+  <meta name="search-keywords" content="audio_group_load" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_group_load</h1>
+  <p>Esta función cargará en la memoria todos los sonidos marcados como pertenecientes al Grupo de Audio dado. La función devolverá <tt>true</tt> si se inicia la carga y <tt>false</tt> si el ID del grupo
+    es inválido, o ya ha sido marcado para la carga. La función es asíncrona, por lo que su juego continuará ejecutándose mientras se carga el audio en segundo plano. Esto significa que también activará un <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">evento asíncrono de carga/guardado</a> para
+    para informarle de que todo el grupo se ha cargado en la memoria y que los sonidos ya pueden ser utilizados.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_group_load(groupID);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>El índice del grupo de audio que se va a cargar (como se define en la <a href="../../../../../Settings/Audio_Groups.htm">ventana de grupos de audio</a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !audio_group_is_loaded(audiogroup_level1)<br> {
+    <br> audio_group_load(audiogroup_level1);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si se ha cargado un grupo de audio y, si no, lo carga.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Groups.htm">Grupos de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_group_unload.htm">audio_group_unload</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_group_load
+-->
+  <!-- TAGS
+audio_group_load
+-->
+</body>
+</html>

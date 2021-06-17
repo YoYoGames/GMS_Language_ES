@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lugar_de_reunión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_meeting" />
+  <meta name="rh-index-keywords" content="place_meeting" />
+  <meta name="search-keywords" content="place_meeting" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lugar_de_reunión</h1>
+  <p>Con esta función puede comprobar una posición para una colisión con otra instancia o todas las instancias de un objeto utilizando la máscara de colisión de la instancia que ejecuta el código para la comprobación. Cuando usted usa esto, está pidiendo a <span class="notranslate">GameMaker Studio 2</span> que mueva la instancia a la nueva posición, compruebe si hay una colisión, vuelva a moverse y le diga si se encontró una colisión o no. Esto funcionará para colisiones precisas, pero sólo si tanto la instancia como el objeto que se está comprobando tienen máscaras de colisión precisas
+    seleccionadas, de lo contrario sólo se aplicarán las colisiones de caja delimitadora. Esta función también acepta las palabras clave especiales <b>all</b> y <b>other</b>. Tenga en cuenta que si necesita obtener el <b>identificador de</b> instancia único del objeto con el que se está colisionando, deberá utilizar
+    debe utilizar <a href="../../Asset_Management/Instances/instance_place.htm"><tt>instance_place()</tt></a>.</p>
+  <p><img alt="Place meeting example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/place_meeting.png">Tenga en cuenta que las coordenadas x/y dadas se rebajarán al número entero más cercano antes de que se realice la comprobación
+    antes de realizar la comprobación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">place_meeting(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>La instancia u objeto a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check(vk_left)<br> {
+    <br> if !place_meeting(x - 5, y, obj_wall) x -=5;<br> }
+  </p>
+  <p>El código anterior comprueba si <i>no</i> hay una colisión a la izquierda de la instancia y mueve la instancia si no la hay.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="position_empty.htm">position_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_meeting
+-->
+  <!-- TAGS
+place_meeting
+-->
+</body>
+</html>

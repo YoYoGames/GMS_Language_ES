@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_find_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_find_value" />
+  <meta name="rh-index-keywords" content="ds_map_find_value" />
+  <meta name="search-keywords" content="ds_map_find_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_find_value</h1>
+  <p>Con esta función se puede obtener el valor de una clave especificada. Los valores de entrada de la función son el mapa DS (previamente creado) a utilizar y la clave a comprobar.</p>
+  <p class="note"><b>NOTA</b>: Si no existe dicha clave, la función devolverá <tt>undefined</tt>. Siempre debe comprobarlo utilizando la función <span style="font-size:1px;"><a href="../../Variable_Functions/is_undefined.htm"><tt style="font-size: 14px">is_undefined()</tt></a></span>    función</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_find_value(id, key)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id del mapa a utilizar.</td>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>La clave para encontrar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real, cadena o indefinido</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">cantidad = ds_map_find_value(inventory, &quot;food&quot;);</p>
+  <p>O bien, utilizando el <a href="../../../GML_Overview/Accessors.htm">accesorio de</a> mapa &quot;?&quot;:</p>
+  <p class="code">cantidad = inventario[? &quot;comida&quot;];</p>
+  <p>El código anterior obtendrá el valor de la clave &quot;comida&quot; y lo almacenará en la variable &quot;cantidad&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_keys_to_array.htm">ds_map_keys_to_array</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_find_value
+-->
+  <!-- TAGS
+ds_map_find_value
+-->
+</body>
+</html>

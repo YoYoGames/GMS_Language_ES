@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_get_blendmode_ext_sepalpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_get_blendmode_ext_sepalpha" />
+  <meta name="rh-index-keywords" content="gpu_get_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+  <meta name="search-keywords" content="gpu_get_blendmode_ext_sepalpha,bm_zero,bm_one,bm_src_colour,bm_inv_src_colour,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_colour,bm_inv_dest_colour,bm_src_alpha_sat,bm_src_color,bm_inv_src_color,bm_dest_color,bm_inv_dest_colour" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_get_blendmode_ext_sepalpha</h1>
+  <p>Esta función puede utilizarse para recuperar el modo de fusión extendido que se está utilizando para dibujar, separando los modos de fusión en dos partes: el componente RGB y el componente Alfa. La función devuelve un array 1D de 4 elementos con los siguientes elementos
+    en él:</p>
+  <ul class="colour">
+    <li>0] = Modo de fusión de origen menos el componente alfa (por defecto es <tt>bm_src_alpha</tt> (As, As, As))</li>
+    <li>1] = Modo de fusión de destino menos el componente alfa (por defecto es <tt>bm_inv_src_alpha</tt> (1-As, 1-As, 1-As))</li>
+    <li>2] = Componente alfa de la fuente (por defecto es <tt>bm_src_alpha</tt> (As))</li>
+    <li>3] = Componente alfa de destino (por defecto es <tt>bm_inv_src_alpha</tt> (1-As))</li>
+  </ul>
+  <p>Los valores de la matriz serán una de las siguientes constantes (&quot;s&quot; denota un valor tomado del origen mientras que &quot;d&quot; denota un valor del destino):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Factor de mezcla (rojo, verde, azul, alfa)</th>
+      </tr>
+      <tr>
+        <td><tt>bm_zero</tt></td>
+        <td>(0, 0, 0, 0)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_one</tt></td>
+        <td>(1, 1, 1, 1)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_colour</tt></td>
+        <td>(Rs, Gs, Bs, As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_src_colour</tt></td>
+        <td>(1-Rs, 1-Gs, 1-Bs, 1-As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_alpha</tt></td>
+        <td>(As, As, As, As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_src_alpha</tt></td>
+        <td>(1-As, 1-As, 1-As, 1-As)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_dest_alpha</tt></td>
+        <td>(Ad, Ad, Ad, Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_dest_alpha</tt></td>
+        <td>(1-Ad, 1-Ad, 1-Ad, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_dest_colour</tt></td>
+        <td>(Rd, Gd, Bd, Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_inv_dest_colour</tt></td>
+        <td>(1-Rd, 1-Gd, 1-Bd, 1-Ad)</td>
+      </tr>
+      <tr>
+        <td><tt>bm_src_alpha_sat</tt></td>
+        <td>(f, f, f, 1) donde f = min(As, 1-Ad)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Al crear los modos de mezcla extendidos de esta manera, los componentes RGB se tomarán de un modo de mezcla y el componente alfa se tomará de otro, de modo que - por ejemplo - si se utiliza <tt>bm_zero</tt> (0, 0, 0, 0) como el modo de mezcla RGB y <tt>bm_one</tt> como el modo de mezcla alfa, se obtendrá una mezcla compuesta de (0,0,0,1).</p>
+  <p>Tenga en cuenta que puede cambiar estos valores directamente dentro del array y pasar el array completo a la función como un único argumento (como se muestra en el ejemplo siguiente).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_get_blendmode_ext_sepalpha();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Matriz 1D de 4 elementos (ver arriba las constantes)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var bm = gpu_get_blendmode_ext_sepalpha();<br> bm[0] = bm_src_alpha;<br> bm[1] = bm_inv_src_alpha;<br> gpu_set_blendmode_ext_sepalpha(bm);
+  </p>
+  <p>El código anterior crea una matriz local y obtiene el modo de fusión actual extendido con valores alfa separados. Este array es entonces manipulado y devuelto para establecer el modo de mezcla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_get_blendmode_src.htm">gpu_get_blendmode_src</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_get_blendmode_ext_sepalpha
+bm_zero
+bm_one
+bm_src_colour
+bm_inv_src_colour
+bm_src_alpha
+bm_inv_src_alpha
+bm_dest_alpha
+bm_inv_dest_alpha
+bm_dest_colour
+bm_inv_dest_colour
+bm_src_alpha_sat
+-->
+  <!-- TAGS
+gpu_get_blendmode_ext_sepalpha
+-->
+</body>
+</html>

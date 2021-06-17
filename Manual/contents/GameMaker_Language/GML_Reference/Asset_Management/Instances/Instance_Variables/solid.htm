@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sólido</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable solid" />
+  <meta name="rh-index-keywords" content="solid" />
+  <meta name="search-keywords" content="solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sólido</h1>
+  <p>Una instancia puede ser marcada como <i>sólida</i> a través de las propiedades del objeto en el <a href="../../../../../The_Asset_Editors/Objects.htm">Editor de Objetos</a>, o cambiando el valor de esta variable incorporada. Si el valor de <tt>sólido</tt> es <tt>verdadero</tt>, entonces
+    cuando se detecta una colisión, la instancia que colisiona se devuelve automáticamente a la posición en la que se encontraba en el paso anterior a la colisión (y entonces se ejecuta cualquier código o acción en el evento de colisión). Si se establece en <tt>false</tt>, todo el posicionamiento
+    debe ser tratado a través del evento de colisión.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sólido;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si other.solid = true<br> {
+    <br> x = xprevious;<br> y = yprevious;<br> }
+  </p>
+  <p>El código anterior comprobará el indicador de solidez de la &quot;otra&quot; instancia en una colisión y, si es verdadero, moverá <tt>esa instancia</tt> a su posición anterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variables.htm">Instance Variables</a></div>
+        <div style="float:right">Siguiente: <a href="persistent.htm">persistente</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+solid
+-->
+  <!-- TAGS
+solid
+-->
+</body>
+</html>

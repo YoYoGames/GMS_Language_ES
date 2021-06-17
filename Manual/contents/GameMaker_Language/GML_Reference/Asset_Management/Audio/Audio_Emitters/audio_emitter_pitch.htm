@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tono_emisor_de_audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_pitch" />
+  <meta name="rh-index-keywords" content="audio_emitter_pitch" />
+  <meta name="search-keywords" content="audio_emitter_pitch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tono_emisor_de_audio</h1>
+  <p>Esta función puede utilizarse para cambiar el tono de todos los sonidos emitidos por el emisor dado. Es un <i>multiplicador de</i> tono, en el sentido de que el valor de entrada multiplica el tono actual por esa cantidad, por lo que el valor por defecto de 1 es ningún cambio de tono,
+    mientras que un valor menor que 1 bajará el tono y mayor que 1 lo subirá. Es mejor utilizar incrementos pequeños para esta función, ya que cualquier valor inferior a 0 o superior a 5 puede no ser audible de todos modos.</p>
+  <p class="note"><b>NOTA: </b>Si un sonido se está reproduciendo en bucle a través del emisor, el cambio de tono no se detectará a menos que el sonido se detenga y se vuelva a reproducir en bucle.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_emitter_pitch(emisor, tono);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>emisor</td>
+        <td>El índice del emisor a cambiar.</td>
+      </tr>
+      <tr>
+        <td>paso</td>
+        <td>El multiplicador de paso (por defecto 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">switch (marcha)<br> {
+    <br> caso 1: audio_emitter_pitch(s_emit, 0.8); break;<br> caso 2: audio_emitter_pitch(s_emit, 0.9); break;<br> caso 3: audio_emitter_pitch(s_emit, 0.95); break;<br> caso 4: audio_emitter_pitch(s_emit, 1); break;<br> caso 5: audio_emitter_pitch(s_emit,
+    1.2); break;<br> }
+  </p>
+  <p>El código anterior cambiará el tono del audio reproducido desde el emisor indexado en la variable &quot;s_emit&quot; en función del valor de la variable &quot;gear&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Emitters.htm">Emisores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_emitter_set_listener_mask.htm">audio_emitter_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_pitch
+-->
+  <!-- TAGS
+audio_emitter_pitch
+-->
+</body>
+</html>

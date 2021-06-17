@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_axis_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_axis_value" />
+  <meta name="rh-index-keywords" content="gamepad_axis_value" />
+  <meta name="search-keywords" content="gamepad_axis_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_axis_value</h1>
+  <p>Puedes utilizar esta función para obtener el valor de los diferentes ejes de una ranura de gamepad dada. Debes suministrar el índice de la ranura del gamepad a comprobar, junto con una constante de índice de eje (como se indica <a href="Gamepad_Input.htm">aquí</a>), o un valor entero entre
+   <tt>0</tt> y <tt><a href="gamepad_axis_count.htm">gamepad_axis_count()</a></tt><tt>-1</tt>. El valor devuelto estará entre <tt>-1</tt> y <tt>1</tt> para cada uno de los ejes horizontal y vertical disponibles.</p>
+  <p>Tenga en cuenta que el valor devuelto se normaliza para tener en cuenta el valor establecido para la zona muerta del eje (utilizando la función <span class="inline"><a href="gamepad_set_axis_deadzone.htm">gamepad_set_axis_deadzone()</a></span>), por lo que siempre estará
+    entre -1 y 0, y 0 y 1. Por ejemplo, establecer la zona muerta en 0,2 significará que al empujar el stick hacia la derecha sólo comenzará a devolver un valor de 0 - 1 cuando el valor <em>bruto</em> del eje sea superior a 0,2 - así, por ejemplo, cuando el valor bruto sea 0,2, el valor de retorno será 0, cuando el valor bruto sea 0,5, el valor de retorno será 0.
+    valor de retorno será 0, cuando el valor bruto esté en 0,5, el valor de retorno será 0,375, o si el valor bruto es 0,9, entonces el valor de retorno sería 0,875.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_axis_value(dispositivo, axisIndex);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>axisIndex</td>
+        <td>El índice del eje a comprobar (ver la <a href="Gamepad_Input.htm">lista de constantes</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var haxis = gamepad_axis_value(0, gp_axislh);<br> var vaxis = gamepad_axis_value(0, gp_axislv);<br> direction = point_direction(0, 0, haxis, vaxis);<br> speed = point_distance(0 ,0, haxis, vaxis) * 5;</p>
+  <p>El código anterior establece la velocidad y la dirección de la instancia basándose en los valores devueltos del controlador analógico izquierdo del gamepad conectado a la &quot;ranura&quot; 0 del dispositivo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_button_check.htm"> gamepad_button_check </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_axis_value
+-->
+  <!-- TAGS
+gamepad_axis_value
+-->
+</body>
+</html>

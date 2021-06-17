@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>manija_de_ventana</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for window_handle" />
+  <meta name="rh-index-keywords" content="window_handle" />
+  <meta name="search-keywords" content="window_handle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>manija_de_ventana</h1>
+  <p>Con esta función se puede obtener el valor del id interno de <span class="notranslate">Windows</span> (el HWND, un <i>puntero</i>). Esta función sólo es útil para los escritores de extensiones que necesitan el <tt>manejador de la ventana</tt> para llamar a la API de <span class="notranslate">Windows</span> en el código DLL (el puntero devuelto debe
+    (el puntero devuelto debe ser convertido en una cadena y luego en C++ simplemente convertirlo en un HWND). La siguiente tabla muestra las plataformas soportadas junto con lo que devuelven:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Plataforma</th>
+        <th>Devuelve</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Windows</span></td>
+        <td>Ventana HWND</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">macOS</span></td>
+        <td>Clase NSWindow</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>)</td>
+        <td>Mango de XWindow</td>
+      </tr>
+      <tr>
+        <td>HTML5</td>
+        <td>Lienzo ID</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">window_handle();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">win_id = windows_handle();</p>
+  <p>El código anterior almacenará el id de la ventana del juego en una variable.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../The_Game_Window/The_Game_Window.htm">La ventana de juego</a></div>
+        <div style="float:right">Siguiente: <a href="../The_Game_Window/window_get_caption.htm">window_get_caption</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+window_handle
+-->
+  <!-- TAGS
+window_handle
+-->
+
+</body></html>

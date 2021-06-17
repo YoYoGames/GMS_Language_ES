@@ -90,7 +90,7 @@
   <ul class="colour">
     <li><span class="inline">(Rd, Gd, Bd, Ad)</span> = el RGB y el Alfa del color sobre el que se va a dibujar.</li>
   </ul>
-  <p>Así, cuando dibujamos algo en la pantalla, nuestro procesador gráfico está haciendo lo siguiente para cada uno de los píxeles:</p>
+  <p>Así que cuando dibujamos algo en la pantalla, nuestro procesador gráfico está haciendo lo siguiente para cada píxel:</p>
   <p class="code">color_pixel_final = (Rs,Gs,Bs,As) * factor_de_mezcla_fuente + (Rd,Gd,Bd,Ad) * factor_de_mezcla_destino</p>
   <p>Los <strong>factores de mezcla</strong> mencionados anteriormente se definen en <span class="notranslate">GameMaker Studio 2</span> mediante una serie de constantes <span class="notranslate">GML</span>, y cada una de ellas representa un factor por el que deben multiplicarse los valores R, G, B y A de origen o destino. Los factores disponibles
     son:</p>
@@ -166,8 +166,8 @@
   <p>Si se continuara dibujando un número de círculos de 0,5 alfa a una superficie con 0 alfa, y luego se dibujara esta superficie a la habitación, se podría ver claramente esto:</p>
   <p><img alt="Surface Alpha Illustration" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_Surface.png">Si todavía estás un poco confundido sobre el alfa, intenta imaginarlo como un color más. Se comporta como
     un color y todos los cálculos sobre él se hacen de manera similar. Sólo que no es realmente visible, aunque el efecto que tiene sobre otros colores sí lo es. Lo que nos lleva a la última cosa que hay que tener en cuenta cuando se utilizan superficies y modos de mezcla (incluso <span class="inline">bm_normal</span>)...</p>
-  <p>Incluso si el alfa de la superficie es 0, <em><strong>los componentes de color siguen estando ahí y existen e influirán en todas las operaciones de mezcla</strong></em>. Por lo tanto, al dibujar sobre una superficie con alfa cero que ha sido limpiada utilizando el color rojo (por
-    por ejemplo) mezclará los colores de origen con los colores de destino y dará efectos diferentes a los que usted pueda pensar. La imagen de arriba fue creada en una superficie limpiada en negro sobre un fondo negro, pero si limpiamos la superficie en rojo, obtenemos
+  <p>Incluso si el alfa de la superficie es 0, <em><strong>los componentes de color siguen estando ahí y existen e influirán en todas las operaciones de mezcla</strong></em>. Así que dibujar sobre una superficie con alfa cero que ha sido limpiada usando el color rojo (por
+    por ejemplo) mezclará los colores de origen con los colores de destino y dará efectos diferentes a los que pueda pensar. La imagen de arriba fue creada en una superficie limpiada en negro sobre un fondo negro, pero si limpiamos la superficie en rojo, obtenemos
     esto en su lugar:</p>
   <p><img class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BlendModes2_SurfaceRed.png">Esperemos que ahora puedas averiguar por ti mismo por qué ocurre esto utilizando las fórmulas que he descrito anteriormente y aplicando las cifras correspondientes
     para <span class="inline">bm_normal</span>.</p>

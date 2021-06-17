@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_obtener_objetivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_target" />
+  <meta name="rh-index-keywords" content="surface_get_target" />
+  <meta name="search-keywords" content="surface_get_target" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_obtener_objetivo</h1>
+  <p>Con esta función puedes obtener el ID de la superficie actual a la que se dirige el dibujo. Si has creado esa superficie con <a href="surface_create.htm"><tt>surface_create()</tt></a>entonces este será el número entero positivo que es el ID único para
+    esa superficie</p>
+  <p>Si no se establece ninguna superficie personalizada, pero la application_surface por defecto sigue activada, la función devolverá normalmente 0. Sin embargo, si ha estado manipulando la application_surface previamente podría querer comprobar que el ID que obtuvo no coincide con el valor actual de la variable application_surface, en caso de que éste ya no sea 0.
+    no coincida con el valor actual de la variable application_surface, en caso de que ésta ya no sea 0.</p>
+  <p>Si no se establece ninguna superficie personalizada y también se ha desactivado el application_surface por defecto, la función devolverá -1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_get_target();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (-1 si no existe ninguna superficie objetivo, en caso contrario, el ID de la superficie objetivo)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">surface_get_target() != -1<br> {
+    <br> surface_reset_target();
+    <br> }
+    <br> draw_surface(surf, 0, 0);</p>
+  <p>El código anterior comprobará si el objetivo de renderizado actual es una superficie o no, y si lo es, restablece el objetivo y luego dibuja una superficie.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_get_target_ext.htm">surface_get_target_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_target
+-->
+  <!-- TAGS
+surface_get_target
+-->
+</body>
+</html>

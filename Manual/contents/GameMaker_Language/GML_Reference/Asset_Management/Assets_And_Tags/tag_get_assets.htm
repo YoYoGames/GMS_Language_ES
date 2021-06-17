@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tag_get_assets</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function tag_get_assets" />
+  <meta name="rh-index-keywords" content="tag_get_assets" />
+  <meta name="search-keywords" content="tag_get_assets" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tag_get_assets</h1>
+  <p>Con esta función puede recuperar los nombres de todos los activos a los que se ha asignado la etiqueta o etiquetas dadas. Puede suministrar una sola cadena de etiquetas o una <a href="../../../GML_Overview/Arrays.htm">matriz</a>, donde cada elemento de la matriz es una cadena de etiquetas.
+    La función devolverá una matriz en la que cada entrada es el nombre (como cadena) del activo con la etiqueta dada. Si necesita el índice único del activo, puede utilizar la función <a href="asset_get_index.htm"><tt>asset_get_index()</tt></a> junto con
+    con el nombre devuelto. Si no hay activos con la(s) etiqueta(s) dada(s), o si hay un error (por ejemplo: las etiquetas dadas no existen), entonces se devolverá un array vacío.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tag_get_assets(tags);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>Una sola cadena de etiquetas de activos o una matriz con varias etiquetas de activos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">backgrounds = ds_list_create();<br> var _assets = tag_get_assets(&quot;background&quot;);<br> for (var i = 0; i&lt; array_length(_assets); ++i;) <br> {
+    <br> if asset_get_type(_assets[i]) == asset_sprite<br> {
+    <br> ds_list_add(backgrounds, asset_get_index(_assets[i]));<br> }
+    <br> }
+  </p>
+  <p>El código anterior crea una lista y luego recupera los nombres de todos los activos con la etiqueta &quot;background&quot;. Recorre la matriz de nombres devueltos, comprobando si alguno de ellos es un activo de sprite, y si lo es, el valor de índice único
+    del activo se añade a la lista para su uso futuro.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Assets_And_Tags.htm">Activos y etiquetas</a></div>
+        <div style="float:right">Siguiente: <a href="asset_get_tags.htm">asset_get_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tag_get_assets
+-->
+  <!-- TAGS
+tag_get_assets
+-->
+</body>
+</html>

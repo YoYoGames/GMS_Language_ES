@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>make_colour_hsv</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function make_colour_hsv" />
+  <meta name="rh-index-keywords" content="make_colour_hsv,make_color_hsv" />
+  <meta name="search-keywords" content="make_colour_hsv,make_color_hsv" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>make_colour_hsv</h1>
+  <p><span class="notranslate">GameMaker Studio 2</span> ofrece esta función (así como otras) para que el usuario pueda crear sus propios colores. Esta función en particular toma tres componentes, el <i>tono</i>, la <i>saturación</i> y el <i>valor</i> (también conocido como &quot;luminosidad&quot;)
+    para crear el color deseado. Estos valores se toman entre 0 y 255, por lo que se pueden crear 16.777.216 (256*256*256) colores con esto. Abajo puedes ver una imagen de cómo se ven estos componentes cuando se separan:</p>
+  <p><img alt="Make HSV colour example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/HSV.png">La imagen de la izquierda es un desglose de los componentes individuales de la función, y luego a la derecha es una ilustración
+    de cómo el cambio de estos componentes afecta al color final. Como puedes ver, incluso sin cambiar el tono (se mantiene en 0, rojo), podemos cambiar drásticamente el color con los otros dos ajustes, con la saturación haciendo que el tono del color pase de gris (0)
+    a un tono puro (255), y con el valor haciendo que pase de más oscuro (0) a más claro (255).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">make_colour_hsv(hue, sat, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>matiz</td>
+        <td>La tonalidad del color</td>
+      </tr>
+      <tr>
+        <td>sat</td>
+        <td>La saturación del color</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>Cómo de oscuro es el color</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">col = make_colour_hsv(100, 145, 255);</p>
+  <p>El código anterior utiliza la función para crear un color y almacenar su valor en la variable &quot;col&quot; para su uso posterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Colour_And_Alpha.htm">Color y Alfa</a></div>
+        <div style="float:right">Siguiente: <a href="make_colour_rgb.htm">make_colour_rgb</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+make_colour_hsv
+make_color_hsv
+-->
+  <!-- TAGS
+make_colour_hsv
+-->
+</body>
+</html>

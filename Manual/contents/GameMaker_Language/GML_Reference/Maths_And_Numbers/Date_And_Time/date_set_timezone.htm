@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>date_set_timezone</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_set_timezone" />
+  <meta name="rh-index-keywords" content="date_set_timezone,timezone_local,timezone_utc" />
+  <meta name="search-keywords" content="date_set_timezone,timezone_local,timezone_utc" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>date_set_timezone</h1>
+  <p>Establece la zona horaria base a utilizar para el resto de las funciones de fecha y hora. Esta zona horaria puede ser <i>local</i> (tal y como la establece el sistema) o <i>UTC</i>, y se utilizaría una de las siguientes constantes para definir cuál se utiliza (por defecto
+    es la hora local):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>timezone_local</td>
+        <td>utilizar la zona horaria local establecida por el sistema</td>
+      </tr>
+      <tr>
+        <td>timezone_utc</td>
+        <td>utilizar el Tiempo Universal Coordinado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">date_set_timezone(timezone);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>zona horaria</td>
+        <td>La zona horaria a utilizar para la hora base.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (date_get_timezone() != timezone_utc)<br> {
+    <br> date_set_timezone(timezone_utc);
+    <br> }
+  </p>
+  <p>Este código comprueba la configuración de la zona horaria base del juego y, si no es UTC, la cambia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Date_And_Time.htm">Fecha y hora</a></div>
+        <div style="float:right">Siguiente: <a href="date_get_timezone.htm">date_get_timezone</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+date_set_timezone
+timezone_local
+timezone_utc
+-->
+  <!-- TAGS
+date_set_timezone
+-->
+
+</body></html>

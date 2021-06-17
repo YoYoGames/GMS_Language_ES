@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_save_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_save_async" />
+  <meta name="rh-index-keywords" content="buffer_save_async" />
+  <meta name="search-keywords" content="buffer_save_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_save_async</h1>
+  <p>Con esta función puede guardar parte del contenido de un búfer en un archivo, listo para ser leído de nuevo en la memoria utilizando la función <a href="buffer_load.htm"><tt>buffer_load()</tt></a> (o cualquiera de las otras funciones para cargar buffers). El &quot;offset&quot;
+    define la posición inicial dentro del búfer para guardar (en bytes), y el &quot;tamaño&quot; es el tamaño del área del búfer que se guardará a partir de ese desplazamiento (también en bytes). Esta función funciona de forma asíncrona, por lo que el juego seguirá funcionando
+    mientras se guarda, y todos los archivos guardados usando esta función se colocarán en una carpeta &quot;por defecto&quot;. Esta carpeta <i>no</i> necesita ser incluida en el nombre del archivo ya que es añadida automáticamente por <span class="notranslate">GameMaker</span>. Por ejemplo, la ruta del nombre del archivo &quot; Data\Player_Save<tt>.sav&quot;</tt>
+    se guardaría en realidad en &quot;<tt>default\Data\Player_Save.sav&quot;.</tt> Sin embargo, si luego carga el archivo utilizando la función <a href="buffer_load_async.htm"><tt>buffer_load_async()</tt></a>no es necesario proporcionar la parte &quot;por defecto&quot; de la ruta
+    de la ruta (pero cualquier otra función de archivo lo <i>requerirá</i>, excepto en las consolas Xbox One, PS4 y <span class="notranslate">Nintendo</span> <span class="notranslate">Switch</span>).</p>
+  <p class="note"><b>NOTA</b>: En HTML5 &quot;default/&quot; no se añade automáticamente y es posible que tengas que tenerlo en cuenta en tu código.</p>
+  <p>La función devolverá un valor de ID único y desencadenará un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Save_Load.htm">Evento Asíncrono de Guardado/Carga</a> en el que podrá utilizar el ID devuelto para comprobar el valor de ID de <tt>async_load</tt>,
+    como se muestra en el ejemplo extendido de abajo. El mapa <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> map en el evento tendrá los siguientes dos pares clave/valor:</p>
+  <ul>
+    <li><b>&quot;id&quot;: el ID de </b>la función asíncrona devuelto por la función de guardar.</li>
+    <li><b>&quot;status&quot;: </b>devolverá true si <tt>los</tt> datos se han guardado/cargado correctamente, y false <tt>en caso contrario</tt>.</li>
+  </ul>
+  <p>Tenga en cuenta que puede guardar varios buffers en uno llamando a esta función varias veces entre las llamadas a <a href="buffer_async_group_begin.htm"><tt>buffer_async_group_begin()</tt></a> y <a href="buffer_async_group_end.htm"><tt>buffer_async_group_end()</tt></a>    (vea esas funciones para más información sobre esto).</p>
+  <p class="note"><b>NOTA</b>: En HTML5 los resultados devueltos se guardan como cadenas codificadas en base64 cuando se guardan en un archivo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_save_async(buffer, filename, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a guardar.</td>
+      </tr>
+      <tr>
+        <td>nombre de archivo</td>
+        <td>El nombre del archivo a guardar como.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El desplazamiento dentro del búfer desde el que se va a guardar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño del área del buffer a guardar (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>La función <tt>buffer_save_async(</tt> ) puede ser llamada desde cualquier evento, y como es asíncrona la llamada de retorno puede ser casi instantánea o puede tardar varios segundos. Llamar a la función es sencillo y sería algo así:</p>
+  <p class="code">saveid = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);</p>
+  <p>El código anterior guarda el contenido del buffer &quot; buff&quot;<i>en</i> el archivo de guardado dado, almacenando el ID de la llamada a la función en la variable &quot; saveid&quot;. Cuando se complete el guardado, se activará el evento asíncrono Save/Load
+    y se puede analizar el mapa <tt>async_load</tt> para encontrar el ID correcto de la función, así:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) == false<br> {
+    <br> show_debug_message(&quot;¡Guardar falló!&quot;);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará primero el id del mapa DS que se ha creado, y luego comprobará el estado de la llamada de retorno, publicando un mensaje de depuración si ha habido algún problema.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_load.htm">buffer_load</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_save_async
+-->
+  <!-- TAGS
+buffer_save_async
+-->
+</body>
+</html>

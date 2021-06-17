@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_xoffset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_xoffset" />
+  <meta name="rh-index-keywords" content="sprite_get_xoffset" />
+  <meta name="search-keywords" content="sprite_get_xoffset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_xoffset</h1>
+  <p>Cuando defines un sprite en el editor de sprites, necesitas establecer el <i>origen</i> para ese sprite. Este es el punto en el que el sprite será &quot;fijado&quot; o &quot;dibujado&quot; cuando se utilice con una instancia. Esta función devuelve el desplazamiento relativo
+    para el eje x del origen basado en la esquina superior izquierda que es la posición 0,0, con un +x siendo la derecha y un -x siendo la izquierda de esto. La siguiente imagen lo ilustra:</p>
+  <p><img alt="Sprite Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_get_xoffset(índice);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sprite para encontrar el desplazamiento x de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si x - sprite_get_xoffset(sprite_index) &lt; 0<br> {
+    <br> x = sprite_get_xoffset(sprite_index);<br> }
+  </p>
+  <p>El código anterior asegurará que se mantenga una instancia dentro de la habitación basada en el sprite (para que el sprite sea siempre visible).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Information.htm">Información sobre el Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_get_yoffset.htm">sprite_get_yoffset</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_xoffset
+-->
+  <!-- TAGS
+sprite_get_xoffset
+-->
+</body>
+</html>

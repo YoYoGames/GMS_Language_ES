@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Máscaras de recorte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to use clipping masks in the track editor" />
+  <meta name="rh-index-keywords" content="Sequences - Clipping Masks" />
+  <meta name="search-keywords" content="masks,clip masks,clipping,clipping masks" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Máscaras de recorte</h1>
+  <p>Como se menciona en la página <a href="The_Track_Panel.htm">del</a> Panel de Pistas, hay una acción para crear lo que se llama un <strong>grupo de máscara de recorte </strong>en el editor de pistas. Se accede a ella haciendo clic en el botón <img alt="Clip Mask Icon" src="../../assets/Images/Icons/Icon_AddClipMask.png"> en la parte inferior del Panel de Pistas:</p>
+  <p><img alt="Clip Mask Button in the Track Panel" class="center" src="../../assets/Images/Asset_Editors/Track_Panel_ClipMask_Button.png">Al hacer clic en esta opción se creará un grupo de máscaras de recorte compuesto por dos subconjuntos de activos que pueden utilizarse como
+    el <strong>sujeto </strong>o la <strong>máscara </strong>del grupo. Básicamente, el sujeto es el activo que va a ser enmascarado, y la máscara es el activo que va a hacer el enmascaramiento:</p>
+  <p><img alt="Basic Clipping Mask" class="center" src="../../assets/Images/Asset_Editors/Track_Clipping_Mask.png">La idea detrás de usar una máscara de recorte es que usted agrega un sprite de sujeto, y luego un sprite de máscara, y el sprite de máscara &quot;ocultará&quot;
+    (máscara) al sujeto. Luego puedes usar la animación del sprite de la máscara, o mover o escalar el sprite de la máscara para cambiar la visibilidad del sujeto (o partes del sujeto). Cada grupo (máscara y sujeto) puede contener múltiples activos, y cada uno de los activos puede
+    tener múltiples pistas de parámetros.</p>
+  <p>Para añadir un tema y una máscara, basta con arrastrar el sprite, el objeto o la secuencia desde el Navegador de Activos sobre la carpeta a la que quieras añadirlo:</p>
+  <p><img alt="Add A Clipping Mask" src="../../assets/Images/Asset_Editors/Track_Add_Clipping_Mask.gif" /></p>
+  <p>El sprite de máscara <em>alfa </em>se utilizará para &quot;ocultar&quot; cualquier tema que esté debajo, donde un valor de 100% alfa (opaco) enmascarará completamente y un valor de 0% alfa (transparente) lo mostrará. Por ejemplo, tenemos este sprite para enmascarar:</p>
+  <p><img alt="Clipping Mask Example Sprite" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Sprite.png">Luego podemos aplicar esto como una máscara de recorte a los iconos para crear un efecto de &quot;enfriamiento&quot;, así:</p>
+  <p><img alt="Animated Clipping Mask Example" class="center" src="../../assets/Images/Asset_Editors/Clipping_Mask_Example.gif">En el ejemplo anterior &quot;<span class="inline">Sprite_2</span>&quot; es simplemente un activo sprite estático que es el icono base,
+    y encima hemos creado un grupo de máscaras de recorte con una versión en escala de grises del sprite, así como una máscara (usando el sprite de ejemplo mostrado arriba). Cuando se combina y se reproduce la secuencia, el grupo de máscaras de recorte revela el sprite base
+    debajo, creando nuestro efecto de enfriamiento.</p>
+  <p>Tenga en cuenta que los grupos de máscaras de recorte pueden tratarse como un único elemento en la lista de pistas y en la <span class="notranslate">hoja de datos</span>, y puede añadir pistas de parámetros de rotación y posición al grupo en su <em>conjunto</em>. También puede aplicar grupos de máscaras de recorte a carpetas de grupo de activos
+    o incluso a <em>otros</em> grupos de máscaras de recorte, lo que los convierte en una herramienta muy potente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="Using_The_Dope_Sheet.htm">Utilización de la <span class="notranslate">hoja informa</span></a>tiva</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Clipping Masks
+Clipping
+Masks
+Clip Masks
+-->
+  <!-- TAGS
+track_panel_clip_mask
+-->
+</body>
+</html>

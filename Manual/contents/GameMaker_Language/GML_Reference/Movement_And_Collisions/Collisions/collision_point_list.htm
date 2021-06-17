@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lista_de_puntos_de_colisión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_point_list" />
+  <meta name="rh-index-keywords" content="collision_point_list" />
+  <meta name="search-keywords" content="collision_point_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lista_de_puntos_de_colisión</h1>
+  <p>Esta función es la misma que la función <a href="collision_point.htm"><tt>punto_colisión()</tt></a> sólo que en lugar de detectar una instancia en colisión a la vez, detectará múltiples instancias. Se suministra la posición x/y del punto a
+    comprobar y puede establecer que la comprobación sea precisa (en cuyo caso todas las instancias que se comprueben tendrán que tener máscaras de colisión <i>precisas</i> ) y si la comprobación debe incluir la instancia que llama o no.</p>
+  <p>También se suministra una <a href="../../Data_Structures/DS_Lists/DS_Lists.htm">lista de DS</a>, por lo que los valores de <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> valores de cualquier instancia que colisione con la instancia que llama se
+    se añadirán al final de la lista dada. Puede <a href="../../Data_Structures/DS_Lists/ds_list_clear.htm">borrar</a> la lista antes de llamar a esta función para que sólo contenga los resultados de esta llamada a la función. También tiene la opción de ordenar las
+    instancias en base a sus distancias desde el punto dado a sus orígenes. La función devuelve el número de instancias encontradas, o 0 si no se encuentra ninguna.</p>
+  <p>Tenga en cuenta que en lugar de un índice de objeto puede suministrar la <a href="../../../GML_Overview/Instance_Keywords.htm">palabra clave de instancia</a> <span class="inline">all</span>, para buscar todas las instancias en la sala actual, que puede incluir la instancia que ejecuta
+    el código (dependiendo del argumento <span class="inline">notme</span> ).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">lista_de_puntos_de_colisión(x, y, obj, prec, notme, list, ordered);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto para comprobar las colisiones de instancia.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Si la comprobación se basa en colisiones precisas<tt>(verdadero</tt>, que es más lento) o en su caja delimitadora en general<tt>(falso</tt>, más rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Si la instancia que llama, si es relevante, debe ser excluida<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>La lista DS que se utilizará para almacenar los ID de las instancias que colisionan.</td>
+      </tr>
+      <tr>
+        <td>ordenado</td>
+        <td>Si la lista debe ser ordenada por distancia<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (El número de instancias que se encuentran en colisión)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _list = ds_list_create();<br> var _num = collision_point_list(x, y, obj_Enemy, false, true, _list, false);<br> if _num &gt; 0<br> {
+    <br> for (var i = 0; i &lt; _num; ++i;)<br> {
+    <br> instance_destroy(_list[| i]);<br> }
+    <br> }
+    <br> ds_list_destroy(_list);
+  </p>
+  <p>El código anterior comprobará la posición de la instancia que llama en busca de colisiones con instancias de &quot;obj_Enemigo&quot;. Si hay alguna colisión, se recorre la lista precreada y se destruye cada instancia que estuvo en la colisión.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="collision_rectangle.htm">colisión_rectángulo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_point_list
+-->
+  <!-- TAGS
+collision_point_list
+-->
+</body>
+</html>

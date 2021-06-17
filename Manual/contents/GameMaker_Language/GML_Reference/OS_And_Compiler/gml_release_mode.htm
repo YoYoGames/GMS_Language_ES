@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_release_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gml_release_mode" />
+  <meta name="rh-index-keywords" content="gml_release_mode" />
+  <meta name="search-keywords" content="gml_release_mode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_release_mode</h1>
+  <p>Cuando tu juego se compila, también incluye ciertas funciones internas para comprobar los errores mientras se ejecuta. Estas comprobaciones internas cubren muchos aspectos del código de un juego, incluyendo rangos, parámetros y algunos aspectos generales del compilador <span class="notranslate">GML</span> interno y son
+    lo que genera los mensajes de error finales en muchos casos. Sin embargo, esta función se puede utilizar para desactivar estas comprobaciones internas (es decir, eliminarlas completamente del juego compilado), dando un impulso de velocidad a su proyecto final.</p>
+  <p>Por favor, ten en cuenta que esto significa que si haces algo en tu código de juego que sea incorrecto, el juego compilado <i>puede simplemente bloquearse</i>, o puede experimentar un <i>comportamiento muy inesperado</i>. Por ejemplo, si se accede a un <tt>DS Grid</tt> en una coordenada
+    fuera del tamaño definido, en el modo de desarrollador recibirás un mensaje de error en la ventana del compilador, pero las comprobaciones realizadas permitirán que el juego siga funcionando. Sin embargo, en el modo de lanzamiento, estas comprobaciones no existirán, por lo que el código podría
+    devolver un puntero NULL, o un puntero malo que a su vez apuntará a alguna memoria aleatoria. Así que, en el mejor de los casos, podrías obtener los datos erróneos devueltos, o en el peor, podrías sobrescribir algo en la memoria - datos, gráficos, o incluso el propio código. Otro ejemplo
+    sería cuando se construyen primitivas - si se suministran los datos de color, posición, textura, etc... en un orden diferente al que se definió cuando se creó el formato de vértices, entonces el juego puede fallar o producir resultados inesperados cuando el modo de liberación
+    esté activado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gml_release_mode(flag);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>bandera</td>
+        <td>O bien <tt>true</tt> para establecer el modo de liberación o false para el desarrollo general.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gml_release_mode(true);</p>
+  <p>El código de ejemplo anterior hará que el juego utilice el modo de liberación cuando se compile.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="gml_pragma.htm">gml_pragma</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_release_mode
+-->
+  <!-- TAGS
+gml_release_mode
+-->
+</body>
+</html>

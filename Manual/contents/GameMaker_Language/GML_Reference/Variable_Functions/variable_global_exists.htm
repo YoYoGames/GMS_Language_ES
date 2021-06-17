@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_global_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_global_exists" />
+  <meta name="rh-index-keywords" content="variable_global_exists" />
+  <meta name="search-keywords" content="variable_global_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_global_exists</h1>
+  <p>Con esta función puedes comprobar si una variable de ámbito global existe o no. Se suministra el nombre de la variable global a comprobar <i>como una cadena</i> (véase el código de ejemplo más abajo) y la función devolverá <tt>true</tt> si
+    una variable global con el nombre dado existe o <tt>falso</tt> en caso contrario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">variable_global_exists(nombre);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre de la variable global a comprobar (como cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !variable_global_exists(&quot;enemy_num&quot;))<br> {
+    <br> global.enemy_num = instance_number(obj_Enemey_Parent);<br> }
+  </p>
+  <p>El código anterior comprobará si la variable global llamada &quot;enemy_num&quot; existe y si no existe se crea y se le asigna un valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="variable_global_get.htm">variable_global_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_global_exists
+-->
+  <!-- TAGS
+variable_global_exists
+-->
+</body>
+</html>

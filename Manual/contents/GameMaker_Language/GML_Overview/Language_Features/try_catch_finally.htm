@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>try / catch / finally</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the try / catch / finally functions" />
+  <meta name="rh-index-keywords" content="try,catch,finally" />
+  <meta name="search-keywords" content="try,catch,finally" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>try / catch / finally</h1>
+  <p>Las sentencias <tt>try</tt>, <tt>catch</tt> y <tt>finally</tt> pueden ser utilizadas en tu juego para la comprobación de errores y te permiten probar bloques de código y controlar lo que ocurre si se produce alguna <a href="../../../Additional_Information/Errors/Runner_Errors.htm">excepción</a> en <a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">tiempo de ejecución</span></a>. El uso de estas sentencias evitará que la excepción termine el juego y muestre el mensaje de error estándar al usuario, pero esto significa que tendrás que manejar lo que sucede después en ese caso, como guardar los archivos de registro - por ejemplo - y terminar el
+    (tenga en cuenta que si decide no hacer nada, su juego puede volverse inestable y no funcionar correctamente).</p>
+  <p>En su forma más básica, la <tt>sintaxis de</tt> try es la siguiente:</p>
+  <p class="code">try<br> {
+    <br> &lt;declaración1&gt;;
+    <br> &lt;declaración2&gt;;
+    <br> ...<br> }
+  </p>
+  <p>Sin embargo, tener un <tt>try</tt> sin nada que maneje realmente cualquier excepción que el código pueda producir no será muy útil, por lo que normalmente lo emparejamos con un <tt>catch</tt>, con la siguiente sintaxis:</p>
+  <p class="code">try<br> {
+    <br> &lt;declaración1&gt;;
+    <br> &lt;declaración2&gt;;
+    <br> ...
+    <br> }
+    <br> catch(&lt;variable&gt;)
+    <br> {
+    <br> &lt;declaración1&gt;;
+    <br> &lt;declaración2&gt;;
+    <br> ...
+    <br> }
+  </p>
+  <p>Lo que hace <tt>catch</tt> es permitir que se ejecute el código extra suministrado en el siguiente bloque cuando se ha capturado una excepción del <tt>try</tt> anterior. Si se trata de una excepción en <span class="notranslate">tiempo de ejecución</span>, entonces la variable suministrada puede ser utilizada para acceder a una <a href="../Structs.htm">estructura</a> que contendrá la siguiente información:</p>
+  <p class="code">{<br> message : &quot;&quot;, // una cadena que es un mensaje corto para esta excepción<br> longMessage : &quot;&quot;, // una cadena que es un mensaje más largo para esta excepción<br> script : &quot;&quot;, // una cadena
+    que describe el origen de la excepción<br> stacktrace : [ &quot;&quot;, &quot;&quot; ], // una matriz de cadenas que es el marco de pila en el que se generó la excepción<br> }
+  </p>
+  <p>A continuación se muestra un sencillo ejemplo de uso:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> catch( _exception)<br> {
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+  </p>
+  <p>Puede ser que quieras ejecutar algún código independientemente de si se ha lanzado una excepción o no, y para ello puedes añadir un bloque <tt>finally</tt>. La sintaxis de <span class="inline">finally</span> es:</p>
+  <p class="code">finalmente<br> {
+    <br> &lt;declaración1&gt;;
+    <br> &lt;declaración2&gt;;
+    <br> etc...
+    <br> }
+  </p>
+  <p>Cabe destacar que se puede tener cualquier combinación de estos juntos, es decir:</p>
+  <ul class="colour">
+    <li><tt>intentar</tt> / <tt>finalmente</tt></li>
+    <li><tt>try</tt> / <tt>catch</tt></li>
+    <li><tt>try</tt> / <tt>catch</tt> / <tt>finally</tt></li>
+  </ul>
+  <p>Tenga en cuenta que dentro del bloque <tt>finally</tt> <em>no puede </em>utilizar <a href="break.htm"><tt>romper</tt></a>, <a href="continue.htm"><tt>continuar</tt></a>, <a href="exit.htm"><tt>salir de</tt></a> o <a href="return.htm"><tt>devolver</tt></a> ya que
+    no tienen ningún significado en este contexto y el compilador generará un error si se utilizan.</p>
+  <p>Por último, también se pueden anidar varios <tt>try</tt> / <tt>catch</tt> / <tt>finally</tt> entre sí, por ejemplo:</p>
+  <p class="code">var a = 0, b = 0, c = 0;<br> try
+    <br> {
+    <br> try
+    <br> {
+    <br> c = a div b;<br> }
+    <br> finally
+    <br> {
+    <br> ++a;
+    <br> }
+    <br> }
+    <br> catch(_exception)
+    <br> {
+    <br> ++a;
+    <br> show_debug_message(_exception.message);
+    <br> show_debug_message(_exception.longMessage);
+    <br> show_debug_message(_exception.script);
+    <br> show_debug_message(_exception.stacktrace);
+    <br> }
+    <br> finally
+    <br> {
+    <br> show_debug_message(&quot;a = &quot; + string(a));<br> }
+  </p>
+  <p>Vale la pena señalar que se puede tomar el mensaje de error <span class="notranslate">GML</span> por defecto y utilizar su propio código manejador llamando a la función <a href="../../GML_Reference/Debugging/exception_unhandled_handler.htm"><tt>exception_unhandled_handler()</tt></a>. Esta función de tiempo de ejecución
+    le permite suministrar un <a href="../Method_Variables.htm">método</a> personalizado que será llamado cada vez que se <a href="../<span class=" notranslate"="">Runtime_Functions.htm"><span class="notranslate">produzcan</span></a> excepciones no manejadas en su juego.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="throw.htm">lanzamiento</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+try
+catch
+finally
+-->
+  <!-- TAGS
+try
+catch
+finally
+-->
+</body>
+</html>

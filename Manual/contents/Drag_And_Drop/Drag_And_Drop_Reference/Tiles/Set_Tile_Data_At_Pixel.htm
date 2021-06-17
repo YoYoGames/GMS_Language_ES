@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer los datos del azulejo en el píxel</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data At Pixel action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data At Pixel" />
+  <meta name="search-keywords" content="Set Tile Data At Pixel" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data At Pixel Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_At_Pixel.png"> Establecer los datos del azulejo en el píxel</h1>
+  <p>Con esta acción puede establecer los datos de baldosa para una celda de baldosa que se encuentra en una posición específica en una capa de <a class="glossterm" data-glossterm="mapa de azulejos" href="#">mapa de baldosas</a>. Los datos del mosaico son simplemente un valor que refleja el índice del mosaico junto con los valores de
+    valores de volteo, reflejo y rotación, así como cualquier máscara de mosaico personalizada que haya utilizado. Con esta acción, primero se suministra la capa a la que se apunta utilizando el nombre de la capa (una cadena) tal y como se define en el editor de la sala, y luego los ejes x e y en la sala
+    para establecer los datos del mosaico. Tenga en cuenta que los datos de la baldosa se establecerán para la &quot;celda&quot; del mapa de baldosas en la que se encuentra la posición dada. Por ejemplo, si su conjunto de azulejos es de 16x16, entonces la capa del mapa de azulejos tendrá azulejos en celdas de 16x16 píxeles, así que
+    si usas esta acción para apuntar a la posición de la habitación (8, 8), estarás cambiando la baldosa en la celda (0, 0) del mapa de baldosas.<b></b></p>
+  <p class="note"><b>NOTA</b>: La capa seleccionada <i>debe</i> haber sido definida como una capa de mapa de baldosas en el editor de habitaciones, de lo contrario puede obtener errores.</p>
+  <p>El argumento final de la acción son los datos del mosaico en sí. Normalmente se recuperan los datos del mosaico para la celda del mapa del mosaico utilizando la acción <a href="Set_Tile_Data_At_Pixel.htm">Obtener datos del mosaico en el píxel</a> y luego se manipulan utilizando la acción <a href="Set_Tile_Data_Transform.htm">Establecer transformación de datos del m</a> osaico antes de establecerlos de nuevo con esta acción. Para obtener más información sobre los datos de mosaico, consulte la sección <span class="notranslate">GML</span> sobre <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">las funciones</a> del mapa de mosaico.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Tile Data At Pixel Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_At_Pixel.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Capa</td>
+        <td>La capa con el mapa de azulejos a la que apuntar</td>
+      </tr>
+      <tr>
+        <td>X</td>
+        <td>La posición a lo largo del eje horizontal (X) para establecer los datos del mosaico para</td>
+      </tr>
+      <tr>
+        <td>Y</td>
+        <td>La posición a lo largo del eje vertical (Y) para establecer los datos del mosaico</td>
+      </tr>
+      <tr>
+        <td>Datos</td>
+        <td>Los datos de la baldosa que se utilizarán para fijar la celda en la posición</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Tile Data At Pixel Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_At_Pixel.png">El código del bloque de acción anterior comprueba si hay un clic del ratón y cuando se recibe uno
+    recupera los datos de la celda que coincide con la posición del ratón. Estos datos se modifican y se devuelven a la capa del mapa de azulejos, girando el azulejo en esa celda.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Actions.htm">Acciones de la baldosa</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Tile_Data_At_Pixel.htm">Obtener los datos de los azulejos en el píxel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data At Pixel
+-->
+  <!-- TAGS
+action_tile_set_data_at_pixel
+-->
+
+</body></html>

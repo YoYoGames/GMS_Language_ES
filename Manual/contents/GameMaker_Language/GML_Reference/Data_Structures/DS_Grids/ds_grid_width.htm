@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_width</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_width" />
+  <meta name="rh-index-keywords" content="ds_grid_width" />
+  <meta name="search-keywords" content="ds_grid_width" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_width</h1>
+  <p>Esta función devolverá el ancho de la cuadrícula dada. Este valor es el número de celdas que tiene la cuadrícula a lo largo del eje x y siempre es un número entero, como se muestra en la imagen siguiente:</p>
+  <p><img alt="DS grid width" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_width.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_width(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>Este índice de la cuadrícula para encontrar el ancho de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = 0; i &lt; ds_grid_width(grid); ++i;) <br> {
+    <br> for (var j = 0; j &lt; ds_grid_height(grid); ++j;) <br> {
+    <br> if (ds_grid_get(grid, i, j) == 1)<br> {
+    <br> instance_create_layer(i * 32, j * 32, &quot;Walls&quot;, obj_Wall);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior hará un bucle a través de la cuadrícula DS indexada en la variable &quot;grid&quot; y si el valor encontrado en cualquier celda específica es igual a 1, entonces creará una instancia de &quot;obj_Wall&quot; en la posición apropiada dentro de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_height.htm">ds_grid_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_width
+-->
+  <!-- TAGS
+ds_grid_width
+-->
+
+</body></html>

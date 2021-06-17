@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sprites y baldosas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Sprites And Tiles functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sprites And Tiles" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sprites y baldosas</h1>
+  <p>Aunque puedes configurar fondos en el editor de salas y puedes asignar sprites a las instancias, a menudo esto no es lo suficientemente flexible para el juego que estás haciendo. Por ejemplo, si tienes una instancia que tiene que dibujar un menú, puede que quieras mostrar varios
+    botones a la vez, o si tienes un juego con fondos parallax que se desplazan necesitarás ser capaz de establecerlos a través de código en una instancia de controlador de algún tipo. En estas situaciones deberías usar las siguientes funciones que pueden
+    dibujar sprites y fondos en cualquier lugar de la habitación con algunas de las funciones que también le permiten manipular la forma, el tamaño, el color y el alfa del sprite para lograr efectos especiales.</p>
+  <p>Usted puede asignar un sprite a una instancia y por defecto <span class="notranslate">GameMaker</span> Studio 2 lo dibujará con las propiedades dadas por las diversas <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">variables del sprite</a>,
+    sin embargo, si usted agrega cualquier cosa en el evento de dibujo, usted está &quot;tomando el control&quot; y debe decirle a GameMaker Studio <span class="notranslate">2 exactamente</span> lo que debe dibujar. Esto significa que si usted debe utilizar las siguientes funciones para definir exactamente lo que es la instancia
+    para dibujar y en qué lugar de la habitación es para dibujar:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_self.htm">dibujar_autoridad</a></li>
+    <li><a href="draw_sprite.htm">draw_sprite</a></li>
+    <li><a href="draw_sprite_ext.htm">dibujar_espiga_ext</a></li>
+    <li><a href="draw_sprite_general.htm">draw_sprite_general</a></li>
+    <li><a href="draw_sprite_part.htm">dibujar_parte_de_espalda</a></li>
+    <li><a href="draw_sprite_part_ext.htm">draw_sprite_part_ext</a></li>
+    <li><a href="draw_sprite_stretched.htm">dibujar_espiga_estirada</a></li>
+    <li><a href="draw_sprite_stretched_ext.htm">dibujar_espiga_extendida</a></li>
+    <li><a href="draw_sprite_pos.htm">draw_sprite_pos</a></li>
+    <li><a href="draw_sprite_tiled.htm">dibujar_espiga_inclinada</a></li>
+    <li><a href="draw_sprite_tiled_ext.htm">dibujar_espiga_etiqueta_acodada_ext</a></li>
+  </ul>
+  <p> </p>
+  <p>Si está utilizando sprites en formato SWF, también hay opciones adicionales para controlar el antialiasing utilizado al dibujar (véase <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importar sprites sin mapa de bits</a> para
+    más información sobre este tipo de sprites). Tenga en cuenta que estas funciones funcionan a nivel <i>global</i> y establecerán el AA en todos los sprites SWF vectoriales dibujados después de haber sido llamadas.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_enable_swf_aa.htm">draw_enable_swf_aa</a></li>
+    <li><a href="draw_set_swf_aa_level.htm">draw_set_swf_aa_level</a></li>
+    <li><a href="draw_get_swf_aa_level.htm">draw_get_swf_aa_level</a></li>
+  </ul>
+  <p> </p>
+  <p>Además de las funciones mencionadas anteriormente, existen dos funciones especiales diseñadas para su uso con animaciones esqueléticas (véase la sección <a href="../../../../Settings/Texture_Information/Non-Bitmap_Sprites.htm">Importación de sprites que no son de mapa de</a> bits para
+    más información sobre estos tipos de sprites, y la sección <a href="../../Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Animaciones</a> esqueléticas para funciones específicas relacionadas con estos tipos de sprites):</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton.htm">dibujar_esqueleto</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm">dibujar_esqueleto_instancia</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm">dibujar_esqueleto_colisión</a></li>
+    <li><a href="../../Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm">draw_skeleton_time</a></li>
+  </ul>
+  <p> </p>
+  <p>Los mosaicos se dibujan automáticamente en función de los datos que contienen, el conjunto de mosaicos utilizado y las propiedades del mapa de mosaicos. Sin embargo, <i>puedes</i> dibujar mosaicos individuales o mapas de mosaicos utilizando las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_tile.htm">dibujar_elemento</a></li>
+    <li><a href="draw_tilemap.htm">dibujar_mapa_de_tilema</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Drawing.htm">Dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="../Text/Text.htm">Texto</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sprites And Tiles
+-->
+  <!-- TAGS
+sprite_tile_functions
+-->
+</body>
+</html>

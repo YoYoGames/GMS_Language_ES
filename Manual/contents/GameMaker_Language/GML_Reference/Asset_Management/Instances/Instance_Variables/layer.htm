@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable layer" />
+  <meta name="rh-index-keywords" content="layer" />
+  <meta name="search-keywords" content="layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa</h1>
+  <p>Esta <b>variable incorporada</b> se crea para cada instancia de una sala y contiene el valor del ID de la capa a la que está asignada la instancia. Este valor puede utilizarse en otras funciones como <a href="../../Rooms/General_Layer_Functions/layer_get_depth.htm"><tt>layer_get_depth()</tt></a> o
+    se puede cambiar para mover la instancia a otra capa, pero ten en cuenta que si la capa que se está asignando no existe en la sala actual, entonces obtendrás un error que obligará a cerrar tu juego. Cuando se asigna una capa, se debe proporcionar el único
+   <b>ID de la capa</b> devuelto por la función <a href="../../Rooms/General_Layer_Functions/layer_get_id.htm"><tt>layer_get_id()</tt></a> (cuando se utilizan capas con nombre en la sala), o como lo devuelve la función <a href="../../Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> (cuando
+    se crean capas propias en tiempo de ejecución).</p>
+  <p class="note"><b>IMPORTANTE:</b> si ha creado la instancia con la función <span style="font-size:1px;"><a href="../instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span> o ha cambiado manualmente la variable <span style="font-size:1px;"><a href="depth.htm"><tt style="font-size: 14px">profundidad</tt></a></span>    la capa asignada a la instancia se convierte en una capa &quot;gestionada&quot;, es decir, una capa que GameMaker <span class="notranslate">Studio 2 controla</span> y gestiona automáticamente. En estos casos la variable de <tt>capa</tt> devolverá -1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">capa;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (entero - valor del índice de recursos)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">capa = layer_create(-1000);</p>
+  <p>El código anterior creará una nueva capa con una profundidad de -1000 y luego establecerá la variable de <tt>capa</tt> de la instancia al ID de la capa devuelta, moviendo la instancia de la capa en la que se encuentra actualmente a la nueva capa que se está creando.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variables.htm">Instance Variables</a></div>
+        <div style="float:right">Siguiente: <a href="alarm.htm">alarma</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer
+-->
+  <!-- TAGS
+layer
+-->
+</body>
+</html>

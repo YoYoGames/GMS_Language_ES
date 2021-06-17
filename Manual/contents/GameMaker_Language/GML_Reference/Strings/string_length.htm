@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>longitud_de_cadena</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_length" />
+  <meta name="rh-index-keywords" content="string_length" />
+  <meta name="search-keywords" content="string_length" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>longitud_de_cadena</h1>
+  <p>Esta función devuelve el número de caracteres que componen una cadena dada. Puede ser útil para cosas como calcular cuándo limitar la longitud de los caracteres de una entrada de texto personalizada (por ejemplo, limitar el nombre de un jugador a 10 caracteres). Recuerde que esto es
+    diferente de <a href="string_width.htm"><tt>ancho_de_cadena()</tt></a> en que mide el número de <i>caracteres</i> de la cadena, no su anchura como se dibuja en la pantalla en píxeles.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string_length(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>La cadena para medir el número de caracteres de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (string_length(nombre) &gt; 10)<br> {
+    <br> nombre = string_copy(nombre, 1, 10);<br> }
+  </p>
+  <p>Esto comprobará si la cadena de nombre es mayor de diez caracteres y, si lo es, copiará y utilizará sólo los diez primeros caracteres.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_letters.htm">letras_de_cadena</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_length
+-->
+  <!-- TAGS
+string_length
+-->
+
+</body></html>

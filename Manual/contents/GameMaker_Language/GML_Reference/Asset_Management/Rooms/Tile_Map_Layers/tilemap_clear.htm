@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_clear" />
+  <meta name="rh-index-keywords" content="tilemap_clear" />
+  <meta name="search-keywords" content="tilemap_clear" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_clear</h1>
+  <p>Con esta función puedes borrar/configurar todos los azulejos de un mapa de azulejos determinado. Se le da el ID del elemento del mapa de azulejos (que se obtiene cuando se crea un elemento del mapa de azulejos usando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> o cuando se utiliza la función
+    la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), y luego suministrar los datos del mosaico que desea limpiar la capa. Un valor por defecto de 0 borrará todos los azulejos de la capa (esencialmente haciendo que todos los azulejos estén &quot;vacíos&quot;),
+    mientras que puede utilizar las funciones dedicadas de <span class="inline">tile_*</span> para crear sus propios datos de azulejos para limpiar el mapa de azulejos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_clear(tilemap_element_id, tiledata)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>Los datos del azulejo que se utilizarán para borrar la capa</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var layer_id = layer_get_id(&quot;Bosque&quot;);<br> var tile_id = layer_tilemap_get_id(layer_id);<br> tilemap_clear(tile_id, 0);</p>
+  <p>El código anterior obtiene el valor de la ID de un mapa de baldosas creado en el editor de salas, y luego lo borra usando baldosas &quot;vacías&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_x.htm">tilemap_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_clear
+-->
+  <!-- TAGS
+tilemap_clear
+-->
+</body>
+</html>

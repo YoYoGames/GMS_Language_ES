@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_impulse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_impulse" />
+  <meta name="rh-index-keywords" content="physics_apply_impulse" />
+  <meta name="search-keywords" content="physics_apply_impulse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_impulse</h1>
+  <p>No sólo puedes aplicar fuerza y gravedad a un objeto con la física en <span class="notranslate">GameMaker Studio 2</span>, sino que también puedes aplicar un impulso. Esto es ligeramente diferente a una fuerza en que cuando se aplica afectará <i>inmediatamente </i>a la velocidad, y,
+    potencialmente el par (o &quot;giro&quot;) del objeto, particularmente si el punto elegido para aplicar el impulso no está alineado con el centro de masa (nota: ¡el centro de masa no es <i>necesariamente el mismo</i> que el origen!). He aquí una ilustración:</p>
+  <p><img alt="Apply physics impulse illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_impulse_image.png">Como puedes ver, el jugador ha pulsado sobre la pelota y esto le ha dado un impulso
+    para que se mueva hacia la parte superior derecha, girando a su paso. El impulso exacto está definido por el vector que obtenemos de los componentes ximpulse/yimpulse en relación con las coordenadas xpos/ypos - lo que significa simplemente que el impulso se calcula como la distancia desde
+    xpos/ypos a ximpulso/yimpulso en Newtons, y la dirección es el ángulo que obtenemos de xpos/ypos a ximpulso/yimpulso.</p>
+  <p class="note"><b>NOTA</b>: El mundo de la física utiliza metros para todos sus cálculos, y la proporción de píxeles por metro se define en el editor de salas o utilizando <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_apply_impulse(xpos, ypos, ximpulse, yimpulse)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>La coordenada x <i>en la sala</i> donde se aplicará el impulso</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>La coordenada y <i>en la sala</i> donde se aplicará el impulso</td>
+      </tr>
+      <tr>
+        <td>ximpulse</td>
+        <td>la componente x del vector impulso</td>
+      </tr>
+      <tr>
+        <td>yimpulse</td>
+        <td>la componente y del vector impulso</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> con (place_meeting(mouse_x, mouse_y, all))<br> {
+    <br> physics_apply_impulse(mouse_x, mouse_y, -10 + irandom(20), -10 + irandom(20));<br> }
+    <br> }
+  </p>
+  <p>El código anterior aplicará un impulso con un vector aleatorio a una instancia que esté en la posición del ratón cuando se pulse el botón izquierdo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Forces.htm">Fuerzas</a></div>
+        <div style="float:right">Siguiente: <a href="physics_apply_local_force.htm">physics_apply_local_force</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_impulse
+-->
+  <!-- TAGS
+physics_apply_impulse
+-->
+</body>
+</html>

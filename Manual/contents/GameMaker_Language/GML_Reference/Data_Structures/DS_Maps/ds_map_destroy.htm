@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_destroy" />
+  <meta name="rh-index-keywords" content="ds_map_destroy" />
+  <meta name="search-keywords" content="ds_map_destroy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_destroy</h1>
+  <p>Los mapas DS ocupan espacio en la memoria, que se les asigna cuando se crean. Esto significa que también hay que liberar esta memoria cuando el mapa DS no se necesita para evitar errores, fugas de memoria y pérdida de rendimiento al ejecutar el juego. Esta función
+    hace precisamente eso. Ten en cuenta que destruir un mapa desreferenciará cualquier estructura de datos almacenada en el mapa dando lugar a una fuga de memoria, por lo que tendrías que revisar el mapa y destruir todos los elementos de la estructura de datos manualmente antes de destruirlo para evitar esto. El
+    único caso en el que esto no es necesario es cuando se ha marcado cualquier elemento del mapa como una <a href="../DS_Lists/DS_Lists.htm">lista DS</a> o como otro <a href="DS_Maps.htm">mapa DS</a>, en cuyo caso estos elementos se destruirán y su memoria se limpiará
+    automáticamente.</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se crea una estructura de datos, el valor del índice para identificarla es un valor entero que comienza en 0. Esto significa que las estructuras de datos de diferentes tipos pueden tener el <b>mismo</b> valor de índice, por lo que en caso de duda se debe utilizar el
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> antes de acceder a ellas. También hay que tener en cuenta que los índices se reutilizan, por lo que el valor del índice de una estructura de datos destruida puede ser utilizado por otra recién creada posteriormente, por lo que recomendamos
+      siempre establecer la variable que contenía el índice DS a -1 después de la destrucción.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_destroy(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id del mapa a destruir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_map_destroy(inventory);<br> inventory = -1;</p>
+  <p>El código anterior destruirá el mapa DS con el id indexado en la variable &quot;inventario&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_secure_save.htm">ds_map_secure_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_destroy
+-->
+  <!-- TAGS
+ds_map_destroy
+-->
+
+</body></html>

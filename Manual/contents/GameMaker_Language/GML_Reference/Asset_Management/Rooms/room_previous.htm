@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>habitación_anterior</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_previous" />
+  <meta name="rh-index-keywords" content="room_previous" />
+  <meta name="search-keywords" content="room_previous" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>habitación_anterior</h1>
+  <p>Con esta función puede recuperar el índice de la habitación <i>antes de</i> la entrada de la habitación en la función. Por ejemplo, puede utilizar la variable <a href="room.htm"><tt>sala</tt></a> para obtener el índice de la sala actual y luego utilizar esta función para encontrar
+    la sala que le precede, tal y como aparece en el <a href="../../../../Settings/The_Room_Manager.htm">Gestor de Salas</a>. Si no hay ninguna sala antes de la introducida, se devuelve -1. Tenga en cuenta que esta función no reconocerá ni tendrá en cuenta
+    las habitaciones que han sido añadidas dinámicamente usando <span class="inline"><a href="room_add.htm">room_add()</a></span> o <span class="inline"><a href="room_duplicate.htm">room_duplicate()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sala_previa(numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>numb</td>
+        <td>El índice de la sala de la que sacar el anterior.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Índice</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si room_previous(room) != -1<br> {
+    <br> room_goto_previous());
+    <br> }
+  </p>
+  <p>El código anterior comprobará si la sala anterior existe y, si es así, irá a ella.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room.htm">habitación</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_previous
+-->
+  <!-- TAGS
+room_previous
+-->
+</body>
+</html>

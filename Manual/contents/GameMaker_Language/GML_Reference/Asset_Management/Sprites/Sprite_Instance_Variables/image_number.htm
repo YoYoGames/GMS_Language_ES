@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>número_de_imagen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_number" />
+  <meta name="rh-index-keywords" content="image_number" />
+  <meta name="search-keywords" content="image_number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>número_de_imagen</h1>
+  <p>Esta variable de <b>sólo lectura</b> puede utilizarse para obtener el número de subimágenes de un sprite que ha sido asignado a una instancia (si necesita el número de subimágenes de un sprite distinto del asignado a la instancia debe utilizar
+    debe utilizar <a href="../Sprite_Information/sprite_get_number.htm"><tt>sprite_get_number()</tt></a>). Tenga en cuenta que cuando hay (por ejemplo) 1 sub-imagen esta variable devolverá &quot;1&quot; pero el image_index de esa sub-imagen
+    es 0.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">número_de_imagen;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si velocidad_de_imagen &gt; 0<br> {
+    <br> si image_index &gt; image_number - 1 instance_destroy();<br> }
+  </p>
+  <p>El código anterior comprueba si el sprite se está animando, y si lo está, comprueba si el image_index actual es mayor que el número de subimágenes y si lo es, destruye la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="image_speed.htm">image_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_number
+-->
+  <!-- TAGS
+image_number
+-->
+</body>
+</html>

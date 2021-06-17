@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_add_list</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_add_list" />
+  <meta name="rh-index-keywords" content="ds_map_add_list" />
+  <meta name="search-keywords" content="ds_map_add_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_add_list</h1>
+  <p>Con esta función puedes asignar una <a href="../DS_Lists/DS_Lists.htm">lista DS</a> (previamente creada) a una clave dentro del mapa DS dado. Esta función está diseñada para crear mapas compatibles con JSON que luego se codificarían utilizando <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>    y sólo debe usarse junto con esa funcionalidad. Si un mapa DS tiene una lista añadida de esta manera, al destruir el mapa padre también se destruirán las listas contenidas y se liberará su memoria, y al llamar a <a href="ds_map_clear.htm"><tt>ds_map_clear()</tt></a> en
+    el mapa padre también destruirá y limpiará cualquier lista marcada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_add_list(id, key, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id del mapa a utilizar.</td>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>La clave para la lista añadida.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El id de la lista a añadir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var j_list = ds_list_create();<br> ds_list_add(j_list, health);<br> ds_list_add(j_list, lives);<br> ds_list_add(j_list, score); <br> var j_map = ds_map_create();<br> ds_map_add_list(j_map, &quot;list&quot;, j_list);<br> var j = json_encode(j_map);<br> ds_map_destroy(j_map);
+  </p>
+  <p>El código anterior creará una lista y la rellenará con los distintos valores de las variables globales. Esta lista es entonces &quot;anidada&quot; dentro de un mapa DS, <span class="misspell-word">y</span> el mapa es entonces codificado en una cadena JSON, antes de que el mapa sea
+    antes de que el mapa sea destruido, eliminando de la memoria el mapa y cualquier lista que contenga.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_add_map.htm">ds_map_add_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_add_list
+-->
+  <!-- TAGS
+ds_map_add_list
+-->
+</body>
+</html>

@@ -183,7 +183,7 @@
       así que si te sientes un poco perdido o confundido, por favor vuelve a leer algunas de las secciones anteriores.
     Lo primero que queremos hacer es colorear los píxeles con cada tono, dependiendo de la posición horizontal del píxel. La forma de hacerlo es establecer que la posición x sea el tono y luego convertir del formato HSV (tono, saturación, brillo) a RGB (rojo, verde
       y azul). Para ello, tendremos que escribir una función de ayuda en nuestro fragment shader que tome los valores HSV y devuelva un vector RGB. Utilizaremos una única función que haga esto sin necesidad de ninguna sentencia if,
-      ya que el uso de condicionales en el código del shader hace que los shaders sean muy lentos, y debería evitarse.
+      ya que el uso de condicionales en el código del sh ader hace que los shaders sean muy lentos, y debería evitarse.
     Este es el aspecto del sombreador en esta fase:
     // Fragment Shader varying vec2 v_vTexcoord; varying vec4 v_vColour;
        vec3 hsv2rgb(vec3 c)  {
@@ -208,7 +208,7 @@
       es como nuestra textura realmente se ve:
     Como se ha explicado anteriormente, v_vTexcoord nos da las coordenadas absolutas del sprite dentro de toda esta página de textura,
       pero lo que queremos es un valor de 0.0 a 1.0 que sólo cubra nuestro sprite actual. Este proceso se llama normalizar (obtener un valor y traducirlo a un rango de 0 a 1). Para normalizar nuestros valores horizontales, necesitamos conocer los
-      valores de x0 y x1 en la imagen anterior. Por suerte, GameMaker tiene una función que nos da la ubicación de cada esquina de nuestro sprite dentro de la página de textura. En primer lugar, tenemos que ir al evento Create y crear un uniforme para pasar estos datos a
+      valores de x0 y x1 en la imagen anterior. Por suerte, GameMaker tiene una función que nos da la ubicación de cada esquina de nuestro sprite dentro de la página de texturas. En primer lugar, tenemos que ir al evento Create y crear un uniforme para pasar estos datos a
       el shader:
     // Crear evento _uniUV = shader_get_uniform(shdrRainbow, "u_uv");
     Y modificamos el evento draw para obtener los valores y luego pasarlos al shader:
@@ -282,7 +282,7 @@
   
    
   Este es el final de esta breve guía y ahora deberías entender mejor cómo funcionan los sombreadores y algunos de los usos que se les puede dar. Deberías tomarte tu tiempo para jugar con los shaders que has creado siguiendo esta guía, y tratar de
-    experimentar con ellos para hacer otras cosas - ¿qué tal si creas un sombreador de desenfoque, o un sombreador que haga una pantalla monocromática al estilo gameboy? - ya que los s ombreadores son una herramienta increíblemente poderosa para añadir complejidad visual y estilo a tus juegos.
+    experimentar con ellos para hacer otras cosas - ¿qué tal si creas un sombreador de desenfoque, o un sombreador que haga una pantalla monocromática al estilo gameboy? - ya que los sombreadores son una herramienta increíblemente poderosa para añadir complejidad visual y estilo a tus juegos.
    
   YoYo Games agradece a Alejandro Hitti y a Amazon por permitirnos reproducir esta guía. Puedes encontrar la versión original en el blog de desarrolladores de Amazon.
    

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Primitivas y formatos de vértices</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Primitive And Vertex Format functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Primitives And Vertex Formats,Primitives,Vertex Buffers,Vertex Formats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Primitivas y formatos de vértices</h1>
+  <p>Una primitiva es un tipo de dibujo realizado mediante puntos para definir lo que se muestra en la pantalla. Pueden estar formadas por puntos simples, líneas o triángulos y pueden ser coloreadas, tener mezcla alfa e incluso recibir una textura, lo que significa que pueden ser utilizadas
+    para crear algunos efectos muy emocionantes en un juego 2D. Por ejemplo, puedes crear un rectángulo usando múltiples primitivas de triángulo, luego texturizarlo con un sprite de bandera y en el evento de dibujo de una instancia hacer que esa bandera &quot;ondee&quot; en el viento y
+    distorsionar el sprite que has utilizado simplemente modificando los puntos que forman la primitiva.</p>
+  <p class="note"><b>ATENCIÓN! </b>Estas funciones no funcionan con el módulo HTML5 a menos que hayas habilitado OpenGL en las <a href="../../../../Settings/Game_Options/HTML5.htm">Opciones de Juego</a>.</p>
+  <p>En las siguientes páginas encontrará información sobre las primitivas de dibujo:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="draw_primitive_begin.htm">draw_primitive_begin</a></li>
+    <li><a href="draw_primitive_begin_texture.htm">dibujar_primitivo_empezar_textura</a></li>
+    <li><a href="draw_primitive_end.htm">draw_primitive_end</a></li>
+    <li><a href="draw_vertex.htm">dibujar_vértice</a></li>
+    <li><a href="draw_vertex_colour.htm">dibujar_vértice_color</a></li>
+    <li><a href="draw_vertex_texture.htm">dibujar_textura_de_vértice</a></li>
+    <li><a href="draw_vertex_texture_colour.htm">dibujar_textura_color</a></li>
+  </ul>
+  <p> </p>
+  <p><span class="notranslate">GameMaker Studio 2</span> te permite definir tus propios <strong>formatos de vértices</strong> a partir de los cuales puedes crear tus propias primitivas personalizadas. Esto puede acelerar enormemente las operaciones de <span class="notranslate">sombreado</span> o puede utilizarse para ampliar sus capacidades y crear efectos sorprendentes.
+    efectos sorprendentes. Puedes encontrar información al respecto en las siguientes secciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_format_begin.htm">vertex_format_begin</a></li>
+    <li><a href="vertex_format_add_colour.htm">vertex_format_add_colour</a></li>
+    <li><a href="vertex_format_add_position.htm">vertex_format_add_position</a></li>
+    <li><a href="vertex_format_add_position_3d.htm">vertex_format_add_position_3d</a></li>
+    <li><a href="vertex_format_add_texcoord.htm">vertex_format_add_texcoord</a></li>
+    <li><a href="vertex_format_add_normal.htm">vertex_format_add_normal</a></li>
+    <li><a href="vertex_format_add_custom.htm">vertex_format_add_custom</a></li>
+    <li><a href="vertex_format_end.htm">vertex_format_end</a></li>
+    <li><a href="vertex_format_delete.htm">vertex_format_delete</a></li>
+  </ul>
+  <p> </p>
+  <p>Una vez que hayas creado tu formato de vértices (ver la sección anterior) puedes usarlo para construir las primitivas que quieres dibujar usando las siguientes funciones de búfer veretx:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="vertex_create_buffer.htm">vertex_create_buffer</a></li>
+    <li><a href="vertex_create_buffer_ext.htm">vertex_create_buffer_ext</a></li>
+    <li><a href="vertex_create_buffer_from_buffer.htm">vertex_create_buffer_from_buffer</a></li>
+    <li><a href="vertex_create_buffer_from_buffer_ext.htm">vertex_create_buffer_from_buffer_ext</a></li>
+    <li><a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></li>
+    <li><a href="vertex_get_number.htm">vertex_get_number</a></li>
+    <li><a href="vertex_delete_buffer.htm">vertex_delete_buffer</a></li>
+    <li><a href="vertex_begin.htm">inicio_de_vértices</a></li>
+    <li><a href="vertex_colour.htm">color_vértice</a></li>
+    <li><a href="vertex_normal.htm">vértice_normal</a></li>
+    <li><a href="vertex_position.htm">posición_vértice</a></li>
+    <li><a href="vertex_position_3d.htm">posición_vértice_3d</a></li>
+    <li><a href="vertex_argb.htm">vertex_argb</a></li>
+    <li><a href="vertex_texcoord.htm">vertex_texcoord</a></li>
+    <li><a href="vertex_float1.htm">vertex_float1</a></li>
+    <li><a href="vertex_float2.htm">vértice_float2</a></li>
+    <li><a href="vertex_float3.htm">vertex_float3</a></li>
+    <li><a href="vertex_float4.htm">vertex_float4</a></li>
+    <li><a href="vertex_ubyte4.htm">vértice_ubyte4</a></li>
+    <li><a href="vertex_end.htm">vertex_end</a></li>
+    <li><a href="vertex_freeze.htm">vertex_freeze</a></li>
+    <li><a href="vertex_submit.htm">vertex_submit</a></li>
+  </ul>
+  <p> </p>
+  <p class="note"><b>IMPORTANTE!</b> Las primitivas que construyas deben seguir el formato que hayas establecido usando las funciones de Formato de Vértices, así que si has definido un formato de vértices con sólo datos posicionales, no tiene sentido construir tu primitiva con
+    datos de color. Debes tener en cuenta que el orden en el que añades las propiedades a la primitiva que estás construyendo está definido por el orden en el que añadiste estas propiedades al crear el formato de vértice, así que si has definido el formato de vector con el
+    orden posición, color y coordenada de textura, <i>debes</i> añadir estas propiedades a la primitiva que se está construyendo en el mismo orden, de lo contrario obtendrás errores.</p>
+  <p>Para una visión general de cómo construir primitivas utilizando las funciones de vértice, ver:</p>
+  <ul class="colour">
+    <li><a href="../../../../Additional_Information/Guide_To_Primitives_And_Vertex_Building.htm">Guía de primitivos y construcción de vértices</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Drawing.htm">Dibujo</a></div>
+        <div style="float:right">Siguiente: <a href="../Surfaces/Surfaces.htm">Superficies</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Primitives And Vertex Formats
+-->
+  <!-- TAGS
+primitive_vertex_functions
+-->
+</body>
+</html>

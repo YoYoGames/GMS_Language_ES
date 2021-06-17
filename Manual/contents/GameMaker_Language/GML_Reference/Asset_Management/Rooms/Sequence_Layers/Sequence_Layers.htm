@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Capas de secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Layers" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Layers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Capas de secuencia</h1>
+  <p>En esta sección tenemos las funciones que se utilizan para añadir, eliminar y editar cómo se comportan <a href="../../../../../The_Asset_Editors/Sequences.htm">las Secuencias</a> en una sala de juego en relación con la <i>capa</i> en la que se encuentran. Hay que tener en cuenta que
+    las secuencias son similares a los objetos, en el sentido de que cuando se crea una en una capa de una sala, se considera una <i>instancia</i> del <i>objeto</i> principal de la secuencia desde el <a href="../../../../../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>. Por lo tanto
+    cuando se añade una secuencia a una capa en una sala, se está creando una <i>instancia</i> del objeto de secuencia base, y esta instancia de secuencia se añade como un <i>elemento</i> dentro de una capa de la sala. La instancia de la secuencia es la que controla cosas como la velocidad y la dirección de la reproducción.
+    y dirección, y contendrá otra <i>estructura de</i> datos de secuencia que es la que contiene los datos de la pista de la secuencia real. Esto es importante, ya que las funciones enumeradas a continuación harán referencia al <strong>ID del elemento</strong> de la secuencia (el ID
+    de la secuencia <i>en la capa</i>), así como el ID de <strong>la instancia de</strong> la secuencia (el ID real de la secuencia a la que hace referencia el elemento) y <a href="../../../../GML_Overview/Structs.htm">la</a> estructura de datos de la secuencia (que
+    contiene todos los datos de la secuencia).</p>
+  <p>A continuación se muestra una lista de todas las funciones que se pueden utilizar para editar las secuencias que se han añadido a una <b>capa de activos</b>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_sequence_exists.htm">secuencia_de_capas_existe</a></li>
+    <li><a href="layer_sequence_create.htm">crear_secuencia_de_capa</a></li>
+    <li><a href="layer_sequence_destroy.htm">secuencia_de_capas_destruir</a></li>
+    <li><a href="layer_sequence_x.htm">secuencia_de_capas_x</a></li>
+    <li><a href="layer_sequence_y.htm">secuencia_de_capa_y</a></li>
+    <li><a href="layer_sequence_angle.htm">ángulo_de_secuencia_de_capa</a></li>
+    <li><a href="layer_sequence_xscale.htm">secuencia_de_capa_escala_x</a></li>
+    <li><a href="layer_sequence_yscale.htm">secuencia_de_capas_escala</a></li>
+    <li><a href="layer_sequence_headpos.htm">capa_secuencia_cabeza</a></li>
+    <li><a href="layer_sequence_headdir.htm">ruta_de_cabecera_de_la_capa</a></li>
+    <li><a href="layer_sequence_pause.htm">pausa_de_la_capa_de_la_secuencia</a></li>
+    <li><a href="layer_sequence_play.htm">secuencia_de_capa_de_reproducción</a></li>
+    <li><a href="layer_sequence_speedscale.htm">escala_de_secuencia_de_velocidad</a></li>
+    <li><a href="layer_sequence_get_x.htm">secuencia_de_capas_obtener_x</a></li>
+    <li><a href="layer_sequence_get_y.htm">secuencia_de_capa_obtener_y</a></li>
+    <li><a href="layer_sequence_get_angle.htm">secuencia_de_capas_obtener_ángulo</a></li>
+    <li><a href="layer_sequence_get_xscale.htm">layer_sequence_get_xscale</a></li>
+    <li><a href="layer_sequence_get_yscale.htm">layer_sequence_get_yscale</a></li>
+    <li><a href="layer_sequence_get_headpos.htm">layer_sequence_get_headpos</a></li>
+    <li><a href="layer_sequence_get_headdir.htm">layer_sequence_get_headdir</a></li>
+    <li><a href="layer_sequence_get_speedscale.htm">layer_sequence_get_speedscale</a></li>
+    <li><a href="layer_sequence_get_length.htm">secuencia_de_capa_obtener_longitud</a></li>
+    <li><a href="layer_sequence_get_instance.htm">layer_sequence_get_instance</a></li>
+    <li><a href="layer_sequence_get_sequence.htm">secuencia_de_capa_obtener_secuencia</a></li>
+    <li><a href="layer_sequence_is_paused.htm">layer_sequence_is_paused</a></li>
+    <li><a href="layer_sequence_is_finished.htm">secuencia_de_capas_está_terminada</a></li>
+  </ul>
+  <p> </p>
+  <p>También existen funciones adicionales para tratar el contenido de las secuencias y para definir las propias. Puede encontrar una lista completa de estas funciones en la siguiente sección:</p>
+  <ul class="colour">
+    <li><a href="../../Sequences/Sequences.htm">Secuencias</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="../General_Layer_Functions/General_Layer_Functions.htm">Funciones generales de las capas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Layers
+-->
+  <!-- TAGS
+sequence_layer_functions
+-->
+</body>
+</html>

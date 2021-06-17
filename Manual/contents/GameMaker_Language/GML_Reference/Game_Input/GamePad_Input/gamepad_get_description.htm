@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_get_description</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_get_description" />
+  <meta name="rh-index-keywords" content="gamepad_get_description" />
+  <meta name="search-keywords" content="gamepad_get_description" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_get_description</h1>
+  <p>Esta función devolverá una cadena con la descripción del gamepad dado, por ejemplo, un mando de PS3 puede devolver una cadena similar a &quot;PLAYSTATION(R)3 Controller&quot;, o un mando de XBox360 podría devolver &quot;Xbox 360 Controller (XInput
+    GAMEPAD ESTÁNDAR)&quot;. Esta cadena depende del hardware y el valor devuelto dependerá del gamepad conectado a la &quot;ranura&quot; del dispositivo que se está comprobando.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_get_description(dispositivo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>De qué &quot;ranura&quot; del gamepad obtener el nombre.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var gp_num = gamepad_get_device_count();<br> for (var i = 0; i &lt; gp_num; i++;)<br> {
+    <br> if gamepad_is_connected(i)<br> {
+    <br> draw_text(32, 32 + (i * 32), gamepad_get_description(i));<br> }
+    <br> si no
+    <br> {
+    <br> draw_text(32, 32 + (i * 32), &quot;No Gamepad Connected&quot;);<br> }
+    <br> }
+  </p>
+  <p>El código anterior recorrerá todas las ranuras de los gamepads para comprobar si hay dispositivos conectados y luego dibujará un texto en la pantalla en función de si un gamepad está conectado a la ranura o no.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_get_button_threshold.htm"> gamepad_get_button_threshold </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_get_description
+-->
+  <!-- TAGS
+gamepad_get_description
+-->
+
+</body></html>

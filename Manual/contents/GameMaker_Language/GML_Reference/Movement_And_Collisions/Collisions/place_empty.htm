@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lugar_vacío</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_empty" />
+  <meta name="rh-index-keywords" content="place_empty" />
+  <meta name="search-keywords" content="place_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lugar_vacío</h1>
+  <p>Puedes utilizar esta función para comprobar si la instancia que llama colisiona con <i>cualquier otra instancia</i> de un objeto o con todas las instancias de tu juego. Para que esta colisión se resuelva correctamente, la instancia que ejecuta el código debe tener una colisión válida
+    válida (ya sea para el propio sprite, o a través del <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>índice_de_máscara</tt></a>) y sólo registrará colisiones con aquellas instancias que también tengan una máscara válida.</p>
+  <p>La función comprueba si no hay colisiones en caso de que la instancia que llama se coloque en una posición específica, y puede proporcionar un argumento opcional para refinar la comprobación para que sólo compruebe si una posición está libre de colisiones con instancias del tipo dado
+    dado. Tenga en cuenta que si no se suministra un ID de objeto opcional, la comprobación se realizará con <i>todas las</i> instancias de la sala. La comprobación de las colisiones será precisa o se basará en el cuadro delimitador de la instancia, dependiendo del tipo de máscara de colisión
+    pero para que las colisiones precisas funcionen correctamente, todas las instancias en la comprobación deben tener máscaras de colisión precisas.</p>
+  <p>Tenga en cuenta que las coordenadas x/y dadas se rebajarán al número entero más cercano antes de realizar la comprobación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">place_empty(x, y, [object_id]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar.</td>
+      </tr>
+      <tr>
+        <td>[object_id]</td>
+        <td>Opcional! El objeto a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if place_empty(mouse_x, mouse_y, obj_Enemy)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>El código anterior comprobará si hay una colisión con cualquier otra instancia del objeto &quot;obj_Enemigo&quot;, como si la instancia que llama se colocara en la misma posición que el ratón. Si no se detecta ninguna colisión, la instancia tiene sus coordenadas x/y
+    a las del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="place_free.htm">place_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_empty
+-->
+  <!-- TAGS
+place_empty
+-->
+</body>
+</html>

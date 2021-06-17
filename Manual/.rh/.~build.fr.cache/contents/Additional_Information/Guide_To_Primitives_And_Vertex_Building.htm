@@ -17,10 +17,10 @@
     Normal
     Posición
     Posición 3D
-    Coordenadas de la textura
+    Coordenada de la textura
   
   En general, siempre debe proporcionar la posición o la posición 3D como parte del formato, pero todos los demás son opcionales.
-  Debe tener en cuenta que una vez que haya creado su formato de vértice, el orden en el que ha definido los atributos de vértice debe ser respetado al construir sus primitivas. Así, si has definido un formato de vértice como posición, color
+  Debes tener en cuenta que una vez que hayas creado tu formato de vértice, el orden en el que hayas definido los atributos de vértice debe ser respetado al construir tus primitivas. Así, si has definido un formato de vértice como posición, color
     y coordenada de textura, entonces  debes añadir estos atributos a la primitiva en el mismo orden, de lo contrario obtendrás un error. También hay que tener en cuenta que, como cualquier otro recurso dinámico, un formato de vértice requiere memoria y por lo tanto debe ser eliminado
     cuando no se necesita utilizando la función vertex_format_delete().
   Las primitivas que construyas se guardan en un buffer de vértices. Este debe ser creado de antemano y luego referenciado por las funciones que se utilizan para construir su primitiva. El buffer de vértices puede ser reutilizado tantas veces como sea necesario para crear diferentes
@@ -47,7 +47,7 @@
     Normal
     Posición
     Posición 3D
-    Coordenadas de la textura
+    Coordenada de la textura
   
   Dentro del shader GLSL ES, estos tipos se reconocen utilizando los siguientes 4 atributos:
   

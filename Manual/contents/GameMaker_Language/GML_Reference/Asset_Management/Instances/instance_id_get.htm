@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_id_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_id_get" />
+  <meta name="rh-index-keywords" content="instance_id_get" />
+  <meta name="search-keywords" content="instance_id_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_id_get</h1>
+  <p>Con esta función se puede obtener el valor de ID único de cualquier instancia de la lista de instancias actualmente activa. Se da el índice en la lista de instancias para obtener el ID y la función devolverá el valor para almacenarlo en una variable.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_id_get(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice dentro de la lista de instancias de 0 - (conteo de instancias - 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del ID de la instancia (real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = 0; i &lt; instance_count; ++i;)<br> {
+    <br> var temp_id = instance_id_get(i);<br> with (temp_id)<br> {<br> speed += 0.1;<br> } <br> }</p>
+  <p>El código anterior recorrerá todas las instancias de la sala y añadirá 0,1 a su velocidad.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_id.htm">instance_id</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_id_get
+-->
+  <!-- TAGS
+instance_id_get
+-->
+</body>
+</html>

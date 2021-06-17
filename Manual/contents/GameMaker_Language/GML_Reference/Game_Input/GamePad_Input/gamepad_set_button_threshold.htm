@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_button_threshold</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_button_threshold" />
+  <meta name="rh-index-keywords" content="gamepad_set_button_threshold" />
+  <meta name="search-keywords" content="gamepad_set_button_threshold" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_button_threshold</h1>
+  <p>Esta función permite establecer el umbral actual de los botones analógicos de un dispositivo determinado. El umbral por defecto para todos los botones analógicos es 0,5, con un rango de 0 a 1. El umbral define en qué momento el botón se considera
+    como &quot;pulsado&quot; para los juegos que requieren que actúen como un botón digital. Tenga en cuenta que esta función afectará a los estados de <a href="gamepad_button_check.htm">comprobación</a>, <a href="gamepad_button_check_pressed.htm">pulsación</a> y <a href="gamepad_button_check_released.htm">liberación</a> de los botones analógicos, pero <em>no</em> afectará al valor devuelto por la función <a href="gamepad_button_check.htm"><span class="inline">gamepad_button_check()</span></a>, que siempre devolverá el valor bruto del botón.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_set_button_threshold(device, threshold);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; del dispositivo gamepad hay que comprobar.</td>
+      </tr>
+      <tr>
+        <td>umbral</td>
+        <td>El nuevo valor del umbral (de 0 a 1, por defecto 0,5).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if gamepad_get_button_threshold(0) != 0.5<br> {
+    <br> gamepad_set_button_threshold(0, 0.5);<br> }
+  </p>
+  <p>El código anterior comprueba el umbral del botón analógico del gamepad conectado a la &quot;ranura&quot; 0 del dispositivo y si no es el valor por defecto de 0,5, se establece en ese valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_set_axis_deadzone.htm"> gamepad_set_axis_deadzone </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_button_threshold
+-->
+  <!-- TAGS
+gamepad_set_button_threshold
+-->
+</body>
+</html>

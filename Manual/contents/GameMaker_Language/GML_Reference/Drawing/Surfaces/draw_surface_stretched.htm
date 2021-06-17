@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_superficie_estirada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_stretched" />
+  <meta name="rh-index-keywords" content="draw_surface_stretched" />
+  <meta name="search-keywords" content="draw_surface_stretched" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_superficie_estirada</h1>
+  <p>Esta función simplemente toma una superficie y la estira sobre la anchura y la altura dadas para que ocupe el área. Al igual que con <a href="draw_surface.htm"><tt>dibujar_superficie()</tt></a> puede especificar una superficie y luego la posición x / y en la habitación para
+    para que la superficie se dibuje y, por último, una anchura y una altura (que deben ser valores en píxeles).</p>
+  <p class="note"><b></b><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de la textura. Debería comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">dibujar_superficie_estirada(id, x, y, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El valor de ID único de la superficie a dibujar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x de donde dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y de dónde dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura a la que se debe dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura a la que se dibujará la superficie.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">dibujar_superficie_estirada(surf, 10, 10, 100, 100);</p>
+  <p>Esto dibujará la superficie indexada en la variable &quot;surf&quot; con su esquina izquierda en (10,10). Su anchura y su altura se establecen en 100, que es el espacio que ocupará independientemente de la anchura y la altura reales de la superficie.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="draw_surface_stretched_ext.htm">dibujar_superficie_estirada_ext.</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_stretched
+-->
+  <!-- TAGS
+draw_surface_stretched
+-->
+</body>
+</html>

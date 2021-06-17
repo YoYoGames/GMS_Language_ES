@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_existe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_exists" />
+  <meta name="rh-index-keywords" content="sequence_exists" />
+  <meta name="search-keywords" content="sequence_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_existe</h1>
+  <p>Con esta función puede comprobar si un objeto de secuencia existe o no. Se suministra la estructura del objeto secuencia (devuelta por la función <a href="sequence_create.htm"><tt>sequence_create()</tt></a> o <a href="sequence_get.htm"><tt>sequence_get()</tt></a>)
+    o el ID de la secuencia (devuelto por la función <a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a> o de la estructura de la instancia de la <tt>secuencia</tt>, o el índice del navegador de activos
+    ) y la función devolverá <tt>true</tt> si el objeto de secuencia existe o <tt>false</tt> si no existe.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sequence_exists(sequence_struct_or_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>estructura_secuencia_o_id</td>
+        <td>La estructura o ID del objeto de la secuencia que se va a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Bool</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if sequence_exists(my_seq)<br> {
+    <br> sequence_destroy(my_seq);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el objeto de la secuencia dada existe y si lo hace se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_create.htm">sequence_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_exists
+-->
+  <!-- TAGS
+sequence_exists
+-->
+</body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_request_permission</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_request_permission" />
+  <meta name="rh-index-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+  <meta name="search-keywords" content="os_request_permission,os_permission_granted,os_permission_denied" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_check_permission</h1>
+  <p>Con esta función puedes solicitar un permiso específico. El permiso a solicitar se proporciona como una cadena usando el formato &quot; android<tt>.permission.&lt;permission&gt; &quot;, por lo que para</tt> solicitar el <tt>permiso</tt> RECORD_AUDIO <tt>(por</tt> ejemplo)
+    se debe llamar a</p>
+  <p class="code">os_request_permission(&quot;android.permission.RECORD_AUDIO&quot;);</p>
+  <p>La función devolverá la activación de un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">evento asíncrono del sistema</a> en el que el mapa <a href="../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>    DS contendrá los siguientes pares clave/valor:</p>
+  <ul class="colour">
+    <li>&quot; tipo<b>&quot;:</b> Es el tipo de evento que se activó y el valor será la cadena &quot;<tt>permission_request_result&quot;.</tt></li>
+    <li>&quot; &lt;permiso&gt;<b>&quot;:</b> Será el permiso solicitado por la función como una cadena, que contendrá una de las siguientes constantes:
+      <table>
+        <tbody>
+          <tr>
+            <th>Constante</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>os_permission_granted</td>
+            <td>Indica que el permiso ha sido concedido</td>
+          </tr>
+          <tr>
+            <td>os_permission_denied</td>
+            <td>Indica que el permiso no ha sido concedido</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+  <p> </p>
+  <p>Cabe destacar que los siguientes permisos son soportados de forma nativa por <span class="notranslate">GameMaker Studio 2</span>, pero son considerados &quot;peligrosos&quot; por Google y como tal deben ser solicitados explícitamente (tenga en cuenta también que algunos permisos pueden ser solicitados usando
+    las <a href="../../../Settings/Game_Options/Android.htm">Opciones de Juego<span class="notranslate">de Android</span></a> sin necesidad de esta función):</p>
+  <ul class="colour">
+    <li><tt>android.permission.WRITE_EXTERNAL_STORAGE</tt></li>
+    <li><tt>android.permission.READ_PHONE_STATE</tt></li>
+    <li><tt>android.permission.RECORD_AUDIO</tt></li>
+  </ul>
+  <p>Para más información sobre los permisos de las aplicaciones, consulte la <a href="https://developer.android.com/guide/topics/permissions/overview" target="_blank">documentación de<span class="notranslate">Android</span></a>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Esta función es para el <b><span class="notranslate">Android</span></b> objetivo solamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">os_request_permission(permission)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>permiso</td>
+        <td>El permiso a solicitar (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si (os_type == os_android)<br> {
+    <br> if (os_check_permission(&quot;android.permission.INTERNET&quot;) == os_permission_denied)<br> {
+    <br> os_request_permission(&quot;android.permission.INTERNET&quot;);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba el tipo de sistema operativo y si es <span class="notranslate">Android</span>, realiza una comprobación de los permisos y si el permiso &quot;INTERNET&quot; aún no ha sido concedido, lo solicita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="GM_build_date.htm">GM_build_date</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_request_permission
+os_permission_granted
+os_permission_denied
+-->
+  <!-- TAGS
+os_request_permission
+-->
+</body>
+</html>

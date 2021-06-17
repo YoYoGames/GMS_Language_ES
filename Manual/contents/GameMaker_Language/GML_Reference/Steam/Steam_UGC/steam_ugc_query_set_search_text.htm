@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_ugc_query_set_search_text</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_ugc_query_set_search_text" />
+  <meta name="rh-index-keywords" content="steam_ugc_query_set_search_text" />
+  <meta name="search-keywords" content="steam_ugc_query_set_search_text" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_ugc_query_set_search_text</span></h1>
+  <p>Esta función puede utilizarse para filtrar aún más cualquier consulta de CGU dada, concretamente para buscar la cadena dada en el título y la descripción de los elementos de CGU. El manejador de la consulta es el valor devuelto cuando se creó la consulta (usando, por ejemplo, <a href="steam_ugc_create_query_user.htm"><tt><span class="notranslate">steam_ugc_create_query_user</span>()</tt></a>)
+    y el segundo argumento es una cadena que se desea utilizar como término de búsqueda. La función devolverá <tt>true</tt> si el filtro de la consulta se ha establecido correctamente, o <tt>false</tt> en caso contrario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_ugc_query_set_search_text</span>(ugc_query_handle , search_text);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ugc_query_handle</td>
+        <td>El mango de la consulta que se va a utilizar.</td>
+      </tr>
+      <tr>
+        <td>texto_de_busqueda</td>
+        <td>El texto de búsqueda a utilizar (una cadena) para la consulta.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var query_handle = <span class="notranslate">steam_ugc_create_query_all</span>(ugc_query_RankedByVote, ugc_match_Items, 1);<br> <span class="notranslate">steam_ugc_query_set_search_text</span>(query_handle, &quot;texture&quot;);<br> <span class="notranslate">steam_ugc_query_set_return_long_description</span>(query_handle, true);<br> <span class="notranslate">steam_ugc_query_set_allow_cached_response</span>(query_handle,
+    true);<br> query_ID = <span class="notranslate">steam_ugc_send_query</span>(query_handle);</p>
+  <p>El código anterior crea una solicitud de consulta y almacena su manejador en una variable local para su uso futuro en el resto de las funciones que definen aún más la solicitud de consulta antes de enviarla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_UGC.htm">UGC</a></div>
+        <div style="float:right">Siguiente: <a href="steam_ugc_query_set_ranked_by_trend_days.htm"><span class="notranslate">steam_ugc_query_set_ranked_by_trend_days</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_ugc_query_set_search_text
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_ugc_query_set_search_text
+-->
+</body>
+</html>

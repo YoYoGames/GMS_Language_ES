@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_replace_sprite" />
+  <meta name="rh-index-keywords" content="font_replace_sprite" />
+  <meta name="search-keywords" content="font_replace_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace_sprite</h1>
+  <p>Con esta función se puede utilizar una &quot;tira de sprites&quot; para reemplazar un activo de fuente de sprites previamente creado, donde cada sub-imagen sería un símbolo o letra individual. El índice es el número de mapa UTF8 para el primer carácter a utilizar y los rangos
+    a utilizar son los mismos que para una fuente normal, empezando por &quot;!&quot;, pero recuerde que sólo debe incluir lo que necesita y que debe utilizar la función <a href="../../Strings/ord.htm"><tt>ord()</tt></a> para obtener el valor correcto de
+    UTF8 para la letra inicial.</p>
+  <p>También puede establecer que el espaciado de la fuente sea proporcional<tt>(verdadero</tt>) o no<tt>(falso</tt>), donde una fuente proporcional se espacia en base a la anchura real de las letras (por lo que la letra &quot;i&quot; ocupa menos espacio que la letra &quot;w&quot;,
+    por ejemplo) mientras que una fuente no proporcional se espaciará en base al ancho de la sub-imagen, como una fuente monoespaciada. Por último, puede definir el espacio que se dejará entre cada letra al escribir, y esto puede ser cualquier valor entero, siendo 0 sin espacio (las
+    letras se &quot;tocarán&quot; si son proporcionales). </p>
+  <p>Si la función falla, entonces fallará silenciosamente sin reemplazar la fuente sprite dada.</p>
+  <p>También hay que tener en cuenta que no puede haber <i>espacios</i> en el mapa de caracteres, de modo que si, por ejemplo, utiliza '.' y '0' pero no '/', deberá incluir '/' de todos modos o dejar una subimagen en blanco entre los
+    dos caracteres utilizados. La imagen siguiente muestra un diseño típico de fuente de sprites:</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">font_replace_sprite(ind, spr, first, prop, sep);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la fuente que será reemplazada (es decir, todas las referencias a este recurso después de esta función se referirán a la nueva fuente, no a la original).</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>El sprite en el que se basará la fuente.</td>
+      </tr>
+      <tr>
+        <td>primero</td>
+        <td>El índice del primer carácter disponible.</td>
+      </tr>
+      <tr>
+        <td>puntal</td>
+        <td>Si se debe eliminar el espacio en blanco alrededor de cada letra (si es falso, la fuente creada será monoespaciada, de lo contrario será como la mayoría de las fuentes regulares).</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>El espacio entre cada letra, 0 significa que la derecha de una letra apenas toca la izquierda de la siguiente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">font_replace_sprite(global.Font, working_directory + &quot;Sprites\spr_Font.png&quot;, ord(&quot;!&quot;), true, 2);</p>
+  <p>El código anterior sustituirá el activo de fuente indexado en la variable global &quot;Font&quot; por un nuevo activo de fuente de un archivo de imagen externo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fonts.htm">Fuentes</a></div>
+        <div style="float:right">Siguiente: <a href="font_replace_sprite_ext.htm">font_replace_sprite_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite
+-->
+  <!-- TAGS
+font_replace_sprite
+-->
+</body>
+</html>

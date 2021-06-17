@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funciones generales de la capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Layers in general" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="layer functions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Funciones generales de la capa</h1>
+  <p>El <a href="../../../../../The_Asset_Editors/Rooms.htm">editor de salas de</a> <span class="notranslate">GameMaker Studio 2</span> te permite añadir <i>capas</i> de diferentes activos a tu sala. Estos pueden ser mapas de azulejos (utilizando conjuntos de azulejos), fondos, sprites o secuencias, e instancias,
+    pero tenga en cuenta que, a diferencia del editor de salas, <i>no</i> está limitado a un solo tipo de activo por capa, y puede añadir varios tipos de activos a la misma capa - por ejemplo, puede tener un fondo y un mapa de azulejos en la misma capa. Tenga en cuenta que cada recurso
+    que se añade a una capa se considera un <strong>elemento</strong> de esa capa.</p>
+  <p>En esta sección se describen las funciones generales que se utilizan al trabajar con las capas de la sala, así como algunas funciones específicas para trabajar con <strong><a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">capa de instancia</a> </strong>elementos:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_exists.htm">capa_existe</a></li>
+    <li><a href="layer_get_id.htm">layer_get_id</a></li>
+    <li><a href="layer_depth.htm">capa_obtener_profundidad</a></li>
+    <li><a href="layer_get_id_at_depth.htm">layer_get_id_at_depth</a></li>
+    <li><a href="layer_get_name.htm">nombre_de_capa</a></li>
+    <li><a href="layer_get_all.htm">layer_get_all</a></li>
+    <li><a href="layer_get_all_elements.htm">layer_get_all_elements</a></li>
+    <li><a href="layer_get_element_layer.htm">layer_get_element_layer</a></li>
+    <li><a href="layer_get_element_type.htm">layer_get_element_type</a></li>
+    <li><a href="layer_get_x.htm">layer_get_x</a></li>
+    <li><a href="layer_get_y.htm">capa_obtener_y</a></li>
+    <li><a href="layer_get_hspeed.htm">layer_get_hspeed</a></li>
+    <li><a href="layer_get_vspeed.htm">layer_get_vspeed</a></li>
+    <li><a href="layer_create.htm">crear_capa</a></li>
+    <li><a href="layer_destroy.htm">destruir_capas</a></li>
+    <li><a href="layer_x.htm">capa_x</a></li>
+    <li><a href="layer_y.htm">capa_y</a></li>
+    <li><a href="layer_hspeed.htm">capa_hspeed</a></li>
+    <li><a href="layer_vspeed.htm">capa_velocidad</a></li>
+    <li><a href="layer_add_instance.htm">layer_add_instance</a></li>
+    <li><a href="layer_has_instance.htm">layer_has_instance</a></li>
+    <li><a href="layer_instance_get_instance.htm">layer_instance_get_instance</a></li>
+    <li><a href="layer_destroy_instances.htm">layer_destroy_instances</a></li>
+    <li><a href="layer_element_move.htm">capa_elemento_mover</a></li>
+    <li><a href="layer_set_visible.htm">layer_set_visible</a></li>
+    <li><a href="layer_get_visible.htm">layer_get_visible</a></li>
+    <li><a href="layer_depth.htm">profundidad_de_capa</a></li>
+    <li><a href="layer_force_draw_depth.htm">fuerza_de_dibujo_de_capas</a></li>
+    <li><a href="layer_is_draw_depth_forced.htm">layer_is_draw_depth_forced</a></li>
+    <li><a href="layer_get_forced_depth.htm">capa_obtener_profundidad_forzada</a></li>
+    <li><a href="layer_script_begin.htm">layer_script_begin</a></li>
+    <li><a href="layer_script_end.htm">capa_guión_final</a></li>
+    <li><a href="layer_shader.htm">sombreador_de_capas</a></li>
+    <li><a href="layer_get_script_begin.htm">layer_get_script_begin</a></li>
+    <li><a href="layer_get_script_end.htm">layer_get_script_end</a></li>
+    <li><a href="layer_get_shader.htm">layer_get_shader</a></li>
+  </ul>
+  <p> </p>
+  <p>También tenemos un par de funciones adicionales relacionadas con la orientación de las capas en una habitación diferente. Puede ser que quieras cambiar algo en una habitación que no es la actual, o tal vez quieras generar habitaciones procedimentalmente, o cualquier número de cosas.
+    Para permitir esto usamos las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="layer_set_target_room.htm">layer_set_target_room</a></li>
+    <li><a href="layer_get_target_room.htm">layer_get_target_room</a></li>
+    <li><a href="layer_reset_target_room.htm">layer_reset_target_room</a></li>
+  </ul>
+  <p> </p>
+  <p>Lo que se hace aquí es establecer la sala de destino utilizando la función apropiada y luego llamar a las funciones de capa son normales. Estas funciones de capa se aplicarán ahora <i>sólo</i> a la sala de destino y no a la actual. Cuando haya terminado, llame a la función
+    función reset para devolver el ámbito del código a la sala actual de nuevo.</p>
+  <p class="note"><b>ADVERTENCIA</b> Mientras se dirige a otra sala, puede utilizar todas las funciones regulares de la capa, <b>excepto</b> que no puede crear instancias utilizando <span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer()</tt></a></span>    o <span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span>ni la función de capa <a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance()</tt></span></a> estará
+    disponible.</p>
+  <p>Por último, y esto es exclusivamente para usar con <i>instancias</i> en capas (aunque la capa en sí puede tener otros elementos, no se verán afectados por las siguientes funciones), tienes un par de funciones que se pueden usar para desactivar o reactivar
+    todas las instancias:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="../../Instances/Deactivating_Instances/instance_deactivate_layer.htm">instancia_desactivar_capa</a></li>
+    <li><a href="../../Instances/Deactivating_Instances/instance_activate_layer.htm">instancia_activar_capa</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="../Tile_Map_Layers/Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+General Layer Functions
+-->
+  <!-- TAGS
+layer_functions
+-->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>evento_realizar_objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function event_perform_object" />
+  <meta name="rh-index-keywords" content="event_perform_object" />
+  <meta name="search-keywords" content="event_perform_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>evento_realizar_objeto</h1>
+  <p>Esta función funciona igual que <a href="event_perform.htm"><tt>event_perform()</tt></a> excepto que esta vez puede especificar eventos de otro objeto. Hay muchas opciones aquí que permiten la simulación completa de todos
+    posibles eventos, pero tenga en cuenta que esto literalmente sólo realiza todo el código del evento y el juego no modificará nada para que se dispare manualmente, por ejemplo si elige realizar un evento de pulsación de teclado, el evento se disparará
+    pero no se reconocerá que se ha pulsado la tecla correspondiente. O si realizas un evento de alarma, el contador de alarmas no se pondrá a -1 sino que continuará la cuenta atrás. Puede encontrar una lista completa de las constantes disponibles que esta función
+    en la página de la función <a href="event_perform.htm"><tt>event_perform()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: Las acciones del evento llamado con esta función se aplican a la <b>instancia actual</b>, y no a las instancias del objeto dado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">event_perform_object(obj, type, numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que debe tener su evento disparado.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de evento a realizar. Véase más abajo.</td>
+      </tr>
+      <tr>
+        <td>numb</td>
+        <td>El evento específico, si es necesario (de lo contrario, sólo use 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">event_perform_object(obj_Player, ev_keypress, ord(&quot;W&quot;));</p>
+  <p>Esto realizaría el evento asociado a la comprobación del teclado pulsado &gt; tecla W del objeto &quot;obj_Player&quot; en la instancia actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Generating_Object_Events.htm">Generación de eventos de objetos</a></div>
+        <div style="float:right">Siguiente: <a href="event_user.htm">event_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+event_perform_object
+-->
+  <!-- TAGS
+event_perform_object
+-->
+</body>
+</html>

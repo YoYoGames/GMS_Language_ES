@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_obtener</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_get" />
+  <meta name="rh-index-keywords" content="sequence_get" />
+  <meta name="search-keywords" content="sequence_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_obtener</h1>
+  <p>Con esta función se puede recuperar la <a href="../../../GML_Overview/Structs.htm">estructura</a> del objeto de la secuencia a partir de un índice de activos de la secuencia. Se suministra el índice de activos para la secuencia como se define en el navegador de activos, y la función
+    devolverá la estructura del objeto de la secuencia a la que se puede acceder, o -1 si la secuencia no existe o el índice de activos dado no es una secuencia.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sequence_get(sequence_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice_de_secuencia</td>
+        <td>El índice de la secuencia como se define en el navegador de activos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">estructura o -1</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _seq = sequence_get(seq_Logo);<br> seq.loopmode = seqplay_pingpong;</p>
+  <p>El código anterior recupera la estructura del objeto secuencia del objeto secuencia &quot;seq_Loop&quot; y luego establece el modo de bucle para la secuencia (todas las instancias de secuencia creadas posteriormente utilizarán ahora este modo de bucle).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_track_new.htm">sequence_track_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_get
+-->
+  <!-- TAGS
+sequence_get
+-->
+</body>
+</html>

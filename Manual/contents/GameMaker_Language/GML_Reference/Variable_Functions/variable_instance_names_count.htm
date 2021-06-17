@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_names_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_names_count" />
+  <meta name="rh-index-keywords" content="variable_instance_names_count" />
+  <meta name="search-keywords" content="variable_instance_names_count" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instance_names_count</h1>
+  <p>Con esta función puede encontrar el número total de variables definidas para una instancia. Se proporciona el ID de la instancia a comprobar, y la función devolverá un valor entero para el número de variables encontradas, o (si no existe ninguna instancia del
+    ID dado) -1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">variable_instance_names_count(instance_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>El valor de ID único de la instancia a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _num = variable_instance_names_count(myinst);<br> show_debug_message(&quot;Instance Variables = &quot; + string(_num));</p>
+  <p>El código anterior recuperará el número de variables en la instancia dada y mostrará un mensaje de depuración en la salida de la consola con ese valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="variable_instance_get.htm">variable_instance_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_names_count
+-->
+  <!-- TAGS
+variable_instance_names_count
+-->
+</body>
+</html>

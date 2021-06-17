@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_deactivate_all</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_deactivate_all" />
+  <meta name="rh-index-keywords" content="instance_deactivate_all" />
+  <meta name="search-keywords" content="instance_deactivate_all" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_deactivate_all</h1>
+  <p>Esta función desactivará <b>todas las</b> instancias que estén en la sala en el momento en que se ejecute el código. Esto puede incluir a la instancia que ejecuta el código si la bandera &quot;notme&quot; se establece en falso, pero normalmente querrás que esa instancia
+    que esté activa, en cuyo caso la bandera &quot;notme&quot; debería ser verdadera. Tenga en cuenta que la desactivación no es instantánea, y una instancia que ha sido desactivada de esta manera no se considerará inactiva hasta el final del evento
+    en el que se llamó a la función.</p>
+  <p class="note"><b>NOTA</b>: Si desactiva una instancia al iniciar la sala (es decir, desde el código de creación de la sala, o desde un evento de creación de una instancia dentro de la sala) todas las instancias que se coloquen dentro de la sala desde el editor de salas <b>seguirán ejecutando su evento de creación</b> antes de ser desactivadas.</p>
+  <p class="note"><b></b><b>ADVERTENCIA</b>: Desactivar las instancias que tienen la física activada <b>NO</b> impedirá que sus accesorios interactúen dentro de la simulación de la física. Para ello, debe establecer su <span style="font-size:1px;"><a href="../../../Physics/Physics_Variables/phy_active.htm"><tt style="font-size: 14px">phy_active</tt></a></span> variable
+    a <tt>true</tt> o <tt>false</tt> al activar/desactivar las instancias.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_deactivate_all(notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Si se mantiene la instancia de llamada activada (true) o no (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">instance_deactivate_all(true);<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_activate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false);</p>
+  <p>El código anterior desactiva todas las instancias excepto la que está ejecutando el código y luego activa una región dentro de la sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Deactivating_Instances.htm">Desactivación de instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_deactivate_object.htm">instance_deactivate_object</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_deactivate_all
+-->
+  <!-- TAGS
+instance_deactivate_all
+-->
+</body>
+</html>

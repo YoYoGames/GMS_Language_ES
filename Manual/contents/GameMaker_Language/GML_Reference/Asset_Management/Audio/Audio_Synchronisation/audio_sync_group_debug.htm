@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_sync_group_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_sync_group_debug" />
+  <meta name="rh-index-keywords" content="audio_sync_group_debug" />
+  <meta name="search-keywords" content="audio_sync_group_debug" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_sync_group_debug</h1>
+  <p>esta función puede utilizarse para mostrar información de depuración sobre cualquier grupo de sincronización dado (el índice del grupo es el valor devuelto cuando se creó el grupo utilizando la función <a href="audio_create_sync_group.htm"><tt>audio_create_sync_group()</tt></a>). Usted
+    puede llamar a la función con un valor de -1 para desactivar la superposición.</p>
+  <p>Cuando estés depurando los grupos de sincronización de audio, se mostrará la superposición:</p>
+  <ul class="colour">
+    <li>Qué grupo de sincronización está depurando</li>
+    <li>Cuántos canales tiene</li>
+    <li>Cuántas veces ha fallado el grupo de sincronización (esto significa que ha intentado hacer demasiado trabajo)</li>
+    <li>Una lista de los canales
+      <ul class="colour">
+        <li>El color rojo significa que este canal no está haciendo ningún trabajo</li>
+        <li>Amarillo significa que el canal está en estado inicial (aún no está decodificando o reproduciendo)</li>
+        <li>Verde significa que el canal está buscando/decodificando actualmente</li>
+        <li>El color púrpura significa que el canal se ha quedado sin datos</li>
+      </ul>
+    </li>
+    <li>Una barra de perfil que muestra qué trabajo está haciendo el hilo de decodificación
+      <ul class="colour">
+        <li>azul significa que se está leyendo un archivo por primera vez</li>
+        <li>el rojo significa que el hilo está leyendo un archivo para saber de dónde leer</li>
+        <li>el verde significa que el hilo está decodificando datos</li>
+        <li>el color púrpura significa que el hilo está durmiendo hasta que tenga que trabajar</li>
+      </ul>
+    </li>
+  </ul>
+  <p>Ten en cuenta que para la depuración general del audio, también tienes la función <a href="../audio_debug.htm"><tt>audio_debug()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: Esta funcionalidad no está disponible para la plataforma de destino HTML5.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_sync_group_debug(group_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>grupo_índice</td>
+        <td>El índice del grupo a depurar, o -1 para desactivar la depuración.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (debug_mode)<br> {
+    <br> audio_sync_group_debug(sg);
+    <br> }
+    <br> si no
+    <br> {
+    <br> audio_sync_group_debug(-1);
+    <br> }
+  </p>
+  <p>El código anterior activará o desactivará la superposición del grupo de sincronización de audio mostrando el grupo de sincronización indexado en la variable &quot;sg&quot; dependiendo de si el juego se ejecuta en modo de depuración o no.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Synchronisation.htm">Sincronización de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_sync_group_is_playing.htm">audio_sync_group_is_playing</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_sync_group_debug
+-->
+  <!-- TAGS
+audio_sync_group_debug
+-->
+</body>
+</html>

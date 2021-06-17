@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_set_target_room</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_set_target_room" />
+  <meta name="rh-index-keywords" content="layer_set_target_room" />
+  <meta name="search-keywords" content="layer_set_target_room" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_set_target_room</h1>
+  <p>Cuando se llama a esta función se está indicando a <span class="notranslate">GameMaker Studio 2</span> que <i>todas las funciones de capas posteriores deben aplicarse a la sala dada</i>. De este modo, puede cambiar o generar capas y contenidos de capas de forma procedimental en una sala que no sea la
+    sala actual. Cuando haya terminado de añadir capas o elementos de capa a una sala, llame a la función <a href="layer_reset_target_room.htm"><tt>layer_reset_target_room()</tt></a> para restablecer el objetivo de la sala (o llame a esta función de nuevo con un argumento de sala
+    de -1). Tenga en cuenta que esta función sólo puede utilizarse en <i>salas</i> distintas de la sala actual, y está diseñada para que pueda añadir/eliminar capas y elementos de capa a salas distintas de la sala que se está ejecutando en ese momento.</p>
+  <p class="note"><b>ADVERTENCIA</b> Mientras se dirige a otra sala, puede utilizar todas las funciones regulares de la capa, <b>excepto</b> que no puede crear instancias utilizando <span style="font-size:1px;"><a href="../../Instances/instance_create_layer.htm"><tt style="font-size: 14px">instance_create_layer()</tt></a></span>    o <span style="font-size:1px;"><a href="../../Instances/instance_create_depth.htm"><tt style="font-size: 14px">instance_create_depth()</tt></a></span>ni la función de capa <a href="layer_add_instance.htm"><span style="font-size:1px;"><tt style="font-size: 14px">layer_add_instance()</tt></span></a>    estará disponible.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_set_target_room(room)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>habitación</td>
+        <td>La sala de destino para todas las funciones de la capa posterior</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">layer_set_target_room(rm_Game);<br> var l = layer_get_id(&quot;SpriteAssets&quot;);<br> repeat(50)
+    <br> {<br> var _x = random(room_get_width(rm_Game));<br> var _y = random(room_get_height(rm_Game));<br> layer_sprite_create(l, _x, _y, spr_Trees);<br> } <br> layer_reset_target_room();
+  </p>
+  <p>El código anterior establece la sala de destino a la sala &quot;rm_Game&quot; y luego obtiene el ID de la capa llamada &quot;SpriteAssets&quot; en esa sala. Este ID de capa se utiliza para añadir 50 activos de sprites al azar a la capa, antes de que el objetivo de la capa
+    se restablece a la sala actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_target_room.htm">layer_get_target_room</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_set_target_room
+-->
+  <!-- TAGS
+layer_set_target_room
+-->
+</body>
+</html>

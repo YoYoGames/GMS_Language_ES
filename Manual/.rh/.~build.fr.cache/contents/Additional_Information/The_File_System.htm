@@ -5,8 +5,8 @@
     el sistema de archivos funciona y qué cosas están sucediendo detrás de las escenas. Con ese fin, esta sección está diseñada para explicar y aclarar exactamente cómo se almacenan las cosas, dónde se almacenan y qué posibles límites o soluciones puede haber
     pueden existir en este sistema.
   Lo primero y más importante a tener en cuenta sobre las funciones de archivo es que están limitadas -en general y por defecto- al sandbox. Esto significa que GameMaker Studio 2 no puede guardar o cargar archivos de cualquier lugar que no sea parte del paquete de juegos o el almacenamiento local para el dispositivo sin la entrada explícita del usuario, e incluso entonces esta entrada se limita a sólo Windows, macOS y Ubuntu(Linux) plataformas de destino.
-  IMPORTANTE! Es posible desactivar el sandboxing, sin embargo, en los objetivos de escritorio(Windows, macOS y Ubuntu(Linux)) marcando la opción Desactivar sandbox del sistema de archivos en las Opciones de Juego para la plataforma de destino. Lo haces bajo tu propio riesgo, y aunque esto abrirá el guardado y la carga de archivos y te permitirá acceder a los archivos en cualquier parte del sistema dado, todavía puede estar limitado por los permisos del sistema operativo, y no serás capaz de escribir
-    en la directorio_de_programas carpeta.
+  IMPORTANTE! Sin embargo, es posible desactivar el sandboxing en los ordenadores de sobremesa(Windows, macOS y Ubuntu(Linux)) marcando la opción Desactivar sandbox del sistema de archivos en las Opciones de juego de la plataforma de destino. Lo haces bajo tu propio riesgo, y aunque esto abrirá el guardado y la carga de archivos y te permitirá acceder a los archivos en cualquier parte del sistema dado, todavía puede estar limitado por los permisos del sistema operativo, y no serás capaz de escribir
+    en la directorio_del_programa carpeta.
   Para entender la caja de arena, primero hay que entender que hay dos áreas distintas para los archivos:
   
     El paquete de archivos - aquí es donde se almacenan todos los archivos que se empaquetan con el juego ejecutable, incluyendo los archivos que ha añadido a la lista de activos de archivos incluidos desde el IDE de GameMaker Studio 2 (que
@@ -28,18 +28,18 @@
   NOTA: en general GameMaker Studio 2 se encargará de todo esto por ti y rara vez necesitarás usar la variable incorporada working_directory.
   Utilizando estas dos sencillas reglas podemos ver ahora cómo funcionan las siguientes funciones (se trata de ejemplos para ayudar a visualizar el proceso de las diferentes funciones disponibles):
   
-    directory_create() (y las demás funciones de directorio) sólo funcionarán en el área de guardado .
+    directory_create() (y las demás funciones de directorio) sólo funcionarán en la zona de guardado .
     las funciones del sistema de archivos devolverán información sobre los archivos tanto del paquete como del área de almacenamiento , pero sólo
      escribirán en el área de almacenamiento .
     las funciones para escribir archivos de texto, binarios o INI crearán un nuevo archivo en el área de guardado si no existe ya uno, copiando cualquier información de los archivos originales incluidos con el paquete del juego si es que existen.
       Ten en cuenta que los archivos originales seguirán en la parte de sólo lectura del directorio de guardado, pero no serán referenciados mientras exista una versión en la sección de lectura/escritura del área de guardado.
   
-  En el Windows, macOS y Ubuntu(Linux) hay dos maneras de guardar y cargar archivos desde fuera de la caja de arena y es utilizando las funciones get_open_filename() y
+  En el Windows, macOS y Ubuntu(Linux) hay dos maneras de guardar y cargar archivos desde fuera de la caja de arena y es usando las funciones get_open_filename() y
     get_save_filename() (ambas funciones requerirán que el usuario seleccione un área para cargar y guardar y la cadena de retorno
     se puede utilizar en el resto de las funciones de archivo para evitar la caja de arena - ver las descripciones de las funciones en la sección de lenguaje del manual para más detalles). La otra forma es desactivar la caja de arena por completo desde las Opciones de Juego para la plataforma de destino (sólo disponible para objetivos de Escritorio, como se discute más arriba en esta página).
   En HTML5 también es posible cargar archivos desde fuera de la caja de arena desde un servidor, sin embargo esto sólo debe hacerse utilizando la función buffer_load_async() como
     cargar de forma sincrónica ha quedado obsoleta en la mayoría de los navegadores y con el tiempo será obsoleta. Esto significa que los archivos que se cargan de esta manera deben guardarse como archivos binarios - por ejemplo, puedes guardar un *.ini como una cadena
-    (véase ini_close() para más detalles) y luego escribirlo en un búfer que puede ser guardado y cargado usando las funciones asíncronas. Tenga en cuenta
+    (véase ini_close() para más detalles) y luego escribirlo en un búfer que luego puede ser guardado y cargado usando las funciones async. Tenga en cuenta
     que si está cargando imágenes con sprite_add() entonces éstas ya son tratadas de forma asíncrona.
   También debes saber que cada plataforma objetivo tiene su propia área de guardado en la que se pueden escribir y leer archivos y directorios. A continuación se muestra una lista de esas áreas para cada objetivo cuando está en sandbox:
   

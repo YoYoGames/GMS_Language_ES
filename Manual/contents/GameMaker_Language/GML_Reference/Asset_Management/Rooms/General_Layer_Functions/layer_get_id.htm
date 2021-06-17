@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_id" />
+  <meta name="rh-index-keywords" content="layer_get_id" />
+  <meta name="search-keywords" content="layer_get_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_id</h1>
+  <p>Esta función se puede utilizar para obtener el valor de ID único de una <b>capa</b> determinada. En el IDE, todas las capas tienen un nombre y un tipo, y para poder editarlas o cambiarlas a través del código hay que dar el valor de ID de <b>la capa</b>. Esta función se utiliza para recuperar
+    este ID utilizando el nombre (una cadena) de la capa (tal y como está escrita en el IDE). Si crea una nueva capa a través de código utilizando la función <a href="layer_create.htm"><tt>layer_create()</tt></a> entonces esa función devolverá el valor de ID único en su lugar
+    (las capas creadas dinámicamente no reciben nombres). Tenga en cuenta que si da el nombre de una capa que no existe en la sala actual, entonces obtendrá un error y el proyecto se bloqueará.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_get_id(nombre_capa)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_capa</td>
+        <td>El nombre de la capa (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del ID de la capa (real), o -1 si la capa especificada no existe</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var near = instance_nearest(x, y, obj_Tree);<br> var layer_id = layer_get_id(&quot;Instances Front&quot;);<br> layer_add_instance(layer_id, near);</p>
+  <p>El código anterior obtendrá primero el índice de la instancia más cercana a la posición x/y dada y lo almacenará en una variable local. A continuación, obtiene el ID de la capa de instancia única para la capa llamada &quot;Frente de Instancias&quot;, y mueve la instancia encontrada a
+    a esa capa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_depth.htm">layer_get_depth</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_id
+-->
+  <!-- TAGS
+layer_get_id
+-->
+</body>
+</html>

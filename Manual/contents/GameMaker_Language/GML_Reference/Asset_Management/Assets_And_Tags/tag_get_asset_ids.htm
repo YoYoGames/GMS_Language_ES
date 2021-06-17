@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tag_get_asset_ids</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function tag_get_asset_ids" />
+  <meta name="rh-index-keywords" content="tag_get_asset_ids,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="tag_get_asset_ids,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence,asset_unknown" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tag_get_asset_ids</h1>
+  <p>Con esta función puede obtener todos los activos de un tipo determinado que tengan asignadas las etiquetas indicadas. Puede proporcionar una sola etiqueta (como una cadena) o una matriz, donde cada elemento de la matriz es una etiqueta (como una cadena), así como el tipo de activo a comprobar.
+    El tipo de activo debe ser una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>objeto_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Objects.htm">objeto</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sound</td>
+        <td>El nombre de pila hace referencia a un <a href="../../../../The_Asset_Editors/Sounds.htm">sonido</a>.</td>
+      </tr>
+      <tr>
+        <td>sala_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Rooms.htm">habitación</a>.</td>
+      </tr>
+      <tr>
+        <td>activos_tiles</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Tile_Sets.htm">conjunto de baldosas</a>.</td>
+      </tr>
+      <tr>
+        <td>ruta_de_activo</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Paths.htm">ruta</a>.</td>
+      </tr>
+      <tr>
+        <td>script_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Scripts.htm">guión</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Fonts.htm">fuente</a>.</td>
+      </tr>
+      <tr>
+        <td>línea_de_tiempo_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Timelines.htm">línea de tiempo</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>El nombre se refiere a un <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">shader</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Curva de Animación</a>.</td>
+      </tr>
+      <tr>
+        <td>secuencia_de_activos</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Sequences.htm">Secuencia</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>La función devolverá una matriz, donde cada elemento de la matriz será un único valor de índice de activo. Si no hay activos del tipo que tienen la(s) etiqueta(s) dada(s), se devolverá un array vacío.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tag_get_asset_ids(tags, asset_type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>Una sola cadena de etiquetas de activos o una matriz con varias etiquetas de activos.</td>
+      </tr>
+      <tr>
+        <td>tipo_de_activo</td>
+        <td>Una constante de tipo de activo (enumerada anteriormente)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Array</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _paths = tag_get_asset_ids(&quot;enemy&quot;, asset_path);<br> var _num = irandom(array_length(_paths) - 1);<br> path_start(_paths[_num], 1, path_action_reverse, false);</p>
+  <p>El código anterior utiliza la etiqueta &quot;enemigo&quot; para encontrar todos los activos de la ruta con esa etiqueta, antes de elegir uno al azar y asignarlo a la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Assets_And_Tags.htm">Activos y etiquetas</a></div>
+        <div style="float:right">Siguiente: <a href="tag_get_assets.htm">tag_get_assets</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tag_get_asset_ids
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+tag_get_asset_ids
+-->
+</body>
+</html>

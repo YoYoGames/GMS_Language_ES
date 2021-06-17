@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>devolver</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the return function" />
+  <meta name="rh-index-keywords" content="return" />
+  <meta name="search-keywords" content="return" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>devolver</h1>
+  <p>La sentencia <tt>return</tt> tiene la siguiente sintaxis:</p>
+  <p class="code">return (&lt;expresión&gt;)</p>
+  <p>La sentencia <tt>return</tt> sólo se utiliza en las<span> <a href="../Script_Functions.htm">funciones</a> y <a href="../Method_Variables.htm">métodos de</a> <a href="../Script_Functions.htm">los scripts</a></span>, y se usa para devolver un valor de la función que se utilizará en otro código o llamada a una función
+    de la función. Hay que tener en cuenta que la <i>ejecución de la función termina en la sentencia <span class="inline">return</span> </i>, lo que significa que cualquier código que venga después de la llamada a <span class="inline">return</span> no se ejecutará. A continuación se muestra un breve
+    de ejemplo llamado <tt>sqr_calc</tt> que calcula el cuadrado de cualquier valor que se le pase, e incluye la captura de errores en caso de que el parámetro que se le pase no sea un número real:</p>
+  <p class="code">/// @function sqr_calc(val);<br> /// @param {real} val El valor a calcular el cuadrado de<br> /// @description Calcula el cuadrado del valor dado<br>
+    <br> function sqr_calc(value)<br> {
+    <br> if !is_real(valor)<br> {
+    <br> return 0;<br> }
+    <br> else
+    <br> {
+    <br> return (valor * valor);<br> }
+    <br> }
+  </p>
+  <p>Para llamar a una función desde un trozo de código, basta con utilizarla de la misma manera que cuando se llama a funciones <span class="notranslate">en tiempo de ejecución</span>, es decir, escribir el nombre de la función con los valores de los parámetros entre paréntesis. Así, la función anterior se llamaría así:</p>
+  <p class="code">si keyboard_check_pressed(vk_enter)<br> {
+    <br> val = scr_sqr(amount);<br> }
+  </p>
+  <p>Aquí la variable <span class="inline">val</span> será o bien 0 (porque la variable <span class="inline">amount</span> no es un número real) o bien el total de <span class="inline">value * value</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="begin_end.htm">inicio / fin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+return
+-->
+  <!-- TAGS
+return
+-->
+</body>
+</html>

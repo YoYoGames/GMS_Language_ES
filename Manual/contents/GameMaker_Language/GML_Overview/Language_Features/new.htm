@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>nuevo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the new function" />
+  <meta name="rh-index-keywords" content="new" />
+  <meta name="search-keywords" content="new" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>nuevo</h1>
+  <p>El operador <tt>new</tt> puede ser utilizado para crear una estructura con una función que es llamada con los argumentos dados. La función puede entonces rellenar la estructura con las variables de los argumentos - al igual que el evento de creación de una instancia establecerá las variables iniciales
+    para la instancia - y luego el operador <tt>new</tt> devolverá la estructura. Antes de usar este operador es importante tener en cuenta que la función dada <i>debe ser marcada como una función <tt>constructora</tt></i>, de lo contrario el operador <tt>new</tt> no creará la estructura (el ejemplo de código de abajo muestra esto, y para más información, por favor vea la página sobre <a href="../Structs.htm">Estructuras</a>).</p>
+  <p class="note"><strong>NOTA</strong>: Puedes comprobar una estructura para saber qué función se utilizó para crearla utilizando la función de <span class="notranslate">tiempo de ejecución</span> <a href="../../GML_Reference/Variable_Functions/instanceof.htm"><tt>instanceof()</tt></a>.</p>
+  <p>Este operador tiene la siguiente sintaxis:</p>
+  <p class="code"><span>&lt;variable&gt; = nueva &lt;función&gt; </span>(&lt;argumento&gt;, &lt;argumento&gt;, ...);</p>
+  <p>Cuando se utiliza el operador new junto con una función, devolverá una referencia a la estructura que se almacena en la variable dada, permitiéndole acceder a la estructura y a cualquier variable que haya sido creada dentro de ella por la función.</p>
+  <p>El siguiente ejemplo muestra una función que ha sido definida para ser utilizada como constructor:</p>
+  <p class="code">function init_struct(_a, _b, _c) constructor<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>Esta función se puede utilizar junto con el operador <tt>new</tt> para crear una estructura y rellenarla con las variables ajustadas a los valores de los argumentos utilizados en la función, así:</p>
+  <p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p>
+  <p>Es importante tener en cuenta que llamar a new en cualquier función que <em>no</em> haya sido marcada como constructor provocará una <a href="../../../Additional_Information/Errors/Runner_Errors.htm">excepción</a> en <a href="../../../Additional_Information/Errors/Runner_Errors.htm"><span class="notranslate">tiempo de ejecución</span></a>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="delete.htm">borrar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+new
+-->
+  <!-- TAGS
+new
+-->
+
+</body></html>

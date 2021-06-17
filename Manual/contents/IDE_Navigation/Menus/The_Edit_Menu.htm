@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>El menú de edición</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section on the Edit Menu" />
+  <meta name="rh-index-keywords" content="Menu - Edit" />
+  <meta name="search-keywords" content="edit menu,search and replace,search,replace,undo,redo" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El menú de edición</h1>
+  <p><img alt="The Edit Menu" class="center" src="../../assets/Images/IDE_Input/Edit_Menu.png" /></p>
+  <p>En el menú de edición se pueden utilizar las herramientas de edición general de la interfaz de <span class="notranslate">GameMaker Studio 2</span>. Las opciones disponibles son:</p>
+  <ul class="colour">
+    <li><strong>Deshacer </strong>- Deshacer una acción.</li>
+    <li><strong>Rehacer </strong>- Rehacer una acción anterior.</li>
+    <li><strong>Buscar y reemplazar </strong>- Esto abrirá una ventana de búsqueda que le permite buscar a través de todo su código (incluyendo el código de creación de la sala, los scripts y los eventos) para una entrada determinada - ver más abajo para más información.</li>
+  </ul>
+  <p>Al seleccionar Buscar y Reemplazar en el menú Edición, se abrirá la siguiente ventana:</p>
+  <p><img alt="Search In Assets Window" class="center" src="../../assets/Images/IDE_Input/Search_Menu.png">Puedes usar esto para buscar entre todos los activos con scripts en tu juego, incluyendo el código de la sala, el código de los eventos, los scripts y los <span class="notranslate">shaders</span>. Cuando busques, puedes
+    puede escribir un nuevo término de búsqueda en el cuadro de la parte superior, o puede hacer clic en el icono de la flecha a la derecha para abrir una lista de términos buscados anteriormente. También tiene la opción de dar un término de sustitución que se utilizará para reemplazar el término de búsqueda inicial
+    y esto también tiene la opción de utilizar una cadena de reemplazo previamente utilizada desde el botón de la flecha a la derecha.</p>
+  <p>Las búsquedas pueden ser generales o se pueden afinar utilizando las opciones que aparecen debajo de las entradas de los términos de búsqueda:</p>
+  <ul class="colour">
+    <li>Puede elegir que la búsqueda <strong>distinga entre mayúsculas y minúsculas</strong>, en cuyo caso sólo incluirá las palabras que coincidan exactamente con la cadena de búsqueda, es decir, si busca &quot;Mi_Var&quot; sin esta opción obtendrá resultados con &quot;mi_var&quot;,
+      &quot;mY_VAR&quot;, o &quot;My_Var&quot;, pero con esta opción marcada sólo se incluirá &quot;My_Var&quot; en los resultados de la búsqueda.</li>
+    <li>Puedes elegir incluir sólo los resultados de la búsqueda que incluyan la <strong>palabra completa</strong>, en cuyo caso cualquier resultado que incluya el término de búsqueda pero que no sea una coincidencia exacta será ignorado, es decir: una búsqueda de &quot;game&quot; sin esto marcado
+      mostrará cosas como la función &quot;game_end()&quot; o variables como &quot;game_state&quot;, mientras que si se marca esto y se hace la búsqueda sólo se mostrarán resultados que sean &quot;game&quot; propiamente dicho.</li>
+    <li>Puede elegir que la búsqueda <strong>ignore los comentarios</strong>. Cuando esto está marcado, cualquier comentario en su código que contenga el término de búsqueda será simplemente ignorado y no se mostrará en los resultados de salida.</li>
+    <li>Puede aplicar un <strong>filtro </strong>en los resultados de la búsqueda basado en los diferentes tipos de activos en el navegador de activos. Por defecto está configurado como &quot;Todo&quot;, pero al hacer clic en él se abrirá el siguiente menú en el que podrá marcar o desmarcar
+      los activos que se incluirán en la búsqueda:</li>
+  </ul>
+  <p><img alt="Search Filter Options" class="center" src="../../assets/Images/IDE_Input/Search_Menu_Filter.png">Una vez que haya dado un término de búsqueda (y opcionalmente un reemplazo) y haya configurado las opciones de búsqueda, puede utilizar los diferentes botones de la parte inferior
+    para elegir cómo realizar la búsqueda y las acciones a realizar. Estos botones son:</p>
+  <ul class="colour">
+    <li><strong>Buscar todo</strong>: Encuentra todos los términos de búsqueda y los muestra en la ventana de salida.</li>
+    <li><strong>Buscar anterior</strong>: Busca la instancia anterior del término de búsqueda. Esto abrirá el activo que contiene la referencia en el espacio de trabajo (si no está ya abierto) y se desplazará hasta él.</li>
+    <li><strong>Buscar siguiente</strong>: Encuentra la siguiente instancia del término de búsqueda. Esto abrirá el activo que contiene la referencia en el espacio de trabajo (si no está ya abierto) y se desplazará hasta él.</li>
+    <li><strong>Reemplazar todo</strong>: Esto realizará una búsqueda del término dado con las opciones establecidas y también lo reemplazará en los activos con el nuevo término de reemplazo que haya especificado.</li>
+    <li><strong>Reemplazar</strong>: Esto reemplazará el término actualmente seleccionado en el editor actual donde está resaltado con el término de reemplazo seleccionado.</li>
+    <li><strong>Detener la búsqueda</strong>: Detener la búsqueda actual si está en curso.</li>
+  </ul>
+  <p>Si se pulsa la tecla <strong>Escape </strong>mientras esta ventana está abierta, se borrará el campo seleccionado, pero si ese campo ya está vacío, se cerrará la ventana.</p>
+  <p>Todos los resultados de la ventana Buscar y reemplazar se mostrarán en la <a href="../../Introduction/The_Output_Window.htm">ventana de resultados de la búsqueda en</a> la parte inferior del IDE. Cada resultado puede ser <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> doble clic para abrir el activo con el término en el espacio de trabajo actual y paneo a él, listo para la edición.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Menus.htm">Menús</a></div>
+        <div style="float:right">Siguiente: <a href="The_Build_Menu.htm">El menú de construcción</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Edit Menu
+-->
+  <!-- TAGS
+edit_menu
+-->
+</body>
+</html>

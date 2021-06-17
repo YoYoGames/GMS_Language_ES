@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fecha_año_superior</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for date_leap_year" />
+  <meta name="rh-index-keywords" content="date_leap_year" />
+  <meta name="search-keywords" content="date_leap_year" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fecha_año_superior</h1>
+  <p>Esta función devolverá <tt>true</tt> si el componente de año del valor datetime dado es un año bisiesto o <tt>false</tt> en caso contrario. Esta función puede ser muy útil para cosas como los huevos de pascua en tus juegos, o para desbloquear contenido especial.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">date_leap_year(date);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fecha</td>
+        <td>La fecha a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if date_leap_year(date_current_datetime())<br> {
+    <br> if !global.ExtraContent<br> {
+    <br> global.ExtraContent = true;<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará la fecha actual para ver si el año es bisiesto o no. Si lo es, establece una variable global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Date_And_Time.htm">Fecha y hora</a></div>
+        <div style="float:right">Siguiente: <a href="date_date_string.htm">date_date_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+date_leap_year
+-->
+  <!-- TAGS
+date_leap_year
+-->
+
+</body></html>

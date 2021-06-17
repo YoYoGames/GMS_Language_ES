@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_colour_hsv</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_colour_hsv" />
+  <meta name="rh-index-keywords" content="part_type_colour_hsv,part_type_color_hsv" />
+  <meta name="search-keywords" content="part_type_colour_hsv,part_type_color_hsv" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_colour_hsv</h1>
+  <p>Con esta función puede establecer un rango de tono, saturación y valor para todas las partículas del tipo dado. Se proporciona un valor mínimo y un valor máximo para cada uno de los tres componentes y las partículas creadas tendrán un color aleatorio basado en el rango de parámetros dado.
+    rango de parámetros dado. De esta manera puede crear partículas del mismo tono pero con diferentes saturaciones, o de diferentes tonos pero con el mismo valor (luminosidad), etc. Todos los valores deben estar entre 0 y 255.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del tipo de partícula a cambiar.</td>
+      </tr>
+      <tr>
+        <td>hmin</td>
+        <td>El mínimo que puede tener el componente de tono del color final.</td>
+      </tr>
+      <tr>
+        <td>hmax</td>
+        <td>El máximo componente de tono del color final puede ser.</td>
+      </tr>
+      <tr>
+        <td>smin</td>
+        <td>El mínimo que puede tener el componente de saturación del color final.</td>
+      </tr>
+      <tr>
+        <td>smax</td>
+        <td>El máximo componente de saturación del color final puede ser.</td>
+      </tr>
+      <tr>
+        <td>vmin</td>
+        <td>El mínimo que puede tener el componente de valor del color final.</td>
+      </tr>
+      <tr>
+        <td>vmax</td>
+        <td>El máximo que puede tener el componente de valor del color final.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_type_hsv(global.Stars, 0, 255, 0, 255, 255, 255 );</p>
+  <p>El código anterior establece que cada partícula emitida del tipo de partícula indexada en la variable global &quot;Estrellas&quot; tenga diferentes colores y saturaciones, pero el mismo valor (luminosidad).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Types.htm">Tipos de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_type_colour1.htm">part_type_colour1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_colour_hsv
+part_type_color_hsv
+-->
+  <!-- TAGS
+part_type_colour_hsv
+-->
+</body>
+</html>

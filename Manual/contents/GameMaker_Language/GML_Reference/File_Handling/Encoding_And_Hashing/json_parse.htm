@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_parse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_parse" />
+  <meta name="rh-index-keywords" content="json_parse" />
+  <meta name="search-keywords" content="json_parse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_parse</h1>
+  <p>Esta función puede utilizarse para analizar una cadena JSON (creada previamente con <a href="json_stringify.htm">json_stringify</a> o desde cualquier fuente válida), y convertirla en una colección de arrays o structs, donde un array es el equivalente a un
+    JSON y un struct es el equivalente a un objeto JSON. Usted suministra la cadena a analizar, y la función devolverá el array o struct de nivel superior que puede ser comprobado en su código. Si no está seguro del contenido del JSON, puede
+    utilizar las diferentes <a href="../../Variable_Functions/Variable_Functions.htm">funciones variables</a> (como <a href="../../Variable_Functions/typeof.htm"><span class="inline">typeof()</span></a> o <a href="../../Variable_Functions/variable_struct_get_names.htm"><span class="inline">variable_struct_get_names()</span></a>)
+    para comprobar el contenido devuelto. Tenga en cuenta que al intentar analizar un valor no válido (es decir, que no sea una cadena) se producirá un error de excepción.</p>
+  <p>Si la cadena JSON suministrada incluye &quot;undefined&quot; como valor de cualquier propiedad, se convertirá en pointer_null <tt>al</tt> ser analizada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><code>json_parse</code>(json)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>json</td>
+        <td>El JSON a analizar (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructuras y matrices anidadas</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo analizaremos la siguiente cadena JSON que mantendremos en la variable &quot;json&quot;:</p>
+  <p class="code">json = &quot;{&quot;miObj&quot;: {&quot;manzanas&quot;:10, {&quot;naranjas&quot;:12, {&quot;patatas&quot;:100000, {&quot;aguacates&quot;:0 }, {&quot;miMatriz&quot;:[0, 1, 2, 2, 4, 0, 1, 5, 1]}&quot;</p>
+  <p>Esta cadena se analizaría de la siguiente manera:</p>
+  <p class="code">data = json_parse(json);<br> if variable_struct_exists(data, &quot;myObj&quot;)<br> {
+    <br> if is_struct(data.myObj)<br> {<br> var _names = variable_struct_get_names(data.myObj);<br> var _str = &quot;&quot;;<br> for (var i = 0; i &lt; array_length(_names); i++;) <br> {<br> _str = _names[i] + &quot;:
+    &quot; + string(variable_struct_get(data.myObj, _names[i]));<br> show_debug_message(_str);<br> } <br> } <br> if variable_struct_exists(data, &quot;myArray&quot;)<br> {<br> if is_array(data.myArray)<br> {<br> show_debug_message(data.myArray);<br> } <br> } <br> }
+  </p>
+  <p>El código anterior analizará la cadena JSON dada, generando la siguiente salida de consola:</p>
+  <p class="code">naranjas: 12<br> patatas: 100000<br> aguacates: 0<br> manzanas: 10<br> [ 0,1,2,2,4,0,1,5,1 ]</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Encoding_And_Hashing.htm">Codificación de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="base64_encode.htm">base64_encode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_parse
+-->
+  <!-- TAGS
+json_parse
+-->
+</body>
+</html>

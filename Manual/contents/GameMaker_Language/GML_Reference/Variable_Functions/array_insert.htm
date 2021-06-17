@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_insert</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_insert" />
+  <meta name="rh-index-keywords" content="array_insert" />
+  <meta name="search-keywords" content="array_insert" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span>array_insert</span></h1>
+  <p>Con esta función puede insertar un valor (o varios) en una matriz en cualquier posición. La función requiere que se proporcione una variable que contenga el array, el índice (posición) en el array a insertar, así como al menos <em>un</em> valor a
+    aunque, opcionalmente, puede proporcionar más argumentos y todos ellos se insertarán en la matriz en orden consecutivo desde el índice dado.</p>
+  <p>Tenga en cuenta que si el índice dado está fuera de la longitud de la matriz, los valores se añadirán en el índice dado, y cualquier ranura vacía en la matriz entre su último valor y los valores insertados se establecerá un valor por defecto de 0.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">array_insert(variable, índice, valor, [valor], [valor], [etc...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>variable</td>
+        <td>La variable que contiene el array.</td>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice (posición) en el array para insertar el/los valor/es </td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor a insertar</td>
+      </tr>
+      <tr>
+        <td>[valor], [valor], [etc...]</td>
+        <td>(Opcional) Otros valores a insertar en la matriz</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">array_insert(score_array, score_rank, current_score);</p>
+  <p>El código anterior insertará la puntuación actual en la matriz de puntuación, en el índice definido por la variable <tt>score_rank</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_delete.htm">array_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_insert
+-->
+  <!-- TAGS
+array_insert
+-->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_set_uniform_f</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_set_uniform_f" />
+  <meta name="rh-index-keywords" content="shader_set_uniform_f" />
+  <meta name="search-keywords" content="shader_set_uniform_f" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_set_uniform_f</span></h1>
+  <p>Con esta función puedes establecer el valor (o los valores) de una constante <span class="notranslate">del shader</span>. Para ello debes haber obtenido previamente el &quot;handle&quot; de la constante mediante la función <a href="shader_get_uniform.htm"><tt><span class="notranslate">shader_get_uniform</span>()</tt></a>y
+    tendrá que saber qué tipo de constante es para pasarle el número correcto de valores de punto flotante, es decir: si tiene un <tt>vec2</tt> tendrá que pasar dos valores a la función.</p>
+  <p>Una excepción a la regla anterior es cuando se trata de valores de color de 32 bits. Puedes pasar al <span class="notranslate">shader</span> hasta ocho valores de color de 32 bits y se convertirán automáticamente en valores vec4 de 0 - 1. Sin embargo, para ello <i>debes</i> utilizar
+    el nombre de la constante <span class="notranslate">del sh</span> ader <tt>in_Colour</tt>, para un solo color, o <tt>in_Colour0</tt>, <tt>in_Colour1</tt>, etc... hasta <tt>in_Colour7</tt> para múltiples valores de entrada. Los siguientes
+    ejemplos muestran cómo se vería esto en el propio <span class="notranslate">shader</span>:</p>
+  <p class="code">    /Un solo color<br> atributo vec2 in_Position;<br> atributo vec4 in_Colour;<br> atributo vec2 in_TextureCoord;<br>
+    <br> /Múltiples colores<br> atributo vec2 in_Position;<br> atributo vec4 in_Colour0;<br> atributo vec4 in_Colour1;<br> atributo vec2 in_TextureCoord;</p>
+  <p>Ten en cuenta también que si quieres hacer normales comprimidas, etc., usando un formato de color de 4 bytes, entonces también tendrás que usar el mismo formato &quot;in_Colour&quot; que se muestra arriba.</p>
+  <p class="note"><b></b><b>NOTA</b>: Todos los uniformes deben ser establecidos <b>después de</b> llamar a la función <span style="font-size:1px;"><a href="shader_set.htm"><tt style="font-size: 14px"><span class="notranslate">shader_set</span>()</tt></a></span>y antes de llamar a 
+    <span style="font-size:1px;"><a href="shader_reset.htm"><tt style="font-size: 14px"><span class="notranslate">shader_reset</span>()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">shader_set_uniform_f</span>(handle, value1 [, value2, value3, value4]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>manija</td>
+        <td>El manejador de la constante <span class="notranslate">del sombreador</span> a establecer.</td>
+      </tr>
+      <tr>
+        <td>valor1 ... valor4</td>
+        <td>El valor de punto flotante (o valores) para establecer la constante <span class="notranslate">del sombreador</span>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code"><span class="notranslate">shader_set</span><span class="notranslate">(shader_Glass</span>);<br> <span class="notranslate">shader_params</span>= <span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader_glass</span>, &quot;u_vParams&quot;);<br> shader_set_uniform_f(shader_params<span class="notranslate">, 0</span>.1, 0.8, 0.25);<br> draw_self();
+    <br> <span class="notranslate">shader_reset</span>();
+  </p>
+  <p>El código anterior obtendrá el control de la constante <span class="notranslate">del sombreador</span> &quot;u_vParams&quot; (un vec3), <tt>y luego</tt> establecerá esa constante a los valores dados.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Shaders.htm"><span class="notranslate">Sombreadores</span></a></div>
+        <div style="float:right">Siguiente: <a href="shader_set_uniform_f_array.htm"><span class="notranslate">shader_set_uniform_f_array</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_set_uniform_f
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_set_uniform_f
+-->
+</body>
+</html>

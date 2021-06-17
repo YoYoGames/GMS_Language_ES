@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Orden de los eventos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the async events." />
+  <meta name="rh-index-keywords" content="Objects - Event Order" />
+  <meta name="search-keywords" content="event order" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Orden de los eventos</h1>
+  <p>Al considerar los eventos en <span class="notranslate">GameMaker Studio 2</span>, debe tenerse en cuenta que <strong>el orden exacto en que TODOS los eventos van a ocurrir en cada paso no puede ser claramente establecido</strong>, simplemente porque depende del funcionamiento interno de <span class="notranslate">GameMaker Studio</span>
+    2 y esto está sujeto a cambios a medida que el software se desarrolla. Sin embargo, hay ciertos eventos que <em>siempre </em>se ejecutarán en el mismo orden.</p>
+  <p>El primer conjunto de eventos que siempre sucederá de la misma manera son los que ocurren cuando se entra por primera vez en una habitación. El orden en que se disparan los diferentes eventos es:</p>
+  <ul class="colour">
+    <li>Las Variables de<strong>Objeto / Variables de Instancia se inicializan</strong> (estas son las variables que puedes definir en el <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> del <a href="../Objects.htm">Editor de Objetos</a> o el <a href="../Rooms.htm">Editor de Salas</a>).
+      Si tiene un objeto con variables adjuntas, éstas se crearán antes que cualquier otra cosa y entonces cualquier instancia que tenga variables adjuntas se definirá después, por lo que puede sobrescribir las variables del objeto con las específicas de la instancia en el editor de salas.
+      en el editor de salas.</li>
+    <li><strong>Evento de<strong>Creación</strong> </strong>seguido por el Código de Creación de<strong> Instancia </strong>de <em>cada </em>instancia - así que cuando se crea cada instancia, se ejecutará primero su evento de Creación y luego su Código de Creación de Instancia
+      antes de pasar a la siguiente instancia a crear</li>
+    <li><strong>Evento de inicio de juego</strong> - este evento se activa una vez en la primera sala del juego para todas las instancias colocadas en la sala desde el editor de salas (ten en cuenta que llamar a game_restart() activará este evento de nuevo.</li>
+    <li><strong>Código de creación de la</strong> sala: es el código único que se escribe en el editor de salas para cuando se introduce una sala por primera vez</li>
+    <li><strong>Evento de inicio de sala de todas las instancias</strong> - uno de los eventos de la categoría &quot;otros&quot; y se disparará para todas las instancias, persistentes o no</li>
+  </ul>
+  <p>Además, cabe destacar que también se puede establecer el orden de creación de instancias específicas dentro del propio editor de salas, moviéndolas hacia arriba o hacia abajo en la lista de la ventana de <a href="../Room_Properties/Layer_Properties.htm">propiedades de la capa de instancias</a>.</p>
+  <p>Aparte de esos eventos específicos, el único orden conocido que siempre ocurrirá de la misma manera sin importar lo que ocurra pertenece a los eventos de tres <strong>pasos </strong>y los diferentes eventos de <strong>sorteo </strong>. Estos siempre serán consistentes, así que si
+    tienes un código que depende de una sincronización específica durante cada paso de tu juego, deberías usar</p>
+  <ul class="colour">
+    <li><strong>Comienza el evento del paso</strong></li>
+    <li><strong>Evento</strong> de paso (tenga en cuenta que el evento de paso se ejecuta justo antes de que las instancias se coloquen en sus nuevas posiciones)</li>
+    <li><strong>Evento de fin de etapa</strong></li>
+  </ul>
+  <p>Todos los eventos para dibujar también se tratan siempre en el mismo orden que se indica a continuación (excepto el evento <strong>Window Resize </strong>, que se activa de forma diferente):</p>
+  <ul class="colour">
+    <li><strong>Evento previo al sorteo</strong></li>
+    <li><strong>Evento de inicio de sorteo</strong></li>
+    <li><strong>Evento de sorteo</strong></li>
+    <li><strong>Evento de fin de sorteo</strong></li>
+    <li><strong>Evento posterior al sorteo</strong></li>
+    <li><strong>Evento de inicio de la interfaz gráfica de usuario (GUI)</strong></li>
+    <li><strong>Evento GUI de dibujo</strong></li>
+    <li><strong>Evento de finalización de la interfaz gráfica de usuario (GUI)</strong></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Object_Events.htm">Eventos de objetos</a></div>
+        <div style="float:right">Siguiente: <a href="Other_Events.htm">Otros eventos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Event Order
+-->
+  <!-- TAGS
+object_event_order
+-->
+
+</body></html>

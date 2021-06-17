@@ -104,7 +104,7 @@ else<br>
     </ul>
     <p class="dropspot">Esto no quiere decir que no debas utilizar estas funciones, ya que pueden ser muy útiles. Sin embargo, debes saber cuáles utilizar y cuándo, ya que todas funcionan de forma ligeramente diferente y tendrán distintas velocidades. Como regla general, las funciones
       <span class="inline">place_</span> son más rápidas que las funciones <span class="inline">instance_</span>, que son más rápidas que las funciones <span class="inline">collision_</span> y <span class="inline">point_</span>, así que lea las páginas
-      del manual para cada uno de estos tipos de funciones y asegúrate de elegir la más apropiada para cada situación.</p>
+      del manual para cada uno de estos tipos de funciones y asegúrate de elegir la más adecuada para cada situación.</p>
     <p class="dropspot">Alternativamente, mira a crear un<strong> sistema de colisión basado en azulejos</strong>, que puede ser creado usando las <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">funciones de mapa de azulejos</a> o incluso
       un array 2D personalizado o una rejilla DS. Estos serán muy rápidos y ayudarán a aumentar la velocidad de tu juego. Sin embargo, si estás usando un terreno irregular o paredes y objetos que no se alinean con una cuadrícula, puede que no sean apropiados. Puedes encontrar un sencillo
       tutorial sobre las colisiones de tilemap en el siguiente enlace de vídeo</p>
@@ -115,9 +115,9 @@ else<br>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Intercambio de texturas y lotes de vértices</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot">Si enciende el <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><strong>superposición de la depuración</strong></a>verá que hay dos cifras entre paréntesis en la parte superior de la pantalla cuando se realizan las pruebas. La primera es el número
+    <p class="dropspot">Si enciende el botón <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_overlay.htm"><strong>superposición de la depuración</strong></a>verá que hay dos cifras entre paréntesis en la parte superior de la pantalla cuando se está probando. La primera es el número
       de <strong>intercambios de texturas </strong>que se realizan y la segunda es el número de <strong>lotes de vértices</strong>. Hay una serie de factores que influyen en estas cifras y nunca las bajarás a (0) (0) ya que el motor requiere uno o dos de cada
-      de cada paso, pero deberías intentar que estos valores sean lo más bajos posible.</p>
+      cada paso, pero deberías intentar reducir estos valores lo máximo posible.</p>
     <p class="dropspot"><img alt="The Debug Overlay Bar" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/BestPractices_DebugOverlay.png">Para los intercambios de texturas, la mejor y más eficiente manera de hacerlo es optimizar la forma en que sus sprites y fondos
       se almacenan en la página de textura. Esto se hace desde las <a href="../The_Asset_Editors/Sprites.htm">propiedades de los sp</a>rites, y puedes crear páginas de texturas en el <a href="../Settings/Texture_Groups.htm">editor de grupos de texturas</a>. Si tienes un número
       de imágenes que sólo se utilizan en el menú principal (por ejemplo), entonces ponlas juntas en una página de <a href="../Settings/Texture_Information/Texture_Pages.htm">textura</a> separada. Lo mismo si tienes imágenes específicas para cada nivel, o para el jugador y los enemigos,
@@ -128,7 +128,7 @@ else<br>
       la GPU. Hay una serie de cosas que romperán el lote, siendo las principales los <strong>modos de mezcla</strong>, la configuración del <strong>color de dibujo</strong>, la configuración del <strong>alfa de dibujo</strong>, y el dibujo utilizando las formas y primitivas incorporadas.
       primitivas incorporadas.
     </p>
-    <p class="dropspot">Por lo tanto, si tienes varias instancias de viñetas que dibujan usando el modo de mezcla <span class="inline">bm_add</span> - por ejemplo - estarás creando un nuevo lote de vértices para cada una de ellas, ¡lo cual es definitivamente algo malo! En su lugar, ten un objeto controlador
+    <p class="dropspot">Por lo tanto, si tienes varias instancias de viñetas que dibujan usando el modo de mezcla <span class="inline">bm_add</span> - por ejemplo - estarás creando un nuevo lote de vértices para cada una de ellas, lo cual es definitivamente algo malo. En su lugar, ten un objeto controlador
       en tu juego que dibuje todas las balas, así:</p>
     <p class="code">gpu_set_blendmode(bm_add);<br> with (obj_BULLET)<br> {<br> draw_self();<br> } <br> gpu_set_blendmode(bm_normal);
     </p>
@@ -162,7 +162,7 @@ else<br>
       está ocupando espacio de memoria adicional y tiempo de procesamiento que podría ser utilizado para otras cosas. Aquí es donde la función <a href="../GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_depth_disable.htm"><span class="inline">surface_depth_disable()</span></a> viene
       entra en juego...</p>
     <p class="dropspot">Esta función puede llamarse antes de crear una superficie para desactivar la generación del buffer de profundidad, y todas las superficies creadas después no tendrán un buffer de profundidad creado para ellas. Puede activar/desactivar esta función según sea necesario, e incluso puede llamarla
-      una vez al inicio del juego para deshabilitar los buffers de profundidad para todas las llamadas de superficie posteriores (y en la mayoría de los juegos 2D esto está bien). No va a dar un gran aumento de rendimiento, pero es ciertamente algo a tener en cuenta si su juego se basa en gran medida
+      una vez al comienzo del juego para deshabilitar los buffers de profundidad para todas las llamadas de superficie posteriores (y en la mayoría de los juegos 2D esto está bien). No va a dar un gran aumento de rendimiento, pero es ciertamente algo a tener en cuenta si su juego se basa en gran medida
       en las superficies y puede evitar que el juego se quede sin memoria en los dispositivos con menos especificaciones.</p>
   </div>
   <p> </p>

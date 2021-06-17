@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_get_language</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_get_language" />
+  <meta name="rh-index-keywords" content="os_get_language" />
+  <meta name="search-keywords" content="os_get_language" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_language</h1>
+  <p>Esta función devuelve una cadena con el código de idioma de dos letras para el sistema operativo que está ejecutando el juego, tal y como establece el estándar <a href="http://en.wikipedia.org/wiki/ISO_639" target="_blank">ISO639</a>. Si la información no está disponible, mantendrá
+    simplemente una cadena vacía &quot;&quot;, o &quot;en&quot; para el idioma &quot;inglés&quot;. Tenga en cuenta que algunos idiomas también tienen un Código Regional relevante, así que para distinguir entre diferentes regiones del mismo país utilice la función <a href="os_get_region.htm"><tt>os_get_region()</tt></a>.</p>
+  <p>La siguiente tabla muestra ejemplos de algunos de los principales códigos de dos letras de las lenguas definidos por la norma ISO 639:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Idioma</th>
+        <th>Código</th>
+      </tr>
+      <tr>
+        <td>Árabe</td>
+        <td>ar</td>
+      </tr>
+      <tr>
+        <td>Chino</td>
+        <td>zh</td>
+      </tr>
+      <tr>
+        <td>Danés</td>
+        <td>da</td>
+      </tr>
+      <tr>
+        <td>Inglés</td>
+        <td>en</td>
+      </tr>
+      <tr>
+        <td>Francés</td>
+        <td>fr</td>
+      </tr>
+      <tr>
+        <td>Alemán</td>
+        <td>de</td>
+      </tr>
+      <tr>
+        <td>Griego</td>
+        <td>el</td>
+      </tr>
+      <tr>
+        <td>Italiano</td>
+        <td>it</td>
+      </tr>
+      <tr>
+        <td>Japonés</td>
+        <td>ja</td>
+      </tr>
+      <tr>
+        <td>Noruega</td>
+        <td>no</td>
+      </tr>
+      <tr>
+        <td>Polaco</td>
+        <td>pl</td>
+      </tr>
+      <tr>
+        <td>Portugués</td>
+        <td>pt</td>
+      </tr>
+      <tr>
+        <td>Ruso</td>
+        <td>ru</td>
+      </tr>
+      <tr>
+        <td>Español</td>
+        <td>es</td>
+      </tr>
+      <tr>
+        <td>Sueco</td>
+        <td>sv</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>NOTA</b>: No se devuelve el código de país de la ubicación, sino el código de idioma del sistema operativo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">os_get_language()</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">switch (os_get_language())<br> {
+    <br> case &quot;es&quot;: ini_open(&quot;spanish.ini&quot;); break;<br> case &quot;fr&quot;: ini_open(&quot;french.ini&quot;); break;<br> case &quot;it&quot;: ini_open(&quot;italian.ini&quot;); break;<br> default: ini_open(&quot;english.ini&quot;);
+    break;<br>;
+  </p>
+  <p>El código anterior comprueba el idioma del sistema operativo y abre un archivo <tt>*.ini</tt> diferente en función del valor devuelto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="os_get_region.htm">os_get_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_language
+-->
+  <!-- TAGS
+os_get_language
+-->
+</body>
+</html>

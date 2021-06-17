@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer los datos de la baldosa en la celda</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data In Cell action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data In Cell" />
+  <meta name="search-keywords" content="Set Tile Data In Cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data In Cell Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_In_Cell.png"> Establecer los datos de la baldosa en la celda</h1>
+  <p>Con esta acción se pueden establecer los datos del mosaico para una celda de <a class="glossterm" data-glossterm="mapa de azulejos" href="#">mosaico</a> en una capa de <a class="glossterm" data-glossterm="mapa de azulejos" href="#">mapa de mosaico</a>. Los datos del mosaico son simplemente un valor que refleja el índice del mosaico junto con los valores de voltear, reflejar y rotar,
+    así como las máscaras de mosaico personalizadas que haya utilizado. Con esta acción, primero se suministra la capa a la que se apunta utilizando el nombre de la capa (una cadena) tal y como se define en el editor de habitaciones, y luego la columna y la fila de la capa del mapa de azulejos para establecer los datos de azulejos
+    para. La &quot;celda&quot; es el área de la rejilla del mapa de azulejos que contiene el azulejo para el que quieres establecer los datos, así que si tus azulejos son de 16x16, por ejemplo, y la habitación es de 1024x768 el mapa de azulejos tendrá 64 columnas y 48 filas.</p>
+  <p class="note"><b>NOTA</b>: La capa seleccionada <i>debe</i> haber sido definida como una capa de mapa de baldosas en el editor de habitaciones, de lo contrario puede obtener errores.</p>
+  <p>El argumento final de la acción es el propio dato de la baldosa. Normalmente se recuperan los datos de mosaico para la celda del mapa de mosaico utilizando la acción <a href="Get_Tile_Data_In_Cell.htm">Obtener datos de mosaico en la celda</a> y luego se manipulan utilizando la acción <a href="Set_Tile_Data_Transform.htm">Establecer transformación de datos</a> de mosaico antes de establecerlos de nuevo con esta acción. Para más información sobre los datos de mosaico, consulte la sección <span class="notranslate">GML</span> sobre <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">las funciones</a> del mapa de mosaico.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Tile Data In Cell Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_In_Cell.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Capa</td>
+        <td>La capa con el mapa de azulejos a la que apuntar</td>
+      </tr>
+      <tr>
+        <td>Columnas</td>
+        <td>La posición de la columna de la celda a lo largo del eje horizontal para establecer los datos del mosaico para</td>
+      </tr>
+      <tr>
+        <td>Fila</td>
+        <td>La posición de la fila de celdas a lo largo del eje vertical para establecer los datos del mosaico</td>
+      </tr>
+      <tr>
+        <td>Datos</td>
+        <td>Los datos del azulejo que se utilizarán para establecer la celda</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Tile Data In Cell Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_In_Cell.png">El código del bloque de acción anterior recorre cada celda de la habitación, recupera
+    los datos de las baldosas de la celda, los refleja, y luego establece la celda de nuevo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Actions.htm">Acciones de la baldosa</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Tile_Data_In_Cell.htm">Obtener los datos del azulejo en la celda</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data In Cell
+-->
+  <!-- TAGS
+action_tile_set_data_in_cell
+-->
+
+</body></html>

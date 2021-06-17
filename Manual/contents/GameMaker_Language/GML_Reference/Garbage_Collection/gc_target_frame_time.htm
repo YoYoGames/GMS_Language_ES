@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_target_frame_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gc_target_frame_time" />
+  <meta name="rh-index-keywords" content="gc_target_frame_time" />
+  <meta name="search-keywords" content="gc_target_frame_time" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_target_frame_time</h1>
+  <p>Con esta función puedes <span>indicar al recolector de basura que no debe pasar más del tiempo especificado ejecutando cada trama. La función toma un valor de tiempo <span>especificado en microsegundos (donde 1.000.000 de microsegundos equivale a un segundo) y el tiempo de trama objetivo por defecto es de 100 microsegundos.</span></span>
+  </p>
+  <p><span><span>Tenga en cuenta que esto es simplemente un </span></span><span>ya que algunas operaciones deben ejecutarse completamente en una sola trama y a veces pueden tardar más que el tiempo objetivo. También tenga en cuenta que<span>aumentar el tiempo objetivo hará que el recolector de basura responda mejor a los cambios rápidos en el uso de la memoria y hará que la memoria se libere más rápidamente, aunque en la práctica es poco probable que esto sea necesario en la mayoría de los casos. Ten en cuenta también que si estableces el tiempo de fotogramas objetivo en 0 <em>no </em>harás que el recolector se detenga por completo, sino que seguirá haciendo una cantidad mínima de trabajo en cada fotograma. Para desactivar completamente el recolector, utilice la función <span class="inline"><a href="gc_enable.htm">gc_enable()</a></span>.</span>
+    </span>
+  </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gc_target_frame_time(tiempo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tiempo</td>
+        <td>El tiempo objetivo - en microsegundos - que el recolector de basura debe trabajar cada cuadro</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A (no definido)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (gc_get_target_frame_time() != 50)<br> {
+    <br> gc_target_frame_time(50);<br> }
+  </p>
+  <p>El código anterior comprueba el objetivo de tiempo del marco actual para el recolector de basura y si no es 50 microsegundos entonces se establece en este valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Garbage_Collection.htm">Recogida de basura</a></div>
+        <div style="float:right">Siguiente: <a href="gc_get_target_frame_time.htm">gc_get_target_frame_time</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_target_frame_time
+-->
+  <!-- TAGS
+gc_target_frame_time
+-->
+</body>
+</html>

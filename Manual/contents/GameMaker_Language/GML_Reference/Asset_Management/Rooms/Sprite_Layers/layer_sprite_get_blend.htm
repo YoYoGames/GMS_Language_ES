@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_get_blend</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_get_blend" />
+  <meta name="rh-index-keywords" content="layer_sprite_get_blend" />
+  <meta name="search-keywords" content="layer_sprite_get_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_get_blend</h1>
+  <p>Esta función puede utilizarse para obtener el color de mezcla del elemento sprite. Se le da el ID del elemento sprite (que se obtiene cuando se crea un elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> o cuando se utiliza la función
+    <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), y la función devolverá un valor real que representa el color asignado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_get_blend(sprite_element_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del elemento sprite del que se va a obtener la información</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del color (real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;sprite_sky&quot;);<br> var back_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> if layer_sprite_get_blend(back_id) == c_white<br> {
+    <br> layer_sprite_blend(back_id, make_colour_rgb(random(255), random(255), 255));<br> }
+  </p>
+  <p>El código anterior obtendrá el ID de la capa llamada &quot;sprite_sky&quot; y luego lo utilizará para obtener el ID del elemento sprite en esa capa. Este ID se utiliza para comprobar el color de mezcla del elemento y si es equivalente a la constante <tt>c_white</tt>,
+    entonces la mezcla del elemento se establece en un color aleatorio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_get_alpha.htm">layer_sprite_get_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_get_blend
+-->
+  <!-- TAGS
+layer_sprite_get_blend
+-->
+</body>
+</html>

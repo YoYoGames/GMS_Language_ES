@@ -86,7 +86,7 @@
     <p class="code">ángulo_de_dibujo = 0;</p>
     <p class="dropspot">Vamos a utilizar esta variable para rotar &quot; <span class="inline">spr_Two</span>&quot; en el tiempo, y dibujarla superpuesta sobre el sprite asignado al objeto (&quot; <span class="inline">spr_One</span>&quot;). Para ello necesitamos añadir un <strong>evento </strong>de dibujo al objeto
       el objeto. Al hacer esto le estamos diciendo a <span class="notranslate">GameMaker Studio 2</span> que queremos hacernos cargo de lo que la instancia dibuja, lo que significa que nuestro código incluirá una llamada a la función <a href="../GameMaker_Language/GML_Reference/Drawing/Sprites_And_Tiles/draw_self.htm"><span class="inline">draw_self()</span></a> función
-      o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>Dibujar a sí mismo</strong></a> acción. Esta acción simplemente replica lo que el objeto hace cuando no hay un evento de dibujo presente y está dibujando por defecto el sprite asignado. Nosotros
+      o <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Drawing/Draw_Self.htm"><strong>Draw Self</strong></a> acción. Esta acción simplemente replica lo que el objeto hace cuando no hay un evento de dibujo presente y está dibujando por defecto el sprite asignado. Nosotros
       entonces dibujar el segundo sprite que queremos usar como sprite superpuesto que está girando. El <span class="notranslate">DnD™</span>y el <span class="notranslate">GML</span> se ven así:</p>
     <p class="dropspot"><img alt="Draw Two Sprites With DnD" class="center" src="../assets/Images/QS_Guide/QS_DrawExample_DnD_4_2.png" /></p>
     <p class="code">draw_self();<br> draw_angle = draw_angle + 0.5;<br> draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);</p>

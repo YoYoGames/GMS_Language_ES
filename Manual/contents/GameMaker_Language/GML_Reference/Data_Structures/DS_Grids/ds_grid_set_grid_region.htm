@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_set_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_set_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_set_grid_region" />
+  <meta name="search-keywords" content="ds_grid_set_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_set_grid_region</h1>
+  <p>Esta función puede utilizarse para copiar el contenido de un área rectangular de celdas de la rejilla de una rejilla DS (previamente definida) a otra, <i>o</i> puede utilizarse para copiar una región desde dentro de la misma rejilla. Las siguientes imágenes ilustran las dos formas en que
+    esta función puede ser utilizada:</p>
+  <p><img alt="DS grid set grid region" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Data_Structures/ds_grid_set_grid_region.png" style="cursor: nesw-resize;" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_set_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la cuadrícula de destino.</td>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>El índice de la red de origen.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La posición izquierda de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La posición superior de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La posición derecha de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La posición inferior de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>La posición x en la cuadrícula de destino para copiar la región de origen.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>La posición y en la cuadrícula de destino para copiar la región de origen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_grid_set_grid_region(grid, t_grid, 0, 0, 5, 5, 10, 10)</p>
+  <p>Esto copiaría la región de celdas de (0,0) a (5,5) de la cuadrícula indexada en la variable &quot;t_grid&quot; y las copiaría en la posición (10,10) de la cuadrícula indexada en la variable &quot;grid&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_set_region.htm">ds_grid_set_region</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_set_grid_region
+-->
+  <!-- TAGS
+ds_grid_set_grid_region
+-->
+
+</body></html>

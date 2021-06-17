@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Caminos</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the path editor works" />
+  <meta name="rh-index-keywords" content="Path Editor" />
+  <meta name="search-keywords" content="paths,path editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de rutas</h1>
+  <p><img alt="The Path Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Paths.png">En algún momento mientras creas tus juegos puedes necesitar que una de tus instancias siga un camino a través de un nivel. Ahora, esto se puede hacer en el código mediante la simple creación de
+    una matriz de posiciones dentro de la habitación y luego tener una instancia de moverse entre ellos, pero que puede ser una tarea de configurar y es difícil de cambiar, probar y adaptar para diferentes instancias. Por esta razón <span class="notranslate">GameMaker Studio 2</span> tiene recursos de ruta y un
+    editor de rutas dedicado.</p>
+  <p>La idea básica es bastante sencilla: se define una ruta dibujándola en el editor de rutas, y luego se puede colocar una acción (o código) en el evento de creación de un objeto para decirle a la instancia que siga esa ruta en particular. También puede establecer la velocidad para seguir
+    y otras acciones relacionadas con la posición y la orientación de la trayectoria dentro de la sala. Cuando se crea por primera vez un recurso de trayectoria, se abre la ventana del editor de trayectorias con las siguientes opciones:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Propiedades de la ruta</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Al igual que con todos los recursos en <span class="notranslate">GameMaker Studio</span> 2 debe dar a su nueva ruta un nombre único, ya que esto es lo que se utilizará para identificar a lo largo del juego que está haciendo, y un buen sistema que mucha gente utiliza es el prefijo (o sufijo) del recurso
+      para facilitar su reconocimiento en el código o en las acciones (por ejemplo: <span class="inline">path_Enemy_1</span> o <span class="inline">PowerUp_path</span>). <br></p>
+    <p class="dropspot">Una vez que haya nombrado la trayectoria, puede empezar a definirla colocando puntos en el editor principal de la derecha, añadiendo aquí cada punto a la lista junto con su posición y velocidad. El valor de la velocidad de los puntos de la trayectoria se define por un porcentaje
+      de la velocidad a la que hace que la instancia se mueva a lo largo de la trayectoria (por defecto es el 100%). Por lo tanto, si inicia una instancia a una velocidad de 2 (2 píxeles por paso) a lo largo de una ruta y luego uno de los puntos de la ruta tiene un valor de velocidad del 50%, la instancia reducirá la velocidad
+      a medida que se acerque a este punto a una velocidad de 1 (50% de la velocidad de la trayectoria). Del mismo modo, puedes establecer la velocidad al 150% y la instancia acelerará al llegar al punto. De este modo, se puede crear un movimiento de aspecto dinámico sin ningún tipo de código.
+      de código.
+    </p>
+    <p class="dropspot">Cabe destacar que puede hacer doble clic rápido <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> en cualquiera de los puntos definidos en la lista para desplazar el editor a
+      el punto seleccionado, o hacer doble clic lento <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> en uno de los valores para editarlo manualmente (x, y, o velocidad).<br></p>
+    <p class="dropspot">También puede especificar el tipo de conexión para toda la ruta y si la ruta debe ser cerrada o no (una ruta cerrada conectará el último punto de la ruta con el primero). El tipo de conexión puede ser de <strong>línea recta</strong> o <strong>suave </strong>, donde
+      una conexión de línea recta simplemente conecta los puntos de un camino de forma lineal, con cambios angulares en cada punto, mientras que una conexión suave creará un camino mucho más suave que puede no pasar directamente por ninguno de los puntos, sino que tomará una
+      línea aproximada, creando bonitas curvas mediante una <a data-glossterm="interpolación suave" class="glossterm" href="#">interpolación suave</a>. También puede especificar la precisión de las curvas (por defecto es 4), que puede ser de 1 a 8, siendo 8 la más suave.
+      más suave. La imagen siguiente muestra un ejemplo de cómo estas opciones afectan a la trayectoria:</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" src="../assets/Images/Asset_Editors/Editor_Paths_Examples.png" alt="Path Editor Examples" class="center" /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Edición de rutas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Puede añadir puntos a la ruta haciendo clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en cualquier lugar de la ventana de edición, y todos los clics posteriores añadirán más puntos. Una vez colocado en el editor, un punto puede moverse
+      haciendo clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> y arrastrando sobre él o cambiando los valores que se presentan a la izquierda para la posición X e Y y la velocidad (ver <strong>Propiedades de la</strong> trayectoria, arriba). Usted
+      puede utilizar <img alt="CTRL Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> y hacer clic con el botón izquierdo del ratón en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en varios puntos para seleccionarlos juntos, y este grupo de puntos puede arrastrarse y colocarse como desee. También puede pulsar <img alt="Delete Key Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Delete.png" width="55"> para eliminar el punto o puntos seleccionados.</p>
+    <p class="dropspot">Hay un menú adicional disponible en la ventana del editor cuando se hace clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png">, que se muestra a continuación:</p>
+    <p class="dropspot"><img alt="Path Editor RMB Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Paths_Menu.png">Cada uno de los elementos de este menú funciona de la siguiente manera:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Borrar puntos</strong> - Borra el punto o puntos seleccionados.</li>
+      <li class="dropspot"><strong>Desplazar a la trayectoria</strong> - Desplazar la vista en el editor hacia el centro de la trayectoria.</li>
+      <li class="dropspot"><strong>Invertir</strong> - Invierte el orden de los puntos de la ruta. Esto no los mueve, sino que cambia el orden en el que serán procesados para que el inicio se convierta en el final y viceversa.</li>
+      <li class="dropspot"><strong>Voltear</strong> - Voltea la trayectoria a lo largo del eje horizontal.</li>
+      <li class="dropspot"><strong>Espejo</strong> - Voltea la trayectoria a lo largo del eje vertical.</li>
+    </ul>
+    <p class="dropspot"> </p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">La caja de herramientas</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Los botones de la caja de herramientas de la parte superior permiten controlar cómo se dibujan las cosas en la ventana del editor. Puedes activar o desactivar la cuadrícula de fondo, así como establecer la adición de puntos de ruta para que se ajusten a esta cuadrícula o no:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" src="../assets/Images/Asset_Editors/Editor_Paths_GridOptions.png" class="center" alt="Path Editor Grid Options">Los valores de ajuste indican el tamaño de las celdas de la cuadrícula
+      y esto puede ser cambiado a cualquier valor que usted requiera. El resto de las herramientas están dedicadas a acercar y alejar el zoom y a desplazar el área del editor, y puedes hacer clic en el botón <img data-cke-saved-src="../assets/Images/Icons/Icon_ZoomReset.png" src="../assets/Images/Icons/Icon_ZoomReset.png" alt="Zoom Reset Icon" class="icon"> para restablecer la relación 1:1 con la pantalla. Tenga en cuenta que si se desplaza demasiado lejos de donde quiere dibujar la ruta, puede utilizar el menú del botón derecho del ratón <img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon">, y luego hacer clic en <strong>Desplazar a la ruta</strong> para volver a donde estaba trabajando.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Puntos de ruta</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Las rutas son simplemente una colección de puntos unidos por una línea. En el editor, estos puntos se colocan utilizando el botón izquierdo del ratón <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">. Puedes añadir puntos en cualquier lugar del editor de la sala y se añadirán a la lista de puntos de forma consecutiva para formar una ruta. Si coloca un punto cerca de una línea de conexión o de otro nodo, el nuevo punto se insertará en la trayectoria en lugar de añadirse a ella (puede configurar la distancia de detección para que el punto sea más fácil de detectar).
+      (puede establecer la distancia de detección para esto en las <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Spline_Editor.htm">Preferencias</a>). Puede pulsar <img data-cke-saved-src="../assets/Images/Icons/Icon_Ctrl.png" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" height="20" class="icon" alt="CTRL Icon"> / <img data-cke-saved-src="../assets/Images/Icons/Icon_Cmd.png" src="../assets/Images/Icons/Icon_Cmd.png" width="55" height="20" class="icon" alt="CMD Icon"> y hacer clic en <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png"> en puntos ya colocados para seleccionarlos, y entonces cualquier operación realizada en los puntos de la ruta, como moverlos, se aplicará a todos
+      los puntos seleccionados como un grupo. Para eliminar un punto o una selección de puntos puede hacer clic con el botón derecho del ratón en <img data-cke-saved-src="../assets/Images/Icons/Icon_RMB.png" src="../assets/Images/Icons/Icon_RMB.png" class="icon" alt="RMB Icon"> y seleccionar &quot;Eliminar
+      Punto&quot; o pulsar la tecla <img data-cke-saved-src="../assets/Images/Icons/Icon_Delete.png" src="../assets/Images/Icons/Icon_Delete.png" width="55" height="20" class="icon" alt="Delete Key Icon">.</p>
+    <p class="dropspot">Tenga en cuenta que también puede utilizar los siguientes atajos para realizar algunas operaciones adicionales que no están disponibles a través del menú del botón derecho del ratón en el punto o puntos de la ruta elegida:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot">T + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Traslada (mueve) los puntos de la trayectoria</li>
+      <li class="dropspot">R + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Gira los puntos de la trayectoria</li>
+      <li class="dropspot">S + <img alt="LMB Icon" class="icon" data-cke-saved-src="../assets/Images/Icons/Icon_LMB.png" src="../assets/Images/Icons/Icon_LMB.png">: Escala los puntos de la trayectoria</li>
+    </ul>
+    <p class="dropspot"><br /></p>
+    <p class="dropspot"></p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left"><a href="Rooms.htm">Atrás: Los editores de activos</a></div>
+        <div style="float:right"><a href="Rooms.htm">Siguiente:</a> Habitaciones</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Path Editor
+Paths
+-->
+  <!-- TAGS
+path_editor
+-->
+
+</body></html>

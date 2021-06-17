@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_clear_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_clear_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_clear_cell" />
+  <meta name="search-keywords" content="mp_grid_clear_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_clear_cell</h1>
+  <p>Esta función puede utilizarse para limpiar una &quot;celda&quot; específica de una cuadrícula MP. Las celdas <i>no</i> se calculan como coordenadas de la sala, sino como coordenadas de la cuadrícula, donde (0,0) es la esquina superior izquierda de la cuadrícula.
+    posición en la sala, debemos cambiar las coordenadas x e y en coordenadas de celda dividiéndolas por la resolución de la cuadrícula MP. El ejemplo de código siguiente muestra cómo funciona esto.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_grid_clear_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice del mp_grid que se va a utilizar</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Posición horizontal de la celda a limpiar</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>posición vertical de la celda a limpiar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">with (obj_Box)<br> {
+    <br> mp_grid_clear_cell(grid, floor(x / 32), floor(y /32));<br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior hará que todos los &quot;obj_Box&quot; se destruyan a sí mismos y que marquen como libres las celdas que ocupaban en el mp_grid indexado en la variable &quot;grid&quot;. En este ejemplo, encontramos la celda adecuada tomando la coordenada x/y
+    del objeto y dividiéndolas por la resolución de la rejilla (usando <tt>floor</tt> para mantener los valores como enteros).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_clear_rectangle.htm">mp_grid_clear_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_clear_cell
+-->
+  <!-- TAGS
+mp_grid_clear_cell
+-->
+</body>
+</html>

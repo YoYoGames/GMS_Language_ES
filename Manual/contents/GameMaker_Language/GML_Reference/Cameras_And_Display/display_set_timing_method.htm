@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mostrar_método_de_tiempo_de_presentación</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_timing_method" />
+  <meta name="rh-index-keywords" content="display_set_timing_method,tm_sleep,tm_countvsyncs" />
+  <meta name="search-keywords" content="display_set_timing_method,tm_sleep,tm_countvsyncs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mostrar_método_de_tiempo_de_presentación</h1>
+  <p>Esta función se puede utilizar para establecer el método de sincronización que se utilizará para renderizar su juego. El método puede ser una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tm_sleep</td>
+        <td>Utilizar el valor del margen de sueño como método principal de temporización</td>
+      </tr>
+      <tr>
+        <td>tm_countvsyncs</td>
+        <td>Utilizar la sincronización vsync como método principal de sincronización (por defecto para todas las plataformas soportadas)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>El método de sincronización vsync utiliza el soporte de las plataformas de destino para la sincronización vertical con el fin de proporcionar un ancla para los cálculos de tiempo de renderización de los juegos, mientras que el establecimiento del modo de margen de sueño sólo tratará de asegurar que cada cuadro dura la cantidad correcta
+    cantidad de tiempo (digamos 1/30 o 1/60 de segundo) esperando o durmiendo. En general, la sincronización vsync por defecto dará los resultados más suaves, pero ten en cuenta que cuando se utiliza el método vsync, los valores del margen de espera siguen siendo relevantes, aunque tendrán un impacto reducido y recomendamos mantener el margen de espera.
+    aunque su impacto será menor y recomendamos mantenerlo en su valor por defecto cuando se utilice este método.</p>
+  <p>Por defecto, en todas las plataformas <i>, excepto</i> PS4, <span class="notranslate">Ubuntu</span> y HTML5, <span class="notranslate">GameMaker Studio 2</span> utilizará el método de temporización vsync, mientras que en las plataformas no compatibles, <i>sólo</i> se puede utilizar la temporización del margen de sueño.</p>
+  <p>Si desea establecer el margen de reposo puede hacerlo con la función <a href="display_set_sleep_margin.htm"><tt>display_set_sleep_margin()</tt></a> y puede encontrar qué método de temporización se está utilizando actualmente con la función <a href="display_get_timing_method.htm"><tt>display_get_timing_method()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">display_set_timing_method(method);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>método</td>
+        <td>El método de cronometraje a utilizar (véase la lista de constantes, más arriba)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si display_get_timing_method() != tm_sleep<br> {
+    <br> display_set_timing_method(tm_sleep);
+    <br> si display_get_sleep_margin() != 20<br> {
+    <br> display_set_sleep_margin(20);
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprobará el método de temporización y, si no está establecido como tm_sleep <tt>,</tt> se establecerá como tal y el margen de suspensión se establecerá en 20.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Cámaras y pantalla</a>
+        <div style="float:left">Atrás: </div>
+        <div style="float:right">Siguiente: <a href="display_set_sleep_margin.htm">display_set_sleep_margin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_timing_method
+tm_sleep
+tm_countvsyncs
+-->
+  <!-- TAGS
+display_set_timing_method
+-->
+</body>
+</html>

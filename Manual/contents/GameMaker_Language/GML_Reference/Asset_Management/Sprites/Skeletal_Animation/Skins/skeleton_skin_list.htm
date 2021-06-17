@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lista_de_pieles_del_esqueleto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_skin_list" />
+  <meta name="rh-index-keywords" content="skeleton_skin_list" />
+  <meta name="search-keywords" content="skeleton_skin_list" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lista_de_pieles_del_esqueleto</h1>
+  <p>Con esta función puedes rellenar una <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">lista</a> (pre-creada) <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">de DS</a> con todos los nombres de las pieles incluidas como parte del sprite de la animación esquelética. Los nombres serán cadenas y podrán ser utilizados en las
+    usarse en las otras funciones de skeleton animation skin para estos tipos de sprite.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_skin_list(sprite, list);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite de la animación del esqueleto de la columna vertebral para obtener la lista.</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>El ID de la lista de DS a rellenar con los nombres de las animaciones.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var list = ds_list_create();<br> skeleton_skin_list(sprite_index, list);<br> var num = ds_list_size(list);<br> skeleton_skin_set(list[| irandom(num - 1));<br> ds_list_destroy(list);
+  </p>
+  <p>El código anterior crea una lista DS y la rellena con los nombres de las pieles. Luego se elige uno al azar y se aplica a la instancia antes de destruir la lista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Skins.htm">Pieles</a></div>
+        <div style="float:right">Siguiente: <a href="../Attachments/skeleton_attachment_get.htm">skeleton_attachment_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_skin_list
+-->
+  <!-- TAGS
+skeleton_skin_list
+-->
+</body>
+</html>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_md5</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_md5" />
+  <meta name="rh-index-keywords" content="buffer_md5" />
+  <meta name="search-keywords" content="buffer_md5" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_md5</h1>
+  <p>En criptografía, MD5 (Message-Digest algorithm 5) es una función <a class="glossterm" data-glossterm="hashtags" href="#">hash</a> criptográfica ampliamente utilizada con un valor hash de 128 bits y se ha empleado en una amplia variedad de aplicaciones de seguridad.
+    También se utiliza habitualmente para comprobar la integridad de los datos. Esta función tomará los datos de entrada de un búfer dado (o parte del búfer) y devolverá el hash MD5 de 32 caracteres hexadecimales que es único para esos datos. De esta manera se puede generar
+    una clave segura que puede ser almacenada y utilizada para comprobar la integridad de la información que se envía a (o se recibe de) un servidor externo (por ejemplo). Cuando se aplica esto a los búferes utilizando esta función se debe especificar el id del búfer a
+    utilizar, luego un valor de desplazamiento (en bytes) para donde comenzar, y luego un tamaño (nuevamente en bytes) para la región a ser hash.</p>
+  <p class="note"><strong>NOTA</strong>: MD5 no es completamente seguro y puede romperse. Consulte <a href="https://en.wikipedia.org/wiki/MD5">esta página</a> para obtener más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_md5(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El valor de desplazamiento de los datos.</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño del buffer.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">check_string = buffer_md5(buff, 0, buffer_get_size(buff));</p>
+  <p>El código anterior creará un hash md5 para los datos completos almacenados en el buffer indexado por la variable &quot;buff&quot;, y almacenará el hash devuelto en la variable &quot;check_string&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_sha1.htm">buffer_sha1</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_md5
+-->
+  <!-- TAGS
+buffer_md5
+-->
+
+</body></html>

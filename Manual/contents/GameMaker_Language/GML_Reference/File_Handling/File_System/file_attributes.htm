@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>atributos_de_archivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_attributes" />
+  <meta name="rh-index-keywords" content="file_attributes,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+  <meta name="search-keywords" content="file_attributes,fa_readonly,fa_hidden,fa_sysfile,fa_volumeid,fa_directory,fa_archive" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>atributos_de_archivo</h1>
+  <p>Puede utilizar esta función para comprobar los atributos de un archivo determinado. Puede sumar las siguientes constantes para ver el tipo de archivos que desea:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><tt>fa_readonly</tt></td>
+        <td>Archivos de sólo lectura</td>
+      </tr>
+      <tr>
+        <td><tt>fa_hidden</tt></td>
+        <td>Archivos ocultos</td>
+      </tr>
+      <tr>
+        <td><tt>fa_sysfile</tt></td>
+        <td>Archivos del sistema</td>
+      </tr>
+      <tr>
+        <td><tt>fa_volumenid</tt></td>
+        <td>Archivos de volumen-identificación</td>
+      </tr>
+      <tr>
+        <td><tt>fa_directorio</tt></td>
+        <td>Directorios</td>
+      </tr>
+      <tr>
+        <td><tt>fa_archivo</tt></td>
+        <td>Ficheros archivados</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><b></b></p>
+  <p class="note"><b>NOTA</b>: Esta es una función sólo para <span class="notranslate">Windows</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_attributes(fname, attr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>El nombre del archivo a comprobar.</td>
+      </tr>
+      <tr>
+        <td>attr</td>
+        <td>Los atributos que hay que comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !file_attributes(file, fa_hidden)<br> {
+    <br> file_delete(file);
+    <br> }
+  </p>
+  <p>Esto comprobaría un archivo para ver si está oculto o no, y si no se elimina.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_System.htm">Sistema de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="filename_name.htm">nombre_de_archivo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_attributes
+fa_readonly
+fa_hidden
+fa_sysfile
+fa_volumeid
+fa_directory
+fa_archive
+-->
+  <!-- TAGS
+file_attributes
+-->
+</body>
+</html>

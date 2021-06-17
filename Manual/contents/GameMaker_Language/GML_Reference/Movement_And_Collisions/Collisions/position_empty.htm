@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posición_vacía</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_empty" />
+  <meta name="rh-index-keywords" content="position_empty" />
+  <meta name="search-keywords" content="position_empty" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posición_vacía</h1>
+  <p>Esta función comprobará si una posición dada entra en colisión con <i>cualquier instancia</i> con una máscara de colisión válida en la posición dada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">posición_vacía(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var xx, yy;<br> xx = random(room_width);<br> yy = random(room_height);<br> if position_empty(xx, yy)<br> {
+    <br> instance_create_layer(xx, yy, &quot;Bullets&quot;, obj_Bomb);<br> }
+  </p>
+  <p>Esto comprobará una posición aleatoria en algún lugar de la habitación para una colisión y si no hay ninguna creará una instancia de obj_Bomb.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="position_meeting.htm">posición_reunión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_empty
+-->
+  <!-- TAGS
+position_empty
+-->
+</body>
+</html>

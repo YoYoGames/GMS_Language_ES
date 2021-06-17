@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_angle</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_angle" />
+  <meta name="rh-index-keywords" content="camera_set_view_angle" />
+  <meta name="search-keywords" content="camera_set_view_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_angle</h1>
+  <p>Puede utilizar esta función para actualizar el ángulo de la cámara de visión dentro de la sala. Se da el valor único del ID de la cámara (devuelto por las diferentes funciones <a href="camera_create.htm"><tt>camera_create()</tt></a> funciones) y luego da el ángulo que usted
+    desea ajustar la vista de la cámara. El valor por defecto es 0° con valores positivos que rotan la cámara <b>en sentido contrario a las agujas del reloj</b>, es decir: si se establece el valor en 90, la cámara girará 90° hacia la izquierda.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">camera_set_view_angle(camera_id, angle)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>El valor único del ID de la cámara devuelto cuando se creó la cámara</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El nuevo ángulo para establecer la vista de la cámara</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">camera_set_view_angle(view_camera[0], point_direction(x, y, mouse_x, mouse_y));</p>
+  <p>El código anterior establecerá el ángulo de la cámara de vista para la cámara asignada al puerto de vista[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="camera_set_view_target.htm">camera_set_view_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_angle
+-->
+  <!-- TAGS
+camera_set_view_angle
+-->
+</body>
+</html>

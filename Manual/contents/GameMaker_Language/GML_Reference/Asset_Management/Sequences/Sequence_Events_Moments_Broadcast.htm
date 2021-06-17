@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Secuencia de eventos, momentos y mensajes de difusión</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequence Events, Moments and Broadcast Messages" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequence Events,Sequence Momements,Sequence Messages,broadcast messages,event_create,event_destroy,event_clean_up,event_step,event_step_begin,event_step_end,event_async_system,event_broadcast_message" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Eventos, momentos y mensajes de difusión</h1>
+  <p>Además de todas las propiedades enumeradas <a href="Sequences.htm">aquí</a> para una estructura de secuencia, también tiene la posibilidad de añadir propiedades de &quot;acción&quot; especiales a una secuencia. Hay tres tipos diferentes de
+    de estas propiedades de &quot;acción&quot; que se pueden añadir a un objeto de secuencia - Eventos. <b>Momentos</b> y <b>Mensajes de difusión</b> - y cada uno de ellos se explica con más detalle
+    en las secciones siguientes.</p>
+  <p> </p>
+  <h2>Secuencia de eventos</h2>
+  <p>Los objetos de secuencia pueden tener <b>eventos</b> añadidos, y estos eventos son análogos a los eventos utilizados por los activos de los objetos. Los eventos que se asignan a un objeto de secuencia ocurrirán en un orden específico, ya sea una vez en un momento definido
+    en un momento definido del ciclo de vida de la secuencia, o en cada fotograma en el que la secuencia se esté ejecutando. En esta sección, discutiremos cómo se manejan estos eventos mediante el código, pero también pueden añadirse utilizando el <a href="../../../../The_Asset_Editors/Sequences.htm">Editor de Secuencias</a>.
+    Tenga en cuenta que el orden de los eventos enumerados aquí no está influenciado por la dirección <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">del cabezal de reproducción</a>, e incluso si la secuencia se está reproduciendo hacia atrás, los eventos se ejecutarán en el orden dado
+    abajo.</p>
+  <p>Los eventos disponibles son:<b></b></p>
+  <ul class="colour">
+    <li><b>Crear</b>: se activa cuando se crea una instancia de secuencia en una capa.</li>
+    <li><b>Destroy</b>: se activa cuando se destruye una instancia de secuencia en una capa.</li>
+    <li><b>Limpieza</b>: se activa cuando una instancia de la secuencia se recoge de la basura.</li>
+    <li><b>Paso</b>: se activa justo antes del evento habitual de paso del objeto. <b>Importante: Si la secuencia está en pausa, este evento no se activará hasta el siguiente paso.</b> Si la secuencia está en pausa, este evento no se activará hasta el siguiente paso después de que la secuencia comience a reproducirse de nuevo.</li>
+    <li><b>Comenzar Paso</b>: se dispara justo antes del evento de comenzar paso del objeto. <b>Importante: Si la secuencia está en pausa, este evento no se activará hasta el siguiente paso.</b> Si la secuencia está en pausa, este evento no se disparará hasta el siguiente paso después de que la secuencia comience a reproducirse de nuevo.</li>
+    <li><b>Paso final</b>: se activa justo antes del evento de paso final del objeto. <b>Importante: Si la secuencia está en pausa, este evento no se activará hasta el siguiente paso.</b> Si la secuencia está en pausa, este evento no se disparará hasta el siguiente paso después de que la secuencia comience a reproducirse de nuevo.</li>
+    <li><b>Sistema Asíncrono</b>: se dispara igual que cualquier objeto manejador de <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/System.htm">eventos del sistema asíncrono</a>. <em><b>Importante!</b> Si la secuencia está en pausa, este evento no se activará.</em></li>
+    <li><b>Mensaje</b> de difusión: se activa durante la actualización de la secuencia cuando se encuentra un <span class="notranslate">fotograma clave</span> de mensaje de difusión.</li>
+  </ul>
+  <p>Todos los eventos deben estar asociados a funciones que se definen en un script, por lo que para configurar un evento se debe asignar una <a href="../../../GML_Overview/Method_Variables.htm">variable de método</a> a una propiedad con el nombre correcto
+    que indique a la secuencia qué evento debe llamar a la función. La sintaxis para esto es la siguiente:<br>
+  </p>
+  <p class="code">&lt;construcción_secuencia&gt;.&lt;propiedad_de_evento&gt; = método(&lt;construcción_secuencia&gt;, &lt;nombre_de_función&gt;);</p>
+  <p>Las propiedades de la estructura de la secuencia para los diferentes eventos son las siguientes:<tt></tt></p>
+  <ul class="colour">
+    <li><tt>crear_evento</tt><tt></tt></li>
+    <li><tt>evento_destrucción</tt><tt></tt></li>
+    <li><tt>limpieza_de_eventos</tt><tt></tt></li>
+    <li><tt>paso_de_evento</tt><tt></tt></li>
+    <li><tt>paso_de_evento_inicio</tt><tt></tt></li>
+    <li><tt>paso_de_evento_final</tt></li>
+    <li><tt>sistema_asíncrono_de_eventos</tt><tt></tt></li>
+    <li><tt>evento_emisión_mensaje</tt></li>
+  </ul>
+  <p>Para dar un ejemplo de uso, digamos que queremos que la secuencia invierta la dirección cuando se detecte un clic del botón izquierdo del ratón. Primero tendríamos que crear un script con la función que queremos llamar, algo así:</p>
+  <p class="code">/// @function seq_reverse();<br>
+    <br> function seq_reverse()<br> {
+    <br> if mouse_check_button_pressed(mb_left)<br> {
+    <br> if self.headDirection == seqdir_right<br> {
+    <br> self.headDirection = seqdir_left;<br> }
+    <br> else self.headDirection = seqdir_right;<br> }
+    <br> }
+  </p>
+  <p>En esta función todo lo que hacemos es escuchar una pulsación del ratón y luego invertir la dirección de reproducción de la secuencia a la que se ha vinculado el método. Notarás que actualmente no puedes pasar ningún parámetro a las funciones
+    que están vinculadas a estas propiedades, y en todos los casos la <a href="../../../GML_Overview/Instance_Keywords.htm"><tt>auto</tt></a> dentro del ámbito de la función se asigna a la instancia de la secuencia.</p>
+  <p class="note"><b>NOTA</b>: Vale la pena señalar que en la secuencia de comandos anterior el identificador de sí mismo puede ser omitido y sólo se utiliza para mostrar explícitamente el alcance de la variable de método que se utiliza para este ejemplo.</p>
+  <p>Para asignar esto a una secuencia se haría algo así:</p>
+  <p class="code">var _seq = sequence_get(Sequence1);<br> _seq.event_step = method(_seq, seq_reverse);</p>
+  <p>Ahora hemos asignado un evento de paso al <i>objeto de</i> la secuencia con una función para detectar cuando se pulsa el ratón y luego cambiar la dirección del cabezal de reproducción de la <i>instancia de</i> la secuencia después de que se haya
+    creado en una sala.</p>
+  <p> </p>
+  <h2><label for="2">Momentos</label></h2>
+  <p>Un momento <b>de</b> secuencia es una acción de código única que se dispara en uno o más fotogramas especificados mientras se reproduce la secuencia. Estos momentos de código son -como en el caso de los eventos (explicados anteriormente)- simplemente <a href="../../../GML_Overview/Method_Variables.htm">variables de método</a> predefinidas que
+    que se disparan en un fotograma determinado. Por ejemplo, digamos que quieres que una secuencia cree una instancia de &quot;bala&quot; en un fotograma específico de la animación - primero tendrías que crear la función que se va a utilizar para esta acción, algo así:</p>
+  <p class="code">/// @function seq_shoot();<br>
+    <br> seq_shoot = function()<br> {
+    <br> instance_create_layer(sequence.xorigin, sequence.yorigin, &quot;Instances&quot;, obj_Bullet);<br> }
+  </p>
+  <p>A continuación, se añadiría esto a un fotograma en la propiedad <tt>momentKeyframes</tt> de la estructura de la secuencia. Esto es esencialmente una pista &quot;especial&quot; que sólo se utiliza para este propósito y por lo tanto sólo puede tomar <span class="notranslate">datos de</span> fotogramas clave <span class="notranslate">que</span> 
+    que se asocian a las acciones de momento que se desea que tenga la secuencia. Esta pista se crea de la misma manera que cualquier otra pista, creando estructuras de <span class="notranslate">fotogramas</span> clave y llenándolas con datos de fotogramas <span class="notranslate">clave</span>, donde el canal 0 es el único canal
+    que puede utilizar y el tipo de pista es <tt>seqtracktype_moment</tt>. A continuación se muestra un ejemplo de cómo se crearía, utilizando la función que definimos anteriormente para disparar en los momentos dados (fotogramas):</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(3);<br> _k[0] = sequence_keyframe_new(seqtracktype_moment);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_moment);<br> _k[1].frame = 120;<br> _k[2] = sequence_keyframe_new(seqtracktype_moment);<br> _k[2].frame = 180;<br> var _d = array_create(1);<br> _d[0] = sequence_keyframedata_new(seqtracktype_moment);<br> _d[0].channel = 0;<br> _d[0].event = method(_d[0], seq_shoot);<br> _k[0].channels = _d;<br> _k[1].channels = _d;<br> _k[2].channels
+    = _d;<br> _seq.momentKeyframes = _k;</p>
+  <p>El código anterior simplemente establecerá los fotogramas 60, 120 y 180 de la pista &quot;momento&quot; para llamar al método seq_shoot. Notarás que actualmente no puedes pasar ningún parámetro a las funciones que se utilizan para cada
+    momento, y en todos los casos se asigna la variable <tt>self</tt> dentro del ámbito de la función para que sea la instancia de la secuencia (generalmente no es necesario usar self <tt>pero</tt> en algunos casos especiales
+    casos especiales puede ser útil).</p>
+  <p> </p>
+  <h2><label for="3">Mensajes de difusión</label></h2>
+  <p>Las secuencias se pueden hacer para generar <b>mensajes de difusión</b>, que son simples cadenas que se añaden a los marcos específicos a lo largo de la línea de tiempo de la animación, y cuando se alcanza ese punto en la línea de tiempo, entonces la cadena se emitirá a todos los
+    las instancias de los objetos que la escuchen. Puedes añadir estos mensajes en el IDE usando el <a href="../../../../The_Asset_Editors/Sequences.htm">editor de secuencias</a>, pero también pueden ser creados y editados usando código.</p>
+  <p>Para crear un mensaje de difusión en una secuencia utilizando <span class="notranslate">GML</span>, es necesario añadirlos a un marco en la propiedad <tt>messageEventKeyframes</tt> de la estructura de la secuencia. Esta es esencialmente una pista &quot;especial&quot; que sólo se utiliza
+    para este propósito y, por lo tanto, sólo puede tomar datos de <span class="notranslate">fotogramas clave</span> que están asociados con los mensajes de difusión que desea que la secuencia tenga. Esta pista se crea de la misma manera que cualquier otra pista, creando estructuras de <span class="notranslate">fotogramas</span> clave y llenándolas con datos de fotogramas clave.
+    llenándolos con datos de <span class="notranslate">fotogramas clave</span>, donde el canal 0 es el único que se puede utilizar y el tipo de pista es <tt>seqtracktype_message</tt>. A continuación se muestra un ejemplo de cómo se crearía esto:</p>
+  <p class="code">var _seq = sequence_get(my_Seq);<br> var _k = array_create(2);<br> _k[0] = sequence_keyframe_new(seqtracktype_message);<br> _k[0].frame = 60;<br> _k[1] = sequence_keyframe_new(seqtracktype_message);<br> _k[1].frame = 120;<br> var _m1 = array_create(2);<br> _m1[0] = &quot;Hola&quot;;<br> _m1[1] = &quot;Mundo&quot;;<br> var _m2 = array_create(1); <br> _m2[0] = &quot;This is a Broadcast Message&quot;;<br> var _d1 = array_create(1);<br> _d1[0] = sequence_keyframedata_new<span class="notranslate">(</span>seqtracktype_message);<br> _d1[0].channel = 0;<br> _d1[0].events = _m1;<br> var _d2 = array_create(1);<br> _d2[0] = sequence_keyframedata_new(seqtracktype_message);<br> _d2[0].channel = 0;<br> _d2[0].events = _m2;<br> _k[0].channels = _d1;<br> _k[1].channels = _d2;<br> _seq.messageEventKeyframes = _k;</p>
+  <p>Notarás que el texto del mensaje se pasa al canal de datos del fotograma clave como un array. Esto se debe a que puedes emitir múltiples mensajes en el mismo fotograma, y hacer que diferentes instancias de objetos los escuchen y reaccionen de forma diferente dependiendo de
+    dependiendo del mensaje que estén esperando.</p>
+  <p>Una vez que la secuencia ha emitido un mensaje de difusión, puede analizarlo utilizando el evento <i>Otros</i> &gt; <i>Mensaje de difusión</i> en instancias de objetos, que se explica en detalle <a href="../../../../The_Asset_Editors/Sequence_Properties/Broadcast_Messages.htm">aquí.</a></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequence Events
+Sequence Moments
+Sequence Broadcast Messages
+broadcast Messages
+event_create
+event_destroy
+event_clean_up
+event_step
+event_step_begin
+event_step_end
+event_async_system
+event_broadcast_message
+-->
+  <!-- TAGS
+sequence_events_moments_broadcasts
+-->
+
+</body></html>

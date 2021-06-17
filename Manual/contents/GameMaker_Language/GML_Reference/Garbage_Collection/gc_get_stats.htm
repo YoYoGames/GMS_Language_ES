@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gc_get_stats</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gc_get_stats" />
+  <meta name="rh-index-keywords" content="gc_get_stats" />
+  <meta name="search-keywords" content="gc_get_stats" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gc_get_stats</h1>
+  <p>Con esta función puedes recuperar información sobre el estado actual del recolector de basura. La función devolverá una <a href="../../GML_Overview/Structs.htm">estructura</a> que tendrá las siguientes variables miembro (nótese que &quot;objetos&quot;
+    se refiere a cualquier cosa que pueda ser recolectada por el recolector de basura y <i>no</i> a las instancias generales de los objetos como se definen en el Navegador de Activos):</p>
+  <ul class="colour">
+    <li><tt>objects_touched</tt> - es el número de objetos activos que el recolector de basura encontró en el marco anterior. Esto variará dependiendo de la generación que se haya recogido.</li>
+    <li><tt>objects_collected</tt> - el número de objetos que el recolector de basura determinó que no estaban activos en el marco anterior, y que por lo tanto podrían ser eliminados.</li>
+    <li><tt>traversal_time</tt> - es el tiempo en microsegundos (en el hilo principal) que el recolector de basura tardó en averiguar qué objetos estaban activos.</li>
+    <li><tt>tiempo_de_recolección</tt> - es el tiempo en microsegundos (en un hilo separado) que el recolector de basura tardó en limpiar los objetos considerados inactivos.</li>
+    <li><tt>gc_frame</tt> - es un contador que se incrementa cada vez que se produce un pase de recolección de basura. Si la recolección de basura está deshabilitada no se incrementará.</li>
+    <li><tt>generation_collected</tt> - es el índice de la última generación recogida. El 0 es la generación más joven y el 3 es la más antigua actualmente.</li>
+    <li><tt>num_generations</tt> - es el número total de generaciones de recolección de basura.</li>
+    <li><tt>num_objects_in_generation</tt> - es una matriz (de tamaño <tt>num_generations</tt>) que contiene el número de objetos en cada generación.</li>
+  </ul>
+  <p class="note"><b>NOTA</b>: En la plataforma de destino HTML5 la recolección de basura es manejada por el motor de JavaScript y por lo tanto las variables miembro en la estructura anterior devolverán 0 si esta función se utiliza en esa plataforma.</p>
+  <p>Al utilizar esta función, tenga en cuenta que la información mostrada para los objetos <em>sólo se actualiza cuando se termina de procesar una generación completa</em>, lo que puede tardar varios fotogramas dependiendo de la configuración del tiempo de los fotogramas (consulte <a href="gc_target_frame_time.htm">aquí</a> para obtener más información sobre el tiempo de los fotogramas).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gc_get_stats();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructurar</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (global.debug == true)<br> {
+    <br> var _s = gc_get_stats();<br> var _t = _s.traversal_time;<br> var _c = _s.collection_time;<br> show_debug_message(&quot;Tiempo de recorrido = &quot; + string(_t))<br> show_debug_message(&quot;Tiempo de recogida = &quot; + string(_c))<br> }
+  </p>
+  <p>El código anterior comprueba una variable global y si es <tt>verdadera</tt> obtiene información del colector de basura y la envía a la consola como mensajes de depuración.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Garbage_Collection.htm">Recogida de basura</a></div>
+        <div style="float:right">Siguiente: <a href="gc_enable.htm">gc_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gc_get_stats
+-->
+  <!-- TAGS
+gc_get_stats
+-->
+</body>
+</html>

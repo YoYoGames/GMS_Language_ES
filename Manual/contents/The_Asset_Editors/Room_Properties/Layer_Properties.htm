@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Propiedades de las capas</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the different room layer types and properties" />
+  <meta name="rh-index-keywords" content="Rooms - Layers" />
+  <meta name="search-keywords" content="layers,layer types,layer properties" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tipos de capas y propiedades</h1>
+  <p>Todo lo que entra en la habitación que creas en el <a href="../Rooms.htm">Editor de habitaciones</a> se coloca en una <strong>capa</strong>. Las capas pueden añadirse, eliminarse y ordenarse desde el Editor de capas, y vienen en una variedad de tipos diferentes, cada uno con su
+    con su propio conjunto de opciones y forma de trabajo. No estás limitado al número de cada tipo de capa, y puedes tener múltiples capas de mosaico, o capas de ruta, o capas de instancia, etc... Cada tipo de capa tiene su propia <strong>ventana de propiedades</strong> en la que se pueden establecer diferentes cosas dependiendo del tipo de capa. También se puede alternar la visibilidad de las capas, y las capas invisibles <em>no </em>se procesan en <span class="notranslate">tiempo de ejecución</span> (pero se pueden hacer visibles de nuevo en cualquier momento utilizando la <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_set_visible.htm">función de capa</a> apropiada).</p>
+  <p><img alt="Room Layers" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Layers.png">La imagen de arriba muestra el editor de capas, con las capas actuales listadas en la parte superior, y los diferentes botones para crear capas en la parte inferior.
+    Puedes renombrar cualquier capa desde este editor haciendo un doble clic lento sobre el nombre (ten en cuenta que no puedes usar nada más que letras números y el carácter &quot;_&quot; de la barra inferior para los nombres) y también puedes activar o desactivar su visibilidad haciendo clic en
+    el icono del ojo <img alt="Eye Icon" class="icon" height="21" src="../../assets/Images/Icons/Icon_Eye.png" width="21">. Si la sala ha heredado capas de una sala principal, puede alternar la herencia desde el botón de la parte inferior, pero tenga en cuenta que
+    esto afectará a todas las capas (ver <a href="Room_Inheritance.htm">aquí</a> para más información sobre la herencia). También puede utilizar <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> o <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y hacer clic con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en varias capas para seleccionarlas y duplicarlas o eliminarlas (estas opciones también están disponibles en el menú del botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> ).</p>
+  <p>Para ayudarle a ordenar sus capas y mantenerlas ordenadas, puede crear grupos de capas en una carpeta de capas haciendo clic en el icono de la carpeta <img alt="Folder Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Folder.png" width="24">. Usted
+    También puede eliminar una o más capas seleccionadas haciendo clic en el botón de eliminación <img alt="Delete Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_DeleteLayer.png" width="24">. Todas las capas tendrán un valor de <strong>profundidad </strong>
+    que define en qué lugar del orden de dibujo se colocará esa capa cuando su contenido se <a class="glossterm" data-glossterm="renderizado" href="#">renderice</a> en la sala. Las capas se dibujan de <em>mayor </em>a <em>menor</em> profundidad, por lo que una capa
+    con una profundidad de -100 se dibujará <em>sobre </em>una capa con una profundidad de 200.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Hay una profundidad de capa mínima y máxima de -16000 a 16000. Todo lo que se coloque en una capa fuera de ese rango no se dibujará, aunque todos los eventos seguirán ejecutándose normalmente para cualquier cosa en la capa.</p>
+  <p>Si hace clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> sobre cualquier capa, obtendrá el menú de capas:</p>
+  <p><img alt="Room Layer Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_LayerSubMenu.png">Aquí puede abrir la ventana de propiedades de la capa seleccionada, eliminar la capa, renombrar la capa o añadir una <strong>subcapa</strong>.
+    Si elige añadir una subcapa, la capa actual recibirá un icono de &quot;carpeta&quot; para mostrar que hay subcapas adjuntas, y la nueva capa se creará debajo de ella, con una pestaña a la derecha. A continuación, puede elegir que la subcapa
+    herede sus propiedades de la capa principal, y también establecer si debe heredar la visibilidad de la capa principal.</p>
+  <p>Tenga en cuenta que puede arrastrar las capas hacia arriba o hacia abajo en la ventana para reordenarlas, y que también puede seleccionar y mover múltiples capas utilizando <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para seleccionar de una capa a otra (incluyendo todas las que están entre ellas) o <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para seleccionar las capas de una en una. Si coloca las capas
+    encima de una carpeta de capas, se moverán y se establecerán como subcapas de la carpeta en la que las hayas colocado. También puedes bloquear las capas para que no puedan ser editadas por error utilizando el botón de bloqueo <img alt="Padlock Icon" class="icon" src="../../assets/Images/Icons/Icon_Padlock.png">.</p>
+  <p class="note"><strong>NOTA</strong>: En la propia ventana del editor donde se colocan los diferentes activos en sus capas, puede mantener pulsado &quot;<span class="inline">P</span>&quot; + en cualquier lugar para seleccionar instantáneamente el activo y saltar a la capa en la que se ha colocado
+    en.</p>
+  <p>A continuación puede encontrar una visión general de cada uno de los tipos de capa disponibles, así como las propiedades editables para esa capa:</p>
+  <p> </p>
+  <p><img alt="Background Layer Icon" class="icon" src="../../assets/Images/Icons/Icon_Background.png" style="margin-left: 24px;"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Fondos</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Puede añadir una nueva capa de fondo haciendo clic en el botón <img alt="Background Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Background.png" width="24">. Esto añadirá la nueva capa, y luego abrirá la ventana de propiedades del fondo
+      de fondo:</p>
+    <p class="dropspot"><img alt="Room Layer Background properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_BackgroundProperties.png" /></p>
+    <p class="dropspot">Cuando se crea una nueva capa de fondo, ésta está vacía por defecto y dibuja el color de fondo definido. Si no asigna un sprite para la imagen de la capa de fondo, esto es lo que se dibujará en su lugar, y puede hacer clic en el cuadro de color para abrir el
+      para abrir el selector de color y cambiar el color utilizado. Si eliges un sprite, puedes marcar las opciones de mosaico para colocarlo horizontal o verticalmente, o para hacer que la imagen se extienda hasta llenar toda la habitación.</p>
+    <p class="dropspot">Si quieres que el fondo se desplace en una dirección, puedes establecer la velocidad horizontal y/o vertical también (cada paso del juego se moverá a lo largo del acceso dado por el número de píxeles que establezcas aquí), y también puedes reposicionar la imagen de fondo
+      de fondo estableciendo los valores de desplazamiento x e y. También puedes establecer la velocidad de animación para el fondo si el recurso de sprite que has seleccionado tiene múltiples sub-imágenes, aunque esto está bloqueado por defecto al valor que has establecido en el Sprite
+      para la imagen utilizada. Por último, puedes establecer la profundidad de la capa explícitamente, aunque de nuevo por defecto está bloqueada y puedes simplemente arrastrar y reordenar el orden de las capas en el Editor de capas para cambiar este valor.</p>
+    <p class="dropspot">Tenga en cuenta que también puede alternar la herencia de un fondo desde esta ventana haciendo clic en el botón de la parte superior.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Instance Layer Icon" class="icon" src="../../assets/Images/Icons/Icon_Instance.png" style="margin-left: 24px;"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Instancias</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Puede añadir una nueva capa de instancia haciendo clic en el botón <img alt="Instance Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Instance.png" width="24">. Esto añadirá la nueva capa, y luego abrirá la ventana de propiedades de la instancia
+      de la instancia:
+    </p>
+    <p class="dropspot"><img alt="Room Layer Instance properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Instances.png">Esta ventana simplemente muestra una lista de todas las instancias que están actualmente en la capa. Puede añadir más instancias a una capa
+      abriendo el <a href="../../Introduction/The_Asset_Browser.htm">Navegador</a> de Activos y arrastrando los objetos desde allí a la sala, o bien puede seleccionar una instancia desde el Navegador de Activos y luego mantener pulsado <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> para previsualizar el recurso &quot;in-situ&quot;, y si además pulsa el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> puede añadir la instancia e incluso &quot;pintarla&quot; en la capa de la sala manteniendo el botón pulsado y moviendo el ratón.</p>
+    <p class="dropspot">La lista de capas puede ordenarse haciendo clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrando una instancia de la lista a la posición requerida, pero cabe señalar que esto es puramente para fines organizativos
+      Si desea establecer un orden de creación específico, utilice la <strong>ventana de orden de creación</strong>, que puede abrirse desde la ventana de <a href="Room_Properties.htm">propiedades de la sala</a> o desde el <a href="../Rooms.htm">menú contextual de la sala</a>.</p>
+    <p class="dropspot">Haciendo doble clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> sobre cualquier instancia - ya sea en el propio editor de salas o en la lista de propiedades - se abrirá una nueva ventana que le permitirá modificar aspectos de esa única
+      única:
+    </p>
+    <p class="dropspot"><img alt="Room Instance properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_InstanceProperties.png">Por defecto, la instancia tendrá un nombre como &quot;<span class="inline">inst_38B0BFF</span>&quot;, pero se puede cambiar
+      por cualquier cosa que desee, siempre que el nombre utilice sólo caracteres alfanuméricos y la barra inferior &quot;_&quot; (y sin espacios). Sin embargo, vale la pena notar que el nombre dado aquí (ya sea uno que usted da, o el que el IDE da por defecto)
+      se considera una <a class="glossterm" data-glossterm="constante" href="#">constante</a> y, por tanto, <strong>debe ser <em>único </em></strong> para la instancia. Esto también significa que puede ser utilizado en el código de su juego para identificar la instancia, pero sólo si usted
+      si estás en la misma habitación que la instancia.</p>
+    <p class="dropspot">Debajo del nombre de la instancia tiene botones para establecer si la instancia va a heredar de la sala padre, cambiar el objeto del que quiere que sea una instancia o incluso abrir el <a href="../Objects.htm">Editor de Objetos</a>, si desea cambiar
+      algo allí. Hay un botón para comprobar y editar las variables a través de la ventana <a href="../Object_Properties/Object_Variables.htm">Variable de</a> objeto y también puede cambiar las características iniciales de esta instancia, estableciendo un color para mezclarlo
+      con el que se mezclará (blanco por defecto), o girando y volteándolo. También puedes escalar la instancia a lo largo de uno o ambos ejes, y establecer su posición dentro de la habitación, así como la velocidad de la imagen y el marco inicial para el sprite a utilizar.</p>
+    <p class="dropspot">Por último, puede dar a la instancia algún código de creación que se ejecutará directamente después del código de evento de creación del objeto, y que es único para esta instancia (por lo que puede, digamos, establecer una variable en el objeto que todas las instancias tendrán y luego modificarla en el código de creación
+      para que sea un valor único para una instancia). Al hacer clic en esto, se encadenará una <a href="../Scripts.htm">ventana de script</a> a la instancia en la que puede añadir cualquier función o modificar cualquier variable y este código se ejecutará directamente después de que la instancia
+      se haya creado y se haya ejecutado el <a href="../Object_Properties/Event_Order.htm">evento de creación de</a> la instancia. Tenga en cuenta que puede activar o desactivar la herencia del código de creación <em>independientemente </em>de la herencia de la instancia.</p>
+    <p class="dropspot">Vale la pena señalar que cada instancia en una capa se marca automáticamente para la exportación cuando se hace el juego. Sin embargo, especialmente cuando se trabaja con la herencia, puede ser que usted no quiere instancias específicas para ser añadido a la habitación
+      en el juego final (o puede que tengas una instancia de depuración en cada sala y simplemente quieras excluirla del juego final). Si este es el caso, simplemente desmarque la casilla &quot;<strong>Exportar&quot;</strong> a la izquierda de la instancia en la lista
+      lista evitará que se exporte como parte del ejecutable. Es importante tener en cuenta, sin embargo, que si tienes algún código que haga referencia a la instancia, <strong>el juego no se ejecutará correctamente</strong>, así que utiliza esta función con cuidado.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Tile map Layer Icon" class="icon" src="../../assets/Images/Icons/Icon_Tilemap.png" style="margin-left: 24px;"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Mapas de azulejos</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Puede añadir una nueva capa de mapa de <a class="glossterm" data-glossterm="mapa de azulejos" href="#">azulejos</a> haciendo clic en el botón <img alt="Tile map Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Tilemap.png" style="margin-left:" width="24">. Esto añadirá la nueva capa, y luego abrirá la ventana de <strong>propiedades de</strong> la capa de mapa de azulejos y la ventana de <strong>edición de azulejos </strong>:</p>
+    <p class="dropspot"><img alt="Room Layer Tile properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_TileEditor.png">En <strong>las propiedades de la capa del mapa de azulejos</strong> puede alternar la herencia de la capa, cambiar el conjunto de azulejos que se está
+      y establecer el desplazamiento x o y de la capa si quieres que la cuadrícula de la capa no se alinee exactamente con la posición (0, 0) de la habitación. También puede establecer la profundidad a la que la capa debe ser <a class="glossterm" data-glossterm="renderizado" href="#">renderizada</a> (que tiene su propio botón de herencia) y puede &quot;bloquear&quot; esta profundidad también, lo que evitará cualquier edición posterior después de que se haya creado.</p>
+    <p class="dropspot">Cuando se abre la ventana de propiedades de la capa, también se abre la ventana de edición de <strong>baldosas</strong>, que muestra el conjunto de baldosas que se está utilizando (si cierras esta ventana por error, puedes volver a abrirla desde el menú <strong>Sala </strong>&gt; <a href="../Rooms.htm">Edición de</a> baldosas en la parte superior del IDE). Puede hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en cualquier baldosa para seleccionarla como el <strong>pincel </strong>actual y luego dibujarlas en la capa del editor de la sala haciendo clic en
+      <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en el lienzo de la habitación, o, si quieres dibujar varios azulejos juntos puedes seleccionarlos como grupo haciendo clic en el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrando para seleccionarlos del conjunto de azulejos antes de dibujar. Si el rango de azulejos que quieres dibujar juntos no está en un bloque, entonces puedes mantener presionado <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" style="cursor: nwse-resize;" width="55"> y luego seleccionar azulejos individuales usando el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y crear un pincel personalizado de esa manera (también puedes eliminar azulejos de un pincel personalizado usando <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">). Tenga en cuenta que la creación de pinceles personalizados de esta manera es temporal y está diseñada para usos puntuales, sin embargo, puede utilizar el <strong>modo de edición</strong> en la pestaña <a href="../Tile_Set_Editors/Brush_Builder.htm">Pinceles</a> para crear pinceles permanentes
+      que se almacenarán en el activo del conjunto de azulejos:</p>
+    <p class="dropspot"><img class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Brush_Editing.png" style="cursor: nwse-resize;" /></p>
+    <p class="dropspot">Tenga en cuenta que la ventana de edición de azulejos le permite acercarse y alejarse del azulejo con la rueda del ratón o con los botones de la parte superior, y puede desplazarse con el botón central del ratón <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> 
+      o <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" style="cursor: nwse-resize;" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">. Tenga en cuenta que también hay una opción de
+      que puede activarse o desactivarse para delimitar los azulejos en la ventana, y también puede establecer el color de la rejilla, aunque los azulejos <em>siempre</em> se ajustarán a la rejilla, esté o no visible.</p>
+    <p class="dropspot">La ventana de edición de mosaicos también permite seleccionar <strong>pinceles</strong>, <strong>mosaicos animados</strong> y <strong>mosaicos automáticos</strong> en la pestaña de bibliotecas, todo lo cual se trata en la sección sobre el <a href="../Tile_Sets.htm">editor de conjuntos de mosaicos</a>.</p>
+    <p class="dropspot">En la parte superior del editor de habitaciones, cuando tengas una capa de azulejos seleccionada, verás un conjunto de herramientas específicas para los azulejos:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Pencil Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Draw.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Lápiz</strong></td>
+          <td class="text">Esta es la herramienta lápiz. Utiliza la baldosa seleccionada para pintar en el Room Editor con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y puede borrar con el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. Tenga en cuenta que el valor del índice de la baldosa se muestra en la parte inferior de la Barra de Estado de la Habitación en el Editor de la Habitación, y si tiene varias baldosas seleccionadas para pintar
+            (es decir, un <a href="../Tile_Set_Editors/Brush_Builder.htm">pincel</a>) entonces se mostrará una lista de todos los índices de las baldosas utilizadas.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Eraser Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Erase.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Borrador</strong></td>
+          <td class="text">Con la herramienta de borrado puedes utilizar el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para borrar una baldosa determinada en el editor de habitaciones. Esencialmente, todo lo que esto hace es establecer el índice de la baldosa a 0, que es
+            el azulejo reservado &quot;vacío&quot;.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Fill Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Fill.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Llenar</strong></td>
+          <td class="text">La herramienta de relleno te permite rellenar toda una capa del mapa de azulejos o una selección de azulejos con el pincel de azulejos actual. El pincel que utilice puede ser un solo mosaico o un pincel compuesto por varios mosaicos, o incluso un mosaico de la biblioteca de animación y
+            al hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en una capa, se rellenarán los azulejos con el pincel elegido. Si no ha utilizado la herramienta de selección, el relleno funcionará en todos los azulejos <em>vacíos </em>consecutivos,
+            o en todos los mosaicos consecutivos <em>del mismo índice</em>. Si tiene una selección dentro de la capa, el relleno se limitará a esa selección.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Line Tool Icon" height="24" src="../../assets/Images/Icons/Icon_Tile_Line.png" style="margin-left: 24px;" width="24" /></td>
+          <td class="icons"><strong>Línea</strong></td>
+          <td class="text">Cuando seleccione la herramienta Línea, al hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y luego arrastrar y soltar, se creará una línea de azulejos entre el lugar donde hizo clic y el lugar donde soltó. Si tiene un área
+            área de la capa del mapa de azulejos seleccionada con la herramienta de selección, la línea sólo se añadirá dentro de los límites de la selección. Las líneas se pueden dibujar utilizando un pincel de azulejos único, un pincel compuesto de varios azulejos o un azulejo animado de la biblioteca.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rctangle Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rectangle.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Rectángulo</strong></td>
+          <td class="text">Cuando selecciona la herramienta Rectángulo, haciendo clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrando y soltando, creará un rectángulo relleno de azulejos con la esquina superior izquierda donde hace clic
+            y la esquina inferior derecha donde se suelta. Si tiene un área de la capa del mapa de azulejos seleccionada con la herramienta de sección, el rectángulo sólo se añadirá dentro de los límites de la selección. Los rectángulos se pueden dibujar utilizando un pincel de azulejos único,
+            un pincel compuesto de varios azulejos, o un azulejo animado de la biblioteca.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Selection Tool Icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" style="margin-left: 24px;" width="24" /></td>
+          <td class="icons"><strong>Selección</strong></td>
+          <td class="text">Esta es la herramienta de selección, que se puede utilizar para definir un área de la capa de azulejos para trabajar en ella. Puede pulsar el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y luego arrastrar el ratón para
+            crear un área rectangular, o puede pulsar <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para añadir selecciones múltiples y <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para borrar una parte de la selección. Para borrar toda la selección puede pulsar <img alt="Escape Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Escape.png" width="55">. Cuando tienes un área de una capa de azulejos seleccionada, el resto de las herramientas (Lápiz, Voltear, Rotar, etc...) sólo funcionarán dentro del área seleccionada. Tenga en cuenta que también puede copiar (<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55">+ &quot;<span class="inline">C</span>&quot;), cortar (<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">X</span>&quot;) y pegar (<img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;
+            <font face="Lucida Console"><span style="font-size: 16px;"><b>V</b></span></font>&quot;) las baldosas seleccionadas dentro del editor de habitaciones, lo que cambiará la herramienta a Lápiz y le permitirá pintar la capa de la habitación con las baldosas seleccionadas.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Autotile Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Auto.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>AutoTile</strong></td>
+          <td class="text">Al hacer clic en esta herramienta, se activa el estilo de pintura de mosaico automático. Cuando esto está activo, puede seleccionar cualquier azulejo de la ficha Bibliotecas Autotile, y luego pintar en la capa de la habitación y <span class="notranslate">GameMaker Studio 2</span> cambiará automáticamente para que coincida con el entorno
+            azulejos, siempre y cuando haya configurado correctamente la ficha Auto <a href="../Tile_Set_Editors/Auto_Tiles.htm">Tile</a>. Tenga en cuenta que la selección de un azulejo del conjunto de azulejos que no es parte de las bibliotecas autotile se restablecerá la herramienta de dibujo a la norma
+            Lápiz.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Inherit Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Inherit.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Herencia</strong></td>
+          <td class="text">Con esta herramienta puede activar/desactivar <a href="Room_Inheritance.htm">la</a> herencia para baldosas específicas en una capa determinada. Para que esto funcione, la sala debe ser primero una sala hija y la capa debe tener su herencia activada <em>en </em>
+            las propiedades de la capa. Cuando está en este estado, el editor de habitaciones coloreará todas las baldosas heredadas en rojo por defecto, y haciendo clic en el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> se desactivará la herencia para esa baldosa, y haciendo clic en el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> se activará de nuevo. De este modo, puedes reutilizar elementos de habitaciones &quot;base&quot;.
+            base", cambiando sólo selectivamente las baldosas que necesites y heredando el resto.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Flip Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Flip.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Flip</strong></td>
+          <td class="text">Haciendo clic en la herramienta Voltear con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot;<span class="inline">X</span>&quot; ) se volteará el azulejo actualmente seleccionado
+            para dibujar a lo largo del eje <em>horizontal </em>, sin cambiar la herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se volteará). Si no tiene ningún azulejo seleccionado para dibujar, pero tiene un grupo de azulejos seleccionados en
+            una capa, entonces la herramienta de volteo volteará los azulejos seleccionados.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Mirror Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Mirror.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Espejo</strong></td>
+          <td class="text">Haciendo clic en la herramienta Espejo con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot; <span class="inline">Y</span>&quot; ) se reflejará el azulejo actualmente seleccionado para dibujar a lo largo del eje vertical (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se reflejará).
+            seleccionado para dibujar a lo largo del eje <em>vertical </em>, sin cambiar la herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel se reflejará). Si no tiene ningún azulejo seleccionado para dibujar, pero tiene un grupo de azulejos seleccionados
+            en una capa, la herramienta Espejo reflejará los azulejos seleccionados.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Rotate Tool Icon" src="../../assets/Images/Icons/Icon_Tile_Rotate.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Girar</strong></td>
+          <td class="text">Haciendo clic en la herramienta Girar con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> (o utilizando el atajo de teclado &quot; <span class="inline">Z</span>&quot; ) girará el azulejo actualmente
+            seleccionado para dibujar 90° <em>en el sentido de las agujas del reloj</em>, sin cambiar de herramienta de dibujo (si tiene un pincel personalizado seleccionado para dibujar, todo el pincel girará). Si no tiene ninguna baldosa seleccionada para dibujar, pero tiene un grupo de baldosas seleccionadas en una
+            capa, entonces la herramienta Rotar rotará los azulejos seleccionados.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Tenga en cuenta que si utiliza la herramienta de selección <img alt="Sekection Tool Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_TileSelect.png" width="24"> para seleccionar un grupo de azulejos en el lienzo del editor de habitaciones y luego los corta o los copia,
+      se convertirán temporalmente en el pincel actual para pintar.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Path Layer Icon" class="icon" height="30" src="../../assets/Images/Icons/Icon_Paths.png" style="margin-left: 24px;" width="30"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Caminos</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Puede añadir una nueva capa de ruta haciendo clic en el botón <img alt="Path Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Paths.png" width="24">. Esto añadirá la nueva capa, y luego abrirá la ventana de propiedades de la ruta:</p>
+    <p class="dropspot"><img alt="Room Layer Path properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_PathProperties.png">Aquí puede seleccionar la trayectoria del Navegador de Activos a utilizar para la capa y luego cambiar el tipo de conexión definida (ya sea
+      usando <a class="glossterm" data-glossterm="interpolación suave" href="#">interpolación suave</a> o recta), así como si es cerrada o no y la precisión con la que debe crearse la trayectoria. Tenga en cuenta también que aquí puede alternar la
+      y que puede establecer que la trayectoria sea <a href="Room_Inheritance.htm">de</a> un color específico (el predeterminado es el rojo) para que se vea mejor en el editor. Si no tiene ningún recurso de ruta definido, puede hacer clic en el botón <strong>Nuevo </strong>
+      para crear uno. Las capas de rutas también tienen un valor de profundidad asociado (bloqueado por defecto) aunque no se <a class="glossterm" data-glossterm="renderizado" href="#">renderice</a> nada en tu juego cuando las utilices.</p>
+    <p class="dropspot">Vale la pena señalar que también puede añadir puntos a la ruta haciendo clic en el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">, así como eliminar puntos utilizando el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">, o seleccionar un punto haciendo clic en él y arrastrándolo, <em>todo ello dentro del editor de la sala real</em>, lo que hace que la creación y la edición de rutas sea muy fácil (aunque usted
+      aunque también puedes editar la trayectoria en el <a href="../Paths.htm">Editor de Trayectorias</a> de forma normal). Si mantienes pulsado <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en diferentes puntos de la ruta, entonces se seleccionarán todos y podrás moverlos juntos o
+      borrarlos todos desde la opción de menú (explicada más abajo).</p>
+    <p class="dropspot">Si hace clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21"> en la ventana del editor de salas mientras manipula una ruta, obtendrá las siguientes opciones:</p>
+    <p class="dropspot"><img alt="Room Layer Path Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_PathRMBMenu.png">Aquí puede invertir la dirección de la ruta (esto tendrá poco efecto visible, pero invierte el orden en que se cuentan los puntos de la ruta, de modo que el punto inicial se convierte en el punto final y viceversa).
+      de manera que el punto inicial se convierte en el punto final y viceversa), así como voltearlos horizontal o verticalmente. También puede eliminar el punto seleccionado desde este menú. Tenga en cuenta que puede mantener pulsado &quot;<span class="inline">T</span>&quot;, &quot;
+      <span class="inline">S</span> &quot; o &quot;<span class="inline">R</span>&quot; y luego hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrar para trasladar, escalar o girar todo el trazado.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><img alt="Asset Layer Icon" class="icon" src="../../assets/Images/Icons/Icon_Assets.png" style="margin-left: 24px;"> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Activos</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Puede añadir una nueva capa de activos haciendo clic en el botón <img alt="Asset Layer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_Assets.png" width="24">. Esto añadirá la nueva capa, y luego abrirá la ventana de propiedades de la capa de activos:</p>
+    <p class="dropspot"><img alt="Room Layer Asset properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_LayerAssetProperties.png">Una capa de activos es simplemente un activo gráfico (sprite o secuencia) que se ha colocado en la sala independientemente de
+      instancias, y puedes colocarlos arrastrándolos desde el <a href="../../Introduction/The_Asset_Browser.htm">Navegador</a> de Activos o seleccionando el que quieras en el Navegador de Activos y luego usando <img alt="Alt Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para &quot;pintarlos&quot;. Los activos de sprites son similares a los azulejos, sólo que pueden ser totalmente animados - si el
+      Si el sprite utilizado tiene sub-imágenes, éstas se mostrarán - sin las restricciones que existen para los tiles, es decir: no están forzados a una cuadrícula y las animaciones pueden ser de cualquier longitud y velocidad. Las secuencias son &quot;colecciones&quot; de sprites, sonidos e instancias
+      que se reproducirán cuando se entre en la habitación.</p>
+    <p class="dropspot">Mientras se colocan los activos en la capa de activos, se ajustarán a los valores de ajuste de la rejilla establecidos en la parte superior del editor de salas para la rejilla, pero si desea colocarlos a mano alzada, simplemente desactive la rejilla o utilice las teclas <img alt="Control Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">. Mientras estas teclas estén pulsadas, podrás colocar el activo en cualquier lugar, sin que se ajuste a la resolución de la cuadrícula.</p>
+    <p class="dropspot">Una vez que coloques un activo en la sala, tienes cierto control sobre su aspecto haciendo doble clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para abrir la ventana de propiedades del activo:</p>
+    <p class="dropspot"><img alt="Room Asset properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_AssetProperties.png">Desde aquí puede dar un nombre único al activo, establecer si debe heredar de la sala padre, o cambiar el sprite o la secuencia
+      que quieres que se muestre. En el caso de las secuencias, puedes establecer la velocidad de la animación y el fotograma inicial <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">del cabezal de reproducción</a>, así como el color con el que se mezclará (blanco por defecto) y la posición en
+      la sala. También puedes cambiar las características de los activos de los sprites, estableciendo un color con el que mezclarlos (blanco por defecto), o girándolos y volteándolos. También puedes escalar los sprites a lo largo de uno o ambos ejes, y establecer su posición dentro de la habitación.
+      Si el sprite tiene subimágenes, puedes elegir la velocidad de la animación, así como establecer el fotograma inicial que se mostrará.</p>
+    <p class="dropspot">Vale la pena señalar que cada activo en la capa se marca automáticamente para la exportación cuando se hace el juego. Sin embargo, especialmente cuando se trabaja con la <a href="Room_Inheritance.htm">herencia</a>, puede ser que usted no quiere sprites específicos
+      se añadan a la sala en el juego final. Si ese es el caso, entonces simplemente desmarca la casilla &quot;<strong>Exportar&quot;</strong> a la izquierda del sprite en la lista de propiedades de la capa para evitar que se exporte como parte del ejecutable.
+      Sin embargo, es importante tener en cuenta que si tienes algún código que haga referencia a ese activo, el juego no se ejecutará correctamente, así que utiliza esta función con cuidado.</p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Rooms.htm">El editor de la sala</a></div>
+        <div style="float:right">Siguiente: <a href="Room_Properties.htm">Propiedades de las habitaciones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Layers
+Layer Properties
+Layer Types
+-->
+  <!-- TAGS
+rooms_layers
+-->
+
+</body></html>

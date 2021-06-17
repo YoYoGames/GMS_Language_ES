@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_master_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_master_gain" />
+  <meta name="rh-index-keywords" content="audio_master_gain" />
+  <meta name="search-keywords" content="audio_master_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_master_gain</h1>
+  <p>Con esta función puedes establecer el valor absoluto del volumen global de todos los sonidos y la música. Se basa en una escala lineal desde 0 (silencio) hasta cualquier valor superior a 0, aunque normalmente se consideraría que el volumen máximo es 1. Cualquier valor superior a 1
+    pero, dependiendo del sonido utilizado y de la plataforma a la que se compila, puede obtener distorsión o recorte cuando el sonido se reproduce. Esta función afectará al volumen relativo de todos los sonidos y la música que se reproduzcan en el juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_master_gain(gain);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ganar</td>
+        <td>Valor del volumen global (0 a 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si keyboard_check(vk_up)<br> {
+    <br> si vol &lt; 1 vol += 0,05;<br> audio_master_gain(vol);
+    <br> }
+    <br> if keyboard_check(vk_down)<br> {
+    <br> si vol &gt; 0 vol -= 0,05;<br> audio_master_gain(vol);
+    <br> }
+  </p>
+  <p>El código anterior comprueba las pulsaciones de las teclas de flecha arriba y abajo, que luego aumentan o disminuyen la variable &quot;vol&quot;. Esta variable se utiliza entonces para establecer la ganancia global de todo el sonido y la música en el juego.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_set_master_gain.htm">audio_set_master_gain</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_master_gain
+-->
+  <!-- TAGS
+audio_master_gain
+-->
+</body>
+</html>

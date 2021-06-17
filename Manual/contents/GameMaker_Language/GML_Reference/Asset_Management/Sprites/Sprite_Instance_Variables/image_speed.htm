@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>velocidad_de_imagen</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_speed" />
+  <meta name="rh-index-keywords" content="image_speed" />
+  <meta name="search-keywords" content="image_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>velocidad_de_imagen</h1>
+  <p>Esta variable determina la velocidad a la que <span class="notranslate">GameMaker Studio</span> 2 recorrerá las subimágenes del sprite de instancia actual. El valor de la velocidad dada es un <i>multiplicador</i>, con 1 es el valor por defecto, y el establecimiento de 0,5 será la mitad de la
+    velocidad de la animación - como se establece en el <a href="../../../../../The_Asset_Editors/Sprites.htm">Editor de Sprite</a> o en el <a href="../../../../../The_Asset_Editors/Image_Editor.htm">Editor de Imágenes -</a> mientras que si se establece en 2 se duplicará. Si el sprite utilizado no tiene
+    no tiene subimágenes, esta variable no tendrá efecto.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">velocidad_de_imagen;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Effects&quot;, obj_Explosion))<br> {
+    <br> velocidad_de_imagen = 0.5;<br> }
+  </p>
+  <p>El código anterior crea una instancia del objeto &quot;obj_Explosion&quot; y establece su image_speed en 0,5 (reduciendo efectivamente la velocidad de ejecución a la mitad).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="image_xscale.htm">image_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_speed
+-->
+  <!-- TAGS
+image_speed
+-->
+</body>
+</html>

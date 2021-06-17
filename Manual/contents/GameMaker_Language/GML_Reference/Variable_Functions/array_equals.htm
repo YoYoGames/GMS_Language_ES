@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_equals</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_equals" />
+  <meta name="rh-index-keywords" content="array_equals" />
+  <meta name="search-keywords" content="array_equals" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_equals</h1>
+  <p>Con esta función puedes comprobar si dos matrices son iguales (equivalentes o iguales). Se dan los dos arrays a comprobar, y la función devolverá <tt>true</tt> si son iguales (equivalentes o iguales) o <tt>false</tt> si
+    no lo son. Tenga en cuenta que esto <i>no</i> es lo mismo que comprobar si dos arrays son iguales utilizando ==, que no comprobará si los dos arrays contienen valores equivalentes, sino sólo si los arrays están referenciando el
+    mismo array inicial. Por ejemplo:</p>
+  <p class="code">var a = [1,2,3,4];<br> var b = [1,2,3,4];<br> if (a == b)<br> {
+    <br> show_debug_message( &quot;Esto nunca se disparará, ya que a y b no hacen referencia al MISMO array&quot; );<br> }
+    <br> if (array_equals(a, b))<br> {
+    <br> show_debug_message( &quot;Esto se disparará ahora&quot; );<br> }
+  </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">array_equals(var1, var2);</p>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td>var1</td>
+          <td>El índice del primer array.</td>
+        </tr>
+        <tr>
+          <td>var2</td>
+          <td>El índice del segundo array.</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !array_equals(matriz_de_inventario, matriz_de_artículo)<br> {
+    <br> var len = array_length(inventory_array);<br> array_copy(item_array, 0, inventory_array, 0, len);<br> }
+  </p>
+  <p>El código anterior comprobará dos matrices para ver si contienen valores equivalentes, y si no lo hacen entonces el código copiará todo el contenido de la matriz &quot;inventory_array&quot; a la matriz &quot;item_array&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_get.htm">array_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_equals
+-->
+  <!-- TAGS
+array_equals
+-->
+</body>
+</html>

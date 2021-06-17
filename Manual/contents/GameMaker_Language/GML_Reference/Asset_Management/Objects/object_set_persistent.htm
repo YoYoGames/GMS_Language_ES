@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>object_set_persistent</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function object_set_persistent" />
+  <meta name="rh-index-keywords" content="object_set_persistent" />
+  <meta name="search-keywords" content="object_set_persistent" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>object_set_persistent</h1>
+  <p>Con esta función puede establecer la persistencia de un objeto específico. Un objeto persistente se &quot;traslada&quot; de una sala a otra y mantiene sus propiedades en todo momento (para más información sobre la persistencia, véase la sección sobre el <a href="../../../../The_Asset_Editors/Objects.htm">Editor de</a> objetos <a href="../../../../The_Asset_Editors/Objects.htm">).</a>
+    Establecer la persistencia del objeto significa que todas las instancias de este objeto que se creen <i>después de cambiar la persistencia</i> se crearán persistentes, mientras que las instancias que ya están en la sala pueden no verse afectadas.</p>
+  <p>Cuando se crea una instancia con la persistencia activada en una sala, se le asignará una capa o una profundidad (dependiendo de la función que se haya utilizado para crear la instancia del objeto). Cuando se cambie de sala, y si la siguiente <i>no</i> tiene
+    una capa con el mismo nombre o profundidad que la asignada, entonces se creará una nueva capa para la instancia que persiste a través de las habitaciones. Si usted asignó una capa con nombre cuando se creó la instancia, entonces la nueva capa también tendrá el mismo nombre
+    que la capa original, mientras que si asignó una profundidad a la instancia, la nueva capa se llamará &quot;_capa_XXX<tt>&quot;,</tt> donde &quot;XXX&quot; es un valor hexadecimal utilizado para dar a la capa un nombre único. Estas capas se eliminarán de la sala
+    al finalizar la sala. Otra cosa a tener en cuenta sobre las capas y las instancias persistentes es que si ha asignado a la instancia una capa con nombre en la creación, y hay otra capa en las siguientes salas con el mismo nombre, entonces la instancia persistente será
+    asignada a la capa con el mismo nombre, independientemente de la <i>profundidad de la capa</i>. Por último, si una instancia persistente se traslada a una sala con una capa con la misma profundidad en la que se creó la instancia, <i>no</i> se asignará a esta capa, sino que
+    en su lugar se creará una nueva capa a la misma profundidad (siguiendo la convención de nombres explicada anteriormente).</p>
+  <p>Tenga en cuenta que esta no es una función de instancia. Puede establecer la bandera persistente de instancias individuales utilizando la variable <a href="../Instances/Instance_Variables/persistent.htm"><tt>persistente</tt></a> y así tener diez instancias marcadas como persistentes
+    aunque el objeto en cuestión tenga la bandera fijada en false en el IDE, e incluso si cambia la bandera persistente del objeto a true usando esta función, todas las instancias que actualmente están en la sala permanecerán como estaban, y sólo las instancias creadas
+    después de llamar a la función comenzarán con la bandera persistente como verdadera.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">object_set_persistent(index, pers);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del objeto a modificar.</td>
+      </tr>
+      <tr>
+        <td>pers</td>
+        <td>Si el objeto debe ser marcado como persistente<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (room == rm_final)<br> {<br> object_set_persistent(obj_Player, false);<br> } <br> instance_create_layer(32, 32, &quot;Instances&quot;, obj_Player);</p>
+  <p>El código anterior comprueba en qué sala se encuentra actualmente la instancia y si está en la especificada &quot;rm_final&quot; entonces establece la persistencia del objeto &quot;obj_Player&quot; a false y luego crea la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Objects.htm">Objetos</a></div>
+        <div style="float:right">Siguiente: <a href="object_set_solid.htm">object_set_solid</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+object_set_persistent
+-->
+  <!-- TAGS
+object_set_persistent
+-->
+</body>
+</html>

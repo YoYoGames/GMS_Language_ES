@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_name" />
+  <meta name="rh-index-keywords" content="path_get_name" />
+  <meta name="search-keywords" content="path_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_get_name</h1>
+  <p>Esta función devolverá el nombre de la ruta a la que se hace referencia como una cadena. El nombre es el que se haya utilizado para definir la ruta en el editor o (si la ruta se ha creado a través de una función de código) devolverá una cadena con el formato &quot;
+   <span class="inline">_newpathXX</span>&quot; donde &quot;<span class="inline">XX</span>&quot; es el número de la ruta generada, empezando por 0 e incrementando en uno cada vez que se crea una nueva ruta. Tenga en cuenta que esto es <i>sólo</i> una
+      y no puede utilizarse para referirse a la ruta directamente - para ello necesitaría el <i>ID del índice de la ruta</i>. Sin embargo, puede utilizar esta cadena para obtener el ID <i>del</i> índice de la ruta utilizando la cadena devuelta junto con
+      con la función <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_get_name(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">nombre_de_la_ruta = nombre_de_la_ruta(matriz_de_la_ruta[0]);</p>
+  <p>Esto establecerá &quot;nombre_de_la_pista&quot; al nombre de la ruta indexada en el array dado en la posición 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Paths.htm">Caminos</a></div>
+        <div style="float:right">Siguiente: <a href="path_get_number.htm">path_get_number</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_name
+-->
+  <!-- TAGS
+path_get_name
+-->
+</body>
+</html>

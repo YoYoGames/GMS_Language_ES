@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer Sprite de Partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Particle Sprite action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Particle Sprite" />
+  <meta name="search-keywords" content="Set Particle Sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Particle Sprite Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Set_Particle_Sprite.png" width="32"> Set Particle Sprite</h1>
+  <p>Esta acción puede utilizarse para establecer el sprite que una partícula puede utilizar al dibujar. Se suministra el valor de ID único para el tipo que se va a establecer el sprite (como se devuelve cuando se crea el tipo con la acción <a href="Create_Particle_Type.htm">Crear tipo de partícul</a>a)
+    y el recurso de sprite a utilizar. Si el sprite tiene sub-imágenes, entonces la partícula se animará a través de los cuadros a la velocidad establecida en el Editor de Imágenes para el sprite. También hay que tener en cuenta que si se establece un valor de color para la partícula (utilizando la acción <a href="Set_Particle_Colour.htm">Establecer color de la partícula</a> ) entonces este color se mezclará con el sprite utilizado, al igual que si se establece la mezcla de imágenes en una instancia se mezclará un color con el sprite de la instancia (utilice el blanco para no mezclar).</p>
+  <p class="note"><b>NOTA</b>: Si usas esta acción <b>no</b> debes usar la acción <a href="Set_Particle_Shape.htm">Establecer Forma de Partícula</a> ya que sólo puedes tener un sprite <b>o</b> una forma, pero no ambos.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Particle Sprite Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/a_Particles_Set_Particle_Sprite.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El valor de la ID del tipo para establecer el sprite de</td>
+      </tr>
+      <tr>
+        <td>Sprite</td>
+        <td>El sprite a asignar al tipo de partícula</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Define Particle Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/e_Particles_Create_Particle_Type.png">El código del bloque de acción anterior creará un nuevo tipo de partícula y asignará su valor único de
+    ID a una variable global. Luego procede a establecer todas las propiedades del tipo de partícula.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Actions.htm">Acciones de las partículas</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Particle_Shape.htm">Establecer la forma de las partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Particle Sprite
+-->
+  <!-- TAGS
+action_part_type_sprite
+-->
+</body>
+</html>

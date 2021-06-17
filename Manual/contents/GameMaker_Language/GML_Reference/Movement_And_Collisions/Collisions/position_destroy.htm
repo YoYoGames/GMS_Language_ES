@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posición_destrucción</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion position_destroy" />
+  <meta name="rh-index-keywords" content="position_destroy" />
+  <meta name="search-keywords" content="position_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posición_destrucción</h1>
+  <p>Esta función simplemente destruye todas las instancias que se encuentran en colisión con la posición especificada. Las colisiones se basan en la máscara de las instancias, y si alguna parte de la máscara coincide con el punto de destino, la función destruirá
+    esa instancia. Las instancias destruidas de este modo activarán sus eventos de <strong>Destrucción</strong> y <strong>Limpieza</strong>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">posición_destrucción(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de dónde destruir las instancias que colisionan.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde destruir las instancias que colisionan.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> position_destroy(mouse_x, mouse_y);<br> }
+  </p>
+  <p>Esto destruirá todas las instancias que colisionen con la posición del cursor del ratón cuando se pulse el botón izquierdo del mismo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="collision_circle.htm">collision_circle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+position_destroy
+-->
+  <!-- TAGS
+position_destroy
+-->
+</body>
+</html>

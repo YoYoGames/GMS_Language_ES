@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>method_get_self</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function method_get_self" />
+  <meta name="rh-index-keywords" content="method_get_self" />
+  <meta name="search-keywords" content="method_get_self" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>method_get_self</h1>
+  <p>Con esta función se puede recuperar el ID de la instancia o la referencia de la estructura que es el <a href="../../GML_Overview/Instance_Keywords.htm"><tt>self</tt></a> contexto utilizado cuando se llama al método. Si la variable <i>no</i> es un método, la función
+    devolverá <tt>undefined</tt>. Tenga en cuenta que la función también puede devolver la constante <span class="inline">pointer_null</span>, en cuyo caso se está utilizando el yo actual en el momento de la llamada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">method_get_self(método);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>método</td>
+        <td>La variable del método a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Integer, undefined, pointer_null</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _self = method_get_self(light_properties);<br> show_debug_message(string(_self));
+  </p>
+  <p>El código anterior obtiene el autocontexto de la variable del método dado y lo muestra en la consola.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="method_get_index.htm">method_get_index</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+method_get_self
+-->
+  <!-- TAGS
+method_get_self
+-->
+</body>
+</html>

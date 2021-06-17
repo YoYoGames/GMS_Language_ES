@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>os_get_info</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for os_get_info" />
+  <meta name="rh-index-keywords" content="os_get_info" />
+  <meta name="search-keywords" content="os_get_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>os_get_info</h1>
+  <p>Esta función devuelve un <a href="../Data_Structures/DS_Maps/DS_Maps.htm"><tt>Mapa DS</tt></a> con información detallada sobre el sistema operativo en el que se está ejecutando el juego. La información exacta devuelta dependerá del sistema operativo y del dispositivo, por lo que se recomienda
+    que pruebes esta función en todas las plataformas a las que desees dirigirte y que describas los valores devueltos utilizando una función como <span class="inline"><a href="../Debugging/show_debug_message.htm">show_debug_message()</a></span>. Tenga en cuenta que el mapa DS no se
+    automáticamente de la memoria y debe utilizar la función <a href="../Data_Structures/DS_Maps/ds_map_destroy.htm"><tt>ds_map_destroy()</tt></a> cuando ya no necesites los datos que contiene.</p>
+  <p>A continuación puede encontrar algunos detalles sobre los datos extra que se pondrán a disposición del mapa DS específicos para las siguientes plataformas, y debe tenerse en cuenta que en <em>todas las</em> plataformas <em>, excepto</em> en HTML5, el mapa tendrá la clave &quot;<span><span class="inline">is64bit</span>&quot;
+    que será <span class="inline">true</span> o <span class="inline">false</span> dependiendo de si el sistema operativo de la plataforma es de 64 bits o no.</span>
+  </p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#"><span class="notranslate">Windows</span> / UWP</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">En <span class="notranslate">Windows</span> Desktop y <span class="notranslate">Windows UWP</span>, obtendrá algunos datos extra de DX11 con las siguientes claves disponibles en el mapa DS (útil para las extensiones):</p>
+    <ul class="dropspotlist">
+      <li><strong>video_d3d11_device </strong>- puntero al dispositivo DX11</li>
+      <li><strong>video_d3d11_context </strong>- puntero al contexto DX11</li>
+      <li><strong>video_adapter_vendorid </strong>- cadena con el identificador de proveedor de los adaptadores</li>
+      <li><strong>video_adapter_deviceid </strong>- cadena con el id del dispositivo adaptador</li>
+      <li><strong>video_adapter_subsysid </strong>- cadena con el id de subsistema del adaptador</li>
+      <li><strong>video_adapter_revision </strong>- cadena con el número de revisión del adaptador</li>
+      <li><strong>video_adapter_dedicatedvideomemory </strong>- cadena con el tamaño de la memoria de vídeo</li>
+      <li><strong>video_adapter_dedicatedsystemmemory </strong>- cadena con el tamaño de la memoria del sistema (utilizada por el adaptador DX11)</li>
+    </ul>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#"><span class="notranslate">Android</span></a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">En la <b><span class="notranslate">Android</span></b> plataforma obtendrá algunos datos adicionales de varias API diferentes con las siguientes claves disponibles en el mapa de DS:</p>
+    <ul class="dropspotlist">
+      <li><tt>android_tv</tt> - devolverá <tt>true</tt> si se detecta que el dispositivo es un dispositivo <span class="notranslate">Android</span> TV, o <tt>false</tt> en caso contrario</li>
+      <li><tt>GL_VERSION</tt> - la versión de OpenGL según el controlador</li>
+      <li><tt>GL_VENDOR</tt> - el proveedor de OpenGL según el controlador</li>
+      <li><tt>GL_RENDERER</tt> - el renderizador de OpenGL según el controlador</li>
+      <li><tt>GL_EXTENSIONS</tt> - las extensiones de OpenGL que están disponibles según lo informado por el controlador</li>
+      <li><tt>GL_SHADING_LANGUAGE_VERSION</tt> - la versión de GLSL que soporta este controlador OpenGL</li>
+      <li><tt>GL_MAX_TEXTURE_SIZE</tt> - el tamaño máximo de la textura soportado por este controlador OpenGL</li>
+      <li><tt>SDK_INT</tt> - valor de android.os.Build.VERSION.SDK_INT ver <a href="https://developer.android.com/reference/android/os/Build.VERSION" target="_blank">aquí</a> para más información.</li>
+      <li><tt>RELEASE</tt> - valor de android.os.Build.VERSION.RELEASE ver <a href="https://developer.android.com/reference/android/os/Build.VERSION" target="_blank">aquí</a> para más información.</li>
+      <li><tt>MODEL</tt> - valor de android.os.Build.MODEL ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>DEVICE</tt> - valor de android.os.Build.DEVICE ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>MANUFACTURER</tt> - valor de android.os.Build.MANUFACTURER ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>CPU_ABI</tt> - valor de android.os.Build.CPU_ABI ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>CPU_ABI2</tt> - valor de android.os.Build.CPU_ABI2 ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>BOOTLOADER</tt> - valor de android.os.Build.BOOTLOADER ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>BOARD</tt> - valor de android.os.Build.BOARD ver <a href="https://developer.android.com/reference/android/os/Build" target="_blank">aquí</a> para más información.</li>
+      <li><tt>VERSION</tt> - valor de os.version del método <tt>System.getProperty</tt> <span class="notranslate">de Android</span> </li>
+      <li><tt>REGION</tt> - valores de user.region del método <tt>System.getProperty</tt> <span class="notranslate">de Android</span> </li>
+      <li><tt>VERSION_NAME</tt> - valor del nombre de la versión de este paquete - ver <a href="https://developer.android.com/reference/android/content/pm/PackageInfo.html#versionName" target="_blank">aquí</a> para más información.</li>
+      <li><tt>PHYSICAL_KEYBOARD</tt> - si pensamos que hay un teclado físico entonces la cadena &quot;TRUE&quot; de lo contrario &quot;FALSE&quot;</li>
+    </ul>
+    <p> </p>
+  </div>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">os_get_info()</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (índice ds_map)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (os_type == os_android)<br> {<br> var _info = os_get_info();<br>     <br> if (_info[? &quot;android_tv&quot;])<br> {<br> global.android_tv = true;<br> } <br> }</p>
+  <p>El código anterior comprueba si el sistema operativo actual es <span class="notranslate">Android</span>, obtiene la información del sistema operativo y lee el mapa devuelto para comprobar si el juego se está ejecutando en un <span class="notranslate">Android</span> TV. En ese caso, establece una variable global a true.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="os_powersave_enable.htm">os_powersave_enable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+os_get_info
+-->
+  <!-- TAGS
+os_get_info
+-->
+</body>
+</html>

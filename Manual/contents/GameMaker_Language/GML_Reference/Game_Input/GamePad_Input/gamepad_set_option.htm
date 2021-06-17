@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_option" />
+  <meta name="rh-index-keywords" content="gamepad_set_option" />
+  <meta name="search-keywords" content="gamepad_set_option" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_option</h1>
+  <p>Esta función se puede utilizar para establecer cualquiera de las opciones disponibles del gamepad. Se proporciona la &quot;ranura&quot; del gamepad para establecer la opción, así como la cadena de opciones a establecer y el valor a utilizar. La cadena de opciones disponible dependerá de la plataforma en la que
+    el proyecto se está ejecutando en, como se indica a continuación:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Opción</th>
+        <th>Plataforma</th>
+        <th>Descripción</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>&quot;allow_rotation&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Establece si el Siri Remote estará bloqueado por rotación (es decir, sólo puede ser utilizado verticalmente) o no. Cuando está desbloqueado (un valor de <tt>true</tt>), la rotación del control cambiará la entrada, de manera que una rotación de 90º a la izquierda hará que el lado &quot;derecho&quot; del panel táctil vuelva a estar &quot;arriba&quot;, etc.
+          de la almohadilla táctil vuelva a estar &quot;arriba&quot;, etc... de manera que toda la entrada será relativa a la orientación del dispositivo. Cuando se bloquea (un valor de <tt>false</tt>) entonces la entrada no cambiará en relación a la posición del controlador
+          y siempre se tratará como si el controlador estuviera en posición vertical.</td>
+        <td>Booleano</td>
+      </tr>
+      <tr>
+        <td>&quot;dpad_absolute&quot;</td>
+        <td><span class="notranslate">tvOS</span></td>
+        <td>Establece si el panel táctil del Siri Remote acepta entradas absolutas o relativas. En modo absoluto (un valor de <tt>verdadero</tt>) el centro del panel táctil se considera la posición (0,0) - es decir, donde el stick analógico está en reposo o donde el centro
+          del dpad - y el movimiento alrededor de esta posición generará la entrada. Cuando se establece como relativa (un valor de <tt>false</tt> ), la posición (0,0) se considerará donde se haga el toque inicial en el pad y toda la entrada se generará desde esa posición, no desde el centro del dpad.
+          se generará desde esa posición, no desde el centro del pad.</td>
+        <td>Booleano</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_set_option(device, option_name, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; de dispositivo de gamepad se debe establecer.</td>
+      </tr>
+      <tr>
+        <td>nombre_de_la_opción</td>
+        <td>El nombre de la opción a establecer (una cadena, véase la tabla anterior)</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor a establecer la opción (puede ser booleano, real, entero o cadena - véase la tabla anterior)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for(var i = 0; i &lt; 12; ++i;)<br> {
+    <br> if gamepad_is_connected(i) &amp;&amp; gamepad_get_description(i) == &quot; tvOS Siri<span class="notranslate">Remote&quot;</span><br> {
+    <br> if gamepad_get_option(i, &quot;allow_rotation&quot;) == false<br> {
+    <br> gamepad_set_option(i, &quot;allow_rotation&quot;, true);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior recorre todas las ranuras del gamepad y busca el &quot;Siri Remote&quot; en la <span class="notranslate">plataforma</span> tvOS <span class="notranslate">.</span> Si se detecta uno, configura el mando para permitir la rotación de la entrada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_axis_count.htm"> gamepad_axis_count </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_option
+-->
+  <!-- TAGS
+gamepad_set_option
+-->
+
+</body></html>

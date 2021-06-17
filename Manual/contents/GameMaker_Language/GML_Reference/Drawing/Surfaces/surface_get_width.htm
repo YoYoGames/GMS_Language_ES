@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_obtener_ancho</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_width" />
+  <meta name="rh-index-keywords" content="surface_get_width" />
+  <meta name="search-keywords" content="surface_get_width" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_obtener_ancho</h1>
+  <p>Esta función simplemente devuelve la anchura, en píxeles, de la superficie indexada. Hay que tener en cuenta que si se llama a esta función para comprobar la superficie de la <tt>aplicación</tt> inmediatamente después de haber cambiado su tamaño usando <a href="surface_resize.htm"><tt>redimensionar_superficie()</tt></a>    no devolverá el nuevo valor ya que el cambio necesita uno o dos pasos para ser procesado completamente. Después de esperar un paso debería devolver el nuevo tamaño correctamente.</p>
+  <p class="note"><b></b><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de la textura. Debería comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_get_width(surface_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie para obtener el ancho.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">sw = surface_get_width(surf);</p>
+  <p>El código anterior almacenará el ancho de la superficie indexada en la variable &quot;surf&quot; en la variable &quot;sw&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_get_texture.htm">surface_get_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_width
+-->
+  <!-- TAGS
+surface_get_width
+-->
+</body>
+</html>

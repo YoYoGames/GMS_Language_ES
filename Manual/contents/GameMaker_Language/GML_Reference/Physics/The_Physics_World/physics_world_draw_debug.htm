@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_draw_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_draw_debug" />
+  <meta name="rh-index-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+  <meta name="search-keywords" content="physics_world_draw_debug,phy_debug_render_aabb,phy_debug_render_collision_pairs,phy_debug_render_coms,phy_debug_render_core_shapes,phy_debug_render_joints,phy_debug_render_obb,phy_debug_render_shapes" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_draw_debug</h1>
+  <p>Esta función dibujará una representación del sistema de física del mundo de la habitación para ayudar a la depuración cuando tengas problemas para conseguir que la escena de física funcione correctamente. A veces el problema puede estar en la parte de renderizado de su juego, por ejemplo
+    un sprite puede ser dibujado en una posición o rotación equivocada, dando la apariencia de una física incorrecta, o puede ser que tus cálculos no sean correctos. En cualquier caso, esta función le ayudará a encontrar y resolver el problema dibujando lo que está pasando
+    en su sistema de física. Para hacer esto, necesitas decirle qué parte del sistema dibujar, y esto se hace pasando un valor creado a partir de los bits almacenados en varias constantes &quot;flag&quot;:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>phy_debug_render_aabb</td>
+        <td>Esto muestra el cuadro delimitador absoluto de cada accesorio en relación con el eje de la sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_collision_pairs</td>
+        <td>Esto mostrará cualquier accesorio que esté actualmente en colisión</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_coms</td>
+        <td>Esto marca el centro de masa de cada accesorio en la habitación</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_core_shapes</td>
+        <td>Muestra las formas básicas que componen las instalaciones de la sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_joints</td>
+        <td>Esto dibujará cada una de las uniones de todos los accesorios de la habitación</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_obb</td>
+        <td>Esto muestra el cuadro delimitador relativo de las instalaciones en la sala</td>
+      </tr>
+      <tr>
+        <td>phy_debug_render_shapes</td>
+        <td>Esto muestra las formas reales que componen los accesorios dentro de la habitación</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Por lo tanto, para dibujar dos de esas opciones tendríamos que hacer una <a href="../../../../Additional_Information/Bitwise_Operators.htm">&quot;o&quot; a nivel de bits (en GameMaker</a> <span class="notranslate">Studio 2 esto se</span> representa con | ) en las dos y almacenar la variable resultante
+    para que la función la utilice. Aquí hay un ejemplo de cómo se establecería una variable para utilizar con la función que dibujará sólo los centros de masa y las articulaciones de todos los accesorios en una habitación:</p>
+  <p class="code">flag = phy_debug_render_coms | phy_debug_render_shapes;</p>
+  <p>Lo que te daría algo como esto:</p>
+  <p><img alt="Physics debug draw example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_draw_debug_image.png">Como puede ver con el código anterior, sólo se dibujan en la pantalla las formas y los centros de masa
+    (así como los colores que representan sus estados - para más información consulte la documentación de Box 2D en línea). De la misma manera puedes mostrar más, o incluso todas, las constantes que desees depurar... Simplemente &quot;o&quot; todas juntas!
+    Hay que tener en cuenta una cosa más - esta función debe ser llamada <i>sólo</i> en el evento de dibujar de una instancia que tenga una profundidad inferior a las que desea depurar o de lo contrario no podrá ver la información de depuración.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_world_draw_debug(flag)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>bandera</td>
+        <td>El valor de la bandera para mostrar diferentes características de depuración</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">flag = phy_debug_render_aabb | phy_debug_render_collision_pairs | phy_debug_render_obb;<br> physics_world_draw_debug(flag);
+  </p>
+  <p>El código anterior dibujará todas las cajas delimitadoras absolutas, las cajas delimitadoras relativas, así como los accesorios en colisión dentro del sistema de física actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Physics_World.htm">El mundo de la física</a></div>
+        <div style="float:right">Siguiente: <a href="physics_draw_debug.htm">physics_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_draw_debug
+phy_debug_render_aabb
+phy_debug_render_collision_pairs
+phy_debug_render_coms
+phy_debug_render_core_shapes
+phy_debug_render_joints
+phy_debug_render_obb
+phy_debug_render_shapes
+-->
+  <!-- TAGS
+physics_world_draw_debug
+-->
+</body>
+</html>

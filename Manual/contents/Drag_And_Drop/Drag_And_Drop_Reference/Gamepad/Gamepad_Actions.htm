@@ -17,7 +17,7 @@
   <p><img alt="Gamepad Action Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Gamepad/Lib_GamePad.png"><span class="notranslate">GameMaker Studio 2</span> cuenta con una serie de acciones dedicadas que pueden utilizarse para detectar los controles analógicos y digitales
     controles de múltiples gamepads conectados. Estas acciones requieren que se especifique un valor de <i>índice</i> de gamepad, que es un número (contando desde 0) que representa el gamepad que se está seleccionando. Tenga en cuenta que cuando un gamepad se conecta a su dispositivo (o
     se retira) entonces se dispara un <a href="../../../The_Asset_Editors/Object_Properties/Async_Events.htm">Evento de Sistema</a> asíncrono (sin embargo, para lidiar con esto puede necesitar usar código).</p>
-  <p>Las &quot;ranuras&quot; de los gamepads están indexadas desde 0, siendo las ranuras 0 - 3 inclusive sólo para <i> <strong>gamepads</strong></i> Xinput <i> <strong>,</strong></i> es <i>decir,</i> mandos de <i>Xbox360</i> y compatibles. Sin embargo, también puede comprobar las ranuras 4 - 11 inclusive para gamepads <strong>DirectInput</strong>, lo que significa que puede detectar muchos otros modelos de controlador cuando se conecta a través de estas ranuras.</p>
+  <p>Las &quot;ranuras&quot; de los gamepads están indexadas desde el 0, siendo las ranuras 0 - 3 inclusive sólo para <i> <strong>gamepads</strong></i> Xinput <i> <strong>,</strong></i> es <i>decir,</i> mandos de <i>Xbox360</i> y compatibles. Sin embargo, también puede comprobar las ranuras 4 - 11 inclusive para gamepads <strong>DirectInput</strong>, lo que significa que puede detectar muchos otros modelos de controlador cuando se conecta a través de estas ranuras.</p>
   <h2>Constantes de entrada</h2>
   <p>Al trabajar con las acciones del gamepad, la entrada puede provenir de <b>ejes</b>, <b>botones</b> o <b>sombreros</b>, que <span class="notranslate">GameMaker Studio 2</span> asignará a las siguientes constantes incorporadas (tenga en cuenta que los &quot;sombreros&quot; generalmente sólo se detectan en los controladores no estándar):</p>
   <table>
@@ -166,22 +166,22 @@
   <p> </p>
   <p>La siguiente lista muestra la compatibilidad actual entre las plataformas (tenga en cuenta que esto cambiará con futuras actualizaciones):</p>
   <ul class="colour">
-    <li><strong><span class="notranslate">Windows</span></strong> es totalmente compatible con un máximo de 11 dispositivos conectados a la vez. Tenga en cuenta que en <span class="notranslate">Windows</span>, las primeras 4 ranuras de gamepad (0 - 3) se manejan usando la dll XInput, lo que significa que sólo los controladores de XBox pueden ser 100% compatibles
+    <li><strong><span class="notranslate">Windows</span></strong> es totalmente compatible con un máximo de 11 dispositivos conectados a la vez. Ten en cuenta que en <span class="notranslate">Windows</span>, las primeras 4 ranuras del gamepad (0 - 3) se manejan usando la dll XInput, lo que significa que sólo los controladores de XBox pueden ser 100% compatibles
       y que para otros tipos de controladores debes comprobar el resto de ranuras del gamepad (4 - 11).</li>
-    <li><strong><span class="notranslate">macOS</span> </strong>es compatible con un máximo de 4 dispositivos conectados a la vez, y estos dispositivos sólo pueden ser del tipo <span class="notranslate">Playstation3</span>o Xbox 360. Tenga en cuenta que la opción &quot;Build<b>for Mac AppStore&quot;</b> en Mac Game
-      debe estar desactivada para que funcione el soporte de pads.</li>
+    <li><strong><span class="notranslate">macOS</span> </strong>es compatible con un máximo de 4 dispositivos conectados a la vez, y estos dispositivos SOLO pueden ser del tipo <span class="notranslate">Playstation3</span>o Xbox 360. Tenga en cuenta que la opción &quot;Build<b>for Mac AppStore&quot;</b> en Mac Game
+      debe estar desactivada para que funcione el soporte del pad.</li>
     <li><strong><span class="notranslate">Ubuntu</span> </strong>también es compatible con la entrada del GamePad, pero es posible que tenga que instalar bibliotecas adicionales desde el repositorio de <span class="notranslate">Ubuntu</span>. Puedes hacerlo fácilmente abriendo un terminal de línea de comandos y escribiendo lo siguiente, que instalará el soporte de GUI
       para el joystick, así como el propio joystick:</li>
   </ul>
   <p class="code">sudo apt-get install jstest-gtk<br> sudo apt-get install joystick.</p>
   <ul class="colour">
     <li>Los juegos<strong>HTML5 </strong>son compatibles con los gamepads de la mayoría de los navegadores, excepto <i>Safari</i>.</li>
-    <li>La compatibilidad con el gamepad también se extiende a <strong><span class="notranslate">iOS</span> </strong>con el gabinete <b>iCade</b>. El eje izquierdo se corresponde con el mando stick (aunque la entrada es digital, no analógica), los cuatro botones &quot;cara&quot; se corresponden con los botones frontales de la caja y los
+    <li>La compatibilidad con el gamepad también se extiende a <strong><span class="notranslate">iOS</span> </strong>con el gabinete <b>iCade</b>. El eje izquierdo se corresponde con el stick del mando (aunque la entrada es digital, no analógica), los cuatro botones de la cara se corresponden con los botones frontales de la caja y los cuatro botones del hombro se corresponden con los de la parte trasera de la caja.
       los cuatro botones del hombro se corresponden con los de la parte trasera de la caja.</li>
     <li><strong><span class="notranslate">Android</span> </strong>export es compatible con los mandos NYKO y los mandos Bluetooth genéricos, pero sólo cuando están activados, lo que significa que tendrás que marcar la opción iCade/Bluetooth en la sección <a href="../../../Settings/Game_Options/Android.htm">General</a> de las <b>Opciones de Juego<span class="notranslate">de Android</span></b>. Requieren el nivel 12 de la API para que funcionen plenamente y hay que tener en cuenta que <span class="notranslate">GameMaker Studio 2</span> registrará como conectado cualquier dispositivo Bluetooth con el que esté emparejado tu dispositivo, esté o no
       realmente conectado. Por lo tanto, esto debe tenerse en cuenta a la hora de asignar y comprobar las &quot;ranuras&quot;.</li>
-    <li>En <strong>PS4</strong>, si quieres utilizar el seguimiento del touch pad tienes que utilizar las funciones para los <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/Device_Input.htm"><tt>device_mouse_*</tt></a><span> </span>botones
-      (no hay acciones <span class="notranslate">DnD™</span>para esto).</li>
+    <li>En <strong>PS4</strong>, si quieres utilizar el seguimiento del touch pad, tienes que utilizar las funciones para los <a href="../../../GameMaker_Language/GML_Reference/Game_Input/Device_Input/Device_Input.htm"><tt>dispositivo_ratón_*</tt></a><span> </span>botones
+      (no hay acciones de <span class="notranslate">DnD™</span>para esto).</li>
   </ul>
   <p> </p>
   <p> </p>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_get_shader</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_shader" />
+  <meta name="rh-index-keywords" content="layer_get_shader" />
+  <meta name="search-keywords" content="layer_get_shader" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_get_shader</h1>
+  <p>Esta función puede utilizarse para comprobar si la capa dada tiene un <span class="notranslate">sombreador</span> asignado. Se proporciona el ID de la capa (que se obtiene al crear la capa con <a href="layer_create.htm"><tt>layer_create()</tt></a>) o el nombre de la capa (como una cadena - esto tendrá
+    tendrá un impacto en el rendimiento), y la función devolverá el índice del <span class="notranslate">sombreador</span> asignado, o -1 si no hay ningún <span class="notranslate">sombreador</span> asignado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_get_shader(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Índice<span class="notranslate">del s</span> ombreador (o -1 si no se asigna ningún <span class="notranslate">sombreador</span> )</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si layer_get_shader(layer) == -1<br> {
+    <br> layer_shader(layer, shd_Sepia);<br> }
+  </p>
+  <p>El código anterior comprobará si la capa que la instancia que ejecuta el código tiene un <span class="notranslate">shader</span> asignado y si no lo tiene se le asigna uno.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_set_target_room.htm">layer_set_target_room</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_<span class="notranslate">shader</span>
+-->
+  <!-- TAGS
+layer_get_<span class="notranslate">shader</span>
+-->
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_obtener_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_x" />
+  <meta name="rh-index-keywords" content="path_get_x" />
+  <meta name="search-keywords" content="path_get_x" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_obtener_x</h1>
+  <p>Con esta función puedes obtener la coordenada x de una posición en cualquier trayectoria. El 0 es el inicio de la trayectoria, el 1 es el final de la misma, y cualquier punto intermedio equivale a esa distancia en la trayectoria. No es necesario que sea un punto definitorio de la trayectoria, puede
+    puede estar en cualquier parte del mismo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_get_x(ind, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a comprobar.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>A qué distancia de la ruta hay que comprobar. Entre 0 (inicio) y 1 (final).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">x = path_get_x(pth_WallWalk, 0.5);</p>
+  <p>Esto establecerá la x de la instancia de llamada a la coordenada x del punto exactamente a la mitad de la ruta dada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Paths.htm">Caminos</a></div>
+        <div style="float:right">Siguiente: <a href="path_get_y.htm">path_get_y</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_x
+-->
+  <!-- TAGS
+path_get_x
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>letrasdigitoscadenas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_lettersdigits" />
+  <meta name="rh-index-keywords" content="string_lettersdigits" />
+  <meta name="search-keywords" content="string_lettersdigits" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>letrasdigitoscadenas</h1>
+  <p>Esta función devolverá una copia de una cadena dada con todo menos sus letras y dígitos eliminados, lo que significa que puede utilizarse para eliminar cualquier carácter no deseado (como &quot;#&quot; o &quot;?&quot;) de, por ejemplo, un nombre de usuario o una contraseña.</p>
+  <p class="note">NOTA: Esta función sólo devuelve el alfabeto inglés de 26 letras de la A a la Z (mayúsculas o minúsculas) y los números del 0 al 9.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string_lettersdigits(string);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>La cadena a convertir en letras y dígitos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (string_length(password) &gt; string_length(string_lettersdigits(password)))<br> {
+    <br> draw_text(32,32, &quot;¡Contraseña inválida! ¡Sólo letras y números, por favor!&quot;);<br> }
+  </p>
+  <p>El código anterior comprobará la longitud de una cadena con la longitud de la misma cadena, pero con todos los símbolos eliminados. Si no son iguales, se dibuja un mensaje en la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_lower.htm">string_lower</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_lettersdigits
+-->
+  <!-- TAGS
+string_lettersdigits
+-->
+
+</body></html>

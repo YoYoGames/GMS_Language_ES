@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Habitaciones</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the room editor works" />
+  <meta name="rh-index-keywords" content="Room Editor" />
+  <meta name="search-keywords" content="room,rooms,room editor,convert image" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de habitaciones</h1>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room.png" style="cursor: nesw-resize;" /></p>
+  <p>El editor de salas es donde se crean las <strong>salas de</strong> juego. Cada juego requiere <em>al menos una sala para funcionar</em>, y en ella puedes colocar instancias, sprites, baldosas, caminos y fondos. Cada uno de estos diferentes activos puede ser colocado
+    en su propia y única <strong>capa </strong>que puede ser ordenada como quieras en el Editor de <strong>Capas</strong>. Debido a la complejidad del editor de salas, primero te daremos un breve resumen de las características más importantes, y luego
+    puede encontrar detalles más profundos en los enlaces de las secciones que aparecen a continuación.</p>
+  <p>Cuando cree un recurso de sala, puede hacer clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> en el navegador de activos para abrir el menú contextual, que le permitirá crear <strong>salas secundarias </strong>(véase
+    la página sobre <a href="Room_Properties/Room_Inheritance.htm">Herencia</a> para más información), abrir la sala para su edición, añadir un nuevo grupo de recursos para organizar mejor las salas, renombrar la sala o eliminarla. Tenga en cuenta que para cambiar el orden de las salas
+    y/o la herencia es necesario utilizar el <a href="../Settings/The_Room_Manager.htm">Gestor de Salas</a>, que puede abrirse utilizando el menú de la parte superior derecha del Navegador de Activos.</p>
+  <p><img class="center" src="../assets/Images/Asset_Editors/Editor_Room_RoomManager.png">El editor de salas es en sí mismo un <a href="../Introduction/Workspaces.htm">espacio de trabajo</a> y, como tal, puedes hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en la pestaña y arrastrarla fuera de la ventana principal a una nueva ventana propia, quizás en otra pantalla, por ejemplo. También puedes volver a colocarla en la ventana principal arrastrando la pestaña a la parte superior del IDE y soltando el botón del ratón.</p>
+  <p>La interfaz de usuario del editor de salas es fácil de navegar y está dividida en varias secciones discretas. Las partes del editor que están ancladas -las <strong>propiedades de la sala</strong> y el <strong>editor de capas</strong>, así como las diferentes secciones de propiedades de las capas
+    también pueden ser retiradas del dock simplemente arrastrándolas al espacio de trabajo, y pueden ser añadidas de nuevo al dock arrastrándolas a los lados o al fondo del espacio de trabajo.</p>
+  <p>A continuación se presenta una breve descripción de cada una de las secciones del Editor de Salas:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Reglas / Guías</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Las reglas a lo largo del borde del lienzo te muestran la posición de las cosas que se colocan dentro de él, y están marcadas desde (0, 0) que es el centro del lienzo y el origen para la habitación. Puede hacer clic y arrastrar en las reglas para tirar de una guía horizontal
+      o vertical dentro de la sala, y esta guía se puede utilizar para posicionar con precisión los diferentes activos que se están utilizando, ya que al mover un activo cerca de uno se &quot;ajusta&quot; a la guía. Mientras se posicionan los objetos en la sala, también se muestran temporalmente las guías inteligentes
+      Mientras se posicionan los objetos dentro de la sala, también se muestran temporalmente guías inteligentes que indican la distancia entre los objetos, así como la distancia desde el límite de la sala o el punto central.</p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" src="../assets/Images/Asset_Editors/Editor_Sequences_Guides.png" class="center" alt="Guides and Smart Guides in the Sequences Editor">La distancia a la que los activos se &quot;ajustan&quot;
+      a las guías, así como otras propiedades, se pueden establecer en <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Room_Editor_Preferences.htm">las Preferencias del Editor de Salas</a>.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Editor de capas</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">El editor de salas coloca las cosas en capas dentro de la sala. Cada capa tiene una &quot;profundidad&quot; discreta, donde las que aparecen al final de la lista en la ventana de capas se dibujarán debajo de las que aparecen cerca de la parte superior.</p>
+    <p class="note"><strong>IMPORTANTE!</strong> Hay una profundidad de capa mínima y máxima de -16000 a 16000. Todo lo que se coloque en una capa fuera de ese rango no se dibujará aunque todos los eventos se seguirán ejecutando normalmente.</p>
+    <p class="dropspot">Las capas se crean haciendo clic en el botón apropiado para el tipo de capa que se desea crear, que son:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Instance Layer Icon" src="../assets/Images/Icons/Icon_Instance.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Instancias</strong></td>
+          <td class="text">Esta capa es para todas las <a href="../Quick_Start_Guide/Objects_And_Instances.htm">instancias</a> que su juego utilizará.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Tile map Layer Icon" src="../assets/Images/Icons/Icon_Tilemap.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Mapas de azulejos</strong></td>
+          <td class="text">Esta capa sirve para colocar los azulejos de los <a href="../Quick_Start_Guide/Creating_Tile_Sets.htm">conjuntos de az</a> ulejos como<span class="glossextra">mapas de</span> <a class="glossterm" data-glossterm="mapa de azulejos" href="#">azulejos</a>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Path Layer Icon" height="30" src="../assets/Images/Icons/Icon_Paths.png" style="margin-left: 24px;" width="30" /></td>
+          <td class="icons"><strong>Caminos</strong></td>
+          <td class="text">Esta capa sirve para mostrar y añadir <a href="Paths.htm">caminos</a> en una habitación.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Asset Layer Icon" src="../assets/Images/Icons/Icon_Assets.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Activos</strong></td>
+          <td class="text">Esta capa es para los activos visuales que se añaden a la sala, como <a href="../Quick_Start_Guide/Creating_Sprites.htm">los sprites</a> y las <a href="../Quick_Start_Guide/Sequences.htm">secuencias</a>.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Background Layer Icon" src="../assets/Images/Icons/Icon_Background.png" style="margin-left: 24px;" /></td>
+          <td class="icons"><strong>Antecedentes</strong></td>
+          <td class="text">Este tipo de capa define un fondo, que es esencialmente un color único o una imagen de sprite que se dibuja sobre toda la habitación.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">También puede crear una carpeta de capas con el botón de carpeta <img alt="Folder Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_Folder.png" width="24"> en la que puede agrupar las capas seleccionadas, así como eliminar las capas seleccionadas
+      con el botón de borrado <img alt="Delete Layer Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_DeleteLayer.png" width="24">. Cada uno de estos tipos de capas se discute <a href="Room_Properties/Layer_Properties.htm">aquí</a> con más
+      detalle.
+    </p>
+    <p class="dropspot">Tenga en cuenta que puede alternar la <a href="Room_Properties/Room_Inheritance.htm">herencia</a> para el editor de capas, lo que afectará al orden y la visibilidad de las mismas. La visibilidad en sí misma puede establecerse haciendo clic en el icono del ojo <img alt="Eye Icon" class="icon" height="21" src="../assets/Images/Icons/Icon_Eye.png" width="21"> al lado de cada una de las capas, o puede hacer clic en el de la parte superior para activar/desactivar todas las capas a la vez. También tiene la posibilidad de &quot;bloquear&quot; una capa (o todas) para que
+      no puedan ser modificadas haciendo clic en el icono del candado <img alt="Padlock Icon" class="icon" src="../assets/Images/Icons/Icon_Padlock.png">. Ten en cuenta que las capas marcadas como invisibles <strong>no</strong> se mostrarán cuando se ejecute el juego.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Propiedades de las capas</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">La ventana de propiedades de la capa de la habitación cambiará dependiendo de la capa actualmente seleccionada en el editor de capas.<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" src="../assets/Images/Asset_Editors/Editor_Room_LayerProperties.png" alt="Room Layer Properties In Full" class="center"> Cada ventana tendrá las diferentes
+      propiedades y listas asociadas con el tipo de capa seleccionada actualmente, y podrá editar detalles fundamentales de cómo se muestra la capa y qué hay realmente en ella. Consulte <a href="Room_Properties/Layer_Properties.htm">aquí</a> para obtener más detalles.<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Propiedades de las habitaciones</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Esta sección del editor de habitaciones es donde se pueden definir todas las propiedades básicas de la habitación, como su tamaño, si utiliza la física, o cualquier cámara y viewports que requiera. Esta sección se explica con más detalle <a href="Room_Properties/Room_Properties.htm">aquí</a>.<br></p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Caja de herramientas de capas</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Ciertos tipos de capas tendrán herramientas adicionales añadidas en la parte superior del IDE en la <strong>caja de herramientas de capas</strong> (por ejemplo, capas de mosaico o capas de ruta). Las herramientas exactas cambiarán en función del tipo de capa que se esté editando, y así se explica
+      en la página que explica cada capa, <a href="Room_Properties/Layer_Properties.htm">aquí</a>.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Caja de herramientas de la habitación</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">En la parte superior del lienzo principal del Editor de Espacios tienes unos cuantos controles para manejar cómo se muestran las cosas. Estos son:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png"> <strong>Alternar</strong> la rejilla del lienzo: Esto activará/desactivará la cuadrícula del lienzo del Editor de Habitaciones. Esta es una cuadrícula que <span class="notranslate">GameMaker Studio 2</span> dibuja sobre el lienzo principal
+        para dividirlo en secciones, y por defecto se establece en 32x32px de tamaño. Sin embargo, si haces clic en el icono del menú de la rejilla <img alt="Icon Grid Menu" class="icon" src="../assets/Images/Icons/Icon_CanvasOptions.png"> abrirás las opciones de la rejilla:<img alt="Room Grid Options" class="center" src="../assets/Images/Asset_Editors/Editor_RoomGridControls.png">Estas opciones te permiten establecer el color y el alfa de la rejilla, así como los valores de las celdas para la rejilla a lo largo de los ejes X e Y. También tiene la opción de activar o desactivar
+        el ajuste de la rejilla (activado por defecto). Puede utilizar los atajos de teclado &quot;G&quot; y <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;G&quot; para cambiar la visibilidad de la cuadrícula
+        y el ajuste de la rejilla, respectivamente.</li>
+      <li class="dropspot"><img alt="Canvas Zoom Controls Icons" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasZoom.png" width="120"> <strong>Controles de</strong> zoom del lienzo: Estos botones controlan el nivel de zoom del lienzo actual. Puede acercarse o alejarse y
+        haciendo clic en el botón <img alt="Zoom Reset Icon" class="icon" src="../assets/Images/Icons/Icon_ZoomReset.png"> se restablecerá el lienzo para que sea 1:1 con la habitación que se está editando. También puede hacer clic en el botón de ajuste de la ventana <img alt="Canvas Fit Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasFit.png"> para hacer que todo el lienzo de la habitación se ajuste al espacio de trabajo del editor actual (esto ampliará o reducirá el zoom según corresponda para que se ajuste). Tenga en cuenta que también puede acercarse y alejarse utilizando los botones <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> y la rueda del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, y pulsando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="Enter Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Enter.png" width="55"> el lienzo de la sala se ajustará a 1:1 con la configuración de la sala.</li>
+      <li class="dropspot"><strong><img alt="Canvas View Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasViews.png"> </strong> Mostrar Vistas: Al hacer clic en esta opción se activará o desactivará el rectángulo de vista. Cuando está activado, verá un área resaltada que significa las diferentes
+        vistas que están habilitadas para la sala.</li>
+      <li class="dropspot"><strong><img alt="Play Room Icon" class="icon" src="../assets/Images/Icons/Icon_PlayRoom.png"> </strong> Reproducir animaciones: Cuando se añaden sprites, secuencias o mosaicos animados, es posible que quieras hacerte una idea de cómo se verán dentro de la propia sala
+        sin tener que compilar todo el proyecto, por lo que puede hacer clic en esta opción para iniciar la reproducción de las diferentes animaciones. Si vuelves a hacer clic, la animación se detendrá.</li>
+      <li class="dropspot"><strong><img alt="Canvas Layer Select Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasSelect.png"> </strong> Lienzo Seleccionar desde cualquier capa: Por defecto, cuando haga clic en un elemento en el lienzo de la sala, sólo podrá seleccionar aquellos
+        Sin embargo, si habilita esta opción, puede hacer clic en cualquier elemento y se seleccionará, cambiando la capa de destino a la que el elemento se encuentra. Puede utilizar el atajo de teclado &quot;
+        <span class="inline">P</span> &quot; para activar temporalmente esta opción (mantenga pulsado &quot;<span class="inline">P</span>&quot; para activar y suelte para desactivar)
+       <p class="dropspot"> </p>
+      </li>
+    </ul>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Lienzo de la habitación</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">El centro de la ventana del editor de habitaciones está ocupado por el área donde tiene lugar toda la edición real. Aquí es donde se colocan las instancias y los recursos, se dibujan las baldosas y se posicionan las rutas. Puede acercarse y alejarse utilizando la rueda del ratón o los controles de la sala en la parte superior de la pantalla.
+      rueda del ratón o los controles de la sala en la parte superior, y puede desplazarse manteniendo el botón central del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png"> y moviendo el ratón alrededor o usando <img alt="Space Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> mientras se mueve.</p>
+    <p class="dropspot">Al crear capas de activos o capas de instancias, puede colocar el activo o la instancia simplemente arrastrándolo desde el Navegador de Activos y luego soltándolo en el lugar que desee. También puede seleccionar un activo o instancia en el Navegador de Activos
+      Navegador de Activos y luego mantener presionado <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> para previsualizar el recurso &quot;in-situ&quot;, y si además hace clic en el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> puede añadir la instancia e incluso &quot;pintarla&quot; en la capa de la habitación manteniendo el botón presionado y arrastrando el ratón. Tenga en cuenta que, por defecto, las instancias y los sprites que se añaden
+      a una sala de esta manera se ajustarán a la configuración de la cuadrícula de la sala definida, pero puede mantener pulsado <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> para que la instancia siga el ratón con precisión y no se ajuste (al soltar <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> se permitirá el ajuste de nuevo).</p>
+    <p class="dropspot">En el caso de las rutas, puede crear una nueva capa de ruta y un recurso de ruta directamente desde el Editor de salas, o crear un nuevo recurso de ruta y arrastrarlo a la ventana principal del editor, como haría con una instancia, y luego editar la ruta y sus conexiones también en la ventana del editor.
+      la ventana del editor también. Para los conjuntos de azulejos, puede &quot;pintarlos&quot; desde el editor de conjuntos de azulejos.</p>
+    <p class="dropspot">Tenga en cuenta que puede seleccionar y mover o eliminar varios recursos de la misma capa manteniendo pulsados <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en los que desee, y la mayoría de los recursos del editor de salas le permitirán rotarlos y escalarlos (individualmente
+      o como grupo) haciendo clic y manteniendo <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> a lo largo de los bordes o esquinas exteriores y arrastrando el ratón. También puedes hacer doble clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> sobre cualquier recurso individual (baldosas, instancias, sprites) para que el editor se desplace hasta él y abra la ventana de propiedades del recurso seleccionado.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Barra de estado</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">La barra de estado se utiliza para mostrar información específica del contexto. La barra de estado siempre le mostrará en qué lugar de la sala se encuentra el cursor del ratón, pero también mostrará información adicional basada en la capa que se está editando, la herramienta que se está utilizando y el estado
+      de esa herramienta.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p> </p>
+  <p>Puede obtener más información sobre algunas de las secciones mencionadas en las siguientes páginas:</p>
+  <ul class="colour">
+    <li><a href="Room_Properties/Layer_Properties.htm">Tipos de capas y propiedades</a></li>
+    <li><a href="Room_Properties/Room_Properties.htm">Propiedades de las habitaciones</a></li>
+    <li><a href="Room_Properties/Room_Inheritance.htm">Herencia de habitaciones</a></li>
+  </ul>
+  <p>Además de las herramientas del editor, también verá que se ha añadido un nuevo menú desplegable en la parte superior del IDE.</p>
+  <p><img alt="Room Editor Menus" class="center" src="../assets/Images/Asset_Editors/Editor_RoomContextMenu.png">Estos menús se explican a continuación:</p>
+  <ul class="colour">
+    <li><strong>Vista de capas</strong>: Esto reabrirá la ventana del Editor de Capas si la ha cerrado en algún momento.</li>
+    <li><strong>Propiedades de</strong> la sala: Esto reabrirá la ventana de Propiedades de la Sala si la ha cerrado en algún momento.</li>
+    <li><strong>Propiedades de la capa</strong>: Esto reabrirá la <a href="Room_Properties/Layer_Properties.htm">ventana de propiedades</a> de la capa si la ha cerrado en algún momento.</li>
+    <li><strong>Orden</strong> de Creación de Instancias: Esto abrirá la <strong>ventana de </strong> orden de creación de instancias (que también puede abrirse usando el botón en la ventana de <a href="Room_Properties/Room_Properties.htm">propiedades de la sala</a><strong> </strong>): <br>
+      <img alt="Room Creation Order Window" class="center" src="../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png"> Esta ventana enumera todas las instancias de la sala en el orden en que serán creadas (de arriba a abajo). Si desea que se cree
+      Si necesita que una instancia específica se cree antes que otra, puede simplemente hacer clic en <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> y arrastrarla a la posición que desee.</li>
+    <li><strong>Restablecer <span class="notranslate">ventanas</span></strong> en el escritorio actual: Esto restablecerá la disposición de las ventanas del editor de salas a sus valores por defecto para el espacio de trabajo del escritorio actualmente enfocado.</li>
+  </ul>
+  <p> </p>
+  <ul class="colour">
+    <li><strong>Edición de</strong> azulejos: Cuando se trabaja con una capa de azulejos, esta opción aparecerá resaltada en el menú desplegable. Tiene el siguiente submenú:<br>
+      <img alt="Room Tile Menu" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileMenu.png">Al editar la capa de azulejos puede seleccionar varios azulejos haciendo clic, manteniendo pulsado y arrastrando el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">, o puede seleccionar y agrupar azulejos individuales utilizando <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">, o eliminar azulejos individuales de la selección utilizando <img alt="Alt Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Alt.png" width="55"> + <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png">. Desde este menú puede borrar la selección o invertirla, así como cortar, copiar o pegar la selección en otra capa (o incluso en la misma capa pero
+      en otra posición). La última opción reabrirá la ventana acoplada del editor de conjuntos de azulejos si la has cerrado.</li>
+    <li><strong>Convertir</strong> imagen en mapa de azulejos: La opción Convertir imagen en mapa de azulejos es una poderosa herramienta que se puede utilizar para importar una sola imagen y luego extraer los azulejos utilizados de la imagen y recrearla como una capa de mapa de azulejos en el editor de la sala, creando
+      el conjunto de azulejos y el sprite necesarios como parte del proceso. Cuando seleccione esta herramienta, se le pedirá que proporcione un archivo de imagen sin comprimir (<span class="inline">PNG</span>, <span class="inline">GIF </span>o <span class="inline">BMP</span>) que se cargará.
+      que se cargará. Al cargarlo, se le presentará la herramienta de <strong>importación de imágenes</strong>:<br>
+      <img alt="Convert Image To Tilemap Tool" class="center" src="../assets/Images/Asset_Editors/Editor_Room_ConvertImage.png">. Aquí se le ofrecen opciones sobre cómo dividir el mosaico al crear el conjunto de mosaicos, y puede establecer la anchura y la altura de las celdas
+      así como los desplazamientos necesarios en los bordes. También puedes establecer la anchura aproximada (en píxeles) del sprite final que se crea. Por ejemplo, si el conjunto de azulejos está formado por celdas de 64x64 y se establece aquí una anchura de 200, el sprite final
+      que se creará para su uso en el conjunto de azulejos tendrá 192 píxeles de ancho (es decir, 3 celdas de azulejos). Si lo deja en el valor predeterminado de 0, entonces <span class="notranslate">GameMaker Studio 2</span> intentará hacer un sprite lo más &quot;cuadrado&quot; posible con aproximadamente el mismo número
+      de celdas horizontales y verticales.<br>
+      <br> Después de establecer la forma en que la imagen se va a dividir, al hacer clic en la muestra junto a la opción <strong>Eliminar color</strong> se abrirá el selector de color y le permitirá seleccionar un color que se va a eliminar del sprite final. Normalmente se trata de
+      Este suele ser un color de fondo que se desea eliminar y si se establece esta muestra en cualquier cosa que no sea 100% transparente (alfa 0) se eliminará el color seleccionado en la importación.<br>
+      <br> Por último, tiene la opción de nombrar el sprite, el conjunto de azulejos y la capa de mapa de azulejos que se creará para usted con esta herramienta. Al finalizar la importación, se creará un sprite con todas las imágenes dispuestas en una cuadrícula, así como un conjunto de azulejos a partir de
+      de este sprite. En la sala, se creará una nueva capa de mapa de azulejos y se reproducirá la imagen utilizando el conjunto de azulejos generado. Tenga en cuenta que la herramienta <em>no </em>duplicará los azulejos, sino que reconocerá cuando una celda tenga datos de imagen que coincidan con
+      otra celda (esto incluye los azulejos girados). Esto se puede ver en la siguiente imagen, en la que sólo se ha creado un mosaico de flores y un mosaico de cajas, aunque hay múltiples instancias de ambos, con algunas instancias rotadas en la imagen base:<br>
+      <img alt="Convert Image To Tilemap Example Tileset" class="center" src="../assets/Images/Asset_Editors/Editor_Room_TileExample.png"></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Asset_Editors.htm">Los editores de activos</a></div>
+        <div style="float:right">Siguiente: <a href="Scripts.htm">Guiones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Editor
+Rooms
+Layers
+Layer Properties
+-->
+  <!-- TAGS
+room_editor
+-->
+
+</body></html>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cámaras y puertos de visualización</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Cameras And View Ports" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Cameras And View Ports,viewports,view ports,views,camera,cameras" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Cámaras y miradores</h1>
+  <p>Cuando creas salas en <span class="notranslate">GameMaker Studio 2</span> necesitas configurar diferentes puertos de <i>vista</i> y/o <i>cámaras</i> para controlar lo que se muestra al jugador. Los puertos de <i>vista</i> son, básicamente, pequeñas ventanas en su mundo de juego que le permiten mostrar
+    el jugador partes de una habitación, ya sea a escala o 1:1, y como tal son esenciales cuando su sala de juego es más grande que el tamaño de la pantalla. Las <i>cámaras</i> son las que definen exactamente lo que se mostrará en cada puerto de vista.</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> te permite 8 puertos de vista independientes (numerados del 0 al 7) y un número ilimitado de cámaras, de las cuales sólo 8 pueden estar <i>activas</i> al mismo tiempo -una asignada a cada uno de los puertos disponibles- aunque normalmente sólo necesitarás
+    uno o dos puertos de visualización. Las cámaras pueden mostrar diferentes partes de la misma habitación y pueden ser activadas y desactivadas así como asignadas a puertos de vista en cualquier momento, lo que significa que puedes usar las cámaras para dibujar elementos del HUD o para tener efectos de pantalla dividida,
+    o para crear escenas de corte, por ejemplo. Esencialmente, colocas una cámara dentro de una habitación y defines la &quot;vista&quot; (área) de la habitación que será visible para ella, y luego esta vista se dibuja en un puerto de vista - <i>ten en cuenta</i> que el puerto de vista puede ser
+    un tamaño diferente al de la vista de la cámara y, por lo tanto, puede distorsionar y escalar la vista de la cámara si tiene un tamaño diferente a 1:1 con el puerto de vista.</p>
+  <p class="note"><b>IMPORTANTE!</b> Es fácil confundirse cuando se habla de cámaras, vistas y puertos de vista, así que para aclarar:</p>
+  <ul class="colour" style="padding-left:150px">
+    <li><b>La cámara</b>: Un punto dentro de la sala que se utilizará para establecer cómo se visualiza la sala - normalmente con posición, orientación, campo de visión y relación de aspecto</li>
+    <li><b>La vista</b>: Lo que ve la cámara, en función de la posición, la proyección y la rotación de la cámara</li>
+    <li><b>El puerto de visualización</b>: El área de la pantalla donde se mostrará la vista de la cámara</li>
+  </ul>
+  <p><img alt="Camera illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/Camera_Example.png">Si está añadiendo cámaras a través del <b>Room Editor</b> entonces puede recuperar su valor <i>de ID de cámara</i> usando la variable <tt>view_camera</tt>. A continuación, puede manipular la vista utilizando las funciones de abajo e incluso puede destruir las cámaras por defecto si es necesario, aunque tendrá que asignar una nueva cámara a la vista de lo contrario obtendrá algunos
+    comportamiento imprevisible. Las cámaras añadidas a un puerto de vista en el Editor de Habitaciones son de alcance <b>global</b>, lo que significa que se crean una vez cuando se inicia el juego, y luego al entrar en cada habitación se establecen los valores establecidos en el editor de habitaciones,
+    por lo que si destruyes una cámara por defecto en <i>cualquier</i> sala, dejará de existir para <i>todas las salas</i>.</p>
+  <p>Algo que hay que tener en cuenta sobre las cámaras y los puertos de vista es que el área total del cuadro delimitador de <i>todos los puertos de vista activos en la primera sala del</i> juego es lo que define el <b>tamaño del lienzo de fondo</b> (o el tamaño de la ventana para <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) y
+   <span class="notranslate">Windows</span>), y cualquier área que no esté cubierta por un puerto de vista se dibujará por defecto utilizando el color de la ventana, como se ilustra en la imagen siguiente:</p>
+  <p><img alt="View Port Canvas" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Cameras_Display/viewport_canvas.png" /></p>
+  <p class="note"><b>NOTA</b>: Por defecto es necesario seleccionar &quot;Clear Display Buffer&quot; en el editor de salas para que se muestre el color, y sólo se puede establecer el color utilizando la función window_set_colour <tt>().</tt> Si no utiliza esta función, el color por defecto será el negro.
+    a negro.</p>
+  <p>Debes tener cuidado cuando utilices múltiples cámaras ya que el evento draw para todas las instancias es llamado una vez por cada vista visible, así que si tienes tres vistas de cámara activas en una habitación, el evento draw se ejecutará tres veces en cada paso (básicamente haciendo tres
+    veces el trabajo) lo que puede ser una causa de ralentización si el juego es grande o complejo. La variable <tt>view_current</tt> puede ser utilizada para ayudar a limitar estas llamadas de dibujo, sin embargo, mediante la comprobación de la vista que se está dibujando y sólo el dibujo de los elementos que son específicos
+    a un puerto de vista dado. También hay que tener cuidado al crear tus propias cámaras, ya que si creas una en una habitación y no la eliminas usando la variable <a href="camera_destroy.htm"><tt>camera_destroy()</tt></a> puedes obtener una fuga de memoria.</p>
+  <p>Puede encontrar un resumen de todas las funciones disponibles en las diferentes secciones que aparecen a continuación, pero vale la pena señalar que algunas de estas funciones requieren la configuración y el uso de diferentes matrices, por lo que es posible que desee consultar la sección del manual
+    para las <a href="../../Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">Funciones de Mat</a>riz. También hay que tener en cuenta que hay algunas funciones de sala que se pueden utilizar para obtener y establecer los valores de las cámaras y de los puertos de visualización en salas distintas a la actual (ver<span> la</span> sección de <a href="../../Asset_Management/Rooms/Rooms.htm">Salas</a>).</p>
+  <p><a name="camera_general"></a></p>
+  <p>Las siguientes funciones se pueden utilizar para crear y destruir cámaras:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="camera_create.htm">crear_cámara</a></li>
+    <li><a href="camera_create_view.htm">camera_create_view</a></li>
+    <li><a href="camera_destroy.htm">cámara_destrucción</a></li>
+    <li><a href="camera_apply.htm">aplicación_de_cámara</a></li>
+  </ul>
+  <p> </p>
+  <p>También hay una serie de funciones para ajustar y obtener información de la cámara:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="camera_set_view_mat.htm">camera_set_view_mat</a></li>
+    <li><a href="camera_set_proj_mat.htm">camera_set_proj_mat</a></li>
+    <li><a href="camera_set_update_script.htm">camera_set_update_script</a></li>
+    <li><a href="camera_set_begin_script.htm">camera_set_begin_script</a></li>
+    <li><a href="camera_set_end_script.htm">camera_set_end_script</a></li>
+    <li><a href="camera_set_view_pos.htm">camera_set_view_pos</a></li>
+    <li><a href="camera_set_view_size.htm">camera_set_view_size</a></li>
+    <li><a href="camera_set_view_speed.htm">camera_set_view_speed</a></li>
+    <li><a href="camera_set_view_border.htm">camera_set_view_border</a></li>
+    <li><a href="camera_set_view_angle.htm">camera_set_view_angle</a></li>
+    <li><a href="camera_set_view_target.htm">camera_set_view_target</a></li>
+    <li><a href="camera_set_default.htm">camera_set_default</a></li>
+    <li><a href="camera_get_view_mat.htm">camera_get_view_mat</a></li>
+    <li><a href="camera_get_proj_mat.htm">camera_get_proj_mat</a></li>
+    <li><a href="camera_get_update_script.htm">camera_get_update_script</a></li>
+    <li><a href="camera_get_begin_script.htm">camera_get_begin_script</a></li>
+    <li><a href="camera_get_end_script.htm">camera_get_end_script</a></li>
+    <li><a href="camera_get_view_x.htm">camera_get_view_x</a></li>
+    <li><a href="camera_get_view_y.htm">camera_get_view_y</a></li>
+    <li><a href="camera_get_view_width.htm">camera_get_view_width</a></li>
+    <li><a href="camera_get_view_height.htm">camera_get_view_height</a></li>
+    <li><a href="camera_get_view_speed_x.htm">camera_get_view_speed_x</a></li>
+    <li><a href="camera_get_view_speed_y.htm">camera_get_view_speed_y</a></li>
+    <li><a href="camera_get_view_border_x.htm">camera_get_view_border_x</a></li>
+    <li><a href="camera_get_view_border_y.htm">camera_get_view_border_y</a></li>
+    <li><a href="camera_get_view_angle.htm">camera_get_view_angle</a></li>
+    <li><a href="camera_get_view_target.htm">camera_get_view_target</a></li>
+    <li><a href="camera_get_default.htm">camera_get_default</a></li>
+    <li><a href="camera_get_active.htm">camera_get_active</a></li>
+  </ul>
+  <p> </p>
+  <p>Cuando se trabaja con cámaras, hay que asignarlas a un puerto de <strong>vista</strong> para que estén &quot;activas&quot; y muestren algo. Estos puertos de vista están numerados del 0 al 7 y pueden cambiarse y posicionarse utilizando diferentes matrices de variables y funciones
+    y también se puede comprobar cuál se está dibujando actualmente o qué cámara está conectada a él.</p>
+  <p>Están disponibles las siguientes variables incorporadas <a href="../../../GML_Overview/Variables/Global_Variables.htm">de ámbito global</a>:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="view_camera.htm">ver_cámara</a></li>
+    <li><a href="view_current.htm">ver_actualidad</a></li>
+    <li><a href="view_enabled.htm">view_enabled</a></li>
+    <li><a href="view_visible.htm">ver_visible</a></li>
+    <li><a href="view_xport.htm">ver_exportación</a></li>
+    <li><a href="view_yport.htm">ver_puerto</a></li>
+    <li><a href="view_wport.htm">view_wport</a></li>
+    <li><a href="view_hport.htm">ver_puerto</a></li>
+    <li><a href="view_surface_id.htm">view_surface_id</a></li>
+  </ul>
+  <p> </p>
+  <p>También existen las siguientes funciones para tratar los puertos de vista:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="view_get_camera.htm">view_get_camera</a></li>
+    <li><a href="view_get_visible.htm">view_get_visible</a></li>
+    <li><a href="view_get_xport.htm">view_get_xport</a></li>
+    <li><a href="view_get_yport.htm">view_get_yport</a></li>
+    <li><a href="view_get_wport.htm">view_get_wport</a></li>
+    <li><a href="view_get_hport.htm">view_get_hport</a></li>
+    <li><a href="view_get_surface_id.htm">view_get_surface_id</a></li>
+    <li><a href="view_set_camera.htm">view_set_camera</a></li>
+    <li><a href="view_set_visible.htm">view_set_visible</a></li>
+    <li><a href="view_set_xport.htm">view_set_xport</a></li>
+    <li><a href="view_set_yport.htm">view_set_yport</a></li>
+    <li><a href="view_set_wport.htm">view_set_wport</a></li>
+    <li><a href="view_set_hport.htm">view_set_hport</a></li>
+    <li><a href="view_set_surface_id.htm">view_set_surface_id</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Cameras_And_Display.htm">Cámaras y pantalla</a></div>
+        <div style="float:right">Siguiente: <a href="../The_Game_Window/The_Game_Window.htm">La ventana de juego</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Cameras And Viewports
+-->
+  <!-- TAGS
+camera_functions
+-->
+</body>
+</html>

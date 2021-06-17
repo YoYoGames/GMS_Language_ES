@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_recalada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_rescale" />
+  <meta name="rh-index-keywords" content="path_rescale" />
+  <meta name="search-keywords" content="path_rescale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_recalada</h1>
+  <p>Esta función puede utilizarse para reescalar la trayectoria dada a lo largo de los ejes vertical y horizontal (o uno de ellos), básicamente moviendo cada uno de los puntos de la trayectoria a una nueva posición correspondiente a esta escala alrededor del centro de la trayectoria. <strong>Esta función cambia el activo real</strong> de la trayectoria,
+    y por lo tanto afectará permanentemente a la forma en que el camino es utilizado por todas las instancias en el juego desde el momento en que la función se utiliza hasta el final del juego. Si esto no es lo que necesitas, entonces deberías usar una función como <span class="inline"><a href="path_duplicate.htm">path_duplicate()</a></span> para crear una copia del camino primero, y luego llamar a esta función en el activo duplicado (no olvides llamar a <span class="inline"><a href="path_delete.htm">path_delete()</a></span> en el activo cuando ya no sea necesario).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_rescale(index, xscale, yscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a escalar.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>Por qué multiplicar la escala horizontal actual. La escala por defecto es 1.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>Por qué multiplicar la escala vertical actual. La escala por defecto es 1.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path_rescale(pth_AI, 3, 3);</p>
+  <p>Esto reescalaría la ruta dada al triple de su tamaño original.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_set_closed.htm">path_set_closed</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_scale
+-->
+  <!-- TAGS
+path_scale
+-->
+</body>
+</html>

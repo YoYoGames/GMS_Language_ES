@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_profundidad_desactivar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_depth_disable" />
+  <meta name="rh-index-keywords" content="surface_depth_disable" />
+  <meta name="search-keywords" content="surface_depth_disable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_profundidad_desactivar</h1>
+  <p>Esta función desactiva la generación automática de búferes de profundidad para <i>todas las</i> superficies que se creen después de haberla desactivado. Normalmente, todas las superficies tienen búferes de profundidad, por lo que si se dibujan objetos 3D en ellas, se ordenarán correctamente por profundidad para mantener la paridad funcional entre el renderizado en las superficies y el renderizado en el búfer posterior.
+    para mantener la paridad funcional entre el renderizado en las superficies y el renderizado en la memoria intermedia, sin embargo, la asignación de las memorias intermedias de profundidad básicamente duplica la cantidad de memoria necesaria para las superficies, lo que podría ser una sobrecarga excesiva e innecesaria
+    especialmente si tu juego es muy intensivo en memoria, y para los juegos 2D generalmente no son necesarios.</p>
+  <p>Para utilizar esta función, deberá llamarla <i>antes de</i> crear una superficie, y podrá volver a activarla después (si es necesario). Todas las superficies creadas cuando el búfer de profundidad está deshabilitado ya no utilizarán un búfer de profundidad cuando se dibujen, esto resulta
+    Esto resulta en que las cosas que se dibujan en la superficie tienen paridad de profundidad. Las imágenes de abajo ilustran esto en la práctica:</p>
+  <p><img alt="Surface depth buffer example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Surface_Depth_Buffer.png">En la imagen anterior, estamos dibujando un rectángulo y un triángulo utilizando un buffer de vértices en 3D. Las coordenadas
+    Las coordenadas del triángulo rojo lo colocan detrás del rectángulo verde, pero el código para dibujar el triángulo se llama <i>después</i> del código para el rectángulo, y cuando el búfer de profundidad está activado, el triángulo se sigue dibujando detrás del rectángulo
+    ya que se respeta la profundidad 3D. Sin embargo, cuando deshabilitamos el buffer de profundidad para la superficie, sólo se respeta el orden del código y entonces el triángulo se dibuja sobre el rectángulo.</p>
+  <p class="note"><b>NOTA</b>: Para preservar adecuadamente la profundidad en 3D cuando se usan superficies, no sólo debe tener el buffer de profundidad habilitado, sino que también debe tener la escritura y la prueba z habilitadas. Vea las funciones <a href="../GPU_Control/gpu_get_ztestenable.htm"><tt><span style="font-size:14px;">gpu_set_ztestenable()</span></tt></a>    y <a href="../GPU_Control/gpu_get_zwriteenable.htm"><tt><span style="font-size:14px;">gpu_set_zwriteenable()</span></tt></a> para más información.</p>
+  <p class="note"><b>NOTA</b>: Si tu juego es 100% 2D o sabes que no necesitas un buffer de profundidad de superficie, entonces debería estar bien simplemente llamar a esta función una vez al inicio del juego para desactivar el buffer.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_depth_disable(disable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>desactivar</td>
+        <td>Si se establece como <tt>verdadero</tt>, el buffer de profundidad se desactivará para las superficies creadas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _depth_setting = surface_get_depth_disable();<br> surface_depth_disable(false);
+    <br> superficie_con_profundidad = surface_create(room_width, room_height);<br> surface_depth_disable(true);
+    <br> superficie_sin_profundidad = surface_create(room_width, room_height);<br> surface_depth_disable(_depth_setting);
+  </p>
+  <p>El código anterior almacena la configuración actual de la memoria de profundidad en una variable y luego crea dos superficies, una con la memoria de profundidad activada y otra sin ella, antes de restaurar la configuración original de nuevo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_get_height.htm">surface_get_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_depth_disable
+-->
+  <!-- TAGS
+surface_depth_disable
+-->
+</body>
+</html>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_sprite_part_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_part_ext" />
+  <meta name="rh-index-keywords" content="draw_sprite_part_ext" />
+  <meta name="search-keywords" content="draw_sprite_part_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_sprite_part_ext</h1>
+  <p>Esta función dibujará una parte del sprite elegido en la posición dada siguiendo las mismas reglas que por <a href="draw_sprite_part.htm"><tt>draw_sprite_part()</tt></a>sólo que ahora puedes escalar la parte, mezclar un color con ella, o cambiar su alfa cuando
+    al dibujarla en la pantalla (igual que cuando se dibuja un sprite con <a href="draw_sprite_ext.htm"><tt>draw_sprite_ext()</tt></a>). Debe tener en cuenta que si la página de la textura permite el recorte automático, esta función puede no funcionar como se espera, ya que
+    el espacio extra &quot;vacío&quot; alrededor del sprite habrá sido eliminado para crear la página de textura. Para resolver este problema, tendrá que establecer la configuración de la página de textura (en el <a href="../../../../Settings/Texture_Groups.htm">Editor de grupos de texturas</a>)
+    para desactivar el <b>Recorte automático</b>.</p>
+  <p class="note"><b>NOTA: </b>Al dibujar con esta función, el desplazamiento <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">x</a> e <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">y</a> del sprite se ignoran y la parte del sprite se dibujará con la esquina superior izquierda en la posición x / y especificada en la sala.</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo es útil para sprites <b>de mapa de bits</b> y no funcionará con sprites SWF o JSON (Spine).</p>
+  <p class="note"><b>NOTA</b>: La mezcla de colores sólo se recomienda para el objetivo HTML5 cuando WebGL está habilitado, aunque todavía se puede establecer el color de mezcla si no está habilitado y se mezclará el sprite de forma normal. Sin embargo, toda mezcla de este modo crea un sprite duplicado
+    sprite que se almacena en la caché y se utiliza cuando se requiere. Esto está lejos de ser óptimo y si se utilizan múltiples cambios de color, se ralentizará el rendimiento de los juegos a menos que se active WebGL.
+    el tamaño de la caché de la fuente para tratar de limitar esto si es necesario utilizando la función <a href="../../Asset_Management/Sprites/Sprite_Manipulation/sprite_set_cache_size_ext.htm"><tt>sprite_set_cache_size()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>La subimagen (fotograma) del sprite a dibujar (image_index o -1 se correlacionan con el fotograma actual de la animación en el objeto).</td>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>La posición x en el sprite de la esquina superior izquierda del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>La posición y en el sprite de la esquina superior izquierda del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El ancho del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura del área a dibujar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color con el que se mezcla el sprite. c_white es para mostrarlo normalmente.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa del sprite (de 0 a 1 donde 0 es transparente y 1 opaco).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, c_black, 1);</p>
+  <p>Esto dibujará el sprite asignado a las instancias (sprite_index) y su fotograma actual de animación (image_index), sin embargo recortará un margen de 8px de los cuatro lados del sprite. Entonces se estirará al doble de su anchura habitual, pero a la mitad de su altura habitual.
+    altura, y aunque el alfa sigue siendo 1, se mezclará con negro (convirtiéndolo en una silueta).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_sprite_stretched.htm">draw_sprite_streteched</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_part_ext
+-->
+  <!-- TAGS
+draw_sprite_part_ext
+-->
+</body>
+</html>

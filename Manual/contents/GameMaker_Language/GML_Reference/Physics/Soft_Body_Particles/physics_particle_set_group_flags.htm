@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_group_flags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_group_flags" />
+  <meta name="rh-index-keywords" content="physics_particle_set_group_flags,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+  <meta name="search-keywords" content="physics_particle_set_group_flags,phy_particle_group_flag_solid,phy_particle_group_flag_rigid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_set_group_flags</h1>
+  <p>Con esta función puede cambiar los indicadores de grupo de un grupo de partículas. El valor del <tt>grupo</tt> es el que se devolvió al crear el grupo de partículas mediante la función <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>,
+    mientras que las banderas son el valor de retorno de una combinación de las siguientes <b>constantes</b>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_solid</td>
+        <td>Un grupo de partículas sólidas impide que otros accesorios se alojen en su interior. En caso de que algo lo penetre, el grupo de partículas sólidas empuja el accesorio ofensivo hacia su superficie, lo que hace que un grupo de partículas sólidas posea una fuerza de repulsión especialmente fuerte.
+          fuerza de repulsión.</td>
+      </tr>
+      <tr>
+        <td>phy_particle_group_flag_rigid</td>
+        <td>Los grupos de partículas rígidas son aquellos cuya forma no cambia, incluso cuando colisionan con otros artefactos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Estos indicadores de grupo utilizan el enmascaramiento de bits para crear un valor de salida final que se comprueba para establecer las diferentes propiedades básicas del grupo, aparte de las establecidas por los indicadores de partículas. Puedes utilizar ninguna, una o ambas de estas constantes utilizando el enmascaramiento de bits <a href="../../../../Additional_Information/Bitwise_Operators.htm"> <i>o</i></a> &quot;|&quot; para enmascarar los bits apropiados (como se muestra en el ejemplo siguiente).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_set_group_flags(group, flags)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>grupo</td>
+        <td>El grupo de partículas a establecer.</td>
+      </tr>
+      <tr>
+        <td>banderas</td>
+        <td>Las banderas que hay que poner en la partícula.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;<br> physics_particle_set_group_flags(group, flags);</p>
+  <p>El código anterior creará una variable para almacenar el valor de las banderas y luego la utilizará para establecer las banderas de todas las partículas creadas en el grupo indexado por la variable &quot;grupo&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_get_group_flags.htm">physics_particle_get_group_flags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_group_flags
+phy_particle_group_flag_solid
+phy_particle_group_flag_rigid
+-->
+  <!-- TAGS
+physics_particle_set_group_flags
+-->
+</body>
+</html>

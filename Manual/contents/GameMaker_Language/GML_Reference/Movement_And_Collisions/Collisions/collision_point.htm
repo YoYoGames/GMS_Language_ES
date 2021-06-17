@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>punto_de_colisión</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_point" />
+  <meta name="rh-index-keywords" content="collision_point" />
+  <meta name="search-keywords" content="collision_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>punto_de_colisión</h1>
+  <p><span class="inline">Collision_point</span> comprueba el punto especificado por los argumentos x1,y1 para una colisión con <b>cualquier</b> instancia del objeto especificado por el argumento &quot;obj&quot;.
+    colisiones precisas, el objeto o la instancia que se está comprobando también <i>debe</i> tener activadas las colisiones precisas para su sprite. Si no es así, la comprobación por defecto se basa en los cuadros delimitadores. La siguiente imagen ilustra cómo funciona esto:</p>
+  <p><img alt="Collision point example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_point_illustration.png">Recuerde que para que las colisiones precisas sean consideradas <i>tanto</i> el sprite del objeto
+    y la función de colisión deben tener marcada la precisión como activada. También hay que tener en cuenta que el valor de retorno de la función puede ser el id de <i>cualquiera</i> de las instancias consideradas en colisión, por lo que si tres instancias se solapan en ese punto, cualquiera
+    uno de sus ids podría ser el valor de retorno de la función.</p>
+  <p>Tenga en cuenta que en lugar de un índice de objeto puede proporcionar una instancia <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> para buscar una instancia específica, o las <a href="../../../GML_Overview/Instance_Keywords.htm">palabras clave de instancia</a> <span class="inline">all</span>, o <span class="inline">other</span> (dependiendo del evento y del ámbito del código actual).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">punto_colisión(x, y, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y del punto a comprobar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto para comprobar las colisiones de instancia.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Si la comprobación se basa en colisiones precisas<tt>(verdadero</tt>, que es más lento) o en su caja delimitadora en general<tt>(falso</tt>, más rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Si la instancia que llama, si es relevante, debe ser excluida<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ID de la instancia o nadie</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if collision_point(x, y, obj_Cursor, false, true)<br> {
+    <br> Puntuación += 10S;<br> }
+  </p>
+  <p>Aquí estamos comprobando el punto en la posición del objeto que tiene el código del objeto &quot;obj_Cursor&quot;. Si hay uno, entonces añadimos 10 a la variable de puntuación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="collision_point_list.htm">lista_de_puntos_de_colisión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_point
+-->
+  <!-- TAGS
+collision_point
+-->
+</body>
+</html>

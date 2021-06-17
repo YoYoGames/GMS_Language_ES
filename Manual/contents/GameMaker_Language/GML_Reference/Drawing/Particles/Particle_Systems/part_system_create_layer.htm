@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_create_layer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_create_layer" />
+  <meta name="rh-index-keywords" content="part_system_create_layer" />
+  <meta name="search-keywords" content="part_system_create_layer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_create_layer</h1>
+  <p>Esta función creará un nuevo sistema de partículas en una capa dada. Se da el ID único de la capa devuelto por la función <a href="../../../Asset_Management/Rooms/General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a> o el nombre de
+    la capa a utilizar como una cadena - por ejemplo &quot;instance_layer&quot; - y luego marcar el sistema como persistente o no. Si el sistema no está marcado como persistente, se destruirá automáticamente al final de la sala en la que fue creado
+    (esto es lo mismo que si hubieras llamado a la función <a href="part_system_destroy.htm"><tt>part_system_destroy()</tt></a> y también destruirá los emisores asociados al sistema). Sin embargo, cuando se marca como persistente, el sistema será llevado
+    a la siguiente sala cuando se cambie de sala, y si la siguiente sala <i>no</i> tiene una capa con el mismo nombre o profundidad que la asignada, entonces se creará una nueva capa para el sistema que persiste a través de las salas, y será
+    nombre de la capa original. Cuando se cambie de sala, si hay otra capa en las siguientes salas con el mismo nombre, entonces la instancia persistente se asignará a la capa con ese nombre, independientemente de la profundidad <i>de la capa</i>. Por último,
+    si un sistema persistente se traslada a una sala con una capa con la misma profundidad que la capa en la que se creó el sistema, <i>no</i> se asignará a esta capa, sino que se creará una nueva capa con la misma profundidad (con el mismo nombre que la capa original).
+    original).</p>
+  <p>La función devolverá un valor de ID único para el sistema de partículas que deberá utilizarse en todas las llamadas posteriores a la función en las que sea necesario dar un ID del sistema.</p>
+  <p class="note"><b>IMPORTANTE!</b> Si marca el sistema de partículas como persistente, entonces (y cualquier emisor asignado a él) tendrá que ser limpiado manualmente usando las funciones de destrucción apropiadas cuando no esté en uso, de lo contrario se arriesga a una fuga de memoria que impactará negativamente
+    negativamente en el juego final.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_system_create_layer(layer_id, persistent);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>capa</td>
+        <td>El valor del ID de la capa o la cadena a la que se asigna el sistema de partículas (puede ser cualquier tipo de capa)</td>
+      </tr>
+      <tr>
+        <td>persistente</td>
+        <td>Marcar el sistema de partículas como persistente (establecer como <tt>verdadero</tt>) o no (establecer como <tt>falso</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor único de identificación del sistema de partículas)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.p_sys = part_system_create_layer(&quot;effects_layer&quot;, true);</p>
+  <p>El código anterior creará un nuevo sistema de partículas en la capa dada y lo marcará como persistente en las siguientes salas. El ID del sistema de partículas se almacena en una variable de ámbito global para futuras referencias.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Systems.htm">Sistemas de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_system_get_layer.htm">part_system_get_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_create_layer
+-->
+  <!-- TAGS
+part_system_create_layer
+-->
+</body>
+</html>

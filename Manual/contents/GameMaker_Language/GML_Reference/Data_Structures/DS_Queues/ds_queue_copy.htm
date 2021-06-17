@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_copy" />
+  <meta name="rh-index-keywords" content="ds_queue_copy" />
+  <meta name="search-keywords" content="ds_queue_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_copy</h1>
+  <p>Esta función puede utilizarse para copiar el contenido de una cola en otra. Tenga en cuenta que esto <i>NO</i> elimina el contenido de la cola original, ni destruye la cola original. Cuando se utiliza esta función, la cola a la que se copia debe haber sido
+    haber sido creada previamente y si contenía algún elemento antes de la copia, éste se borrará primero (lo que significa que esta información se perderá).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_queue_copy(id, source);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la NUEVA cola.</td>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>La cola ORIGINAL a copiar en el id.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">with (instance_create_layer(x, y, &quot;Enemigos&quot;, obj_Enemy))<br> {
+    <br> queue = ds_queue_create();<br> ds_queue_copy(queue, other.queue);<br> }
+  </p>
+  <p>La función anterior crea una nueva instancia y luego en esa instancia crea una nueva cola DS y copia el contenido de la cola en la instancia que ejecuta el bloque de código, en la cola de la instancia recién creada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Queues.htm">Colas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_queue_read.htm">ds_queue_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_copy
+-->
+  <!-- TAGS
+ds_queue_copy
+-->
+
+</body></html>

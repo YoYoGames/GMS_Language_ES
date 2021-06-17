@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>habitación_goto</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_goto" />
+  <meta name="rh-index-keywords" content="room_goto" />
+  <meta name="search-keywords" content="room_goto" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>habitación_goto</h1>
+  <p>Esta función le permite ir a cualquier sala de su proyecto de juego, ya sea creada mediante código o en el Navegador de Activos. Usted proporciona el índice de la sala (almacenado en la variable del nombre de la sala, o como una variable devuelta por la función <a href="room_add.htm"><tt>room_add()</tt></a>).
+    Tenga en cuenta que la sala no cambiará hasta el final del evento en el que se llamó a la función, por lo que cualquier código después de esto ha sido llamado todavía se ejecutará si en el mismo evento. La advertencia de esto es que cualquier código que cree instancias que sea llamado después de
+    que se llame después de esto, <i>no</i> creará la instancia y por lo tanto debe ser llamado antes de cambiar la habitación. Esta función también activará el evento <b>Room End</b>.</p>
+  <p class="note"><strong>Nota</strong>: Los ID de las salas no se basan en su orden en el Navegador de Activos o en el Gestor de Salas, por lo que debe evitar suministrar un valor numérico directamente. En su lugar, utilice la <a class="glossterm" data-glossterm="constante" href="#">constante</a> de la sala para
+    el activo al que desea hacer referencia (que es simplemente su nombre) o recupérelo a través de una función.</p>
+  <h4>Sintaxis:</h4>
+  <p class="code">room_goto(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la sala a la que hay que ir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">switch (global.level)<br> {
+    <br> caso 0: room_goto(rm_level1); break;<br> caso 1: room_goto(rm_level2); break;<br> caso 2: room_goto(rm_level3); break;<br> }
+  </p>
+  <p>El código anterior comprobará una variable global y cambiará de sala en función del valor que contenga.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room_goto_next.htm">room_goto_next</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_goto
+-->
+  <!-- TAGS
+room_goto
+-->
+
+</body></html>

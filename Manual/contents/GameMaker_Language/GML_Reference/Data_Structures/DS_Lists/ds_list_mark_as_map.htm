@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_mark_as_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_mark_as_map" />
+  <meta name="rh-index-keywords" content="ds_list_mark_as_map" />
+  <meta name="search-keywords" content="ds_list_mark_as_map" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_mark_as_map</h1>
+  <p>Esta función &quot;marcará&quot; (o &quot;marcará&quot;) una posición dada dentro de una lista DS previamente creada como si tuviera un mapa DS. Esta funcionalidad es necesaria cuando se codifican cadenas JSON (que se pueden crear
+    utilizando <a href="../../File_Handling/Encoding_And_Hashing/json_encode.htm"><tt>json_encode()</tt></a>), pero también puede ser útil cuando se anidan estructuras de datos, ya que los elementos marcados de esta manera serán automáticamente recogidos de la basura (destruidos) cuando la lista padre
+    DS se destruye. Esto significa que no tienes que recorrer manualmente el contenido de la lista y destruir las estructuras de datos marcadas individualmente antes de destruir la lista &quot;padre&quot;. Sin embargo, si elimina la posición de la lista individualmente
+    la estructura de datos que contenía <i>no</i> será recolectada por la basura y deberá llamar a la función apropiada de destrucción del mapa DS antes de borrar la posición de la lista padre. Tenga en cuenta también que si llama a la función <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>    en una lista, cualquier elemento marcado como mapa se destruirá también cuando se borre la lista.</p>
+  <p>También hay que tener en cuenta que si la posición que se ha marcado cambia dentro de la lista, la &quot;marca&quot; se moverá con ella, por lo que si ha marcado la posición 3 en la lista (por ejemplo) y luego inserta 2 elementos más por debajo para que se mueva hasta la posición
+    5, <i>seguirá</i> marcada como mapa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_mark_as_map(id, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la lista a marcar.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>La posición dentro de la lista a marcar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (entero - ID del mapa DS si tiene éxito o -1 si falla)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var sub_map = ds_map_create();<br> ds_map_add(sub_map, &quot;player&quot;, player_array);<br> ds_map_add(sub_map, &quot;enemy&quot;, enemy_array);<br> ds_list_add(j_list, sub_map);<br> ds_list_mark_as_map(j_list, 0);</p>
+  <p>El código anterior crea un mapa DS y luego lo rellena con dos claves, cada una de las cuales contiene una matriz de valores. Este mapa se añade entonces a la lista DS dada, y la posición se &quot;marca&quot; como tal para que pueda ser codificada correctamente más tarde.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_is_list.htm">ds_list_is_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_mark_as_map
+-->
+  <!-- TAGS
+ds_list_mark_as_map
+-->
+</body>
+</html>

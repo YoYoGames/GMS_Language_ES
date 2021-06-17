@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>orientación_tipo_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_orientation" />
+  <meta name="rh-index-keywords" content="part_type_orientation" />
+  <meta name="search-keywords" content="part_type_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>orientación_tipo_parte</h1>
+  <p>Esta función se utiliza para determinar la orientación del sprite de partículas cuando se crea y también se puede utilizar para hacer que la orientación de las partículas aumente o disminuya durante su vida. Los valores mínimos y máximos de la orientación son por defecto 0, pero estos
+    valores pueden ser cambiados para aleatorizar la orientación siguiendo las direcciones estándar de <span class="notranslate">GameMaker Studio 2</span> de 0 grados a la derecha, 90 grados hacia arriba, 180 grados a la izquierda y 270 grados hacia abajo. Si usted los establece en el mismo valor de la
+    partículas serán creadas con la misma orientación.</p>
+  <p>También puede establecer un valor de incremento que sumará (si es un número positivo) o restará (si es un número negativo) una cantidad de grados a la orientación durante su vida. Este valor puede ser un mínimo de (+/-) 0,01.</p>
+  <p>También se puede establecer el factor &quot;wiggle&quot;, al igual que otras funciones de partículas. Este es un valor que se sumará o restará aleatoriamente a la orientación en cada paso de la vida de las partículas. Obviamente, los valores más grandes son más pronunciados que los más pequeños
+    y este valor puede ser incluso negativo, con un rango máximo entre -20 y 20.</p>
+  <p>Finalmente, puedes elegir que la orientación sea relativa o no, lo que significa que mientras la partícula tenga una dirección (y velocidad) el sprite de la partícula se orientará alrededor de ese vector. Ten en cuenta que si tienes la velocidad de la partícula configurada para reducir
+    y llega a 0, la falta de velocidad fija la dirección en el valor por defecto de 0°, por lo que una orientación relativa hará que el sprite de partículas &quot;salte&quot; a un ángulo diferente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_type_orientation( ind, ang_min, ang_max, ang_incr, ang_wiggle, ang_relative );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del tipo de partícula a cambiar.</td>
+      </tr>
+      <tr>
+        <td>ang_min</td>
+        <td>El ángulo mínimo de inicio de las partículas.</td>
+      </tr>
+      <tr>
+        <td>ang_max</td>
+        <td>El ángulo máximo de inicio de las partículas.</td>
+      </tr>
+      <tr>
+        <td>ang_incr</td>
+        <td>El aumento (o disminución si se establece en negativo) del ángulo en grados por paso.</td>
+      </tr>
+      <tr>
+        <td>ang_wiggle</td>
+        <td>La cantidad que el ángulo se mueve en el sentido de las agujas del reloj/en contra de las agujas del reloj por paso.</td>
+      </tr>
+      <tr>
+        <td>ang_relative</td>
+        <td>Si se establece su ángulo en relación con la dirección del movimiento de la partícula (verdadero) o no (falso).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_type_shape(particle2, pt_shape_spark);<br> part_type_size(particle2, 0.10, 0.50, 0.01, 0);<br> part_type_scale(particle2, 0.30, 0.30);<br> part_type_colour1(particle2, 8454143);<br> part_type_alpha1(particle2, 0.50);<br> part_type_speed(particle2,
+    4, 4, -0,07, 1);<br> part_type_direction(particle2, 0, 359, 0, 20);<br> part_type_orientation(particle2, 0, 359, 0, 20, 1);<br> part_type_blend(particle2, 1);<br> part_type_life(particle2, 1, 5);</p>
+  <p>El código anterior establecerá varios valores de las partículas incluyendo la orientación que será un valor aleatorio entre 0º y 359º. También se le añadirá una cantidad aleatoria entre 0 y 20 en cada paso, y la orientación es relativa a la
+    dirección del movimiento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Types.htm">Tipos de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_type_colour_mix.htm">part_type_colour_mix</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_orientation
+-->
+  <!-- TAGS
+part_type_orientation
+-->
+</body>
+</html>

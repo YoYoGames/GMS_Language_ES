@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_espiga_estirada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_stretched" />
+  <meta name="rh-index-keywords" content="draw_sprite_stretched" />
+  <meta name="search-keywords" content="draw_sprite_stretched" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_espiga_estirada</h1>
+  <p>Esta función simplemente toma un recurso sprite y lo estira sobre la anchura y altura dadas para que ocupe esa área. Al igual que con <a href="draw_sprite.htm"><tt>dibujar_sprite()</tt></a> puedes especificar un sprite y una sub-imagen para dibujar, luego la posición
+    x / y en la habitación para que el sprite se dibuje y, por último, una anchura y una altura (que deben ser valores de píxeles). La siguiente imagen muestra el resultado de esta función con diferentes conjuntos de argumentos:</p>
+  <p><img alt="draw_sprite_stretched example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/spr_stretch.png" /></p>
+  <p class="note"><b>NOTA</b>: Cuando se dibuja con esta función, el <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_xoffset.htm">desplazamiento x</a> y el <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/sprite_yoffset.htm">desplazamiento y</a> del sprite se ignoran y el sprite se dibujará con la esquina superior izquierda en la posición x / y especificada en la sala.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_sprite_stretched(sprite, subimg, x, y, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>La subimagen (fotograma) del sprite a dibujar (image_index o -1 se correlacionan con el fotograma actual de la animación en el objeto).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>El ancho del área que ocupará el sprite estirado.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura del área que ocupará el sprite estirado.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_sprite_stretched(sprite_index, image_index, x, y, sprite_width, sprite_height / 2);</p>
+  <p>Esto dibujará el sprite asignado a la instancia y su subimagen con la esquina izquierda en la posición x/y de la instancia. Su anchura es la misma que la del sprite, y la altura es la del sprite dividida por dos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_sprite_stretched_ext.htm">draw_sprite_stretched_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_stretched
+-->
+  <!-- TAGS
+draw_sprite_stretched
+-->
+</body>
+</html>

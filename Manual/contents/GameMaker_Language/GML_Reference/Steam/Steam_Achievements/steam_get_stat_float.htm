@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>steam_get_stat_float</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for steam_get_stat_float" />
+  <meta name="rh-index-keywords" content="steam_get_stat_float" />
+  <meta name="search-keywords" content="steam_get_stat_float" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">steam_get_stat_float</span></h1>
+  <p>Con esta función puedes obtener el valor de una estadística específica de <b>punto flotante</b>. La estadística debe haber sido definida previamente en la página de cuentas del panel de control de <span class="notranslate">Steamworks</span>para tu juego y la cadena que se pasa a la función debe
+    coincidir con la utilizada como <b>nombre de la API</b> en el panel de control.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">steam_get_stat_float</span>(stat_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_estado</td>
+        <td>El nombre de la estadística a obtener (una cadena).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var dist_pc = (dist / dist_max) * 100;<br> if <span class="notranslate">steam_get_stat_float</span>(&quot;Travelled&quot;) &lt; dist_pc<br> {
+    <br> <span class="notranslate">steam_set_stat_int</span>(&quot;Travelled&quot;, dist_pc);<br> }
+  </p>
+  <p>El código anterior calcula un porcentaje basado en la variable de distancia recorrida &quot;dist&quot; y la distancia máxima que se puede recorrer &quot;dist_max&quot;. A continuación, sondea el valor actual de la estadística &quot;Recorrido&quot; y si es menor
+    que el valor calculado, establece la estadística de nuevo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Steam_Achievements.htm">Logros y estadísticas</a></div>
+        <div style="float:right">Siguiente: <a href="steam_get_stat_avg_rate.htm"><span class="notranslate">steam_get_stat_avg_rate</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">steam</span>_get_stat_float
+-->
+  <!-- TAGS
+<span class="notranslate">steam</span>_get_stat_float
+-->
+</body>
+</html>

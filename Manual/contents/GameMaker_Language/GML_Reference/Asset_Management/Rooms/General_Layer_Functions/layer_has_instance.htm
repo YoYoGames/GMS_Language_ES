@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_has_instance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_has_instance" />
+  <meta name="rh-index-keywords" content="layer_has_instance" />
+  <meta name="search-keywords" content="layer_has_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_has_instance</h1>
+  <p>Esta función puede utilizarse para comprobar si una instancia dada está asignada actualmente a la capa dada. Se proporciona el ID de la capa (que se obtiene al crear la capa con <a href="layer_create.htm"><tt>layer_create()</tt></a>) o el nombre de la capa (como una cadena
+    - esto tendrá un impacto en el rendimiento) y el ID de la instancia a comprobar. También puede dar un <tt>object_index</tt> (es decir, el nombre del objeto en el Navegador de Activos) y la función comprobará si hay alguna instancia de ese objeto en
+    la capa dada. La función devolverá <tt>true</tt> si la instancia está en la capa y <tt>false</tt> si no lo está.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_has_instance(layer_id, instance_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>El ID único de la instancia o el índice del objeto de la instancia a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !layer_has_instance(global.Bullet_Layer, obj_Bullet_Parent)<br> {
+    <br> layer_destroy(global.Bullet_Layer);
+    <br> }
+  </p>
+  <p>El código anterior comprobará si la capa dada contiene alguna instancia del objeto &quot;obj_Bullet_Parent&quot; y en caso contrario destruirá la capa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_instance_get_instance.htm">layer_instance_get_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_has_instance
+-->
+  <!-- TAGS
+layer_has_instance
+-->
+</body>
+</html>

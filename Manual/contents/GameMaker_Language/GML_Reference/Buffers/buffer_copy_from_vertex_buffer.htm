@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>búfer_copia_de_vértice_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_copy_from_vertex_buffer" />
+  <meta name="rh-index-keywords" content="buffer_copy_from_vertex_buffer" />
+  <meta name="search-keywords" content="buffer_copy_from_vertex_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>búfer_copia_de_vértice_buffer</h1>
+  <p>Esta función puede utilizarse para copiar algunos (o todos) los datos de vértices almacenados en un búfer de vértices en un búfer regular previamente creado. Cuando se copia desde un búfer de vértices a un búfer regular con esta función, ambos búferes deben haber sido previamente
+    creados (con los botones <a href="../Drawing/Primitives/vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a> y <a href="buffer_create.htm"><tt>buffer_create()</tt></a> por ejemplo). Se puede especificar el rango de datos de vértices que
+    que desea copiar en el búfer, donde el vértice inicial puede estar en cualquier lugar entre 0 y el número de vértices -1, y puede dar el número de vértices a partir de ese punto para copiar. Puedes utilizar la función <a href="../Drawing/Primitives/vertex_get_number.htm"><tt>vertex_get_number()</tt></a>    en el buffer de vértices para obtener el número total de vértices almacenados. Por último, se da el índice del búfer en el que se van a copiar los datos de los vértices, así como un desplazamiento de datos para definir la posición en la que se van a copiar los datos de los vértices en el búfer de destino.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>búfer_de_vértices</td>
+        <td>El índice del buffer de vértices <i>del que</i> se va a copiar.</td>
+      </tr>
+      <tr>
+        <td>inicio_vértice</td>
+        <td>El vértice inicial.</td>
+      </tr>
+      <tr>
+        <td>número_de_vertices</td>
+        <td>El número total de vértices a utilizar.</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td>El índice del buffer <i>a</i> copiar.</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>La posición de desplazamiento para copiar los datos (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);</p>
+  <p>El código anterior copiará los datos de los vértices almacenados en el buffer de vértices indexado en la variable &quot;model_buffer&quot;, y luego los pegará en el buffer indexado en la variable &quot;player_buffer&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_get_type.htm">buffer_get_type</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy_from_vertex_buffer
+-->
+  <!-- TAGS
+buffer_copy_from_vertex_buffer
+-->
+</body>
+</html>

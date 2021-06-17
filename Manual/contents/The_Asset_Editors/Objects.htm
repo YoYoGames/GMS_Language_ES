@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Objetos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the object editor works" />
+  <meta name="rh-index-keywords" content="Object Editor" />
+  <meta name="search-keywords" content="objects,object editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El editor de objetos</h1>
+  <p><img alt="The Object Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Objects.png">Los objetos son el recurso que utilizamos para controlar aspectos de un juego y para hacer cosas específicas. La mayoría de las veces tienen un sprite asociado a ellos
+    para que los veas en las salas de juego, pero a veces se usan como un controlador &quot;detrás de escena&quot; para hacer cosas relacionadas con el usuario o para la sincronización, etc. Se les puede dar comportamientos y pueden reaccionar a ciertos eventos así como a
+    entre sí, y la mayoría de las cosas que se ven en un juego se basan en objetos y sus interacciones. Ahora bien, decimos &quot;basadas en&quot; porque en realidad no colocas objetos directamente en las salas de juego, sino que colocas instancias <strong>de estos objetos</strong> que son básicamente copias (o clones si lo prefieres) del recurso objeto. Esto es algo muy importante de recordar ya que las instancias y los objetos <em>no son la misma cosa</em> y cada uno tiene su propio conjunto de funciones que pueden afectar
+    a ellos.</p>
+  <p>Para aclarar esto, piense en un juego hecho con <span class="notranslate">GameMaker Studio 2</span>. Todos los personajes, monstruos, bolas, paredes, etc... son objetos que creas en el <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>. A continuación, arrastra el <em>objeto </em>en
+    una sala en el <a href="Rooms.htm">Editor de salas</a> para crear una <em>instancia </em>copiada de la plantilla de objetos básicos. La instancia en la sala puede entonces ser modificada en el propio editor o a través de código, de manera que puede ser escalada, o coloreada, o tener
+    otros detalles modificados del objeto &quot;base&quot;. Así que cuando hablamos de que algo afecta o cambia una <strong>instancia</strong>, nos referimos a que afecta a esa <em>copia concreta de un objeto en una</em> habitación. Sólo esa instancia se ve afectada
+    sólo esa instancia se ve afectada, mientras que el resto no lo está. Pero, cuando hablamos de afectar o cambiar un <strong>objeto</strong>, queremos decir que estamos modificando el objeto en el Navegador de Activos y cualquier cosa que hagamos en él se reflejará en todas las instancias creadas
+    a partir de ese momento también. Por lo tanto, el objeto es la plantilla para la instancia, y la instancia es lo que colocamos en una habitación para hacer nuestro juego.</p>
+  <p>Para crear un objeto en su juego, puede hacer clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" style=""> en el Navegador de Activos y hacer clic en la opción <em>Crear Objeto</em>. Esto abrirá la ventana que se muestra en la parte superior de esta página con las siguientes secciones
+    superior de esta página con las siguientes secciones:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Detalles</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Aquí puede dar un nombre a su objeto. Este nombre nunca debe contener espacios ni caracteres no autorizados (sólo se permiten caracteres alfanuméricos y la barra inferior &quot;_&quot;) y debe ser corto pero memorable para que pueda identificar fácilmente los recursos
+      más adelante, cuando tenga muchos de ellos. Por ejemplo, mucha gente utiliza un prefijo o un sufijo para identificar las diferencias entre los recursos, como &quot;<span class="inline">obj_Ship</span>&quot; o &quot;<span class="inline">Ship_obj</span>&quot;.</p>
+    <p class="dropspot">A continuación puede elegir el sprite para el objeto si desea que tenga uno. Haga clic con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"> en el cuadro de sprites y aparecerá el <strong>Explorador de Activos</strong> con una lista de todos los sprites disponibles en el Navegador de Activos:</p>
+    <p class="dropspot"><img alt="The Asset Explorer" class="center" src="../assets/Images/Asset_Editors/Editor_Objects_AssetExplorer.png">A continuación, puedes seleccionar el que quieras utilizar para el objeto. Con un sprite asignado al objeto puede hacer clic en el botón <em>Editar Sprite</em> <img alt="Edit Sprite Icon" class="icon" src="../assets/Images/Icons/Icon_EditSprite.png"> para cambiar las <a href="Sprites.htm">propiedades del sprite</a>, o - si no tiene un sprite para el objeto pero desea crear uno - puede hacer clic en
+      el botón <em>Añadir Spr</em> ite <img alt="Add Sprite Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_NewSprite.png" width="24"> para crear un nuevo activo de sprite y asignarlo. También puede editar la imagen del activo sprite que ha sido
+      asignado haciendo clic en el botón <em>Editar imagen</em> <img alt="Edit Image Icon" class="icon" src="../assets/Images/Icons/Icon_EditImage.png"> para abrir el <a href="Image_Editor.htm">Editor de imágenes</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Máscara de colisión</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Debajo del área de asignación de sprites tienes un botón para elegir una <strong>máscara de colisión</strong> específica. Por defecto, un objeto generará propiedades de colisión basadas en el sprite asignado a él, pero hay casos en los que puede querer
+      colisiones se basen en una forma diferente de un sprite diferente. Por ejemplo, usted puede tener un juego de arriba hacia abajo donde el sprite principal tiene una máscara de colisión rectangular, pero para hacer las colisiones más suaves una máscara circular puede ser mejor. En estos casos
+      puedes hacer clic en el botón de máscara de colisión y seleccionar otro recurso de sprite, de modo que ahora las instancias del objeto <em>dibujarán </em>el sprite asignado, pero basarán <em>las colisiones </em>en el sprite de la máscara. Puedes encontrar más información sobre las máscaras de colisión
+      de colisión en la página del <a href="Sprites.htm">Editor de Sprites</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Propiedades</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Aquí se le presentan las siguientes opciones para su objeto:<strong></strong></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Visible</strong>: Visible indica si las instancias de este objeto son visibles cuando se inicia la sala. Normalmente, la mayoría de las instancias son visibles, pero a veces es útil tener las invisibles - por ejemplo, puede utilizarlas para puntos de paso para
+        controlar un monstruo en movimiento, o para mantener valores de seguimiento y realizar ciertas acciones temporizadas. Los objetos invisibles seguirán reaccionando a los eventos y si tienen un sprite o una máscara asignada, también reaccionarán si otras instancias colisionan con ellos...
+        simplemente no pueden ser vistos y <em>no </em>realizan su <strong>evento de dibujo</strong>. Por defecto, la bandera visible está marcada.<strong></strong></li>
+      <li class="dropspot"><strong>Sólido</strong>: Cuando usted marca una instancia como sólida, le está diciendo a <span class="notranslate">GameMaker Studio 2</span> que debe intentar resolver cualquier colisión antes de disparar un <strong>Evento de Colisión</strong>. Esta es una funcionalidad muy básica, y en realidad
+        todo lo que hace es mover la instancia de vuelta a la posición en la que estaba en el momento antes de que se detectara una colisión antes de realizar cualquier código o <span class="notranslate">DnD™</span>que esté en el propio Evento de Colisión, y como tal es de uso limitado.</li>
+      <li class="dropspot"><strong>Persistente</strong>: Un objeto persistente es aquel que no desaparece cuando se cambia de sala, sino que &quot;persiste&quot; y se traslada a la nueva sala. Sólo desaparecerá cuando lo destruyas explícitamente, ya sea con
+        una acción de destrucción o en el código. Esto significa que si colocas un objeto persistente en una sala, seguirá estando disponible en todas las salas posteriores y continuará realizando cualquier acción asignada a los eventos en sus propiedades de objeto, <em>excepto </em>el evento
+       <strong>Crear</strong>, que sólo se dispara <em>una vez </em>cuando se crea inicialmente y no cuando se cambia a una nueva sala. Esto es útil para cuando tienes, por ejemplo, un personaje principal que se mueve de una habitación a otra y quieres mantener
+        las variables dentro de la instancia igual, pero debes tener mucho cuidado de crear y destruir objetos persistentes correctamente ya que puedes conseguir fácilmente errores que se cuelen en tu proyecto por error.</li>
+    </ul>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#" style="margin-left:88px">Persistencia y capas de la sala</a>  </p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot" style="margin-left: 132px">Cuando se crea una instancia con la persistencia activada en una sala, se le asignará una capa o una profundidad (dependiendo de la función que se haya utilizado para crear la instancia del objeto). Cuando se cambie de sala, y si la siguiente no tiene
+        una capa con el mismo nombre o profundidad que la asignada, entonces<strong> se creará una nueva capa para la instancia que persiste a través de las habitaciones</strong>. Si se asignó una capa con nombre cuando se creó la instancia, entonces la nueva capa también
+        nombre de la capa original, mientras que si asignó una profundidad a la instancia, la nueva capa se llamará &quot;<span class="inline">_layer_XXX</span>&quot;, donde &quot;<span class="inline">XXX</span>&quot; es un valor hexadecimal utilizado para dar
+        a la capa un nombre único. Estas capas se eliminarán de la sala al <strong>finalizar la misma</strong>. <br>
+        <br> Otra cosa a tener en cuenta sobre las capas y las instancias persistentes es que si ha asignado a la instancia una capa con nombre en la creación, y hay otra capa en las siguientes salas con el mismo nombre, entonces la instancia persistente será asignada
+        a la capa con el mismo nombre, independientemente de la profundidad de la capa.<br>
+        <br> Por último, si una instancia persistente se traslada a una sala con una capa con la <em>misma</em> profundidad en la que se creó la instancia, <em>no </em>se asignará a esta capa, sino que se creará una nueva capa con la misma profundidad (siguiendo
+        la convención de nomenclatura explicada anteriormente).</p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#" style="margin-left: 88px">Persistencia y eventos</a></p>
+    <div class="droptext" data-targetname="drop-down6">
+      <p class="dropspot" style="margin-left: 132px">Como se mencionó anteriormente, un objeto persistente sólo ejecutará su <strong>Evento de Creación</strong> <em>una vez</em>, pero también tendrá sus eventos de <strong>Inicio de Juego</strong>, <strong>Fin de Juego</strong>, <strong>Inicio de Sala</strong> y <strong>Fin de Sala</strong> disparados en los momentos apropiados. Sin embargo, si reinicias el juego (con, por ejemplo, la función <span class="inline">game_restart()</span> ) <em>todos los objetos persistentes serán eliminados y sólo existirán cuando sean creados de nuevo por el juego</em>.<br>
+        <br> También ten en cuenta que si <strong>desactivas </strong>un objeto persistente, ya no pasará de una sala a otra a menos que se reactive antes de que se dispare el evento de Fin de <strong>Sala</strong>. La reactivación <em>requiere un paso completo del juego para que ocurra</em>,
+        así que usar el evento Room <strong>End</strong> para esto no funciona, ya que no le da al juego un paso completo para reactivar el objeto, así que necesitas tener esto en mente cuando uses la desactivación junto con objetos persistentes y planear tu
+        código en consecuencia.</p>
+    </div>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Utiliza</strong> Física: Cuando se marca la casilla Usos de la Física se está indicando a <span class="notranslate">GameMaker Studio 2</span> que este objeto debe formar parte de un mundo de física (tal y como se establece en el<a href="Rooms.htm">Editor de Salas</a> <strong></strong>. Al marcar esta casilla también
+        abrirá una ventana encadenada donde puede definir las propiedades físicas de todas las instancias de este objeto. Más información sobre esto se puede encontrar en la sección de <a href="Object_Properties/Physics_Objects.htm">objetos</a> de física.</li>
+    </ul>
+  </div>
+  <p> </p>
+  <p>La última parte del Editor de Objetos está ocupada por las diferentes <strong>Opciones de</strong> objetos, cada una de las cuales se discute en su página, enlazada más abajo:</p>
+  <ul class="colour">
+    <li><a href="Object_Properties/Object_Events.htm">Eventos de objetos</a></li>
+    <li><a href="Object_Properties/Parent_Objects.htm">Objetos de los padres</a></li>
+    <li><a href="Object_Properties/Physics_Objects.htm">Objetos de Física</a></li>
+    <li><a href="Object_Properties/Object_Variables.htm">Variables del objeto</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Asset_Editors.htm">Los editores de activos</a></div>
+        <div style="float:right">Siguiente: <a href="Paths.htm">Caminos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Editor
+Objects
+-->
+  <!-- TAGS
+object_editor
+-->
+</body>
+</html>

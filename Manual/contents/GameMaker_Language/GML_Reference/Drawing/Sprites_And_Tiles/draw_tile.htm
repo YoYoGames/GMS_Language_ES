@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_elemento</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_tile" />
+  <meta name="rh-index-keywords" content="draw_tile,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+  <meta name="search-keywords" content="draw_tile,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_elemento</h1>
+  <p>Con esta función puedes dibujar cualquier baldosa de un conjunto de baldosas - compite con rotaciones, volteos y espejos - estableciendo el marco (si es animado) y la posición dentro de la habitación. El valor del ID del conjunto de baldosas es el índice del conjunto de baldosas establecido en el IDE y el dato de la baldosa
+    es el &quot;blob&quot; de datos que contiene toda la información sobre el índice del mosaico y las transformaciones que se han aplicado. Se puede utilizar la función <a href="../../Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm"><tt>tilemap_get()</tt></a>    para obtener los datos del mosaico, que luego pueden ser manipulados utilizando las <a href="../../Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">funciones del mosaico</a>, o puede construirlos usted mismo utilizando las siguientes constantes del mosaico junto con el valor del índice
+    del mosaico a crear:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tile_rotate</td>
+        <td>Se utiliza para establecer/obtener el bit de rotación de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>espejo_azulejo</td>
+        <td>Se utiliza para establecer/obtener el bit de espejo de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>tile_flip</td>
+        <td>Se utiliza para establecer/obtener el bit de volteo de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>tile_index_mask</td>
+        <td>Una constante especial que sirve para &quot;y&quot; con el blob de datos del mosaico para extraer el índice del mosaico.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Estas constantes se combinan con el valor del índice de la baldosa para obtener los datos finales de la baldosa:</p>
+  <p class="code">var tiledata = 8 | tile_rotate | tile_flip;</p>
+  <p>El código anterior simplemente crea una variable local para almacenar los datos del azulejo con el índice 8 en el conjunto de azulejos, y se gira y voltea. Esto puede ser utilizado para dibujar el azulejo en ese índice del conjunto de azulejos que usted especifica.
+    Esto no está vinculado a ninguna capa del mapa de azulejos y el azulejo se dibujará en la profundidad de la capa de la instancia que hace el dibujo, en la posición x/y que usted especifica en la habitación. Tenga en cuenta que también puede establecer el marco para dibujar también. Si el azulejo indexado es parte de un conjunto de animación
+    entonces puedes establecer el número de fotograma aquí (desde 0 hasta el número de fotogramas - 1) y la baldosa indexada será simplemente el indicador de qué conjunto de baldosas animadas estás utilizando mientras que será el fotograma dado el que se dibuje. Si el azulejo no es parte de
+    un conjunto animado, entonces el fotograma debe ser fijado en 0.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_tile(tile set, tiledata, frame, x, y)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>juego de baldosas</td>
+        <td>El ID del conjunto de azulejos a utilizar</td>
+      </tr>
+      <tr>
+        <td>tiledata</td>
+        <td>Los datos de los azulejos que se van a utilizar</td>
+      </tr>
+      <tr>
+        <td>marco</td>
+        <td>El número de fotograma del azulejo animado que se va a utilizar (por defecto 0 para azulejos no animados)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x dentro de la habitación para dibujar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y dentro de la habitación para dibujar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var data = tilemap_get(map_id, 0, 0);<br> tile_set_flip(data, true);<br> draw_tile(set_Wall, data, 0, x, y);</p>
+  <p>El código anterior obtendrá los datos de un azulejo del mapa de azulejos dado, luego establecerá la bandera &quot;flip&quot; y utilizará estos datos para dibujar el azulejo volteado en la posición de la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_tilemap.htm">draw_tilemap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_tile
+tile_rotate
+tile_mirror
+tile_flip
+tile_index_mask
+-->
+  <!-- TAGS
+draw_tile
+-->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tamaño_del_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_sizeof" />
+  <meta name="rh-index-keywords" content="buffer_sizeof" />
+  <meta name="search-keywords" content="buffer_sizeof" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tamaño_del_buffer</h1>
+  <p>Esta función devolverá el tamaño (en bytes) de cualquiera de las constantes de datos dadas (enumeradas <a href="buffer_write.htm">aquí</a>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_sizeof(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de datos que se va a comprobar (ver la lista de constantes <a href="buffer_read.htm">aquí</a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var b = 12 * buffer_sizeof(buffer_u8);<br> buff = buffer_create(b, buffer_fixed, 1);</p>
+  <p>El código anterior calcula primero el tamaño del búfer a crear multiplicando el tipo de datos de 8 bits sin signo por 12 (ya que utilizaremos el búfer para contener 12 datos), y luego utiliza este valor para establecer un búfer fijo con el tamaño correcto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_md5.htm">buffer_md5</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_sizeof
+-->
+  <!-- TAGS
+buffer_sizeof
+-->
+</body>
+</html>

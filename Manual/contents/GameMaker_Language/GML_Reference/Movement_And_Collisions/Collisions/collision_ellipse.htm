@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>colisión_elipse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion collision_ellipse" />
+  <meta name="rh-index-keywords" content="collision_ellipse" />
+  <meta name="search-keywords" content="collision_ellipse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>colisión_elipse</h1>
+  <p><span class="inline">Collision_ellipse</span> utiliza los cuatro primeros argumentos (x1,y1,x2,y2) para definir la anchura y la altura de una elipse dentro de la sala actual y luego comprueba si <b>algún</b> objeto definido por el argumento &quot;obj
+    está en colisión con esa área. Esta colisión puede ser comprobada como precisa o no, y también puede elegir comprobar la instancia que ejecuta el propio código o no. Considere esta imagen:</p>
+  <p><img alt="Collision ellipse example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/collision_ellipse_illustration.png">Aquí, la instancia del centro está usando una elipse de colisión para comprobar si hay objetos
+    objetos bola. Ahora bien, los azules <i>no</i> tienen una caja delimitadora precisa y, como puedes ver, aunque el sprite no esté tocando la elipse, la colisión puede seguir ocurriendo (incluso si estableces la opción precisa en la función a true) ya que
+    la caja delimitadora de ese sprite sobrepasa el área elíptica definida por collision_circle. Por otro lado, las bolas verdes sólo se considerarán en colisión si el sprite real sobrepasa la elipse definida. Recuerda que para que las colisiones sean precisas
+    se consideren <i>tanto</i> el sprite del objeto como la función de colisión deben tener marcada la precisión como activada. También hay que tener en cuenta que el valor de retorno de la función puede ser el id de <i>cualquiera</i> de las instancias consideradas en colisión.</p>
+  <p>Tenga en cuenta que en lugar de un índice de objeto puede proporcionar una instancia <a href="../../Asset_Management/Instances/Instance_Variables/id.htm"><tt>id</tt></a> para buscar una instancia específica, o las <a href="../../../GML_Overview/Instance_Keywords.htm">palabras clave de instancia</a> <span class="inline">all</span>, o <span class="inline">other</span> (dependiendo del evento y del ámbito del código actual).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p> </p>
+  <p>collision_ellipse(x1, y1, x2, y2, obj, prec, notme);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La coordenada x del lado izquierdo de la elipse a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La coordenada y del lado superior de la elipse a comprobar.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La coordenada x del lado derecho de la elipse a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La coordenada y del lado inferior de la elipse a comprobar.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto para comprobar las colisiones de instancia.</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Si la comprobación se basa en colisiones precisas<tt>(verdadero</tt>, que es más lento) o en su caja delimitadora en general<tt>(falso</tt>, más rápido).</td>
+      </tr>
+      <tr>
+        <td>notme</td>
+        <td>Si la instancia que llama, si es relevante, debe ser excluida<tt>(true</tt>) o no<tt>(false</tt>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p> </p>
+  <p>Id. de instancia o no</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p> </p>
+  <p>if collision_ellipse(50, 50, 200, 100, obj_Player, false, true)<br> {
+    <br> instance_create_layer(obj_Player.x, obj_Player.y, &quot;Effects&quot;, obj_Splash);<br> }
+  </p>
+  <p>Esto comprobará una zona elíptica dentro de los límites de 50x, 50y y 200x, 100y para el objeto &quot;obj_Player&quot;. Si hay una colisión con ese objeto, entonces creará una instancia de &quot;obj_Splash&quot; en las coordenadas x/y de obj_Player.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="collision_ellipse_list.htm">collision_ellipse_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+collision_ellipse
+-->
+  <!-- TAGS
+collision_ellipse
+-->
+</body>
+</html>

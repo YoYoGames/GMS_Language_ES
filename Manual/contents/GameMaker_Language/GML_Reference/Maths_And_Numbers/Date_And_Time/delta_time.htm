@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tiempo_delta</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for delta_time" />
+  <meta name="rh-index-keywords" content="delta_time" />
+  <meta name="search-keywords" content="delta_time" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tiempo_delta</h1>
+  <p>El propósito del delta timing es eliminar los efectos del lag o la lentitud de los ordenadores que tratan de manejar gráficos complejos o mucho código. Es un valor que se puede añadir a la velocidad de los objetos para que finalmente se muevan a la misma
+    velocidad, independientemente del lag. Esto se consigue en <span class="notranslate">GameMaker Studio 2</span> utilizando la variable de <b>sólo lectura</b> <tt>delta_time</tt> en cada paso, ya que mide el tiempo que ha pasado entre un paso y el siguiente en microsegundos (1microsegundo es la 1.000.000ª
+    de segundo). Por lo tanto, la variable <tt>delta_time</tt> se puede utilizar para calcular cuánto más rápido (por ejemplo) tiene que moverse un personaje del juego para compensar un pico de retraso en el juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tiempo_delta</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (entero)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _dt = delta_time / 1000000;<br> speed = spd * dt;</p>
+  <p>El código anterior establecerá la velocidad de la instancia utilizando el tiempo delta para corregir el retraso. La variable &quot;_dt&quot; se utilizaría para mantener el valor del tiempo delta calculado previamente, de modo que el ratio pueda utilizarse para multiplicar el valor de la velocidad base (mantenido
+    en la variable &quot;spd&quot;) y así obtener una velocidad consistente para la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Date_And_Time.htm">Fecha y hora</a></div>
+        <div style="float:right">Siguiente: <a href="date_set_timezone.htm">date_set_timezone</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+delta_time
+-->
+  <!-- TAGS
+delta_time
+-->
+
+</body></html>

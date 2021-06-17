@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Funciones numéricas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Number functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Number Functions,numbers" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Funciones numéricas</h1>
+  <p>Los números reales en <span class="notranslate">GameMaker Studio 2</span> se consideran <i>números de punto flotante de doble precisión</i>, es decir, que tienen un punto decimal sin un número fijo de dígitos antes o después del punto.
+    antes o después del punto - o <i>enteros</i> - es decir, son números enteros sin valor decimal. El 2, por ejemplo, es un número entero, pero el 2,01 es un real de coma flotante.</p>
+  <p class="note"><b>NOTA</b>: En el objetivo <b>HTML5</b>, todos los números reales son dobles.</p>
+  <p>Esta distinción entre enteros y flotantes es muy importante cuando se trata de desarrollo entre plataformas, ya que la precisión de los cálculos realizados en un PC <span class="notranslate">con Windows</span> <i>no</i> es la misma que la de esos mismos cálculos
+    cuando se realizan en un dispositivo móvil. Esto significa que hay que prestar especial atención al realizar comparaciones, por ejemplo:</p>
+  <p class="code">if (image_index == 1)<br> {<br> hacer algo...<br> }</p>
+  <p>En el ejemplo anterior, si hemos establecido la <tt>velocidad de la imagen</tt> a 0,25 - por ejemplo - entonces después de cuatro pasos se puede asumir que el valor <tt>de image_index</tt> sería 1, pero <i>puede</i> ser
+    un valor como 1.0000002 debido a la forma en que funcionan las matemáticas de punto flotante y por lo tanto la evaluación no será <tt>verdadera</tt>. Este tipo de errores puede ser bastante difícil de depurar, por lo que siempre es bueno ser consciente de ellos y planificar con antelación y utilizar
+    otros medios de comprobación de valores o utilizar las funciones de suelo o redondeo apropiadas (listadas más abajo) para convertir el número a comprobar en un entero (para más información sobre las matemáticas en coma flotante y por qué esto es un problema, por favor, <a href="https://floating-point-gui.de/" target="_blank">vea aquí</a>). Por ejemplo, el código anterior podría escribirse como</p>
+  <p class="code">if (floor(image_index) == 1)<br> {<br> hacer algo...<br> }</p>
+  <p>También hay que tener en cuenta que cuando se utilizan los objetivos <b>del Compilador<span class="notranslate">YoYo</span></b>, todas las expresiones y funciones se evalúan <i>de izquierda a derecha</i>, mientras que en el resto de plataformas objetivo se evalúan <i>de derecha a izquierda</i>,
+    lo que significa que esto - por ejemplo - dará diferentes resultados dependiendo de la plataforma:</p>
+  <p class="code">val = max(num, ++num, num++);</p>
+  <p class="note"><strong>NOTA</strong>: Para más información, consulte la sección sobre la <a href="../../../GML_Overview/Evaluation_Order.htm">orden de evaluación</a>.</p>
+  <p>También puede utilizar una función especial disponible en <span class="notranslate">GameMaker Studio 2</span> para establecer el valor de <b>épsilon</b> para las matemáticas en coma flotante. Cuando un número real se redondea al número de coma flotante más cercano
+    el épsilon (también conocido como &quot;épsilon de la máquina&quot;) forma un límite superior en el error relativo, y puede obtener y establecer el valor del épsilon utilizando las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="math_set_epsilon.htm">math_set_epsilon</a></li>
+    <li><a href="math_get_epsilon.htm">math_get_epsilon</a></li>
+  </ul>
+  <p> </p>
+  <p>Todas estas funciones se ocupan de utilizar números y valores aleatorios:</p>
+  <p class="note"><b>NOTA: </b>Cuando se utilizan las funciones aleatorias, <span class="notranslate">GameMaker Studio 2</span> mantiene la misma semilla aleatoria cada vez que se inicia el juego. Esto hace que la depuración mucho más fácil, ya que se garantiza que las funciones aleatorias siempre devolverá inicialmente
+    el mismo valor, sin embargo, si no desea que esto suceda, primero debe establecer una nueva semilla aleatoria en el inicio del juego, ya sea utilizando <span style="font-size:1px;"><a href="randomise.htm"><tt style="font-size: 14px">aleatorizar()</tt></a></span> o 
+    <span style="font-size:1px;"><a href="random_set_seed.htm"><tt style="font-size: 14px">random_set_seed()</tt></a></span>.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="choose.htm">elija</a></li>
+    <li><a href="random.htm">al azar</a></li>
+    <li><a href="random_range.htm">rango_aleatorio</a></li>
+    <li><a href="irandom.htm">irandom</a></li>
+    <li><a href="irandom_range.htm">rango_irandom</a></li>
+    <li><a href="random_set_seed.htm">random_set_seed</a></li>
+    <li><a href="random_get_seed.htm">random_get_seed</a></li>
+    <li><a href="randomise.htm">aleatorizar</a><b></b></li>
+  </ul>
+  <p> </p>
+  <p>Todas estas funciones redondean los valores de alguna manera, o seleccionan un único valor de entre varios valores dados:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="round.htm">redondo</a></li>
+    <li><a href="floor.htm">piso</a></li>
+    <li><a href="frac.htm">frac</a></li>
+    <li><a href="abs.htm">abs</a></li>
+    <li><a href="sign.htm">firmar</a></li>
+    <li><a href="ceil.htm">ceil</a></li>
+    <li><a href="max.htm">max</a></li>
+    <li><a href="mean.htm">media</a></li>
+    <li><a href="median.htm">mediana</a></li>
+    <li><a href="min.htm">min</a></li>
+    <li><a href="lerp.htm">lerp</a></li>
+    <li><a href="clamp.htm">abrazadera</a></li>
+  </ul>
+  <p> </p>
+  <p>Por último, una colección variada de funciones matemáticas importantes:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="exp.htm">exp</a></li>
+    <li><a href="ln.htm">ln</a></li>
+    <li><a href="power.htm">poder</a></li>
+    <li><a href="sqr.htm">sqr</a></li>
+    <li><a href="sqrt.htm">sqrt</a></li>
+    <li><a href="log2.htm">log2</a></li>
+    <li><a href="log10.htm">log10</a></li>
+    <li><a href="logn.htm">logn</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Maths_And_Numbers.htm">Matemáticas y números</a></div>
+        <div style="float:right">Siguiente: <a href="../Angles_And_Distance/Angles_And_Distance.htm">Vectores</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Number Functions
+-->
+  <!-- TAGS
+number_functions
+-->
+
+</body></html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>phy_dynamic</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for phy_dynamic" />
+  <meta name="rh-index-keywords" content="phy_dynamic" />
+  <meta name="search-keywords" content="phy_dynamic" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>phy_dynamic</h1>
+  <p>Una instancia dinámica es aquella que está totalmente simulada dentro del mundo de la física y esta variable <b>de sólo</b> lectura devolverá <tt>true</tt> si la instancia que se está comprobando está totalmente simulada o <tt>false</tt> si no lo está</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">phy_dynamic;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano (o <tt>indefinido</tt> si la instancia no tiene activada la física)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si other.phy_dynamic<br> {
+    <br> con (otro)<br> {
+    <br> var dir;<br> dir = point_direction(x, y, other.x, other.y);<br> physics_apply_impulse(x, y, x + lengthdir_x(100, dir), y + lengthdir_y(100, dir));<br> }
+    <br> }
+  </p>
+  <p>El código anterior crea una nueva instancia y luego la define como una &quot;bala&quot; en el mundo de la física antes de darle un impulso masivo a lo largo del eje y.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Physics_Variables.htm">Variables físicas</a></div>
+        <div style="float:right">Siguiente: <a href="phy_kinematic.htm">phy_kinematic</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+phy_dynamic
+-->
+  <!-- TAGS
+phy_dynamic
+-->
+</body>
+</html>

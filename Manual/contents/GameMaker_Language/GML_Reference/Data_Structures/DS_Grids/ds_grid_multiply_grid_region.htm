@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_multiply_grid_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_multiply_grid_region" />
+  <meta name="rh-index-keywords" content="ds_grid_multiply_grid_region" />
+  <meta name="search-keywords" content="ds_grid_multiply_grid_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_multiply_grid_region</h1>
+  <p>Con esta función se puede definir un área dentro de una cuadrícula DS dada, luego tomar esos valores y multiplicarlos con los que se encuentran en una región separada de la misma cuadrícula DS, o de otra (que ha sido creada previamente). La región original
+    permanecerá sin cambios, mientras que la región con la que se han multiplicado almacenará ahora los nuevos valores para cada celda.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_multiply_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la cuadrícula de destino.</td>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>El índice de la red de origen.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La posición izquierda de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La posición superior de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La posición derecha de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La posición inferior de la región de celdas a copiar de la rejilla de origen.</td>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>La posición x en la cuadrícula de destino con la que se multiplicará la región de origen.</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>La posición y en la cuadrícula de destino para multiplicar la región de origen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_grid_multiply_grid_region(mygrid, mygrid, 0, 0, 5, 5, 0, 0)</p>
+  <p>Esto tomaría la región de celdas de (0,0) a (5,5) de la cuadrícula DS &quot;mygrid&quot; y las multiplicaría con las celdas de la posición (0,0) de la misma cuadrícula DS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_value_exists.htm">ds_grid_value_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_multiply_grid_region
+-->
+  <!-- TAGS
+ds_grid_multiply_grid_region
+-->
+
+</body></html>

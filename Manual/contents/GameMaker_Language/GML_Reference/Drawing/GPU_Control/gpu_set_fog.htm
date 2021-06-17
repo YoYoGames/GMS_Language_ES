@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_fog</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_fog" />
+  <meta name="rh-index-keywords" content="gpu_set_fog" />
+  <meta name="search-keywords" content="gpu_set_fog" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_fog</h1>
+  <p>Esta función se puede utilizar para activar o desactivar el dibujo de la niebla. La niebla se puede utilizar en los juegos 3D para hacer que las instancias en la distancia se vean borrosas o incluso desaparezcan, lo que ayuda a crear una atmósfera, así como a enmascarar el hecho de que no se están dibujando instancias
+    que están lejos. Puedes establecer si está activada<tt>(true</tt>) o desactivada<tt>(false</tt>), el color que la niebla debe utilizar para la mezcla, así como las distancias de dibujo inicial y final. Tenga en cuenta que el inicio de la niebla indica el radio relativo a la
+    de la cámara donde comienza la niebla, y el final de la niebla indica en qué radio (también relativo) las instancias serán completamente invisibles.</p>
+  <p>La función puede tomar cuatro argumentos individuales (dados arriba) o un array con la siguiente estructura (el código de ejemplo que sigue muestra este método):</p>
+  <ul class="colour">
+    <li>0] = alternancia habilitada (un booleano, <tt>verdadero</tt> o <tt>falso</tt>), por defecto <tt>falso</tt></li>
+    <li>1] = color (real), por defecto <tt>c_black</tt></li>
+    <li>2] = distancia inicial (real), por defecto 0</li>
+    <li>3] = distancia final (real), por defecto 1</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_fog(enable, color, start, end);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Activar o desactivar la niebla</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color de la niebla</td>
+      </tr>
+      <tr>
+        <td>iniciar</td>
+        <td>La distancia a partir de la cual se aplica la niebla</td>
+      </tr>
+      <tr>
+        <td>fin</td>
+        <td>La distancia para acabar con la niebla</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var fog_a = gpu_get_fog();<br> fog_a[1] = c_red;<br> gpu_set_fog(fog_a);
+  </p>
+  <p>El código anterior obtiene la configuración actual de la niebla y luego establece el elemento de color de la matriz a <tt>c_red</tt> antes de establecer la niebla de nuevo utilizando la matriz modificada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_cullmode.htm">gpu_set_cullmode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_fog
+-->
+  <!-- TAGS
+gpu_set_fog
+-->
+</body>
+</html>

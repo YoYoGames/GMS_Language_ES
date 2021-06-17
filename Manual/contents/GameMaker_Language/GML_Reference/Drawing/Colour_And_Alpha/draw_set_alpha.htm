@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_alpha</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section the function draw_set_alpha" />
+  <meta name="rh-index-keywords" content="draw_set_alpha" />
+  <meta name="search-keywords" content="draw_set_alpha" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_alpha</h1>
+  <p>Con esta función puedes establecer el alfa base de dibujo para el juego. Este valor puede establecerse de 0 a 1, siendo 0 totalmente transparente y 1 totalmente opaco (el valor por defecto), y afectará a todo el dibujo posterior, incluyendo fondos, sprites, fuentes
+    primitivas y 3D.</p>
+  <p>Tenga en cuenta que si está dibujando cualquiera de los activos y suministrando un argumento alfa como parte de la función (por ejemplo, cuando se utiliza <a href="../Sprites_And_Tiles/draw_sprite_ext.htm"><tt>dibujar_espiga_ext()</tt></a>), entonces el valor alfa establecido aquí será
+    anulado, por lo que dibujar un sprite usando <tt>draw_sprite_ext()</tt> con un argumento alfa de 1 dibujará el sprite completamente opaco independientemente del alfa establecido con <tt>draw_set_alpha()</tt> (esto funcionará igual cuando se use <a href="../Sprites_And_Tiles/draw_self.htm"><tt>dibujar_self()</tt></a>    y estableciendo el <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm"><tt>imagen_alfa</tt></a> de la instancia). También hay que tener en cuenta que cuando una instancia está dibujando <i>por defecto</i> (es decir, tiene un sprite pero no un evento de dibujo), entonces la variable
+   <tt>image_alpha</tt> se ajustará al alfa establecido con <tt>draw_set_alpha()</tt>, de forma que un <tt>image_alpha</tt> de 1 y un draw alpha de 0.5 dibujarán el sprite a alfa 0.5, mientras que un <tt>image_alpha</tt> de 0.25 y un draw alpha
+    de 0.5 dibujará el sprite a 0.25 alfa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_set_alpha(alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El alfa a establecer (entre 0 y 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_alpha(0.5);<br> draw_set_colour(c_black);
+    <br> draw_text(x+5, y+5, &quot;NIVEL 1&quot;);<br> draw_set_alpha(1);
+    <br> draw_set_colour(c_white);
+    <br> draw_text(x, y, &quot;NIVEL 1&quot;);</p>
+  <p>El código anterior dibujará un texto en la posición especificada con un efecto de sombra creado por la modificación del alfa y el color del dibujo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Colour_And_Alpha.htm">Color y Alfa</a></div>
+        <div style="float:right">Siguiente: <a href="draw_set_colour.htm">draw_set_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_alpha
+-->
+  <!-- TAGS
+draw_set_alpha
+-->
+</body>
+</html>

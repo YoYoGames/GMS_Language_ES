@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_cell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_cell" />
+  <meta name="rh-index-keywords" content="mp_grid_add_cell" />
+  <meta name="search-keywords" content="mp_grid_add_cell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_cell</h1>
+  <p>Con esta función podemos marcar celdas individuales dentro de la cuadrícula MP dada como &quot;prohibidas&quot;, lo que significa que las funciones de búsqueda de rutas no las cruzarán nunca. Ahora bien, normalmente se trabaja en coordenadas de <i>habitación</i> x/y, y no en coordenadas de <i>celdas</i> de la cuadrícula MP. Por lo tanto, consideremos la siguiente imagen que muestra cómo pueden correlacionarse las dos:</p>
+  <p><img alt="Add cell example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_cell_image.png">Como puede ver, la cuadrícula mp_grid está numerada como una serie de celdas (empezando en 0,0 en la esquina superior izquierda
+    esquina), y cuando colocas esta cuadrícula sobre la habitación hay una correlación directa entre las coordenadas de la habitación (que también empiezan en 0,0 en la parte superior izquierda) y las celdas dentro de la cuadrícula. En la imagen puede ver que una instancia en la posición 260,130
+    cae en la celda 8,4 de la cuadrícula. Puedes calcular matemáticamente la celda exacta en la que cae una posición fácilmente dividiendo el número por la resolución de la cuadrícula y redondeando hacia abajo <i>o</i>, si estás usando resoluciones de cuadrícula de potencia de 2 (como 8,
+    16, 32, etc...) puedes utilizar los <a href="../../../../Additional_Information/Bitwise_Operators.htm">operadores de bit a bit</a>. Hay que tener en cuenta que la operación a nivel de bits es más rápida y el ejemplo siguiente muestra ambos métodos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_grid_add_cell(id, h, v);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice del mp_grid que se va a utilizar</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>Posición horizontal de la celda en la cuadrícula</td>
+      </tr>
+      <tr>
+        <td>v</td>
+        <td>Posición vertical de la celda en la cuadrícula</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">with (obj_Wall)<br> {
+    <br> mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));<br> }
+    <br> with (obj_Puerta)<br> {
+    <br> mp_grid_add_cell(grid, x&gt;&gt;5, y&gt;&gt;5);<br> }
+  </p>
+  <p>El código anterior hará que todos los &quot;obj_Wall&quot; y todos los obj_Door añadan sus posiciones de celda equivalentes en el mp_grid indexado en la variable &quot;grid&quot;. En la primera parte del ejemplo, esto se hace tomando las coordenadas x/y del objeto
+    y dividiéndolas por la resolución de la rejilla (usando <tt>floor</tt> para mantener los valores como enteros), y en la segunda parte (ya que la resolución de la rejilla es una potencia de 2) se hace desplazando las coordenadas x,y 5 lugares a la derecha.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_add_instances.htm">mp_grid_add_instances</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_cell
+-->
+  <!-- TAGS
+mp_grid_add_cell
+-->
+</body>
+</html>

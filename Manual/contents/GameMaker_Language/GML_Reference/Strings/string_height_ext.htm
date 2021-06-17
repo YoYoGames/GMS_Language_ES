@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>string_height_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_height_ext" />
+  <meta name="rh-index-keywords" content="string_height_ext" />
+  <meta name="search-keywords" content="string_height_ext" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>string_height_ext</h1>
+  <p>Esta función devolverá la altura (en píxeles) de la cadena de entrada, teniendo en cuenta la separación entre líneas y el ancho del salto de línea (que se define como el número de píxeles que puede ocupar la cadena antes de que se inserte un salto de línea). Es muy útil
+    para calcular las distancias entre los elementos de texto en función de la más alta de las letras que componen la cadena, así como la propia longitud de la cadena cuando se reparte en varias líneas como se dibujaría con <a href="../Drawing/Text/draw_text_ext.htm"><tt>dibujar_texto_texto()</tt></a>    utilizando la fuente definida actualmente. La separación y la anchura pueden establecerse en -1 para obtener el espaciado por defecto.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string_height_ext(string, sep, w);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>cadena</td>
+        <td>La cadena para medir la altura de.</td>
+      </tr>
+      <tr>
+        <td>sep</td>
+        <td>La distancia en píxeles entre las líneas de texto como si la cadena se estuviera dibujando.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura máxima (en píxeles) de la cadena antes de un salto de línea, como si la cadena fuera dibujada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var hh = string_height_ext(str_Story_Text[1], -1, 100);<br> draw_text_ext(32, 32, str_Story_Text[1], -1, 100);<br> draw_text_ext(32, 32 + hh, str_Story_Text[2], -1, 100);</p>
+  <p>El código anterior obtendrá la altura de la cadena dada, teniendo en cuenta la separación entre líneas y el ancho del salto de línea, y luego dibujará dos líneas de texto, utilizando la altura total de la cadena devuelta como separador.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_width.htm">string_width</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_height_ext
+-->
+  <!-- TAGS
+string_height_ext
+-->
+
+</body></html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_bone_data_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_bone_data_set" />
+  <meta name="rh-index-keywords" content="skeleton_bone_data_set" />
+  <meta name="search-keywords" content="skeleton_bone_data_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_bone_data_set</h1>
+  <p>Su animación esquelética se compone de un número de &quot;huesos&quot;, a los que habrá definido y dado nombre en su programa de animación, y esta función se puede utilizar para establecer ciertos datos para el hueso nombrado en cualquier momento. Tenga en cuenta que estos datos se refieren
+    a la pose <b>por defecto</b> del esqueleto, y <i>no</i> a la pose actual que se está dibujando (para eso usa la función <a href="skeleton_bone_state_set.htm"><tt>skeleton_bone_state_set()</tt></a>), y deben establecerse a partir de un mapa DS previamente creado.
+   <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">DS</a>, que debe tener las siguientes claves y sus valores equivalentes:</p>
+  <ul class="colour">
+    <li><b>&quot;x&quot;:</b> La posición local x del hueso en relación con el hueso padre.</li>
+    <li><b>&quot;y&quot;:</b> La posición local y del hueso en relación con el hueso padre.</li>
+    <li><b>&quot;ángulo&quot;:</b> La rotación local del hueso con respecto al hueso padre.</li>
+    <li><b>&quot;xscale&quot;:</b> La escala horizontal local del hueso.</li>
+    <li><b>&quot;yscale&quot;:</b> La escala vertical local del hueso.</li>
+    <li><b>&quot;padre&quot;:</b> El nombre (una cadena) del hueso padre.</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_bone_data_set(hueso, mapa);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>hueso</td>
+        <td>El nombre (como cadena) del hueso.</td>
+      </tr>
+      <tr>
+        <td>mapa</td>
+        <td>El mapa DS (previamente creado) que almacena los datos de los huesos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var bone_map = ds_map_create();<br> skeleton_bone_data_get(&quot;head&quot;, bone_map);<br> ds_map_replace(bone_map, &quot;parent&quot;, &quot;body&quot;);<br> skeleton_bone_data_set(&quot;head&quot;, bone_map);<br> ds_map_destroy(bone_map);
+  </p>
+  <p>El código anterior crea un mapa DS y luego lo rellena con los datos del hueso llamado &quot;cabeza&quot;. Luego reemplaza la clave del hueso &quot;padre&quot; en el mapa con un nuevo valor y establece el hueso &quot;cabeza&quot; de nuevo con el nuevo conjunto de datos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Espalda: <a href="Bones.htm">Huesos</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_bone_state_get.htm">skeleton_bone_state_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_bone_data_set
+-->
+  <!-- TAGS
+skeleton_bone_data_set
+-->
+</body>
+</html>

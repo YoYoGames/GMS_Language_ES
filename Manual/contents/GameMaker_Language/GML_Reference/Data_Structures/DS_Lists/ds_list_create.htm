@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_create" />
+  <meta name="rh-index-keywords" content="ds_list_create" />
+  <meta name="search-keywords" content="ds_list_create" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_create</h1>
+  <p>Esta función creará una nueva estructura de datos de la lista y devolverá el valor del índice. Este valor debe almacenarse en una variable y utilizarse en todas las llamadas posteriores a funciones relacionadas con la lista. Tenga en cuenta que si intenta acceder a un valor de la lista <i>antes de que</i> se haya rellenado -es decir, si la lista está &quot;vacía&quot;-, el valor de retorno puede ser 0, ya que internamente las primeras entradas de la lista se establecen cuando se crea para minimizar los problemas de rendimiento al añadir inicialmente elementos a la lista (aunque la función
+    <a href="ds_list_size.htm"><tt>ds_list_size()</tt></a> devolverá 0 en una lista recién creada). Si desea asegurarse de que la lista está &quot;realmente&quot; vacía al crearla, deberá llamar a <a href="ds_list_clear.htm"><tt>ds_list_clear()</tt></a>    después de crear la lista, lo que significará que cualquier valor devuelto para las ranuras de la lista sin rellenar será <tt>indefinido</tt>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se crea una estructura de datos, el valor del índice para identificarla es un valor entero que comienza en 0. Esto significa que las estructuras de datos de diferentes tipos pueden tener el <b>mismo</b> valor de índice, por lo que en caso de duda se debe utilizar la función
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> antes de acceder a ellas. También hay que tener en cuenta que los índices se reutilizan, por lo que el valor del índice de una estructura de datos destruida puede ser utilizado por otra recién creada posteriormente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_create();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">list = ds_list_create();</p>
+  <p>Esto creará una nueva lista y asignará su índice a la variable de instancia &quot;lista&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_destroy.htm">ds_list_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_create
+-->
+  <!-- TAGS
+ds_list_create
+-->
+
+</body></html>

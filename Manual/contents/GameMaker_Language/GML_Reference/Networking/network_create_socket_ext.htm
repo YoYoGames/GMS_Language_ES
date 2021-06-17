@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_create_socket_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_socket_ext" />
+  <meta name="rh-index-keywords" content="network_create_socket_ext,network_socket_tcp,network_socket_udp,network_socket_ws" />
+  <meta name="search-keywords" content="network_create_socket_ext,network_socket_tcp,network_socket_udp,network_socket_ws" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_create_socket_ext</h1>
+  <p>Esta función se utiliza para crear un nuevo socket de cliente para que su juego se comunique a través de la red. Debes definir el protocolo del socket (ver la lista de constantes más abajo) y dar un puerto a utilizar, y la función devolverá un <i>id</i> único que debe
+    que debe ser utilizado en todas las llamadas de función posteriores para ese socket, o un valor inferior a 0 si la conexión falla.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>network_socket_tcp</td>
+        <td>Crear un socket usando TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_udp</td>
+        <td>Crear un socket usando UDP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_ws</td>
+        <td>Crear un socket web<i>(sólo</i> para proyectos que se ejecutan en HTML5), utilizando TCP.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_create_socket_ext(protocolo, puerto);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>protocolo</td>
+        <td>El protocolo de red a utilizar</td>
+      </tr>
+      <tr>
+        <td>puerto</td>
+        <td>El puerto a utilizar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">cliente = network_create_socket_ext(network_socket_udp, 6510);</p>
+  <p>El código anterior creará un nuevo socket UDP en el puerto 6510.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_connect.htm">network_connect</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_socket_ext
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+-->
+  <!-- TAGS
+network_create_socket_ext
+-->
+</body>
+</html>

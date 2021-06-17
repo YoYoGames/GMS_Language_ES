@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estructuras y constructores</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the use of Structs" />
+  <meta name="rh-index-keywords" content="Structs" />
+  <meta name="search-keywords" content="structs,new,delete,struct" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Estructuras y constructores</h1>
+  <p>Una <strong>estructura </strong>es, en pocas palabras, una variable que contiene una colección de otras variables. Las variables que contiene una estructura pueden ser de cualquier <a href="Data_Types.htm">tipo de datos</a> mencionado anteriormente y estas variables pueden ser leídas desde
+    y escribir en ellas después de la declaración inicial de la estructura, y también se pueden añadir más variables a una estructura después de haberla declarado. Las variables utilizadas en una estructura deben seguir los esquemas de denominación convencionales, es decir, no pueden empezar por un número y deben
+    y sólo deben estar formadas por caracteres alfanuméricos y el carácter de subrayado &quot;_&quot;, y también hay que tener en cuenta que el contenido de una estructura es <em>independiente de la instancia o función que la ha</em> creado, por lo que puede, si lo desea, utilizar nombres de variables incorporados como image_index.
+    como <tt>image_index</tt> o <tt>x</tt> e <tt>y</tt>.</p>
+  <p>Después de la creación inicial, los structs no tienen ninguna sobrecarga de procesamiento mientras existan, <i>aunque</i> ocuparán espacio en la memoria. La sintaxis de los struct es la siguiente:</p>
+  <p class="code"><i>&lt;variable&gt; =</i><br> {
+   <br>
+       <i> &lt;variable&gt;</i>: &lt;valor&gt; <i>,</i><br>
+       <i> &lt;variable&gt;</i>: &lt;valor&gt; <i>,</i><br> <i></i> etc...
+    <br> };
+  </p>
+  <p>Así, un ejemplo de esto en la práctica sería:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hello World&quot;<br> };
+  </p>
+  <p>El código anterior crea una estructura de ámbito de instancia en la variable <tt>mystruct</tt> y la rellena con algunos valores (las estructuras pueden crearse en ámbitos locales, de instancia y globales, como cualquier otra variable - véase la sección sobre <a href="Variables_And_Variable_Scope.htm">Variables y Ámbito de las Variables</a> para más información). Ten en cuenta que no tienes que rellenar el contenido de una estructura cuando se crea inicialmente y puedes crear una estructura vacía simplemente haciendo esto:</p>
+  <p class="code">mystruct = {};</p>
+  <p>Esta estructura puede ser añadida en un punto posterior del código del juego. Aquí hay un ejemplo de una estructura con varias variables y tipos de datos:</p>
+  <p class="code">var _xx = 100;<br> mystruct =<br> {
+    <br> a : 10,<br> b : &quot;Hola Mundo&quot;,<br> c : int64(5),<br> d : _xx + 50,<br> e : function(a, b)<br> {
+    <br> return a + b;<br> },
+    <br> f : [ 10, 20, 30, 40, 50 ],<br> g : image_index<br> };
+  </p>
+  <p>Notarás en el código anterior que también puedes definir métodos y utilizar funciones en tiempo de ejecución en los structs, y también puedes utilizar variables locales y de instancia dentro de la declaración del struct.</p>
+  <p>Por ejemplo, notará en el ejemplo anterior que la variable struct &quot;g&quot; está siendo establecida a <span class="inline">image_index</span>, que es una variable de instancia. Podrías pensar que tendrías que usar la palabra clave <span class="inline">other</span> en este caso para obtener la variable de instancia, pero no es necesario. Esencialmente, cuando defines una estructura<strong>, todas las variables miembro a la izquierda de los dos puntos &quot;:&quot; son las <em>variables</em></strong> de<strong> la estructura, y los valores y variables a la derecha utilizan el ámbito de lo que está definiendo la estructura (en</strong> este caso, una instancia).</p>
+  <p>Veamos un ejemplo sencillo para ilustrar esto. Digamos que quieres definir una estructura con las variables &quot;x&quot; e &quot;y&quot; y quieres establecerlas a las &quot;x&quot; e &quot;y&quot; de la instancia que define la estructura. En la práctica
+    el código se vería así:</p>
+  <p class="code">mystruct =<br> {
+    <br> x : x,<br> y : y<br> };
+  </p>
+  <p>En el código anterior, las variables miembro de la estructura <tt>x</tt> e <tt>y</tt> se establecen a los valores de las variables de instancia <tt>x</tt> e <tt>y</tt>, ya que la parte derecha de los dos puntos &quot;:&quot; se refiere a la instancia que define
+    la estructura. Vale la pena señalar que esto significa que <em>no se pueden</em> utilizar las variables miembro del struct para definir las variables subsiguientes dentro de la declaración del struct. Por ejemplo, lo siguiente daría un error:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 10,<br> b : 10,<br> c : a + b<br> }
+  </p>
+  <p>El error se produce porque las variables <tt>a</tt> y <tt>b</tt> están siendo evaluadas en el ámbito de lo que define la estructura (están a la derecha de los dos puntos &quot;:&quot;), y no son las <em>que</em> se definen dentro de la propia estructura.
+    la estructura misma.<strong></strong></p>
+  <h3 style="padding-left: 20px"><em><strong style="margin-left: 0px">IMPORTANTE!</strong></em> <strong>No puede </strong>utilizar ninguna variable de ámbito <em><strong>global </strong></em>como nombres de miembros de la estructura, por ejemplo: <span class="inline">game_id</span> o <span class="inline">fps</span>.
+    Puedes encontrar una lista completa de estas variables globales en la siguiente página:</h3>
+  <ul class="colour">
+    <li><a href="Struct_Forbidden_Variables.htm">Variables prohibidas de la estructura</a></li>
+  </ul>
+  <p>Una vez que se ha definido una estructura, se puede acceder a los datos dentro de ella utilizando la notación &quot;punto&quot;, así:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hola Mundo&quot;<br> }
+    <br>
+    <br> mystring = mystruct.b + string(mystruct.a);</p>
+  <p>También puedes realizar operaciones sobre las variables dentro de una estructura o utilizarlas en funciones, como harías con cualquier otra variable. Por ejemplo:</p>
+  <p class="code">mystruct.a += 1;<br> mystruct.b = mystruct.a + 20;<br> mydir = point_direction(mouse_x, mouse_y, mystruct.xx, mystruct.yy);</p>
+  <p>Por último, los structs pueden tener otros structs anidados dentro de ellos, así:</p>
+  <p class="code">mystruct =<br> {
+    <br> a :<br> {<br> aa : &quot;Este es un ejemplo&quot;<br> },
+    <br> b :<br> {<br> bb : &quot;Y otro más&quot;<br> },
+    <br> };
+  </p>
+  <p>Para acceder a estos structs anidados se seguiría utilizando la notación de puntos, así:</p>
+  <p class="code">var _str = mystuct.a.aa + &quot; + mystruct.b.bb;<br> show_debug_message(_str);
+  </p>
+  <p>Otra forma de acceder a los datos de una estructura es utilizando la función <a href="Language_Features/with.htm"><span class="inline">with()</span></a> función. Así, por ejemplo, podrías hacer esto:</p>
+  <p class="code">con(mystruct)<br> {
+    <br> a += otro.x;<br> }
+  </p>
+  <p>El uso de <span class="inline">with()</span> cambia el ámbito del código a la estructura dada donde se pueden manipular las variables miembro en el ámbito de la estructura. Observe que en el ejemplo también utilizamos la <a href="Instance_Keywords.htm">palabra clave<span class="inline">other</span> </a>.
+    Esto funciona igual que en una instancia cuando se utiliza <span class="inline">with()</span> y hará referencia a la instancia (o estructura) que está ejecutando el bloque de código.</p>
+  <p>Cuando una estructura ya no es necesaria, puede ser eliminada de la memoria utilizando el operador <a href="Language_Features/delete.htm"><tt>borrar</tt></a> que marca la estructura como susceptible de ser recolectada por la basura. Esto no es estrictamente necesario ya que el <a class="glossterm" data-glossterm="recolector de basura" href="#">recolector</a> de basura puede hacerlo automáticamente si la estructura ya no es referenciada en tu código, pero es una buena práctica hacerlo y lo recomendamos (por ejemplo, llamar a <tt>delete</tt> en el <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento Clean Up</a> de una instancia para decirle explícitamente al recolector de basura que una estructura de ámbito de instancia debe ser eliminada). He aquí un ejemplo:</p>
+  <p class="code">// Crear evento<br> mystruct =<br> {
+    <br> pos_x : x,<br> pos_y : y,<br> count : 1000<br> };
+    <br>
+    <br> // Limpiar el evento<br> borrar mystruct;</p>
+  <h2>Funciones del constructor</h2>
+  <p>También puedes utilizar <a href="Script_Functions.htm">funciones</a> o <a href="Method_Variables.htm">métodos</a> de <a href="Script_Functions.htm">script</a> para crear funciones que puedan ser utilizadas para generar nuevos structs, lo que requiere el uso de la palabra clave <tt>constructor</tt> para la función
+    y el operador <a href="Language_Features/new.htm"><tt>nuevo</tt></a> al crear una estructura a partir de dicha función. Véase la siguiente función:</p>
+  <p class="code">function Vector2(_x, _y) <strong>constructor</strong><br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function(_vec2)<br> {
+    <br> x += _vec2.x;<br> y += _vec2.y;<br> }
+    <br> }
+  </p>
+  <p>O bien, utilizando la sintaxis de la variable de método:</p>
+  <p class="code">Vector2 = function(_x, _y) constructor<br> {
+    <br> x = _x;<br> y = _y;<br>
+    <br> static Add = function(_vec2)<br> {
+    <br> x += _vec2.x;<br> y += _vec2.y;<br> }
+    <br> }
+  </p>
+  <p>Aquí estamos creando una función llamada <tt>Vector2</tt> y diciéndole a <span class="notranslate">GameMaker Studio 2</span> que esta es una función usada para crear structs añadiendo la palabra clave <tt>constructor</tt> después de su definición. A continuación, puede llamar a esta función constructora como
+    así:</p>
+  <p class="code">v2 = nuevo Vector2(10, 10);</p>
+  <p>La variable <tt>v2</tt> contendrá ahora una estructura con las variables <tt>x</tt> e <tt>y</tt> y la <a href="Method_Variables.htm">variable del método</a> <a href="Functions/Static_Variables.htm">estático</a> <tt>Add</tt>.</p>
+  <p>También puede hacer uso de argumentos opcionales en sus funciones constructoras:</p>
+  <p class="code">function Vector2<strong>(_x = 0, _y = 0</strong>) constructor<br> {
+    <br> x = _x;<br> y = _y;<br> }
+  </p>
+  <p>Este constructor utilizará ahora <tt>0</tt> para los argumentos <tt>_x</tt> y <tt>_y</tt> si no se especifican cuando se llama a la función. Esto significa que se puede crear una nueva estructura <tt>Vector2</tt> sin tener que especificar ningún argumento:</p>
+  <p class="code">vector_vacío = new Vector2();</p>
+  <h2>Herencia</h2>
+  <p>Las funciones creadas de esta manera también soportarán la <b>herencia</b> simple, es decir, puedes crear una función constructora que herede datos de otra función constructora.</p>
+  <p class="note"><strong>NOTA</strong>: Cuando se trabaja con herencia, no se pueden utilizar variables de método para definir la función del constructor, sólo funciones de script.</p>
+  <p>Por ejemplo, hemos creado la función constructora <tt>Vector2</tt> arriba, así que podemos usarla como &quot;padre&quot; de otra función constructora, que llamaremos Vector3:</p>
+  <p class="code">function <strong>Vector3(_x, _y, _z) </strong><strong>:</strong><strong> Vector2(_x, _y </strong>) constructor<br> {
+    <br> z = _z;<br>
+    <br> static Add = function( _vec3 )<br> {
+    <br> x += _vec3.x;<br> y += _vec3.y;<br> z += _vec3.z;<br> }
+    <br> }
+  </p>
+  <p>Como puedes ver, al definir la función utilizamos dos puntos &quot;<span class="inline">:</span>&quot; para separar el nuevo constructor del constructor padre del que se hereda. El constructor hijo<tt>(V</tt>ector3) pasa los argumentos <tt>_x</tt> y
+   <tt>_y</tt> al constructor padre (<tt>Vector2</tt>), que se utilizan para ejecutar primero el constructor padre, tras lo cual se ejecuta el constructor hijo. De este modo, el constructor hijo obtiene las variables del padre (x e y) y también puede definir las suyas propias (z).</p>
+  <p>También puedes pasar valores constantes al constructor padre, de forma que un determinado constructor hijo siempre proporcione los mismos valores a su constructor padre:</p>
+  <p class="code">function Item(damage) constructor<br> {
+    <br> mi_daño = daño;<br> }
+    <br>
+    <br> function BasicSword() : Item(10) constructor<br> {}
+    <br>
+    <br> var _basic_sword = new BasicSword();<br> show_debug_message(_basic_sword.my_damage); // Imprime 10</p>
+  <p>Esto significa que el daño de una espada básica siempre será <tt>10</tt>, ya que pasa ese valor a su constructor padre independientemente de cuáles sean sus propios argumentos.</p>
+  <p>Tenga en cuenta que la asignación de un valor por defecto a un argumento en un constructor hijo anulará el valor por defecto del padre para ese argumento. Véase el siguiente ejemplo:</p>
+  <p class="code">function Parent(valor = 10) constructor<br> {
+    <br> show_debug_message(valor);<br> }
+    <br>
+    <br> function Child(value = 20) : Parent(value) constructor<br> {
+    <br> show_debug_message(valor);<br> }
+    <br>
+    <br> var _child = new Child();</p>
+  <p>Ambos constructores imprimirán <tt>20</tt> en el registro de salida, ya que ese era el valor por defecto del argumento establecido por el constructor hijo, y el mismo valor fue pasado al constructor padre.</p>
+  <p>Para más detalles sobre los operadores <tt>nuevos</tt> y <tt>eliminados</tt>, consulte las siguientes páginas:</p>
+  <ul class="colour">
+    <li><a href="Language_Features/new.htm"><tt>nuevo</tt></a></li>
+    <li><tt><a href="Language_Features/delete.htm"><tt>borrar</tt></a>
+      </tt>
+    </li>
+  </ul>
+  <h2>Salida de cadenas</h2>
+  <p>Una última cosa a mencionar sobre los structs es que puedes cambiar lo que se envía a la consola desde ellos para la depuración. Por defecto, al llamar a la función <a href="../GML_Reference/Debugging/show_debug_overlay.htm"><span class="inline">show_debug_message()</span></a> en
+    una estructura mostrará el contenido de la estructura (como se muestra arriba). Sin embargo, es posible personalizar este mensaje añadiendo un método de nombre específico a la estructura llamado <span class="inline">toString</span>:</p>
+  <p class="code">mystruct =<br> {
+    <br> a : 20,<br> b : &quot;Hello World&quot;,<br>
+    <br> toString : function()<br> {<br> return &quot;This stuct says &quot; + b + &quot;, &quot; + string(a) + &quot; times!&quot;;<br> } <br> }
+    <br> show_debug_message(mystruct);
+  </p>
+  <p>Ahora, cuando se llame a la función <span class="inline">show_debug_message()</span>, se utilizará el método <span class="inline">toString</span> para generar la salida y -con el ejemplo anterior- se obtendrá:</p>
+  <p class="code">Esta estructura dice "Hola Mundo", ¡20 veces!</p>
+  <p>Tenga en cuenta que también puede llamar a la función <a href="../GML_Reference/Strings/Strings.htm"><span class="inline">string()</span></a> función en una referencia de estructura y usarla para mostrar el contenido - o el método <span class="inline">toString</span> - en la pantalla
+    pantalla, o guardarlo en un archivo, o lo que sea, ej:</p>
+  <p class="code">var _str = string(mystruct);<br> draw_text(32, 32, _str);</p>
+  <p>Por último, hay una serie de funciones en <span class="notranslate">tiempo de ejecución</span> que puedes utilizar en los structs para obtener las variables que contienen, así como algunas otras cosas. Puedes encontrarlas en la siguiente sección:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Funciones variables</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Language_Features.htm">Características lingüísticas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Structs
+struct
+constructor
+-->
+  <!-- TAGS
+structs
+-->
+
+</body></html>

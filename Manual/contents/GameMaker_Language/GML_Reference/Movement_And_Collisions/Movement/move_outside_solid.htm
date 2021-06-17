@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_outside_solid</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_outside_solid" />
+  <meta name="rh-index-keywords" content="move_outside_solid" />
+  <meta name="search-keywords" content="move_outside_solid" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_outside_solid</h1>
+  <p>Con esta función se puede indicar a una instancia que salga de una colisión con cualquier instancia marcada como <a href="../../Asset_Management/Instances/Instance_Variables/solid.htm"><b>sólido</b></a> en cualquier dirección y cualquier número de píxeles en cada paso, con un
+    valor de -1 o 0 para la distancia máxima que es de 1000px por defecto, es decir: <span class="notranslate">GameMaker Studio 2</span> moverá la instancia continuamente hacia arriba 1000 píxeles hasta que esté fuera de la colisión.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">move_outside_solid(dir, maxdist);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>La dirección a seguir.</td>
+      </tr>
+      <tr>
+        <td>maxdist</td>
+        <td>La distancia máxima que puede recorrer el objeto (-1 o 0 un valor por defecto de 1000 píxeles).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si otro.sólido<br> {
+    <br> var pdir;<br> pdir = point_direction(other.x, other.y, x, y);<br> move_outside_solid(pdir, -1);<br> }
+  </p>
+  <p>El código anterior entraría en un evento de colisión y comprobaría si la &quot;otra&quot; instancia en la colisión está marcada como &quot;sólida&quot;. Si lo es, moverá la instancia fuera de la colisión.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="move_random.htm">move_random</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_outside_solid
+-->
+  <!-- TAGS
+move_outside_solid
+-->
+</body>
+</html>

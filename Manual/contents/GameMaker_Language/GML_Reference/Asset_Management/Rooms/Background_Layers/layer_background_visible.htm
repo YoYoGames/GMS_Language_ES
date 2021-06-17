@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_background_visible</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_visible" />
+  <meta name="rh-index-keywords" content="layer_background_visible" />
+  <meta name="search-keywords" content="layer_background_visible" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_background_visible</h1>
+  <p>Con esta función se puede cambiar la visibilidad de un elemento de fondo. Se suministra el ID del elemento de fondo (que se obtiene cuando se crea un elemento de fondo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a> o cuando
+    utiliza la función <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), y luego establece el argumento visible como <tt>verdadero</tt> o <tt>falso</tt>. Cuando se establece en <tt>true</tt> el elemento se mostrará, y cuando se establece en <tt>false</tt>
+    el elemento no se mostrará. Tenga en cuenta que esto depende de la visibilidad de la capa, e incluso si el elemento de fondo está marcado como visible, no se dibujará si la capa en la que se encuentra está marcada como no visible.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_background_visible(background_element_id, visible)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>El valor de identificación único del elemento de fondo que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>visible</td>
+        <td>El conmutador de visibilidad, que puede ser <tt>verdadero</tt> o <tt>falso</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> var back = layer_background_get_id(layer);<br> if layer_background_get_visible(back)<br> {
+    <br> layer_background_visible(back, false);<br> }
+    <br> si no
+    <br> {
+    <br> layer_background_visible(back, true);<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba si se ha pulsado el botón del ratón y, si se detecta alguno, cambiará la visibilidad del elemento de fondo asignado a la capa en la que se encuentra la instancia que ejecuta el código.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Background_Layers.htm">Capas de fondo</a></div>
+        <div style="float:right">Siguiente: <a href="layer_background_sprite.htm">layer_background_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_visible
+-->
+  <!-- TAGS
+layer_background_visible
+-->
+</body>
+</html>

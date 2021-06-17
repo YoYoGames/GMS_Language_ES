@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gpu_set_zwriteenable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function gpu_set_zwriteenable" />
+  <meta name="rh-index-keywords" content="gpu_set_zwriteenable" />
+  <meta name="search-keywords" content="gpu_set_zwriteenable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gpu_set_zwriteenable</h1>
+  <p>Esta función se puede utilizar para activar<tt>(true</tt>) y desactivar<tt>(false</tt>) el ordenamiento de la profundidad utilizando el buffer z. Cuando se renderiza una instancia en <span class="notranslate">GameMaker Studio 2</span>, la profundidad de un píxel generado (su coordenada z) se almacena en el buffer z,
+    entonces, si otra instancia de la escena debe ser renderizada en el mismo píxel, las dos profundidades se comparan (z-testing - ver <a href="gpu_set_ztestenable.htm"><tt>gpu_set_ztestenable()</tt></a>) y la más &quot;cercana&quot; al observador se guarda entonces
+    en el búfer z, sustituyendo a la anterior. Sin embargo, esto no es siempre lo que deseas que ocurra y hay momentos en los que puedes querer que algo se dibuje por encima de todo lo demás, sin importar cuál sea su valor z. En esos casos puedes usar esta función
+    para desactivar la escritura en el búfer z y así forzar que lo que se está dibujando se dibuje por encima de todo lo demás. Tenga en cuenta que la descripción dada aquí es para el modo de comparación de prueba z <i>por defecto</i>, pero eso puede ser cambiado</p>
+  <p>El valor por defecto es que el z-buffering está activado<tt>(true</tt>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gpu_set_zwriteenable(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>El modo de comparación a utilizar (véase la lista anterior)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">gpu_set_zwriteenable(false);<br> with (obj_Menu_Containers)<br> {
+    <br> draw_self();
+    <br> }
+    <br> gpu_set_zwriteenable(true);
+  </p>
+  <p>El código anterior desactiva la escritura en el búfer z, dibuja un número de objetos y luego lo vuelve a activar para continuar dibujando.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GPU_Control.htm">Control de la GPU</a></div>
+        <div style="float:right">Siguiente: <a href="gpu_set_fog.htm">gpu_set_fog</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gpu_set_zwriteenable
+-->
+  <!-- TAGS
+gpu_set_zwriteenable
+-->
+</body>
+</html>

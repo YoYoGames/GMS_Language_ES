@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_gravity_scale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_gravity_scale" />
+  <meta name="rh-index-keywords" content="physics_particle_set_gravity_scale" />
+  <meta name="search-keywords" content="physics_particle_set_gravity_scale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_set_gravity_scale</h1>
+  <p>Con esta función se puede establecer el factor de escala de gravedad para las partículas en la simulación física. La función está diseñada para ayudar a prevenir la inestabilidad en la simulación física, especialmente cuando se utilizan partículas muy pequeñas que pueden comportarse de forma impredecible
+    (es decir, romper la conservación del momento) en escenarios como las explosiones. Ralentizar estas partículas reduciendo la escala de gravedad puede estabilizar su comportamiento. Esta función es de alcance <i>global</i>, en el sentido de que cambiará la escala de gravedad no sólo
+    para las nuevas partículas creadas después del cambio, sino también para las ya presentes en la simulación.</p>
+  <p class="note"><b>NOTA</b>: Ajustar el número de iteraciones de actualización por paso (usando la función <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_update_iterations.htm"><tt style="font-size: 14px">physics_world_update_iterations()</tt></a></span>    también puede afectar al efecto de la gravedad sobre las partículas. Los tamaños de iteración más grandes confieren una mayor resistencia a la gravedad.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_set_gravity_scale(scale)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>escala</td>
+        <td>El factor de escala que se aplicará a la gravedad para todas las partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_particle_set_radius(15);<br> physics_particle_set_density(0.5);
+    <br> physics_particle_set_damping(1);
+    <br> physics_particle_set_gravity_scale(1);
+  </p>
+  <p>El código anterior establecerá las propiedades base para todas las partículas de la simulación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_get_max_count.htm">physics_particle_get_max_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_gravity_scale
+-->
+  <!-- TAGS
+physics_particle_set_gravity_scale
+-->
+</body>
+</html>

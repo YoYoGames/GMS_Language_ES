@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Imagen cargada</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Image Loaded async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Image Loaded Event" />
+  <meta name="search-keywords" content="Image Loaded,ev_web_image_load" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Imagen cargada</h1>
+  <p><img alt="Image Loaded Event" class="center" src="../../../assets/Images/Asset_Editors/Async_ImageLoaded.png">Este evento se activa cuando se carga una imagen en <span class="notranslate">GameMaker Studio 2</span>, ya sea en HTML5, o a través de una <a class="glossterm" data-glossterm="URL" href="#">URL</a>. Por ejemplo, digamos que usted quiere cargar una imagen de sprite, y sólo cambiar el sprite actual para la instancia a la nueva después de que ha cargado. Usted tendría algo como esto en el evento Create (o cualquier otro evento):</p>
+  <p class="code">var _url = &quot;http://www.angusgames.com/game/background1.png&quot;;<br> spr = sprite_add(_url, 0, false, false, 0, 0);</p>
+  <p>Esto empezará a cargar la imagen en el dispositivo o en el navegador, pero no bloqueará GameMaker Studio <span class="notranslate">2</span> mientras espera a que se cargue el archivo. En su lugar, <span class="notranslate">GameMaker Studio</span> 2 seguirá funcionando normalmente hasta que la imagen se cargue y la <a class="glossterm" data-glossterm="llamada de retorno" href="#">devolución de</a> llamada desencadene el <strong>Evento de Imagen Cargada</strong>, donde se crea un <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a> y se almacena en la variable especial
+    <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>. El mapa contiene la siguiente información:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">filename</span>&quot;: La ruta completa del archivo solicitado.</li>
+    <li class="dropspot">&quot;<span class="inline">id</span>&quot;: El ID del recurso que has cargado. Será el mismo que la variable a la que has asignado el recurso.</li>
+    <li class="dropspot">&quot;<span class="inline">status</span>&quot;: Devuelve un valor inferior a 0 para un error.</li>
+  </ul>
+  <p>A continuación, se asignaría la imagen recién cargada a un sprite en este evento. El siguiente ejemplo de código demuestra cómo se utilizaría la información devuelta:</p>
+  <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == spr<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;) &gt;= 0<br> {<br> sprite_index = spr;<br> } <br> }
+  </p>
+  <p>El código anterior comprobará primero la <span class="inline">id</span> del mapa DS que se ha creado, y luego comprobará la <span class="inline">status</span> de la llamada de retorno. Si el valor es mayor o igual a 0 (señalando el éxito) el resultado de
+    la llamada de retorno se utilizará para establecer el índice del sprite a la imagen recién cargada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Async_Events.htm">Eventos asíncronos</a></div>
+        <div style="float:right">Siguiente: <a href="Networking.htm">Red</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Image Loaded Event
+ev_web_image_load
+-->
+  <!-- TAGS
+ev_web_image_load
+-->
+
+</body></html>

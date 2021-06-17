@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>velocidad_de_espionaje_de_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_speed" />
+  <meta name="rh-index-keywords" content="layer_sprite_speed" />
+  <meta name="search-keywords" content="layer_sprite_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>velocidad_de_espionaje_de_capa</h1>
+  <p>Esta función puede ser utilizada para establecer la velocidad de una imagen animada que ha sido asignada a un elemento sprite. Se le da el ID del elemento sprite (que se obtiene cuando se crea un elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    o al utilizar la función <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), y luego establece la velocidad de la animación. Si el IDE ha establecido que la velocidad de la animación para el sprite utilizado se calcule como Cuadros por Cuadro de Juego, entonces el valor de la velocidad
+    es un <i>multiplicador</i>, siendo 1 el valor por defecto, y si se establece en 0.5 se reducirá a la mitad la velocidad de la animación, mientras que si se establece en 1.5 se duplicará. Sin embargo, si el IDE ha establecido que la velocidad de la animación para el sprite utilizado se calcule como
+    Fotogramas por segundo, entonces el valor de la velocidad dada es un valor literal de fotogramas por segundo, por lo que si se establece en 5, por ejemplo, se establecerá la animación para hacer un bucle de 5 fotogramas cada segundo que el juego se ejecute. Si el sprite utilizado no tiene sub-imágenes, esta función no tendrá efecto.
+    no tendrá ningún efecto.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_speed(sprite_element_id, speed);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del elemento del sprite que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>El multiplicador/valor de velocidad que se utilizará para el elemento</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Assets_water&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;gfc_water&quot;);<br> layer_sprite_speed(spr_id, 0.5);</p>
+  <p>El código anterior obtendrá el ID de la capa llamada &quot;Activos_agua&quot; y luego lo utilizará para obtener el ID del elemento sprite dado en esa capa. Este ID se utiliza entonces para cambiar la velocidad de la imagen del elemento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_xscale.htm">layer_sprite_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_speed
+-->
+  <!-- TAGS
+layer_sprite_speed
+-->
+</body>
+</html>

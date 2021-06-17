@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>textura_prefetch</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ​texture_prefetch" />
+  <meta name="rh-index-keywords" content="texture_prefetch" />
+  <meta name="search-keywords" content="texture_prefetch" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>textura_prefetch</h1>
+  <p>Esta función puede usarse para &quot;precargar&quot; una página de textura o un grupo de páginas de textura, es decir, cargarlas en la VRAM cuando sea necesario. Puedes suministrar el <b>ID de</b> la página de textura (tal y como lo devuelven las funciones <tt>texturegroup_*</tt> ) para precargar una sola página, o puedes suministrar el nombre de un grupo de texturas (tal y como se define en la función Texture Group).
+    o puedes suministrar el <b>nombre de un grupo de</b> texturas (como se define en el <a href="../../../../Settings/Texture_Groups.htm">Editor de Grupos de Text</a>uras) para obtener todas las páginas de texturas del grupo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">texture_prefetch(tex_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tex_id</td>
+        <td>El ID de la página de la textura (un entero) <i>o</i> el ID de un grupo de texturas (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _tex_array = texturegroup_get_textures( &quot;MainMenu&quot;);<br> for (var i = 0; i &lt; array_length(_tex_array); ++i;) <br> {
+    <br> texture_prefetch(_tex_array[i]);
+    <br> }
+  </p>
+  <p>El código anterior precargará todas las páginas de texturas bajo el grupo de texturas &quot;MainMenu&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Textures.htm">Texturas</a></div>
+        <div style="float:right">Siguiente: <a href="texture_flush.htm">texture_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+texture_prefetch
+-->
+  <!-- TAGS
+texture_prefetch
+-->
+</body>
+</html>

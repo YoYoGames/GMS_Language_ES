@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_create" />
+  <meta name="rh-index-keywords" content="ds_grid_create" />
+  <meta name="search-keywords" content="ds_grid_create" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_create</h1>
+  <p>Con esta función se puede crear una nueva estructura de datos DS grid de la anchura y altura de celda especificada. Esta función devuelve un id que debe ser utilizado en todas las funciones posteriores que traten con esta rejilla DS.</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se crea una estructura de datos, el valor del índice para identificarla es un valor entero que comienza en 0. Esto significa que las estructuras de datos de diferentes tipos pueden tener el <b>mismo</b> valor de índice, por lo que en caso de duda se debe utilizar la función
+    <span style="font-size:1px;"><a href="../ds_exists.htm"><tt style="font-size: 14px">ds_exists()</tt></a></span> antes de acceder a ellas. También hay que tener en cuenta que los índices se reutilizan, por lo que el valor del índice de una estructura de datos destruida puede ser utilizado por otra recién creada posteriormente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_create(w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura de la cuadrícula que se va a crear.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la cuadrícula que se va a crear.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mygrid = ds_grid_create(10, 10)</p>
+  <p>Esto crea una cuadrícula de 10 celdas de alto y 10 de ancho.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_destroy.htm">ds_grid_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_create
+-->
+  <!-- TAGS
+ds_grid_create
+-->
+
+</body></html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Reproducción de audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the Audio Playback async event." />
+  <meta name="rh-index-keywords" content="Objects - Async Audio Playback Event" />
+  <meta name="search-keywords" content="Audio Playback,ev_audio_playback" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Reproducción de audio</h1>
+  <p><img alt="Audio Playback Event" class="center" src="../../../assets/Images/Asset_Editors/Async_AudioPlayback.png">Este evento sólo puede ser activado por las funciones de reproducción de <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/Audio_Buffers.htm">la cola de audio</a> y devolverá un <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a> almacenado en la variable <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a>,
+    que contiene diferentes pares clave/valor relacionados con la cola de audio que ha disparado el evento. El evento se activa mediante una <a class="glossterm" data-glossterm="llamada de retorno" href="#">llamada de retorno</a> cuando se ha seleccionado una cola de audio para reproducir y un
+    buffer en esa cola de audio haya terminado de reproducirse.</p>
+  <p>Las siguientes llaves estarán disponibles en el mapa de DS:</p>
+  <ul class="dropspotlist">
+    <li class="dropspot">&quot;<span class="inline">queue_id</span>&quot; - el índice de la cola que ha terminado de reproducirse, devuelto por la función <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_create_play_queue.htm"><span class="inline">audio_create_play_queue()</span></a>.</li>
+    <li class="dropspot">&quot;<span class="inline">buffer_id</span>&quot; - el ID del búfer del <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">que</a> ya no se reproduce.</li>
+    <li class="dropspot">&quot;<span class="inline">queue_shutdown</span>&quot; - se pone a 0 durante la reproducción normal y a 1 cuando se recibe el evento porque <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Audio/Audio_Buffers/audio_free_play_queue.htm"><span class="inline">audio_free_play_queue()</span></a> ha
+      sido llamado. Cuando esto se establece en 1, no quiere poner en cola más datos.</li>
+  </ul>
+  <p>Dado que una cola de audio puede crearse a partir de varios búferes, este evento puede activarse varias veces para una cola a medida que se alcanza el final de cada sección de audio almacenada en el búfer, de ahí la clave &quot;buffer_id&quot;.</p>
+  <p class="note"><strong>NOTA</strong>: La variable <span class="inline" style="font-size: 14px">async_load</span> sólo es válida en los eventos asíncronos, ya que el mapa DS al que apunta se crea al inicio del evento, y se vuelve a borrar al final, quedando esta
+    con un valor de -1. Sin embargo, todas las estructuras de datos creadas a partir del evento deben ser limpiadas usando las funciones apropiadas.</p>
+  <p>En el ejemplo de uso que se da a continuación, crearemos una cola de audio con 10 sonidos de audio almacenados en el buffer y luego reproduciremos la cola:</p>
+  <p class="code">audio_queue = audio_create_play_queue(buffer_s16, 11052, audio_mono);<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> audio_queue_sound(audio_queue, audio_buffer[i], 0, buffer_get_size(audio_buffer[i]));<br> } <br> audio_play_sound(audio_queue,
+    0, true);</p>
+  <p>Cada paso del juego en el que se detecte la grabación activará un evento de grabación de audio asíncrono en el que se puede tratar la entrada grabada algo así:</p>
+  <p class="code">var queue = async_load[? &quot;queue_id&quot;];<br> var num = 0;<br> if queue = audio_queue<br> {<br> for (var i = 0; i &lt; 10; i++;)<br> {<br> if async_load[? &quot;buffer_id&quot;] == audio_buffer[i]<br> {<br> buffer_seek(audio_buffer[i],
+    buffer_seek_start, 0);<br> num = i;<br> } <br> } <br> if num == 9<br> {<br> audio_stop_sound(audio_queue);<br> audio_free_play_queue(audio_queue);<br> } <br> }
+  </p>
+  <p>Aquí comprobamos el ID de la cola y si es el que queremos, entonces comprobamos el ID del buffer para ver qué buffer ha terminado de reproducirse. También establecemos una var local a ese valor de índice para comprobarlo más tarde y establecemos el buffer de nuevo al inicio para ese
+    sonido. Una vez que nuestra variable local llega a 9, indicando que la cola ha terminado, detenemos la reproducción del sonido y liberamos la cola.</p>
+  <p> </p>
+  <div class="droptext" data-targetname="drop-down"> </div>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Async_Events.htm">Eventos asíncronos</a></div>
+        <div style="float:right">Siguiente: <a href="Audio_Recording.htm">Grabación de audio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Asynchronous Audio Playback Event
+ev_audio_playback
+Audio Playback
+-->
+  <!-- TAGS
+ev_audio_playback
+-->
+
+</body></html>

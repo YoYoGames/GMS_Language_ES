@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_tpe</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_tpe" />
+  <meta name="rh-index-keywords" content="sprite_get_tpe" />
+  <meta name="search-keywords" content="sprite_get_tpe" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_tpe</h1>
+  <p>Esta función devolverá un valor especial que se relaciona con la posición del sprite y la subimagen dados en la página de texturas utilizada por tu juego. De esta manera usted puede pasar el valor a las extensiones para su uso fuera del juego compilado, evitando efectivamente
+    las funciones de dibujo de <span class="notranslate">GameMaker Studio 2</span> y permitiendo que el sprite sea utilizado en el contenido del DOM que puede ser dibujado en cualquier lugar dentro de la ventana que contiene el lienzo del juego. Esta función es de especial interés para aquellos que deseen crear botones
+    y otros medios interactivos fuera del elemento del lienzo de <span class="notranslate">GameMaker</span> Studio 2 en su página anfitriona utilizando la función <a href="../../../Web_And_HTML5/clickable_add.htm"><tt>clickable_add()</tt></a>.</p>
+  <p class="note"><b>NOTA</b>: Esta función es sólo para HTML5.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_get_tpe(sprite, index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite para encontrar la entrada de la página de textura.</td>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la imagen del sprite.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), &quot;http://macsweeney_games.com&quot;, &quot;_blank&quot;, &quot;width=700, height=500, menubar=0, toolbar=0, scrollbars=0&quot;);</p>
+  <p>El código anterior crea un botón DOM en la posición (32, 32) de la página en la que se está ejecutando el lienzo del juego. El botón utiliza el sprite referenciado desde la página de textura como &quot;spr_MS_Home&quot; y cuando se hace clic en el botón se abrirá una nueva ventana para
+    la URL especificada y con las propiedades definidas para esa ventana.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Information.htm">Información sobre el Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_get_texture.htm">sprite_get_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_tpe
+-->
+  <!-- TAGS
+sprite_get_tpe
+-->
+</body>
+</html>

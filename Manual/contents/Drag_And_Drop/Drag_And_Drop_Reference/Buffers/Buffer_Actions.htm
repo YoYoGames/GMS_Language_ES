@@ -22,7 +22,7 @@
     <li>El argumento &quot;size&quot; de las funciones del buffer siempre se refiere al tamaño en bytes <i>del</i> buffer.</li>
     <li>Los búferes de<span class="notranslate">DnD™</span>siempre están <i>alineados a 1 byte</i>. La &quot;alineación&quot; se refiere a cómo se almacenan los datos dentro de un búfer y se utiliza cuando se usan las <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm"><span class="notranslate">Funciones de</span></a> búfer GML <a href="../../../GameMaker_Language/GML_Reference/Buffers/Buffers.htm">, pero</a>
       para <span class="notranslate">Drag And Drop</span>, no es relevante.</li>
-    <li>Los datos en los búferes se leen y escriben de manera <i>secuencial</i> (es decir, se llama a la acción <a href="Write_Buffer.htm">Escribir Búfer</a> tres veces, entonces se escribirá el primer dato, se avanzará, a la derecha el segundo dato, se avanzará y luego se escribirá
+    <li>Los datos en los búferes se leen y escriben de manera <i>secuencial</i> (es decir, se llama a la acción <a href="Write_Buffer.htm">Escribir Búfer</a> tres veces, entonces se escribirá el primer dato, se avanzará, se leerá el segundo dato, se avanzará y luego se escribirá
       el último dato), con algo llamado valor de &quot;búsqueda&quot; para indicarle en qué parte del buffer tendrá lugar la siguiente lectura/escritura.</li>
     <li>Todos los datos se escriben en el búfer y se devuelven desde el búfer como una <b>cadena</b>, por lo que si ha almacenado algún número real tendrá que utilizar una de las <a href="../Data_Types/Data_Type_Actions.htm">acciones de tipo de datos</a> para convertirlo de la cadena
       al valor.</li>

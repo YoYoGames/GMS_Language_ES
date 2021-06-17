@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Notificaciones Push</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for all the Push Notification functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Push Notifications,local notifications,remote notifications" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Notificaciones Push</h1>
+  <p>En los dispositivos móviles, normalmente sólo puede haber una aplicación activa en primer plano en todo momento, pero muchos juegos y aplicaciones funcionan en un entorno temporal o interconectado en el que pueden producirse eventos de interés para los usuarios cuando la aplicación <i>no</i> está en primer plano. En estos casos, las notificaciones push <b>locales</b> y <b>remotas</b> pueden permitir que estos juegos notifiquen a sus usuarios cuando se produzcan eventos.</p>
+  <p>Cuando el sistema operativo entrega una notificación push local o remota y la aplicación de destino no se está ejecutando en primer plano, presenta la notificación al usuario en forma de banner. Si hay una alerta de notificación y el usuario pulsa
+    en ella, entonces se lanza el juego y se llama a un <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">Evento Push Asíncrono</a> donde se puede comprobar la cadena de devolución de llamada que se especifica y resolver el push
+    basándose en su valor. Si la aplicación se está ejecutando en primer plano cuando se entrega la notificación, la aplicación seguirá recibiendo un Evento Push Asíncrono, pero el usuario no recibirá ningún mensaje en pantalla a menos que lo cree usted mismo.</p>
+  <p>Hay algunas diferencias a tener en cuenta entre las plataformas soportadas:</p>
+  <ul class="colour">
+    <li>En <span class="notranslate">Android</span>, <i>todas las</i> notificaciones recibidas cuando la aplicación no se está ejecutando/en segundo plano, serán almacenadas, y los datos entregados por el evento async la próxima vez que la aplicación se ejecute y tendrás que habilitar las notificaciones push dentro de las <a href="../../../../Settings/Game_Options/Android.htm">Opciones de Juego<span class="notranslate">de Android</span></a> para que funcionen.</li>
+    <li>En <span class="notranslate">iOS</span>, los datos de una determinada notificación sólo se entregarán cuando se seleccione la notificación (o si la aplicación se está ejecutando en primer plano cuando se reciba la notificación) y tendrás que habilitar las notificaciones push en las <a href="../../../../Settings/Game_Options/iOS.htm">Opciones de Juego<span class="notranslate">de iOS</span></a> para que funcionen.</li>
+  </ul>
+  <p> </p>
+  <h2>Notificaciones locales</h2>
+  <p>Una notificación push local es local para el dispositivo en el que está instalado el juego, y no requiere ningún servidor back-end. Basta con establecer la fecha y la hora de la notificación y ésta se mostrará al usuario si el juego no se está ejecutando en ese momento. Este tipo
+    Este tipo de notificación es útil para establecer &quot;recordatorios&quot; para que el usuario juegue de nuevo, o para ofrecer una recompensa diaria por jugar, etc... y cuando el usuario toca la notificación se inicia el juego y pasa una cadena de datos que puede ser
+    que puede ser analizada por el juego para dar una recompensa o lo que sea.</p>
+  <p><b>NOTA</b>: Esta funcionalidad está limitada a los <b><span class="notranslate">iOS</span></b> y <b><span class="notranslate">Android</span></b> módulos de destino. Para <b><span class="notranslate">Android</span></b> deberá tener instalada la extensión de <a href="https://help.yoyogames.com/hc/en-us/articles/360024582692" target="_blank">notificaciones push de Google</a>.</p>
+  <p>Las siguientes funciones están disponibles para las notificaciones locales:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="push_local_notification.htm">push_local_notification</a></li>
+    <li><a href="push_get_first_local_notification.htm">push_get_first_local_notification</a></li>
+    <li><a href="push_get_next_local_notification.htm">push_get_next_local_notification</a></li>
+    <li><a href="push_cancel_local_notification.htm">push_cancel_local_notification</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h2><label for="b">Notificaciones remotas</label></h2>
+  <p>Los mensajes de notificación remota son enviados por un servidor a un servicio proporcionado por la tienda de aplicaciones de la plataforma del dispositivo, y éste reenvía esos mensajes a todos los dispositivos en los que está instalada tu aplicación. Esto es compatible con <span class="notranslate">GameMaker Studio 2</span> en los módulos de destino de
+    módulos de destino de <span class="notranslate">iOS</span> y <span class="notranslate">Android</span>.</p>
+  <p>No hay funciones en <span class="notranslate">GameMaker Studio</span> 2 para gestionar las notificaciones remotas, ya que todas deben ser generadas por tu servidor y gestionadas por las respectivas tiendas de aplicaciones. Sin embargo, una vez configurado correctamente, los juegos de <span class="notranslate">GameMaker</span> Studio 2 recibirán estas notificaciones,
+    que luego pueden ser tratados en el <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Push_Notifications.htm">evento push asíncrono</a>, como lo haría una notificación local.</p>
+  <p>Tenga en cuenta que no hay garantía de que se entreguen las notificaciones push remotas, y que la carga de datos permitida es bastante pequeña. Esto varía entre las plataformas, pero <span class="notranslate">iOS</span> es particularmente limitado - el servicio de la manzana sólo entrega la notificación más reciente
+    que debe ser seleccionada por el destinatario para que los datos de la carga útil sean entregados a su evento asíncrono, y estas notificaciones tienen un tamaño máximo de carga útil de 256bytes. Normalmente, una notificación push remota sólo indicaría que hay nuevos datos
+    están disponibles en su servidor, por ejemplo.</p>
+  <p class="note"><b>NOTA</b>: La implementación del lado del servidor depende totalmente del usuario final, y <span class="notranslate">YoYo Games</span> no proporciona ningún tipo de apoyo para ese lado de las cosas, aparte de la información básica de configuración disponible en su Base de Conocimiento.</p>
+  <p>Para obtener más detalles sobre cómo configurar un servidor, así como información específica sobre las plataformas disponibles, consulte los siguientes artículos:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/360024582652"><span class="notranslate">Android</span>: Notificaciones remotas con Firebase</a></li>
+    <li><a href="https://help.yoyogames.com/hc/en-us/articles/216753838"><span class="notranslate">iOS</span>: Notificaciones Push Remotas</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Asynchronous_Functions.htm">Funciones asíncronas</a></div>
+        <div style="float:right">Siguiente: <a href="../Facebook/Facebook.htm">Facebook</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Push Notification Functions
+-->
+  <!-- TAGS
+push_functions
+-->
+</body>
+</html>

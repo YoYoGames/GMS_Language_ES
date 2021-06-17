@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_create" />
+  <meta name="rh-index-keywords" content="animcurve_create" />
+  <meta name="search-keywords" content="animcurve_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_create</h1>
+  <p>Esta función creará una <a href="../../../GML_Overview/Structs.htm">estructura de</a> curva de animación vacía, lista para que usted la rellene con los datos de los canales. La función devolverá un puntero a la estructura y ésta se utilizará para añadir canales
+    y otros datos a la curva de animación. También se puede suministrar a funciones como <a href="animcurve_get.htm"><tt>animcurve_get()</tt></a> para obtener posteriormente los datos de la curva.</p>
+  <p>Cuando se utiliza esta función, la estructura creada no tendrá datos en ella, y para utilizarla se debe añadir al menos un canal y el canal debe tener puntos añadidos. Para añadir un canal, vea la función <a href="animcurve_channel_new.htm"><tt>animcurve_channel_new()</tt></a>,
+    y para añadir puntos al canal, vea la función <a href="animcurve_point_new.htm"><tt>animcurve_point_new()</tt></a>. Además, puede dar un nombre a la estructura de la curva de animación estableciendo la variable &quot;name&quot; (como se muestra en
+    el código de ejemplo, más abajo). Los canales añadidos a una nueva curva de animación deben ser añadidos como una <a href="../../../GML_Overview/Arrays.htm">matriz</a>, donde cada elemento de la matriz hace referencia a una estructura de canal, y los puntos de un canal también deben ser añadidos
+    como una matriz, donde cada elemento de la matriz hace referencia a una estructura de puntos.</p>
+  <p>Tenga en cuenta que las curvas de animación creadas de esta manera <b>deben ser eliminadas cuando ya</b> no se necesiten, ya que de lo contrario ocuparán espacio en la memoria, lo que puede conducir a una fuga de memoria, ralentizando y eventualmente estrellando su juego.
+    Puedes eliminar una curva de animación cuando ya no la necesites utilizando la función <a href="animcurve_destroy.htm"><tt>animcurve_destroy()</tt></a>. No es necesario limpiar ningún canal o punto de datos dentro de la curva, ya que esto se hará
+    ya que el recolector de basura lo hará automáticamente cuando la curva sea destruida.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis: </h4>
+  <p class="code">animcurve_create();</p>
+  <p> </p>
+  <h4>Devuelve: </h4>
+  <p class="code">Referencia de la estructura</p>
+  <p> </p>
+  <h4>Ejemplo: </h4>
+  <p class="code">mi_curva = animcurve_create();<br> mi_curva.name = &quot;Mi_Curva&quot;;<br> var _channels = array_create(1);<br> _channels[0] = animcurve_channel_new();<br> _channels[0].name = &quot;alpha&quot;;<br> _channels[0].type = animcurvetype_catmullrom;<br> _channels[0].iteraciones = 8;<br> var _points = array_create(3);<br> _points[0] = animcurve_point_new();<br> _points[0].posx = 0;<br> _points[0].value = 0;<br> _points[1] = animcurve_point_new();<br> _points[1].posx = 0.5;<br> _points[1].value
+    = 1;<br> _puntos[2] = animcurve_point_new();<br> _puntos[2].posx = 1;<br> _puntos[2].value = 0;<br> _channels[0].points = _points;<br> my_curve.channels = _channels;</p>
+  <p>El código anterior crea una nueva estructura de curva de animación y la almacena en la variable &quot;mi_curva&quot;. Esta estructura se rellena con un nombre y una matriz de canales. La matriz de canales contiene un único canal con tres puntos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation_Curves.htm">Curvas de animación</a></div>
+        <div style="float:right">Siguiente: <a href="animcurve_channel_new.htm">animcurve_channel_new</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_create
+-->
+  <!-- TAGS
+animcurve_create
+-->
+</body>
+</html>

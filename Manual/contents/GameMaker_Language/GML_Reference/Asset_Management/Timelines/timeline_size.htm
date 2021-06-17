@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tamaño de la línea de tiempo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_size" />
+  <meta name="rh-index-keywords" content="timeline_size" />
+  <meta name="search-keywords" content="timeline_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tamaño de la línea de tiempo</h1>
+  <p>Con esta función puedes obtener el número total de momentos activos para una línea de tiempo (un momento &quot;activo&quot; es aquel que tiene código o DnD™ <span class="notranslate">añadido</span>). Esto puede ser útil cuando se crean líneas de tiempo dinámicas utilizando las funciones <a href="timeline_moment_add_script.htm"><tt>timeline_moment_add_script()</tt></a> y <a href="timeline_moment_clear.htm"><tt>timeline_moment_clear()</tt></a> ya que puedes comprobar si una línea de tiempo dada tiene el número correcto de momentos activos o ninguno.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">timeline_size(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la línea de tiempo de la que se obtiene la información.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si timeline_size(global.tl) == 0<br> {
+    <br> timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy);<br> }
+  </p>
+  <p>El código anterior comprueba el tamaño de la línea de tiempo dada, y si devuelve 0 (es decir, la línea de tiempo no tiene momentos activos) añadirá una función de script que se utilizará en un momento aleatorio dentro de la línea de tiempo indexada en la variable global &quot;tl&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timelines.htm">Líneas de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="timeline_max_moment.htm">timeline_max_moment</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_size
+-->
+  <!-- TAGS
+timeline_size
+-->
+</body>
+</html>

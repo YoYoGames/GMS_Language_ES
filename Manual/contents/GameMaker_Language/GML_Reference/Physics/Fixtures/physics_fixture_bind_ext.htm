@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_fixture_bind_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_fixture_bind_ext" />
+  <meta name="rh-index-keywords" content="physics_fixture_bind_ext" />
+  <meta name="search-keywords" content="physics_fixture_bind_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_fixture_bind_ext</h1>
+  <p>Una vez que hayamos definido nuestro fixture, éste debe estar vinculado a una instancia. Esto significa que sus <i>propiedades</i> se transfieren a la instancia seleccionada, <b>no al propio fixture</b>, de modo que un fixture puede estar ligado a múltiples instancias si todas
+    tienen las mismas propiedades. Puede especificar un índice de objeto para el objetivo y todas las instancias presentes en la sala en ese momento recibirán las propiedades de ese objeto (pero no las nuevas instancias del objeto creadas posteriormente), o puede utilizar las palabras clave especiales
+   <i>other</i> y <i>all</i>. También se puede especificar un objeto padre y todas las instancias hijas con ese padre también recibirán el fixture. Una vez que el fixture ha sido vinculado a todas las instancias que necesita, puede ser eliminado si ya no es necesario y las instancias con ese fixture serán eliminadas.
+    Si ya no es necesario, se puede eliminar y las instancias con las propiedades de ese accesorio no se verán afectadas y mantendrán esas propiedades.</p>
+  <p>Normalmente, el fixture se vinculará a la instancia con el centro de masa posicionado en el origen de la instancia, sin embargo, esto no es siempre lo que se requiere, por lo que esta función también le permite desplazar la posición x e y donde el fixture
+    en una cantidad determinada (si no necesita esto, utilice <a href="physics_fixture_bind.htm"><tt>physics_fixture_bind()</tt></a> en su lugar). Es importante tener en cuenta que un dispositivo sólo puede admitir <i>un único</i> desplazamiento, ya que la adición de múltiples desplazamientos
+    a un solo fixture no es soportado por Box2D.</p>
+  <p><img alt="Extended physics fixture binding example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_fixture_bind_ext_image.png">La función también devolverá un valor &quot;id&quot; único para el <i>fixture</i> vinculado (no el<b>fixture en sí) que</b> puede utilizarse para eliminar (&quot;desvincular&quot;) las propiedades físicas de la instancia utilizando la función <a href="physics_remove_fixture.htm"><tt>physics_remove_fixture()</tt></a>. Esto le permite
+    añadir y eliminar propiedades físicas de una instancia sin destruir y volver a crear objetos.</p>
+  <p class="note"><b>NOTA</b>: Los accesorios deben ser eliminados cuando ya no se necesiten, ya que si no se hace así se puede producir una fuga de memoria que ralentizará y acabará por bloquear el juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_fixture_bind_ext(fixture, target, xoffset, yoffset)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>accesorio</td>
+        <td>el accesorio que va a ser atado</td>
+      </tr>
+      <tr>
+        <td>objetivo</td>
+        <td>la instancia de destino que va a recibir el fixture (puede ser un id de instancia, un id de objeto, <i>otro</i>, o <i>todos</i>)</td>
+      </tr>
+      <tr>
+        <td>xoffset</td>
+        <td>el desplazamiento a lo largo del eje x</td>
+      </tr>
+      <tr>
+        <td>yffset</td>
+        <td>el desplazamiento a lo largo del eje y</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var fix, inst;<br> fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(fix, 16);<br> physics_fixture_set_density(fix, 1.0);<br> inst = instance_create_layer(x, y, &quot;Instances&quot;, genericBodyObject);<br> my_fix = physics_fixture_bind_ext(fix,
+    inst, sprite_width / 2, -(sprite_height / 2));<br> physics_fixture_delete(fix);
+  </p>
+  <p>El código anterior creará un fixture y asignará su índice a la variable &quot;fix&quot;. A continuación, define la forma y la densidad del fixture antes de vincularlo a la instancia en un desplazamiento basado en la anchura y la altura del sprite. El índice de
+    El índice del fixture <b>vinculado</b> se almacena en la variable &quot;mi_fijo&quot;. Por último, el fixture en sí se elimina para evitar fugas de memoria cuando ya no es necesario.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fixtures.htm">Instalaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_fixture_bind_ext
+-->
+  <!-- TAGS
+physics_fixture_bind_ext
+-->
+</body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_add_region</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_add_region" />
+  <meta name="rh-index-keywords" content="ds_grid_add_region" />
+  <meta name="search-keywords" content="ds_grid_add_region" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_add_region</h1>
+  <p>Esta función puede utilizarse para añadir un valor dado (real o de cadena) a todos los valores de las celdas que se encuentran dentro del área definida de una cuadrícula. El valor a añadir debe ser del mismo tipo que el que se encuentra en las celdas de la cuadrícula, es decir, no se puede añadir una cadena a
+    una real o viceversa, y para las cadenas esto corresponde a la concatenación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_add_region(index, x1, y1, x2, y2, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La posición x de la izquierda de la región en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La posición y de la parte superior de la región en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La posición x de la derecha de la región en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La posición y del fondo de la región en la cuadrícula.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor a añadir a las celdas de la región.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_grid_add_region(grid, 2, 4, 5, 5, &quot;.&quot;)</p>
+  <p>Esto añadiría &quot;.&quot; a todas las cadenas contenidas en las celdas dentro de la región definida de la rejilla DS referenciada por la variable &quot;grid&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_add_disk.htm">ds_grid_add_disk</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_add_region
+-->
+  <!-- TAGS
+ds_grid_add_region
+-->
+
+</body></html>

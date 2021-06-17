@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>display_set_gui_size</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for display_set_gui_size" />
+  <meta name="rh-index-keywords" content="display_set_gui_size" />
+  <meta name="search-keywords" content="display_set_gui_size" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>display_set_gui_size</h1>
+  <p>Esta función sólo afectará a las cosas dibujadas en el <a href="../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">evento Draw GUI</a> y puede utilizarse para establecer una anchura y altura específicas para todos los componentes de la GUI en ese evento, y no importa qué
+    no importa el tamaño de la pantalla o de la ventana que se utilice para mostrar la GUI, se escalará para que se ajuste correctamente. La posición de la GUI (es decir, la posición (0,0)) dependerá de si ha utilizado la función <a href="display_set_gui_maximise.htm"><tt>display_set_gui_maximise()</tt></a>    o no. Si no utiliza esta función (la configuración por defecto) entonces la capa de la GUI se posicionará con su punto (0,0) en la misma posición que la de la superficie de la aplicación (el área donde se está dibujando su juego) y la anchura y la altura serán
+    se estirarán para ajustarse a esta superficie, de modo que si se establece una anchura de la GUI de 256px con esta función cuando la superficie de la aplicación es de 512px, se estirarán esos 256 píxeles para ajustarse, haciendo que los píxeles sean el doble de grandes. Esto es ideal para aquellos juegos
+    que tienen la corrección de la relación de aspecto establecida en la configuración global del juego.</p>
+  <p>Si has usado la función <tt>display_set_gui_maximise()</tt> entonces la posición (0,0) para la capa de la GUI será por defecto la esquina superior izquierda de la ventana del juego, o de la pantalla (cuando esté en pantalla completa o en dispositivos), con el factor de escalado establecido por esa función,
+    y la anchura y la altura establecidas por ésta. Puedes restablecer la capa GUI en cualquier momento a la configuración por defecto llamando a esta función usando -1 como anchura y altura - esto establecerá la posición (0, 0) a la superficie de la aplicación y la anchura
+    y la altura se restablecerán a 1:1 con la superficie también.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">display_set_gui_size(width, height);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>La anchura de la interfaz gráfica de usuario</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura de la interfaz gráfica de usuario</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">display_set_gui_size(768, 1024);</p>
+  <p>El código anterior bloqueará el evento draw GUI a la anchura y altura dadas, escalando todos los componentes para que se ajusten a la superficie de la aplicación, o a la pantalla, usando esa proporción.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear"><a href="Cameras_And_Display.htm">Cámaras y pantalla</a>
+        <div style="float:left">Atrás: </div>
+        <div style="float:right">Siguiente: <a href="display_set_gui_maximise.htm">display_set_gui_maximise</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+display_set_gui_size
+-->
+  <!-- TAGS
+display_set_gui_size
+-->
+</body>
+</html>

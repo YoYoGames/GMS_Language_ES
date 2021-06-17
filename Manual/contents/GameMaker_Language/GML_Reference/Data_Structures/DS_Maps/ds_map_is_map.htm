@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_is_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_is_map" />
+  <meta name="rh-index-keywords" content="ds_map_is_map" />
+  <meta name="search-keywords" content="ds_map_is_map" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_is_map</h1>
+  <p>Con esta función se puede comprobar si un mapa DS está almacenado en la clave de mapa dada. Si la clave dada contiene un ID de mapa DS, entonces la función devolverá <tt>true</tt>, de lo contrario devolverá <tt>false</tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_is_map(id, key)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id del ds_map a utilizar.</td>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>La clave para reemplazar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var size = ds_map_size(inventory) ;<br> var key = ds_map_find_first(inventory);<br> for (var i = 0; i &lt; size; i++;)<br> {
+    <br> if ds_map_is_map(inventory, key)<br> {
+    <br> ds_map_destroy(key);
+    <br> }
+    <br> key = ds_map_find_next(inventory);<br> } <br> ds_map_destroy(inventario);
+  </p>
+  <p>El código anterior hace un bucle a través de un mapa DS y comprueba si alguna de las claves dentro de él son para otros mapas DS. Si lo son, entonces el mapa DS almacenado es destruido, y al final del bucle el mapa DS principal es destruido también.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_exists.htm">ds_map_exists</a><span class="footer"><span class="buttons"></span></span>
+        </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_is_map
+-->
+  <!-- TAGS
+ds_map_is_map
+-->
+
+</body></html>

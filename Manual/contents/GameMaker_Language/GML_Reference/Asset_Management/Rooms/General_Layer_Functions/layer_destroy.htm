@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>destruir_capas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_destroy" />
+  <meta name="rh-index-keywords" content="layer_destroy" />
+  <meta name="search-keywords" content="layer_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>destruir_capas</h1>
+  <p>Esta función destruirá la capa dada. Se suministra el ID de la capa (que se obtiene cuando se crea la capa usando <a href="layer_create.htm"><tt>layer_create()</tt></a>) o el nombre de la capa (como una cadena - esto tendrá un impacto en el rendimiento) y esto
+    la eliminará de la sala actual. Si la capa ha sido diseñada en el editor de salas, la próxima vez que abandone la sala y regrese, la capa se volverá a crear con el contenido original, sin embargo, si la sala es persistente,
+    la capa será eliminada a menos que la persistencia de la sala sea desactivada de nuevo. Cuando se destruye una capa de esta manera, todo su contenido será eliminado también, por lo que cualquier ID de referencia para fondos o mapas de azulejos, etc... ya no será válido y cualquier instancia
+    asignadas a la capa serán destruidas (realizando su <strong>Evento de Destrucción</strong> al mismo tiempo, si tienen uno, así como el <strong>Evento de Limpieza</strong>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_destroy(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a destruir (o el nombre de la capa como cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !instance_exists(obj_Bullet_Parent)<br> {
+    <br> layer_destroy(global.Bullet_Layer);
+    <br> }
+  </p>
+  <p>El código anterior comprobará si existe alguna instancia del objeto &quot;obj_Bullet_Parent&quot;, y si no existe destruirá la capa con el ID almacenado en la variable global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_x.htm">layer_x</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_destroy
+-->
+  <!-- TAGS
+layer_destroy
+-->
+</body>
+</html>

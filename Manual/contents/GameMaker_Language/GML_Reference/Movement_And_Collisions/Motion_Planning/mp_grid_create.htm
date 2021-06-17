@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_create" />
+  <meta name="rh-index-keywords" content="mp_grid_create" />
+  <meta name="search-keywords" content="mp_grid_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_create</h1>
+  <p>Con esta función se puede crear un mp_grid para las funciones de planificación del movimiento. Devuelve un índice que debe ser almacenado en una variable para su uso en todas las demás llamadas a la función MP grid. Las coordenadas x e y indican la posición de la esquina superior izquierda
+    de la rejilla, hcells y vcells indican el número de celdas horizontales y verticales que se crearán dentro de la rejilla, y la anchura y altura de las celdas indican el tamaño de las mismas en píxeles. Puede crear y mantener varias estructuras de rejilla al mismo tiempo
+    mismo momento si las necesitas para cosas diferentes, pero ten en cuenta que cada cuadrícula requerirá memoria, y cuantas más celdas tengan más memoria necesitarán. También hay que tener en cuenta que las funciones MP son bastante pesadas para el procesador, así que cuanto más a menudo
+    más a menudo las llames y cuanto mayor sea la resolución de las celdas, más probable será que el rendimiento disminuya.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_grid_create(left, top, hcells, vcells, cellwidth, cellheight):</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>Coordenada x inicial del mp_grid en la sala</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>Coordenada inicial y de la cuadrícula mp en la sala</td>
+      </tr>
+      <tr>
+        <td>hcells</td>
+        <td>Número de celdas horizontales que contendrá el mp_grid</td>
+      </tr>
+      <tr>
+        <td>vcells</td>
+        <td>Número de celdas verticales que contendrá el mp_grid</td>
+      </tr>
+      <tr>
+        <td>ancho de celda</td>
+        <td>La anchura (en píxeles) de cada celda individual del mp_grid</td>
+      </tr>
+      <tr>
+        <td>altura de la celda</td>
+        <td>La altura (en píxeles) de cada celda individual del mp_grid</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.grid = mp_grid_create(0, 0, room_width / 32, room_height /32, 32, 32);</p>
+  <p>El código anterior crea una variable global &quot;grid&quot;, luego genera un mp_grid y asigna su índice (id) a esa variable para usarlo en todas las llamadas posteriores a la función mp_grid. La cuadrícula cubre la habitación, con una resolución de celdas de 32x32 píxeles. Esto significa que
+    que, por ejemplo, en una habitación de 640x480, la cuadrícula contendría 300 celdas: 20 celdas horizontales (640 / 32) multiplicadas por 15 celdas verticales (480 /32) dan 300 celdas</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_destroy.htm">mp_grid_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_create
+-->
+  <!-- TAGS
+mp_grid_create
+-->
+</body>
+</html>

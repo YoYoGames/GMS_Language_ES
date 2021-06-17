@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_alpha_from_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_alpha_from_sprite" />
+  <meta name="rh-index-keywords" content="sprite_set_alpha_from_sprite" />
+  <meta name="search-keywords" content="sprite_set_alpha_from_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_alpha_from_sprite</h1>
+  <p>Esta función utiliza el valor/saturación de un sprite y lo multiplica por el alfa del sprite de destino. Idealmente, el sprite que se utiliza para generar el nuevo mapa alfa debería ser de escala de grises, con las áreas blancas teniendo un valor alfa equivalente a 1
+    (opaco), las áreas negras equivalentes al alfa 0 (transparente), y las áreas grises con un alfa entre 0 y 1. El sprite al que se le está estableciendo el alfa <i>no puede ser un recurso permanente</i>, ni tampoco el sprite que se utiliza para establecer el alfa,
+    ya que esto dará un error. Esto significa que debes crear dos sprites completamente nuevos &quot;sobre la marcha&quot; de alguna manera para que la función funcione correctamente. Esto puede lograrse utilizando superficies, o creando un sprite desde la pantalla (el código
+    muestra cómo se puede lograr el efecto con las superficies).</p>
+  <p class="note"><b>NOTA</b>: Esta función sólo es útil para sprites <b>de mapa de bits</b> y no funcionará con sprites SWF o JSON (Spine).</p>
+  <p>A continuación se muestra una imagen que ilustra cómo funciona esta función:</p>
+  <p><img alt="Sprite Set Alpha Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_alpha.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_set_alpha_from_sprite(ind, spr);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sprite para cambiar el mapa de transparencia.</td>
+      </tr>
+      <tr>
+        <td>spr</td>
+        <td>El índice del sprite del que se tomarán los datos del mapa de transparencia.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo extendido mostramos cómo se puede crear un sprite de efecto especial a partir de dos recursos de sprite. Para empezar necesitamos tener una variable de controlador en el <b>evento Create</b> de la instancia. Esta variable es para asegurar que el sprite sólo se
+    se cree una sola vez:</p>
+  <p class="code">spr_create = true;</p>
+  <p>Una vez hecho esto, tenemos que ir al <b>evento Draw</b> y añadir este código:</p>
+  <p class="code">si spr_create<br> {
+    <br> spr_create = false;<br> var _sw = sprite_get_width(spr_Explosion_Alpha);<br> var _sh = sprite_get_height(spr_Explosion_Alpha);<br> var _xo = sprite_get_xoffset(spr_Gradient);<br> var _yo = sprite_get_yoffset(spr_Gradient);<br> var _surf = surface_create(_sw, _sh);<br> surface_set_target(_surf);
+    <br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Gradient, 0, 0, 0);<br> sprite_index = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo);<br> draw_clear_alpha(c_black, 0);<br> draw_sprite(spr_Explosion_Alpha,
+    0, _xo, _yo);<br> var _spr = sprite_create_from_surface(_surf, 0, 0, _sw, _sh, false, false, _xo, _yo);<br> surface_reset_target();
+    <br> surface_free(_surf);
+    <br> sprite_set_alpha_from_sprite(sprite_index, _spr);<br> sprite_delete(_spr);
+    <br> }
+    <br> draw_sprite(sprite_index, 0, x, y);</p>
+  <p>El código anterior primero comprueba si la variable de control es verdadera o no, y si lo es, entonces ejecuta el código para establecer el alfa del sprite, poniendo la variable en falso para evitar que el código se ejecute más de una vez. En este caso, crea una superficie
+    del tamaño de la máscara alfa que queremos usar, luego dibuja el sprite al que se le va a cambiar el alfa en la superficie y crea un nuevo sprite a partir de él, asignándolo como <tt>sprite_index</tt> del objeto. A continuación, el código borra la superficie y
+    dibuja el sprite del mapa alfa en ella y crea otro nuevo sprite, almacenando su índice en una variable local. Finalmente, el nuevo sprite asignado al objeto obtiene su mapa alfa de este sprite temporal, la superficie es liberada y el sprite temporal es
+    temporal.</p>
+  <p>Hay una última cosa que hacer aquí, y es eliminar de la memoria el sprite que ha sido creado para el objeto cuando no está en uso. Esto se haría en el <b>Evento de Destrucción</b> o en el <b>Evento de Finalización de la</b> Habitación como este:</p>
+  <p class="code">sprite_delete(sprite_index);</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_set_cache_size.htm">sprite_set_cache_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_alpha_from_sprite
+-->
+  <!-- TAGS
+sprite_set_alpha_from_sprite
+-->
+</body>
+</html>

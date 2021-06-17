@@ -8,7 +8,7 @@
   Las funciones que definas aquí tendrán un alcance global y actuarán como cualquier acción integrada de DnD™
     es decir, pueden tomar diferentes valores - o ninguno - llamadosargumentos (o parámetros), y luego realizar una tarea, devolviendo un valor o no devolviendo nada
     según sea necesario. A continuación, llamarías a la función en tus juegos utilizando la acción de llamada a la función , que tiene el siguiente aspecto:
-  Para crear un script de DnD™, sólo tienes que utilizar el botón derecho del ratón  en cualquier lugar del Navegador de Activos y seleccionar Crear y luego Script. Esto creará un nuevo script de DnD™y abrirá la ventana del editor:
+  Para crear un script de DnD™, basta con utilizar el botón derecho del ratón  en cualquier lugar del Navegador de Activos y seleccionar Crear y luego Script. Esto creará un nuevo script de DnD™y abrirá la ventana del editor:
   Puede nombrar el script haciendo clic con el botón derecho del ratón en  en el Navegador de Activos y seleccionando Renombrar (o haciendo un doble clic izquierdo lento ), pero tenga en cuenta que el nombre del script
     debe ajustarse a las reglas generales de los activos, por lo que debe comenzar con una letra y contener sólo letras, números o el símbolo de la barra inferior "_". Su script también será pre-rellenado con una acción de Declarar una nueva función,
     lista para que usted la rellene, y puede añadir más declaraciones de funciones según sea necesario (un solo script puede contener múltiples funciones, lo cual es útil para agrupar funciones con un uso similar o conectado).
@@ -17,11 +17,11 @@
   Cuando se define una nueva función, se le da un nombre y también se define el nombre de los argumentos que toma, si es que toma alguno (las funciones pueden no tomar argumentos o tomar múltiples argumentos dependiendo de lo que se requiera). Si se le da un nombre a los argumentos, éstos se utilizarán en las acciones a las que llame la función.
     Si da nombres de argumentos, éstos se utilizarán en las acciones a las que llame la función como variables locales que contienen los valores de entrada de la función.
   También es una buena práctica añadir un comentario para la acción que explique lo que hace, siguiendo las reglas de JS Doc. Por ejemplo, considere esta función set_vec():
-  Para llamar al script de arriba, simplemente se usaría la acción de Llamar a la Función,
+  Para llamar al script de arriba simplemente se debe usar la acción de Llamar Función,
     así:
   No sólo puede pasar argumentos a una función, sino que también puede pedir a una función que devuelva un valor
     (utilizando la acción Return  ), por lo que puedes
-    puede usarlos para (por ejemplo) construir métodos de cálculo o devolver un ID de instancia después de una compleja detección de colisión o cualquier número de cosas. Tenga en cuenta, sin embargo, que el uso de return termina la función, y por lo tanto no se ejecutará ninguna acción colocada después de
+    puede utilizarlos para (por ejemplo) construir métodos de cálculo o devolver un ID de instancia después de una detección de colisión compleja o cualquier número de cosas. Tenga en cuenta, sin embargo, que el uso de return finaliza la función, por lo que no se ejecutará ninguna acción colocada después de
     se ejecutará, y esto significa que hay que pensar bien cómo se estructuran las funciones.
   A continuación se muestra una función de arrastrar y soltar que devuelve un valor:
   

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>El perfilador</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers the profiler in the debugger" />
+  <meta name="rh-index-keywords" content="Debugger - Profiling" />
+  <meta name="search-keywords" content="profile,profiler,profile game" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El perfilador</h1>
+  <p>El depurador te permite recorrer tu código y encontrar cualquier problema con la base de código, pero a veces necesitas comprobar detalles más sutiles para optimizar adecuadamente tus juegos. La opción de <strong>Perfil </strong>ayuda a hacer eso dando
+    una visión general del rendimiento, mostrando el tiempo que se tarda en llamar a las funciones, los scripts, e incluso el tiempo que tarda un evento específico en completarse.</p>
+  <p><img alt="Debug Profile Window" class="center" src="../../assets/Images/IDE Tools/Debug_Profile.png">Aparte de la ventana principal que muestra todos los diferentes eventos, scripts y funciones que se llaman, también tiene las siguientes opciones para utilizar el
+    Perfilador:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Activar / Desactivar</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Este es el botón para habilitar o deshabilitar el perfilador. Cuando está habilitado, el perfilador se iniciará y empezará a ver los eventos, scripts y funciones listados en la ventana principal junto con diferentes valores de datos para cada uno de ellos. La forma en que se muestran estos datos
+      dependerá de la <strong>Visualización del Tiempo</strong> y del <strong>Modo de Vista</strong> (ambos se explican con mayor profundidad más adelante).</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Pantalla de la hora</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Esta casilla permite cambiar entre el tiempo <strong>medio </strong>y el tiempo <strong>absoluto </strong>del perfilador. Cuando no está marcada, los valores mostrados en la ventana principal serán el número <em>total </em>de llamadas realizadas a la
+      función, script o evento y el tiempo <em>total </em>empleado (los tiempos están en <strong>microsegundos</strong>) a lo largo del perfil. Sin embargo, si se habilita esta opción, estas columnas muestran el tiempo <em>medio </em>empleado por paso para cada función
+      script o evento, y el número <em>medio </em>de veces que fue llamado.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Ver Modo</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Este menú le permite elegir el modo de vista, que puede ser de <strong>arriba a abajo</strong> o de <strong>abajo a arriba</strong>.</p>
+    <p class="dropspot">Seleccionando el modo de vista <strong>Top Down</strong> se mostrará el perfil de arriba hacia abajo (más o menos lo mismo que la jerarquía de la pila de llamadas) por lo que se mostrará el evento, luego el script y luego cualquier función utilizada. Tenga en cuenta que puede hacer doble clic en <img alt="LMB Icon" class="icon" height="24" data-cke-saved-src="../../assets/Images/Icons/Icon_LMB.png" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquiera de las entradas para que se abra en la ventana de depuración de <strong>origen </strong>si
+      tiene una. Si ves un icono <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> al lado de un nombre, entonces hay más llamadas a scripts o funciones dentro de esa
+      sección, y al hacer clic en <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png"> se expandirá el árbol para mostrarlas.</p>
+    <p class="dropspot">Seleccionando el modo de vista de <strong>abajo hacia arriba</strong> se mostrarán las cosas de abajo hacia arriba para que pueda ver todas las funciones y llamadas de script individualmente. Cuando se utiliza este modo de vista, al hacer clic en <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> se expandirá la función o el script para mostrar lo que realmente lo llamó.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Ver objetivo</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">El <strong>objetivo de la vista</strong> le permite elegir entre ver el <span class="notranslate">GML</span> del proyecto (datos de eventos y código), los procesos del motor de fondo o ambos. Si elige &quot;GML&quot;, obtendrá los eventos, funciones y scripts que se llaman
+      mientras que la vista &quot;Motor&quot; sólo mostrará las llamadas al motor requeridas por el proyecto, permitiéndole ver cualquier cuello de botella en la forma en que su proyecto está manejando las cosas. Si selecciona &quot;Ambos&quot;, entonces se mostrarán ambos conjuntos de datos
+      pero tenga en cuenta que cuando se combina con la vista &quot;Bottom Up&quot;, las diferentes llamadas a scripts y funciones estarán anidadas dentro de las llamadas al motor y tendrá que hacer clic en el <img alt="Expand Debug Icon" data-cke-saved-src="../../assets/Images/Icons/Debug_Expand.png" src="../../assets/Images/Icons/Debug_Expand.png" width="12" height="12"> para expandirlas y verlas.</p>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><br> Los datos del perfil se muestran en cuatro columnas, y al hacer clic en cualquiera de ellas se ordenan los datos según el criterio de la columna.</p>
+  <p><img alt="Profile Display" class="center" src="../../assets/Images/IDE Tools/Profiler_Display.gif" /></p>
+  <ul class="colour">
+    <li><strong>Nombre</strong>: Este es el nombre del evento, script o función que se está llamando, y puede tener un <img alt="Expand Debug Icon" height="12" src="../../assets/Images/Icons/Debug_Expand.png" width="12"> al lado para denotar más llamadas a él o
+      desde él (dependiendo del <strong>Modo de Vista</strong> que hayas seleccionado). Puede hacer doble clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> sobre cualquiera de los nombres para que se abra el bloque de código
+      o script dentro de la ventana Fuente. Si haces clic en la parte superior de esta columna, los nombres se ordenarán por orden alfabético.</li>
+    <li><strong>Tiempo</strong>: Se mostrará el tiempo <em>total </em>que ha tardado una función (o un script o un evento) mientras se realiza el perfil, o el tiempo <em>medio </em>que ha tardado cada paso en ser llamado (dependiendo de la opción de <strong>visualización de tiempo</strong> seleccionada) y se muestra en microsegundos.</li>
+    <li><strong>Llamadas</strong>: Aquí puede ver el número <em>total </em>de llamadas al evento, función o script dado, o el número <em>medio </em>de llamadas en un solo paso (de nuevo, dependiendo de la opción de <strong>visualización de tiempo</strong> 
+      seleccionada).</li>
+    <li><strong>Paso%</strong>: El valor que se muestra aquí es el porcentaje global de un solo paso que ha dado la llamada.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../The_Debugger.htm">El depurador</a></div>
+        <div style="float:right">Siguiente: <a href="Watches.htm">Relojes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Profiler
+Profiling Your Game
+Profiler
+Debug Profiler
+-->
+  <!-- TAGS
+debug_profiler
+-->
+</body>
+</html>

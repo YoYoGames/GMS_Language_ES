@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_group_join</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_join" />
+  <meta name="rh-index-keywords" content="physics_particle_group_join" />
+  <meta name="search-keywords" content="physics_particle_group_join" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_group_join</h1>
+  <p>Con esta función puede unir dos grupos de partículas, y los grupos unidos se comportarán como si fueran parte de una sola entidad. Los grupos deben haber sido creados con bordes superpuestos, ya que, si no se tocan, no se unirán.
+    no se unirán. La función toma los ID de grupo únicos de los grupos a unir, tal y como los devuelve la función <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a>y puede utilizar la función cualquier número de veces para
+    un solo grupo para unir varios cuerpos blandos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_group_join(to, from)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>a</td>
+        <td>El primer grupo de partículas que se une.</td>
+      </tr>
+      <tr>
+        <td>de</td>
+        <td>El segundo grupo de partículas para unirse.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid;<br> physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(50);
+    <br> var g1 = physics_particle_group_end();<br> physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_circle(50);
+    <br> var g2 = physics_particle_group_end();<br> physics_particle_group_join(g1, g2);</p>
+  <p>El código anterior crea dos grupos de partículas circulares y los une.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_group_delete.htm">physics_particle_group_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_join
+-->
+  <!-- TAGS
+physics_particle_group_join
+-->
+</body>
+</html>

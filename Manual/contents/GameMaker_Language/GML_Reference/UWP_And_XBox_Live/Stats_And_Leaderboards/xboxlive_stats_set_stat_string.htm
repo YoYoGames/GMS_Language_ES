@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_stats_set_stat_string</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_stats_set_stat_string" />
+  <meta name="rh-index-keywords" content="xboxlive_stats_set_stat_string" />
+  <meta name="search-keywords" content="xboxlive_stats_set_stat_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_stats_set_stat_string</h1>
+  <p>Esta función se puede utilizar para establecer una estadística en una cadena para el ID de usuario dado. Se suministra el ID de usuario tal y como lo devuelve (por ejemplo) la función <a href="../Users_And_Accounts/xboxlive_get_user.htm"><tt>xboxlive_get_user()</tt></a>y, a continuación, la cadena de estadísticas
+    a establecer<b>(si la cadena de estadísticas no existe ya, se creará una nueva y se establecerá el valor dado</b>) y, a continuación, la cadena a la que se establecerá la estadística. Tenga en cuenta que el nombre de la estadística debe ser sólo alfanumérico, sin símbolos ni espacios, pero la cadena
+    que se establezca puede tener espacios y caracteres especiales.</p>
+  <p>Al establecer la cadena de estadísticas, cualquier cadena anterior será anulada, por lo tanto, depende de ti determinar si la cadena de estadísticas debe ser actualizada o no, comparando la cadena de estadísticas actual con la nueva antes de establecerla.</p>
+  <p>La función devolverá -1 si hubo un error o el ID de usuario no es válido, o cualquier otro valor si la función fue llamada con éxito.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(user_id, stat, value);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>user_id</td>
+        <td>El puntero de identificación del usuario para establecer la estadística para</td>
+      </tr>
+      <tr>
+        <td>stat</td>
+        <td>La estadística a establecer (una cadena)</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor a establecer la estadística (una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">xboxlive_stats_set_stat_string(p_user_id, &quot;LevelName&quot;, global.LevelName);</p>
+  <p>El código anterior establece la estadística &quot;LevelName&quot; a la cadena almacenada en la variable global dada. </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Stats_And_Leaderboards.htm">Estadísticas y tablas de clasificación</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_stats_delete_stat.htm">xboxlive_stats_delete_stat</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_stats_set_stat_string
+-->
+  <!-- TAGS
+xboxlive_stats_set_stat_string
+-->
+</body>
+</html>

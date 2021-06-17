@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_open_append</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_open_append" />
+  <meta name="rh-index-keywords" content="file_text_open_append" />
+  <meta name="search-keywords" content="file_text_open_append" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_open_append</h1>
+  <p>Esta función abre el archivo de texto con el nombre de archivo indicado para su <i>escritura</i> (si el archivo no existe, se crea), devolviendo el <i>id</i> único del archivo que debe ser almacenado en una variable ya que se utilizará para todas las acciones posteriores
+    que tengan que ver con ese archivo. La posición dentro del fichero para escribir en él se establece en la última línea de texto que contenga el fichero. Tenga en cuenta que si el archivo <i>no puede ser</i> creado (debido a un nombre de archivo ilegal, por ejemplo) la función devolverá -1.</p>
+  <p class="note"><b>NOTA</b>: Sólo puede tener un máximo de 32 archivos abiertos al mismo tiempo. También debe cerrar <b>siempre</b> los archivos cuando haya terminado, ya que esto escribe la información y libera la memoria asociada al archivo.</p>
+  <p class="note"><b></b><b>¡AVISO!</b> Esta función puede no funcionar como esperas debido a que <span class="notranslate">GameMaker Studio 2</span> está en un entorno aislado. Por favor, vea la sección sobre el <a href="../../../../Additional_Information/The_File_System.htm">Sistema de Archivos</a> para más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_text_open_append(fname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fname</td>
+        <td>El nombre del archivo al que se va a añadir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">file = file_text_open_append(working_directory + &quot;save.txt&quot;);</p>
+  <p>Esto abriría &quot;save.txt&quot; desde el mismo directorio del juego y almacenaría el id del archivo en la variable &quot;file&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text_Files.htm">Archivos de texto</a></div>
+        <div style="float:right">Siguiente: <a href="file_text_open_from_string.htm">file_text_open_from_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_open_append
+-->
+  <!-- TAGS
+file_text_open_append
+-->
+</body>
+</html>

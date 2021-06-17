@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Fragmentos de código</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how to create your own code snippets
+" />
+  <meta name="rh-index-keywords" content="Code Editor - Snippets" />
+  <meta name="search-keywords" content="snippet,snippets,code snippets" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Fragmentos de código</h1>
+  <p>Una herramienta muy práctica que tienes a tu disposición cuando editas tu código es el uso de fragmentos de <strong>código</strong>. Cuando utilice el editor de scripts, puede pulsar <span class="inline">F4</span> para abrir la ventana emergente de fragmentos de código, que le permite seleccionar
+    uno de los métodos de código más utilizados de una lista:</p>
+  <p><img alt="Code Snippets Window" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_IDE.png">Desde esta ventana puede seleccionar con el ratón el fragmento a utilizar, o puede pulsar la tecla de acceso directo asociada que aparece a la derecha. Esto añadirá
+    el fragmento a su código para editarlo.</p>
+  <p>También puede definir sus propios fragmentos de código si lo desea. Antes de hacer esto, tendrá que crear un archivo llamado &quot;<span class="inline">snippets.txt</span>&quot; en uno de los siguientes directorios:</p>
+  <ul class="colour">
+    <li><span class="notranslate">Windows</span>: <span class="inline">%ProgramData%\<span class="notranslate">GameMaker</span>Studio2\User\</li>
+    <li><span class="notranslate">macOS</span>: <span class="inline">/Users/Shared/<span class="notranslate">GameMaker</span>Studio2/User/</li>
+  </ul>
+  <p>Esta carpeta <em>no </em>se modifica durante ninguna actualización de <span class="notranslate">GameMaker Studio 2</span>, por lo que el archivo editado permanecerá intacto (pero cualquier edición del archivo de fragmentos base en el directorio de instalación se revertirá).</p>
+  <p>Una vez creado el archivo en el directorio de usuario, puede editarlo con cualquier editor de texto siguiendo estas reglas:</p>
+  <ul class="colour">
+    <li>Cada fragmento tiene que estar en una línea separada (no debe haber líneas en blanco)</li>
+    <li>Cada fragmento debe comenzar con la tecla de acceso directo que se va a utilizar, seguida de &quot;<span class="inline">-</span>&quot; y, a continuación, el nombre del fragmento (que es el que se muestra en el menú), seguido de dos puntos &quot;<span class="inline">:</span>&quot;, por ejemplo:</li>
+  </ul>
+  <p class="code" style="margin-left: 100px">I - Creación de instancias:</p>
+  <p style="margin-left: 60px">Después de los dos puntos se añade el fragmento de código</p>
+  <p class="code" style="margin-left: 100px">I - Creación de instancias: instance_create_layer(x, y, |layer|, object);</p>
+  <p>El código que añadas también debe seguir un formato específico en el que:</p>
+  <ul class="colour">
+    <li>Todo el código está en una sola línea</li>
+    <li>Se utiliza &quot;<span class="inline">$</span>&quot; para una nueva línea</li>
+    <li>Ponga el texto que debe seleccionarse primero entre los símbolos &quot;<span class="inline">|</span>&quot; (el cursor seleccionará este texto para editarlo cuando se añada el fragmento)</li>
+  </ul>
+  <p>Vea los ejemplos que ya están en el archivo base de fragmentos para ver cómo se configura siguiendo las reglas anteriores. Puedes encontrar el archivo base en el directorio de instalación de <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <ul class="colour">
+    <li><span class="inline">\<span class="notranslate">GameMaker Studio 2</span>\TextEditor\\\Nsnippets.txt</li>
+  </ul>
+  <p><img alt="Code Snippets Example" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_Example.png" /></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Scripts.htm">El editor de guiones</a></div>
+        <div style="float:right">Siguiente: <a href="Editing_Code.htm">Edición de código</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Snippets
+Code Snippets
+-->
+  <!-- TAGS
+code_snippets
+-->
+</body>
+</html>

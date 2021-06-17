@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>path_append</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_append" />
+  <meta name="rh-index-keywords" content="path_append" />
+  <meta name="search-keywords" content="path_append" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>path_append</h1>
+  <p>Con este código puede añadir una ruta a otra, uniéndolas de hecho, y para que esto funcione, ambas rutas deben existir previamente. En general, se recomienda utilizar esta función en las rutas creadas con <span class="inline"><a href="path_add.htm">path_add()</a></span>,
+    ya que si la utilizas en un activo de ruta, <strong>afectará permanentemente a la ruta para las instancias del juego</strong> desde el momento en que se utiliza la función hasta el final del juego.</p>
+  <p class="note"><b>NOTA</b>: Esto no eliminará la ruta que se está añadiendo al juego. Sigue ahí, sólo que ahora no tiene puntos en él y si ya no desea utilizarlo debe eliminarlo con la función <span style="font-size:1px;"><a href="path_delete.htm"><tt style="font-size: 14px">path_delete()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_append(index, path);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El nuevo índice de la ruta.</td>
+      </tr>
+      <tr>
+        <td>camino</td>
+        <td>El índice de la ruta que se añadirá a 'índice'.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">path_append(mypath, mppath);<br> path_delete(mppath);
+  </p>
+  <p>El código anterior añade los datos de la ruta indexada en la variable &quot;mppath&quot; a la ruta indexada en la variable &quot;mypath&quot; y luego borra la &quot;mppath&quot; de la memoria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Path_Manipulation.htm">Manipulación del camino</a></div>
+        <div style="float:right">Siguiente: <a href="path_assign.htm">path_assign</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_append
+-->
+  <!-- TAGS
+path_append
+-->
+</body>
+</html>

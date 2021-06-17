@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>get_string_async</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for get_string_async" />
+  <meta name="rh-index-keywords" content="get_string_async" />
+  <meta name="search-keywords" content="get_string_async" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>get_string_async</h1>
+  <p>Esta función abre una ventana y muestra un mensaje, así como un espacio para que el usuario introduzca una cadena (que contendrá la cadena suministrada por defecto para empezar). Esta es una función asíncrona, y como tal <span class="notranslate">GameMaker Studio 2</span> <i>no</i> bloquea
+    el dispositivo en el que se está ejecutando mientras se espera una respuesta, sino que sigue ejecutando eventos de forma normal. Una vez que el usuario ha escrito su cadena y ha pulsado el botón &quot;Okay&quot;, se activa un evento de <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">diálogo </a>asíncrono
+    que, <i>sólo</i> mientras dure el evento, tendrá un mapa DS almacenado en la variable <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a>.</p>
+  <p>Este mapa contendrá las tres claves, &quot;id&quot;,<strong>&quot;</strong>estado&quot; y &quot;<strong>resultado</strong>&quot;. &quot;id&quot; es el<strong>valor que</strong> devolvió la función al ser llamada, el &quot;estado&quot; será
+    será <tt>verdadero</tt> si se ha pulsado el botón &quot;Okay&quot;, o falso si se ha cancelado <tt>el</tt> mensaje (en su caso, ya que no todas las plataformas de destino permiten cancelar el mensaje). Por último, &quot;resultado&quot; devolverá la cadena
+    que el usuario introdujo (o una cadena vacía &quot;&quot; si no se suministró ninguna).</p>
+  <p class="note"><strong><em>NOTA:</em></strong><em> Esta función es <span data-keyref="Dialog for debug only"> <strong>sólo</strong> para <strong>uso de depuración y pruebas</strong></span>y no debe ser utilizada en juegos lanzados. Para ello, debe crear una interfaz de usuario personalizada para recibir las entradas de los jugadores, de modo que tenga un control completo sobre el aspecto y el comportamiento de los diálogos.</em></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">get_string_async(cadena, por defecto);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Cadena</td>
+        <td>El mensaje a mostrar en el diálogo.</td>
+      </tr>
+      <tr>
+        <td>por defecto</td>
+        <td>La cadena por defecto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p> </p>
+  <p>El <b>evento de pulsación del ratón izquierdo</b> (por ejemplo) del objeto que está mostrando el mensaje tendría el siguiente código:</p>
+  <p class="code">msg = get_string_async(&quot;¿Cuál es tu nombre?&quot;, &quot;Anon&quot;);</p>
+  <p>Lo anterior mostrará un mensaje solicitando que el usuario ingrese una cadena y presione &quot;Okay&quot;. El id de la función se almacena en la variable &quot;msg&quot; y se utilizará en el evento asíncrono Dialogs como se muestra a continuación:</p>
+  <p class="code">var i_d = ds_map_find_value(async_load, &quot;id&quot;);<br> if i_d == msg<br> {
+    <br> if ds_map_find_value(async_load, &quot;status&quot;)<br> {
+    <br> if ds_map_find_value(async_load, &quot;result&quot;) != &quot;&quot;<br> {
+    <br> global.Name = ds_map_find_value(async_load, &quot;result&quot;);<br> }
+    <br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba la clave &quot;id&quot; del Mapa DS devuelto <tt>con</tt> el valor almacenado en la variable &quot;msg&quot;. Si son iguales, entonces comprueba si se ha pulsado &quot;Okay&quot; (en lugar de cerrar/cancelar la ventana)
+    y si devuelve <tt>&quot;true&quot;</tt> entonces comprueba el &quot;resultado&quot; de una cadena para asegurarse de que no se han devuelto cadenas vacías antes de establecer una variable global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Dialog.htm">Diálogo</a></div>
+        <div style="float:right">Siguiente: <a href="get_integer_async.htm">get_integer_async</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+get_string_async
+-->
+  <!-- TAGS
+get_string_async
+-->
+</body>
+</html>

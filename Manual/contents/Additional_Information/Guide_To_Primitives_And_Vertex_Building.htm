@@ -29,10 +29,10 @@
     <li>Normal</li>
     <li>Posición</li>
     <li>Posición 3D</li>
-    <li>Coordenada de la textura</li>
+    <li>Coordenadas de la textura</li>
   </ul>
   <p>En general, <em>siempre</em> debe proporcionar la posición o la posición 3D como parte del formato, pero todos los demás son opcionales.</p>
-  <p>Debes tener en cuenta que una vez que hayas creado tu formato de vértice, el orden en el que hayas definido los atributos de vértice <i>debe ser respetado</i> al construir tus <strong>primitivas</strong>. Así, si has definido un formato de vértice como posición, color
+  <p>Debe tener en cuenta que una vez que haya creado su formato de vértice, el orden en el que ha definido los atributos de vértice <i>debe ser respetado</i> al construir sus <strong>primitivas</strong>. Así, si has definido un formato de vértice como posición, color
     y coordenada de textura, entonces <b> <i>debes</i></b> añadir estos atributos a la primitiva en el mismo orden, de lo contrario obtendrás un error. También hay que tener en cuenta que, como cualquier otro recurso dinámico, un formato de vértice requiere memoria y por lo tanto debe ser eliminado
     cuando no se necesita utilizando la función <a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/vertex_format_delete.htm"><tt>vertex_format_delete()</tt></a>.</p>
   <p>Las primitivas que construyas se guardan en un <b>buffer de vértices</b>. Este debe ser creado de antemano y luego referenciado por las funciones que se utilizan para construir su primitiva. El buffer de vértices puede ser reutilizado tantas veces como sea necesario para crear diferentes

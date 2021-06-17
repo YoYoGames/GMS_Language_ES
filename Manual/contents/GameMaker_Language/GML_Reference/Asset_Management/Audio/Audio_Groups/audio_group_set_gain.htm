@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_group_set_gain</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_group_set_gain" />
+  <meta name="rh-index-keywords" content="audio_group_set_gain" />
+  <meta name="search-keywords" content="audio_group_set_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_group_set_gain</h1>
+  <p>Con esta función se puede hacer un fundido de entrada o salida de un grupo de sonidos durante un tiempo determinado, o se puede utilizar para ajustar la ganancia del grupo de forma instantánea. El tiempo se mide en milisegundos, y la función requiere que introduzca un nivel final de ganancia para que el
+    para que el grupo haya alcanzado al final de ese tiempo. Esta ganancia puede estar entre 0 (silencio) y 1 (volumen total) y la escala es lineal, de forma que un valor de 0,5 sería la mitad del volumen. Para cambiar instantáneamente la ganancia, basta con poner el argumento del tiempo a 0. Tenga en cuenta que
+    en algunas plataformas se puede tener una ganancia superior a 1, aunque un valor de 1 se considera &quot;volumen completo&quot; y cualquier valor superior puede introducir recortes de audio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_group_set_gain(groupID, volume, time);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>groupID</td>
+        <td>El índice del grupo de audio que se va a detener (como se define en la <a href="../../../../../Settings/Audio_Groups.htm">ventana de grupos de audio</a>)</td>
+      </tr>
+      <tr>
+        <td>volumen</td>
+        <td>El valor final del volumen del grupo.</td>
+      </tr>
+      <tr>
+        <td>tiempo</td>
+        <td>La duración del cambio de ganancia en milisegundos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check_pressed(vk_space)<br> {
+    <br> audio_group_set_gain(audiogroup1, 0, 5000);<br> }
+  </p>
+  <p>El código anterior comprueba la tecla &quot;espacio&quot; y luego desvanece todo el audio para &quot;audiogroup1&quot; a 0 durante 5 segundos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Groups.htm">Grupos de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_group_load.htm">audio_group_load</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_group_set_gain
+-->
+  <!-- TAGS
+audio_group_set_gain
+-->
+</body>
+</html>

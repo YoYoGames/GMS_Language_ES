@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>shader_get_uniform</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function shader_get_uniform" />
+  <meta name="rh-index-keywords" content="shader_get_uniform" />
+  <meta name="search-keywords" content="shader_get_uniform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><span class="notranslate">shader_get_uniform</span></h1>
+  <p>Dado que no se puede cambiar el valor de una constante <span class="notranslate">del sombreador</span> dentro del propio <span class="notranslate">sombreador</span>, hay que establecerla antes de llamar al <span class="notranslate">sombreador</span> utilizando una de las funciones de <strong>establecimiento de uniformes</strong> disponibles. Sin embargo, para poder hacerlo, primero debes llamar a esta función
+    para obtener el &quot;handle&quot; de la <span class="notranslate">constante</span> del sombreador que quieres cambiar.</p>
+  <p class="note"><b>NOTA</b>: Aunque un <span class="notranslate">shader</span> se compone de dos programas discretos (vértice y fragmento) esta función no diferenciará entre los dos y devolverá el handle de la constante del <span class="notranslate">shader</span> de cualquiera de ellos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code"><span class="notranslate">shader_get_uniform</span><span class="notranslate">(shader</span>, uniform);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">sombreador</span></td>
+        <td>El índice del <span class="notranslate">shader</span> a utilizar.</td>
+      </tr>
+      <tr>
+        <td>uniforme</td>
+        <td>La constante <span class="notranslate">del sombreador</span> para obtener el manejador de (una cadena).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (manija uniforme)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code"><span class="notranslate">shader_params</span>= <span class="notranslate">shader_get_uniform</span>(shd_glass, &quot;u_vRefractColour&quot;);</p>
+  <p>El código anterior obtendrá el control de la constante <span class="notranslate">del shader</span> &quot;u_vRefractColour&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Shaders.htm"><span class="notranslate">Sombreadores</span></a></div>
+        <div style="float:right">Siguiente: <a href="shader_get_sampler_index.htm"><span class="notranslate">shader_get_sampler_index</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">shader</span>_get_uniform
+-->
+  <!-- TAGS
+<span class="notranslate">shader</span>_get_uniform
+-->
+</body>
+</html>

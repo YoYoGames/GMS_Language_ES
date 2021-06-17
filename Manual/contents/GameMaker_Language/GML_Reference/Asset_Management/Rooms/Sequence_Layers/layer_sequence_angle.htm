@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ángulo_de_secuencia_de_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_angle" />
+  <meta name="rh-index-keywords" content="layer_sequence_y" />
+  <meta name="search-keywords" content="layer_sequence_angle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ángulo_de_secuencia_de_capa</h1>
+  <p>Con esta función se puede establecer el ángulo de rotación para el elemento de secuencia dado. Se suministra el ID del elemento de la secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones</a> del elemento de la capa junto con el nuevo ángulo a establecer y la secuencia será girada sobre su origen a la nueva posición. Los ángulos en <span class="notranslate">GameMaker</span> se calculan con 0º a la derecha, y van en sentido contrario a las agujas del reloj - por lo que 90º es arriba, 180º es izquierda y 270º es abajo - y el ángulo por defecto
+    para una secuencia sería 0º.</p>
+  <p>Tenga en cuenta que no debe cambiar las variables <span class="inline">image_xscale</span> \ <span class="inline">image_yscale</span> \ <span class="inline">image_angle</span> \ <span class="inline">x</span> \ <span class="inline">y</span> para cualquier instancia
+    en una secuencia que utilice esta función, ya que se sobrescribirán tan pronto como la secuencia se actualice después de llamar a la función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">capa_secuencia_ángulo(secuencia_elemento_id, ángulo)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>ángulo</td>
+        <td>El nuevo ángulo al que se girará el elemento de la secuencia</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si ángulo_actual &lt; 90<br> {
+    <br> ángulo_actual += 1;<br> ángulo_secuencia_capa(mi_seq, ángulo_actual);<br> }
+  </p>
+  <p>El código anterior comprueba el valor mantenido en la variable <span class="inline">current_angle</span>, y si es menor que 90 entonces lo suma y luego utiliza el valor para establecer el ángulo del elemento de la secuencia referenciado en la variable <span class="inline">my_seq</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_xscale.htm">layer_sequence_xscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_angle
+-->
+  <!-- TAGS
+layer_sequence_angle
+-->
+</body>
+</html>

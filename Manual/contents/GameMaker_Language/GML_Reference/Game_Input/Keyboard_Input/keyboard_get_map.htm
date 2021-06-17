@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>keyboard_get_map</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for keyboard_get_map" />
+  <meta name="rh-index-keywords" content="keyboard_get_map" />
+  <meta name="search-keywords" content="keyboard_get_map" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>keyboard_get_map</h1>
+  <p>A veces puede desear obtener el código ascii de una tecla asignada (para ver si ya está asignada, por ejemplo), que es lo que devuelve esta función. La función tomará un valor de código de tecla como el devuelto por la función <a href="../../Strings/ord.htm"><tt>ord()</tt></a>    (sólo letras <i>mayúsculas</i> de la A a la Z o números del 0 al 9), o cualquiera de las constantes <tt>vk_*</tt> listadas en la página principal de <a href="Keyboard_Input.htm">Entrada de Teclado</a>.</p>
+  <p> </p>
+  <h4><b>Sintaxis:</b></h4>
+  <p class="code">keyboard_get_map(key);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>Esta es la clave de la que se desea obtener el valor mapeado</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4><b>Devuelve:</b></h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4><b>Ejemplo:</b></h4>
+  <p class="code">if keyboard_get_map(ord(&quot;A&quot;)) = ord(&quot;A&quot;)<br> {
+    <br> keyboard_set_map(ord(&quot;A&quot;), keyboard_lastkey);<br> }
+  </p>
+  <p>El código de ejemplo anterior primero comprobará si &quot;A&quot; ha sido asignada a otra tecla, y si no lo ha sido, la asignará a la última tecla que el usuario haya pulsado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Keyboard_Input.htm">Entrada del teclado</a></div>
+        <div style="float:right">Siguiente: <a href="keyboard_unset_map.htm">keyboard_unset_map</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+keyboard_get_map
+-->
+  <!-- TAGS
+keyboard_get_map
+-->
+
+</body></html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>array_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function array_set" />
+  <meta name="rh-index-keywords" content="array_set" />
+  <meta name="search-keywords" content="array_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>array_set</h1>
+  <p>Con esta función puedes establecer el valor de un índice en un array a un valor. La función requiere que proporcione una variable que contenga el array, así como el índice a establecer y el valor a establecer. Esta función también puede utilizarse para matrices multidimensionales
+    siempre que se especifique la dimensión que se desea establecer al proporcionar el índice de la matriz, siguiendo este patrón:</p>
+  <p class="code">// Matriz 1D<br> array_set(mi_matriz, 0, 100);<br> // Matriz 2D<br> array_set(mi_matriz[0], 0, 100);<br> // Matriz 3D<br> array_set(mi_matriz[0][0], 0, 100);<br> // etc.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">array_set(variable, índice, valor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>variable</td>
+        <td>La variable que contiene el array.</td>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la matriz para establecer el valor.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor a fijar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> array_set(score_array, i, i*100));<br> }
+  </p>
+  <p>El código anterior establecerá los 10 primeros elementos de la matriz dada con un valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_push.htm">array_push</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+array_set
+-->
+  <!-- TAGS
+array_set
+-->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_listener_set_orientation</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_listener_set_orientation" />
+  <meta name="rh-index-keywords" content="audio_listener_set_orientation" />
+  <meta name="search-keywords" content="audio_listener_set_orientation" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_listener_set_orientation</h1>
+  <p>Con esta función puede cambiar la orientación del <i>oyente</i> dado dentro del espacio de audio 3D. El índice del oyente por defecto es 0, pero puede utilizar la función <a href="audio_get_listener_info.htm"><tt>audio_get_listener_info()</tt></a> para
+    obtener los diferentes índices disponibles para la plataforma de destino.</p>
+  <p>El vector de <b>observación</b> y el vector <b>ascendente</b> se basan en los valores que se resuelven a partir de las posiciones relativas x, y y z dadas, y por defecto son (0, 0, -1) para el vector de observación y (0, 1, 0)
+    para el vector superior, como se muestra en la siguiente ilustración:</p>
+  <p><img alt="Listener Orientation Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Base.png" /></p>
+  <p>Cambiar la orientación del oyente con esta función cambiará la forma en que el sonido creado por los emisores de audio alrededor de la sala de juego es percibido por el jugador de su juego. En el ejemplo siguiente, los sonidos creados por el emisor cuando el oyente está en la posición
+    posición por defecto parecerían venir de abajo y a la derecha del oyente, pero con la nueva posición y orientación del oyente ahora se percibirán como procedentes de <i>arriba</i> y a la derecha.</p>
+  <p><img alt="Listener Orientation Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Orientation_Example.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_listener_set_orientation(index, lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El oyente para establecer la orientación de.</td>
+      </tr>
+      <tr>
+        <td>lookat_x</td>
+        <td>El vector de apariencia x (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>mirar_y</td>
+        <td>El vector de apariencia y (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>lookat_z</td>
+        <td>El vector de apariencia z (por defecto -1).</td>
+      </tr>
+      <tr>
+        <td>up_x</td>
+        <td>El vector x up (por defecto 0).</td>
+      </tr>
+      <tr>
+        <td>up_y</td>
+        <td>El vector y up (por defecto 1).</td>
+      </tr>
+      <tr>
+        <td>up_z</td>
+        <td>El vector z hacia arriba (por defecto 0).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _m = camera_get_view_mat(view_camera[0]);<br> audio_listener_set_position(global.Player_Listener, _m[0], _m[1], _m[2]);<br> audio_listener_set_orientation(info[? &quot;index&quot;], _m[3], _m[4], _m[5], _m[6], _m[7], _m[8]);</p>
+  <p>El código anterior recupera la matriz de vista para la vista de cámara [0] y luego la utiliza para establecer la posición y la orientación del oyente de audio con el ID almacenado en la variable global &quot;Player_Listener&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_get_listener_count.htm">audio_get_listener_count</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_listener_set_orientation
+-->
+  <!-- TAGS
+audio_listener_set_orientation
+-->
+</body>
+</html>

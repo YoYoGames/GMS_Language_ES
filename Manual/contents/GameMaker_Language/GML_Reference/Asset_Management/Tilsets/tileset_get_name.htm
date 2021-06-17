@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tileset_get_name</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function tileset_get_name" />
+  <meta name="rh-index-keywords" content="tileset_get_name" />
+  <meta name="search-keywords" content="tileset_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tileset_get_name</h1>
+  <p>Esta función devolverá el nombre en <i>forma de cadena</i> del conjunto de baldosas especificado. Este nombre es el que se ha especificado para el conjunto de baldosas en el navegador de activos de la ventana principal de <span class="notranslate">GameMaker Studio 2</span>. Tenga en cuenta que esto es <i>sólo</i> una cadena
+    y no se puede utilizar para hacer referencia al conjunto de baldosas directamente - para eso necesitarías el <i>índice del conjunto de bal</i>dosas. Sin embargo, puede utilizar esta cadena para obtener el índice del conjunto de <i>baldosas</i> utilizando la cadena devuelta junto con la función <a href="../Assets_And_Tags/asset_get_index.htm"><tt>asset_get_index()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tileset_get_name(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del conjunto de baldosas para obtener el nombre.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4><b>Ejemplo:</b></h4>
+  <p class="code">var _l = layer_get_id(&quot;tilemap_trees&quot;);<br> var _m = layer_tilemap_get_id(_l);<br> var _t = tilemap_tileset(_m);<br> tileset_name = tileset_get_name(_t);</p>
+  <p>El código anterior obtendrá el nombre del índice del conjunto de azulejos para la capa dada, almacenando la cadena de retorno en la variable <tt>tileset_name</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Sets.htm">Juegos de baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="tileset_get_texture.htm">tileset_get_texture</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tileset_get_name
+-->
+  <!-- TAGS
+tileset_get_name
+-->
+</body>
+</html>

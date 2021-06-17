@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_at" />
+  <meta name="rh-index-keywords" content="audio_play_sound_at" />
+  <meta name="search-keywords" content="audio_play_sound_at" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_at</h1>
+  <p>Con esta función puedes reproducir cualquier recurso sonoro en una posición determinada dentro del espacio de audio. Usted proporciona el índice del sonido y luego le asigna una posición dentro del espacio 3D. La posición por defecto del oyente es (0, 0, 0), lo que significa que si el oyente
+    no se ha movido y quiere que el sonido provenga de la izquierda (por ejemplo), debe establecer la posición x en un valor negativo (para más información sobre cómo establecer la posición del oyente vea <a href="Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a>).</p>
+  <p>También puede establecer una distancia de desvanecimiento (0 hará que el sonido sea silencioso, por defecto es 100) que hará que el sonido se desvanezca a medida que se aleja de la posición del oyente. La forma en que se escuche el desvanecimiento dependerá de la referencia de desvanecimiento (que es la distancia
+    (que es la distancia por debajo de la cual el volumen de la fuente normalmente se reduce a la mitad) y el factor de atenuación (que afecta al sonido más allá de la distancia de referencia de atenuación). El factor por defecto es normalmente 1, y el efecto de los diferentes valores de decaimiento dependerá
+    del modelo elegido (para una guía completa de los diferentes modelos de decaimiento y de cómo se utilizan estos valores, consulte la función <a href="audio_falloff_set_model.htm"><tt>audio_falloff_set_model()</tt></a>).</p>
+  <p>Los dos últimos argumentos sirven para establecer que el sonido se reproduzca en bucle o no y, por último, para asignar una prioridad al sonido. Esta prioridad se utiliza para determinar cómo se tratan los sonidos cuando el número de sonidos que se reproducen supera el límite establecido por la función
+    <a href="audio_channel_num.htm"><tt>audio_channel_num()</tt></a>. Los sonidos de menor prioridad se detendrán en favor de los de mayor prioridad, y el valor de la prioridad puede ser cualquier número real (el valor real es arbitrario, y puede ser de 0 a 1 o de 0
+    a 100, ya que <span class="notranslate">GameMaker Studio 2</span> les dará la misma prioridad). Tenga en cuenta que cuando se trata de la prioridad, cuanto <i>mayor sea</i> el número, <i>mayor será</i> la prioridad, de tal manera que un sonido con prioridad 100 será favorecido sobre un sonido con prioridad 1.</p>
+  <p>Esta función devolverá un número de índice único para el sonido que se está reproduciendo, el cual puede ser almacenado en una variable para que luego puedas pausarlo o detenerlo con las funciones apropiadas. Esto significa que si tiene varias instancias del mismo sonido
+    que se está reproduciendo en un momento dado, se puede seleccionar sólo una instancia de ese sonido para utilizar las funciones de audio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sonido a reproducir.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La posición z.</td>
+      </tr>
+      <tr>
+        <td>ref. de fallo</td>
+        <td>La referencia de desvanecimiento en relación con el oyente (pinza).</td>
+      </tr>
+      <tr>
+        <td>fallo_máximo</td>
+        <td>La distancia máxima de desvanecimiento en relación con el oyente.</td>
+      </tr>
+      <tr>
+        <td>factor_de_fallo</td>
+        <td>El factor de decaimiento (por defecto 1).</td>
+      </tr>
+      <tr>
+        <td>bucle</td>
+        <td>Marca el sonido como en bucle o no.</td>
+      </tr>
+      <tr>
+        <td>prioridad</td>
+        <td>Establece la prioridad del canal para el sonido.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Índice (ID de sonido)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si global.SFX<br> {
+    <br> audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br> }
+  </p>
+  <p>El código anterior comprueba la variable global &quot;SFX&quot; y, si devuelve true, <tt>el</tt> sonido indexado en la variable &quot;snd_Waterfall&quot; se reproducirá en bucle en su posición de sala, con una referencia de caída de 100, una distancia de caída de 300
+    un factor de desvanecimiento de 1 y una prioridad baja.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_pause_sound.htm">audio_pause_sound</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_at
+-->
+  <!-- TAGS
+audio_play_sound_at
+-->
+</body>
+</html>

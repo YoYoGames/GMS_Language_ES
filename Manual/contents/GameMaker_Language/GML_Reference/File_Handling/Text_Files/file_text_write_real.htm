@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_write_real</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_write_real" />
+  <meta name="rh-index-keywords" content="file_text_write_real" />
+  <meta name="search-keywords" content="file_text_write_real" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_write_real</h1>
+  <p>Con esta función se puede escribir un número en el archivo de texto previamente abierto. Tenga en cuenta que como el valor a escribir puede ser un número real, todos los decimales se escribirán con un punto &quot;.&quot; como separador. Si el archivo ya contiene información
+    esta información se borrará y la cadena se escribirá al principio del archivo, a menos que haya abierto el archivo con el botón <a href="file_text_open_append.htm"><tt>file_text_open_append()</tt></a>. También puede evitar esto utilizando el botón
+    <a href="file_text_readln.htm"><tt>file_text_readln()</tt></a> junto con la función <a href="file_text_eof.htm"><tt>file_text_eof()</tt></a> para recorrer el contenido del archivo hasta llegar al final y luego comenzar a escribir.</p>
+  <p>Es importante tener en cuenta que cuando se escriben números muy grandes en un archivo de texto mediante esta función, es posible que se traduzcan a un formato estándar simplificado, como &quot;6,6624e+003&quot;, que no puede leerse <span class="notranslate">correctamente</span> en GameMaker <span class="notranslate">Studio 2</span>.
+    Para evitar este tipo de problemas, debería convertir el valor en una cadena y utilizar la función <a href="file_text_write_string.htm"><tt>file_text_write_string()</tt></a> en su lugar.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_text_write_real(fileid, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>El id del archivo a editar.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor real para escribir en el archivo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var file = file_text_open_write(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> file_text_write_real(file, scr[i]);<br> file_text_writeln(file);
+    <br> file_text_write_string(file, scr_name[i]);<br> file_text_writeln(file);
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>El código anterior abre un archivo para escribir y luego hace un bucle a través de dos matrices, escribiendo cada valor de la matriz en una nueva línea del archivo. El archivo se cierra cuando el bucle ha terminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text_Files.htm">Archivos de texto</a></div>
+        <div style="float:right">Siguiente: <a href="file_text_write_string.htm">file_text_write_string</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_write_real
+-->
+  <!-- TAGS
+file_text_write_real
+-->
+</body>
+</html>

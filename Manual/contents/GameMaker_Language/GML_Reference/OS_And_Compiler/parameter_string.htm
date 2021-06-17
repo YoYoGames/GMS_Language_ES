@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cadena_de_parámetro</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for parameter_string" />
+  <meta name="rh-index-keywords" content="parameter_string" />
+  <meta name="search-keywords" content="parameter_string" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cadena_de_parámetro</h1>
+  <p>Los parámetros de línea de comandos son esos comandos extra que puedes añadir a un exe para cambiar la forma en que se ejecuta el programa y con esta función puedes obtener el parámetro de línea de comandos elegido como una cadena. Puedes encontrar el número de parámetros para el juego actual
+    utilizando la función <a href="parameter_count.htm"><tt>parameter_count()</tt></a>donde el primer parámetro tiene el índice 1 y el último tiene el índice devuelto por la función (un valor de 0 es especial en cuanto a que es el nombre del archivo del ejecutable del juego,
+    incluyendo la ruta). Hay que tener en cuenta que esta función funcionará para en la plataforma HTML5, recuperando los parámetros de la url.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">parámetro_cadena(n);</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var p_num;<br> p_num = parameter_count();<br> if p_num &gt; 0<br> {
+    <br> var i;<br> for (i = 0; i &lt; p_num; i += 1)<br> {
+    <br> p_string[i] = parameter_string(i + 1);<br> }
+    <br> }
+  </p>
+  <p>El código anterior obtendrá el número de parámetros de la línea de comandos, y si hay 1 o más los recorrerá en bucle y los almacenará como cadenas en un array.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="environment_get_variable.htm">environment_get_variable</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+parameter_string
+-->
+  <!-- TAGS
+parameter_string
+-->
+</body>
+</html>

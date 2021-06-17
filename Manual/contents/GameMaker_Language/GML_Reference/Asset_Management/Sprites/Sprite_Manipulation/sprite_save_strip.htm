@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_save_strip</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_save_strip" />
+  <meta name="rh-index-keywords" content="sprite_save_strip" />
+  <meta name="search-keywords" content="sprite_save_strip" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_save_strip</h1>
+  <p>Esta función creará una imagen de tira a partir de todas las subimágenes de un sprite, guardándola en el disco con el nombre de archivo especificado. El sprite debe haber sido <a href="sprite_add.htm">añadido</a> en <span class="notranslate">tiempo de ejecución</span> (no puede guardar sprites añadidos a través del IDE) y el archivo
+    debe guardarse con una extensión <tt>*.png</tt>.</p>
+  <p class="note"><b>NOTA</b>: Dependiendo de la plataforma de destino que se elija, usted está limitado en cuanto a dónde puede guardar y cargar archivos. Consulte la sección <a href="../../../../../Additional_Information/The_File_System.htm">Manejo de archivos</a> para obtener más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_save_strip(ind, filename);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sprite para cambiar el mapa de transparencia.</td>
+      </tr>
+      <tr>
+        <td>nombre de archivo</td>
+        <td>El nombre del archivo para la tira de sprites guardada.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var spr, i;<br> spr = sprite_create_from_surface(0, 0, 32, 32, true, true, 16, 16);<br> for (i = 1; i &lt; 8; i +=1)<br> {
+    <br> sprite_add_from_surface(spr, i, 0, 32, 32, true, true, 16, 16);<br> }
+    <br> sprite_save_strip(spr, &quot;Custom_Player_Sprite.png&quot;);<br> sprite_delete(spr);
+  </p>
+  <p>El código anterior crea un sprite a partir de la superficie indexada en la variable &quot;surf&quot;, asignando su índice a la variable local &quot;spr_Custom&quot;, y luego utiliza un bucle for para moverse <tt>por</tt> la superficie y capturar varias secciones que
+    Este nuevo sprite se guarda como una tira de png antes de ser eliminado de la memoria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_flush.htm">sprite_flush</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_save_strip
+-->
+  <!-- TAGS
+sprite_save_strip
+-->
+</body>
+</html>

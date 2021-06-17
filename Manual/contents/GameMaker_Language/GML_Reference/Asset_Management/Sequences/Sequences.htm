@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Secuencias</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Sequences" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Sequences" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Secuencias</h1>
+  <p>Las secuencias suelen crearse en el IDE mediante el <a href="../../../../The_Asset_Editors/Sequences.htm">editor de secuencias</a>, pero también pueden crearse y editarse mediante código. Sin embargo, antes de ver las funciones disponibles, es importante
+    entender la forma en que se definen las secuencias en <span class="notranslate">GameMaker</span> y los diferentes términos que se utilizarán.</p>
+  <p>Para empezar, en el nivel superior, tienes un <b>elemento de secuencia</b>. Esto es lo que se coloca en una capa en una sala, ya sea a través del Editor de Salas o en el código utilizando las funciones de <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">capa</a> apropiadas.
+    El elemento de la capa no tiene propiedades reales más que un valor de ID de elemento, pero este ID es necesario para utilizar las funciones de la capa mencionadas anteriormente para cambiar la reproducción de la secuencia o para acceder a los datos de la secuencia.</p>
+  <p>A continuación, tiene <b>objetos</b> de secuencia e <b>instancias de secuencia</b> al igual que tiene objetos e instancias generales. Un objeto <i>de</i> secuencia es el recurso base tal y como lo creaste en el <b>Navegador de Activos</b> o utilizando la función <a href="sequence_create.htm"><tt>sequence_create()</tt></a>,
+    y la <i>instancia</i> de secuencia es la &quot;copia&quot; de ese objeto de secuencia que se ha colocado en una sala como un elemento en una capa. Piense en los objetos de secuencia como planos y en las instancias de secuencia como la creación a partir de esos planos. Secuencia
+    son <a href="../../../GML_Overview/Structs.htm">estructuras</a> y, a diferencia de los objetos normales, la estructura de un objeto de secuencia puede editarse en <span class="notranslate">tiempo de ejecución</span>, lo que afectará a todas las demás instancias de esa secuencia cuando las cree como elementos
+    (y cualquier edición realizada en un objeto de secuencia <b>no</b> se restablecerá al reiniciar el juego o la sala utilizando las funciones <tt>room_restart()</tt> o <tt>game_restart()</tt> ). La estructura de la instancia de la secuencia contiene algunos parámetros para controlar la reproducción
+    y cosas (esto se explica con más detalle a continuación), así como la estructura de <b>datos de la secuencia</b>.</p>
+  <p>Por último, como se ha mencionado anteriormente, tienes los <b>datos</b> de la secuencia, que es otra estructura. Esta estructura contiene <i>todos los</i> datos sobre la secuencia. Las pistas que contiene, las propiedades que tienen esas pistas, la velocidad de reproducción y mucho más. Los detalles exactos
+    Los detalles exactos del contenido de esta estructura se describen a continuación, pero básicamente consiste en estructuras de pistas de <b>activos</b> y estructuras de <b>pistas de parámetros</b> que utilizan <b>datos de<span class="notranslate">fotogramas clave</span></b> para realizar acciones mientras se reproduce la secuencia.</p>
+  <p>Los elementos de la secuencia se tratan con las <a href="../Rooms/Sequence_Layers/Sequence_Layers.htm">funciones de la capa de</a> la sala, pero para los objetos, instancias y datos de la secuencia tenemos las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="sequence_exists.htm">secuencia_existe</a></li>
+    <li><a href="sequence_create.htm">crear_secuencia</a></li>
+    <li><a href="sequence_destroy.htm">secuencia_destrucción</a></li>
+    <li><a href="sequence_get.htm">secuencia_obtener</a></li>
+    <li><a href="sequence_track_new.htm">pista_secuencia_nueva</a></li>
+    <li><a href="sequence_keyframe_new.htm">sequence_keyframe_new</a></li>
+    <li><a href="sequence_keyframedata_new.htm">secuencia_clave_de_fotogramas_nueva</a></li>
+    <li><a href="sequence_get_objects.htm">sequence_get_objects</a></li>
+    <li><a href="sequence_instance_override_object.htm">secuencia_instancia_sobrecarga_objeto</a></li>
+  </ul>
+  <p> </p>
+  <p>También hay una <strong>variable incorporada</strong> asociada a las instancias que puede utilizarse para determinar si la instancia ha sido utilizada en una secuencia o no:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="in_sequence.htm">secuencia_in</a></li>
+  </ul>
+  <p class="note"><strong>IMPORTANTE!</strong> Si su secuencia tiene algunas instancias en ella, estas instancias no deben cambiar su <span class="inline"><span style="font-size:14px;">image_xscale</span> / <span class="inline"><span style="font-size:14px;">image_yscale</span> /
+    <span class="inline"><span style="font-size:14px;">ángulo_de_imagen</span></span> / <span class="inline"><span style="font-size:14px;">x</span> / <span class="inline"><span style="font-size:14px;">y</span> ya que se sobrescribirán cuando la secuencia
+      actualice cada paso después de empezar a reproducirse.</p>
+  <p> </p>
+  <p>Antes de utilizar estas funciones para crear o editar secuencias, le recomendamos que lea las descripciones detalladas que se dan a continuación para las propiedades de la estructura. Una visión general de cómo crear una nueva secuencia sería:</p>
+  <ul class="colour">
+    <li>Cree el nuevo objeto de secuencia utilizando la función <a href="sequence_create.htm"><tt>seqeunce_create()</tt></a> y almacena el índice del objeto de secuencia en una variable. Este índice le da acceso a la estructura del objeto de secuencia.</li>
+  </ul>
+  <p class="code">myseq = sequence_create();</p>
+  <ul class="colour">
+    <li>Establezca los valores de nivel superior del objeto de secuencia, como la duración, el modo de reproducción, la velocidad de reproducción, etc. Por ejemplo:</li>
+  </ul>
+  <p class="code">myseq.length = 120;<br> myseq.loopmode = seqplay_pingpong</p>
+  <ul class="colour">
+    <li>Antes de poder añadir pistas al objeto secuencia, es necesario crearlas, por lo que ahora se crearía un array de pistas de <i>activos</i> que se han definido con la función <a href="sequence_track_new.htm"><tt>sequence_track_new()</tt></a>. Tenga en cuenta que
+      en el código, no hay realmente ninguna diferencia entre las pistas de activos y las pistas de parámetros - todas son simplemente pistas y la forma en que se comportan dependerá del tipo de pista que se crea y si se asignan como sub-pistas a una pista de nivel superior o no.
+      Por lo tanto, usted crearía una pista para un activo, y luego asignaría sub-pistas para los diferentes parámetros a ella y estas sub-pistas actuarían como las pistas de <i>parámetros</i> para el activo. El ejemplo siguiente crea una única pista de activo gráfico que se
+      se añadirá a la secuencia más tarde:</li>
+  </ul>
+  <p class="code">var mytracks = array_create(1);<br> mytracks[0] = sequence_track_new(seqtracktype_graphic);</p>
+  <ul class="colour">
+    <li>Cada pista de activos necesita tener algunos datos para decirle a la secuencia cómo se verá, o su posición, etc... y esto se añade en forma de <i><span class="notranslate">fotogramas clave</span></i>. En el nivel superior de una pista de activos, puede establecer <span class="notranslate">fotogramas clave</span> para varias cosas (enumeradas en la sección
+      sección sobre la Estructura de la Pista, más abajo), pero tenga en cuenta que como estos son fotogramas <span class="notranslate">clave</span> de la pista de activos, no serán interpolados y simplemente cambiarán el valor al que se refieren cuando se alcance el fotograma dado. Cada <span class="notranslate">fotograma</span> clave es una estructura que se añade a un array,
+      y luego este array se asigna a la pista del activo. Para crear la estructura de <span class="notranslate">fotogramas</span> clave, llamaríamos a la función <a href="sequence_keyframe_new.htm"><tt>secuencia_cuadro_nuevo()</tt></a> y para rellenar el <span class="notranslate">fotograma</span> clave con los datos necesarios, utilizaríamos
+      la función <a href="sequence_keyframedata_new.htm"><tt>sequence_keyframedata_new()</tt></a>:</li>
+  </ul>
+  <p class="code">// Cree una nueva estructura de <span class="notranslate">fotogramas clave</span> para una pista de activos gráficos y añádala a una matriz (ya que puede tener varias claves en un fotograma)<br> var graphickeys = array_create(1);<br> graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br> // Establezca los datos de nivel superior de los fotogramas clave de los gráficos
+    gráficos para la posición y la longitud del <span class="notranslate">fotograma</span> <span class="notranslate">clave</span>, etc...<br> graphickeys[0].frame = 0;<br> graphickeys[0].length = 1;<br> graphickeys[0].stretch = true;<br> graphickeys[0].disabled = false;<br> // Crear los datos del canal que irán
+    irán en este <span class="notranslate">fotograma clave</span> (de nuevo un array, ya que cada tecla puede tener múltiples canales de datos de <span class="notranslate">fotogramas clave</span> )<br> var graphickeydata = array_create(1);<br> graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br> graphickeydata[0].spriteIndex
+    = spr_Platform;<br> graphickeydata[0].channel = 0;<br> // Añadir los canales de datos de <span class="notranslate">fotogramas</span> clave al <span class="notranslate">fotograma clave</span>de la pista gráfica<br> graphickeys[0].channels = graphickeydata;<br> // Añadir los <span class="notranslate">fotogramas clave</span> definidos a la pista<br> mytracks[0].name = &quot;TestGraphicTrack&quot;;<br> mytracks[0]. keyframes<span class="notranslate">= graphickeys</span>;</p>
+  <ul class="colour">
+    <li>Ahora tenemos que crear una pista de parámetros que asignaremos como una subpista a la pista de gráficos que acabamos de crear. Esto se hará de una manera similar a la mostrada anteriormente, sólo que ahora tenemos que dar a la pista un nombre que muestre su propósito, en este caso
+      &quot;posición&quot;, ya que utilizaremos esta pista para mover la pista de gráficos en el transcurso de los fotogramas de animación de la secuencia:</li>
+  </ul>
+  <p class="code">// Crear una nueva estructura de pista de parámetros para la posición del gráfico<br> var paramtracks = array_create(1);<br> paramtracks[0] = sequence_track_new(seqtracktype_real);<br> paramtracks[0].name = &quot;position&quot;;<br> paramtracks[0].interpolation
+    = true;<br> // Crear la estructura de <span class="notranslate">fotogramas</span> <span class="notranslate">clave</span>para contener los datos del canal de parámetros y establecer la posición del fotograma clave<br> var paramkeys = array_create(2);<br> paramkeys[0] = sequence_keyframe_new(seqtracktype_real);<br> paramkeys[0].frame =
+    0;<br> paramkeys[1] = sequence_keyframe_new(seqtracktype_real);<br> paramkeys[1].frame = 120;<br> // Crear las estructuras de datos de <span class="notranslate">los fotogramas clave</span><br> var paramkeydata1 = array_create(2);<br> paramkeydata1[0] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata1[0].channel = 0; // El canal 0 de una pista de posición es la posición X<br> paramkeydata1[0].value = 0;<br> paramkeydata1[1] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata1[1].channel = 1; // El canal 1 de una posición
+    pista es la posición Y<br> paramkeydata1[1].value = 0;<br> var paramkeydata2 = array_create(2);<br> paramkeydata2[0] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata2[0].channel = 0;<br> paramkeydata2[0].value = room_width;<br> paramkeydata2[1] = sequence_keyframedata_new(seqtracktype_real);<br> paramkeydata2[1].channel = 1;<br> paramkeydata2[1].value = room_height;<br> // Asigna los structs de datos de <span class="notranslate">fotogramas</span> clave a los canales de cada tecla<br> paramkeys[0].channels = paramkeydata1;<br> paramkeys[1].channels = paramkeydata2;<br> // Asigna las teclas a la pista de parámetros<br> paramtracks[0].<span class="notranslate">keyframes</span> = paramkeys;</p>
+  <ul class="colour">
+    <li>Una vez hecho esto, lo último que hay que hacer es asignar la pista de parámetros como una sub-pista a nuestra pista principal de activos gráficos que creamos al principio y luego asignar estas pistas a la secuencia de la que podemos crear una instancia en la sala:</li>
+  </ul>
+  <p class="code">mytracks[0].tracks = paramtracks;<br> myseq.tracks = mytracks;<br> layer_sequence_create(&quot;Assets_1&quot;, 0, 0, myseq);</p>
+  <p>Las instrucciones anteriores crean un objeto de secuencia muy simple que dibuja un sprite en la posición (0, 0) <i>de la secuencia</i> y luego lo mueve a la esquina inferior derecha y de vuelta en un bucle. Como se ha mencionado, hay un número de lugares donde se necesita
+    acceder a diferentes structs para dar u obtener datos sobre la secuencia, y las secciones siguientes enumeran todas las diferentes propiedades que contienen estos structs:</p>
+  <ul class="colour">
+    <li><a name="object"></a><a href="Sequence_Structs/The_Sequence_Object_Struct.htm"><label for="1">La estructura de los objetos de la secuencia</label></a></li>
+    <li><a name="instance"></a><a href="Sequence_Structs/The_Sequence_Instance_Struct.htm"><label for="2">La estructura de la instancia de la secuencia</label></a></li>
+    <li><a name="track"></a><a href="Sequence_Structs/The_Track_Struct.htm"><label for="3">La estructura de la pista</label></a></li>
+    <li><a name="keyframe"></a><a href="Sequence_Structs/The_Keyframe_Struct.htm"><label for="4">La estructura de <span class="notranslate">los fotogramas clave</span> </label></a></li>
+    <li><a name="keyframe_data"></a><a href="Sequence_Structs/The_Keyframe_Data_Struct.htm"><label for="5">La estructura de datos de <span class="notranslate">los fotogramas clave</span> </label></a></li>
+  </ul>
+  <p> </p>
+  <p>Por último, es posible añadir código a las secuencias que pueden activarse como un <strong>evento</strong> un <strong>momento</strong> o como un <strong>mensaje de difusión</strong>. Esto se explica completamente en la página siguiente:</p>
+  <ul class="colour">
+    <li><a href="Sequence_Events_Moments_Broadcast.htm">Eventos, momentos y mensajes de difusión</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Asset_Management.htm">Gestión de activos</a></div>
+        <div style="float:right">Siguiente: <a href="../Fonts/Fonts.htm">Fuentes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences
+-->
+  <!-- TAGS
+sequence_functions
+-->
+</body>
+</html>

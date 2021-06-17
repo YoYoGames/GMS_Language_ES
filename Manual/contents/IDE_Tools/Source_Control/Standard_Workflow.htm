@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Flujo de trabajo estándar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control standard workflow
+" />
+  <meta name="rh-index-keywords" content="Source Control - Workflow" />
+  <meta name="search-keywords" content="using source control,source control workflow" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Flujo de trabajo estándar</h1>
+  <p>A medida que trabajes en tu proyecto, naturalmente crearás sprites, editarás scripts, eliminarás líneas de tiempo y cualquier otra cosa que sea necesaria a medida que tu proyecto se desarrolle con el tiempo. Estas son todas las acciones que usted puede desear para realizar un seguimiento y volver en caso de que algo
+    algo vaya mal. Esta es la razón principal para usar el Control de Fuentes - para que cualquier accidente pueda ser revertido - y te llevaremos rápidamente a través del flujo de trabajo básico desde el principio para que entiendas cómo funciona.</p>
+  <p>Empezando por el principio, creamos un nuevo proyecto <span class="notranslate">GML</span> y luego activamos el control de fuentes a través de las <a href="../../Settings/Game_Options.htm">opciones</a> principales. Esto nos da acceso al menú de Control de Fuentes en la parte superior, así que inmediatamente iremos y
+    seleccionaremos <strong>Crear Repositorio</strong> del Proyecto. Si nos fijamos en los recursos de la sala, podemos ver que la sala por defecto ha ganado una exclamación roja <img alt="SCM Modified Icon" class="icon" src="../../assets/Images/Icons/SCM_Modified.png">, lo que significa
+    que ha sido <strong>modificada </strong>desde su último estado. Si tuviéramos otros recursos en el proyecto, verías que todos tienen el mismo icono como se muestra en la imagen de abajo:</p>
+  <p><img alt="Source Control Modified Assets" class="center" src="../../assets/Images/IDE Tools/SCM_ModifiedState.png">Ahora tenemos la opción de confirmar el proyecto en blanco tal y como está, o llevarlo a un estado base. Por ahora, haremos nuestro primer
+    así que haz clic en <strong>Source Control</strong> &gt; <strong>Commit Changes.</strong> Ahora se abrirá una nueva ventana que se divide en tres áreas:</p>
+  <p><img alt="Source Control Commit Window" class="center" src="../../assets/Images/IDE Tools/SCM_CommitWindow.png" /></p>
+  <ul class="colour">
+    <li><strong>Cambios por etapas</strong>: Esto representa los cambios que serán enviados al código fuente. Es probable que esté en blanco, pero puede mostrar un cambio de Opciones principales, lo cual está bien.</li>
+    <li><strong>Cambios no confirmados</strong>: Muestra los archivos que han cambiado, pero que no le hemos dicho a Git que queremos confirmarlos: son cambios &quot;pendientes&quot;.</li>
+    <li><strong>Mensaje de compromiso</strong>: Es una nota que podemos añadir para explicar cuáles son los cambios.</li>
+  </ul>
+  <p>Por ahora, haz clic en el botón <strong>Stage All</strong>, ya que queremos confirmar todos los cambios, y escribe algo como &quot;¡Primera confirmación!&quot; en el mensaje de confirmación y haz clic en Commit. Todos nuestros recursos deben tener ahora una marca verde<img alt="SCM Committed Icon" class="icon" src="../../assets/Images/Icons/SCM_Committed.png">, lo que significa que no hay modificaciones encontradas.</p>
+  <p>Hay que tener en cuenta que, al trabajar en esta ventana, los distintos mensajes de <strong>Staged </strong>y <strong>Unstaged </strong>irán precedidos de un símbolo. El símbolo que se utilice variará en función de la operación y del archivo, siendo los siguientes
+    que se utiliza:</p>
+  <ul class="colour">
+    <li><span class="inline">[...]</span> - Cambio escalonado (antes era [A])</li>
+    <li><span class="inline">[+]</span> - Recién añadida</li>
+    <li><span class="inline">[-&gt;]</span> - Cambio de nombre/traslado</li>
+    <li><span class="inline">[-]</span> - Eliminado</li>
+    <li><span class="inline">[M]</span> - Cambios no escalonados</li>
+    <li><span class="inline">[?]</span> - Archivo no rastreado</li>
+    <li><span class="inline">[!]</span> - Archivo perdido</li>
+  </ul>
+  <p>Nuestro proceso de trabajo puede ahora comenzar, y podemos empezar a construir nuestro proyecto y guardar y confirmar los cambios, tal y como hemos hecho en los párrafos anteriores.</p>
+  <p>Después de trabajar durante un tiempo, es posible que quieras comprobar y ver lo que has confirmado en un momento dado, y para ello querrás abrir el Historial de confirmaciones <strong>.</strong> Para abrir la ventana del historial sólo tienes que ir a <strong>Source Control</strong> &gt; <strong>View History</strong> que abre otra ventana con tres paneles:</p>
+  <p><img alt="Source Control History Window" class="center" src="../../assets/Images/IDE Tools/SCM_HistoryWindow.png">El panel superior describe las confirmaciones, el panel central describe el comentario dado a la confirmación seleccionada, y el panel inferior describe
+    los archivos que han sido modificados en esta confirmación. Tenga en cuenta que si ha configurado una <a href="External_Merge_Diff_Tools.htm">Herramienta</a> de Diferencias, al hacer doble clic en cualquier archivo de esta ventana se abrirá la herramienta de diferencias y podrá ver los cambios
+    entre los archivos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Source_Control.htm">Control de la fuente</a></div>
+        <div style="float:right">Siguiente: <a href="Reverting_Files.htm">Revertir archivos</a> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control Workflow
+-->
+  <!-- TAGS
+source_control_workflow
+-->
+</body>
+</html>

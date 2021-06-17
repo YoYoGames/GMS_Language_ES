@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_send_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_send_raw" />
+  <meta name="rh-index-keywords" content="network_send_raw" />
+  <meta name="search-keywords" content="network_send_raw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_send_raw</h1>
+  <p>Con esta función puedes enviar un paquete de datos &quot;en bruto&quot; a través de la red. La función toma el <i>id de socket</i> para conectarse y luego debe suministrar el <i>id de buffer</i> que contiene los datos a enviar (para más información sobre buffers
+    ver <a href="../Buffers/Buffers.htm">Referencia - B</a>ufferes) y finalmente el tamaño (en bytes) del paquete de datos. Los datos enviados no son formateados por <span class="notranslate">GameMaker Studio 2</span> de ninguna manera y los dispositivos receptores obtendrán los datos como un flujo que
+    significa que tendrá que manejarlo usted mismo. La función devolverá el número de bytes de datos enviados, o un número menor que 0 si el envío ha fallado.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_send_raw(socket, buffer, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>toma de corriente</td>
+        <td>El id del socket a utilizar.</td>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El id del buffer del que se van a obtener los datos.</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño (en bytes) de los datos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buff = buffer_load(&quot;player_save.dat&quot;);<br> network_send_raw(sock, buff, buffer_get_size(buff));</p>
+  <p>La información anterior carga los datos de un búfer previamente guardado en la memoria y devuelve el id del búfer para ser almacenado en la variable &quot;buff&quot;. Este búfer completo se envía entonces como un paquete de datos en bruto a través de la red utilizando el socket identificado por la
+    variable &quot;sock&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_send_udp.htm">network_send_udp</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_raw
+-->
+  <!-- TAGS
+network_send_raw
+-->
+</body>
+</html>

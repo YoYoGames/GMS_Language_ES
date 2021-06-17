@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_pulley_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_pulley_create" />
+  <meta name="rh-index-keywords" content="physics_joint_pulley_create" />
+  <meta name="search-keywords" content="physics_joint_pulley_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_pulley_create</h1>
+  <p>La articulación de polea se utiliza para conectar dos instancias dentro del mundo de la física de tal manera que el movimiento de una influya directamente en el movimiento de la otra. Estas articulaciones se anclan primero en el espacio del mundo en dos puntos, cada uno conectado a una instancia
+    en su centro de masa. Esto puede cambiarse estableciendo las coordenadas locales de anclaje x/y en relación con el origen de la instancia, lo que significa que la conexión real de la instancia al punto de anclaje del mundo de la física puede desplazarse a algún lugar distinto de
+    su origen. La siguiente imagen ilustra esto:</p>
+  <p><img alt="Pulley joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/pulley_joint_image.png">Si observa inst2 puede ver que su punto de anclaje local ha sido desplazado 20 píxeles a la &quot;izquierda&quot;
+    de su origen (¡Recuerde! Los puntos de anclaje mundiales se definen utilizando las coordenadas de la sala, mientras que los puntos de anclaje locales se definen en relación con el origen de la instancia). También puede especificar una relación para la articulación de la polea, que indica que un lado o
+    un valor inferior a 1 hace que la primera instancia se mueva más rápido (por ejemplo, 0,5 hará que se mueva el doble de rápido) y un valor superior a 1 hace que la segunda instancia se mueva más rápido (por ejemplo, 2 hará que se mueva el doble de rápido).</p>
+  <p>Al igual que con todas las articulaciones, si se establece el valor &quot;col&quot; en true entonces <tt>las</tt> dos instancias pueden interactuar y colisionar entre sí, pero sólo <i>si</i> tienen eventos de colisión, sin embargo, si se establece en false, no <tt>van</tt> a colisionar
+    no colisionarán.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_pulley_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, l_anchor1_x, l_anchor1_y, l_anchor2_x, l_anchor2_y, ratio, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>La primera instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>La segunda instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>w_anclaje1_x</td>
+        <td>La coordenada x donde se ancla la primera parte de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anchor1_y</td>
+        <td>La coordenada y donde se ancla la primera parte de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anclaje2_x</td>
+        <td>La coordenada x donde se ancla la segunda parte de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anclaje2_y</td>
+        <td>La coordenada y donde se ancla la segunda parte de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>l_anclaje1_x</td>
+        <td>La coordenada local x donde la articulación 1 está anclada a la primera instancia</td>
+      </tr>
+      <tr>
+        <td>l_anclaje1_y</td>
+        <td>La coordenada local y donde la articulación 1 está anclada a la primera instancia</td>
+      </tr>
+      <tr>
+        <td>l_anclaje2_x</td>
+        <td>La coordenada local x donde la articulación 2 está anclada a la segunda instancia</td>
+      </tr>
+      <tr>
+        <td>l_anclaje2_y</td>
+        <td>La coordenada local y donde la articulación 2 está anclada a la segunda instancia</td>
+      </tr>
+      <tr>
+        <td>relación</td>
+        <td>Establecer la relación de velocidad entre dos instancias</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Si las dos instancias pueden colisionar (verdadero) o no (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (índice de la articulación)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var t_fix, inst1, inst2;<br> t_fix = physics_fixture_create();<br> physics_fixture_set_circle_shape(t_fix, 20);<br> inst1 = instance_create_layer(150, room_height - 90, &quot;Instances&quot;, obj_Block);<br> inst2 = instance_create_layer(300, room_height
+    - 90, &quot;Instances&quot;, obj_block);<br> physics_fixture_bind(t_fix, inst1);<br> physics_fixture_bind(t_fix, inst2);<br> physics_joint_pulley_create(inst1, inst2, 150, room_height - 140, 300, room_height - 140, 0, 0, 0, 2, 0);<br> physics_fixture_delete(t_fix);
+  </p>
+  <p>El código anterior crea y define un nuevo fixture, crea dos instancias de &quot;obj_Block&quot;, y luego vincula este fixture a dos de ellas. A continuación, define una articulación de polea entre estas instancias, sin desplazamiento para las articulaciones, una relación de 2:1 (lo que significa
+    que inst2 se moverá más rápido). No se producen colisiones entre las dos instancias en la polea.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_gear_create.htm">physics_joint_gear_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_pulley_create
+-->
+  <!-- TAGS
+physics_joint_pulley_create
+-->
+</body>
+</html>

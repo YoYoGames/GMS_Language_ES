@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lugar_libre</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion place_free" />
+  <meta name="rh-index-keywords" content="place_free" />
+  <meta name="search-keywords" content="place_free" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lugar_libre</h1>
+  <p>Puedes utilizar esta función para comprobar si la instancia que llama colisiona con cualquier instancia <i>marcada como <b>sólida</b></i> en tu juego. Ahora, hay que tener en cuenta que para que esto funcione, la instancia que ejecuta el código debe tener una máscara de colisión válida
+    válida (ya sea para el propio sprite, o a través del <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/mask_index.htm"><tt>índice_máscara</tt></a>) y sólo registrará colisiones con aquellas instancias marcadas como sólidas que también tengan una máscara
+    máscara válida.</p>
+  <p>La función en sí funciona básicamente tomando la instancia y comprobando las colisiones con sólo las instancias marcadas como sólidas cuando se colocan en la posición especificada por los argumentos x/y. La comprobación de colisiones puede ser precisa o basarse en el cuadro delimitador
+    de la instancia, dependiendo del tipo de máscara de colisión que se haya seleccionado.</p>
+  <p>Tenga en cuenta que las coordenadas x/y dadas se rebajarán al número entero más cercano antes de realizar la comprobación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">place_free(x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x a comprobar.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si place_free(mouse_x, mouse_y)<br> {
+    <br> x = mouse_x;<br> y = mouse_y;<br> }
+  </p>
+  <p>El código anterior comprobará si hay una colisión con cualquier instancia marcada como sólida si la instancia que llama se coloca en la misma posición que el ratón. Si no se detecta ninguna colisión, entonces la instancia tiene sus coordenadas x/y establecidas a las del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="place_meeting.htm">lugar_de_reunión</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+place_free
+-->
+  <!-- TAGS
+place_free
+-->
+</body>
+</html>

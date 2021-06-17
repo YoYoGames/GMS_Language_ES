@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>redimensionamiento_de_superficie</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_resize" />
+  <meta name="rh-index-keywords" content="surface_resize" />
+  <meta name="search-keywords" content="surface_resize" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>redimensionamiento_de_superficie</h1>
+  <p>Esta función redimensionará una superficie a las dimensiones dadas (en píxeles). El &quot;surface_id&quot; es el de una superficie que haya creado previamente, o el <a href="application_surface.htm"><tt>aplicación_superficie</tt></a>y la función redimensionará
+    esa superficie. Tenga en cuenta que esto no recortará ni estirará el contenido de la superficie, sino que destruirá la superficie actual y la recreará con el mismo manejador (surface_id) con las nuevas dimensiones, lo que significa que tendrá que ser borrado
+    y dibujarla de nuevo (a menos que sea la <tt>superficie de la aplicación</tt>, en cuyo caso <span class="notranslate">GameMaker Studio 2</span> lo hará automáticamente).</p>
+  <p class="note"><b>NOTA</b>: Si está redimensionando la superficie de la aplicación, estos cambios no se registrarán hasta el inicio del siguiente fotograma de dibujo, lo que significa que llamar a la función <span style="font-size:1px;"><a href="surface_get_width.htm"><tt style="font-size: 14px">superficie_obtener_ancho()</tt></a></span>    o <span style="font-size:1px;"><a href="surface_get_height.htm"><tt style="font-size: 14px">surface_get_height()</tt></a></span> en el mismo evento o paso devolverá los valores anteriores.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_resize(surface_id, w, h);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a cambiar.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura de la nueva superficie.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la nueva superficie.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if view_wport[0] != surface_get_width(application_surface) || view_hport[0] != surface_get_height(application_surface)<br> {
+    <br> surface_resize(application_surface, view_wport[0],view_hport[0]);<br> }
+  </p>
+  <p>El código anterior comprobará el tamaño del puerto de la vista con el de la superficie &quot;aplication_surface&quot; y si es diferente, la superficie se redimensiona.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_set_target.htm">surface_set_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_resize
+-->
+  <!-- TAGS
+surface_resize
+-->
+</body>
+</html>

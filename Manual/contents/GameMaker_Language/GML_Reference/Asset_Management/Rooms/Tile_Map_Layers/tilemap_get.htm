@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get" />
+  <meta name="rh-index-keywords" content="tilemap_get" />
+  <meta name="search-keywords" content="tilemap_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get</h1>
+  <p>Con esta función puede recuperar los datos de los azulejos de una celda del elemento de mapa de azulejos. Se da el ID del elemento de mapa de azulejos (que se obtiene al crear un elemento de mapa de azulejos utilizando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> o
+    al utilizar la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), así como la posición x e y de <i>la cel</i> da, y la función devolverá el &quot;blob&quot; de datos del mosaico. Estos datos son esencialmente una máscara de bits que contiene
+    el índice del mosaico, los booleanos de volteo/rotación/espejo y cualquier dato de máscara que se haya aplicado (véase <a href="tilemap_set_mask.htm"><tt>tilemap_set_mask()</tt></a> para más detalles), y el valor de los datos resultantes puede utilizarse en las funciones de <span class="inline">tile_*</span> 
+    para cambiar las propiedades de los azulejos. Tenga en cuenta que estamos utilizando las posiciones de las celdas x/y basadas en el tamaño de la cuadrícula del mapa de azulejos y <i>no</i> como una posición en la habitación, por lo que &quot;cell_x&quot; es un valor de 0 a la <a href="tilemap_get_width.htm">anchura</a> del mapa de azulejos <a href="tilemap_get_width.htm">,</a>
+    y &quot;cell_y&quot; es un valor de 0 a la <a href="tilemap_get_height.htm">altura del mapa de azulejos.</a> Si necesitas obtener los datos de una baldosa en una posición específica de la sala, entonces debes utilizar la función <a href="tilemap_get_at_pixel.htm"><tt>tilemap_get_at_pixel()</tt></a>.</p>
+  <p class="note"><b>IMPORTANTE!</b> Si los azulejos del mapa de azulejos no se han modificado (es decir, no se han girado o volteado, etc.), entonces el valor de retorno de los datos del conjunto de azulejos será exactamente igual al índice del azulejo en el conjunto de azulejos. Por lo tanto, puede crear &quot;mapas de colisión
+    de azulejos utilizando un azulejo en el índice 1 en el conjunto de azulejos - por ejemplo - y luego utilizar esta función para comprobar 1 o 0 (un azulejo vacío) para calcular las colisiones.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_get(tilemap_element_id, cell_x, cell_y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos para obtener los datos de los azulejos</td>
+      </tr>
+      <tr>
+        <td>x_celda</td>
+        <td>La celda a lo largo del eje x para obtener los datos del mosaico</td>
+      </tr>
+      <tr>
+        <td>y_cell</td>
+        <td>La celda a lo largo del eje y para obtener los datos del mosaico</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (-1 si hay un error)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var data = tilemap_get(map_id, 0, 0);<br> data = tile_set_flip(data, true);<br> tilemap_set(map_id, data, 0, 0);</p>
+  <p>El código anterior obtiene el ID del mapa de azulejos en la capa &quot;Tiles_Sky&quot; y luego lo utiliza para obtener los datos del azulejo en la celda (0, 0). Estos datos del azulejo se voltean antes de ser utilizados para establecer el azulejo en el mapa de azulejos de nuevo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get
+-->
+  <!-- TAGS
+tilemap_get
+-->
+</body>
+</html>

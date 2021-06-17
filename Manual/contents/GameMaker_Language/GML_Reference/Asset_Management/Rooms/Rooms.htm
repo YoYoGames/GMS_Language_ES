@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Habitaciones</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the different functions and variables associated with Rooms" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Rooms" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Habitaciones</h1>
+  <p>Las salas se crean en el <a href="../../../../The_Asset_Editors/Rooms.htm">Editor de Salas</a> de <span class="notranslate">GameMaker Studio 2</span><span> y </span>es donde todo sucede en su juego. Usted debe tener al menos una sala en cualquier juego para que se ejecute, pero puede
+    pero puedes necesitar muchas más dependiendo del tipo de juego y de cómo estructures tu proyecto. Esta sección tiene todas las funciones generales de <span class="notranslate">GML</span> y las variables relacionadas con las habitaciones y para obtener información sobre ellas, así como para establecer ciertas propiedades dentro de
+    en ellas.</p>
+  <p>Las siguientes <a href="../../../GML_Overview/Variables/Global_Variables.htm">variables</a> y funciones <a href="../../../GML_Overview/Variables/Global_Variables.htm">globales</a> pueden utilizarse para obtener información básica sobre cualquier sala:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_first.htm">habitación_primera</a></li>
+    <li><a href="room_last.htm">habitación_última</a></li>
+    <li><a href="room_next.htm">habitación_siguiente</a></li>
+    <li><a href="room_previous.htm">habitación_anterior</a></li>
+    <li><a href="room.htm">habitación</a></li>
+    <li><a href="room_speed.htm">velocidad_de_habitación</a></li>
+    <li><a href="room_height.htm">altura_de_la_habitación</a></li>
+    <li><a href="room_width.htm">ancho_de_habitación</a></li>
+    <li><a href="room_persistent.htm">habitación_persistente</a></li>
+  </ul>
+  <p> </p>
+  <p>También puede utilizar las siguientes funciones para obtener el nombre de la sala actual (tal y como se define en el <a href="../../../../Introduction/The_Asset_Browser.htm">Navegador de Activos</a>), así como para moverse entre salas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_get_name.htm">room_get_name</a></li>
+    <li><a href="room_goto.htm">habitación_goto</a></li>
+    <li><a href="room_goto_next.htm">room_goto_next</a></li>
+    <li><a href="room_goto_previous.htm">room_goto_previous</a></li>
+    <li><a href="room_restart.htm">room_restart</a></li>
+  </ul>
+  <p> </p>
+  <p>A continuación, tenemos una serie de funciones que se pueden utilizar para cambiar las salas y su contenido o incluso crear nuevas salas y añadirlas. Hay que tener en cuenta que estas funciones <i>no</i> deben <i>ejecutarse nunca desde la sala que se desea cambiar</i>, sino que
+    ejecutarse primero desde una instancia en otra sala. También hay que tener en cuenta que si se cambia cualquier activo de la sala de esta manera, el cambio es <strong>permanente</strong> y se mantendrá durante toda la duración del juego, incluso si se llama a la función room_restart()
+    (sin embargo, cerrar y reiniciar el juego restablecerá las propiedades de la sala).</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="room_exists.htm">habitación_existe</a></li>
+    <li><a href="room_add.htm">room_add</a></li>
+    <li><a href="room_duplicate.htm">habitación_duplicada</a></li>
+    <li><a href="room_assign.htm">asignación_de_habitaciones</a></li>
+    <li><a href="room_instance_add.htm">room_instance_add</a></li>
+    <li><a href="room_instance_clear.htm">room_instance_clear</a></li>
+    <li><a href="room_set_height.htm">room_set_height</a></li>
+    <li><a href="room_set_width.htm">room_set_width</a></li>
+    <li><a href="room_set_persistent.htm">room_set_persistent</a></li>
+    <li><a href="room_set_view_enabled.htm">room_set_view_enabled</a></li>
+    <li><a href="room_set_viewport.htm">room_set_viewport</a></li>
+    <li><a href="room_get_viewport.htm">room_get_viewport</a></li>
+    <li><a href="room_set_camera.htm">room_set_camera</a></li>
+    <li><a href="room_get_camera.htm">room_get_camera</a></li>
+  </ul>
+  <p> </p>
+  <p>También hay una serie de funciones diferentes relacionadas con la creación y manipulación de los diferentes tipos de elementos que se pueden colocar en las capas de la sala. Estas funciones se enumeran en las secciones apropiadas para cada tipo de elemento enumerado a continuación:</p>
+  <ul class="colour">
+    <li><a href="General_Layer_Functions/General_Layer_Functions.htm">Funciones generales de la capa</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Capas del mapa de azulejos</a></li>
+    <li><a href="Background_Layers/Background_Layers.htm">Capas de fondo</a></li>
+    <li><a href="Sprite_Layers/Sprite_Layers.htm">Capas de sprites</a></li>
+    <li><a href="Sequence_Layers/Sequence_Layers.htm">Capas de secuencia</a></li>
+  </ul>
+  <p> </p>
+  <p>Una cosa importante a tener en cuenta al crear las capas de la sala es que <i>usted puede tener varios tipos de elementos diferentes en una capa</i>. Así, por ejemplo, puede tener una capa para los enemigos, y en esa capa tener las instancias de los enemigos, así como ciertos activos de sprites
+    que sólo están relacionados con ese enemigo. O podrías tener un elemento de fondo con un elemento de mapa de azulejos para crear el aspecto de una habitación. Esto no está permitido en el editor de habitaciones, pero cuando se crean cosas dinámicamente se puede hacer esto, por lo que funciones
+    como <a href="General_Layer_Functions/layer_get_all_elements.htm"><tt>layer_get_all_elements()</tt></a> existen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Asset_Management.htm">Gestión de activos</a></div>
+        <div style="float:right">Siguiente: <a href="../Assets_And_Tags/Assets_And_Tags.htm">Activos y etiquetas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Rooms
+Room Layers
+Layer Functions
+-->
+  <!-- TAGS
+room_functions
+-->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_bbox_mode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_bbox_mode" />
+  <meta name="rh-index-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+  <meta name="search-keywords" content="sprite_get_bbox_mode,bboxmode_automatic,bboxmode_fullimage,bboxmode_manual" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_bbox_mode</h1>
+  <p>Esta función devolverá el &quot;modo&quot; actual para los cálculos de la caja delimitadora. Usted proporciona el índice del sprite a comprobar, y la función devolverá una de las constantes que se muestran a continuación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_get_bbox_mode(ind);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sprite a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Constante</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_automatic</tt></td>
+        <td>Automático - El cuadro delimitador se calculará automáticamente, basándose en la configuración de la tolerancia del sprite</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_fulllimage</tt></td>
+        <td>Imagen completa: el cuadro delimitador se establecerá para utilizar toda la anchura y la altura del sprite, independientemente de la tolerancia y los píxeles &quot;vacíos&quot;</td>
+      </tr>
+      <tr>
+        <td><tt>bboxmode_manual</tt></td>
+        <td>Manual - El cuadro delimitador se ha ajustado manualmente a los valores definidos por el usuario (ya sea en el editor de sprites, o utilizando la función <a href="../Sprite_Manipulation/sprite_set_bbox.htm"><tt>sprite_set_bbox()</tt></a>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if sprite_get_bbox_mode(sprite_index) != 0<br> {
+    <br> sprite_set_bbox_mode(sprite_index, bboxmode_automatic);<br> }
+  </p>
+  <p>Lo anterior comprueba el modo bbox para el sprite actual y si no es <tt>automático,</tt> entonces lo establece a ese valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Information.htm">Información sobre el Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_get_nineslice.htm">sprite_get_nineslice</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_bbox_mode
+bboxmode_manual
+bboxmode_fullimage
+bboxmode_automatic
+-->
+  <!-- TAGS
+sprite_get_bbox_mode
+-->
+</body>
+</html>

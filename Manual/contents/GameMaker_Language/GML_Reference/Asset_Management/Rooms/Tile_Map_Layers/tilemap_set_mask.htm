@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_set_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_set_mask" />
+  <meta name="rh-index-keywords" content="tilemap_set_mask,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+  <meta name="search-keywords" content="tilemap_set_mask,tile_rotate,tile_mirror,tile_flip,tile_index_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_set_mask</h1>
+  <p>Esta función puede utilizarse para establecer la <b>máscara de bits</b> de un mapa de azulejos. Se da el ID del elemento del mapa de azulejos (que se obtiene cuando se crea un elemento del mapa de azulejos usando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> o cuando
+    se utiliza la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), y luego el valor de la máscara. La idea es que si tienes, por ejemplo, un conjunto de azulejos bastante pequeño de 16 x 16 azulejos, entonces tienes un total de 256 azulejos diferentes
+    en su conjunto de azulejos, que sólo utiliza 8 bits de su índice en el &quot;blob&quot; de datos de los azulejos (de los 19 bits de datos disponibles). Estos bits pueden ser &quot;enmascarados&quot; y entonces el resto de los datos de los mosaicos pueden ser utilizados para almacenar valores adicionales.</p>
+  <p>Una manera fácil de obtener el valor de la máscara de índice inicial es tomar el número de azulejos en el conjunto de azulejos y restar 1, por lo que un conjunto de azulejos de 16x16 tiene 256 azulejos y un valor de máscara de 255 (o $ff en hexadecimal), y si el conjunto de azulejos tiene un número de azulejos que no son
+    Si el conjunto de azulejos tiene un número de azulejos que no es una potencia de dos, entonces se redondea a la potencia de dos más cercana para obtener la máscara, por ejemplo, un conjunto de azulejos de 20x20 tiene 400 azulejos, que se redondea a 512, y así se obtiene un valor de índice de máscara de 511 ($1ff en hexadecimal). Aparte de la máscara de índice,
+    normalmente querrás preservar los valores de volteo, rotación y espejo que se asignan a un azulejo también, así que para ayudar con eso hay algunas <b>constantes</b> que se pueden utilizar. Estos pueden ser &quot;o&quot; junto con el valor de la máscara de índice para preservar
+    esos bits de datos. Se pueden utilizar las siguientes constantes (ver el código de ejemplo más abajo para su uso):</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tile_rotate</td>
+        <td>Se utiliza para establecer/obtener el bit de rotación de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>espejo_azulejo</td>
+        <td>Se utiliza para establecer/obtener el bit de espejo de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>tile_flip</td>
+        <td>Se utiliza para establecer/obtener el bit de volteo de un blob de datos de baldosas.</td>
+      </tr>
+      <tr>
+        <td>tile_index_mask</td>
+        <td>Una constante especial que sirve para &quot;y&quot; con el blob de datos del mosaico para extraer el índice del mosaico.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>El enmascaramiento de bits del mapa de azulejos es una característica avanzada y permite utilizar bits del &quot;blob&quot; de datos de azulejos para su propio uso. Por ejemplo, el usuario podría reservar un bit para significar &quot;sólido&quot; en la estructura de datos de baldosas y luego esto puede ser comprobado para
+    colisiones rápidas. Básicamente, la máscara de bits es &quot;y&quot; contra los datos del mosaico cuando se dibuja el mapa del mosaico (por lo <i>que</i> no afecta a ninguna otra funcionalidad), lo que significa que los bits que no están en la máscara se ignoran, pero todavía pueden
+    ser leídos y escritos por el usuario para sus propios fines. Tenga en cuenta que hay dos máscaras diferentes - una global y una por mapa de azulejos - y estos son &quot;y&quot; juntos internamente por GameMaker <span class="notranslate">Studio 2 antes de</span> ser utilizado para el dibujo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_set_mask(tilemap_element_id, mask)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos para establecer la máscara de</td>
+      </tr>
+      <tr>
+        <td>máscara</td>
+        <td>El valor de la máscara</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_sky&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var mask = tile_mirror | tile_flip | tile_rotate | 255;<br> tilemap_set_mask(map_id, mask);</p>
+  <p>El código anterior obtiene el ID del mapa de azulejos de la capa dada y luego establece la máscara de bits del mapa de azulejos a 8bits, preservando los valores de volteo, espejo y rotación para cada azulejo en el mapa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_set_global_mask.htm">tilemap_set_global_mask</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_set_mask
+tile_rotate
+tile_mirror
+tile_flip
+tile_index_mask
+-->
+  <!-- TAGS
+tilemap_set_mask
+-->
+</body>
+</html>

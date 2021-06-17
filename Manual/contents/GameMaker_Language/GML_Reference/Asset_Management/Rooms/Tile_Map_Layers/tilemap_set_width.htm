@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_set_width</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_set_width" />
+  <meta name="rh-index-keywords" content="tilemap_set_width" />
+  <meta name="search-keywords" content="tilemap_set_width" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_set_width</h1>
+  <p>Esta función puede utilizarse para cambiar el tamaño de un elemento de mapa de azulejos. Se le da el ID del elemento del mapa de azulejos (que se obtiene cuando se crea un elemento del mapa de azulejos utilizando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a> o cuando se utiliza la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>),
+    y el nuevo ancho del mapa de azulejos en celdas de azulejos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_set_width(tilemap_element_id, width)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos para establecer el ancho de</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El valor de la anchura (en &quot;celdas&quot;)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Walls&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> if tilemap_get_width(map_id) != room_width div 16<br> {
+    <br> tilemap_set_width(map_id, room_width div 16);<br> }
+  </p>
+  <p>El código anterior comprueba la anchura de un mapa de azulejos específico y si no es el tamaño correcto, entonces se establece la anchura.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_set_height.htm">tilemap_set_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_set_width
+-->
+  <!-- TAGS
+tilemap_set_width
+-->
+</body>
+</html>

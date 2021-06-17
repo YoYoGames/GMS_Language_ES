@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_begin_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_begin_script" />
+  <meta name="rh-index-keywords" content="camera_set_begin_script" />
+  <meta name="search-keywords" content="camera_set_begin_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_begin_script</h1>
+  <p>Esta función se puede utilizar para establecer una <a href="../../../GML_Overview/Script_Functions.htm">función de script</a> que será llamada al principio de cada fotograma del juego en el que la cámara esté asignada a un puerto de vista visible y activo. Se da el valor único de la cámara
+    ID de la cámara (tal y como la devuelven las diferentes <tt><a href="camera_create.htm">camera_create()</a></tt> funciones) y el ID de la función a llamar. El orden en el que los scripts se adjuntan a las cámaras y el renderizado real de la vista de la cámara es el siguiente:</p>
+  <ul class="colour">
+    <li>Las cámaras de todos los puertos de vista visibles y activos tienen su <b>función de actualización</b> llamada</li>
+    <li>Luego, para cada vista:
+      <ul>
+        <li>Se llama a la <b>función de inicio </b>de la cámara para esa vista</li>
+        <li>Se ejecutan los eventos de dibujo para esa vista</li>
+        <li>Se llama a la <b>función </b>de finalización de la cámara</li>
+      </ul>
+    </li>
+    <li>Pasar a la siguiente vista visible activa y repetir...</li>
+  </ul>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">camera_set_begin_script(camera_id, script)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>El valor único del ID de la cámara devuelto cuando se creó la cámara.</td>
+      </tr>
+      <tr>
+        <td>guión</td>
+        <td>La función de script para ejecutar cada fotograma del juego</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">camera_set_begin_script(view_camera[0], beginCamera);</p>
+  <p>El código anterior establece la función de inicio de script para la cámara asignada al puerto de vista [0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="camera_set_end_script.htm">camera_set_end_script</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_begin_script
+-->
+  <!-- TAGS
+camera_set_begin_script
+-->
+</body>
+</html>

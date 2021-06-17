@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>cambiar</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
+  <meta name="rh-index-keywords" content="switch,case" />
+  <meta name="search-keywords" content="switch,default" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>cambiar</h1>
+  <p>En varias situaciones querrás que tus instancias realicen diferentes acciones en función de un valor concreto. Puede hacerlo utilizando una serie de sentencias <a href="If_Else_and_Conditional_Operators.htm"><tt>if / else</tt></a> consecutivas, pero
+    cuando las opciones posibles son más de dos o tres, suele ser más fácil utilizar la sentencia <tt>switch</tt>. Una sentencia <tt>switch</tt> tiene la siguiente forma:</p>
+  <p class="code">switch (&lt;expresión&gt;)<br> {
+    <br> case &lt;constante1&gt;: &lt;expresión1&gt;; ... ; break;<br> case &lt;constante2&gt;: &lt;expresión2&gt;; ... ; break;<br>...
+    <br> por defecto: &lt;declaración&gt;;<br> }
+  </p>
+  <p>Esto funciona de la siguiente manera:</p>
+  <ul class="colour">
+    <li>Primero se ejecuta la <a class="glossterm" data-glossterm="expresión" href="#">expresión</a>.</li>
+    <li>A continuación se compara con los resultados de las diferentes <a href="../Variables/Constants.htm">constantes</a> después de cada una de las<span class="glossextra">sentencias</span> <span class="inline">case</span>.
+      Cuando decimos &quot;constante&quot; lo que queremos decir es que el valor en el caso no puede ser una expresión variable y debe ser un valor fijo de cualquier tipo de datos, <a href="../Data_Types.htm">como &quot;</a>lucha&quot; o 3 o la palabra clave <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
+    <li>La ejecución continúa después de la primera sentencia <span class="inline">case</span> con el valor correcto, <i>hasta que se encuentra una sentencia <a href="break.htm">break</a></i>.</li>
+    <li>Si ninguna sentencia case tiene el valor correcto, se ejecutará la sentencia <span class="inline">default</span> (no es necesario que tenga una sentencia <span class="inline">default</span>, y si no se suministra ninguna, no se realizará ninguna acción).</li>
+  </ul>
+  <p>Un ejemplo sencillo de uso de una sentencia switch sería algo así:</p>
+  <p class="code">switch (global.state)<br> {<br> case &quot;alert&quot;:<br> if (instance_exists(obj_Player))<br> {<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br> {<br> 
+    global.state = &quot;chase&quot;;<br> } <br> } <br> break;<br> case &quot;chase&quot;:<br> var _lost = false;<br> if (instance_exists(obj_Player))<br> {<br> move_towards_point(obj_Player.x,
+    obj_Player.y, 2);<br> if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br> {<br> _lost = true;<br> } <br> } <br> else _lost = true;<br> if (_lost)<br> {<br> speed = 0;<br> global.state = &quot;alert&quot;;<br> } <br> break;<br> }</p>
+  <p>Aquí tenemos una variable global que contiene un valor de cadena que se utiliza para establecer el comportamiento (estado) de la instancia. En este ejemplo, la instancia simplemente cambia entre dos estados, pero es extremadamente fácil ampliar esto para incluir más estados añadiendo
+    más declaraciones <span class="inline">case</span> para cadenas de estado adicionales, como &quot;luchar&quot; o &quot;morir&quot;, etc...</p>
+  <p>Tenga en cuenta que se pueden utilizar múltiples sentencias <tt>case</tt> para ejecutar la misma sentencia, ya que el <tt>break</tt> no siempre es necesario para todos y cada uno de los <span class="inline">case</span>. Si no hay una sentencia <span class="inline">break</span> para un
+    particular <span class="inline">case</span>, la ejecución simplemente continúa con el código para el siguiente caso, ej:</p>
+  <p class="code">switch (tecla_del_teclado)<br> {
+    <br> case vk_left:<br> case ord(&quot;A&quot;):<br> x -= 4;<br> break;
+    <br> case vk_right:<br> case ord(&quot;D&quot;):<br> x += 4;<br> break;
+    <br> case vk_up:<br> case ord(&quot;W&quot;):<br> y -= 4;<br> break;
+    <br> case vk_down:<br> case ord(&quot;S&quot;):<br> y += 4;<br> break;
+    <br> }
+  </p>
+  <p>El código anterior utiliza <tt>switch</tt> para comprobar si hay un evento de teclado y luego lo compara con cada uno de los <span class="inline">case</span> listados. Si cumple con alguno de los valores requeridos entonces se ejecuta el código correspondiente. Observe cómo en el código hemos utilizado
+    la forma en que <tt>switch</tt> puede comprobar múltiples <span class="inline">cases</span> y continuar si no se encuentra ningún <span class="inline">break</span> para permitir que se utilicen varias teclas para obtener el mismo resultado. Nótese que cada <span class="inline">case</span> puede tener su propio código, y así se puede establecer una especie de sistema de &quot;herencia&quot; en el que más de un <span class="inline">case</span> y su código se ejecutarán consecutivamente con el siguiente hasta que se llegue a una ruptura dependiendo del valor
+    de la expresión inicial <span class="inline">switch</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Language_Features.htm">Características lingüísticas</a></div>
+        <div style="float:right">Siguiente: <a href="break.htm">descanso</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+
+</body></html>

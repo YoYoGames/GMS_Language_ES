@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_barra_de_salud</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for the function draw_healthbar" />
+  <meta name="rh-index-keywords" content="draw_healthbar" />
+  <meta name="search-keywords" content="draw_healthbar" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_barra_de_salud</h1>
+  <p>Con esta función puede dibujar una barra de color para mostrar un valor constante. Aunque la función utiliza la palabra &quot;barra de salud&quot;, puede utilizarla para mostrar cualquier cosa que desee siempre que la cantidad a mostrar sea un valor porcentual entre 0 y
+    100 (un porcentaje de cualquier valor puede ser calculado con la fórmula <b>(Valor_CURRENTE / Valor_MÁXIMO) * 100</b>), así que, por ejemplo, puedes usar esto para mostrar la potencia, la salud, el maná, el tiempo o cualquier otra cosa que se beneficiaría de una barra de visualización.</p>
+  <p>Puede configurar varias cosas diferentes que cambian el aspecto visual de la barra y que se ilustran en la imagen siguiente (tenga en cuenta que los colores utilizados aquí son <tt>c_verde</tt> para el valor máximo y <tt>c_rojo</tt> para el valor mínimo, pero puede
+    puede utilizar los colores que desee):</p>
+  <p><img alt="Healthbar examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/draw_healthbar.png" /></p>
+  <p class="note"><b>NOTA</b>: Si quieres dibujar una forma usando un <span class="notranslate">shader</span>, debes tener en cuenta que la mayoría de <span class="notranslate">los shaders</span> esperan las siguientes entradas: vértice, textura, color. Sin embargo, cuando se utiliza esta función, sólo se pasan datos de vértice y color, por lo que el
+    puede no dibujar nada (o dibujar algo pero no correctamente). Si necesitas dibujar formas de esta manera, entonces el <span class="notranslate">shader</span> debe ser personalizado con esto en mente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_healthbar(x1, y1, x2, y2, amount, backcol, mincol, maxcol, direction, showback, showborder);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x1</td>
+        <td>La coordenada x de la izquierda de la barra de salud</td>
+      </tr>
+      <tr>
+        <td>y1</td>
+        <td>La coordenada y de la parte superior de la barra de salud</td>
+      </tr>
+      <tr>
+        <td>x2</td>
+        <td>La coordenada x de la derecha de la barra de salud</td>
+      </tr>
+      <tr>
+        <td>y2</td>
+        <td>La coordenada y de la parte inferior de la barra de salud</td>
+      </tr>
+      <tr>
+        <td>cantidad</td>
+        <td>La variable que define la salud total (entre 0 y 100)</td>
+      </tr>
+      <tr>
+        <td>backcol</td>
+        <td>El color del fondo de la barra</td>
+      </tr>
+      <tr>
+        <td>mincol</td>
+        <td>El color de la barra cuando está sin salud (0)</td>
+      </tr>
+      <tr>
+        <td>maxcol</td>
+        <td>El color de la barra cuando está a plena salud (100)</td>
+      </tr>
+      <tr>
+        <td>dirección</td>
+        <td>Dónde se &quot;ancla&quot; la barra (0 = izquierda, 1 = derecha, 2 = arriba, 3 = abajo)</td>
+      </tr>
+      <tr>
+        <td>mostrar de nuevo</td>
+        <td>Si se dibuja el fondo de la barra (true<tt>) o</tt> no (<tt>false).</tt> Si es falso, el argumento backcol no se tiene en cuenta.</td>
+      </tr>
+      <tr>
+        <td>mostrar frontera</td>
+        <td>Si los elementos de la barra tienen un borde negro de 1px de ancho (true<tt>) o</tt> no (<tt>false).</tt></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var pc;<br> pc = (hp / max_hp) * 100;<br> draw_healthbar(100, 100, 500, 200, pc, c_black, c_red, c_lime, 0, true, true)</p>
+  <p>El código anterior utiliza el valor porcentual que se obtiene de las variables &quot;hp&quot; y &quot;hp_max&quot; para dibujar una barra de salud roja/verde estándar.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Basic_Forms.htm">Formularios básicos</a></div>
+        <div style="float:right">Siguiente: <a href="draw_path.htm">draw_path</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_healthbar
+-->
+  <!-- TAGS
+draw_healthbar
+-->
+</body>
+</html>

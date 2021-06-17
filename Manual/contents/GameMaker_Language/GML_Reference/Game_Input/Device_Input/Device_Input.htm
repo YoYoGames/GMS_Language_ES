@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Entrada del dispositivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Device Input" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Device Input,mb_left,mb_middle,mb_right,mb_none,mb_any" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Entrada del dispositivo</h1>
+  <p>Cuando tu juego está dirigido a aquellas plataformas que permiten la multitáctil, deberías utilizar estas funciones. Funcionan de la misma manera que lo haría un PC si tuviera varios ratones conectados y las constantes que se comprueban son las mismas que las
+    utilizadas para las <a href="../Mouse_Input/Mouse_Input.htm">funciones estándar del ratón</a>:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>mb_left</td>
+        <td>El botón izquierdo del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>El botón central del ratón (esto puede no ser válido para todas las plataformas de destino)</td>
+      </tr>
+      <tr>
+        <td>mb_right</td>
+        <td>El botón derecho del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Botón lateral del ratón 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Botón lateral del ratón 2</td>
+      </tr>
+      <tr>
+        <td>mb_any</td>
+        <td>Cualquiera de los botones del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_none</td>
+        <td>Sin botón de ratón</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> * <strong>NOTA</strong>: Los botones <strong>mb_side1</strong> y <strong>mb_side2 </strong>sólo están disponibles en <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> y HTML5.</p>
+  <p>Todas las funciones pueden tomar un valor de &quot;toque&quot; que corresponde a un toque en la pantalla del dispositivo, sin embargo el número máximo de toques que se pueden detectar dependerá mucho del dispositivo y del sistema operativo que se ejecute. Por ejemplo, algunos dispositivos <span class="notranslate">Android</span>de gama baja
+    de gama baja sólo pueden detectar 2 o 3 toques al mismo tiempo, mientras que un dispositivo UWP puede detectar hasta 10. Ten en cuenta también que en los dispositivos con pantalla táctil, un doble toque se devuelve como el equivalente a un evento del <b>botón derecho del ratón</b>. Por lo tanto, si usted
+    necesita detectar varios toques en rápida sucesión, por ejemplo, tendrá que comprobar <b>tanto</b> el <tt>mb_left</tt> como el <tt>mb_right</tt>. Esta funcionalidad puede activarse o desactivarse utilizando <a href="device_mouse_dbclick_enable.htm"><tt>device_mouse_dbclick_enable()</tt></a>.</p>
+  <p>A continuación encontrará una lista de todas las funciones de control específicas del dispositivo:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="device_mouse_check_button.htm">device_mouse_check_button</a></li>
+    <li><a href="device_mouse_check_button_pressed.htm">device_mouse_check_button_pressed</a></li>
+    <li><a href="device_mouse_check_button_released.htm">device_mouse_check_button_released</a></li>
+    <li><a href="device_mouse_dbclick_enable.htm">device_mouse_dbclick_enable</a></li>
+    <li><a href="device_mouse_x.htm">dispositivo_ratón_x</a></li>
+    <li><a href="device_mouse_y.htm">dispositivo_ratón_y</a></li>
+    <li><a href="device_mouse_raw_x.htm">device_mouse_raw_x</a></li>
+    <li><a href="device_mouse_raw_y.htm">device_mouse_raw_y</a></li>
+    <li><a href="device_mouse_x_to_gui.htm">device_mouse_x_to_gui</a></li>
+    <li><a href="device_mouse_y_to_gui.htm">device_mouse_y_to_gui</a></li>
+    <li><a href="device_is_keypad_open.htm">device_is_keypad_open</a></li>
+    <li><a href="device_get_tilt_x.htm">device_get_tilt_x</a></li>
+    <li><a href="device_get_tilt_y.htm">device_get_tilt_y</a></li>
+    <li><a href="device_get_tilt_z.htm">device_get_tilt_z</a></li>
+  </ul>
+  <p> </p>
+  <p>Ten en cuenta que en los dispositivos móviles<span class="notranslate">(Android</span>, <span class="notranslate">iOS</span> y <span class="notranslate">Windows Phone</span>), puedes utilizar el botón de retroceso en cualquier momento, ya que está mapeado al <b>retroceso</b> del teclado que es la <a href="../Keyboard_Input/Keyboard_Input.htm">constante del teclado de</a> <span class="notranslate">GameMaker Studio 2</span> <tt>vk_backspace</tt>, por lo que puedes hacer comprobaciones para esa tecla y realizar acciones en esos dispositivos como si se hubiera utilizado el botón de retroceso. También hay que tener en cuenta que el objetivo HTML5 sólo aceptará correctamente la entrada para el &quot;dispositivo 0&quot; cuando se utilicen estas funciones.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Game_Input.htm">Entrada del juego</a></div>
+        <div style="float:right">Siguiente: <a href="../Gesture_Input/Gesture_Input.htm">Entrada de gestos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Device Input Functions
+mb_left
+mb_middle
+mb_right
+mb_none
+mb_any
+-->
+  <!-- TAGS
+device_functions
+-->
+</body>
+</html>

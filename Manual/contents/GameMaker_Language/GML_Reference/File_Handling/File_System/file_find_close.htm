@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_find_close</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_find_close" />
+  <meta name="rh-index-keywords" content="file_find_close" />
+  <meta name="search-keywords" content="file_find_close" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_find_close</h1>
+  <p>Debe llamarse después de manejar los archivos abiertos con <a href="file_find_first.htm"><tt>file_find_first()</tt></a> y <a href="file_find_next.htm"><tt>file_find_next()</tt></a> para liberar memoria. Las funciones de búsqueda de archivos abren asas en el directorio de archivos
+    y estos ocupan una cantidad mínima de memoria, que (con el tiempo) se acumula. Por lo tanto, siempre debe llamar a esta función después de haber encontrado los archivos que necesita para &quot;cerrar&quot; estos manejadores.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_find_close();</p>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">file_find_close();</p>
+  <p>Esto cerrará y liberará la memoria asociada a los manejadores de la función de búsqueda de archivos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_System.htm">Sistema de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="file_attributes.htm">file_attributes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_find_close
+-->
+  <!-- TAGS
+file_find_close
+-->
+</body>
+</html>

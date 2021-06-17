@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_user_for_pad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_user_for_pad" />
+  <meta name="rh-index-keywords" content="xboxlive_user_for_pad" />
+  <meta name="search-keywords" content="xboxlive_user_for_pad" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_user_for_pad</h1>
+  <p>Esta función devolverá el <tt>puntero</tt> de ID de usuario asociado con el valor del índice del gamepad dado, o <tt>pointer_null</tt> si no hay ningún usuario asociado. Tenga en cuenta que esta función sólo debe utilizarse con índices de gamepad, y <b>no</b> con <a href="xboxlive_get_user_count.htm"><tt>xboxlive_get_user_count()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_user_for_pad(pad_index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>pad_index</td>
+        <td>El índice (un entero) de la ranura del gamepad a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">for(var i = 0; i &lt; 11; ++i;)<br> {
+    <br> var u_id = xboxlive_user_for_pad(i);<br> if u_id != pointer_null<br> {
+    <br> pad_name[i] = xboxlive_gamedisplayname_for_user(u_id);<br> }
+    <br> else
+    <br> {
+    <br> pad_name[i] = &quot;Press Play&quot;;<br> }
+    <br> }
+  </p>
+  <p>El código anterior recorre todas las ranuras disponibles de los pads y comprueba si hay un puntero de ID de usuario asociado a él. Si lo hay, se establece un array con el nombre del usuario, de lo contrario el array se establece con algún texto por defecto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Users_And_Accounts.htm">Usuarios y cuentas</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_pad_for_user.htm">xboxlive_pad_for_user</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_user_for_pad
+-->
+  <!-- TAGS
+xboxlive_user_for_pad
+-->
+</body>
+</html>

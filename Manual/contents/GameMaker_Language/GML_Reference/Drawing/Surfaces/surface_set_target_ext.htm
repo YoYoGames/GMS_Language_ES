@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>surface_set_target_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_set_target_ext" />
+  <meta name="rh-index-keywords" content="surface_set_target_ext" />
+  <meta name="search-keywords" content="surface_set_target_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>surface_set_target_ext</h1>
+  <p>Esta función se utiliza con las <a href="../../Asset_Management/Shaders/Shaders.htm">funciones</a> de <a href="../../Asset_Management/Shaders/Shaders.htm"><span class="notranslate">sombreado</span></a> y establece el MRT (0 - 3) para los <span class="notranslate">sombreadores de</span> nivel nativo (DX9, DX11, OpenGL).</p>
+  <p class="note"><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de la textura. Debería comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_set_target_ext(index, surface_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de destino de renderizado que se va a utilizar (de 0 a 3).</td>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">surface_set_target_ext(0, surf);</p>
+  <p>El código anterior establecerá el objetivo de renderizado 0 al ID de la superficie indexada en la variable &quot;surf&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_get_target.htm">surface_get_target</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_set_target_ext
+-->
+  <!-- TAGS
+surface_set_target_ext
+-->
+</body>
+</html>

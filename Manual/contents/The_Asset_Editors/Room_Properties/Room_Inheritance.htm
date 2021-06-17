@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Herencia de habitaciones</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the inheritance functionality of rooms" />
+  <meta name="rh-index-keywords" content="Rooms - Inheritance" />
+  <meta name="search-keywords" content="room inheritance,inherit,inheritance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Herencia de habitaciones</h1>
+  <p>Una característica importante del editor de habitaciones es la <strong>herencia</strong>. La herencia significa que puedes crear una sala &quot;padre&quot; y a partir de ella crear una sala &quot;hija&quot; que heredará todas las propiedades de la sala padre. Esta habitación
+    es esencialmente un <em>clon </em>de la sala madre, y todo lo que hay en ella <strong>está vinculado a la sala madre</strong>. Esto significa que si cambias la vista en la sala madre, o mueves una baldosa, o añades instancias, se reflejará en la sala hija.
+    No sólo eso, en la sala hija se puede desactivar selectivamente la herencia para capas específicas, instancias, activos o cualquier otra cosa que se requiera.</p>
+  <p>Una sala que tenga propiedades heredadas tendrá los botones de herencia encendidos -como se muestra en la imagen de abajo- y entonces podrá usarlos para activar o desactivar la herencia para la capa o recurso dado, etc...</p>
+  <p><img alt="Room Inherit Buttons" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_Inheritance.png">Esto puede ser un poco difícil de visualizar al principio, así que veamos un ejemplo: digamos que tienes una habitación con una ciudad y un castillo en
+    en el centro. La ciudad y el castillo están dibujados usando diferentes capas de azulejos y también tienes instancias y algunos caminos para que los NPCs puedan caminar alrededor. Usted quiere que en el juego el castillo sea destruido, pero todo lo demás en la ciudad se ve
+    y se comporte igual. Crearías la sala inicial con todo normal, luego crearías una sala hija que herede las capas de la sala padre. En la sala hija desactivarías la herencia de la capa de azulejos (o incluso azulejos individuales) para el área del castillo y los
+    azulejos) para el área del castillo y mover/añadir/eliminar azulejos para crear el aspecto de castillo destruido. Cuando un jugador entre en esa habitación, todas las instancias de la habitación padre y todas las baldosas, etc., seguirán siendo exactamente las mismas, excepto las del castillo destruido.
+    castillo destruido.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Si edita cualquier propiedad heredada, se desactivará automáticamente la herencia en la sección a la que pertenece sin tener que activar primero el botón de heredar.</p>
+  <p>Para crear una herencia de habitación, simplemente seleccione la habitación de la que desea crear un hijo en el <a href="../../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> y luego haga clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_RMB.png" width="21">. Esto abrirá el menú de la sala y allí puede seleccionar <strong>Crear Hijo </strong>para crear una nueva sala hija. Esta se creará y se &quot;adjuntará&quot; al padre visualmente en el Navegador de Activos:</p>
+  <p><img alt="Room Inheritance" class="center" src="../../assets/Images/Asset_Editors/Editor_RoomInheritance.png">Para cambiar el orden de las habitaciones y/o la herencia es necesario utilizar el <a href="../../Settings/The_Room_Manager.htm">Gestor de Habitaciones</a>, que puede
+    puede abrir usando el menú en la parte superior derecha del Navegador de Activos. Aquí puede ir a la pestaña de <em>Herencia </em>y luego hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrar cualquier habitación sobre cualquier otra habitación para
+    para que se convierta en hija de esa sala (o arrastrar una sala hija de una padre y romper la herencia).</p>
+  <p>Tenga en cuenta que, dentro de una habitación, la herencia es de varias capas y puede comprobar elementos individuales, grupos de elementos en una sola capa, propiedades de elementos o habitaciones enteras como heredadas, y también puede heredar de habitaciones consecutivas (así, la habitación C hereda de la habitación
+    B, que a su vez ha heredado de la sala A). Si crea una sala base sin nada en ella, excepto la configuración de la vista, por ejemplo, puede crear todas las demás salas como sus hijos y todas ellas heredarán las propiedades de la vista de la sala padre.
+    padre. Pero puedes ir un paso más allá y crear otra sala base con la sala &quot;vista&quot; como su padre que contiene la <a class="glossterm" data-glossterm="GUI" href="#">instancia</a> general de la GUI y los controladores requeridos en cada sala de juego.
+    Ahora puedes crear salas hijas a partir de esta y heredarán tanto los controladores como las GUIs de la sala padre, así como la configuración de la vista del padre de esa sala.</p>
+  <p>Como puede ver, la herencia es muy potente y puede utilizarla para mantener una estructura de salas mucho más limpia, acelerar el flujo de trabajo y, en general, optimizar el tiempo que dedica a crear y diseñar salas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Rooms.htm">El editor de la sala</a></div>
+        <div style="float:right">Siguiente: <a href="Layer_Properties.htm">Tipos de capas y propiedades</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Inheritance
+-->
+  <!-- TAGS
+rooms_inheritance
+-->
+
+</body></html>

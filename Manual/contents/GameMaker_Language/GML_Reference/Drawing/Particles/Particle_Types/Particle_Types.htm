@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tipos de partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Particle Type functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Particle Types" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tipos de partículas</h1>
+  <p>Las partículas son los efectos gráficos que se pueden crear mediante el uso de sistemas de partículas en un juego. Las partículas que se definen mediante estas funciones pueden utilizarse en cualquier sistema que se cree y el procedimiento normal sería definir todas las partículas
+    una vez al inicio del juego y almacenar sus valores de índice en variables globales. Estas variables globales pueden ser usadas para reventar, emitir o crear partículas en cualquier momento a lo largo del juego. También puedes crear, usar y luego destruir partículas según sea necesario
+    si la memoria es un problema o si deseas muchos tipos diferentes pero sólo en puntos específicos de tu juego. Sea cual sea tu elección, ¡las partículas son un recurso muy versátil!</p>
+  <p>Las partículas deben ser creadas y tener su índice almacenado en una variable para que todas las rutinas de partículas posteriores puedan acceder a ellas correctamente. Las siguientes funciones se utilizan para crear, comprobar, borrar y destruir tipos de partículas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_exists.htm">tipo_parte_existe</a></li>
+    <li><a href="part_type_create.htm">part_type_create</a></li>
+    <li><a href="part_type_destroy.htm">part_type_destroy</a></li>
+    <li><a href="part_type_clear.htm">tipo_parte_claro</a></li>
+  </ul>
+  <p> </p>
+  <p>Una vez que hayas creado tu tipo de partícula debes darle una <i>forma</i>. Esta puede ser una de las 14 formas incorporadas, que son sprites de 64x64 píxeles con mezcla alfa, o puede utilizar sus propios sprites, que pueden ser animados, estáticos o utilizar
+    subimágenes aleatorias. Las siguientes funciones definen la forma visual base de cada partícula:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_shape.htm">tipo_de_parte_forma</a></li>
+    <li><a href="part_type_sprite.htm">part_type_sprite</a></li>
+  </ul>
+  <p> </p>
+  <p>La siguiente imagen muestra los 14 tipos de partículas incorporadas que puede elegir:</p>
+  <p><img alt="The different built-in particle sprites" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/Particle_Sprites.png">Una vez que haya elegido el sprite para el tipo de partícula (ya sea una forma predeterminada o su
+    propia) puede indicar el tamaño y la escala del mismo. El tamaño puede ser especificado como un rango y todas las partículas serán creadas con un tamaño elegido dentro del rango dado. La escala es el valor &quot;base&quot; para la escala de los ejes x e y de la partícula antes de que se añada cualquier
+    de la partícula antes de que se añada cualquier variación de tamaño y las siguientes funciones se utilizan para controlar estos valores:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_size.htm">tipo_parte_tamaño</a></li>
+    <li><a href="part_type_scale.htm">tipo_parte_escala</a></li>
+  </ul>
+  <p> </p>
+  <p>Las partículas también pueden tener una orientación y un movimiento. Al igual que con la mayoría de las funciones de partículas, la velocidad, la dirección y la orientación se resuelven como un valor aleatorio que se selecciona de un rango determinado y puede establecerse con las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_speed.htm">tipo_parte_velocidad</a></li>
+    <li><a href="part_type_direction.htm">tipo_parte_dirección</a></li>
+    <li><a href="part_type_gravity.htm">parte_tipo_gravedad</a></li>
+    <li><a href="part_type_orientation.htm">orientación_tipo_parte</a></li>
+  </ul>
+  <p> </p>
+  <p>Una vez que tengas resuelto el estilo y el movimiento de tus partículas, puedes establecer sus valores de color y alfa, los cuales pueden establecerse como un valor absoluto durante toda la vida de la partícula, o como una escala de valores que van de uno a otro
+    otro gradualmente. Hay que tener en cuenta que también hay una función especial que permite establecer la mezcla de las partículas y su entorno, que puede ser normal o aditiva y que da unos efectos fantásticos.
+    y la mezcla son:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_colour_mix.htm">part_type_colour_mix</a></li>
+    <li><a href="part_type_colour_rgb.htm">part_type_colour_rgb</a></li>
+    <li><a href="part_type_colour_hsv.htm">part_type_colour_hsv</a></li>
+    <li><a href="part_type_colour1.htm">parte_tipo_color1</a></li>
+    <li><a href="part_type_colour2.htm">tipo_parte_color2</a></li>
+    <li><a href="part_type_colour3.htm">tipo_parte_color3</a></li>
+    <li><a href="part_type_alpha1.htm">part_type_alpha1</a></li>
+    <li><a href="part_type_alpha2.htm">part_type_alpha2</a></li>
+    <li><a href="part_type_alpha3.htm">part_type_alpha3</a></li>
+    <li><a href="part_type_blend.htm">part_type_blend</a></li>
+  </ul>
+  <p> </p>
+  <p>Las partículas existen en la pantalla durante un tiempo limitado que se denomina &quot;tiempo de vida&quot;. El tiempo de vida de las partículas se mide en pasos y (al igual que las funciones anteriores) se expresa como un rango de valores a partir del cual la partícula recibirá
+    un tiempo de vida específico. También hay un par de funciones interesantes que pueden usarse para hacer que las partículas generen <i>otras</i> partículas, ya sea en cada paso o cuando &quot;mueren&quot; (es decir, son eliminadas de la pantalla), pero
+    tenga mucho cuidado con estas funciones, ya que pueden crear rápidamente miles de partículas y bloquear el juego. Las funciones que establecen el tiempo de vida y la emisión de pasos o muerte son las siguientes:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_type_life.htm">parte_tipo_vida</a></li>
+    <li><a href="part_type_step.htm">tipo_parte_paso</a></li>
+    <li><a href="part_type_death.htm">tipo_parte_muerte</a></li>
+  </ul>
+  <p> </p>
+  <p>Hay que tener en cuenta que la creación de partículas a través de código puede ser a menudo un proceso laborioso y que requiere mucho tiempo debido al gran número de parámetros que se pueden cambiar y ajustar. Por esta razón se recomienda que busques y consigas algún tipo de Diseñador de Partículas (¡o hagas uno tú mismo!).
+    de algún tipo de <b>Diseñador de Partículas</b> (¡o crear uno tú mismo!) para eliminar la pesadez de la creación de partículas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Particles.htm">Partículas</a></div>
+        <div style="float:right">Siguiente: <a href="../Particle_Emitters/Particle_Emitters.htm">Emisores de partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Types
+-->
+  <!-- TAGS
+particle_type_functions
+-->
+</body>
+</html>

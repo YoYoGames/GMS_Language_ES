@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa_secuencia_cabeza</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_headpos" />
+  <meta name="rh-index-keywords" content="layer_sequence_headpos" />
+  <meta name="search-keywords" content="layer_sequence_headpos" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa_secuencia_cabeza</h1>
+  <p>Con esta función se puede establecer la posición <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">del cabezal de reproducción</a> de un elemento de la secuencia en un fotograma específico. Se proporciona el ID del elemento de secuencia devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>    o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones de los elementos de la capa</a>, junto con la nueva posición a establecer. Tenga en cuenta que la posición está en <i>fotogramas</i> y si establece un valor mayor que el número total de fotogramas
+    (o menor que 0) entonces la posición final real del cabezal de reproducción dependerá del tipo de reproducción de la secuencia que se haya seleccionado, siguiendo estas reglas:</p>
+  <ul class="colour">
+    <li><strong>No hay b</strong>ucle: El cabezal de reproducción se sujetará al final del bucle (o al principio si el valor dado es negativo)</li>
+    <li><strong>Bucle</strong>: El cabezal de reproducción retrocederá hasta el principio de la secuencia más los fotogramas extra, por ejemplo: si ajustas el cabezal de reproducción en una secuencia de 30 fotogramas a una posición de 45, la posición real del cabezal de reproducción acabará siendo 15. Si da
+      un valor negativo, el cabezal de reproducción de la secuencia se desplazará en sentido inverso.</li>
+    <li><strong>Bucle de ping-pong</strong>: El cabezal de reproducción avanzará hasta el final y luego retrocederá el número extra de fotogramas que sobrepasen la longitud total del fotograma, invirtiendo el sentido de la reproducción, p. ej: Si la secuencia es de 30 fotogramas y se coloca el cabezal de reproducción
+      a 40, la posición final del cabezal de reproducción será 20 y la dirección se invertirá (bajando a 0). Tenga en cuenta que <i>nunca</i> debe dar un valor negativo para la reproducción ping-pong de una secuencia, ya que puede tener resultados indefinidos.</li>
+  </ul>
+  <p>El ajuste de la posición del cabezal de esta manera no detendrá la reproducción y la secuencia simplemente continuará desde la nueva posición del cabezal de reproducción a menos que se ponga en pausa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sequence_headpos(sequence_element_id, position)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+      <tr>
+        <td>posición</td>
+        <td>La posición dentro de la secuencia (en fotogramas) a la que se debe ajustar la posición del cabezal de reproducción (puede ser un valor decimal)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var a = layer_get_all_elements(layer);<br> for (var i = 0; i &lt; array_length(a); i++;) <br> {
+    <br> if layer_get_element_type(a[i]) == layerelementtype_sequence<br> {
+    <br> layer_sequence_headpos(a[i], 0)<br> }
+    <br> }
+  </p>
+  <p>El código anterior obtiene los IDs de todos los elementos asignados a la capa de la instancia que ejecuta el código. A continuación, el código comprueba si alguno de los elementos devueltos es un activo de la secuencia y, si lo es, su posición de cabezal de reproducción se establece en 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_headdir.htm">layer_sequence_headdir</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_headpos
+-->
+  <!-- TAGS
+layer_sequence_headpos
+-->
+
+</body></html>

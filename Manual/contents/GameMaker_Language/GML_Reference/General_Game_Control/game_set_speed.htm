@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_set_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_set_speed" />
+  <meta name="rh-index-keywords" content="game_set_speed,gamespeed_fps,gamespeed_microseconds" />
+  <meta name="search-keywords" content="game_set_speed,gamespeed_fps,gamespeed_microseconds" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>game_set_speed</h1>
+  <p>Esta función se puede utilizar para establecer la velocidad del juego. Se puede establecer de dos maneras - como cuadros de juego por segundo (FPS) o como microsegundos por cuadro de juego (MPF) - utilizando una de las dos constantes siguientes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>gamespeed_fps</td>
+        <td>Establece la velocidad del juego utilizando fotogramas por segundo.</td>
+      </tr>
+      <tr>
+        <td>gamespeed_microseconds</td>
+        <td>Establece la velocidad del juego usando microsegundos por cuadro.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Así, por ejemplo, una velocidad de juego de 30 fotogramas por segundo sería de 33333 microsegundos por fotograma de juego, lo que se expresaría mediante esta función como</p>
+  <p class="code">game_set_speed(30, gamespeed_fps);</p>
+  <p>o:</p>
+  <p class="code">game_set_speed(33333, gamespeed_microseconds);</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">game_set_speed(velocidad, tipo);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>La nueva velocidad del juego (como FPS o MPF).</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de método utilizado para establecer la velocidad del juego (ver las constantes anteriores).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si os_browser == browser_not_a_browser<br> {
+    <br> game_set_speed(60, gamespeed_fps);<br> }
+    <br> si no
+    <br> {
+    <br> game_set_speed(30, gamespeed_fps);<br> }
+  </p>
+  <p>El código anterior comprueba si el juego se está ejecutando en un navegador y establece la velocidad del juego en consecuencia como un valor de FPS.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Game_Control.htm">Control general del juego</a></div>
+        <div style="float:right">Siguiente: <a href="highscore_add.htm">highscore_add</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_set_speed
+gamespeed_fps
+gamespeed_microseconds
+-->
+  <!-- TAGS
+game_set_speed
+-->
+</body>
+</html>

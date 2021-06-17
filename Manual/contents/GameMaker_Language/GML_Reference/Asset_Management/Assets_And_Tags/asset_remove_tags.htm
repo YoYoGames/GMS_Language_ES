@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>asset_remove_tags</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function asset_remove_tags" />
+  <meta name="rh-index-keywords" content="asset_remove_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+  <meta name="search-keywords" content="asset_remove_tags,asset_object,asset_sprite,asset_sound,asset_room,asset_tiles,asset_path,asset_script,asset_font,asset_timeline,asset_shader,asset_animationcurve,asset_sequence" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>asset_remove_tags</h1>
+  <p>Con esta función puede eliminar una o más cadenas de etiquetas de cualquier activo del navegador de activos. Se proporciona el nombre del activo (como una cadena) o su índice de activos, así como una cadena de etiquetas única o una matriz en la que cada elemento es una cadena de etiquetas única.
+    Si proporciona un valor de índice de activo, entonces tendrá que proporcionar el argumento opcional de tipo de activo (una constante), ya que los activos de diferentes tipos pueden tener el mismo índice, aunque no pueden tener el mismo nombre. Los tipos de activos disponibles se enumeran
+    en la tabla siguiente:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>objeto_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Objects.htm">objeto</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sprite</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Sprites.htm">sprite</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_sound</td>
+        <td>El nombre de pila hace referencia a un <a href="../../../../The_Asset_Editors/Sounds.htm">sonido</a>.</td>
+      </tr>
+      <tr>
+        <td>sala_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Rooms.htm">habitación</a>.</td>
+      </tr>
+      <tr>
+        <td>activos_tiles</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Tile_Sets.htm">conjunto de baldosas</a>.</td>
+      </tr>
+      <tr>
+        <td>ruta_de_activo</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Paths.htm">ruta</a>.</td>
+      </tr>
+      <tr>
+        <td>script_activo</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Scripts.htm">guión</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_font</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Fonts.htm">fuente</a>.</td>
+      </tr>
+      <tr>
+        <td>línea_de_tiempo_de_activos</td>
+        <td>El nombre de pila se refiere a una <a href="../../../../The_Asset_Editors/Timelines.htm">línea de tiempo</a>.</td>
+      </tr>
+      <tr>
+        <td>asset_shader</td>
+        <td>El nombre dado se refiere a un <a href="../../../../The_Asset_Editors/Shaders.htm"><span class="notranslate">sombreador</span></a>.</td>
+      </tr>
+      <tr>
+        <td>asset_animationcurve</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Animation_Curves.htm">Curva de Animación</a>.</td>
+      </tr>
+      <tr>
+        <td>secuencia_de_activos</td>
+        <td>El nombre dado se refiere a una <a href="../../../../The_Asset_Editors/Sequences.htm">Secuencia</a>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p>Si la función consigue eliminar la(s) etiqueta(s), devolverá <tt>true</tt>; en caso contrario, devolverá <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">asset_remove_tags(name_or_index, tags, [asset_type]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_o_índice</td>
+        <td>El nombre del activo (una cadena) o su valor de índice (un entero).</td>
+      </tr>
+      <tr>
+        <td>tags</td>
+        <td>Una sola cadena de etiquetas de activos o una matriz con varias etiquetas de activos.</td>
+      </tr>
+      <tr>
+        <td>[asset_type]</td>
+        <td>OPCIONAL! El tipo de activo del que se van a eliminar las etiquetas, sólo se utiliza cuando se proporciona un índice para el primer argumento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _a = array_create(3);<br> _a[0] = &quot;enemigo&quot;;<br> _a[1] = &quot;todos_los_niveles&quot;;<br> _a[2] = &quot;jefe&quot;;<br> asset_remove_tags(obj_Enemy_Boss_Parent, _a, asset_object);</p>
+  <p>El código anterior creará una matriz de etiquetas y luego las eliminará del objeto dado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Assets_And_Tags.htm">Activos y etiquetas</a></div>
+        <div style="float:right">Siguiente: <a href="asset_has_tags.htm">asset_has_tags</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+asset_remove_tags
+asset_object
+asset_sprite
+asset_sound
+asset_room
+asset_tiles
+asset_path
+asset_script
+asset_font
+asset_timeline
+asset_<span class="notranslate">shader</span>
+asset_animationcurve
+asset_sequence
+-->
+  <!-- TAGS
+asset_remove_tags
+-->
+</body>
+</html>

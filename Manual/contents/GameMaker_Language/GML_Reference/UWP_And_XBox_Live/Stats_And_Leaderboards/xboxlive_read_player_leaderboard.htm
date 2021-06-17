@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>xboxlive_read_player_leaderboard</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for xboxlive_read_player_leaderboard" />
+  <meta name="rh-index-keywords" content="xboxlive_read_player_leaderboard,achievement_filter_all_players,achievement_filter_friends_only,achievement_filter_favorites_only,achievement_filter_friends_alt,achievement_filter_favorites_alt,achievement_leaderboard_info" />
+  <meta name="search-keywords" content="xboxlive_read_player_leaderboard,achievement_filter_all_players,achievement_filter_friends_only,achievement_filter_favorites_only,achievement_filter_friends_alt,achievement_filter_favorites_alt,achievement_leaderboard_info" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>xboxlive_read_player_leaderboard</h1>
+  <p>La función devolverá la información de la tabla de clasificación para el nombre de usuario dado. La tabla de posiciones debe haber sido creada previamente en el tablero XDP para su juego, y la llamada a la función activará un <a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Social.htm">evento social asíncrono</a> que contiene el mapa <a href="../../../GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><tt>async_load</tt></a> mapa rellenado con los pares clave/valor relevantes. La clave &quot;id&quot; de este mapa DS se utiliza para identificar el callback correcto
+    (puede haber más de una función de activación para cualquier evento asíncrono), y se emparejará con la constante <tt>achievement_leaderboard_info</tt>, así como con una serie de otros pares clave/valor. El contenido exacto del mapa se muestra a continuación:</p>
+  <ul class="colour">
+    <li>&quot; id&quot; - Para esta función debe ser <tt>achievement_leaderboard_info</tt><b></b></li>
+    <li>&quot;<b><b>leaderboardid</b></b>&quot; - El ID único de la tabla de clasificación tal y como se define en el panel del proveedor.</li>
+    <li>&quot;<b><b>numentries</b></b>&quot; - El número de entradas en la tabla de clasificación que has recibido.</li>
+    <li>&quot;<b><b>PlayerN</b></b>&quot; - El nombre del jugador, donde &quot;N&quot; es un valor entero correspondiente a su posición dentro de la lista de entradas de la tabla de clasificación.</li>
+    <li>&quot;<b><b>PlayeridN</b></b>&quot; - El id de usuario único del jugador, &quot;N&quot;.</li>
+    <li>&quot;<b><b>RangoN</b></b>&quot; - El rango del jugador &quot;N&quot; dentro de la tabla de clasificación.</li>
+    <li>&quot;<b><b>PuntuaciónN</b></b>&quot; - La puntuación del jugador &quot;N&quot;.</li>
+  </ul>
+  <p><b></b><br> La función requiere que se dé una de las siguientes constantes para establecer las propiedades del filtro:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>filtro_de_logros_de_todos_los_jugadores</td>
+        <td>Consigue todas las puntuaciones.</td>
+      </tr>
+      <tr>
+        <td>filtro_de_logros_solo_amigos</td>
+        <td>Obtenga sólo las puntuaciones de los amigos, en orden ascendente.</td>
+      </tr>
+      <tr>
+        <td>filtro_de_logros_solo_favoritos</td>
+        <td>Obtener sólo las puntuaciones de los favoritos, en orden ascendente</td>
+      </tr>
+      <tr>
+        <td>filtro_de_logro_de_amigos_alt</td>
+        <td>Obtener sólo las puntuaciones de los amigos en orden descendente.</td>
+      </tr>
+      <tr>
+        <td>filtro_de_logros_favoritos_alt</td>
+        <td>Obtener sólo las puntuaciones de los favoritos en orden descendente.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">xboxlive_read_player_leaderboard(leaderboard_name, user_name, num_items, friend_filter);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_líder</td>
+        <td>El nombre de la tabla de clasificación que se va a leer, tal y como se ha configurado en el XDP.</td>
+      </tr>
+      <tr>
+        <td>nombre_de_usuario</td>
+        <td>El nombre del usuario del que hay que leer.</td>
+      </tr>
+      <tr>
+        <td>número_de_artículos</td>
+        <td>El número de elementos a recuperar.</td>
+      </tr>
+      <tr>
+        <td>filtro_amigo</td>
+        <td>Una de las constantes del filtro (véase la descripción, más arriba).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _user = xboxlive_user_for_pad(0);<br> var _uid = xboxlive_user_id_for_user(_user);<br> xboxlive_read_player_leaderboard(&quot;MyLeaderboard&quot;, _uid, 10, achievement_filter_all_players);</p>
+  <p>El código anterior obtiene el ID de usuario y luego lo utiliza para solicitar todos los datos de los jugadores de los 10 primeros lugares de la tabla de posiciones dada.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Stats_And_Leaderboards.htm">Estadísticas y tablas de clasificación</a></div>
+        <div style="float:right">Siguiente: <a href="xboxlive_fire_event.htm">xboxlive_fire_event</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+xboxlive_read_player_leaderboard
+achievement_leaderboard_info
+achievement_filter_all_players
+achievement_filter_friends_only
+achievement_filter_favorites_only
+achievement_filter_friends_alt
+achievement_filter_favorites_alt
+-->
+  <!-- TAGS
+xboxlive_read_player_leaderboard
+-->
+</body>
+</html>

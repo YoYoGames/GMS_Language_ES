@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>longituddir_y</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for lengthdir_y" />
+  <meta name="rh-index-keywords" content="lengthdir_y" />
+  <meta name="search-keywords" content="lengthdir_y" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>longituddir_y</h1>
+  <p>Esta función se utiliza para obtener la componente <b>y</b> de una posición &quot;len&quot; píxeles desde el punto inicial y en la dirección &quot;dir&quot;. Si imaginamos un círculo alrededor de nuestra instancia, y luego imaginamos un punto en cualquier parte de ese círculo, para movernos
+    a ese punto necesitamos mover el objeto tantos píxeles en esa dirección... así que esta función (cuando se usa con <a href="lengthdir_x.htm"><tt>longituddir_x()</tt></a>) obtiene la posición de ese punto en el círculo para ser utilizada en el código por la instancia. Ver
+    la imagen de abajo para más detalles:</p>
+  <p><img alt="Lengthdir_y example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/Lengthdir_Image.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">lengthdir_y(len, dir);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>len</td>
+        <td>La longitud del punto de retorno.</td>
+      </tr>
+      <tr>
+        <td>dir</td>
+        <td>La dirección del punto a devolver.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _xx = x + lengthdir_x(64, image_angle);<br> var _yy = y + lengthdir_y(64, image_angle);<br> instance_create_layer(_xx, _yy, &quot;Bullets&quot;, obj_bullet);</p>
+  <p>Esto creará una instancia de bala en<tt>(_xx</tt>, <tt>_yy</tt>), que estará a 64 píxeles de la instancia padre en la dirección del ángulo de la imagen.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Angles_And_Distance.htm">Ángulos y distancia</a></div>
+        <div style="float:right">Siguiente: <a href="arccos.htm">arccos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+lengthdir_y
+-->
+  <!-- TAGS
+lengthdir_y
+-->
+
+</body></html>

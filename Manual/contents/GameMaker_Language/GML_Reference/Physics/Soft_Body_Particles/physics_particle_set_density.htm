@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_set_density</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_set_density" />
+  <meta name="rh-index-keywords" content="physics_particle_set_density" />
+  <meta name="search-keywords" content="physics_particle_set_density" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_set_density</h1>
+  <p>Con esta función puedes establecer la densidad de las partículas en una simulación física. Establecer la densidad de la partícula tendrá un impacto directo en la cantidad de inercia que tiene, así como la forma en que reacciona a las colisiones, por lo que si usted hace una pequeña partícula con
+    una densidad alta tendrá una masa muy grande, pero si defines una partícula grande con una densidad baja tendrá una masa mucho menor. Esta función es de alcance <i>global</i>, en el sentido de que cambiará la densidad no sólo para las nuevas partículas creadas después de
+    el cambio, sino también para las que ya están presentes en la simulación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_set_density(densidad)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>densidad</td>
+        <td>La densidad de la fijación de partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_particle_set_radius(15);<br> physics_particle_set_density(0.5);
+    <br> physics_particle_set_damping(1);
+    <br> physics_particle_set_gravity_scale(1);
+  </p>
+  <p>El código anterior establecerá las propiedades base para todas las partículas de la simulación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_set_damping.htm">physics_particle_set_damping</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_set_density
+-->
+  <!-- TAGS
+physics_particle_set_density
+-->
+</body>
+</html>

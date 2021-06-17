@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_is_playing</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_is_playing" />
+  <meta name="rh-index-keywords" content="audio_is_playing" />
+  <meta name="search-keywords" content="audio_is_playing" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_is_playing</h1>
+  <p>Esta función comprobará el sonido dado para ver si se está reproduciendo actualmente. El sonido puede ser una sola instancia de un sonido (el índice de los sonidos individuales que se están reproduciendo puede almacenarse en una variable cuando se utiliza la función <a href="audio_play_sound.htm"><tt>audio_play_sound()</tt></a> o 
+    <a href="audio_play_sound_at.htm"><tt>audio_play_sound_at()</tt></a> ) o un activo de sonido, en cuyo caso se comprobarán <i>todas las</i> instancias del sonido dado y, si alguna de ellas se está reproduciendo, la función devolverá <tt>true</tt>; en caso contrario
+      devolverá <tt>false</tt>. Tenga en cuenta que esta función seguirá devolviendo <tt>true</tt> si el sonido que se está comprobando ha sido pausado previamente utilizando la función <a href="audio_pause_sound.htm"><tt>audio_pause_sound()</tt></a> función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_is_playing(index);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice del sonido a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !audio_is_playing(snd_Waterfall)<br> {
+    <br> audio_play_sound_at(snd_Waterfall, x, y, 0, 300, true, 1);<br> }
+  </p>
+  <p>El código anterior comprueba si el sonido indexado en la variable &quot;snd_Waterfall&quot; se está reproduciendo actualmente y, si devuelve false, <tt>el</tt> sonido se reproducirá en bucle en su posición en la sala, con una distancia de caída
+    de 300 y una prioridad baja.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_is_paused.htm">audio_is_paused</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_is_playing
+-->
+  <!-- TAGS
+audio_is_playing
+-->
+</body>
+</html>

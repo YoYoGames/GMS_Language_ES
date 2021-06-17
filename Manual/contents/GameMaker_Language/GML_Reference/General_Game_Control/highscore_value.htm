@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>valor_de_puntuación_alta</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function highscore_value" />
+  <meta name="rh-index-keywords" content="highscore_value" />
+  <meta name="search-keywords" content="highscore_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>valor_de_puntuación_alta</h1>
+  <p>Con esta función se puede recuperar el valor de la puntuación que se ha almacenado en la lista de puntuaciones altas en la posición dada. Si no se ha introducido ninguna puntuación, la función devolverá 0.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">valor_de_la_punta_alta(lugar);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>lugar</td>
+        <td>El lugar en la mesa (1-10).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var i = 9;<br> repeat(10)
+    <br> {
+    <br> scr[i] = highscore_value(i + 1);<br> i -= 1;<br> }
+  </p>
+  <p>El código anterior recorrerá la lista de puntuaciones máximas y almacenará todas las puntuaciones en una matriz.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Game_Control.htm">Control general del juego</a></div>
+        <div style="float:right">Siguiente: <a href="highscore_clear.htm">highscore_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+highscore_value
+-->
+  <!-- TAGS
+highscore_value
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Dirección de las variables en otras instancias</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining hoe to address variables in other instances" />
+  <meta name="rh-index-keywords" content="Addressing Variables In Other Instances" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Dirección de las variables en otras instancias</h1>
+  <p>En las secciones dedicadas a <a href="Variables_And_Variable_Scope.htm">las variables</a> has descubierto cómo crear y utilizar variables dentro de una única instancia, o en un ámbito global, pero ¿qué ocurre si quieres que una instancia acceda a una variable en otra
+    otra instancia diferente? Hay muchos casos en los que puedes querer hacer esto, por ejemplo en una colisión con un objeto bala, puedes querer averiguar cuánto daño hace la bala accediendo a una variable en la bala, o puedes querer parar el movimiento
+    de todas las bolas en un rompecabezas, o podrías querer mover al personaje principal a una posición particular, o cualquier número de otras situaciones que típicamente te encuentras en cualquier juego. Afortunadamente, el <span class="notranslate">lenguaje GameMaker</span> viene equipado con mecanismos para lograr
+    esto.</p>
+  <p>Uno de los métodos más comunes para acceder o cambiar una variable en otra instancia es utilizar su nombre de objeto como identificador y luego utilizar un punto &quot;<span class="inline">.</span>&quot; para indicar a GameMaker <span class="notranslate">Studio 2 que la</span> variable utilizada después de
+    debe ser asignada o modificada en ese objeto. La sintaxis para esto es:</p>
+  <p class="code">&lt;objeto_id&gt;.&lt;variable&gt;<em>= &lt;valor&gt;;</em></p>
+  <p>En la práctica sería así:</p>
+  <p class="code">obj_ball.speed = 0;</p>
+  <p>Con el código anterior está estableciendo la velocidad de una instancia de &quot; obj_ball<tt>&quot;.</tt> Sin embargo, si tiene más de una instancia del objeto dado en la habitación, <em>entonces se aplicará a TODOS ellos por igual</em> - a menos que esté usando <b>HTML5</b>,
+    en cuyo caso sólo afectará a <em>uno</em>, pero no tiene forma de saber a cuál afectará - así que si necesita acceder a todas las instancias de un objeto, debería usar <a href="Language_Features/with.htm"><tt>con()</tt></a>ya que es
+    100% compatible con todas las plataformas. En general, este formato sólo debe utilizarse cuando se tiene una sola instancia del objeto en la sala, o (como se verá en la siguiente parte) cuando se tiene un <i> <b>ID de</b></i> instancia específico.</p>
+  <p>También se puede acceder a una única instancia de un objeto cuando hay varias instancias dentro de la sala utilizando el nombre de <b>instancia</b> único para indicar a <span class="notranslate">GameMaker Studio</span> 2 exactamente a qué instancia queremos dirigirnos. La constante <b>del</b> nombre de instancia es la
+    constante de identificación única que se da a todas y cada una de las instancias añadidas a una sala en su juego. Puedes encontrar esta constante haciendo doble clic en una instancia en el <a href="../../The_Asset_Editors/Rooms.htm">editor de</a> salas:</p>
+  <p><img alt="The instance constant in the room editor" class="center" src="../../assets/Images/Scripting_Reference/GML/Overview/Instance_Constant.png">Tenga en cuenta que este nombre se puede editar y dar un nombre más descriptivo - aunque el nombre <em>debe</em> ser
+    único para todo el juego - y puede ser utilizado como el lado izquierdo del punto:</p>
+  <p class="code">inst_4DB70D2.speed = 0;</p>
+  <p>Sin embargo, el método más común y práctico, con diferencia, es utilizar una <i>variable</i> a la izquierda del punto, siempre que la variable en cuestión<i> tenga almacenado un <b>id de instancia</b></i> válido. Los siguientes ejemplos lo ilustran.</p>
+  <p class="code">// Ejemplo 1<br> var _inst = instance_position(mouse_x, mouse_y, all);<br> if instance_exists(_inst)<br> {
+    <br> _inst.speed = 0;<br> }
+    <br>
+    <br> // Ejemplo 2<br> var _inst = instance_create_layer(mouse_x, mouse_y, &quot;Enemigos&quot;, obj_E_Parent);<br> _inst.direction = point_direction(_inst.x, _inst.y, x, y);<br> _inst.target = id;</p>
+  <p>En el código anterior del ejemplo 1, hay una llamada <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><tt>instancia_existe()</tt></a> en el bloque de código. Esto se debe a que el uso del método point para acceder o cambiar el valor de otra instancia
+    dará un error y bloqueará el juego si la instancia no existe, y existe la posibilidad de que este sea el caso en ese ejemplo. Sin embargo, no necesitamos la comprobación en los Ejemplos 2 y 3 porque sabemos que la instancia está ahí
+    ya que en el Ejemplo 2 la creamos, y en el Ejemplo 3, es la otra instancia en un evento de colisión. Sin embargo, si hay <i>alguna</i> posibilidad de que la instancia pueda ser destruida, desactivada o eliminada de la sala mientras se utiliza este método,
+   <i>siempre</i> debes comprobarlo de antemano utilizando la función <tt>instance_exists()</tt> o la <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><tt>instance_number()</tt></a> función.</p>
+  <p>Tenga en cuenta que no puede utilizar la <a href="Instance_Keywords.htm">palabra clave</a> especial &quot;all&quot; con este método para dirigirse a todas las instancias (por ejemplo: <span class="inline">all.val = 10</span> daría un error), pero puede utilizar <i>las</i> palabras clave
+    &quot; other<tt>&quot; y</tt>&quot;self&quot; sin problemas. Por ejemplo, usando <tt>other</tt> en un <a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">evento de colisión</a>:</p>
+  <p class="code">// Ejemplo 3 other.hp -= 10;<br> if other.hp &lt;= 0<br> {
+    <br> other.sprite_index = spr_E_Dead;<br> }
+  </p>
+  <p>También es importante tener en cuenta que no se puede utilizar ninguna función por sí misma como lado izquierdo de una asignación. Por ejemplo, el siguiente código daría un error:</p>
+  <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
+  <p>El valor de retorno de la expresión en ese ejemplo de código es un número entero (el valor de identificación único para la instancia más cercana) y por lo tanto debe ser encerrado entre paréntesis <span class="inline">()</span> para ser utilizado de esta manera y dirigirse correctamente a la instancia
+    requerida. El código anterior se escribiría correctamente como</p>
+  <p class="code">(instance_nearest(x, y, obj)).speed = 0;<br>
+    <br> //o
+    <br>
+    <br> var inst = instance_nearest(x, y, obj);<br> inst.speed = 0;</p>
+  <p>Todas estas son formas perfectamente válidas de leer, cambiar y establecer variables en otras instancias, y funcionan porque el punto es en realidad un <i>operador</i>. Toma un valor como <a class="glossterm" data-glossterm="operando" href="#">operando</a> izquierdo y una variable como operando derecho, y devuelve la dirección de esta variable particular en el objeto o instancia indicada. Todos los nombres de objetos, constantes, IDs, etc... simplemente representan valores y estos pueden ser tratados como cualquier otro valor.</p>
+  <p>La otra forma de referenciar variables en otra instancia es utilizar la función <span class="notranslate">del Lenguaje GameMaker</span> <span class="inline">with()</span>, que se discute en detalle <a href="Language_Features/with.htm">aquí</a>:</p>
+  <p class="code">// Esto afectará a todas las instancias del objeto &quot;obj_Enemigo&quot;<br> with (obj_Enemigo)<br> {<br> target = other.parent;<br> } <br>
+    <br> // Esto afectará a una instancia del objeto &quot;obj_Enemigo&quot;<br> var _enemy = instance_nearest(x, y, obj_Enemy);<br> if instance_exists(_enemy)<br> {<br> with (_enemy)<br> {<br> target_x = mouse_x;<br> target.y = mouse_y;<br> } <br> }</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="GML_Overview.htm">Visión general de<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="Evaluation_Order.htm">Orden de evaluación</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables - addressing
+addressing variables
+-->
+  <!-- TAGS
+addressing_variables
+-->
+
+</body></html>

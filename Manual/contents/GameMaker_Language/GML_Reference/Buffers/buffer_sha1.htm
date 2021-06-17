@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_sha1</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_sha1" />
+  <meta name="rh-index-keywords" content="buffer_sha1" />
+  <meta name="search-keywords" content="buffer_sha1" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_sha1</h1>
+  <p>En criptografía, SHA-1 es una función de <a class="glossterm" data-glossterm="hashtags" href="#">hash</a> criptográfico diseñada por la Agencia de Seguridad Nacional de los Estados Unidos y se emplea en varias aplicaciones y protocolos ampliamente utilizados, como el popular
+    <b><span class="notranslate">Git</span></b> donde se utiliza para comprobar los cambios en los archivos. Esta función toma los datos de entrada de un buffer y devuelve un resumen de mensaje de 160 bits en formato ASCII. De esta manera se puede generar una clave segura que puede ser almacenada y utilizada para comprobar la integridad
+    de la información que se envía a (o se recibe de) un servidor externo (por ejemplo). Al aplicar esto a los búferes utilizando esta función, debe especificar el id del búfer a utilizar, luego un valor de desplazamiento (en bytes) para donde comenzar, y luego
+    un tamaño (de nuevo en bytes) para la región a la que se aplicará el hash.</p>
+  <p class="note"><strong>NOTA</strong>: SHA-1 no es completamente seguro y puede romperse. Consulte <a href="https://en.wikipedia.org/wiki/SHA-1">esta página</a> para obtener más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_sha1(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El valor de desplazamiento de los datos.</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño del buffer.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">check_string = buffer_sha1(buff, 0, buffer_get_size(buff));</p>
+  <p>El código anterior creará un hash sha1 para los datos completos almacenados en el buffer indexado por la variable &quot;buff&quot;, y almacenará el hash devuelto en la variable &quot;check_string&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_crc32.htm">buffer_crc32</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_sha1
+-->
+  <!-- TAGS
+buffer_sha1
+-->
+
+</body></html>

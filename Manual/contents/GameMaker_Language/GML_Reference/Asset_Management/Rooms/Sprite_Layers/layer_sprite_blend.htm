@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>capa_espiga_mezcla</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_blend" />
+  <meta name="rh-index-keywords" content="layer_sprite_blend" />
+  <meta name="search-keywords" content="layer_sprite_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>capa_espiga_mezcla</h1>
+  <p>Esta función controla la mezcla (o &quot;tintado&quot;) del sprite y el valor por defecto es -1 (que representa la constante c_white, <tt>que</tt> también puede utilizarse). Cualquier otro valor (incluyendo las constantes de color internas como <tt>c_red</tt>,
+    o <tt>c_aqua</tt>) mezclará el color especificado con el sprite original. Le das el ID del elemento sprite (que obtienes cuando creas un elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> o cuando usas
+    la función <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), y luego establece el color de mezcla a utilizar. A continuación puede ver un ejemplo de un sprite que ha sido mezclado con diferentes colores:</p>
+  <p><img alt="Colour blended sprites example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png">Tenga en cuenta que debe intentar limitar la mezcla en la plataforma <b>HTML5</b> (a menos que utilice WebGL),
+    ya que cada sprite mezclado tiene que ser almacenado en caché por separado, por lo que tener muchos sprites mezclados puede afectar negativamente al rendimiento (también puedes establecer el tamaño de la caché utilizando la función <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_blend(sprite_element_id, blend);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del elemento del sprite que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>mezcla</td>
+        <td>El color a mezclar con el sprite sprite (por defecto es <tt>c_white</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_sky&quot;);<br> var spr_id = layer_sprite_get_id(lay_id, &quot;Clouds&quot;);<br> layer_sprite_blend(spr_id, c_gray);</p>
+  <p>El código anterior obtiene el valor del ID del sprite llamado &quot;Clouds&quot; asignado a la capa &quot;Asset_sky&quot; y luego lo tiñe de un color.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_alpha.htm">layer_sprite_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_blend
+-->
+  <!-- TAGS
+layer_sprite_blend
+-->
+</body>
+</html>

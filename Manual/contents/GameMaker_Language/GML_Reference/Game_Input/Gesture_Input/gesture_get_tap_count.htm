@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gesture_get_tap_count</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gesture_get_tap_count" />
+  <meta name="rh-index-keywords" content="gesture_get_tap_count" />
+  <meta name="search-keywords" content="gesture_get_tap_count" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gesture_get_tap_count</h1>
+  <p>Esta función se utiliza para comprobar si el conteo de toques está habilitado o deshabilitado. La función devolverá <tt>true</tt> si está activada, y <tt>false</tt> en caso contrario, y puede activar o desactivar el conteo de toques utilizando la función <a href="gesture_tap_count.htm"><tt>gesture_tap_count()</tt></a>.
+    Cuando está habilitado, cada evento de pulsación tendrá una entrada adicional en el mapa DS &quot;tapcount&quot; que habrá registrado el número de pulsaciones, y cuando está habilitado significa que todos los eventos de pulsación se activarán, es decir: dos pulsaciones activarán tanto el evento de pulsación simple
+    es decir, dos toques desencadenarán tanto el evento de un solo toque como el evento de doble toque, siendo el recuento de toques del evento de un solo toque 1 y el recuento de toques del evento de doble toque 2. El valor de la cuenta de toques se restablecerá a 0 una vez que haya transcurrido el tiempo establecido para la detección de un toque doble (véase la función <a href="gesture_get_double_tap_time.htm"><tt>gesture_double_tap_time()</tt></a>).
+    Si el recuento de toques está desactivado, el toque inicial no se registrará hasta que haya pasado el tiempo de doble toque y no se haya detectado un segundo toque. Tenga en cuenta que esto está <b>activado</b> por defecto.</p>
+  <p> </p>
+  <h4><b>Sintaxis:</b></h4>
+  <p class="code">gesture_get_tap_count();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Bool</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !gesture_get_tap_count()<br> {
+    <br> getsure_tap_count(true);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el recuento de grifos está activado y, si no lo está, se activa.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gesture_Input.htm">Entrada gestual</a></div>
+        <div style="float:right">Siguiente: <a href="gesture_get_pinch_distance.htm">gesture_get_pinch_distance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gesture_get_tap_count
+-->
+  <!-- TAGS
+gesture_get_tap_count
+-->
+
+</body></html>

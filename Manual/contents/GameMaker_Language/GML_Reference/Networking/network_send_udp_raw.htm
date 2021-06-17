@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_send_udp_raw</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_send_udp_raw" />
+  <meta name="rh-index-keywords" content="network_send_udp_raw" />
+  <meta name="search-keywords" content="network_send_udp_raw" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_send_udp_raw</h1>
+  <p>Con esta función puedes enviar datos a través de la red usando UDP a un servidor. La función toma el <i>identificador de socket</i> para conectarse, la URL a la que conectarse y el puerto a utilizar. A continuación, debe suministrar el identificador del <i>búfer</i> que contiene los datos a
+    (para más información sobre los búferes, véase <a href="../Buffers/Buffers.htm">Referencia - Búferes</a>) y, por último, el tamaño (en bytes) de los datos. UDP es &quot;sin conexión&quot; en el sentido de que en realidad no se hace una conexión, sólo se envía un paquete
+    directamente a una IP, y el servidor recibe los datos entrantes de una dirección IP y tiene que tratarlos &quot;tal cual&quot;. Los datos enviados no son formateados por <span class="notranslate">GameMaker Studio 2</span> de ninguna manera y los dispositivos receptores obtendrán los datos como un flujo que
+    significa que tendrá que manejarlo usted mismo. La función devolverá el número de bytes de datos enviados, o un número menor que 0 si el envío ha fallado.</p>
+  <p class="note"><b>NOTA</b>: Esta función no funcionará cuando se utilice en un proyecto que se ejecute en el objetivo HTML5, y tampoco los proyectos HTML5 podrán recibir UDP.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_send_udp_raw(socket, url, port, buffer, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>toma de corriente</td>
+        <td>El id del socket a utilizar.</td>
+      </tr>
+      <tr>
+        <td>url</td>
+        <td>La url o IP a la que conectarse (una cadena).</td>
+      </tr>
+      <tr>
+        <td>puerto</td>
+        <td>El puerto al que hay que conectarse.</td>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El id del buffer del que se van a obtener los datos.</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño (en bytes) de los datos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">network_send_udp_raw(sock, &quot;www.macsweeneygames.com&quot;, 6510, buff, buffer_tell(buff));</p>
+  <p>El código anterior enviará un paquete UDP sin procesar al servidor definido por la URL en el puerto 6510. Los datos se toman del buffer indexado en la variable &quot;buff&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_destroy.htm">network_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_udp_raw
+-->
+  <!-- TAGS
+network_send_udp_raw
+-->
+</body>
+</html>

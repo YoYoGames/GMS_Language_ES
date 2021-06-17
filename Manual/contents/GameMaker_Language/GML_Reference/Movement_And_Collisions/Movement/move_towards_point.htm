@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mover_hacia_el_punto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_towards_point" />
+  <meta name="rh-index-keywords" content="move_towards_point" />
+  <meta name="search-keywords" content="move_towards_point" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mover_hacia_el_punto</h1>
+  <p>Esta función simplemente le dice a la instancia que ejecuta el código que se mueva hacia un punto establecido a una velocidad determinada. Ten en cuenta que eres tú quien tiene que decirle qué hacer una vez que llegue a ese punto, ya que no se detendrá por sí mismo. Esto significa que puedes obtener una instancia &quot;vibrante&quot;
+    mientras se mueve (por ejemplo) 3 píxeles hacia adelante, sobrepasando la posición del objetivo x/y en 2, luego se mueve 3 píxeles hacia atrás de nuevo, sobrepasando el punto objetivo en uno y así sucesivamente... Hay varias maneras de evitar esto, por ejemplo, utilizando
+    <a href="../../Maths_And_Numbers/Angles_And_Distance/distance_to_point.htm"><tt>distancia_al_punto()</tt></a> para ver a qué distancia de la ubicación especificada se encuentra la instancia antes de moverse.</p>
+  <p class="note"><b>NOTA</b>: esta función establece la velocidad de la instancia, por lo que incluso si se detiene utilizando este código, la instancia seguirá moviéndose en la dirección anterior, por lo que es necesario establecer la instancia <a href="../../Asset_Management/Instances/Instance_Variables/speed.htm"><tt style="font-size: 14px">velocidad</tt></a>    a 0 si desea que se detenga. Vea el ejemplo de código más abajo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mover_hacia_el_punto( x, y, sp );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x del punto hacia el que hay que moverse.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y del punto hacia el que hay que moverse.</td>
+      </tr>
+      <tr>
+        <td>sp</td>
+        <td>La velocidad a la que se debe mover en píxeles por paso.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si punto_distancia(x, y, objetivo.x, objetivo.y) &gt; 5<br> {
+    <br> mover_hacia_el_punto(objetivo.x, objetivo.y, 5);<br> }
+    <br> else speed = 0;</p>
+  <p>El código anterior moverá la instancia hacia la posición de la instancia indexada en la variable &quot;target&quot; a una velocidad de 5 píxeles por paso. Una vez que alcanza esa posición la velocidad se pone a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="move_bounce_all.htm">move_bounce_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_towards_point
+-->
+  <!-- TAGS
+move_towards_point
+-->
+</body>
+</html>

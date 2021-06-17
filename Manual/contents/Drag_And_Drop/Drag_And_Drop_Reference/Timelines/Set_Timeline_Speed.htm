@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer la velocidad de la línea de tiempo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Timeline Speed action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Timeline Speed" />
+  <meta name="search-keywords" content="Set Timeline Speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Timeline Speed Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/i_Timelines_Set_Timeline_Speed.png"> Establecer la velocidad de la línea de tiempo</h1>
+  <p>Esta acción se puede utilizar para establecer la velocidad a la que una línea de tiempo se moverá a través de los momentos que contiene. Normalmente, en cada fotograma del juego querrás que la posición en la línea de tiempo se incremente en 1, sin embargo puedes cambiar esta cantidad estableciendo esta
+    acción a un valor diferente. El valor que elijas será tratado como un <i>multiplicador</i>, de modo que un valor de 2, por ejemplo, hará que la línea de tiempo se ejecute al doble de velocidad, mientras que un valor de 0,5 hará que se ejecute a la mitad de velocidad.
+    Lo que esto significa para los momentos es que si el valor es mayor que uno, entonces podrían ocurrir varios momentos dentro del mismo marco de juego (nunca se saltan momentos), y si la velocidad es menor que uno, entonces después de que un momento haya corrido, habrá marcos
+    en los que no ocurre nada hasta que se ejecuta el siguiente momento - si estableces la velocidad de la línea de tiempo en 0,1, por ejemplo, tendrás un momento en un fotograma del juego, luego 9 fotogramas del juego sin momentos, y en el décimo fotograma del juego se ejecutará el siguiente momento.</p>
+  <p>Si se configura una línea de tiempo para que se inicie utilizando las acciones <a href="Set_Instance_Timeline.htm">Establecer línea de tiempo de la instancia</a> o <a href="Set_Timeline_State.htm">Establecer estado de la línea de tiempo</a> pero <i>no se establece</i> 
+    la velocidad, entonces la línea de tiempo estará por defecto a 1 momento por fotograma del juego.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Timeline Speed Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/a_Timelines_Set_Timeline_Speed.png" /></p>
+  <h4>Argumentos:</h4>
+  
+    <table>
+      <tbody>
+        <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+        </tr>
+        <tr>
+          <td>Velocidad</td>
+          <td>La velocidad -como multiplicador- a la que se ejecutará la línea de tiempo (por defecto es 1)</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Timeline Speed Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Timelines/e_Timelines_Set_Instance_Timeline.png">El código del bloque de acción anterior asignará una línea de tiempo
+    a la instancia que llama a las acciones, así como establecerá el momento inicial a 10 y luego la velocidad de la línea de tiempo a 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timeline_Actions.htm">Acciones de la línea de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="Set_Timeline_State.htm">Establecer el estado de la línea de tiempo</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Timeline Speed
+-->
+  <!-- TAGS
+action_speed_timeline
+-->
+</body>
+</html>

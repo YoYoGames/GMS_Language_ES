@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>velocidad_de_habitación</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_speed" />
+  <meta name="rh-index-keywords" content="room_speed" />
+  <meta name="search-keywords" content="room_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_speed (obsoleto)</h1>
+  <p>Esta variable contiene la velocidad de ejecución de <b>todas las</b> habitaciones (y del juego) en cuadros de juego por segundo. Tenga en cuenta que esto <i>NO</i> es el FPS (cuadros por segundo), sino más bien el número de pasos de juego que <span class="notranslate">GameMaker Studio 2</span> tratará de mantener cada
+    segundo.</p>
+  <p class="note"><b>IMPORTANTE!</b> Esta variable se mantiene sólo para el soporte de Legacy, y no debe ser utilizada ya que no establece la velocidad para una sola sala, sino para TODAS las salas del juego. Para cambiar la velocidad del juego debes utilizar la función <span style="font-size:1px;"><a href="../../General_Game_Control/game_set_speed.htm"><tt style="font-size: 14px">game_set_speed()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">velocidad_de_habitación;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">alarma[0] = velocidad_habitación * 10;</p>
+  <p>El código anterior utiliza <tt>room_speed</tt> para establecer que la alarma se ejecute durante 10 segundos. El uso de la variable de esta manera asegurará que la alarma se ejecute durante 10 segundos, independientemente de la velocidad que se establezca para la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room_height.htm">room_height</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_speed
+-->
+  <!-- TAGS
+room_speed
+-->
+</body>
+</html>

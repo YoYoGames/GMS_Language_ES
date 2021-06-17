@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Obtener número aleatorio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Get Random Number action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - get Random Number" />
+  <meta name="search-keywords" content="Get Random Number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Get Random Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/i_Mathematics_Get_Random_Number.png"> Obtener número aleatorio</h1>
+  <p>Esta acción generará un número aleatorio dentro de los límites de un conjunto de valores mínimos y máximos. Puede elegir el tipo de número a generar (ya sea un decimal o un entero) y luego establecer el rango dentro del cual se generará el número suministrando
+    un valor mínimo y máximo. El valor aleatorio generado será devuelto a la variable de destino (que puede ser marcada como una variable local temporal).</p>
+  <p class="note"><b>NOTA</b>: Al generar un entero aleatorio la acción devolverá un valor entero entre el valor mínimo y el máximo <b>, ambos inclusive</b>, por lo que un rango de 5 - 10 podría devolver 5 o 10, así como cualquier entero entre ambos. Sin embargo, al generar un decimal aleatorio
+    no devolverá nunca el valor máximo, por lo que el rango de 5 a 10 puede devolver 5 pero no devolverá 10 (aunque podría devolver 9.999999999999).</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Get Random Number Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/a_Mathematics_Get_Random_Number.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Tipo</td>
+        <td>El tipo de números a utilizar (enteros o decimales)</td>
+      </tr>
+      <tr>
+        <td>Mínimo</td>
+        <td>El número mínimo para el rango aleatorio</td>
+      </tr>
+      <tr>
+        <td>Máximo</td>
+        <td>El número máximo para el rango aleatorio</td>
+      </tr>
+      <tr>
+        <td>Objetivo</td>
+        <td>La variable de destino para almacenar el valor devuelto</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Get Random Number Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/e_Mathematics_Get_Random_Number.png">El código del bloque de acción anterior genera un valor aleatorio y lo asigna a una variable local
+    variable local. Este valor se utiliza entonces en un bucle de repetición en el que se realizan más llamadas aleatorias para generar posiciones dentro de la sala. Estas posiciones se utilizan entonces para crear un número de instancias.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Random_Actions.htm">Acciones aleatorias</a></div>
+        <div style="float:right">Siguiente: <a href="Randomise.htm">Aleatorizar</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Get Random Number
+-->
+  <!-- TAGS
+action_get_random_number
+-->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instancia_activar_región</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_activate_region" />
+  <meta name="rh-index-keywords" content="instance_activate_region" />
+  <meta name="search-keywords" content="instance_activate_region" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instancia_activar_región</h1>
+  <p>Con esta función puede definir una región dentro de la sala para activar instancias que han sido previamente desactivadas. Esta región puede marcarse como &quot;interior&quot; o &quot;exterior&quot;, como se muestra en la siguiente imagen:</p>
+  <p><img alt="Instance activate region example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Instances/instance_activate_region.png">Puedes ver en la imagen de arriba que la instancia &quot;manzana&quot; está siempre activa
+    porque, aunque el propio sprite no se superponga a la región, el cuadro delimitador sí lo hace. Así, se considera que las instancias están dentro de la región especificada cuando su caja <i>delimitadora</i> se solapa con ella, y el estado de la máscara de colisión (precisa
+    o no) no se tiene en cuenta. Hay que tener en cuenta que la activación no es instantánea, y una instancia que haya sido activada de este modo no se considerará activa hasta el final del evento en el que se llamó a la función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_activate_region(left, top, width, height, inside);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>La coordenada x de la izquierda de la región rectangular a activar.</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>La coordenada y de la parte superior de la región rectangular a activar.</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>La anchura de la región a activar.</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura de la región a activar.</td>
+      </tr>
+      <tr>
+        <td>dentro de</td>
+        <td>Si se activan las instancias en el interior de la región (true) o en el exterior (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">instance_deactivate_all(true);<br> var _vx = camera_get_view_x(view_camera[0]);<br> var _vy = camera_get_view_y(view_camera[0]);<br> var _vw = camera_get_view_width(view_camera[0]);<br> var _vh = camera_get_view_height(view_camera[0]);<br> instance_activate_region(_vx
+    - 64, _vy - 64, _vw + 128, _vh + 128, false);</p>
+  <p>El código anterior desactiva todas las instancias excepto la que está ejecutando el código y luego activa una región dentro de la sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Deactivating_Instances.htm">Desactivación de instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_activate_layer.htm">instance_activate_layer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_activate_region
+-->
+  <!-- TAGS
+instance_activate_region
+-->
+</body>
+</html>

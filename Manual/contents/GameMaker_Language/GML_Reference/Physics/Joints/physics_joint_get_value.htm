@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_get_value</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_get_value" />
+  <meta name="rh-index-keywords" content="physics_joint_get_value" />
+  <meta name="search-keywords" content="physics_joint_get_value" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_get_value</h1>
+  <p>Utilizando una serie de constantes predefinidas, puedes pedir a <span class="notranslate">GameMaker Studio 2</span> que te diga una serie de cosas sobre el estado de cualquier articulación. Esto es muy útil, ya que le da la capacidad de eliminar las articulaciones o cambiar un comportamiento de las instancias en función de
+    dependiendo de sus necesidades en ese momento. Hay una serie de constantes que se pueden utilizar en esta función y se pueden encontrar aquí: <a href="Physics_Joint_Constants.htm">Physics Joint Constants</a>, pero tenga en cuenta que se realizan cálculos complejos
+    cuando los llame, por lo que deben ser utilizados con cuidado y sólo cuando sea necesario y tenga en cuenta que <i>muchos son únicos para un tipo específico de articulación</i>.</p>
+  <p>Si la propiedad no existe (si, por ejemplo, se comprueba la traslación prismática de una articulación de polea), el valor de retorno será 0.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_get_value(joint, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>conjunta</td>
+        <td>El índice de la articulación que desea probar</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>La constante de la propiedad conjunta que desea probar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si shipJoint<br> {
+    <br> var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);<br> var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y);<br> var reactionForce = point_distance(0, 0, reactionForceX,
+    reactionForceY);<br> si reactionForce &gt; 2<br> {
+    <br> physics_joint_delete(shipJoint);
+    <br> shipJoint = -1;<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba si la variable &quot;shipJoint&quot; contiene un índice de articulación y, si es así, calcula la fuerza que se aplica a esa articulación utilizando las dos constantes. Finalmente, si la fuerza total es mayor que 2, se elimina la articulación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_set_value.htm">physics_joint_set_value</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_get_value
+-->
+  <!-- TAGS
+physics_joint_get_value
+-->
+</body>
+</html>

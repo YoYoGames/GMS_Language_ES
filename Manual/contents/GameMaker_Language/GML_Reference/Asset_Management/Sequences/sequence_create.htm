@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>crear_secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_create" />
+  <meta name="rh-index-keywords" content="sequence_create" />
+  <meta name="search-keywords" content="sequence_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>crear_secuencia</h1>
+  <p>Con esta función puede crear un nuevo objeto de secuencia al que puede añadir pistas. La función devuelve una <a href="../../../GML_Overview/Structs.htm">estructura</a> a la que puede acceder para configurar la nueva secuencia que ha creado. El contenido
+    de esta estructura se detalla en <a href="Sequence_Structs/The_Sequence_Object_Struct.htm">esta página</a>. La estructura del objeto de secuencia puede utilizarse para crear instancias de la secuencia en una capa de la sala utilizando la función <a href="../Rooms/Sequence_Layers/layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a>.
+    Tenga en cuenta que al crear objetos de secuencia de esta manera debe eliminarlos de nuevo llamando a la función <a href="sequence_destroy.htm"><tt>sequence_destroy()</tt></a> cuando ya no se necesiten, de lo contrario se producirá una fuga de memoria que
+    puede ralentizar y eventualmente bloquear su juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sequence_create();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructurar</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">myseq = sequence_create();<br> myseq.length = 120;<br> myseq.loopmode = seqplay_pingpong;</p>
+  <p>El código anterior crea una nueva estructura de objeto de secuencia y establece su longitud de reproducción y el modo de bucle.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_destroy.htm">sequence_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_create
+-->
+  <!-- TAGS
+sequence_create
+-->
+</body>
+</html>

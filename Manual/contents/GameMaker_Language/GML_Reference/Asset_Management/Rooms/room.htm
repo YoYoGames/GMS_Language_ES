@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>habitación</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room" />
+  <meta name="rh-index-keywords" content="room" />
+  <meta name="search-keywords" content="room" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>habitación</h1>
+  <p>Esta variable contiene el índice de la sala actual en la que se está ejecutando el juego. <i>No</i> es una variable de sólo lectura, sin embargo, cambiarla no cambiará el valor del índice de la sala actual, sino que cambiará la sala para que coincida con el índice al que
+    que se ha establecido en la variable. Hay que tener cuidado al hacer esto, ya que si el índice al que cambias la variable no es válido, el juego lanzará un error y se cerrará. En general, es mucho mejor usar <a href="room_goto.htm"><tt>room_goto()</tt></a>    para cambiar de sala.</p>
+  <p class="note"><strong>Nota</strong>: Los ID de las salas no se basan en su orden en el Navegador de Activos o en el Gestor de Salas, por lo que debe evitar suministrar un valor numérico directamente. En su lugar, utilice la <a class="glossterm" data-glossterm="constante" href="room_goto.htm#">constante</a> de la sala para
+    el activo al que desea hacer referencia (que es simplemente su nombre) o recupérelo a través de una función.</p>
+  <h4>Sintaxis:</h4>
+  <p class="code">habitación;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de índice único)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (room == rm_level1)<br> {<br> audio_play_sound(snd_level1, 1, 1);<br> }</p>
+  <p>El código anterior comprobará si la habitación actual es el primer nivel, y en ese caso reproducirá la música de ese nivel.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room_speed.htm">room_speed</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room
+-->
+  <!-- TAGS
+room
+-->
+
+</body></html>

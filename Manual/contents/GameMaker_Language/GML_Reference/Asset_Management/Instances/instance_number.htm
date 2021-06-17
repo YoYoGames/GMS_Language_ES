@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>número_de_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_number" />
+  <meta name="rh-index-keywords" content="instance_number" />
+  <meta name="search-keywords" content="instance_number" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>número_de_instancia</h1>
+  <p>Con esta función se puede averiguar cuántas instancias activas del objeto especificado existen en la sala. Al realizar la comprobación mediante esta función, si el objeto es un <b>padre</b>, <i>todos los objetos hijos se incluirán también en el valor de retorno</i>, y
+    tenga en cuenta también que aquellas instancias que hayan sido desactivadas con las funciones de <a href="Deactivating_Instances/Deactivating_Instances.htm">desactivación de instancias</a> <i>no</i> se incluirán en esta comprobación.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">número_de_instancia(obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto para totalizar el número de instancias.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if instance_number(object_index) &lt; 50<br> {<br> instance_create_layer(random(room_width), random(room_height), &quot;Instances&quot;, object_index);<br> }
+  </p>
+  <p>El código anterior comprobará el número de instancias que se crean del mismo objeto que la instancia actual y, si hay menos de 50, creará otra en una posición aleatoria dentro de la habitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_place.htm">instance_place</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_number
+-->
+  <!-- TAGS
+instance_number
+-->
+</body>
+</html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_superficie_parte_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_part_ext" />
+  <meta name="rh-index-keywords" content="draw_surface_part_ext" />
+  <meta name="search-keywords" content="draw_surface_part_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_superficie_parte_ext</h1>
+  <p>Esta función dibujará una parte de la superficie elegida en la posición dada siguiendo las mismas reglas que por <a href="draw_surface_part.htm"><tt>dibujar_superficie_parte()</tt></a>sólo que ahora puede escalar la parte, mezclar un color con ella, o cambiar su alfa
+    al dibujarla en la pantalla (igual que cuando se dibuja una superficie con <a href="draw_surface_ext.htm"><tt>dibujar_superficie_ext()</tt></a>).</p>
+  <p class="note"><b></b><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de texturas. Debe comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, color, alpha);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El valor de ID único de la superficie a dibujar.</td>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>La posición izquierda en la superficie de la pieza a dibujar.</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>La posición superior en la superficie de la pieza a dibujar.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura de la pieza a dibujar, desde la izquierda.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la pieza a dibujar, desde arriba.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x de donde dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y de dónde dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal con la que debe dibujarse la pieza.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical con la que debe dibujarse la pieza.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color de mezcla con el que se debe dibujar la pieza.</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>La transparencia alfa con la que debe dibujarse la pieza.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0.5, c_black, 1);</p>
+  <p>Esto dibujará un área de 32x32 píxeles de 8x8 píxeles en la superficie indexada en la variable &quot;surf&quot;. Se estirará al doble de su anchura habitual pero a la mitad de su altura habitual. Será opaca y se mezclará con negro (convirtiéndola en
+    una silueta).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="draw_surface_stretched.htm">dibujar_superficie_estirada</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_part_ext
+-->
+  <!-- TAGS
+draw_surface_part_ext
+-->
+</body>
+</html>

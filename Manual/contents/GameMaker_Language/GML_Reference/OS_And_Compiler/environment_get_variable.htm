@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>environment_get_variable</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for environment_get_variable" />
+  <meta name="rh-index-keywords" content="environment_get_variable" />
+  <meta name="search-keywords" content="environment_get_variable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>environment_get_variable</h1>
+  <p>Esta función devuelve el valor (una cadena) de la variable de entorno con el nombre dado (también una cadena). Puede obtener las variables de entorno disponibles en <span class="notranslate">macOS</span> y <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) escribiendo &quot; env&quot; en la aplicación de terminal, y para
+    información sobre las variables de entorno <span class="notranslate">de Windows</span>, si estás usando el símbolo del sistema, escribe &quot; echo<tt>%PATH%&quot;,</tt> y usando PowerShell es &quot; ls env&quot;. Tenga en cuenta que tanto en <span class="notranslate">macOS</span> como en <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>) la variable de entorno &quot;HOME&quot;
+    devolverá la ruta &quot;~/&quot;, que corresponde a &quot;<tt>/Users/&lt;nombredeusuario&gt;&quot; en macOS y a &quot;/home/&lt;nombredeusuario</tt> <span class="notranslate">&gt;&quot;</span> en Ubuntu (Linux<tt>).</tt></p>
+  <p class="note"><b>NOTA</b>: Esta función es sólo para <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span> y <span class="notranslate">Ubuntu</span><span class="notranslate">(Linux</span>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">environment_get_variable(nombre);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre (una cadena) de la variable de entorno a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">e_str = environment_get_variable(&quot;APPDATA&quot;);</p>
+  <p>El código anterior devolverá la ruta completa de la variable de entorno &quot;%appdata%<tt>&quot;,</tt> que normalmente es &quot;C:\N-usuario\N-AppData\N-Roaming<tt>&quot;.</tt></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="external_define.htm">external_define</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+environment_get_variable
+-->
+  <!-- TAGS
+environment_get_variable
+-->
+</body>
+</html>

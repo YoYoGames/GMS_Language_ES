@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>llamada_externa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for external_call" />
+  <meta name="rh-index-keywords" content="external_call" />
+  <meta name="search-keywords" content="external_call" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>llamada_externa</h1>
+  <p>Si ha creado una llamada a una función externa a una <tt>dll</tt> o <tt>dylib</tt> utilizando <a href="external_define.htm"><tt>external_define()</tt></a>puede utilizar esta función para llamarla. Debe proporcionar el nombre de la función previamente definida, así como
+    así como cada uno de los argumentos que requiere (cada argumento debe ser del tipo correcto, ya sea real o cadena) y la función devuelve el resultado de la llamada externa.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">llamada_externa(id, args[0...15]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El nombre de la función que se quiere llamar</td>
+      </tr>
+      <tr>
+        <td>args[0...10]</td>
+        <td>Los diferentes argumentos que quieres pasar a la función externa</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor (el tipo de valor devuelto dependerá de la función definida)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mi_función = external_define(&quot;MiDLL.dll&quot;, &quot;MiMin&quot;, dll_cdecl, ty_real, 2, ty_real, ty_real);<br> var _a = external_call(mi_función, x, y);</p>
+  <p>El código de ejemplo anterior llama a una función externa previamente definida y almacena el valor devuelto en una variable local.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="OS_And_Compiler.htm">Sistema operativo y compilador</a></div>
+        <div style="float:right">Siguiente: <a href="external_free.htm">external_free</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+external_call
+-->
+  <!-- TAGS
+external_call
+-->
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_superficie_parte</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for draw_surface_part" />
+  <meta name="rh-index-keywords" content="draw_surface_part" />
+  <meta name="search-keywords" content="draw_surface_part" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_superficie_parte</h1>
+  <p>Con esta función puedes dibujar parte de cualquier superficie en una posición determinada dentro de la habitación. Al igual que con <tt><a href="draw_surface.htm">dibujar_superficie()</a></tt> puede especificar una superficie, pero luego debe especificar las <i>coordenadas relativas</i> dentro de la
+    superficie de un área a seleccionar para dibujar. Esto significa que una posición izquierda de 0 y una posición superior de 0 sería la esquina superior izquierda de la superficie y todas las coordenadas posteriores deberían tomarse desde esa posición.</p>
+  <p class="note"><b></b><b>NOTA</b>: Cuando se trabaja con superficies existe la posibilidad de que dejen de existir en cualquier momento debido a que están almacenadas en la memoria de la textura. Debería comprobar <b>SIEMPRE</b> que una superficie existe utilizando <span style="font-size:1px;"><a href="surface_exists.htm"><tt style="font-size: 14px">surface_exists()</tt></a></span>    antes de referenciarla directamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">dibujar_superficie_parte(id, izquierda, arriba, w, h, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El valor de ID único de la superficie a dibujar.</td>
+      </tr>
+      <tr>
+        <td>a la izquierda</td>
+        <td>La posición izquierda en la superficie de la pieza a dibujar.</td>
+      </tr>
+      <tr>
+        <td>top</td>
+        <td>La posición superior en la superficie de la pieza a dibujar.</td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>El ancho de la pieza a dibujar, desde la izquierda.</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la pieza a dibujar, desde arriba.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x de donde dibujar la superficie.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y de dónde dibujar la superficie.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">dibujar_superficie_parte(surf, 8, 8, 32, 32, x, y);</p>
+  <p>Esto dibujará un área de 32x32 8px por 8px desde la parte superior izquierda de la superficie indexada en &quot;surf&quot;, en la posición de las instancias (x,y).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="draw_surface_part_ext.htm">draw_surface_part_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_surface_part
+-->
+  <!-- TAGS
+draw_surface_part
+-->
+</body>
+</html>

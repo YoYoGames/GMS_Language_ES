@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Otros eventos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the other events." />
+  <meta name="rh-index-keywords" content="Objects - Other Events" />
+  <meta name="search-keywords" content="other events,outside room,intersect boundary,view events,room start event,room end event,game start event,game end event,path ended,user events,broadcast message,animation end,animation update,animation event" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Los otros eventos</h1>
+  <p><img alt="The Other Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_OtherEvents.png" /></p>
+  <p>En esta página se explica cada uno de los diferentes eventos que se recogen en la categoría <strong>Otros</strong> eventos del Editor de objetos:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Sala exterior</a> </p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Este evento se dispara cuando una instancia sale fuera de la habitación, y se basa en una comprobación hecha contra el sprite asignado (y sus propiedades) de la instancia, de modo que incluso si has establecido la escala de la imagen x o y a un valor distinto de uno, este evento
+      sólo se activará cuando todo el sprite esté fuera de la pantalla. Si la instancia no tiene sprite, entonces se utiliza la posición de la instancia y en el momento en que su posición x o y esté fuera de la sala también se disparará el evento. Este evento
+      es típicamente usado para cosas como balas, donde son destruidas una vez que salen de la habitación para que no termines con millones de balas volando infinitamente y causando que tu juego se ralentice. Tenga en cuenta que este evento sólo se activa una vez
+      cuando la instancia sale de la habitación inicialmente.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Intersección de límites</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Este evento se dispara cuando una instancia &quot;toca&quot; el borde interior de la habitación, y, al igual que el evento de fuera de la habitación, se basa en una comprobación que se hace con el sprite asignado a la instancia, de modo que incluso si has establecido la escala x o y de la imagen a
+      a un valor distinto de uno, este evento se activará en el momento en que una parte del sprite se cruce con el límite de la habitación. Si la instancia <em>no </em>tiene sprite, entonces se utiliza la posición de la instancia y en el momento en que su posición x o y intersecte el
+      límite de la habitación, también se activará el evento. Puedes usar este evento para hacer cosas como decirle a una instancia que &quot;rebote&quot; hacia la habitación de nuevo en lugar de salir.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Vistas</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Las vistas de cámara se definen normalmente en el editor de salas y se utilizan para mostrar sólo una pequeña área de una sala grande en un momento dado. Esta categoría de eventos tiene dos subcategorías separadas<strong>(Vista Exterior</strong> e <strong>Intersección de Límites</strong>), con
+      con ocho eventos diferentes en cada una que corresponden a los ocho puertos de vista disponibles. Estas dos categorías funcionan exactamente igual que los respectivos eventos de sala, sólo que toman el límite de la vista de la cámara como lo que la instancia debe comprobar
+      en lugar de la sala.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Inicio del juego</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Este evento especial se activa sólo una vez en todo el juego y sólo para aquellas instancias con acciones o código colocado en el evento. Estas instancias deben estar presentes en la primera sala del juego y haber sido colocadas allí en el editor de salas, en lugar de
+      que haber sido creadas dinámicamente mediante código o acciones. Hay que tener en cuenta que este evento ocurre <em>después </em>del evento de creación de todas las instancias y por lo tanto puede contener código o acciones con variables que han sido previamente definidas en ese evento.
+      Este evento se define típicamente en un solo objeto &quot;controlador&quot; y se utiliza típicamente para inicializar variables globales, iniciar música, leer de archivos y cualquier otra cosa que normalmente se hace sólo una vez al inicio de un juego.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Fin del juego</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Al igual que el evento Game Start mencionado anteriormente, este evento sólo se activa una vez en todo el juego y es justo antes de que se cierre la ventana del juego. Una vez más, para que una instancia con este evento haga algo, tiene que estar en la sala mientras
+      el juego se cierra. Ten en cuenta que este evento sólo es viable para <strong><span class="notranslate">Windows</span></strong>, <strong><span class="notranslate">Ubuntu</span> </strong><span class="notranslate">(Linux</span>) y <strong><span class="notranslate">macOS</span></strong> los dispositivos móviles pueden cerrar el juego sin dar a <span class="notranslate">GameMaker Studio 2</span> la oportunidad de llamar a este evento.
+      oportunidad de llamar a este evento. Para los juegos de navegador hechos con el módulo HTML5, este evento debería funcionar cuando se cierra la pestaña del juego o el navegador, pero no todos los navegadores soportan esta característica (Firefox, Chrome y Safari lo hacen en el momento de escribir este artículo) por lo que hay que tener cuidado al utilizarlo.
+      por lo que hay que tener cuidado al utilizarlo. Típicamente se usaría este evento para guardar datos.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Sala de inicio</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Este evento ocurre para todas las instancias inicialmente en una sala cuando la sala se inicia. Ten en cuenta que ocurre <em>después </em>del evento de creación y por lo tanto puede depender de variables y cosas definidas previamente en ese evento.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Fin de la habitación</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Este evento ocurre a todas las instancias que están en la sala cuando ésta termina. Este evento es muy útil para &quot;limpiar&quot; después de que un nivel haya terminado, por ejemplo, puedes eliminar los recursos cargados aquí, o eliminar un sistema de partículas para evitar fugas de memoria
+      de memoria, etc...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Fin de la animación</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">En <span class="notranslate">GameMaker Studio 2</span> los sprites no son cosas estáticas ya que pueden tener sub-imágenes y ser animados a diferentes velocidades. Cada fotograma de una animación (llamada sub-imagen) tiene su propio número, empezando por el 0, que puede ser comprobado en el código o a través de acciones,
+      pero a veces todo lo que necesitas saber es cuando la animación ha terminado. Es entonces cuando se dispara este evento, justo al final de la animación cuando el índice de la sub-imagen muestra que se ha alcanzado el último fotograma. Este evento es realmente útil
+      para muchas cosas, por ejemplo un objeto de explosión en el que puedes configurar la instancia para que se destruya a sí misma cuando se alcance el último fotograma de la animación.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Actualización de la animación</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">Este evento está diseñado sólo para ser usado con las <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Funciones de Animación Esquelética</a>. Es un evento especial que se dispara a cada paso en
+      una instancia que utiliza un sprite de animación esquelética, y está diseñado para &quot;interceptar&quot; los datos óseos después de que la orientación de los huesos haya sido calculada para el estado actual de la animación, pero antes de que estos datos sean comprometidos para su uso en el dibujo.
+      Esto le permite hacer modificaciones a los datos de los huesos utilizando las funciones apropiadas.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Evento de animación</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><strong></strong>Este evento está diseñado sólo para su uso con las <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">Funciones de Animación Esquelética</a>. Este evento se dispara en un objeto
+      que tiene un sprite de animación esquelética asignado, y donde el objeto está usando el dibujo por defecto para el sprite asignado, o el sprite está siendo dibujado vía draw_self(). Actualmente no se activará en sprites de animación de esqueleto dibujados de otra manera.
+      manera. El evento está diseñado para capturar y transmitir datos que han sido asignados a eventos particulares en la animación de sprites tal y como se define en el editor utilizado para hacerlos.</p>
+    <p class="dropspot">Cuando el Evento de Animación se dispara, se creará un <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">Mapa DS</a> especial llamado event_data map (muy parecido al mapa async_load para un evento async).
+      Este mapa tendrá todos los siguientes pares clave/valor que puedes analizar para obtener información sobre el evento:</p>
+    <ul class="dropspotlist">
+      <li>&quot;<span class="inline">name</span>&quot;: el nombre del evento (como se define en el programa de animación)</li>
+      <li>&quot;<span class="inline">track</span>&quot;: el índice de la pista en la que se reproduce la animación (por defecto es 0)</li>
+      <li>&quot;<span class="inline">integer</span>&quot;: un valor entero asociado al evento (como se define en el programa de animación, por defecto es 0)</li>
+      <li>&quot;<span class="inline">float</span>&quot;: un valor flotante asociado al evento (como se define en el programa de animación, por defecto es 0,0)</li>
+      <li>&quot;<span class="inline">string</span>&quot;: un valor de cadena asociado al evento (como se define en el programa de animación, por defecto es una cadena vacía &quot;&quot;)</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Camino terminado</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><a href="../Paths.htm">Los caminos</a> pueden ser una parte importante de la creación de cualquier juego, ya sea para un juego de tipo de defensa de la torre, o un shoot-em-up o lo que sea, y es a menudo muy importante que una instancia hace alguna acción particular cuando llega a
+      el final de su camino. Este evento detecta esto y se desencadena cuando ocurre, permitiéndote añadir código o acciones para lidiar con las circunstancias, por ejemplo, en un juego de defensa de torres podrías usar esto para destruir la instancia y eliminar un punto de salud
+      punto de salud del objeto objetivo.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Eventos de los usuarios</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Se trata de eventos especiales que no son activados por <span class="notranslate">GameMaker Studio 2</span> de forma automática, sino que tienen que ser llamados <em>implícitamente </em>por ti mediante código o acciones mientras se ejecuta el juego. Hay 12 eventos de usuario en total y pueden contener código o acciones
+      y pueden ser llamados en cualquier momento en el bucle del juego, haciéndolos muy útiles para crear tus propios eventos que suceden cuando <em>tú </em>lo decides.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Mensaje de difusión</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot">Este evento se dispara cada vez que un sprite o una secuencia genera una cadena de mensajes de difusión. Para más información, consulta la página sobre <a href="../Sequence_Properties/Broadcast_Messages.htm">Mensajes</a> de Difusión.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Object_Events.htm">Eventos de objetos</a></div>
+        <div style="float:right">Siguiente: <a href="Draw_Events.htm">Sorteo de eventos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Other Events
+Outside Room
+Intersect Boundary
+View Events
+Outside View
+Interect View
+Game Start
+Game End
+Room Start
+Room End
+Animation End
+Animation Update
+Animation Event
+Path Ended
+User Events
+Broadcast Message
+-->
+  <!-- TAGS
+other_events
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sombreador_de_capas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_shader" />
+  <meta name="rh-index-keywords" content="layer_shader" />
+  <meta name="search-keywords" content="layer_shader" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sombreador_de_capas</h1>
+  <p>Con esta función puedes asignar un recurso <span class="notranslate">de sombreado</span> a cualquier capa y la capa se renderizará utilizando ese <span class="notranslate">sombreado</span>. Usted proporciona el valor de ID único de la capa o el nombre de la capa (como una cadena - esto tendrá un impacto en el rendimiento)
+    junto con el ID del <span class="notranslate">sombreador</span> a utilizar. El <span class="notranslate">sombreador</span> debe haber sido creado previamente en el Navegador de Activos y el índice <span class="notranslate">del sombreador</span> (el nombre del recurso <span class="notranslate">del sombreador</span> ) se pasa a esta función. Si la capa asignada tiene instancias añadidas, entonces
+    el <span class="notranslate">sombreador</span> se aplicará a <i>todos los</i> eventos de dibujo que la instancia utilice - por ejemplo, si la instancia tiene un evento Draw GUI Begin, entonces el <span class="notranslate">sombreador</span> se aplicará automáticamente a él. El <span class="notranslate">sombreador</span> también afectará a cualquier otro elemento gráfico dibujado
+    en esa capa, como los activos de sprites o los mapas de azulejos.</p>
+  <p>Tenga en cuenta que la función <i>no</i> está pensada para ser llamada en cualquier evento de dibujo o eventos de paso, sino que sólo necesita ser llamada al inicio de la sala en el <b>código de creación de la sala</b> o en el <b>evento de creación </b>/ <b>evento de inicio de la sala</b> de una instancia.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_shader(layer_id, <span class="notranslate">shader</span>)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">sombreador</span></td>
+        <td>El índice <span class="notranslate">del sombreador</span> a asignar a la capa</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Instances&quot;);<br> layer_shader(lay_id<span class="notranslate">,</span> shd_Sepia);</p>
+  <p>El código anterior asignará el recurso <span class="notranslate">shader</span> &quot;shd_Sepia&quot; a la capa dada para todo el dibujo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_script_begin.htm">layer_get_script_begin</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_<span class="notranslate">shader</span>
+-->
+  <!-- TAGS
+layer_<span class="notranslate">shader</span>
+-->
+</body>
+</html>

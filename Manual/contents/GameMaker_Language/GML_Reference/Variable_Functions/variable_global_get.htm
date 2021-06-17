@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_global_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_global_get" />
+  <meta name="rh-index-keywords" content="variable_global_get" />
+  <meta name="search-keywords" content="variable_global_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_global_get</h1>
+  <p>Con esta función puede obtener el valor de una variable global con nombre. Se suministra el nombre de la variable global para obtener el valor <i>como una cadena</i> (véase el código de ejemplo a continuación) y la función devolverá el valor
+    de la variable global o <span class="inline">undefined</span> si la variable no existe.<b></b></p>
+  <p class="note"><b>IMPORTANTE!</b> Si la variable global que está obteniendo no existe entonces la función devolverá la palabra clave <tt>undefined</tt> y puede obtener errores que detendrán el funcionamiento del juego, así que en caso de duda
+    utilice la función <a href="variable_global_exists.htm"><tt>variable_global_exists</tt></a> primero.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">variable_global_get(nombre);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre de la variable global a obtener (como una cadena)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor (cualquier tipo de datos) o <tt>indefinido</tt> (si la variable nombrada no existe)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if variable_global_exists(&quot;enemy_num&quot;)<br> {
+    <br> show_debug_message(&quot;número_enemigo = &quot; + string(variable_global_get(&quot;número_enemigo&quot;));) <br> }
+  </p>
+  <p>El código anterior comprobará si existe una variable global y, si lo hace, se mostrará en la consola.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="variable_global_set.htm">variable_global_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_global_get
+-->
+  <!-- TAGS
+variable_global_get
+-->
+</body>
+</html>

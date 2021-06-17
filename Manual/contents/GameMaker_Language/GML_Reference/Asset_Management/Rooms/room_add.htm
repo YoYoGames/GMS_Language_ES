@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>room_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function room_add" />
+  <meta name="rh-index-keywords" content="room_add" />
+  <meta name="search-keywords" content="room_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>room_add</h1>
+  <p>Esta función creará una nueva sala vacía y la añadirá a su juego, devolviendo su índice para ser almacenado en una variable para todos los códigos posteriores que traten con esta sala. Tenga en cuenta que cada sala se añade permanentemente al juego hasta que se cierre el ejecutable,
+    es decir, <i>las habitaciones añadidas mediante código no pueden volver a borrarse</i>. Esto tiene importantes implicaciones para el uso de la memoria, por lo que debe utilizar esta función con cuidado.</p>
+  <p class="note"><b>NOTA</b>: Las salas nuevas no forman parte del ordenamiento habitual de las salas, por lo que no tienen una sala &quot;anterior&quot; o &quot;siguiente&quot; (lo que significa que las funciones <span style="font-size:1px;"><a href="room_next.htm"><tt style="font-size: 14px">room_next()</tt></a></span> y
+    <span style="font-size:1px;"><a href="room_previous.htm"><tt style="font-size: 14px">room_previous()</tt></a></span> no funcionarán). Para saltar de una sala añadida a otra, debe utilizar el índice de la propia sala.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">room_add();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Índice</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.myroom = room_add();<br> room_set_width(global.myroom, 640);<br> room_set_height(global.myroom, 480);<br> room_set_persistent(global.myroom, false);</p>
+  <p>Esto creará una nueva sala y almacenará su índice en la variable &quot;global.myroom&quot;. A continuación, establecerá su anchura a 640 píxeles, su altura a 480 píxeles y su persistencia a <tt>false</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Rooms.htm">Habitaciones</a></div>
+        <div style="float:right">Siguiente: <a href="room_duplicate.htm">room_duplicate</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+room_add
+-->
+  <!-- TAGS
+room_add
+-->
+</body>
+</html>

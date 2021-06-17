@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>camera_set_view_border</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for camera_set_view_border" />
+  <meta name="rh-index-keywords" content="camera_set_view_border" />
+  <meta name="search-keywords" content="camera_set_view_border" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>camera_set_view_border</h1>
+  <p>Puede utilizar esta función para establecer el borde de seguimiento de la cámara de visión dentro de la habitación. Se da el valor único del ID de la cámara (devuelto por las diferentes funciones <tt>camera_create</tt> ) y luego se da el tamaño del borde x y el tamaño del borde y (horizontal
+    y vertical). Estos valores sólo se utilizarán cuando a la cámara de visión se le haya asignado un objetivo de instancia a seguir (ya sea en el editor de salas o utilizando la función <a href="camera_set_view_target.htm"><tt>camera_set_view_target()</tt></a>) y están relacionados con
+    a la distancia del borde de la vista que debe tener la instancia antes de que la vista actualice su posición para seguirla.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">camera_set_view_border(camera_id, x_border, y_border)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>camera_id</td>
+        <td>El valor único del ID de la cámara devuelto cuando se creó la cámara.</td>
+      </tr>
+      <tr>
+        <td>x_border</td>
+        <td>El borde (en píxeles) de la cámara de visión a lo largo del eje horizontal</td>
+      </tr>
+      <tr>
+        <td>y_borde</td>
+        <td>El borde (en píxeles) de la cámara de visión a lo largo del eje vertical</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">camera_set_view_border(view_camera[0], 64, 64);</p>
+  <p>El código anterior establecerá el borde de la cámara de vista para la cámara asignada al puerto de vista[0].</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="camera_set_view_angle.htm">camera_set_view_angle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+camera_set_view_border
+-->
+  <!-- TAGS
+camera_set_view_border
+-->
+</body>
+</html>

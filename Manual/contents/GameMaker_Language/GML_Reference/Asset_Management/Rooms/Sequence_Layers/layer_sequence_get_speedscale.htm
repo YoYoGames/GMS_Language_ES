@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sequence_get_speedscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sequence_get_speedscale" />
+  <meta name="rh-index-keywords" content="layer_sequence_get_speedscale" />
+  <meta name="search-keywords" content="layer_sequence_get_speedscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sequence_get_speedscale</h1>
+  <p>Con esta función se suministra el ID del elemento de la secuencia -como el devuelto por <a href="layer_sequence_create.htm"><tt>layer_sequence_create()</tt></a> o por una de las <a href="../General_Layer_Functions/General_Layer_Functions.htm">funciones de los elementos de la capa</a> - y devolverá la escala de velocidad de reproducción actual. Este es el valor del <i>multiplicador</i> utilizado para reducir o acelerar la velocidad de reproducción. Un valor de 1 es el valor por defecto, y los valores inferiores a 1 significan que la reproducción se ralentiza y los valores superiores a 1 significan que la reproducción se acelera.
+    que 1 significan que la reproducción se acelera.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sequence_get_speedscale(sequence_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sequence_element_id</td>
+        <td>El valor de identificación único del elemento de la secuencia a la que se dirige</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if layer_sequence_get_speedscale(title_sequence) != 1<br> {
+    <br> layer_sequence_speedscale(title_sequence, 1);<br> }
+  </p>
+  <p>El código anterior comprueba la escala de velocidad de reproducción actual del ID del elemento de la secuencia almacenado en la variable &quot;title_sequence&quot;, y si no está establecido en 1 se establece en este valor.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequence_Layers.htm">Secuencia de capas</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sequence_get_length.htm">layer_sequence_get_length</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sequence_get_speedscale
+-->
+  <!-- TAGS
+layer_sequence_get_speedscale
+-->
+</body>
+</html>

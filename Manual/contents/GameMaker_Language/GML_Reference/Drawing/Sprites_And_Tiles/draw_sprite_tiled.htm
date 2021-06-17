@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>dibujar_espiga_inclinada</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_sprite_tiled" />
+  <meta name="rh-index-keywords" content="draw_sprite_tiled" />
+  <meta name="search-keywords" content="draw_sprite_tiled" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>dibujar_espiga_inclinada</h1>
+  <p>Esta función tomará un sprite y lo distribuirá repetidamente por toda la vista (o la habitación si no hay una vista definida), partiendo de las coordenadas que se indiquen en la función. El mosaico se basa en la anchura y la altura del sprite definidas por las variables
+   <a href="../../Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">variables de sprite</a> de la instancia que ejecuta el código. Esta función es sólo para proyecciones 2D (ortográficas), y no funcionará correctamente cuando se utilice una proyección de cámara 3D
+    cuando se utilice una proyección de cámara 3D.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_sprite_tiled(sprite, subimg, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>La subimagen (fotograma) del sprite a dibujar (image_index o -1 se correlacionan con el fotograma actual de la animación en el objeto).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_sprite_tiled(sprite_index, image_index, x, y);</p>
+  <p>Esto dibujará el sprite asignado a la instancia (sprite_index) y su fotograma actual de animación (image_index) en la posición x e y propia de la instancia, y en mosaico horizontal y vertical a través de la vista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprites_And_Tiles.htm">Sprites y baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="draw_sprite_tiled_ext.htm">draw_sprite_tiled_ext</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_sprite_tiled
+-->
+  <!-- TAGS
+draw_sprite_tiled
+-->
+</body>
+</html>

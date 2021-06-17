@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_debug</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_debug" />
+  <meta name="rh-index-keywords" content="audio_debug" />
+  <meta name="search-keywords" content="audio_debug" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_debug</h1>
+  <p>Esta función puede utilizarse para mostrar información de depuración sobre el sistema de audio, con <tt>true</tt> para activarla y <tt>false</tt> para desactivarla. Cuando se está depurando el audio de esta manera, la superposición mostrará la siguiente información:</p>
+  <p><img alt="Audio Debug Overview" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Debug.png" /></p>
+  <ul class="colour">
+    <li><strong>Handle </strong>- El handle de la fuente OpenAL (único para cada sonido reproducido)</li>
+    <li><strong>Manejador de datos</strong> - El manejador del búfer de OpenAL (muestra el mismo valor para múltiples sonidos con el mismo manejador de origen)</li>
+    <li><strong>Buffers procesados</strong>: cuántos buffers se han reproducido</li>
+    <li><strong>Bufferes en cola</strong>: cuántos bufferes se han puesto en cola (y aún están esperando para reproducirse)</li>
+    <li><strong>Ganancia </strong>- El valor de la ganancia para el audio (0 - 65536)</li>
+    <li><strong>Play Offset</strong> - la posición de la muestra (posición actual de reproducción) en el buffer actual</li>
+    <li><strong>Barras de búferes en cola</strong>: un pequeño diagrama de caja de los búferes procesados/en cola con el desplazamiento de la reproducción (posición actual) dibujado como una línea azul</li>
+  </ul>
+  <p>Para los grupos de audio sincronizados, también tiene la función <a href="Audio_Synchronisation/audio_sync_group_debug.htm"><tt>audio_sync_group_debug()</tt></a>.</p>
+  <p class="note"><b>NOTA: </b>Esta función no funciona en la plataforma de destino HTML5.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_debug(enable);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>activar</td>
+        <td>Habilitar (establecer como <tt>verdadero</tt>) o deshabilitar<tt>(falso</tt>) la depuración de audio.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (debug_mode)<br> {
+    <br> audio_debug(true);
+    <br> }
+    <br> si no
+    <br> {
+    <br> audio_debug(false);
+    <br> }
+  </p>
+  <p>El código anterior activará o desactivará la superposición de la depuración de audio dependiendo de si el juego se está ejecutando en modo de depuración o no.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_system_is_available.htm">audio_system_is_available</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_debug
+-->
+  <!-- TAGS
+audio_debug
+-->
+</body>
+</html>

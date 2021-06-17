@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gamepad_set_colour</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gamepad_set_colour" />
+  <meta name="rh-index-keywords" content="gamepad_set_colour" />
+  <meta name="search-keywords" content="gamepad_set_colour,gamepad_set_color" />
+</head>
+
+<body>
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gamepad_set_colour</h1>
+  <p>Esta función se puede utilizar para establecer el color de los LEDs dentro de un controlador de PlayStation. Se especifica la ranura del dispositivo que se va a configurar, y luego se da un color, que puede ser cualquiera de las <a href="../../Drawing/Colour_And_Alpha/Colour_And_Alpha.htm">constantes de color</a> o un valor de color creado utilizando las funciones de color específicas o un valor HEX (como $FFFFFFF).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gamepad_set_colour(dispositivo, color);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>Qué &quot;ranura&quot; de dispositivo de gamepad se debe establecer.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si salud &lt; 10<br> {
+    <br> gamepad_set_colour(0, c_red);<br> }
+  </p>
+  <p>El código anterior pondrá los LEDs del controlador PlayStation en rojo si la variable de <tt>salud</tt> cae por debajo de 10.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Gamepad_Input.htm">Entrada del Gamepad</a></div>
+        <div style="float:right">Siguiente: <a href="gamepad_set_option.htm"> gamepad_set_option </a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gamepad_set_colour
+gamepad_set_color
+-->
+  <!-- TAGS
+gamepad_set_colour
+-->
+
+</body></html>

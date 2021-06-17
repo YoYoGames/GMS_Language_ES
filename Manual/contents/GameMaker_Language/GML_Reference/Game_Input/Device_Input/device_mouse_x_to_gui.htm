@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>device_mouse_x_to_gui</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for device_mouse_x_to_gui" />
+  <meta name="rh-index-keywords" content="device_mouse_x_to_gui" />
+  <meta name="search-keywords" content="device_mouse_x_to_gui" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>device_mouse_x_to_gui</h1>
+  <p>Esta función devuelve la posición x del toque en el dispositivo en relación con la capa GUI. Dado que la capa de la GUI puede configurarse con un tamaño diferente independientemente de la resolución de la pantalla <i>y del</i> tamaño de la sala, a veces puede ser complicado obtener
+    el punto exacto de la capa GUI en el que un usuario ha tocado la pantalla. Con esta función puedes obtener esa posición basándote en el tamaño real de la GUI, haciendo que los botones de la GUI y los elementos del HUD sean más fáciles de crear e interactuar. Si estás ejecutando esto en los módulos
+    HTML5 o en los módulos de PC y Mac, entonces este valor se actualiza constantemente, siempre y cuando el dispositivo (normalmente un ratón) esté conectado, sin embargo, para los dispositivos móviles, esto sólo se actualizará mientras se esté tocando la pantalla, y ten en cuenta que el número máximo de
+    toques que se pueden detectar dependerá mucho del dispositivo que se utilice y del sistema operativo que ejecute. También hay que tener en cuenta que en HTML5 sólo funcionará correctamente el &quot;dispositivo 0&quot; y otros dispositivos pueden dar valores erróneos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">device_mouse_x_to_gui(device);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>dispositivo</td>
+        <td>El dispositivo (de 0 a <i>n</i>) que se está comprobando.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if device_mouse_check_button(0, mb_left)<br> {
+    <br> if device_mouse_x_to_gui(0) &gt; 0 &amp;&amp; device_mouse_x_to_gui(0) &lt; 32<br> {
+    <br> pressed = true;<br> }
+    <br> si no
+    <br> {
+    <br> pressed = false;<br> }
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el ratón del dispositivo está siendo presionado y si es así, entonces sondea la posición x del dispositivo en la capa de la GUI para ver si está dentro de los parámetros. Si lo está, establece la variable &quot;pressed&quot; como verdadera, de <tt>lo</tt> contrario
+    la pone en <tt>falso</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Device_Input.htm">Entrada de dispositivos</a></div>
+        <div style="float:right">Siguiente: <a href="device_mouse_y_to_gui.htm">device_mouse_y_to_gui</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+device_mouse_x_to_gui
+-->
+  <!-- TAGS
+device_mouse_x_to_gui
+-->
+
+</body></html>

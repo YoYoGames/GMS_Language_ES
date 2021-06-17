@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cuerdas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for string functions" />
+  <meta name="rh-index-keywords" content="\r,\b,\f,\t,\v,\\,\a,\u,\x,\,\r,\b,\f,\t,\v,\\,\a,\u,\x,\" />
+  <meta name="search-keywords" content="Strings,\n,\r,\b,\f,\t,\v,\\,\a,\u,\x,\,string literal,@" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Cuerdas</h1>
+  <p>En algún momento de la creación de tu juego necesitarás utilizar texto. El texto en los juegos se trata utilizando las funciones de <b>cadena</b> (una cadena es sólo otra forma de decir una línea de texto) y <span class="notranslate">GameMaker Studio 2</span> tiene un conjunto completo de funciones que
+    le permiten manipular cadenas de muchas maneras, incluyendo la inserción de una cadena en otra, la copia de cadenas y la capacidad de analizar cadenas para los dígitos o las letras que contienen. En general, una cadena <i>sólo</i> puede crearse
+    añadiendo texto entre comillas dobles &quot; &quot; y <em>no se aceptan cadenas con comillas simples, ni se puede</em> dividir la cadena en varias líneas y esperar que GameMaker <span class="notranslate">Studio 2</span> la <span class="notranslate">represente</span> como si los saltos de línea fueran nuevas líneas (a menos que se utilice un identificador de
+   <strong>cadena literal</strong> <span class="inline">@</span> identificador, como se explica a continuación).</p>
+  <p>Vale la pena señalar que hay ciertas convenciones que puede utilizar al crear cadenas, sobre todo relacionadas con el uso de <i>caracteres de escape</i>. Se trata de caracteres que van precedidos de un símbolo &quot;<span class="inline">\</span>&quot;. Así, por ejemplo
+    ejemplo, si quieres poner comillas dentro de una cadena tendrías algo así:</p>
+  <p class="code">str = &quot;Hola &quot;Mundo&quot;;</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> también es compatible con los caracteres Unicode de cuatro bytes de ancho, lo que permite descodificar y codificar los caracteres Unicode en los límites superiores del estándar (incluidos, entre otros, los emoji). Para tratar los caracteres Unicode, puede
+    puede utilizar el &quot;<span class="inline">\</span>&quot; para preceder cualquier literal Unicode - dígitos de hexadecimal precedidos de un &quot;<span class="inline">u</span>&quot;, por ejemplo &quot;<span class="inline"><tt>\u00e2</tt></span>&quot; para &quot;á&quot;- donde
+    los dígitos son el número del carácter Unicode. Cuando se trabaja con Unicode de esta manera, es necesario tener en cuenta el hecho de que <span class="notranslate">GameMaker Studio 2</span> interpretará <i>todos los</i> dígitos que siguen a la &quot;<span class="inline">u</span>&quot;, por lo que
+    si quisieras escribir &quot;áa&quot; por ejemplo, deberías usar</p>
+  <p class="code">&quot;\N - La vida de un niño es un juego de niños.</p>
+  <p>o</p>
+  <p class="code">&quot;\N - 2\N - 61&quot;</p>
+  <p>o</p>
+  <p class="code">&quot;\u00e2&quot; + &quot;a&quot;</p>
+  <p>ya que el uso de &quot; \u00e2a<tt>&quot;</tt> daría como resultado el carácter Unicode &quot; ส&quot; (convirtiéndose esencialmente en &quot; \ue2a&quot;).<i></i></p>
+  <p><span class="notranslate">GameMaker Studio 2</span> también puede manejar cualquier literal hexadecimal - normalmente escrito como dígitos de hex tras &quot;<span class="inline">0x</span>&quot;, por ejemplo &quot;<span class="inline">0xff</span>&quot;, donde los dígitos son el número de
+    el carácter a utilizar. En <span class="notranslate">GameMaker Studio</span> 2 estos se escriben usando &quot; \x&quot;<tt> y</tt> luego el valor hexadecimal. Estos y otros caracteres de escape predefinidos se enumeran en la siguiente tabla:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>\n</td>
+        <td>Línea nueva</td>
+      </tr>
+      <tr>
+        <td>\r</td>
+        <td>Retorno del carro</td>
+      </tr>
+      <tr>
+        <td>\b</td>
+        <td>Retroceso (0x08)</td>
+      </tr>
+      <tr>
+        <td>\f</td>
+        <td>Alimentación del formulario (0x0c)</td>
+      </tr>
+      <tr>
+        <td>\t</td>
+        <td>Ficha horizontal (0x09)</td>
+      </tr>
+      <tr>
+        <td>\v</td>
+        <td>Ficha vertical (0x0b)</td>
+      </tr>
+      <tr>
+        <td>\\</td>
+        <td>La propia barra invertida (0x5c)</td>
+      </tr>
+      <tr>
+        <td>\a</td>
+        <td>Alerta (0x07)</td>
+      </tr>
+      <tr>
+        <td>[Dígitos hexadecimales]</td>
+        <td>Insertar un carácter Unicode</td>
+      </tr>
+      <tr>
+        <td>\x[Dígitos hexadecimales]</td>
+        <td>Insertar carácter literal hexadecimal</td>
+      </tr>
+      <tr>
+        <td>[Dígitos octales]</td>
+        <td>Insertar carácter octal Unicode</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p class="note"><b>NOTA</b>: Las cadenas admiten el avance de forma, el tabulador vertical, etc., pero esto no significa que <b>el renderizado</b> lo haga, y al dibujar las cadenas estos caracteres pueden ser ignorados.</p>
+  <p>También puede crear <i>literales de cadena</i> precediendo la cadena completa con el carácter <span class="inline">@</span>:</p>
+  <p class="code">var test = @&quot;<br> Saltos de línea<br> en varias líneas<br> 
+    <br> &quot;;
+  </p>
+  <p>El código anterior representará la cadena en varias líneas como si hubiera un carácter de escape de salto de línea incluido. Un literal de cadena verbatim es similar a los literales de cadena de la versión anterior <span class="notranslate">de GameMaker</span>, pero también utilizan comillas dobles o simples y deben ser
+    prefijados por un símbolo <span class="inline">@</span>, pueden ser divididos en múltiples líneas en el archivo de código y NO admiten caracteres de escape, es decir, <span class="inline">@&quot;Hello\World&quot;</span> <em>no</em> tratará de escapar la W
+    en World y se almacenará literalmente. Tenga en cuenta, sin embargo, que cuando se utilizan literales de cadena como este, tendrá que romper la cadena si desea incluir las comillas como parte de la cadena, es decir:</p>
+  <p class="code">var test = @&quot;Hola &quot; + &quot;\&quot;&quot; + @&quot;Mundo&quot; + &quot;\&quot;&quot;</p>
+  <p>Otra cosa que hay que tener en cuenta es que el carácter Unicode 9647 (▯) se utiliza para sustituir cualquier glifo que falte en su fuente designada al renderizarla en el evento de dibujo. Así que si su fuente no tiene, por ejemplo, el símbolo °, entonces escribir
+    90° producirá realmente 90▯.</p>
+  <p>La siguiente lista de funciones son todas para tratar con cadenas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="ansi_char.htm">ansi_char</a></li>
+    <li><a href="chr.htm">chr</a></li>
+    <li><a href="ord.htm">ord</a></li>
+    <li><a href="real.htm">real</a></li>
+    <li><a href="string.htm">cadena</a></li>
+    <li><a href="string_byte_at.htm">string_byte_at</a></li>
+    <li><a href="string_byte_length.htm">string_byte_length</a></li>
+    <li><a href="string_set_byte_at.htm">string_set_byte_at</a></li>
+    <li><a href="string_char_at.htm">string_char_at</a></li>
+    <li><a href="string_ord_at.htm">cadena_ord_at</a></li>
+    <li><a href="string_copy.htm">copiar_cadenas</a></li>
+    <li><a href="string_count.htm">cuenta_de_cadenas</a></li>
+    <li><a href="string_delete.htm">string_delete</a></li>
+    <li><a href="string_digits.htm">dígitos_de_cadena</a></li>
+    <li><a href="string_format.htm">formato_de_cadena</a></li>
+    <li><a href="string_insert.htm">string_insert</a></li>
+    <li><a href="string_length.htm">longitud_de_cadena</a></li>
+    <li><a href="string_letters.htm">letras_de_cadena</a></li>
+    <li><a href="string_lettersdigits.htm">letrasdigitoscadenas</a></li>
+    <li><a href="string_lower.htm">string_lower</a></li>
+    <li><a href="string_pos.htm">string_pos</a></li>
+    <li><a href="string_pos_ext.htm">string_pos_ext</a></li>
+    <li><a href="string_last_pos.htm">string_last_pos</a></li>
+    <li><a href="string_last_pos_ext.htm">string_last_pos_ext</a></li>
+    <li><a href="string_repeat.htm">string_repeat</a></li>
+    <li><a href="string_replace.htm">string_replace</a></li>
+    <li><a href="string_replace_all.htm">string_replace_all</a></li>
+    <li><a href="string_upper.htm">cadena_superior</a></li>
+    <li><a href="string_height.htm">altura_de_la_cadena</a></li>
+    <li><a href="string_height_ext.htm">string_height_ext</a></li>
+    <li><a href="string_width.htm">ancho_de_cadena</a></li>
+    <li><a href="string_width_ext.htm">ancho_de_cadena_ext</a></li>
+    <li><a href="string_hash_to_newline.htm">string_hash_to_newline</a></li>
+    <li><a href="../Variable_Functions/is_string.htm">is_string</a></li>
+  </ul>
+  <p> </p>
+  <p>Aparte de las funciones que se refieren específicamente a las cadenas, el <b><span class="notranslate">Windows</span></b> también le permite utilizar el acceso al portapapeles para obtener y establecer información de texto:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="clipboard_has_text.htm">portapapeles_tiene_texto</a></li>
+    <li><a href="clipboard_get_text.htm">portapapeles_obtener_texto</a></li>
+    <li><a href="clipboard_set_text.htm">clipboard_set_text</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../GML_Reference.htm">Referencia<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="../Maths_And_Numbers/Maths_And_Numbers.htm">Matemáticas y números</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Strings
+\n
+\r
+\b
+\f
+\t
+\v
+\\
+\a
+\u
+\x
+\
+-->
+  <!-- TAGS
+string_functions
+-->
+
+</body></html>

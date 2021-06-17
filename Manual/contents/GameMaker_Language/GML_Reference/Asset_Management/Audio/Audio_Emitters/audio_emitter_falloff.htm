@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_emisor_falloff</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_falloff" />
+  <meta name="rh-index-keywords" content="audio_emitter_falloff" />
+  <meta name="search-keywords" content="audio_emitter_falloff" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_emisor_falloff</h1>
+  <p>Con esta función puede establecer la distancia de caída de un emisor. Se trata de la distancia a la que debe estar el <i>emisor</i> para que el sonido &quot;caiga&quot; a un volumen de 0. El valor por defecto
+    para esto es 100, pero tenga cuidado de establecer esto a cualquier valor inferior a 1, ya que hará que cualquier sonido reproducido a través de este emisor sea inaudible para el <i>oyente</i>, sin embargo cualquier otro valor hará que el sonido se desvanezca cuanto más lejos esté el emisor del oyente.
+    el emisor se encuentre del <i>oyente</i>.</p>
+  <p>La forma en que se escuche el sonido dependerá de la referencia de decaimiento (que es la distancia por debajo de la cual el volumen de la fuente normalmente caería a la mitad) y del factor de decaimiento (que afecta al sonido más allá de la distancia de referencia de decaimiento solamente).
+    El factor por defecto es normalmente 1, y el efecto de los diferentes valores de decaimiento dependerá del modelo elegido.</p>
+  <p>Para una guía completa de los diferentes modelos de desvanecimiento y cómo se utilizan estos valores, por favor vea la función <tt><a href="../audio_falloff_set_model.htm">audio_falloff_set_model()</a></tt>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_emitter_falloff(emisor, falloff_ref, falloff_max, falloff_factor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>emisor</td>
+        <td>El índice del emisor a cambiar.</td>
+      </tr>
+      <tr>
+        <td>ref. de fallo</td>
+        <td>La referencia de desvanecimiento en relación con el oyente (pinza).</td>
+      </tr>
+      <tr>
+        <td>fallo_máximo</td>
+        <td>La distancia máxima de desvanecimiento en relación con el oyente.</td>
+      </tr>
+      <tr>
+        <td>factor_de_fallo</td>
+        <td>El factor de decaimiento (por defecto 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">s_emit = audio_emitter_create();<br> audio_emitter_position(s_emit, x, y, 0);<br> audio_emitter_falloff(s_emit, 100, 300, 1);</p>
+  <p>El código anterior crea un emisor de audio y asigna su índice a la variable &quot;s_emit&quot;. Este emisor se coloca en la posición de la instancia que lo crea y se le da una distancia de caída de 300, lo que significa que cuando el emisor está más lejos
+    más de 300 píxeles de la posición del <i>oyente</i>, se mantendrá en silencio. Su factor de decaimiento es el 1 por defecto y la referencia de decaimiento es 100, por lo que a 100 píxeles del oyente comenzará el decaimiento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Emitters.htm">Emisores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_emitter_gain.htm">audio_emitter_gain</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_falloff
+-->
+  <!-- TAGS
+audio_emitter_falloff
+-->
+</body>
+</html>

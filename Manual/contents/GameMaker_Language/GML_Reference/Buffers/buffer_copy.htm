@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>búfer_copia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_copy" />
+  <meta name="rh-index-keywords" content="buffer_copy" />
+  <meta name="search-keywords" content="buffer_copy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>búfer_copia</h1>
+  <p>Esta función puede utilizarse para copiar un segmento (o todos) de los datos almacenados en un búfer a otro. Cuando se utilizan dos buffers y se copia de uno a otro, ambos buffers deben haber sido creados previamente con la función <a href="buffer_create.htm"><tt>buffer_create()</tt></a>    (por ejemplo), y se puede especificar un desplazamiento de datos (en bytes) para el punto de inicio de los datos a copiar desde el buffer de origen en relación con el inicio del buffer, así como otro desplazamiento de datos para definir la posición a la que copiar los datos
+    en la memoria intermedia de destino.</p>
+  <p class="note"><b>NOTA</b>: No se puede copiar en el mismo búfer.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_copy(src_buffer, src_offset, size, dest_buffer, dest_offset);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>src_buffer</td>
+        <td>El índice del búfer <i>del que</i> se va a copiar.</td>
+      </tr>
+      <tr>
+        <td>src_offset</td>
+        <td>El desplazamiento de datos desde el que se empieza a copiar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño de los datos a copiar (en bytes).</td>
+      </tr>
+      <tr>
+        <td>dest_buffer</td>
+        <td>El índice del buffer <i>a</i> copiar.</td>
+      </tr>
+      <tr>
+        <td>dest_offset</td>
+        <td>La posición de desplazamiento para copiar los datos (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_copy(buff1, 0, 2048, buff2, 2048);</p>
+  <p>El código anterior copiará los datos almacenados en el buffer indexado en la variable &quot;buff1&quot;, y luego los pegará en el buffer indexado en la variable &quot;buff2&quot;, pero desplazado 2048 bytes.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_copy_from_vertex_buffer.htm">buffer_copy_from_vertex_buffer</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_copy
+-->
+  <!-- TAGS
+buffer_copy
+-->
+</body>
+</html>

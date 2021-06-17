@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_queue_dequeue</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_queue_dequeue" />
+  <meta name="rh-index-keywords" content="ds_queue_dequeue" />
+  <meta name="search-keywords" content="ds_queue_dequeue" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_queue_dequeue</h1>
+  <p>Esta función <i>retirará</i> el valor de la cabeza de la <span class="misspell-word">cola DS</span>, eliminándolo de la cola y devolviendo el valor para ser almacenado en una variable. Si la cola está vacía, la función devolverá la constante
+   <tt>indefinida</tt>, de lo contrario devolverá el valor real o de cadena contenido en la cola.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_queue_dequeue(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El identificador de la cola de la que se va a retirar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Valor del tipo de datos almacenado en la cola o indefinido</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !ds_queue_empty(move_queue)<br> {
+    <br> var xx = ds_queue_dequeue(move_queue);<br> var yy = ds_queue_dequeue(move_queue);<br> move_towards_point(xx, yy, 4);<br> }
+  </p>
+  <p>El código anterior comprueba la cola DS indexada en la variable &quot;move_queue&quot; para ver si está vacía, y si no lo está, entonces dequeues los dos valores de la cabeza de la cola y los utiliza para establecer una dirección para el movimiento.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Queues.htm">Colas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_queue_enqueue.htm">ds_queue_enqueue</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_queue_dequeue
+-->
+  <!-- TAGS
+ds_queue_dequeue
+-->
+
+</body></html>

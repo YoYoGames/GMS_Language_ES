@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_clear</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_clear" />
+  <meta name="rh-index-keywords" content="ds_map_clear" />
+  <meta name="search-keywords" content="ds_map_clear" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_clear</h1>
+  <p>Esta función borrará el mapa DS (previamente creado) de todos los pares clave/valor, pero no borrará el propio mapa DS de la memoria. Para ello debe utilizar la función <a href="ds_map_destroy.htm"><tt>ds_map_destroy()</tt></a>. Tenga en cuenta que al borrar
+    un mapa desreferenciará cualquier estructura de datos almacenada en el mapa dando lugar a una fuga de memoria, por lo que necesitarás recorrerlo y destruir todos los elementos de la estructura de datos manualmente antes de borrar el mapa para evitar esto. La única vez que esto no es necesario es cuando
+    se ha marcado algún elemento del mapa como <a href="../DS_Lists/DS_Lists.htm">lista DS</a> o como otro <a href="DS_Maps.htm">mapa DS</a>, en cuyo caso estos elementos se destruirán (¡no se borrarán!) y su memoria se limpiará automáticamente cuando se borre el
+    cuando se borre el mapa principal.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_clear(id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id de la estructura de datos que se va a borrar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si global.new_game<br> {
+    <br> ds_map_clear(inventario);
+    <br> }</p>
+  <p>La función anterior comprobará una variable global para ver si es verdadera y, si lo es, entonces el mapa DS indexado en la variable de instancia &quot;inventario&quot; será limpiado de todos los pares clave/valor (pero no es <i>destruido</i> ).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_copy.htm">ds_map_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_clear
+-->
+  <!-- TAGS
+ds_map_clear
+-->
+
+</body></html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>json_encode</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for json_encode" />
+  <meta name="rh-index-keywords" content="json_encode" />
+  <meta name="search-keywords" content="json_encode" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>json_encode</h1>
+  <h3><strong>IMPORTANTE!</strong> Esta función -aunque sigue siendo válida- ha sido superada por la función <span class="inline"><a href="json_stringify.htm">json_stringify()</a></span>, y le recomendamos que sólo utilice esta función para el soporte heredado.</h3>
+  <p>JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de leer y escribir, tanto para las personas como para las máquinas. Se basa en dos estructuras básicas:</p>
+  <ul class="colour">
+    <li>Una colección de pares nombre/valor, llamada <a href="../../Data_Structures/DS_Maps/DS_Maps.htm"><tt>Mapa DS</tt></a> en <span class="notranslate">GameMaker Studio 2</span> pero que también se conoce como &quot;diccionario&quot; u &quot;objeto&quot; en otros lenguajes de programación.</li>
+    <li>Una lista ordenada de valores, llamada <a href="../../Data_Structures/DS_Lists/DS_Lists.htm"><tt>DS </tt><tt>Lista</tt></a> en <span class="notranslate">GameMaker Studio 2</span>, pero también puede llamarse &quot;matriz&quot; o &quot;secuencia&quot; en otros lenguajes de programación.</li>
+  </ul>
+  <p><tt>json_encode()</tt> toma un mapa DS o un array que hayas creado previamente y lo codifica como una cadena JSON que luego puedes usar como (por ejemplo) parte de una <a href="../../Asynchronous_Functions/HTTP/http_post_string.htm"><tt>http_post_string()</tt></a>    o, para que pueda ser almacenada externamente, puede ser escrita en un archivo. Si se utiliza un array como estructura de nivel superior, el array sólo puede contener valores válidos u otros arrays, y <em>no</em> estructuras de datos. Para ello se deben utilizar las funciones
+    DS.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> JSON es agnóstico respecto a los números. En cualquier lenguaje de programación, puede haber una variedad de tipos de números de diversas capacidades y complementos, fijos o flotantes, binarios o decimales. Esto puede hacer que el intercambio entre diferentes
+    lenguajes de programación. En cambio, JSON sólo ofrece la representación de los números que utilizan los humanos: una secuencia de dígitos. Todos los lenguajes de programación saben cómo dar sentido a las secuencias de dígitos, aunque no estén de acuerdo con las representaciones internas. Para
+    más información, consulte el <a href="http://www.ecma-international.org/publications/standards/Ecma-404.htm">estándar JSON de la ECMA</a>.</p>
+  <p>Tenga en cuenta que debe tener cuidado al escribir JSON en un archivo ini, ya que las especificaciones ini pueden causar problemas al utilizar comillas y caracteres de escape. Consulte la función <a href="../Ini_Files/ini_write_string.htm"><tt>ini_write_string()</tt></a> para más
+    información. También tenga en cuenta que si codifica un int64 en JSON, lo escribirá como un <i>int</i> si está en el rango válido para un int32, como un <i>double</i> si puede hacerlo sin perder precisión o (si ninguno de esos casos es aplicable) como una <i>cadena</i> con un identificador &quot; @i64@<tt>&quot;</tt> antes y &quot; $i64$&quot; después<tt>.</tt> Cuando vuelva a decodificar el JSON a un mapa, <span class="notranslate">GameMaker Studio 2</span> recogerá estos identificadores y reconvertirá el valor a un int64. Esto significa
+    que si el JSON está destinado a un servidor o algún otro objetivo que no sea GameMaker, estos valores no serán apropiados y por lo tanto deben ser evitados.</p>
+  <p class="note"><b>NOTA</b>: La funcionalidad jerárquica de JSON está disponible a través de funciones especiales de mapas y listas DS (por ejemplo <span class="inline"><a href="../../Data_Structures/DS_Maps/ds_map_add_list.htm" style="font-size: 14px">ds_map_add_list()</a></span> o
+    <span class="inline"><a href="../../Data_Structures/DS_Lists/ds_list_mark_as_map.htm" style="font-size: 14px">ds_list_mark_as_map()</a></span> ), por lo que es posible codificar sublistas y mapas.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">json_encode(map)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>mapa</td>
+        <td>un mapa DS con la información a codificar (o un array)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var hiscore_map, i, str;<br> hiscore_map = ds_map_create();<br> for (i = 0; i &lt; 10; i ++;)<br> {
+    <br> ds_map_add(hiscore_map, name[i], score[i]);<br> }
+    <br> str = json_encode(hiscore_map);<br> get[0] = http_post_string(&quot;http://www.angusgames.com/game?game_id=&quot; + string(global.game_id), str)<br> ds_map_destroy(hiscore_map);
+  </p>
+  <p>El código anterior crea un mapa DS y luego recorre las matrices de nombres y puntuaciones, añadiendo cada par clave/valor al nuevo mapa. A continuación, este mapa se codifica utilizando <tt>json_encode()</tt> y se almacena como una cadena en la variable &quot;str&quot;. Esta cadena se
+    Esta cadena se envía a un servidor web utilizando <tt>http_post_string()</tt> y el mapa DS se destruye para evitar una fuga de memoria, ya que ya no se necesita.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Encoding_And_Hashing.htm">Codificación de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="json_decode.htm">json_decode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+json_encode
+-->
+  <!-- TAGS
+json_encode
+-->
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_xscale</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_xscale" />
+  <meta name="rh-index-keywords" content="layer_sprite_xscale" />
+  <meta name="search-keywords" content="layer_sprite_xscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_xscale</h1>
+  <p>Usando esta función puede cambiar si el elemento sprite dado en una capa debe ser escalado a lo largo del eje x o no. Se da el ID del elemento sprite (que se obtiene cuando se crea un elemento sprite usando <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a>    o al utilizar la función <a href="layer_sprite_get_id.htm"><tt>layer_sprite_get_id()</tt></a>), y luego establece el valor de la escala. Una escala de 1 indica que no hay escala (1:1), los valores más pequeños reducirán la escala (0.5, por ejemplo, reducirá a la mitad el ancho del
+    ), los valores más grandes aumentarán la escala, y los valores negativos voltearán el sprite y lo escalarán a menos que el valor utilizado sea exactamente -1 (en cuyo caso el sprite utilizado se voltea de derecha a izquierda sobre su posición de origen sin escalar).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_xscale(sprite_element_id, xscale);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del elemento del sprite que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>El valor de la escala x (por defecto es 1)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var asset_sprite = layer_sprite_get_id(layer, &quot;gfc_Trees&quot;);<br> if layer_sprite_get_xscale(asset_sprite) != 1 || layer_sprite_get_yscale(asset_sprite) != 1<br> {
+    <br> layer_sprite_xscale(asset_sprite, 1);<br> layer_sprite_yscale(asset_sprite, 1);<br> }
+  </p>
+  <p>El código anterior comprobará el elemento sprite asignado a la capa en la que se encuentra la instancia que ejecuta el código y, si está escalado en cualquier dirección, establecerá tanto la escala del eje x como la del eje y en 1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_yscale.htm">layer_sprite_yscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_xscale
+-->
+  <!-- TAGS
+layer_sprite_xscale
+-->
+</body>
+</html>

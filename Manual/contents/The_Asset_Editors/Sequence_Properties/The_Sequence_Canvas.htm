@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>El lienzo de la secuencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the sequence canvas" />
+  <meta name="rh-index-keywords" content="Sequences - The Canvas" />
+  <meta name="search-keywords" content="sequence canvas" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El lienzo de la secuencia</h1>
+  <p>Al crear secuencias para sus proyectos, una gran parte del trabajo se realizará en el <strong>lienzo</strong> del <a href="../Sequences.htm">Editor de Secuencias</a>. El lienzo es simplemente el área que se utilizará para contener los elementos de la secuencia, y
+    también define lo que se mostrará cuando la secuencia se añada a una sala para ser mostrada. Cuando se crea una secuencia por primera vez, el lienzo tendrá el tamaño por defecto de 1366px por 768px, pero esto puede cambiarse desde la <strong>Caja de Herramientas </strong>haciendo
+    haciendo clic en el <img alt="Icon Grid Menu" class="icon" src="../../assets/Images/Icons/Icon_CanvasOptions.png"> al lado del botón <strong>Canvas Frame Toggle</strong> <img alt="Toggle Canvas Frame Icon" class="icon" src="../../assets/Images/Icons/Icon_ToggleCanvas.png">:</p>
+  <p><img alt="Sequence Editor Canvas Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Sequences_CanvasControls.png">El tamaño del lienzo define un área visual dentro de la cual colocar los activos que componen la secuencia, pero el marco es
+    simplemente una guía para el tamaño y no afectará a cómo se renderizan las cosas, es decir: si colocas un activo de sprite fuera del marco y añades la secuencia a una habitación, el activo seguirá siendo renderizado.</p>
+  <p>El marco también se utiliza para alojar cualquier imagen de <strong>referencia</strong> que desee utilizar para guiar el posicionamiento de los activos dentro de la secuencia. Una imagen de referencia puede ser añadida desde el mismo menú de <strong>Opciones de Lienzo</strong> donde se establece el tamaño
+    del marco del lienzo, y se utilizará como imagen de fondo para el lienzo de la secuencia. Esto le permite posicionar las cosas de acuerdo con - por ejemplo - una maqueta de la interfaz de usuario de un artista del proyecto:</p>
+  <p><img alt="The Canvas With A Reference Image" class="center" src="../../assets/Images/Asset_Editors/Canvas_Reference.png">Tenga en cuenta que las imágenes de referencia no se almacenan con el proyecto y no se renderizarán cuando la secuencia se añada a una sala.</p>
+  <p>Una vez que haya configurado el lienzo como desee, puede empezar a añadir activos a él. Esto se hace simplemente arrastrándolos desde el <a href="../../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> al lienzo, lo que creará una <a class="glossterm" data-glossterm="seguimiento de activos" href="#">pista de activos</a> en el <a href="The_Track_Panel.htm">Panel de Pistas</a>:</p>
+  <p><img alt="Adding An Asset To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Asset.gif">Los activos que se pueden añadir a una secuencia son los siguientes:</p>
+  <ul class="colour">
+    <li>Sprites</li>
+    <li>Objetos</li>
+    <li>Suena</li>
+    <li>Secuencias</li>
+  </ul>
+  <p>Una vez que haya añadido los activos necesarios, pueden colocarse en sus posiciones iniciales para la animación, y también pueden transformarse utilizando los diferentes <strong>Gizmos de control de transformación</strong>. Se puede acceder a ellos de dos maneras diferentes
+    maneras:</p>
+  <ul class="colour">
+    <li>Moviendo el ratón a los bordes del activo en el lienzo y haciendo clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> y arrastrando (tenga en cuenta que el cursor cambiará para mostrar las diferentes transformaciones
+      que se cambiarán):<br>
+      <img alt="Transforming The Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Transforms.gif" style="margin-top: 10px; margin-bottom: 25px;"></li>
+    <li>Utilizando el gizmo de transformación en el origen del activo, que puedes cambiar desde la caja de herramientas del lienzo:<br>
+      <img alt="Using The Transform Gizmo And The Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Edit_Widgets.gif" style="margin-top: 10px; margin-bottom: 20px;"></li>
+  </ul>
+  <p>Cuando haya establecido las transformaciones iniciales para el activo (si es necesario), puede utilizar el lienzo para añadir<span class="glossextra">claves de</span> <a class="glossterm" data-glossterm="clave del parámetro" href="#">parámetros</a>a la pista del activo en el <strong>panel de pistas</strong>.
+    Un ejemplo simple de cómo funciona esto sería una transformación de posición básica, donde usted colocaría el activo en su posición inicial, luego movería la cabeza de reproducción <a class="glossterm" data-glossterm="cabezal de reproducción" href="#">en</a> el <a href="Using_The_Dope_Sheet.htm"><span class="notranslate">Hoja de ruta</span></a>    hasta el fotograma en el que desea que el movimiento termine, y luego mover el activo de nuevo:</p>
+  <p><img alt="Adding A Parameter Key To An Asset In The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Add_Keys.gif">Como puede ver en la imagen anterior, las nuevas posiciones se están grabando automáticamente en la pista ya que hemos activado
+    &quot;<strong>Grabar automáticamente los cambios&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Record.png"> en el Panel de Pista. También puede ver que se ha añadido una línea de puntos a la vista del lienzo para indicar el movimiento a través de
+    tiempo del activo. Si no tiene activada la grabación automática, todavía puede añadir puntos moviendo el activo, luego fijando el cabezal de reproducción y finalmente haciendo clic en el botón &quot;Grabar<strong>una nueva clave&quot;</strong> <img class="icon" src="../../assets/Images/Icons/Icon_Seq_Add.png">.</p>
+  <p>Un último punto que merece la pena mencionar es que el lienzo permite utilizar y añadir <strong>guías inteligentes</strong>, que son directrices que pueden añadirse al lienzo para que los activos puedan alinearse con ellas. Por defecto, el lienzo mostrará guías horizontales
+    y verticales alrededor del punto central, así como una guía rectangular alrededor del &quot;borde&quot; del lienzo de la secuencia, según el tamaño del lienzo. Estas guías no se mostrarán en la secuencia final cuando se añada a una habitación y sólo están
+    están ahí para ayudarte a tener una idea del espacio y para ayudar a posicionar las cosas. También puede añadir sus propias guías haciendo clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en una regla y luego arrastrando en
+    en el lienzo:</p>
+  <p><img alt="Adding Guides To The Canvas" class="center" src="../../assets/Images/Asset_Editors/Canvas_Adding_Guides.gif">Para eliminar una guía, basta con hacer clic en ella y arrastrarla de nuevo hacia las reglas. Cuando tenga guías añadidas a una secuencia,
+    Cuando tenga guías añadidas a una secuencia, al mover un recurso se &quot;ajustará&quot; a la guía cuando el cuadro delimitador o el origen estén lo suficientemente cerca, y se mostrarán guías inteligentes adicionales para marcar las distancias entre los recursos, así como para marcar los recursos que están todos en la misma guía o en
+    la misma posición (se colorean de forma diferente):</p>
+  <p><img alt="Canvas Smart Guides" class="center" src="../../assets/Images/Asset_Editors/Canvas_Smart_Guides.gif" /></p>
+  <p> </p>
+  <p> </p>
+  <h1>Menú y navegación de RMB</h1>
+  <p>Para navegar por la vista del lienzo, puedes utilizar los mismos controles básicos que para un espacio de trabajo normal, es decir: utiliza el botón central del ratón <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> y arrastra para desplazarte por el lienzo (o alternativamente
+    <img alt="Space Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Space.png" width="55"> + <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png">), y puede desplazarse horizontalmente con la rueda del ratón
+    <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png"> o acercarse y alejarse con la tecla <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y la rueda del ratón <img alt="MMB Icon" class="icon" src="../../assets/Images/Icons/Icon_MMB.png">.</p>
+  <p>Para seleccionar un activo, simplemente haga clic con el botón izquierdo del ratón <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en él, o puede seleccionar varios activos utilizando <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> y <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para hacer clic en cada activo. También puede seleccionar
+    múltiples activos utilizando <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> y luego haciendo clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrando. Esto
+    creará una &quot;caja&quot; en el lienzo y cualquier activo que toque el área de la caja será seleccionado.</p>
+  <p>Cuando tenga uno o varios activos seleccionados, podrá cortarlos, copiarlos y pegarlos utilizando las combinaciones de teclas <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> +&quot;<span class="inline">X</span>&quot;, <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">C</span>&quot; y <img alt="CONTROL Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Cmd.png" width="55"> + &quot;<span class="inline">V</span>&quot;.</p>
+  <p>Tenga en cuenta que cuando se seleccionan varios activos en el lienzo, se mostrará un <a class="glossterm" data-glossterm="cuadro delimitador" href="#">cuadro</a> delimitador para cada activo y un cuadro delimitador más grande para todos ellos combinados. Puede cambiar el comportamiento de este
+    este cuadro delimitador desde los iconos de la esquina superior izquierda:</p>
+  <p><img alt="Combined Selection BBox Controls" class="center" src="../../assets/Images/Asset_Editors/Canvas_BBox_Controls.png">Al hacer clic en el icono del círculo, el widget de control de la transformación cambiará al origen del cuadro delimitador completo de todos los activos seleccionados,
+    mientras que al hacer clic en el icono de la caja se mostrará un widget de control individual para cada activo de la selección. Puedes mover los activos agrupados y copiarlos/pegarlos, etc., igual que harías con un activo individual.</p>
+  <p>Si tiene varios activos que se superponen y desea seleccionar uno específico sin molestar al resto, puede pasar el ratón por encima de ellos para que aparezca la <strong>caja de herramientas de elementos</strong> que mostrará una lista de iconos para cada elemento bajo
+    el ratón. A continuación, puede hacer clic en uno de estos elementos para seleccionarlo y editarlo:</p>
+  <p><img alt="The Item Toolbox" class="center" src="../../assets/Images/Asset_Editors/Canvas_Item_Toolbox.gif">También dispone de una serie de opciones adicionales desde el botón derecho del ratón <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> cuando lo pulsa sobre cualquier activo de la secuencia:</p>
+  <p><img alt="Canvas Asset RIght Mouse Button Menu" class="center" src="../../assets/Images/Asset_Editors/Canvas_RMB_Menu.png">Las opciones disponibles aquí son:</p>
+  <ul class="colour">
+    <li><strong>Grabar</strong>: esta opción permite grabar las claves de los parámetros de los activos, y si pasa el ratón por encima verá opciones para grabar la <em>escala, la</em> <em>rotación o la </em> <em>posición.</em></li>
+    <li><strong>Grupo</strong>: Al seleccionar esta opción, se creará una nueva carpeta de grupo en el Panel de Seguimiento y se moverá el o los activos seleccionados a ella.</li>
+    <li><strong>Renombrar</strong>: Cuando hagas clic en esta opción, la pista se resaltará en el Panel de Pistas y el nombre se hará editable, listo para que lo cambies.</li>
+    <li><strong>Buscar en la</strong> hoja: Al hacer clic en esta opción, el activo seleccionado tendrá su clave resaltada en la hoja de <span class="notranslate">datos</span>.</li>
+    <li><strong>Buscar otros</strong>: Al hacer clic en esta opción, se mostrará una lista de todos los demás activos del mismo tipo para que pueda seleccionar uno.</li>
+    <li><strong>Seleccionar</strong>: Al hacer clic en esta opción, se mostrará una lista de todos los activos que se superponen en la posición en la que se ha hecho clic, y podrá seleccionar cualquiera de ellos para editarlo.</li>
+    <li><strong>Eliminar</strong> clave: Cuando se selecciona esta opción, la clave de la pista de activos se eliminará de la <span class="notranslate">hoja de datos</span> en la posición actual del cabezal de reproducción. La pista en sí seguirá existiendo, al igual que cualquier pista de parámetros que contenga, y podrá volver a añadir otro activo
+      a la pista arrastrándola desde el Navegador de Activos a la hoja de <span class="notranslate">datos</span>.</li>
+    <li><strong>Eliminar</strong> Pista: Esto eliminará la pista del activo (y las pistas de parámetros si están asignadas a ella) del Panel de Pistas, así como todas las claves relacionadas con ella en la <span class="notranslate">Hoja de Claves</span>.</li>
+    <li><strong>Abrir Editor</strong>: Esto abrirá el activo para su edición en el editor por defecto para el tipo de activo.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="The_Track_Panel.htm">El panel de la pista</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Sequences Canvas
+-->
+  <!-- TAGS
+sequences_canvas
+-->
+
+</body></html>

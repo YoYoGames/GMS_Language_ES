@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Paquetes de activos locales</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers creating and installing local asset packages" />
+  <meta name="rh-index-keywords" content="Local Asset Packages" />
+  <meta name="search-keywords" content="local asset packages,asset packages,local packages" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Paquetes de activos locales</h1>
+  <p>En el <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">menú Herramientas</a> tiene dos opciones para crear e importar <strong>paquetes</strong> de activos locales. Un Paquete de Activos Locales es un grupo de recursos guardados usando el formato de archivo <span class="inline">*.yymp</span> que puede ser fácilmente instalado en proyectos existentes. Esto significa que puedes crear tu propia biblioteca de paquetes para recursos de uso común, como bibliotecas de scripts, intros de pantallas de inicio, sistemas de menús, etc., sin tener que usar
+    los <span class="notranslate">YoYo Games</span> <a href="../Introduction/The_Marketplace.htm"><span class="notranslate">Marketplace</span></a>.</p>
+  <p> </p>
+  <h2>Creación de un paquete de activos</h2>
+  <p>Para crear un paquete de activos, primero debe haber creado los recursos que desea guardar en un proyecto y, a continuación, desde el menú <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">Herramientas</a>, seleccionar la opción <strong>Crear paquete local</strong>.
+    Esto abrirá la siguiente ventana:</p>
+  <p><img alt="Create Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Create.png">En esta ventana puede proporcionar un <strong>nombre de editor</strong> opcional y un <strong>nombre de visualización</strong> e
+    ID del <strong>paquete</strong>. El ID del paquete se utilizará para generar el nombre de archivo con el que se guardará el paquete, y se le añadirá automáticamente la extensión de archivo <span class="inline">*.yymp</span> al crearlo. También puede establecer el
+   <a class="glossterm" data-glossterm="Número de versión" href="#">Número de versión</a> del paquete, y elegir si desea firmarlo o no (está desactivado por defecto). Para firmar un paquete es necesario haber creado un <strong>certificado de firma</strong> (puede
+    hacerlo desde las <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm">Preferencias<span class="notranslate">del Mercado</span></a>), y significa que cualquier activo que haya sido firmado no podrá ser importado si ha sido manipulado después de
+    creación.</p>
+  <p>Una vez que haya rellenado los detalles del paquete, puede seguir adelante y seleccionar los activos que desee incluir desde la sección &quot;<strong>Proyecto</strong>&quot; de la derecha (utilizando el botón izquierdo del ratón <img alt="LMB Icon" class="icon" height="22" src="../assets/Images/Icons/Icon_LMB.png" width="20"> o una combinación de <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> y <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> junto con el botón izquierdo del ratón). Los recursos seleccionados pueden moverse a la vista &quot;<strong>Paquete de</strong> activos&quot;, utilizando
+    los botones <strong>Añadir </strong>o<strong> Añadir todo</strong> y pueden ser eliminados de nuevo utilizando los botones <strong>Eliminar </strong>y <strong>Eliminar todo</strong>.</p>
+  <p>Una vez que esté satisfecho con la selección de recursos y haya rellenado los datos necesarios, al hacer clic en el botón <strong>Aceptar </strong>se abrirá un explorador de archivos en el que podrá elegir la ubicación en la que guardar el paquete. Una vez seleccionado, el paquete se creará
+    y se mostrará una ventana de confirmación, con una opción para abrir la ubicación del paquete en el explorador de archivos del sistema operativo.</p>
+  <p> </p>
+  <h2>Importar un paquete de activos</h2>
+  <p>Hay dos maneras de importar un paquete de activos locales:</p>
+  <ul class="colour">
+    <li>la primera es simplemente arrastrar el archivo <span class="inline">*.yymp</span> desde una ventana del explorador hasta el IDE de <span class="notranslate">GameMaker Studio 2</span> </li>
+    <li>la segunda es seleccionar la opción &quot;<strong>Importar paquete local&quot;</strong> en el menú de herramientas <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">.</a></li>
+  </ul>
+  <p>Cuando se utiliza el menú de herramientas, se abrirá una ventana del explorador y se puede buscar la ubicación del paquete y seleccionarla para importarla. Cualquiera de las dos formas abrirá la siguiente ventana en <span class="notranslate">GameMaker Studio 2</span>:</p>
+  <p><img alt="Import Local Asset Package Window" class="center" src="../assets/Images/IDE Tools/Local_Asset_Package_Import.png">A la izquierda está el contenido del paquete y a la derecha las partes del mismo que desea importar. Puede seleccionar uno
+    o más recursos del paquete (utilizando el botón izquierdo del ratón <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> o una combinación de <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> y <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> junto con el botón izquierdo del ratón
+    ) y luego utilizar el botón <strong>Añadir </strong>para añadirlos para la importación, o utilizar el botón <strong>Añadir todo </strong>para añadir todo para la importación.</p>
+  <p>Cuando tenga todo listo, puede hacer clic en el botón <strong>Importar </strong>para añadir los recursos seleccionados a su proyecto. Tenga en cuenta que también tiene la opción de <strong>Importar todos los</strong> recursos a un nuevo proyecto, que creará un nuevo
+    proyecto (y le pedirá que le dé una ubicación para guardarlo) y luego añadirá los recursos del paquete a ese proyecto.</p>
+  <p>Ten en cuenta que los paquetes de recursos creados con una versión anterior a <span class="notranslate">GameMaker Studio 2</span>.3 requerirán una conversión, ya que el formato de los archivos del proyecto cambió con la actualización de la 2.3. Esto significa que puede ser preferible importar todo el proyecto y convertirlo todo
+    y luego exportarlo como un nuevo paquete a una nueva ubicación si los activos se importan con frecuencia a otros proyectos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_IDE_Tools.htm">Herramientas adicionales del IDE</a></div>
+        <div style="float:right">Siguiente: <a href="Project_Image_Generator.htm">Generador de imágenes de proyectos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Local Asset Packages
+Asset Packages
+Local Packages
+-->
+  <!-- TAGS
+local_asset_packages
+-->
+
+</body></html>

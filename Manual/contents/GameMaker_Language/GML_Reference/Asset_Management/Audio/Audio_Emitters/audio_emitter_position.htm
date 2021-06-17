@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posición_emisora_de_audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_position" />
+  <meta name="rh-index-keywords" content="audio_emitter_position" />
+  <meta name="search-keywords" content="audio_emitter_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posición_emisora_de_audio</h1>
+  <p>Con esta función puede cambiar la posición de un emisor de audio dentro del espacio de audio 3D. La posición afectará al sonido de diferentes maneras dependiendo de dónde se sitúe el <i>oyente</i> dentro del espacio de audio
+    (la posición por defecto es (0, 0, 0). Consulte <a href="../Audio_Listeners/audio_listener_position.htm"><tt>audio_listener_position()</tt></a> para más información), así que, por ejemplo, si la posición del emisor se establece en (100, 0, 0) y
+    el oyente actual está en (200, 0, 0) el audio transmitido desde el emisor aparecerá a la izquierda del campo de audio. La imagen siguiente muestra una representación visual de los emisores y sus posiciones relativas respecto al oyente:</p>
+  <p><img alt="Audio Position Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Emitters.png" /></p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_emitter_position(emisor, x, y, z);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>emisor</td>
+        <td>El índice del emisor a cambiar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y.</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>La posición z.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si velocidad &gt; 0<br> {
+    <br> audio_emitter_position(s_emit, x, y, 0);<br> }
+  </p>
+  <p>El código anterior comprueba si la velocidad de la instancia es superior a 0 y si lo es actualiza el emisor de audio indexado en la variable &quot;s_emit&quot; a la posición x/y actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Emitters.htm">Emisores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_emitter_velocity.htm">audio_emitter_velocity</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_position
+-->
+  <!-- TAGS
+audio_emitter_position
+-->
+</body>
+</html>

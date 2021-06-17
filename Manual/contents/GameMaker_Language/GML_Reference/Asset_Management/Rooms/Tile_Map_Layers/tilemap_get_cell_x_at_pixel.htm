@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tilemap_get_cell_at_pixel</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function tilemap_get_cell_x_at_pixel" />
+  <meta name="rh-index-keywords" content="tilemap_get_cell_x_at_pixel" />
+  <meta name="search-keywords" content="tilemap_get_cell_x_at_pixel" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tilemap_get_cell_at_pixel</h1>
+  <p>Con esta función puede recuperar la posición del eje x de una celda individual del mapa de azulejos dando la posición relativa del eje x dentro de la habitación. Se da el ID del elemento del mapa de azulejos (que se obtiene cuando se crea un elemento del mapa de azulejos utilizando <a href="layer_tilemap_create.htm"><tt>layer_tilemap_create()</tt></a>    o al utilizar la función <a href="layer_tilemap_get_id.htm"><tt>layer_tilemap_get_id()</tt></a>), así como la posición x e y dentro de <i>la</i> habitación y la función devolverá la posición x de la celda dentro del mapa de azulejos para ese punto.
+    Tenga en cuenta que si el valor está fuera del área del mapa de azulejos, y no hay ninguna celda disponible, devolverá -1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">tilemap_get_cell_at_pixel(tilemap_element_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tilemap_element_id</td>
+        <td>El valor de identificación único del elemento del mapa de azulejos para obtener la posición x de la celda</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x dentro de la habitación que se utilizará para obtener la célula</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y dentro de la habitación que se utilizará para obtener la célula</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (posición de la celda del eje x o -1 si hay un error)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Tiles_Walls&quot;);<br> var map_id = layer_tilemap_get_id(lay_id);<br> var _x = tilemap_get_cell_at_pixel(map_id, mouse_x, mouse_y);<br> var _y = tilemap_get_cell_at_pixel(map_id, mouse_x, mouse_y);<br> tiledata
+    = tilemap_get(map_id, _x, _y);</p>
+  <p>El código anterior utiliza el ID del mapa de baldosas recuperado para obtener la posición de la celda a partir de un conjunto de coordenadas de la habitación y, a continuación, almacena los datos de cualquier baldosa que se encuentre allí en una variable de instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="tilemap_get_cell_y_at_pixel.htm">tilemap_get_cell_at_pixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+tilemap_get_cell_x_at_pixel
+-->
+  <!-- TAGS
+tilemap_get_cell_x_at_pixel
+-->
+</body>
+</html>

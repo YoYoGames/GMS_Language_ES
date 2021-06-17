@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mouse_check_button_pressed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for mouse_check_button_pressed" />
+  <meta name="rh-index-keywords" content="mouse_check_button_pressed" />
+  <meta name="search-keywords" content="mouse_check_button_pressed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mouse_check_button_pressed</h1>
+  <p>Esta función devolverá <tt>true</tt> si el botón del ratón que se está comprobando ha sido pulsado o <tt>false</tt> si no lo ha sido. Esta función sólo se activará <i>una vez</i> para cualquier botón del ratón cuando se pulse por primera vez y para activarla de nuevo el botón
+    deberá ser soltado y pulsado de nuevo. Tenga en cuenta que se considerará activada mientras dure el paso, y para todas las instancias que tengan algún evento de ratón o que utilicen esta misma función.</p>
+  <p>Se suministra el botón del ratón para comprobar de una de las siguientes constantes:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>mb_left</td>
+        <td>El botón izquierdo del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_middle</td>
+        <td>El botón central del ratón (esto puede no ser válido para todas las plataformas de destino)</td>
+      </tr>
+      <tr>
+        <td>mb_right</td>
+        <td>El botón derecho del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_side1*</td>
+        <td>Botón lateral del ratón 1</td>
+      </tr>
+      <tr>
+        <td>mb_side2*</td>
+        <td>Botón lateral del ratón 2</td>
+      </tr>
+      <tr>
+        <td>mb_any</td>
+        <td>Cualquiera de los botones del ratón</td>
+      </tr>
+      <tr>
+        <td>mb_none</td>
+        <td>Sin botón de ratón</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><br> *
+   <strong>NOTA</strong>: Los botones <strong>mb_side1</strong> y <strong>mb_side2 </strong>sólo están disponibles en <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span>, <span class="notranslate">Ubuntu</span> y HTML5.</p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mouse_check_button_pressed(numb);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>numb</td>
+        <td>Qué constante del botón del ratón hay que comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button_pressed(mb_left)<br> {
+    <br> puntuación += 50;<br> }
+  </p>
+  <p>El código anterior comprobará si se ha pulsado el botón izquierdo del ratón y, en caso afirmativo, añadirá 50 a la puntuación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Mouse_Input.htm">Entrada del ratón</a></div>
+        <div style="float:right">Siguiente: <a href="mouse_check_button_released.htm">mouse_check_button_released</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mouse_check_button_pressed
+-->
+  <!-- TAGS
+mouse_check_button_pressed
+-->
+</body>
+</html>

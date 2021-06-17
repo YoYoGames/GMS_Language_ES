@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Trabajadores a distancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers the Remote Workers" />
+  <meta name="rh-index-keywords" content="Remote Workers" />
+  <meta name="search-keywords" content="Remote Workers" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Trabajadores a distancia</h1>
+  <p>Cuando compilas tu juego, normalmente utilizas el trabajador &quot;Local&quot;, que es el ordenador en el que se <span class="notranslate">ha</span> instalado GameMaker <span class="notranslate">Studio 2</span>. Sin embargo, en algunas circunstancias puede ser necesario utilizar otro ordenador para construir sus proyectos. Por ejemplo,
+    si usted está trabajando en un Mac y quiere construir un proyecto de <span class="notranslate">Windows</span>, entonces usted querría configurar un Trabajador <strong>Remoto</strong> y tener un PC <span class="notranslate">con Windows</span> para hacer la construcción. Básicamente, cuando se utiliza un trabajador remoto, <span class="notranslate">GameMaker Studio 2</span> enviará todos
+    los archivos necesarios desde la máquina (local) en la que se está ejecutando a la máquina del trabajador remoto, y luego utiliza esa máquina para construir el ejecutable final para el proyecto (ya sea guardándolo en la máquina remota, o devolviéndolo a la máquina local después).
+    Sin embargo, antes de que puedas utilizar esta funcionalidad tendrás que haber instalado ciertas herramientas en la máquina de construcción y realizar algunas configuraciones, que explicaremos aquí.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Puede configurar un trabajador remoto utilizando un PC local <span class="notranslate">con Windows</span> y un PC remoto <span class="notranslate">con Windows</span>, o entre un PC local con Mac y un PC remoto <span class="notranslate">con Windows</span>, pero actualmente no puede configurar un PC local <span class="notranslate">con Windows</span> (o Mac) y un PC remoto con Mac, es decir, no puede
+    tener un trabajador remoto Mac, sólo uno <span class="notranslate">Windows</span>.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Configuración inicial</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Para configurar un trabajador remoto, primero tendrá que instalar la <strong>aplicación de la herramienta de construcción</strong> del trabajador remoto en el PC que se va a utilizar. Puedes encontrar esta herramienta yendo al <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menú de construcción</a> en <span class="notranslate">GameMaker Studio 2</span> en la máquina local y seleccionando la opción &quot;Show<strong>Remote Worker Installer&quot;:</strong></p>
+    <p class="dropspot"><img alt="Build Menu Remote Worker Installer" class="center" src="../assets/Images/IDE Tools/RemoteWorker_Menu.png">Como alternativa, puede hacer clic en el icono &quot;ojo&quot; en el <a href="../Introduction/Compiling.htm">Administrador de</a> objetivos <a href="../Introduction/Compiling.htm">, y obtener</a>
+      el instalador de Remote Worker de esa manera:</p>
+    <p class="dropspot">
+      <img alt="Target Manager Remote Worker Installer" src="../assets/Images/IDE Tools/RemoteWorker_TargetEye.png" class="center"> El instalador se llamará algo así como &quot;<span class="inline"><span class="notranslate">GameMaker</span>Studio-Remote-Installer-X.X.X.XXX.exe&quot;
+      y tienes que copiarlo en el PC que quieras usar como trabajador remoto (no necesitas tener <span class="notranslate">GameMaker Studio 2</span> instalado en el trabajador remoto, sólo este programa).<br></p>
+    <p class="dropspot">Una vez que lo hayas copiado en el PC de construcción, instálalo siguiendo las indicaciones en pantalla y cuando el instalador haya terminado, es posible que el sistema operativo te pida acceso a tu red a través del cortafuegos. Una vez que haya concedido el acceso, el instalador abrirá
+      una página en su navegador web y debe anotar la <strong>dirección IP</strong> y el <strong>número de puerto</strong> que aparecen en esta página, ya que los necesitará para el siguiente paso.<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_IP.png" src="../assets/Images/IDE Tools/RemoteWorker_IP.png" class="center" alt="IP Address for Remote Worker">Ahora tienes que volver a la máquina donde tienes instalado <span class="notranslate">GameMaker Studio</span>
+      2 instalado y hacer clic en el botón Target Manager <img data-cke-saved-src="../assets/Images/Icons/Icon_TargetManager.png" src="../assets/Images/Icons/Icon_TargetManager.png" alt="Target Manager Icon" class="icon"> para abrir la ventana Target Manager,
+      y allí ir a la sección Worker y hacer clic en el botón Add Worker <img data-cke-saved-src="../assets/Images/Icons/Icon_AddWorker.png" src="../assets/Images/Icons/Icon_AddWorker.png" class="icon" alt="Add Worker Icon">. Esto abrirá entonces la
+      siguiente ventana:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_Add.png" src="../assets/Images/IDE Tools/RemoteWorker_Add.png" alt="Add IP Address for Remote Worker" class="center">Aquí necesita dar un nombre a su Trabajador Remoto (esto es lo que se
+      se mostrará en la <strong>lista de</strong> Trabajadores en el Gestor de Destinos) y en la sección <strong>Nombre del Host</strong>, añadir la dirección junto con el puerto que se le mostró y anotó previamente de la máquina del trabajador.</p>
+    <p class="dropspot">Si todo ha ido correctamente, debería recibir un mensaje diciendo que puede conectarse con éxito a la máquina del trabajador remoto. Una vez que tengas tu Remote Worker instalado y conectado a tu ordenador IDE principal, necesitarás ir y configurar los <strong>Local
+      Build Settings</strong> para cada plataforma (ver la sección de abajo para más detalles) antes de poder compilar tu proyecto.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Ajustes remotos</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">La página de <strong>configuración </strong>muestra las diferentes rutas y configuraciones de construcción para la aplicación Remote Worker. En la parte superior de la configuración tiene las diferentes rutas que serán utilizadas por la aplicación Remote Worker y antes de hacer cualquier otra cosa
+      Antes de hacer cualquier otra cosa, estas deben ser revisadas y ajustadas a rutas alternativas si es necesario (en general, las rutas por defecto deberían estar bien). Puede acceder a la página de configuración del Trabajador Remoto utilizando cualquiera de los siguientes métodos:<br></p>
+    <ul class="dropspotlist">
+      <li class="dropspot">Haga clic en el enlace &quot;Configuración&quot; en la parte superior de la página de Remote Worker que se abre en el navegador de su máquina remota:<br><img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_SettingsBrowser.png" src="../assets/Images/IDE Tools/RemoteWorker_SettingsBrowser.png" class="center" alt="Remote Worker Settings - Browser"></li>
+      <li class="dropspot">Utilice el RMB en el icono de la bandeja del Trabajador Remoto para abrir la configuración en el navegador de su máquina remota:<br><img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_SettingsTray.png" src="../assets/Images/IDE Tools/RemoteWorker_SettingsTray.png" alt="Remote Worker Settings - System Tray" class="center" width="224" height="185"></li>
+      <li class="dropspot">En su máquina local, abra el Administrador de objetivos y haga clic en el icono de &quot;engranaje&quot; para abrir la configuración de los trabajadores en una ventana de su máquina local:<img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_SettingsIDE.png" src="../assets/Images/IDE Tools/RemoteWorker_SettingsIDE.png" class="center" alt="Remote Worker Settings - GameMaker Studio 2 IDE"></li>
+    </ul>
+    <p class="dropspot">Esto mostrará la página de configuración donde puede ver (y establecer) las diferentes opciones que le permiten establecer las rutas para construir su proyecto:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/IDE Tools/RemoteWorker_Settings.png" src="../assets/Images/IDE Tools/RemoteWorker_Settings.png" alt="Remote Worker Settings" class="center" /><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Configuración local de la construcción</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Después de comprobar las rutas para la aplicación del Trabajador Remoto que se va a utilizar, puede establecer (si es necesario) las diferentes <strong>configuraciones de construcción local</strong>. Diferentes plataformas requerirán diferentes herramientas de construcción para ser instaladas en el PC de construcción y el trabajador remoto tendrá que ser capaz de utilizarlas para construir sus juegos a través de la página de configuración.
+      El trabajador remoto tendrá que ser capaz de utilizarlos para construir sus juegos a través de la página de <strong>configuración </strong>. La primera configuración aquí es la configuración <strong>general </strong>:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/IDE Tools/Remote_Worker_Local_General.png" src="../assets/Images/IDE Tools/Remote_Worker_Local_General.png" class="center" alt="Local General Settings">Aquí puede configurar el <strong>puerto </strong>para el
+     <strong>Servidor de ayuda</strong> y el puerto para el <strong>depurador </strong>. Estos pueden ser cambiados si tiene algún problema de conexión al usar el módulo de depuración, pero en general deben dejarse en sus valores por defecto.</p>
+    <p class="dropspot">Ahora puede seguir adelante y configurar las diferentes opciones para las plataformas para las que el Trabajador Remoto puede construir:<br></p>
+    <p class="dropspot"><img data-cke-saved-src="../assets/Images/IDE Tools/Remote_Worker_Local_Windows.png" src="../assets/Images/IDE Tools/Remote_Worker_Local_Windows.png" alt="WindowsLocal Windows Settings" class="center">Si tiene acceso a la plataforma de destino <span class="notranslate">Windows</span>,
+      debería ser capaz de construir usando el trabajador remoto en el PC <span class="notranslate">Windows</span> inmediatamente usando la opción de <a data-glossterm="Máquina virtual (VM)" class="glossterm" href="#">Máquina Virtual (VM)</a>. Sin embargo, si desea utilizar el <a data-glossterm="Compilador YoYo (YYC)" class="glossterm" href="#">compilador<span class="notranslate">YoYo</span></a> (YYC), también tendrá que establecer la ruta de acceso a <span class="notranslate">Visual Studio</span> en el PC de compilación. Para conocer todos los detalles sobre cómo configurar un PC <span class="notranslate">con</span> Windows para compilar tus proyectos, consulta el siguiente artículo del servicio de asistencia técnica:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="https://help.yoyogames.com/hc/en-us/articles/235186048-Setting-Up-For-Windows">Configuración para <span class="notranslate">Windows</span></a></li>
+    </ul>
+    <p class="dropspot"><br /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Compilación de</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">Una vez que hayas configurado tu Remote Worker y hayas completado la configuración de la compilación local (ver la sección anterior), puedes empezar a utilizarlo para compilar tus juegos. Para ello, basta con seleccionar el Remote Worker en la lista del Target Manager
+      seleccionando la plataforma para la que se va a probar/compilar, así como cualquier otra opción (como el tipo de compilación o la configuración), y luego pulsar Play <img data-cke-saved-src="../assets/Images/Icons/Icon_Play.png" src="../assets/Images/Icons/Icon_Play.png" class="icon" alt="Play Icon"> o Create Executable <img data-cke-saved-src="../assets/Images/Icons/Icon_Compile.png" src="../assets/Images/Icons/Icon_Compile.png" class="icon" alt="Compile Icon">.</p>
+    <div class="dropspotnote"><strong>NOTA</strong>: Las plataformas disponibles en el Administrador de objetivos cambiarán en función de las capacidades del ordenador del trabajador remoto, y no todos los objetivos estarán disponibles. Tenga en cuenta también que no hay ningún objetivo &quot;de prueba&quot; para los trabajadores remotos.</div>
+    <p class="dropspot">Si simplemente está reproduciendo el proyecto, entonces la máquina de Remote Worker lo compilará y ejecutará, pero si está creando un ejecutable, entonces Remote Worker compilará el proyecto y luego devolverá un archivo <span class="inline">*.zip</span> a la
+      máquina local para guardarlo.</p>
+    <p class="dropspot">Hay que tener en cuenta que ni el botón de depuración <img data-cke-saved-src="../assets/Images/Icons/Icon_Debug.png" src="../assets/Images/Icons/Icon_Debug.png" class="icon" alt="Debug Icon"> ni el de limpieza <img data-cke-saved-src="../assets/Images/Icons/Icon_Clean.png" src="../assets/Images/Icons/Icon_Clean.png" class="icon" alt="Clean Cache Icon"> estarán disponibles cuando se utilice un Trabajador Remoto. También hay que tener en cuenta que actualmente sólo se puede realizar una construcción remota a la vez.</p>
+    <p class="dropspot"></p>
+  </div>
+  <p><br> Una vez que tenga el Remote Worker instalado y funcionando en su máquina remota, aparecerá en la barra de tareas como un icono, y puede hacer clic con el botón derecho del ratón sobre él para que aparezcan las siguientes opciones:</p>
+  <p><img alt="Remote Worker RMB System Menu" class="center" src="../assets/Images/IDE Tools/RemoteWorker_RMBMenu.png" /></p>
+  <ul class="colour">
+    <li><strong>Abrir</strong>: Abre la aplicación Remote Worker en tu navegador por defecto.</li>
+    <li><strong>Mostrar registro</strong>: Abra el archivo de registro del Trabajador Remoto en su navegador.</li>
+    <li><strong>Configuración de la red</strong>: Aquí puede filtrar qué máquinas quiere que puedan enviar construcciones a la máquina del Trabajador Remoto. Cada filtro puede ser un filtro de <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">estilo CIDR</a> o un nombre de host de una máquina para permitir. Debes tener en cuenta que si quieres que varias máquinas se conecten a un trabajador remoto, o si estás mezclando tipos de conexión (por ejemplo: cableada y wifi), entonces puede que necesites editar el rango de IPs permitidas aquí.</li>
+    <li><strong>Editar</strong> la configuración: Abra el menú de configuración del Trabajador Remoto (explicado en la sección Configuración, más arriba).</li>
+    <li><strong>Salir</strong>: Salir de la aplicación Remote Worker. Esto significará que ya no podrás conectarte (ni compilar) con la app desde una máquina local hasta que reinicies la app Remote Worker.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_IDE_Tools.htm">Herramientas adicionales del IDE</a></div>
+        <div style="float:right">Siguiente: <a href="Source_Control.htm">Control de las fuentes</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Remote Workers
+-->
+  <!-- TAGS
+remote_workers
+-->
+
+</body></html>

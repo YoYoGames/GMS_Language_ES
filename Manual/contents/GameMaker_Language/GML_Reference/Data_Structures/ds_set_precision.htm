@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_set_precision</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_set_precision" />
+  <meta name="rh-index-keywords" content="ds_set_precision" />
+  <meta name="search-keywords" content="ds_set_precision" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_set_precision</h1>
+  <p>Al comparar valores, por ejemplo al buscar en un mapa u ordenar una lista, <span class="notranslate">GameMaker Studio 2</span> debe decidir cuándo dos valores son iguales. En el caso de las cadenas y los valores enteros esto está claro, pero en el caso de los números reales, debido a los errores de redondeo en coma flotante, los números aparentemente iguales pueden convertirse fácilmente en desiguales.
+    de punto flotante, los números aparentemente iguales pueden convertirse fácilmente en desiguales. Por ejemplo, es posible que (5 / <b> 3) * 3</b> no <i>sea</i> igual a 5! Para evitar esto, se utiliza un valor de precisión
+    se utiliza en todas las funciones de números reales, y cuando la <i>diferencia entre dos números es menor</i> que esta precisión se consideran iguales. Por defecto se utiliza una precisión de 0.0000001 para todas las funciones de estructura de datos
+    a menos que se cambie por esta función.</p>
+  <p class="note"><b>NOTA</b>: ¡Esta precisión se utiliza en todas las estructuras de datos pero no en otras comparaciones en <span class="notranslate">GML</span>!</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_set_precision(prec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>El valor de precisión (por defecto 0,0000001)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Devoluciones:N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_set_precision(0.0001);</p>
+  <p>El código anterior cambiará la configuración de precisión por defecto para todas las funciones de estructura de datos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Data_Structures.htm">Estructuras de datos</a></div>
+        <div style="float:right">Siguiente: ds_exists</div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_set_precision
+-->
+  <!-- TAGS
+ds_set_precision
+-->
+
+</body></html>

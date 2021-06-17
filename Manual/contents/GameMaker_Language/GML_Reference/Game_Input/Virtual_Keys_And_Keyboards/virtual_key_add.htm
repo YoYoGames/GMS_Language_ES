@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>virtual_key_add</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for virtual_key_add" />
+  <meta name="rh-index-keywords" content="virtual_key_add" />
+  <meta name="search-keywords" content="virtual_key_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>virtual_key_add</h1>
+  <p>Esta función permite asignar &quot;toques&quot; de un área de la pantalla a eventos del teclado. Esto significa que una vez que haya asignado un área a una tecla virtual, todos los toques en esa área activarán el evento de teclado correspondiente a la tecla que haya asignado
+    al área. También puede asignar cada tecla virtual que defina a una variable, que luego puede utilizarse en las funciones posteriores de las teclas virtuales para mostrarlas, ocultarlas y eliminarlas. Estas teclas se asignan <i>por habitación</i> y serán eliminadas automáticamente
+    por <span class="notranslate">GameMaker Studio 2</span> al cambiar de habitación.</p>
+  <p>La posición real de la llave virtual se basa en la posición de la <i>pantalla</i> y no en la posición de la sala, por lo que los valores x/y son absolutos en la pantalla. Esto significa que no necesitas preocuparte por el uso de vistas o las coordenadas relativas de la habitación,
+    y puede simplemente definir las llaves en el <strong>evento Create</strong> de un objeto (sólo necesita definir una llave virtual una vez por habitación), y luego dibujar sus sprites de llave en el <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">evento Draw GUI</a>,
+    dimensionando la capa de la GUI para que sea igual a la pantalla.</p>
+  <p> </p>
+  <h4>Sintaxis</h4>
+  <p class="code">virtual_key_add(x, y, w, h, keycode);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x (lado izquierdo) de la llave virtual <i>en la pantalla</i></td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y (lado superior) de la llave virtual <i>en la pantalla</i></td>
+      </tr>
+      <tr>
+        <td>w</td>
+        <td>La anchura de la llave virtual</td>
+      </tr>
+      <tr>
+        <td>h</td>
+        <td>La altura de la llave virtual</td>
+      </tr>
+      <tr>
+        <td>código clave</td>
+        <td>Qué evento de tecla del teclado debe activarse al tocar esta zona</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">índice de la llave virtual</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.Left = virtual_key_add(32, 32, 64, 64, vk_left);</p>
+  <p>El código anterior crea una tecla virtual de 64x64 píxeles cuadrados, posicionada en la pantalla en (32, 32) que activará el evento vk_left cuando se toque y asigna el índice de esta tecla virtual a una variable global.</p>
+  <p><b></b></p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Virtual_Keys_And_Keyboards.htm">Teclas y teclados virtuales</a></div>
+        <div style="float:right">Siguiente: <a href="virtual_key_show.htm">virtual_key_show</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+virtual_key_add
+-->
+  <!-- TAGS
+virtual_key_add
+-->
+</body>
+</html>

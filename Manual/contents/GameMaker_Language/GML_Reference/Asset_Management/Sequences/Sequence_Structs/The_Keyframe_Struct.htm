@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>La estructura de los fotogramas clave</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining The Keyframe Struct" />
+  <meta name="rh-index-keywords" content="Sequence Keyframe Struct" />
+  <meta name="search-keywords" content="The Keyframe Struct,frame,length,stretch,channels" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>La estructura de <span class="notranslate">los fotogramas clave</span> </h1>
+  <p>Cada pista (como se define en la página que cubre las <a href="The_Track_Struct.htm">estructuras de pista</a>) tendrá una o más <a href="../../../../GML_Overview/Structs.htm">estructuras de</a> <span class="notranslate">fotogramas</span> clave asignadas a ella (que puede obtener de la propiedad <tt><span class="notranslate">fotogramas clave</span></tt> propiedad
+    de la estructura de pista), y cada una tendrá las siguientes propiedades:</p>
+  <ul class="colour">
+    <li><tt>fotograma</tt>: La posición (en fotogramas) a lo largo de la línea de tiempo para el <span class="notranslate">fotograma clave</span>. El valor por defecto es 0.<tt></tt></li>
+    <li><tt>longitud</tt>: La longitud del <span class="notranslate">fotograma</span> clave. El valor por defecto es 1, y cuando se establece a valores mayores entonces la propiedad de la pista a la que se refiere el <span class="notranslate">keyframe</span> se mantendrá en el valor inicial durante la duración de la longitud dada. Tenga en cuenta que la propiedad <tt>stretch</tt> 
+      anulará esto si se establece como <tt>verdadero</tt>.</li>
+    <li><tt>estirar</tt>: Si esta propiedad se establece en <tt>true</tt>, el <span class="notranslate">fotograma clave</span> se estira hasta el siguiente <span class="notranslate">fotograma clave</span> de la pista o hasta el final de la pista si es el último fotograma clave <span class="notranslate">.</span> Puede obtener o establecer este valor, y
+      el valor por defecto es <tt>falso</tt>.</li>
+    <li><tt>canales</tt>: Esta propiedad permite acceder a la lista de <a href="The_Keyframe_Data_Struct.htm">structs de datos</a> de <a href="The_Keyframe_Data_Struct.htm"><span class="notranslate">fotogramas clave</span></a> para los canales de la pista. Cuando se obtiene esta propiedad se devuelve un <a href="../../../../GML_Overview/Arrays.htm">array</a> de
+      Cuando se obtiene esta propiedad se devuelve una matriz de estructuras de datos de <span class="notranslate">fotogramas</span> clave, y cuando se establece esta propiedad se debe especificar una matriz de estructuras de datos de <span class="notranslate">fotogramas clave</span>.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="The_Keyframe_Data_Struct.htm">La estructura de datos de <span class="notranslate">los fotogramas clave</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The <span class="notranslate">Keyframe</span> Struct
+-->
+  <!-- TAGS
+sequence_<span class="notranslate">keyframe</span>
+-->
+
+</body></html>

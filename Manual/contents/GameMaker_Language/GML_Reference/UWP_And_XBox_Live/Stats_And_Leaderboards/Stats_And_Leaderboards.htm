@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Estadísticas y tablas de clasificación</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the XBox Live Stats And Leaderboards functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="XBox Live Stats,Xbox Live Leaderboards" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Estadísticas y tablas de clasificación</h1>
+  <p>Las estadísticas de Xbox One (logros y tablas de clasificación) son funcionales cuando se utiliza UWP y tienen algunas funciones especiales para tratarlas, aunque también utilizan algunas de las funciones estándar incorporadas para las tablas de clasificación. El sistema de estadísticas de Xbox Live de 2017 simplifica
+    todo el procedimiento para crear logros y tablas de clasificación, permitiéndote crear y utilizar los diferentes sistemas desde <span class="notranslate">GameMaker Studio 2</span>. La principal diferencia entre el sistema de 2017 y los sistemas anteriores
+    es que ya no tienes que definir todas las estadísticas que utilizas en el juego en XDP, y tampoco necesitas vincular el desbloqueo de logros a un evento/regla de estadísticas (ya que se desbloquean mediante una llamada directa a una función).</p>
+  <p class="note"><b>NOTA</b>: Aunque no se requiere un archivo de manifiesto con este sistema, puedes configurar algunas estadísticas en XDP/MDC. Las que se configuren allí se considerarán <b>estadísticas destacadas</b>, lo que significa que puedes tener tablas de clasificación globales y
+    las estadísticas aparecen en la página del panel de control de los juegos. Para más información, consulta el artículo de MS <a href="https://docs.microsoft.com/en-us/windows/uwp/xbox-live/leaderboards-and-stats-2017/player-stats-configure-2017" target="_blank">Configuring Featured Stats or Leaderboards on Universal Dev Center with Data Platform 2017</a>.</p>
+  <p>Antes de llamar a cualquiera de las funciones de estadísticas listadas a continuación, debes asegurarte de que el usuario está conectado (ver las funciones de usuario listadas arriba) y luego configurar el sistema de estadísticas y añadir el usuario a él usando estas funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_stats_setup.htm">xboxlive_stats_setup</a></li>
+    <li><a href="xboxlive_stats_add_user.htm">xboxlive_stats_add_user</a></li>
+  </ul>
+  <p> </p>
+  <p>El resto de las funciones de las estadísticas de 2017 son las siguientes:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="xboxlive_stats_remove_user.htm">xboxlive_stats_remove_user</a></li>
+    <li><a href="xboxlive_stats_flush_user.htm">xboxlive_stats_flush_user</a></li>
+    <li><a href="xboxlive_stats_set_stat_real.htm">xboxlive_stats_set_stat_real</a></li>
+    <li><a href="xboxlive_stats_set_stat_int.htm">xboxlive_stats_set_stat_int</a></li>
+    <li><a href="xboxlive_stats_set_stat_string.htm">xboxlive_stats_set_stat_string</a></li>
+    <li><a href="xboxlive_stats_delete_stat.htm">xboxlive_stats_delete_stat</a></li>
+    <li><a href="xboxlive_stats_get_stat_names.htm">xboxlive_stats_get_stat_names</a></li>
+    <li><a href="xboxlive_stats_get_stat.htm">xboxlive_stats_get_stat</a></li>
+    <li><a href="xboxlive_stats_get_leaderboard.htm">xboxlive_stats_get_leaderboard</a></li>
+    <li><a href="xboxlive_stats_get_social_leaderboard.htm">xboxlive_stats_get_social_leaderboard</a></li>
+    <li><a href="xboxlive_achievements_set_progress.htm">xboxlive_achievements_set_progress</a></li>
+    <li><a href="xboxlive_get_stats_for_user.htm">xboxlive_get_stats_for_user</a></li>
+    <li><a href="xboxlive_read_player_leaderboard.htm">xboxlive_read_player_leaderboard</a></li>
+    <li><a href="xboxlive_fire_event.htm">xboxlive_fire_event</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../UWP_And_XBox_Live.htm">UWP y XBox Live</a></div>
+        <div style="float:right">Siguiente: <a href="../Match_Making/Match_Making.htm">La creación de partidos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+XBox Live Stats And Leaderboards
+-->
+  <!-- TAGS
+xboxlive_stat_functions
+-->
+</body>
+</html>

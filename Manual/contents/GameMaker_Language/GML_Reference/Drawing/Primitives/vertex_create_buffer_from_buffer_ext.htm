@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>vertex_create_buffer_from_buffer_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_create_buffer_from_buffer_ext" />
+  <meta name="rh-index-keywords" content="vertex_create_buffer_from_buffer_ext" />
+  <meta name="search-keywords" content="vertex_create_buffer_from_buffer_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>vertex_create_buffer_from_buffer_ext</h1>
+  <p>Al igual que la función <a href="vertex_create_buffer.htm"><tt>vertex_create_buffer()</tt></a>esta función creará un nuevo búfer de vértices, sólo que ahora los datos de vértices que almacena se copian del búfer normal que se especifica como fuente. El búfer
+    está preformateado con el formato de vértices para la construcción de primitivas para su uso con (por ejemplo) <span class="notranslate">shaders</span>, y también se puede suministrar un offset dentro del buffer de origen para copiar desde él y el número de vértices que debe tener el buffer final. Tenga en cuenta que si
+    el número de vértices no coincide con los que se están copiando puedes obtener datos de vértices corruptos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_create_buffer_from_buffer_ext(buffer, format, src_offset, vert_num);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El buffer para crear el buffer de vértices.</td>
+      </tr>
+      <tr>
+        <td>formato</td>
+        <td>El formato de vértice primitivo a utilizar.</td>
+      </tr>
+      <tr>
+        <td>src_offset</td>
+        <td>El desplazamiento dentro del búfer de origen para copiar.</td>
+      </tr>
+      <tr>
+        <td>vert_num</td>
+        <td>El número de vértices que debe tener el buffer.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Puntero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position_3d();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> var my_format = vertex_format_end();<br> v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat, 0, 512);</p>
+  <p>El código anterior creará un nuevo formato de vértices y luego creará un nuevo búfer de vértices a partir de un búfer regular previamente creado, aplicándole el formato de vértices personalizado con un desplazamiento de 0. La función indica al nuevo búfer de vértices que debe esperar 512 vértices.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_get_buffer_size.htm">vertex_get_buffer_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_create_buffer_from_buffer_ext
+-->
+  <!-- TAGS
+vertex_create_buffer_from_buffer_ext
+-->
+
+</body></html>

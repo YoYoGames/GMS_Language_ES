@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>rectángulo_en_círculo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that gives an overview of the funtion rectangle_in_circle" />
+  <meta name="rh-index-keywords" content="rectangle_in_circle" />
+  <meta name="search-keywords" content="rectangle_in_circle" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>rectángulo_en_círculo</h1>
+  <p>Esta función comprobará un área rectangular que usted defina para ver si no está en colisión, si está completamente dentro de los límites de destino, o si simplemente está tocando, un área circular definida. Si no se tocan en absoluto, la función devolverá
+    0, si el origen está completamente dentro del destino devolverá 1, y si simplemente se superponen entonces devolverá 2. La imagen siguiente lo ilustra:</p>
+  <p><img alt="Rectangle circle collision example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/rectangle_in_circle.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">rectángulo_en_círculo(sx1, sy1, sx2, sy2, x, y, rad);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sx1</td>
+        <td>La coordenada x del lado izquierdo del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sy1</td>
+        <td>La coordenada y del lado superior del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sx2</td>
+        <td>La coordenada x del lado derecho del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>sy2</td>
+        <td>La coordenada y del lado inferior del rectángulo de origen.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x del centro del círculo</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y del centro del círculo.</td>
+      </tr>
+      <tr>
+        <td>rad</td>
+        <td>El radio alrededor del punto central en el que se comprobará si hay una colisión.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">inst = instance_nearest(x, y, obj_Bullet);<br> if instance_exists(inst)<br> {
+    <br> if rectangle_in_circle(inst.x - 5, inst.y - 5, inst.x + 5, inst.y + 5, x, y - 25, 20) &gt; 0<br> {
+    <br> hit = true;<br> }
+    <br> }
+  </p>
+  <p>El código anterior utiliza la función <tt>rectangle_in_circle</tt> para comprobar si hay una colisión dentro de un área circular y el rectángulo alrededor de una instancia encontrada. Si hay una colisión (ya sea una superposición de bordes o englobado) entonces una variable se establecerá en <tt>verdadero</tt>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Collisions.htm">Colisiones</a></div>
+        <div style="float:right">Siguiente: <a href="place_empty.htm">place_empty</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+rectangle_in_circle
+-->
+  <!-- TAGS
+rectangle_in_circle
+-->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_world_update_speed</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_world_update_speed" />
+  <meta name="rh-index-keywords" content="physics_world_update_speed" />
+  <meta name="search-keywords" content="physics_world_update_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_world_update_speed</h1>
+  <p> <span class="notranslate">GameMaker Studio</span><span class="notranslate">2</span> actualiza las cosas basándose en la velocidad de la sala, de modo que si la ajustas a, digamos, 30, <span class="notranslate">GameMaker Studio 2</span> ejecutará 30 pasos en el transcurso de un segundo. Sin embargo, para las funciones de física que puede no ser suficiente y es posible que desee cosas
+    que las cosas se actualicen a una velocidad ligeramente superior para aumentar la estabilidad o la precisión. Para ello utilizamos la función <tt>physics_world_update_speed()</tt> que establece la velocidad de actualización del sistema de física <i>independientemente</i> de la velocidad de la sala. Esto significa que
+    que podrías tener una velocidad de sala de 30, pero establecer la física a 60, duplicando efectivamente la velocidad a la que el sistema de física se actualiza y realiza sus cálculos en comparación con la velocidad a la que se actualiza el paso.</p>
+  <p class="note"><b>NOTA</b>: actualmente no se puede configurar a una velocidad inferior a la de la sala, pero es posible que las futuras actualizaciones lo cambien.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_world_update_speed(velocidad)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>velocidad</td>
+        <td>el número de veces por segundo que el sistema de física se actualiza</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">physics_world_update_speed(room_speed * 2);</p>
+  <p>El código anterior establece que la velocidad de actualización del sistema de física sea el doble de la velocidad de la sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="The_Physics_World.htm">El mundo de la física</a></div>
+        <div style="float:right">Siguiente: <a href="physics_world_draw_debug.htm">physics_world_draw_debug</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_world_update_speed
+-->
+  <!-- TAGS
+physics_world_update_speed
+-->
+</body>
+</html>

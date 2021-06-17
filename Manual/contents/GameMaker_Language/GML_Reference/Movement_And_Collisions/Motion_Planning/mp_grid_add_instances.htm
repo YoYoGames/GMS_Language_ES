@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_grid_add_instances</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_grid_add_instances" />
+  <meta name="rh-index-keywords" content="mp_grid_add_instances" />
+  <meta name="search-keywords" content="mp_grid_add_instances" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_grid_add_instances</h1>
+  <p>Esta función utiliza la máscara de colisión de la instancia (decidida por las propiedades del sprite o el índice de la máscara de la instancia que llama) para marcar las celdas como prohibidas o no en una cuadrícula de MP, donde las celdas prohibidas no pueden ser cruzadas por ninguna de las funciones de pathfinding.
+    Se puede especificar en la función si se consideran las colisiones precisas o no y las celdas prohibidas marcadas cambiarán dependiendo de esta configuración. Esta imagen ilustra este comportamiento:</p>
+  <p><img alt="Add instances example" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Movement_Collisions/mp_grid_add_instance_image.png">Las dos instancias de arriba han sido añadidas a la rejilla de MP usando la función <span class="inline">mp_grid_add_instances()</span> con la precisión establecida como verdadera. Como puedes ver, la instancia verde sólo ha marcado como prohibidas las casillas de la cuadrícula que &quot;toca&quot;, debido a que su máscara de sprites también está configurada como precisa. Sin embargo, la segunda instancia ha marcado otras
+    celdas que no <i>parecen</i> estar tocando. Esto se debe a que la máscara del sprite <b>no</b> está configurada como precisa, lo que significa que, aunque se utilice la configuración precisa en la función, sólo se tendrá en cuenta el cuadro delimitador del sprite. Este
+    es también lo que ocurriría si se establece el argumento preciso de la función como falso - incluso las instancias con una máscara de sprite precisa se añadirán a la rejilla basándose en sus cuadros delimitadores.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_grid_add_instances(id, obj, prec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>Índice del mp_grid que se va a utilizar</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>Índice de objeto, o id de instancia, de las instancias que se van a añadir en el mp_grid</td>
+      </tr>
+      <tr>
+        <td>prec</td>
+        <td>Si la comprobación se basa en colisiones de píxeles (verdadero = lento) o en su caja delimitadora en general (falso = rápido).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mp_grid_add_instances(grid, obj_Wall, true);</p>
+  <p>El código anterior añadirá todas las instancias de &quot;obj_Wall&quot; en el mp_grid indexado en la variable &quot;grid&quot; utilizando la máscara de colisión precisa en lugar de la caja de delimitación.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_grid_add_rectangle.htm">mp_grid_add_rectangle</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_grid_add_instances
+-->
+  <!-- TAGS
+mp_grid_add_instances
+-->
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>red_destrucción</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_destroy" />
+  <meta name="rh-index-keywords" content="network_destroy" />
+  <meta name="search-keywords" content="network_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>red_destrucción</h1>
+  <p>Con esta función puedes eliminar una conexión de red de tu juego.</p>
+  <p class="note"><b>NOTA</b>: Esta función no funcionará cuando se utilice en un proyecto que se ejecute en el objetivo HTML5.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_destroy(socket);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>toma de corriente</td>
+        <td>El id del enchufe a eliminar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !os_is_network_connected()<br> {
+    <br> network_destroy(sock);
+    <br> }
+  </p>
+  <p>El código anterior comprobará si hay una conexión de datos y si no se encuentra ninguna, destruirá el socket con el id &quot;sock&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_create_server.htm">network_create_server</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_destroy
+-->
+  <!-- TAGS
+network_destroy
+-->
+</body>
+</html>

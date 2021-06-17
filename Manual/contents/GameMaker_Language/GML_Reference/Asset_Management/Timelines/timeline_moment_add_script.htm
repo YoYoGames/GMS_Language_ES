@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>timeline_moment_add_script</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_moment_add_script" />
+  <meta name="rh-index-keywords" content="timeline_moment_add_script" />
+  <meta name="search-keywords" content="timeline_moment_add_script" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>timeline_moment_add_script</h1>
+  <p>Con esta función puedes añadir dinámicamente una <a href="../../../GML_Overview/Script_Functions.htm">función de script</a> a las líneas de tiempo en cualquier &quot;momento&quot; dentro de esa línea de tiempo, donde un &quot;momento&quot; es el equivalente a un tick de juego (o
+    paso). De este modo, puede crear una nueva línea de tiempo utilizando la función <a href="timeline_add.htm"><tt>timeline_add()</tt></a> y añadir diferentes comportamientos en cualquier punto, o simplemente modificar un recurso de línea de tiempo previamente creado con nuevos comportamientos. Tenga en cuenta
+    que la función no puede requerir ningún argumento adicional cuando se utiliza esta función, y si la utiliza para modificar un recurso de línea de tiempo presente en el Navegador de Activos, entonces todas las instancias que utilizan esta línea de tiempo se verán afectadas, y el cambio durará hasta
+    el final del juego (llamando a <span class="inline">game_restart()</span> tampoco se restablecerá el cambio).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">timeline_moment_add_script(ind, step, script);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la línea de tiempo para añadir un momento.</td>
+      </tr>
+      <tr>
+        <td>paso</td>
+        <td>El momento (paso) a añadir.</td>
+      </tr>
+      <tr>
+        <td>guión</td>
+        <td>El índice de la función de script a añadir en el momento.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.tl = timeline_add();<br> var i = room_speed * 60;<br> repeat(3)
+    <br> {
+    <br> timeline_moment_add_script(global.tl, i, choose(Attack_1, Attack_2, Attack_3);<br> i += room_speed * 60;<br> }
+  </p>
+  <p>El código anterior creará una nueva línea de tiempo y almacenará su índice en la variable &quot;global.tl&quot;. A continuación, añadirá tres scripts a la línea de tiempo, elegidos al azar, a intervalos de un minuto.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timelines.htm">Líneas de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="timeline_moment_clear.htm">timeline_moment_clear</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_moment_add_script
+-->
+  <!-- TAGS
+timeline_moment_add_script
+-->
+</body>
+</html>

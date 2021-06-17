@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_draw_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_draw_ext" />
+  <meta name="rh-index-keywords" content="physics_particle_draw_ext" />
+  <meta name="search-keywords" content="physics_particle_draw_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_draw_ext</h1>
+  <p>Esta función dibujará un sprite en la posición de todas las partículas que compartan el mismo valor de categoría definido por el usuario, y que tengan banderas que coincidan con las establecidas para la máscara. El valor de la máscara se define de la misma manera que se definen las
+    banderas al crear las partículas (ver las funciones <a href="physics_particle_create.htm"><tt>physics_particle_create()</tt></a> para ver un ejemplo), es decir, usando el <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitwise <i>o</i></a> &quot;|&quot; para enmascarar los bits apropiados para cada bandera.</p>
+  <p class="note"><b>NOTA</b>: Esta función dibujará <b>todas las</b> partículas de la simulación física con banderas que coincidan con las de la máscara, ya sean partículas individuales o grupos, si la categoría del usuario es la misma.</p>
+  <p>La partícula dibujada ignorará los valores de color y alfa establecidos cuando la creaste, y en su lugar se dibujará usando los parámetros de escala, ángulo, color y alfa dados en esta función. Tenga en cuenta que esto es puramente para dibujar un sprite en la posición de la partícula
+    y no afecta en absoluto al comportamiento de la partícula.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_draw_ext(typemask, category, sprite, subimg, xscale, yscale, ang, col, alpha)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>máscara de escritura</td>
+        <td>La máscara con la que se comparan las banderas de las partículas.</td>
+      </tr>
+      <tr>
+        <td>categoría</td>
+        <td>La categoría definida por el usuario para dibujar (use 0 para dibujar todas las categorías).</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El sprite a utilizar para cada partícula.</td>
+      </tr>
+      <tr>
+        <td>subimg</td>
+        <td>El <tt>image_index</tt> del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>El factor de escala a aplicar al sprite a lo largo del eje x.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>El factor de escala a aplicar al sprite a lo largo del eje y.</td>
+      </tr>
+      <tr>
+        <td>ang</td>
+        <td>El ángulo (en grados) para dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>El color a mezclar con el sprite (por defecto es <tt>c_white</tt>).</td>
+      </tr>
+      <tr>
+        <td>alfa</td>
+        <td>El valor alfa a utilizar al dibujar (0 - 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white, 0.5);</p>
+  <p>El código anterior dibujará un sprite para todas las partículas de la categoría definida por el usuario &quot;2&quot; que tengan las mismas banderas que la máscara dada, escaladas por 2 en ambos ejes y con un alfa de 0,5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_count.htm">physics_particle_count</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_draw_ext
+-->
+  <!-- TAGS
+physics_particle_draw_ext
+-->
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_joint_rope_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_joint_rope_create" />
+  <meta name="rh-index-keywords" content="physics_joint_rope_create" />
+  <meta name="search-keywords" content="physics_joint_rope_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_joint_rope_create</h1>
+  <p>Una articulación de cuerda es la que se utiliza para unir dos instancias que se desea mantener a una distancia constante, sin importar las demás fuerzas que actúen sobre ella. Con una unión a distancia, se puede producir un &quot;estiramiento de la unión&quot; en el que las dos instancias se separarán
+    y se comportan de forma extraña si se ejerce demasiada tensión sobre la junta, sin embargo la junta de cuerda no hace esto y no se estirará más allá de la longitud máxima definida. Cuando se crea una unión por cuerda, las dos instancias deben estar ya creadas y
+    Cuando se crea una articulación de cuerda, las dos instancias deben estar creadas y tener una fijación asignada, entonces se definen los dos puntos de anclaje en coordenadas de la habitación. El primer punto de anclaje se conecta a la instancia 1, el segundo punto de anclaje se conecta a la instancia 2 y la distancia y el argumento de longitud máxima establece la restricción de longitud máxima en la articulación.
+    longitud máxima de la unión. La imagen siguiente muestra cómo funciona esto:</p>
+  <p><img alt="Rope joint illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/direction_joint_image.png">Como puede ver, los puntos de anclaje se especifican como coordenadas de la sala, por lo que hay que tener cuidado al definirlos
+    especialmente si las instancias se crean al mismo tiempo que las juntas en lugar de colocarse en la sala a través del editor de salas. También hay que tener en cuenta que las juntas se crean independientemente del tamaño del sprite de las instancias
+    o de los accesorios que tengan unidos. Por lo tanto, si creas una articulación de cuerda en algún lugar distinto al origen de la instancia, seguirá siendo válida y limitará las dos instancias en relación con la posición en la que fue creada. Si establece el valor &quot;col&quot;
+    a <tt>true</tt>, las dos instancias pueden interactuar y colisionar entre sí, pero <i>sólo</i> si tienen eventos de colisión, sin embargo, si se establece a <tt>false</tt>, no colisionarán pase lo que pase.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_joint_rope_create(inst1, inst2, w_anchor1_x, w_anchor1_y, w_anchor2_x, w_anchor2_y, maxlength, col)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>inst1</td>
+        <td>La primera instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>inst2</td>
+        <td>La segunda instancia para conectar con la junta</td>
+      </tr>
+      <tr>
+        <td>w_anclaje1_x</td>
+        <td>La primera coordenada x de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anchor1_y</td>
+        <td>La primera coordenada y de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anclaje2_x</td>
+        <td>La segunda coordenada x de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>w_anclaje2_y</td>
+        <td>la segunda coordenada y de la articulación, dentro del mundo del juego</td>
+      </tr>
+      <tr>
+        <td>longitud máxima</td>
+        <td>La longitud máxima que la articulación puede &quot;estirar&quot;</td>
+      </tr>
+      <tr>
+        <td>col</td>
+        <td>Si las dos instancias pueden colisionar (verdadero) o no (falso)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero (índice de la articulación)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var mainFixture, o_id;<br> mainFixture = physics_fixture_create();<br> physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);<br> o_id=instance_create_layer(x+300, y, &quot;Instances&quot;, obj_Rudder);<br> physics_fixture_bind(mainFixture,
+    id);<br> physics_fixture_bind(mainFixture, o_id);<br> physics_joint_rope_create(id, o_id, x + 50, y, o_id.x - 50, o_id.y, 300, 0);<br> physics_fixture_delete(mainFixture);
+  </p>
+  <p>El código anterior crea y define un nuevo fixture y luego crea una instancia de &quot;obj_Rudder&quot;. A continuación, se asigna el fixture a la instancia que está ejecutando el código, así como a la recién creada, y se crea una unión de cuerda entre ellas.
+    Por último, se elimina el fixture porque ya no es necesario.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Joints.htm">Articulaciones</a></div>
+        <div style="float:right">Siguiente: <a href="physics_joint_wheel_create.htm">physics_joint_wheel_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_joint_rope_create
+-->
+  <!-- TAGS
+physics_joint_rope_create
+-->
+</body>
+</html>

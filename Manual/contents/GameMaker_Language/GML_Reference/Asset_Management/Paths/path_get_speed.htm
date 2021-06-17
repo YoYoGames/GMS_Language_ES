@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_obtener_velocidad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_speed" />
+  <meta name="rh-index-keywords" content="path_get_speed" />
+  <meta name="search-keywords" content="path_get_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_obtener_velocidad</h1>
+  <p>Esta función devuelve el factor de velocidad de cualquier posición dada en una trayectoria. La posición debe ser un valor entre 0 y 1 (puede utilizar <a href="Path_Variables/path_position.htm"><tt>posición_de_la_trayectoria</tt></a>por ejemplo, si necesita la posición actual de la instancia
+    de la instancia), siendo 0 la posición inicial y 1 la final. El valor devuelto será el factor por el que el <tt><a href="Path_Variables/path_speed.htm">velocidad_de_la_trayectoria</a> </tt>se está ajustando. Por ejemplo, en un camino
+    con sólo dos puntos, 0 y 1, donde el factor de velocidad del punto 0 es 100 y el factor de velocidad del punto 1 es 0, la función <tt>path_get_speed(path, 0.5)</tt> devolverá 50.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">path_get_speed(ind, pos);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a comprobar.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>Hasta dónde se va a comprobar la trayectoria. Entre 0 (inicio) y 1 (final), puede ser decimal.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">velocidad = path_get_speed(pth_Patrol, 0.5) / 20;</p>
+  <p>Esto establecerá la velocidad de la instancia que llama al factor de velocidad del punto exactamente a la mitad de la ruta dada, dividido por 20. Así, si el factor de velocidad encontrado es el 100 por defecto, establecerá la velocidad de la instancia que llama a 5.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Paths.htm">Caminos</a></div>
+        <div style="float:right">Siguiente: <a href="path_get_x.htm">path_get_x</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_speed
+-->
+  <!-- TAGS
+path_get_speed
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_system_draw_order</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_system_draw_order" />
+  <meta name="rh-index-keywords" content="part_system_draw_order" />
+  <meta name="search-keywords" content="part_system_draw_order" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_system_draw_order</h1>
+  <p>Con esta función puedes establecer la forma en que se dibujan las partículas cuando se crean en la pantalla. El sistema por defecto utiliza un aspecto viejo &gt; nuevo (la función se establece en <tt>true),</tt> donde las partículas viejas se dibujan a una profundidad mayor que las nuevas y
+    pero si estableces esta función en false <tt>puedes</tt> invertir este orden y hacer que las nuevas partículas se dibujen más arriba y aparezcan &quot;debajo&quot; de las más antiguas. Las imágenes de abajo ilustran esto,
+    con la imagen de la izquierda con el valor por defecto de <tt>true</tt> y la imagen de la derecha con <tt>false</tt>:</p>
+  <center><img alt="Old to new particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/frontback.gif" /> <img alt="New to old particle example" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/backfront.gif" /></center>
+  <p class="note"><b>NOTA</b>: Cuando las partículas se dibujan con un modo de mezcla aditivo, el efecto de esta función puede no ser siempre obvio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_system_draw_order(ind, oldtonew);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sistema de partículas a cambiar.</td>
+      </tr>
+      <tr>
+        <td>oldtonew</td>
+        <td>Si las partículas antiguas deben dibujarse detrás de las nuevas (verdadero) o viceversa (falso).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">mysystem = part_system_create();<br> part_system_draw_order(mysystem, true);</p>
+  <p>Esto creará un nuevo sistema de partículas con el índice &quot; mysystem<tt>&quot;,</tt> y luego establece las partículas para dibujar las partículas más nuevas encima de las más antiguas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Systems.htm">Sistemas de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_particles_create.htm">part_particles_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_system_draw_order
+-->
+  <!-- TAGS
+part_system_draw_order
+-->
+</body>
+</html>

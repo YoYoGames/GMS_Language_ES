@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Baldosas para automóviles</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the tile set editor auto tiles  works" />
+  <meta name="rh-index-keywords" content="Tile Sets - Autotiles" />
+  <meta name="search-keywords" content="16 tiles,47 tiles,autotile,auto tile" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Baldosas para automóviles</h1>
+  <p>La función <strong>Auto T</strong> ile es una herramienta increíblemente poderosa que puede ser utilizada para hacer la construcción de niveles mucho más fácil, ya sea para un proyecto de vista superior o lateral. Esencialmente, se crea una <em>biblioteca</em> de baldosas automático, y luego cada vez
+    que coloques una baldosa de esa biblioteca se &quot;conectará&quot; con las baldosas que están a su alrededor para crear una pared o plataforma sin fisuras.</p>
+  <p>Sin embargo, antes de empezar a utilizar la función de baldosas automáticas, es muy importante que hayas configurado correctamente el sprite del conjunto de baldosas y que elijas un tipo adecuado de baldosas automáticas. Los tipos disponibles son <strong>47 </strong>baldosas automáticas, o
+    16 <strong>baldosas </strong>automáticas, siendo (en general) las baldosas de 16 las que se utilizan para los paisajes o las vistas de arriba a abajo (ya que proporcionan transiciones más agradables) y las de 47 las que se utilizan para las vistas de plataformas/laterales o las vistas de arriba a abajo en las que las paredes requieren múltiples conexiones, pero esto
+    pero esto no es una regla rígida y dependerá de cómo quieras que sea tu proyecto final.</p>
+  <p>La imagen siguiente muestra un conjunto típico de 47 baldosas y 16 baldosas para el autoalicatado:</p>
+  <p><img alt="Two Autotile Examples" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Autotiles.png">Ahora, sólo mirar las imágenes no te dice realmente cómo encajarán juntas, así que abriremos el Editor de Autotiles <strong>desde</strong> el <a href="../Tile_Sets.htm">Editor de</a> Conjuntos de Azulejos <a href="../Tile_Sets.htm">y</a> los <a href="../Tile_Sets.htm">añadiremos</a>. El Editor de Autotiles se ve así:</p>
+  <p><img alt="Autotile Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_AutotileEditor.png">Tenga en cuenta que el sprite del conjunto de azulejos que se utiliza tiene TODOS los azulejos que requerimos, y también puede tener otros azulejos, ya que puede elegir
+    cuales estar en el auto azulejo. Ahora puede hacer clic en <img alt="LMB Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_LMB.png" width="21"> en el botón de 47 azulejos en el área de plantillas para crear una nueva entrada de la biblioteca de 47 azulejos y se
+    y aparecerá la plantilla para seleccionar los azulejos que necesitas:</p>
+  <p><img alt="47 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_47tiles.png">En la plantilla, el área gris claro representa el borde exterior de la baldosa que se está utilizando y el gris más oscuro es el área de &quot;relleno&quot;.
+    Para añadir una baldosa a la plantilla, simplemente haga clic en la primera celda disponible de la plantilla y luego seleccione la baldosa que desea añadir desde la izquierda:</p>
+  <p><img alt="Adding Auto Tiles To The Library" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Add_AutoTiles.gif">Si se equivoca, sólo tiene que seleccionar la baldosa automática que desea eliminar y seleccionar la baldosa &quot;vacía&quot; de
+    del conjunto de baldosas. Una vez que haya añadido todos los azulejos, puede comprobar los azulejos con la plantilla haciendo clic en el botón &quot;Mostrar plantilla&quot; <img alt="Show Template Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_Template.png"> en la parte superior.
+    en la parte superior, y esto activará la superposición de la plantilla en el autotile final, como se muestra en la imagen siguiente:</p>
+  <p><img alt="Show The Autotile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_Show_Template.gif">Si quiere hacer un autotexto de 16 baldosas, el procedimiento es exactamente el mismo que el explicado anteriormente, sólo que en lugar de utilizar
+    la plantilla de 47 baldosas se utiliza la plantilla de 16 baldosas:</p>
+  <p><img alt="16 Tile Template" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_16Tiles.gif">Ahora tenemos algunos azulejos automáticos en nuestra biblioteca de azulejos automáticos tomados de un conjunto de azulejos. Estos pueden ser utilizados en el editor de habitaciones simplemente creando una capa de mapa de azulejos
+    y seleccionando uno de los azulejos automáticos de la biblioteca (que seleccionará automáticamente el pincel de azulejos automáticos de la parte superior del editor de habitaciones) y pintando en su habitación. Los azulejos se conectarán ahora &quot;auto-mágicamente&quot; para crear
+    mapas de azulejos correctamente secuenciados.</p>
+  <p><img alt="Autotile In The Room Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Tilesets_RoomTile.gif">Tenga en cuenta que el comportamiento de una baldosa automática alrededor de los bordes de la habitación dependerá del botón de <strong>Bordes abiertos o</strong> cerrados <img alt="Open Close Edges Icon" class="icon" src="../../assets/Images/Icons/Icon_Tiles_OpenCloseEdges.png">. Por defecto, cuando una baldosa automática se coloca a lo largo del borde de una habitación, elegirá una baldosa como si el exterior de la habitación estuviera vacío (es decir
+    dará un &quot;borde&quot; a la habitación). Sin embargo, si hace clic en este botón, la baldosa automática colocará la habitación como si el área exterior estuviera llena de baldosas y, por lo tanto, elegirá baldosas que se mezclen y no tengan &quot;borde&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Tile_Sets.htm">Juegos de baldosas</a></div>
+        <div style="float:right">Siguiente: <a href="Brush_Builder.htm">El constructor de pinceles</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Auto Tile
+Autotiles
+-->
+  <!-- TAGS
+tile_set_editor_autotiles
+-->
+</body>
+</html>

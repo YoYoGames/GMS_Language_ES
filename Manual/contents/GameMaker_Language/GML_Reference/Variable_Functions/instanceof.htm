@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>de</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function instanceof" />
+  <meta name="rh-index-keywords" content="instanceof" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>de</h1>
+  <p>Esta función se puede utilizar para obtener el nombre de la función que se utilizó para crear una estructura cuando ésta se creó utilizando una <a href="../../GML_Overview/Structs.htm">función constructora</a> y la <a href="../../GML_Overview/Structs.htm">función</a> <a href="../../GML_Overview/Language_Features/new.htm"><tt></tt></a>    <a href="../../GML_Overview/Language_Features/new.htm"><tt>nuevo</tt></a> operador. Se suministra la variable con la referencia del struct a comprobar y la función devolverá una cadena con el nombre de la función o <tt>undefined</tt>. Tenga en cuenta que si
+    pasa a la función un literal de estructura (es decir, una estructura que fue creada sin usar una función constructora) entonces simplemente devolverá la cadena &quot;struct&quot;. Esta función también puede utilizarse para comprobar si una referencia a un struct es un <strong><a class="glossterm" data-glossterm="referencia débil" href="#">referencia débil</a></strong> o
+    no, en cuyo caso la función devolverá la cadena &quot;<span class="inline">weakref</span>&quot; en lugar del nombre de la función que creó la estructura. Para más información, véase la función <span class="inline">weak_ref_create()</span>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instanceof(struct_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>struct</td>
+        <td>La referencia de la estructura a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena o <tt>indefinido</tt></p>
+  <p> </p>
+  <h4>Ejemplo ampliado:</h4>
+  <p>En este ejemplo debemos definir primero la función que se utilizará como constructor de la estructura:</p>
+  <p class="code">function init_struct(_a, _b, _c) constructor<br> {
+    <br> a = _a;<br> b = _b;<br> c = _c;<br> }
+  </p>
+  <p>Esta función puede utilizarse junto con el operador <tt>new</tt> para crear una estructura y rellenarla con las variables establecidas con los valores de los argumentos utilizados en la función:</p>
+  <p class="code">mystruct = new init_struct(10, 100, &quot;Hello World&quot;);</p>
+  <p>Entonces podemos obtener el nombre de la función que se utilizó así:</p>
+  <p class="code">var _name = instanceof(mystruct);<br> if is_string(_name)<br> {
+    <br> show_debug_message(_nombre);
+    <br> }
+  </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="array_create.htm">array_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instanceof
+-->
+  <!-- TAGS
+instanceof
+-->
+
+</body></html>

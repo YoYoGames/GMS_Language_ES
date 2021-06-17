@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mp_linear_step_object</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function mp_linear_step_object" />
+  <meta name="rh-index-keywords" content="mp_linear_step_object" />
+  <meta name="search-keywords" content="mp_linear_step_object" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mp_linear_step_object</h1>
+  <p>Con esta función le dices a una instancia que dé un &quot;paso&quot; hacia un punto específico, especificado por los valores xgoal y ygoal. El tamaño del paso (es decir, cuántos píxeles debe mover la instancia en cada paso) se indica mediante el tamaño del paso, y
+    si la instancia ya está en la posición, se detendrá y no se moverá más, al contrario que otras funciones más sencillas como <a href="../Movement/move_towards_point.htm"><tt>mover_hacia_un_punto()</tt></a>. El tamaño del paso es también la distancia &quot;por delante&quot;
+    que el objeto comprobará en cada paso en busca de una colisión, y puedes elegir si la instancia se detiene en una colisión con un objeto o instancia de tu elección.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">mp_linear_step_object(xgoal, ygoal, stepize, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xgoal</td>
+        <td>La posición x del objetivo.</td>
+      </tr>
+      <tr>
+        <td>ygoal</td>
+        <td>La posición y del objetivo.</td>
+      </tr>
+      <tr>
+        <td>tamaño del paso</td>
+        <td>La velocidad a la que se mueve la instancia en píxeles por paso.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que debe bloquear la ruta. Puede ser un índice de objeto, un id de instancia o la palabra clave especial, <b>todos</b></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mp_linear_step_object(mouse_x, mouse_y, 5, obj_Wall)<br> {
+    <br> instance_create_layer(x, y, &quot;Effects&quot;, obj_Explosion);<br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior hará que el objeto se mueva hacia el ratón a una velocidad de 5 píxeles por paso, comprobando únicamente las colisiones con el objeto &quot;obj_Wall&quot;. Una vez que alcance la posición del ratón creará un objeto &quot;obj_Explosion&quot; y
+    se destruirá a sí mismo.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Motion_Planning.htm">Planificación del movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="mp_linear_path.htm">mp_linear_path</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+mp_linear_step_object
+-->
+  <!-- TAGS
+mp_linear_step_object
+-->
+</body>
+</html>

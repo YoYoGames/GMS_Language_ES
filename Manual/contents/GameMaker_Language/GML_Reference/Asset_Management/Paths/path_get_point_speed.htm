@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ruta_obtener_velocidad_de_punto</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function path_get_point_speed" />
+  <meta name="rh-index-keywords" content="path_get_point_speed" />
+  <meta name="search-keywords" content="path_get_point_speed" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ruta_obtener_velocidad_de_punto</h1>
+  <p>Con esta función puedes obtener la velocidad del punto (tal y como se define en el <a href="../../../../The_Asset_Editors/Paths.htm">Path Editor</a> o cuando añades dinámicamente un punto de la ruta usando <a href="Path_Manipulation/path_add_point.htm"><tt>path_add_point()</tt></a>)
+    expresado como un porcentaje. Así, si tienes un punto de ruta establecido en 50 en el editor de rutas, esta función devolvería 50 cuando se utilice.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">camino_obtener_punto_velocidad(índice, n);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>índice</td>
+        <td>El índice de la ruta a comprobar.</td>
+      </tr>
+      <tr>
+        <td>n</td>
+        <td>La identidad de punto para comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (path_get_point_speed(pth_Patrol, 0) != 100)<br> {
+    <br> var _px = path_get_point_x(pth_Patrol, 0);<br> var _py = path_get_point_x(pth_Patrol, 0);<br> path_change_point(pth_Patrol, 0, _px, _py, 100);<br> }
+  </p>
+  <p>El código anterior comprueba el punto &quot;0&quot; de la ruta indexada por &quot;pth_Patrol&quot; para ver si la velocidad no es igual a 100. Si no lo es, entonces establece la velocidad de ese punto a 100.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Paths.htm">Caminos</a></div>
+        <div style="float:right">Siguiente: <a href="path_get_point_x.htm">path_get_point_x</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+path_get_point_speed
+-->
+  <!-- TAGS
+path_get_point_speed
+-->
+</body>
+</html>

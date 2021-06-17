@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gravedad</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable gravity" />
+  <meta name="rh-index-keywords" content="gravity" />
+  <meta name="search-keywords" content="gravity" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gravedad</h1>
+  <p><tt>La gravedad</tt> es una de las variables &quot;incorporadas&quot; que tienen todas las instancias y, cuando se establece, aplicará una fuerza constante en la <a href="gravity_direction.htm"><tt>dirección_de_gravedad</tt></a> de la instancia, influyendo tanto en la instancia <tt><a href="speed.htm">velocidad</a> </tt>como en
+    <span class="inline"><a href="direction.htm">direction</a></span> . Tenga en cuenta que la gravedad es una fuerza acumulativa y acelerará el objeto si decide no poner un tope a la velocidad final, y es habitual que establezca esta variable con pequeños valores decimales
+    como 0.01. Si estableces el <span class="inline">gravity</span> a 0, entonces no se aplicará gravedad a la instancia (este es el valor por defecto).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">gravedad;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !place_meeting(x, y + 1, obj_Ground)<br> {
+    <br> gravedad = 0,01;<br> }
+    <br> else
+    <br> {
+    <br> gravedad = 0;<br> }
+  </p>
+  <p>El código anterior sólo aplicará la gravedad si la instancia no encuentra ninguna instancia de &quot;obj_Ground&quot; debajo de ella.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instance_Variables.htm">Instance Variables</a></div>
+        <div style="float:right">Siguiente: <a href="gravity_direction.htm">dirección_de_gravedad</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+gravity
+-->
+  <!-- TAGS
+gravity
+-->
+</body>
+</html>

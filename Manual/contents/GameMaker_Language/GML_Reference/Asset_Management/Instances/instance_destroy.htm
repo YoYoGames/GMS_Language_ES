@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>instance_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_destroy" />
+  <meta name="rh-index-keywords" content="instance_destroy" />
+  <meta name="search-keywords" content="instance_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>instance_destroy</h1>
+  <p>Se llama a esta función siempre que se desee &quot;destruir&quot; una instancia, normalmente activando un <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Evento</a> de Destrucción <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">y también</a> un <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Evento de</a> Limpieza <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">.</a>
+    Esto la eliminará de la sala hasta que ésta se reinicie (a menos que la sala sea persistente). Llamar a la función sin argumentos simplemente destruirá la instancia que está actualmente en el ámbito y ejecutando el código, pero puedes proporcionar un argumento opcional
+    &quot;id&quot; opcional y apuntar a una instancia específica usando el valor de la instancia <span class="inline"><a href="Instance_Variables/id.htm">id</a></span>, o puede apuntar a todas las instancias de un objeto en particular usando un argumento <a href="../Objects/object_index.htm"><tt>object_index</tt></a>.
+    Por ejemplo:</p>
+  <p class="code">instance_destroy(other); // destruir la instancia &quot;other&quot; en un evento de colisión<br> instance_destroy(obj_Bullet); // destruir TODAS las instancias del objeto &quot;obj_Bullet&quot;</p>
+  <p>El segundo indicador <i>opcional</i> permite &quot;desactivar&quot; el evento de destrucción para la instancia que se está destruyendo. Por defecto, el Evento de Destrucción <i>siempre</i> se llevará a cabo, pero si establece esta bandera en <tt>falso</tt>, entonces puede hacer que la
+    instancia se destruya a sí misma y omitir la realización de ese evento.</p>
+  <p class="note"><b>IMPORTANTE!</b> Esto omitirá el evento de destrucción, pero el evento de limpieza seguirá siendo llamado.</p>
+  <p>Cabe destacar que cuando se destruye una instancia, su evento de destrucción se llama <i>inmediatamente</i> después del código o acción que llama a la función de destrucción. Además, aunque se ejecute el evento de destrucción, la instancia <i>no se elimina inmediatamente del juego</i>,
+    y continuará realizando el código contenido en el evento actual. Sólo cuando el evento actual termine será eliminado del juego.</p>
+  <p>Así que, si tienes, por ejemplo, este código:</p>
+  <p class="code">f hp &lt;= 0 instance_destroy();<br> score += 10;</p>
+  <p>La variable &quot;score&quot; se incrementará <i>aunque la <tt>función</tt></i> instance_destroy haya sido llamada, y la instancia será finalmente eliminada de tu juego al final del evento. Ten cuidado con esto, ya que si has (por ejemplo)
+    creado un recurso dinámico para la instancia, como una estructura de datos, y luego has destruido ese recurso en el evento de destrucción, si hay alguna referencia a él después de que la función o acción de destrucción se haya realizado, entonces obtendrás un error de &quot;recurso desconocido&quot;, ya que el evento de destrucción
+    desconocido&quot;, ya que el evento de destrucción lo ha eliminado del juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_destroy([id, execute_event_flag]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El ID de la instancia o object_index a destruir (opcional, por defecto es la instancia que llama)</td>
+      </tr>
+      <tr>
+        <td>ejecutar_evento_bandera</td>
+        <td>Establecer en <tt>true</tt> o <tt>false</tt> para realizar el evento de destrucción o no (opcional, por defecto es <tt>true</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if bbox_right &lt; 0 || bbox_left &gt; room_width || bbox_bottom &lt; 0 | bbox_top &gt; room_height<br> {
+    <br> instance_destroy(id, false);<br> }
+  </p>
+  <p>El código anterior destruirá la instancia que ejecuta el código sin llamar al evento Destroy si la instancia está fuera de los límites de la sala.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_exists.htm">instance_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_destroy
+-->
+  <!-- TAGS
+instance_destroy
+-->
+</body>
+</html>

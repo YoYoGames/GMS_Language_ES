@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_sprite_destroy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_sprite_destroy" />
+  <meta name="rh-index-keywords" content="layer_sprite_destroy" />
+  <meta name="search-keywords" content="layer_sprite_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_sprite_destroy</h1>
+  <p>Esta función destruirá el elemento sprite dado. Se proporciona el ID del sprite (que se obtiene al crear el sprite con <a href="layer_sprite_create.htm"><tt>layer_sprite_create()</tt></a> o cuando se utiliza el ID de la capa junto con <a href="layer_sprite_get_id.htm"><tt>layer_get_sprite_id()</tt></a>)
+    y esto lo eliminará. Tenga en cuenta que esto <i>no</i> elimina la capa, sólo el sprite de la misma, y si el sprite es uno que ha sido añadido en el editor de la sala, entonces la próxima vez que salga de la sala y luego regrese, el sprite será recreado
+    de nuevo. Sin embargo, si la sala es persistente, el sprite será eliminado a menos que la persistencia de la sala se desactive de nuevo.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_sprite_destroy(sprite_element_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite_element_id</td>
+        <td>El valor de identificación único del sprite que se va a destruir</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Asset_Trees&quot;);<br> if layer_sprite_exists(lay_id, global.Asset_spr_trees)<br> {
+    <br> layer_sprite_destroy(lay_id);
+    <br> }
+  </p>
+  <p>El código anterior comprueba la capa &quot;Asset_Trees&quot; para ver si el elemento sprite dado existe y si lo hace, entonces se destruye (pero no la capa).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Layers.htm">Capas de Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="layer_sprite_change.htm">layer_sprite_change</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_sprite_destroy
+-->
+  <!-- TAGS
+layer_sprite_destroy
+-->
+</body>
+</html>

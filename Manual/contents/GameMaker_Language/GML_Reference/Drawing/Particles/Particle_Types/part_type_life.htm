@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>parte_tipo_vida</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_life" />
+  <meta name="rh-index-keywords" content="part_type_life" />
+  <meta name="search-keywords" content="part_type_life" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>parte_tipo_vida</h1>
+  <p>Esta es la función que gobierna el tiempo que cada partícula individual del tipo indicado permanece en la pantalla. Al igual que con otras funciones de partículas, usted proporciona un valor mínimo y un valor máximo (en pasos) y la duración de cada partícula será un número aleatorio
+    de pasos dentro del rango especificado. Para que todas las partículas tengan el mismo tiempo de vida, establece los dos valores para que sean iguales.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_type_life(ind, life_min, life_max);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del tipo de partícula a cambiar.</td>
+      </tr>
+      <tr>
+        <td>vida_mínima</td>
+        <td>La vida mínima de las partículas.</td>
+      </tr>
+      <tr>
+        <td>vida_máxima</td>
+        <td>La vida útil máxima de las partículas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">part_type_life(part_Flare, room_speed, room_speed * 2);</p>
+  <p>El código anterior hará que todas las partículas creadas del tipo de partícula indexado en la variable &quot;part_Flare&quot; tengan una duración de entre 1 y 2 segundos, en función de la velocidad de la sala actual.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Types.htm">Tipos de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_type_step.htm">part_type_step</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_life
+-->
+  <!-- TAGS
+part_type_life
+-->
+</body>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_get_listener_mask</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_get_listener_mask" />
+  <meta name="rh-index-keywords" content="audio_get_listener_mask" />
+  <meta name="search-keywords" content="audio_get_listener_mask" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_get_listener_mask</h1>
+  <p>Esta función devolverá los datos de la máscara de bits que define la máscara actual por defecto (global) para los oyentes de audio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_get_listener_mask();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var g_mask = audio_get_listener_mask();<br> if g_mask != global.Audio_Mask<br> {
+    <br> var num = audio_get_listener_count();<br> global.Audio_Mask = 0; for(var i = 0; i &lt; num; ++i;)<br> {
+    <br> var info = audio_get_listener_info(i);<br> var m = audio_listener_get_data(info[? &quot;mask&quot;]);<br> global.Audio_Mask = global.Audio_Mask | m;<br> ds_map_destroy(info);
+    <br> }
+    <br> audio_set_listener_mask(mask);
+    <br> }
+  </p>
+  <p>El código anterior obtiene los datos de la máscara del oyente actual y los compara con los datos almacenados en una variable global. Si no son iguales, el código comprueba el número de oyentes disponibles y los recorre para obtener sus bits de máscara, que se combinan para crear una única máscara que se aplica al sistema de audio para definir los oyentes globales.
+    combinados para crear una única máscara que se aplica al sistema de audio para definir los oyentes globales.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Listeners.htm">Auditores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_set_listener_mask.htm">audio_set_listener_mask</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_get_listener_mask
+-->
+  <!-- TAGS
+audio_get_listener_mask
+-->
+</body>
+</html>

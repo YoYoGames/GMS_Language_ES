@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_skeleton_time</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function draw_skeleton_time" />
+  <meta name="rh-index-keywords" content="draw_skeleton_time" />
+  <meta name="search-keywords" content="draw_skeleton_time" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_skeleton_time</h1>
+  <p>Esta función dibujará la animación dada usando el skin dado en un momento específico de la animación. El valor del tiempo debe estar entre 0 (el comienzo) y la duración final de la animación, que puedes encontrar usando la función <a href="../Animation/skeleton_animation_get_duration.htm"><tt>esqueleto_animación_obtener_duración()</tt></a>.
+   <i>Puedes</i> establecer el valor del tiempo en valores superiores a la duración total de la animación y la animación volverá al principio, pero corres el riesgo de perder precisión en punto flotante a medida que el tiempo acumulado
+    se hace más grande.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_skeleton_time(sprite, animname, skinname, time, x, y, xscale, yscale, rot, color)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a dibujar.</td>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>El nombre de la animación de la que se va a obtener el fotograma (una cadena).</td>
+      </tr>
+      <tr>
+        <td>nombre de la piel</td>
+        <td>El nombre de la piel a utilizar para el dibujo (una cadena).</td>
+      </tr>
+      <tr>
+        <td>tiempo</td>
+        <td>El marco de tiempo para dibujar la animación (de 0 a la duración final, en segundos).</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x de donde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y de dónde dibujar el sprite.</td>
+      </tr>
+      <tr>
+        <td>xscale</td>
+        <td>La escala horizontal del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>yscale</td>
+        <td>La escala vertical del sprite, como multiplicador: 1 = escala normal, 0,5 es la mitad, etc.</td>
+      </tr>
+      <tr>
+        <td>pudrirse</td>
+        <td>La rotación del sprite. 0=normal, 90=girado 90 grados en sentido contrario a las agujas del reloj, etc.</td>
+      </tr>
+      <tr>
+        <td>color</td>
+        <td>El color con el que se mezclará el sprite.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var time += delta_time / 1000000;<br> var d = skeleton_animation_get_duration(&quot;walk&quot;);<br> if time &gt; d time -= d;<br> draw_skeleton_time(sprite_index, &quot;walk&quot;, &quot;skin1&quot;, time, x, y, image_xscale, image_yscale, image_angle,
+    c_white);</p>
+  <p>El código anterior dibujará el sprite de animación esquelético dado utilizando el tiempo delta para establecer el cuadro que se dibuja.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Drawing_And_Miscellaneous.htm">Dibujo y Varios</a></div>
+        <div style="float:right">Siguiente: <a href="../Animation/skeleton_animation_get.htm">skeleton_animation_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_skeleton_time
+-->
+  <!-- TAGS
+draw_skeleton_time
+-->
+</body>
+</html>

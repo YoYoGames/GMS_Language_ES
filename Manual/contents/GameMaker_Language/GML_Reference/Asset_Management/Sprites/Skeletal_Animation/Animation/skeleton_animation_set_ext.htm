@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_set_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_set_ext" />
+  <meta name="rh-index-keywords" content="skeleton_animation_set_ext" />
+  <meta name="search-keywords" content="skeleton_animation_set_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_set_ext</h1>
+  <p>Cuando estableces un set de animación para tu sprite de animación esquelética, se le asigna la <i>pista 0</i> internamente. Sin embargo, puede asignar otros conjuntos a otras pistas (1 y superiores) y de esta manera hacer que su sprite reproduzca dos (o
+    más) animaciones al mismo tiempo. Tenga en cuenta que el sprite debe haber sido diseñado en su programa de animación con esto en mente, de tal manera que la animación &quot;base&quot; en la pista 0 sólo tiene fotogramas clave <span class="notranslate">para</span> ciertos huesos, mientras que las siguientes pistas tienen fotogramas clave
+    para los demás. Por ejemplo, si tienes una animación de &quot;caminar&quot; y sus fotogramas clave <span class="notranslate">sólo</span> afectan a las piernas del sprite, puedes tener un conjunto de animaciones de la cabeza y de los brazos que puedes establecer en las pistas 1 y 2 respectivamente, permitiéndote
+    tener un movimiento base y adaptarlo en tiempo real mientras se desarrolla el juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_animation_set_ext(animname, track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>animname</td>
+        <td>El nombre (una cadena) del conjunto de animaciones a utilizar.</td>
+      </tr>
+      <tr>
+        <td>pista</td>
+        <td>La pista del set de animación a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if mouse_check_button(mb_left)<br> {
+    <br> skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br> }
+    <br> else
+    <br> {
+    <br> skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br> }
+  </p>
+  <p>El código anterior cambiará el conjunto de animación que está siendo utilizado por la pista 1 al conjunto &quot;bodyfight&quot; o al conjunto &quot;bodywalk&quot; cuando se presione el botón izquierdo del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation.htm">Animación</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_animation_get_duration.htm">skeleton_animation_get_duration</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_set_ext
+-->
+  <!-- TAGS
+skeleton_animation_set_ext
+-->
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_list_insert</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_list_insert" />
+  <meta name="rh-index-keywords" content="ds_list_insert" />
+  <meta name="search-keywords" content="ds_list_insert" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_list_insert</h1>
+  <p>Esta función añadirá el valor dado a la lista en la posición dada. Si la lista contiene más valores después de la posición dada, su posición se desplazará uno hacia arriba para hacer espacio haciendo la lista más grande en uno.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_list_insert(id, pos, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El identificador de la lista a la que hay que añadir.</td>
+      </tr>
+      <tr>
+        <td>pos</td>
+        <td>La posición para añadir el valor, donde 0 corresponde al principio de la lista y la posición final es ds_list_size(id)-1.</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor a añadir a la lista.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ds_list_insert(list, 9, score);</p>
+  <p>El código anterior añadirá el valor almacenado en la variable &quot;score&quot; en la décima posición de la lista indexada por la variable &quot;list&quot; (las listas se cuentan desde 0, por lo que una lista de diez valores se numera de 0 a 9).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Lists.htm">Listas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_list_replace.htm">ds_list_replace</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_list_insert
+-->
+  <!-- TAGS
+ds_list_insert
+-->
+
+</body></html>

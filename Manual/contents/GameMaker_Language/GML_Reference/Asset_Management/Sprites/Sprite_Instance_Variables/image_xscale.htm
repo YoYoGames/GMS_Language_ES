@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>imagen_escala_x</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the variable image_xscale" />
+  <meta name="rh-index-keywords" content="image_xscale" />
+  <meta name="search-keywords" content="image_xscale" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>imagen_escala_x</h1>
+  <p>Este valor establece la escala horizontal aplicada al sprite que se ha asignado a la instancia actual. Una escala de 1 indica que no hay escala (1:1), los valores más pequeños reducirán la escala (0.5, por ejemplo, reducirá el ancho del sprite a la mitad), los valores más grandes
+    aumentarán la escala y los valores negativos voltearán el sprite <i>y</i> lo escalarán a menos que el valor utilizado sea exactamente -1 (en cuyo caso el sprite se volteará sobre su origen sin escalar).</p>
+  <p><img alt="image_xscale example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/xscale_image.png" /></p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">image_xscale;</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (valor de punto flotante de precisión única)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si image_xscale &lt; 5<br> {
+    <br> image_xscale += 0.2;<br> image_yscale = image_xscale;<br> }
+    <br> si no
+    <br> {
+    <br> instance_create_layer(x, y, &quot;Effects&quot;, obj_Explosion);<br> instance_destroy();
+    <br> }
+  </p>
+  <p>El código anterior escala el sprite y una vez que se escala a 5 veces su tamaño original, se crea una nueva instancia de otro objeto y se destruye la instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Instance_Variables.htm">Variables de instancia de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="image_yscale.htm">image_yscale</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+image_xscale
+-->
+  <!-- TAGS
+image_xscale
+-->
+</body>
+</html>

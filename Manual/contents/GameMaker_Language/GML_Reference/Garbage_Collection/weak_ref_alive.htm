@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>weak_ref_alive</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for weak_ref_alive" />
+  <meta name="rh-index-keywords" content="weak_ref_alive" />
+  <meta name="search-keywords" content="weak_ref_alive" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>weak_ref_create</h1>
+  <p>Con esta función puede comprobar la <a class="glossterm" data-glossterm="referencia débil" href="#">referencia</a> débil a una estructura para ver si sigue &quot;viva&quot; o no. Se suministra la referencia débil a comprobar (tal y como la devuelve la función
+    <a href="weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>), y la función devolverá <span class="inline">true</span> si la estructura sigue siendo referenciada en algún lugar o <span class="inline">false</span> si no lo está y ha sido recolectada por la basura.
+      Tenga en cuenta que si suministra un valor que no es una referencia débil, la función devolverá <span class="inline">undefined</span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">weak_ref_alive(weak_ref);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>weak_ref</td>
+        <td>La referencia débil a la estructura que desea comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano (o indefinido)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if weak_ref_alive(inventory_ref)<br> {<br> inventory = -1;<br> }</p>
+  <p>El código anterior comprueba una referencia débil a una estructura y, si sigue viva, la variable que la referencia se pone a -1, desreferenciando la estructura y permitiendo su recogida de basura.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Garbage_Collection.htm">Recogida de basura</a></div>
+        <div style="float:right">Siguiente: <a href="weak_ref_any_alive.htm">weak_ref_any_alive</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+weak_ref_alive
+-->
+  <!-- TAGS
+weak_ref_alive
+-->
+
+</body></html>

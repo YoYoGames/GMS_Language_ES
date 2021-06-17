@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_obtener_profundidad_desactivar</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_get_depth_disable" />
+  <meta name="rh-index-keywords" content="surface_get_depth_disable" />
+  <meta name="search-keywords" content="surface_get_depth_disable" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_obtener_profundidad_desactivar</h1>
+  <p>Esta función comprueba si la generación automática de búferes de profundidad para las superficies está activada. Normalmente, todas las superficies tienen búferes de profundidad, por lo que si se dibujan objetos 3D en ellas, se ordenarán correctamente por profundidad, sin embargo, la asignación de búferes de profundidad esencialmente
+    duplica el tamaño de las superficies, lo que podría ser una sobrecarga excesiva e innecesaria, especialmente si su juego requiere mucha memoria o es predominantemente 2D. En estos casos puedes comprobarlo usando esta función y desactivar el buffer de profundidad para las superficies
+    si es necesario, utilizando la función <a href="surface_depth_disable.htm"><tt>surface_depth_disable()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_get_depth_disable();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (!surface_exists(surf))<br> {
+    <br> si surface_get_depth_disable() == false<br> {
+    <br> surface_depth_disable(true);
+    <br> }
+    <br> surf = surface_create(room_width, room_height);<br> }
+  </p>
+  <p>El código anterior comprobará si la superficie dada existe, y si no existe, entonces comprueba el estado actual del buffer de profundidad de la superficie y si está activado, lo desactivará en su lugar, antes de crear finalmente la superficie.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_getpixel.htm">surface_getpixel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_get_depth_disable
+-->
+  <!-- TAGS
+surface_get_depth_disable
+-->
+</body>
+</html>

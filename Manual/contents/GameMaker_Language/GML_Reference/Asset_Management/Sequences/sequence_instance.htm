@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page outlining the variable sequence_instance" />
+  <meta name="rh-index-keywords" content="sequence_instance" />
+  <meta name="search-keywords" content="sequence_instance" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_instancia</h1>
+  <p>Esta es una <strong>variable incorporada</strong> que forma parte de las <a href="../Instances/Instance_Variables/Instance_Variables.htm">variables de instancia</a> creadas para cada instancia de objeto en tu juego. Si la instancia está siendo controlada por una secuencia,
+    esta variable contendrá la <a href="Sequence_Structs/The_Sequence_Instance_Struct.htm">estructura de</a> la instancia de la secuencia que controla la instancia, de lo contrario será <tt>indefinida</tt>. Esta es una variable <strong>de sólo lectura</strong> 
+    y no puede ser modificada.</p>
+  <p>Tenga en cuenta que esta variable se volverá <tt>indefinida</tt> después de que la Secuencia de control haya terminado, incluso si su Elemento de Secuencia todavía existe, y obtendrá la estructura de nuevo si ese elemento de Secuencia se <a href="../Rooms/Sequence_Layers/layer_sequence_play.htm">reproduce</a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">secuencia_instancia</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if (in_sequence)<br> {
+    <br> sequence_instance.speedScale = 2;<br> }
+  </p>
+  <p>El código anterior comprueba la variable <a href="in_sequence.htm"><span class="inline">in_sequence</span></a> y si es <span class="inline">true</span> (lo que significa que la instancia está siendo controlada por una secuencia) entonces cambiará la escala de velocidad de esa
+    Secuencia a 2.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_exists.htm">sequence_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_instance
+-->
+  <!-- TAGS
+sequence_instance
+-->
+</body>
+</html>

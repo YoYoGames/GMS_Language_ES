@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>superficie_getpixel_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for surface_getpixel_ext" />
+  <meta name="rh-index-keywords" content="surface_getpixel_ext" />
+  <meta name="search-keywords" content="surface_getpixel_ext" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>superficie_getpixel_ext</h1>
+  <p>Con esta función puedes obtener el valor completo <b>abgr 32bit</b> de cualquier píxel de una superficie (previamente creada).</p>
+  <p class="note"><b>NOTA</b>: Esta función tendrá un gran impacto en el rendimiento, por lo que sólo debe utilizarse cuando sea absolutamente necesario.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">surface_getpixel_ext(surface_id, x, y);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ID de superficie</td>
+        <td>El ID de la superficie a utilizar.</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La coordenada x del píxel a comprobar</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La coordenada y del píxel a comprobar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">col = surface_getpixel_ext(mouse_x, mouse_y);<br> alpha = (col &gt;&gt; 24) &amp; 255;<br> blue = (col &gt;&gt; 16) &amp; 255;<br> green = (col &gt;&gt; 8) &amp; 255;<br> red = col &amp; 255;</p>
+  <p>El código anterior obtendrá el valor del color de 32 bits en la posición del ratón y luego lo dividirá en los valores que lo componen, almacenándolos en variables.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Surfaces.htm">Superficies</a></div>
+        <div style="float:right">Siguiente: <a href="surface_free.htm">superficie_libre</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+surface_getpixel_ext
+-->
+  <!-- TAGS
+surface_getpixel_ext
+-->
+</body>
+</html>

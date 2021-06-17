@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>crear_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_create" />
+  <meta name="rh-index-keywords" content="layer_create" />
+  <meta name="search-keywords" content="layer_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>crear_capa</h1>
+  <p>Esta función se utiliza para crear una nueva capa dentro de la sala actual. Usted suministra la profundidad que va a ocupar la nueva capa y la función devuelve el valor único del ID de la capa que puede ser utilizado para acceder a la capa en otras funciones. También puede
+    suministrar un argumento opcional &quot;nombre&quot;, que le permitirá dar a la capa un nombre específico (como una cadena), y en lugar de utilizar el ID de la capa para acceder a ella, puede utilizar esta cadena de nombre, aunque debe tenerse en cuenta que el uso de
+    tendrá un mayor impacto en el rendimiento que si se utiliza sólo el valor del ID. Si no se especifica el nombre de la capa, se asignará a la capa creada un nombre con el formato &quot; _capa_XXX<tt>&quot;,</tt> donde &quot;XXX&quot;
+    es un valor hexadecimal utilizado para dar un nombre único a la capa.</p>
+  <p>Cuando se da un valor de profundidad, éste será mayor cuanto más &quot;lejos&quot; de la cámara esté la capa y menor cuanto más &quot;cerca&quot; de la cámara esté la capa, así que si tienes tres capas con profundidades -100, 0, 100, las capas se dibujarán en el orden
+    100, 0, -100, de modo que la capa &quot;superior&quot; (es decir, la más cercana a la vista de la cámara y por lo tanto dibujada sobre todo lo demás) será la capa con la profundidad -100.</p>
+  <p>La siguiente imagen muestra un esquema de cómo funciona la profundidad para las capas:</p>
+  <p><img alt="Layer depth example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/Layer_Depths.png">Vale la pena señalar que, aunque se <i>puede</i> asignar más de una capa a una misma profundidad, <i>no hay forma de garantizar que las capas de la misma profundidad se dibujen en un orden determinado</i>, por lo que es mejor asignar sólo una capa a una profundidad determinada. Tenga en cuenta también que las profundidades mínima y máxima de las capas son de -16000 a 16000, y todo lo que esté fuera de esas profundidades <b>no se renderizará</b>. Si necesita una profundidad fuera de ese rango
+    tendrá que utilizar la función <a href="layer_force_draw_depth.htm"><tt>layer_force_draw_depth()</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_create(depth, [name])</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>profundidad</td>
+        <td>La profundidad a la que debe crearse la capa.</td>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre que se le dará a la capa (una cadena - opcional)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ID de la capa (real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.Bullet_Layer = layer_create(-100);</p>
+  <p>El código anterior creará una nueva capa con un valor de profundidad de -100 y asignará su valor de ID a una variable global.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_destroy.htm">layer_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_create
+-->
+  <!-- TAGS
+layer_create
+-->
+</body>
+</html>

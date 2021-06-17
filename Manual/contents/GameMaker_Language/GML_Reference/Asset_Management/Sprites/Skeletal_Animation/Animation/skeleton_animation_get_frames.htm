@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_get_frames</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_frames" />
+  <meta name="rh-index-keywords" content="skeleton_animation_get_frames" />
+  <meta name="search-keywords" content="skeleton_animation_get_frames" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_get_frames</h1>
+  <p>Esta función puede utilizarse para obtener el número de fotogramas que tiene una determinada animación de esqueleto. Se proporciona el nombre de la animación del esqueleto (como una cadena, tal y como se define en el programa utilizado para hacer la animación, o como se devuelve utilizando la función     <a href="skeleton_animation_get.htm"><tt>esqueleto_animación_get</tt></a>y la función devuelve los fotogramas que tiene como un valor entero. La función devolverá 0 si la animación especificada no existe.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_animation_get_frames(anim_name);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre_de_animación</td>
+        <td>El nombre de la animación para obtener los fotogramas.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var num = skeleton_animation_get_frames(skeleton_animation_get());<br> image_index = num -1;<br> image_speed = 0;</p>
+  <p>El código anterior obtendrá el número de fotogramas de la animación y luego pondrá el sprite en el último fotograma y dejará de animar.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation.htm">Animación</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_animation_get_frame.htm">skeleton_animation_get_frame</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_get_frames
+-->
+  <!-- TAGS
+skeleton_animation_get_frames
+-->
+</body>
+</html>

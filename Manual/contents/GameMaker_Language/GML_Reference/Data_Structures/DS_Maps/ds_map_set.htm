@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_map_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_map_set" />
+  <meta name="rh-index-keywords" content="ds_map_set" />
+  <meta name="search-keywords" content="ds_map_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_map_set</h1>
+  <p>Con esta función se puede establecer el valor de una clave dentro de un mapa DS dado. Se proporciona el valor del ID del mapa DS (devuelto por la función <a href="ds_map_create.htm"><tt>ds_map_create()</tt></a>), y a continuación la clave que se desea establecer y el valor que se desea asignar
+    a. Las claves pueden ser números enteros o cadenas, y si la clave dada no existe, se creará para usted y se establecerá el valor. Esta función es lo mismo que usar el <a href="../../../GML_Overview/Accessors.htm">accesorio de mapa DS</a> para establecer/crear un par
+    un par clave/valor del mapa. La función no devuelve nada, por lo que si necesita comprobar si el valor de la clave ha sido reemplazado o si se ha creado una nueva clave, deberá utilizar la función <span class="inline"><a href="ds_map_replace.htm">ds_map_replace()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_map_set(id, key, value)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>id</td>
+        <td>El id del mapa a utilizar.</td>
+      </tr>
+      <tr>
+        <td>clave</td>
+        <td>La clave de la fijación.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor para establecer la clave.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if is_undefined(ds_map_find_value(map, &quot;score&quot;))<br> {
+    <br> ds_map_set(map, &quot;score&quot;, 0);<br> }
+  </p>
+  <p>El código anterior comprobará si la clave dada existe y si no existe entonces se crea y se establece.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Maps.htm">Mapas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_map_read.htm">ds_map_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_map_set
+-->
+  <!-- TAGS
+ds_map_set
+-->
+</body>
+</html>

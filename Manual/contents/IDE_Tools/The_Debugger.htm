@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>El depurador</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers the debugger." />
+  <meta name="rh-index-keywords" content="Debugger,The Debugger,Debugging" />
+  <meta name="search-keywords" content="debugging,the debugger,debug module,debug mode,debug" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>El depurador</h1>
+  <p>El <strong>depurador </strong>es una poderosa herramienta para comprobar tu juego, y es especialmente útil para localizar errores y fallos en tu código, así como para comprobar que los scripts se ejecutan cuando deben, y que las variables y arrays contienen los
+    valores esperados, etc... Puedes iniciar el depurador ejecutando tu juego desde el <a class="glossterm" data-glossterm="IDE" href="The_Debugger/The_Profiler.htm#">IDE de</a> <span class="notranslate">GameMaker Studio 2</span> usando el botón de depuración <img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png"> en la parte superior del IDE, o yendo al <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menú de construcción</a> y seleccionando &quot;Depuración<em>&quot;.</em></p>
+  <p class="note"><strong>NOTA</strong>: Es posible que el Firewall de <span class="notranslate">Windows</span> (o cualquier otro programa de firewall que ejecute) le pida que cree una excepción de seguridad para este módulo. <strong>Debe hacerlo, de lo contrario no funcionará correctamente</strong>. Esto se debe a la forma en que
+    el depurador funciona y es esencial para la depuración de las plataformas móviles.</p>
+  <p>Cuando se ejecuta un juego en modo de depuración, el IDE mostrará las diferentes herramientas disponibles para el depurador:</p>
+  <p><img alt="The Debugger Windows" class="center" src="../assets/Images/IDE Tools/Debug_Module.png">La imagen de arriba muestra el diseño por defecto del depurador, pero al igual que con otros aspectos del IDE puedes personalizarlo para que se ajuste a tus necesidades, cerrando
+    cerrando las ventanas que no necesites o cambiando el tamaño de los documentos y ventanas que sí necesites. Puedes restablecer el diseño del depurador en cualquier momento - o reabrir las ventanas cerradas - desde el menú contextual del depurador en la parte superior del IDE:</p>
+  <p><img alt="Debugger Context Menu" class="center" src="../assets/Images/IDE Tools/Debug_Module_Context_Menu.png">A continuación explicamos para qué sirve cada sección del depurador:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Vista del gráfico</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">La vista de gráfico te muestra un gráfico de cómo tu proyecto está utilizando la memoria y su velocidad de fotogramas a lo largo del tiempo:</p>
+    <p class="dropspot"><img alt="Debug Graph" class="center" src="../assets/Images/IDE Tools/Debug_Graph.png">El gráfico muestra el uso actual y medio de la memoria, así como los FPS actuales y medios a lo largo del tiempo, y puedes acercarte o alejarte utilizando los botones <img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55"> / <img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55"> junto con la rueda del ratón <img alt="MMB Icon" class="icon" src="../assets/Images/Icons/Icon_MMB.png">, y si sitúas el cursor del ratón sobre cualquiera de los elementos del gráfico, te mostrará el valor de ese elemento en el punto seleccionado.</p>
+    <p class="dropspot">La vista de gráfico también mostrará ciertos eventos de depuración como puntos a lo largo del gráfico. Estos eventos son generados automáticamente por <span class="notranslate">GameMaker Studio 2</span> en ciertos puntos de la ejecución de un juego para mostrar eventos importantes específicos, pero también puede
+      añadir sus propios elementos gráficos utilizando las funciones <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message()</span></a> y <a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm"><span class="inline">debug_event()</span></a>.
+      Los eventos del sistema se marcarán en un color diferente a los eventos que se activan a través del código:</p>
+    <p class="dropspot"><img alt="Debug Graph Events" class="center" src="../assets/Images/IDE Tools/Debug_Graph_Events.png">Cuando se ejecuta el juego en depuración y se pasa el ratón por encima de estos eventos, se mostrará una lista de todos los eventos que se activaron en ese punto del juego,
+      y tienes la opción de sacar la lista en una ventana separada para revisarla haciendo clic en el texto &quot;Click<strong>to open in a new window&quot;:</strong></p>
+    <p class="dropspot"><img alt="Debug Events" class="center" src="../assets/Images/IDE Tools/Debug_Events.png" /></p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Vista de recursos</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">La vista de recursos te muestra una lista de todos los recursos que se están utilizando en el proyecto y que pueden contener código o acciones de <span class="notranslate">DnD™</span>. Esta sección funciona de forma muy parecida al <a href="../Introduction/The_Asset_Browser.htm">Navegador de Activos</a> y puedes expandir los elementos
+      en ella para mostrar más información, por ejemplo, los diferentes eventos de un objeto específico. A continuación, puede hacer doble clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en cualquiera de los recursos para abrir
+      el código correspondiente en la ventana <strong>de la Vista de Código</strong>, donde puede comprobar los valores y añadir o eliminar <strong>puntos de interrupción</strong>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Pila de llamadas</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Esta ventana mostrará la pila de llamadas actual de los eventos, así como el número de línea del código que se está recorriendo. La pila de llamadas es esencialmente una estructura de datos &quot;última entrada - primera salida&quot; que muestra el orden de ejecución de todo el código del juego
+      tanto desde el corredor de <span class="notranslate">GameMaker Studio 2</span> - ya que la depuración se realiza utilizando la <a class="glossterm" data-glossterm="Máquina virtual (VM)" href="#">máquina virtual (VM)</a> - y de lo que ha escrito para el juego. El depurador tendrá que
+      que el depurador esté <em>en pausa </em>antes de que se muestre cualquier información aquí.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Barra de herramientas</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">La barra de herramientas tiene los controles del depurador junto con alguna información básica como el uso de la memoria, los FPS actuales (reales) del juego y un indicador para mostrar si el depurador está conectado o no (el indicador será verde cuando esté conectado
+      a una instancia en ejecución de su proyecto y rojo en caso contrario). Los controles disponibles son:</p>
+    <table class="icons" style="margin-left: 32auto">
+      <tbody>
+        <tr>
+          <td class="icons"><img alt="Play Debug Icon" src="../assets/Images/Icons/Debug_play.png" style="margin-left: 24px;" /></td>
+          <td class="text">Esto inicia el juego de nuevo después de haber sido pausado (atajo de teclado &quot;<span class="inline">f5</span>&quot;).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Pause Debug Icon" height="24" src="../assets/Images/Icons/Debug_Pause.png" style="margin-left: 24px;" width="24" /></td>
+          <td class="text">Esto pondrá en pausa (romper) el juego.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Restart Debug Icon" src="../assets/Images/Icons/Debug_Restart.png" style="margin-left: 24px;" /></td>
+          <td class="text">Reinicia el juego.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Stop Debug Icon" height="24" src="../assets/Images/Icons/Debug_Stop.png" style="margin-left: 24px;" width="24" /></td>
+          <td class="text">Detiene el juego.</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Step In Debug Icon" src="../assets/Images/Icons/Debug_StepIn.png" style="margin-left: 24px;" /></td>
+          <td class="text">Entre en un bloque de código o script (atajo de teclado &quot;<span class="inline">f11</span>&quot;).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Step Over Debug Icon" src="../assets/Images/Icons/Debug_StepOver.png" style="margin-left: 24px;" /></td>
+          <td class="text">Pase por encima de un bloque de código o de un script (atajo de teclado &quot;<span class="inline">f10</span>&quot;).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Step Out Debug Icon" src="../assets/Images/Icons/Debug_StepOut.png" style="margin-left: 24px;" /></td>
+          <td class="text">Salir de un bloque de código o script (atajo de teclado <img alt="Shift Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Shift.png" width="55"> + &quot;<span class="inline">f11</span>&quot;).</td>
+        </tr>
+        <tr>
+          <td class="icons"><img alt="Real Time Debug Icon" src="../assets/Images/Icons/Debug_RealTime.png" style="margin-left: 24px;" /></td>
+          <td class="text">Activa o desactiva las actualizaciones en tiempo real de la información de depuración (está desactivada por defecto).</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">Los tres primeros botones se utilizan para controlar el juego, permitiéndote <strong>iniciar</strong>, <strong>pausar</strong>, <strong>reiniciar </strong>o <strong>detenerlo </strong>en cualquier momento. Cuando el juego está en pausa (ya sea haciendo clic en el botón Pausa
+      o desde un <strong>punto de interrupción</strong>) puedes utilizar los tres botones de <strong>paso</strong> para recorrer tu código.</p>
+    <p class="dropspot">Cuando hablamos de &quot;pasar&quot; por el código, simplemente queremos decir que puedes decirle a tu juego que ejecute la línea de código actual, y luego &quot;pasar&quot; a la siguiente, permitiéndote ejecutar todo tu juego una línea de código a la vez
+      si lo desea. Normalmente, simplemente usarías el botón <strong>"Step In</strong> " para hacer esto, pero también tienes uno para pasar <strong>por encima </strong>del código y otro para <strong>salir </strong>del código. El paso por encima es útil cuando
+      cuando tiene que ejecutar scripts grandes, ya que al hacer clic en este botón se ejecutará todo el script o bloque de código como un solo paso y se detendrá en la siguiente línea después, mientras que el paso de salida le llevará fuera de un script (se ejecutará, pero todo a la vez) y se detendrá en el
+      siguiente paso cuando el ámbito cambie.</p>
+    <p class="dropspot">El último icono para las <strong>actualizaciones en tiempo real</strong> permite que la ventana de depuración actualice sus datos en tiempo real, para que puedas ver cómo cambian las variables o se crean y destruyen instancias a medida que sucede. Tenga en cuenta que esto puede afectar al rendimiento del juego
+      y que no toda la información está disponible en tiempo real. Por ejemplo, el reloj de <strong>Estado de Renderización</strong> (ver la sección de <a href="The_Debugger/Watches.htm">Relojes</a>) no puede ser visto en tiempo real.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Vista del código</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">La vista de código es donde podemos ver y revisar diferentes scripts o código de eventos de nuestro proyecto mientras se ejecuta. Por defecto comienza vacía, pero puedes hacer doble clic en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> sobre cualquier activo de la Vista de <strong>Recursos </strong>para abrirlo aquí. Puedes abrir varios eventos o scripts diferentes también, y se añadirán al espacio de trabajo de la Vista de Código como pestañas en la parte superior.</p>
+    <p class="dropspot">Mientras cualquier ventana de código está abierta en la Vista de Código, puede hacer clic con el botón izquierdo del ratón en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en el canalón (donde están los números de línea) para añadir o eliminar <strong>puntos </strong> de interrupción (vea
+      más adelante en esta página para obtener información sobre los puntos de interrupción).</p>
+    <p class="dropspot">También puede utilizar el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> para abrir el <strong>menú contextual</strong>, que también le permite añadir o eliminar puntos de interrupción y copiar cualquier
+      código seleccionado al portapapeles.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Relojes</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Esta sección está dedicada a &quot;observar&quot; diferentes aspectos de tu juego para permitir una depuración más profunda y detallada. Esto se trata en profundidad en la siguiente página:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><a href="The_Debugger/Watches.htm">Relojes</a></li>
+    </ul>
+  </div>
+  <p><br> Es importante tener en cuenta que mientras el juego se está ejecutando no actualiza las ventanas de depuración con los valores de las variables y otros detalles por defecto, por lo tanto, primero debe utilizar el botón de Pausa <img alt="Pause Debug Icon" class="icon" src="../assets/Images/Icons/Debug_Pause.png"> en el depurador para pausar el juego antes de que los datos Locales, Globales y otros estén disponibles, o activar la actualización en tiempo real desde los iconos en la parte superior <img alt="Real Time Debug Icon" class="icon" src="../assets/Images/Icons/Debug_RealTime.png">. La
+    La única excepción a esta regla es la vista de <strong>Perfil </strong>, que se actualiza en tiempo real cuando se activa independientemente del interruptor de tiempo real, ya que tiene su propio botón de encendido/apagado. Puedes encontrar información completa sobre esta vista en la siguiente página:</p>
+  <ul class="colour">
+    <li><a href="The_Debugger/The_Profiler.htm">El perfilador</a></li>
+  </ul>
+  <p>Otra parte importante de la depuración de su juego es el uso de <strong>puntos</strong> de interrupción. Un punto de interrupción es un lugar en el código de tu proyecto en el que deseas que se detenga para que puedas ver lo que está sucediendo. Con el depurador en marcha, puedes añadir o eliminar puntos de interrupción
+    en cualquier momento y en cualquier bloque de código o script haciendo clic con el botón izquierdo del ratón en <img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21"> en el canalón (donde están los números de línea), o puedes utilizar el botón derecho del ratón <strong><img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"></strong> para
+    abrir el <strong>menú contextual</strong>, que también le permite añadir o eliminar puntos de interrupción:</p>
+  <p><img alt="Add/Remove Breakpoints" class="center" src="../assets/Images/IDE Tools/Add_Remove_Breakpoint.gif">Los puntos de interrupción también se pueden establecer desde el IDE de <span class="notranslate">GameMaker Studio 2</span>. Al escribir el proyecto, se pueden añadir o eliminar en cualquier momento utilizando
+    <span class="inline">f9</span> (o utilizando el botón derecho del ratón <img alt="RMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_RMB.png" width="21"> y seleccionando &quot; toggle<strong>breakpoint&quot;),</strong> ya sea en una acción en la ventana de objetos
+      (para los usuarios <span class="notranslate">de DnD™</span>), o en una línea en una ventana del editor de código. Ahora, cuando ejecutes tu juego en modo de depuración, se detendrá en el punto (o puntos) que hayas definido.</p>
+  <p>Los puntos de interrupción establecidos desde el IDE se guardan junto con su proyecto y persistirán durante varias ejecuciones hasta que se eliminen de nuevo, sin embargo, si usted añade un punto de interrupción a su código en el depurador, éste se perderá después de que el módulo se cierre, o se inicie una nueva ejecución de la prueba.
+    Tenga en cuenta que todos los puntos de interrupción aparecerán en la <a href="../Introduction/The_Output_Window.htm">ventana de salida</a>, donde pueden ser activados o desactivados o incluso eliminados.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_IDE_Tools.htm">Herramientas adicionales del IDE</a></div>
+        <div style="float:right">Siguiente: <a href="The_Micro_Web_Server.htm">El microservidor web</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+The Debugger
+The Debug Module
+Debug Mode
+Debugging
+Debug
+-->
+  <!-- TAGS
+debug_mode
+-->
+
+</body></html>

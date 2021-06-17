@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>draw_set_halign</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for draw_set_halign" />
+  <meta name="rh-index-keywords" content="draw_set_halign,fa_left,fa_center,fa_right" />
+  <meta name="search-keywords" content="draw_set_halign,fa_left,fa_center,fa_right" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>draw_set_halign</h1>
+  <p>Esta función se utiliza para alinear el texto a lo largo del eje horizontal y el cambio de la alineación horizontal cambiará la posición y la dirección en la que se dibuja todo el texto posterior, siendo el valor por defecto <tt>fa_left</tt>. Se aceptan las siguientes constantes
+    aceptadas:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Alineación</th>
+      </tr>
+      <tr>
+        <td>fa_left</td>
+        <td style="text-align: center"><img alt="fa_left example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_left.png" /></td>
+      </tr>
+      <tr>
+        <td>fa_center</td>
+        <td style="text-align: center"><img alt="fa_center example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_center.png" /></td>
+      </tr>
+      <tr>
+        <td>fa_right</td>
+        <td style="text-align: center"><img alt="fa_right example" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Drawing/fa_right.png" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">draw_set_halign(halign);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>halign</td>
+        <td>Alineación horizontal.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">draw_set_halign(fa_left);<br> draw_text(100, 32, &quot;Puntuación: &quot; + string(puntuación));<br> draw_set_halign(fa_right);
+    <br> draw_text(room_width - 100, 32, &quot;Health: &quot; + string(health));</p>
+  <p>El código anterior dibujará dos cadenas en la misma línea, con la puntuación alineada a la izquierda y la salud alineada a la derecha.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text.htm">Texto</a></div>
+        <div style="float:right">Siguiente: <a href="draw_set_valign.htm">draw_set_valign</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+draw_set_halign
+fa_left
+fa_center
+fa_right
+-->
+  <!-- TAGS
+draw_set_halign
+-->
+</body>
+</html>

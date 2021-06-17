@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variables de instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining instance variables" />
+  <meta name="rh-index-keywords" content="Instance Variables" />
+  <meta name="search-keywords" content="instance variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Variables de instancia</h1>
+  <p>Una variable de <strong>instancia </strong>se crea dentro de una instancia de un objeto y se considera única para esa instancia - es decir, muchas instancias del mismo objeto pueden tener la misma variable, pero cada variable puede tener un valor diferente ya que son <em>únicas </em>para
+    cada instancia. ¿Pero <i>cómo</i> se crea una variable de instancia? Bueno, se crean nuevas variables simplemente asignándoles un valor como se muestra en este pequeño ejemplo (esto se llama <em>declarar</em> la variable):</p>
+  <p class="code">pociones = 12;<br> vida = 100;<br> nombre = &quot;Jock MacSweeney&quot;;<br> fuerza = 5,5;<br> armadura = -2;</p>
+  <p>Como puede ver, sólo tiene que dar el nombre y luego un valor (el valor puede ser cualquier <a href="../Data_Types.htm">tipo de datos</a>) para establecer esa variable y tenerla lista para su uso dentro de una instancia del objeto para el que está codificando (tenga en cuenta que el valor puede
+    venir del valor de retorno de una función o del resultado de una operación entre otras variables, etc...). Estas variables pueden ser usadas y modificadas de varias maneras dentro de la instancia, por ejemplo este código podría estar en un evento de colisión
+    y utilizarse para quitar una cantidad de la variable &quot;<span class="inline">life</span>&quot;:</p>
+  <p class="code">vida -= 5 + armadura;</p>
+  <p>Si &quot;<span class="inline">life</span>&quot; está en 100, ahora tendrá un valor de 97 (100 - (5 + -2) = 97). Ahora, ese es un ejemplo simple, y usted <i>podría</i> reemplazar &quot;<span class="inline">armour</span>&quot; por el valor real de -2,
+    pero ¿qué pasa si ese valor está <a class="glossterm" data-glossterm="codificado" href="#">codificado</a> en varios lugares y luego decide cambiarlo? Usted tendría que ir a través de TODO su código y cambiar cada -2 a lo que el nuevo valor
+    lo que lleva mucho tiempo y es muy propenso a errores. Pero si usas una variable, todo lo que tienes que hacer es reasignarle un nuevo valor y el código usará automáticamente ese nuevo valor a partir de entonces, haciendo las cosas mucho más flexibles y mucho más fáciles de arreglar
+    en caso de que haya un problema. También hay que tener en cuenta que, incluso si un valor no va a cambiar, es mucho más fácil recordar lo que significa una variable llamada &quot;<span class="inline">life</span>&quot; en lugar de limitarse a mirar un número.</p>
+  <p><span class="notranslate">GameMaker Studio 2</span> tiene una colección de variables de instancia &quot;construidas&quot; también, por lo que debe ser consciente de ellos, ya que puede nombrar una de sus propias variables de instancia de la misma manera o desea tener su propia variable global con el mismo nombre y se pregunta por qué
+    por qué se producen errores. Sin embargo, son fáciles de detectar, ya que se muestran en un color diferente en el editor de código y también aparecen en la función de autocompletar y se muestran en una barra en la parte inferior del <a href="../../../The_Asset_Editors/Scripts.htm">editor de</a> código.</p>
+  <p>Hay bastantes <a href="../Runtime_Functions.htm">funciones<span class="notranslate">en tiempo de ejecución</span></a> diseñadas para ayudarle a manejar las variables de instancia, que se enumeran en la siguiente sección:</p>
+  <ul class="colour">
+    <li><a href="../../GML_Reference/Variable_Functions/Variable_Functions.htm">Funciones variables</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Variables_And_Variable_Scope.htm">Variables y Ámbito de las Variables</a></div>
+        <div style="float:right">Siguiente: <a href="Global_Variables.htm">Variables globales</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance variables
+-->
+  <!-- TAGS
+instance_variables
+-->
+
+</body></html>

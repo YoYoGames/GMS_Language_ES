@@ -87,7 +87,7 @@
     part_particles_create(global.P_System, x, y, global.Particle1, 10);
     y en DnD™sería:
     Ese único código/acción de arriba creará 10 partículas en las coordenadas x/y dadas de tipo "Particle1"
-      de nuestro sistema global. Muy sencillo. Lo bueno de esa línea de código/acción es que se puede utilizar en cualquier lugar sin ningún problema. Por ejemplo, si la colocas en el evento Global Left Pressed para el ratón en un objeto y cambias
+      de nuestro sistema global. Muy sencillo. Lo mejor de esa línea de código/acción es que puede ser utilizada en cualquier lugar sin ningún problema. Por ejemplo, si la colocas en el evento Global Left Pressed para el ratón en un objeto y cambias
       x/y para la posición mouse_x/y, creará partículas en la posición del ratón cada vez que presiones el botón. O si usted tiene un cohete, entonces usted podría colocar esto en el evento de paso y tener partículas de humo que vienen cada paso (aunque 1 o
       2 sería mejor que 10). Incluso puedes hacer que cree partículas sobre un área cambiando las coordenadas x/y aleatoriamente, por ejemplo:
     
@@ -141,9 +141,9 @@
       lentamente la memoria y causar lag en su juego o incluso bloquear el ordenador causando su juego a la caída, y es un problema bastante común con los usuarios de primera vez de los sistemas de partículas.
     Cómo se puede evitar esto? Bueno, GameMaker Studio 2 tiene GML y DnD™para borrar los sistemas de partículas y sus emisores y partículas de la memoria cuando no están en uso y con un poco de planificación al usar el siguiente código/acciones, puedes evitar fácilmente
       este potencial problema.
-    Lo primero que tienes que hacer es decidir dónde vas a crear el sistema y cómo lo vas a utilizar. Podrías crear un sistema global en el Evento de Inicio de Juego de un objeto que esté en tu primera habitación (como un menú o una pantalla de título),
+    Lo primero que tienes que hacer es decidir dónde vas a crear el sistema y cómo lo vas a utilizar. Podrías crear un sistema global en el evento de inicio del juego de un objeto que esté en tu primera habitación (como un menú o una pantalla de título),
       pero esto significa que si reinicias el juego usando la función game_restart() se recreará y causará una fuga de memoria. O bien
-      podría crear un sistema local en una instancia en cualquier sala, pero de nuevo, si deja la sala, el sistema será inaccesible y causará una fuga de memoria. Para evitar esto necesitarías tener algo como esto en el Evento de fin de juego      o en el Evento de limpieza de tu objeto:
+      podría crear un sistema local en una instancia en cualquier sala, pero de nuevo, si deja la sala, el sistema será inaccesible y causará una fuga de memoria. Para evitar esto necesitarías tener algo como esto en el Evento de Fin de Juego      o en el Evento de limpieza de tu objeto:
     part_type_destroy(global.Particle1); part_emitter_destroy(global.P_System, global.Particle1_Emitter); part_emitter_destroy(global.P_System, global.Particle2_Emitter); part_system_destroy(global.P_System);
     
     Esto eliminará las partículas definidas, los emisores, y luego el sistema de la memoria listo para que usted pueda reiniciar

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>renombrar archivo</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_rename" />
+  <meta name="rh-index-keywords" content="file_rename" />
+  <meta name="search-keywords" content="file_rename" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>renombrar archivo</h1>
+  <p>Esta función renombrará el archivo especificado con el nombre especificado. La función devolverá <tt>true</tt> si el archivo ha sido renombrado con éxito, o <tt>false</tt> en cualquier otra circunstancia.</p>
+  <p class="note"><b></b><b>¡AVISO!</b> Esta función puede no funcionar como esperas debido a que <span class="notranslate">GameMaker Studio 2</span> está en un entorno aislado. Por favor, vea la sección sobre el <a href="../../../../Additional_Information/The_File_System.htm">Sistema de Archivos</a> para más información.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_rename(oldname, newname);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>oldname</td>
+        <td>El nombre del archivo a modificar.</td>
+      </tr>
+      <tr>
+        <td>nuevo nombre</td>
+        <td>El nuevo nombre que se le dará al archivo.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if file_exists(&quot;nivel1.txt&quot;)<br> {
+    <br> file_rename(&quot;nivel1.txt&quot;, &quot;nivel.txt&quot;);<br> }
+  </p>
+  <p>Esto comprobaría la existencia de un archivo y si existe se le cambia el nombre.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="File_System.htm">Sistema de archivos</a></div>
+        <div style="float:right">Siguiente: <a href="file_copy.htm">file_copy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_rename
+-->
+  <!-- TAGS
+file_rename
+-->
+</body>
+</html>

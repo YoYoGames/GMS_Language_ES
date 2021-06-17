@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>file_text_readln</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for file_text_readln" />
+  <meta name="rh-index-keywords" content="file_text_readln" />
+  <meta name="search-keywords" content="file_text_readln" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>file_text_readln</h1>
+  <p>Con esta función puede saltarse el resto de la línea actual de un archivo de texto abierto y pasar al inicio de la siguiente. La función también devolverá la línea completa como una cadena, lo que hace que sea una forma fácil de leer &quot;trozos&quot; completos
+    de datos para su posterior análisis.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">file_text_readln(fileid);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>fileid</td>
+        <td>El id del archivo del que se va a leer.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var file = file_text_open_read(working_directory + &quot;hiscore.txt&quot;);<br> for (var i = 0; i &lt; 10; ++i;)<br> {
+    <br> scr[i] = file_text_read_real(file);<br> file_text_readln(file);
+    <br> scr_name[i] = file_text_read_string(file);<br> file_text_readln(file);
+    <br> }
+    <br> file_text_close(file);
+  </p>
+  <p>El código anterior abre un archivo para su lectura y luego hace un bucle a través de las líneas del archivo leyendo alternativamente un valor numérico real y una cadena en dos matrices diferentes para su uso futuro. El archivo se cierra cuando el bucle ha terminado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Text_Files.htm">Archivos de texto</a></div>
+        <div style="float:right">Siguiente: <a href="file_text_write_real.htm">file_text_write_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+file_text_readln
+-->
+  <!-- TAGS
+file_text_readln
+-->
+</body>
+</html>

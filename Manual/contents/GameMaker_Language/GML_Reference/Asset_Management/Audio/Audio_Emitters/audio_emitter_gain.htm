@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ganancia_emisora_de_audio</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_emitter_gain" />
+  <meta name="rh-index-keywords" content="audio_emitter_gain" />
+  <meta name="search-keywords" content="audio_emitter_gain" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ganancia_emisora_de_audio</h1>
+  <p>Esta función establece la ganancia máxima (volumen) del sonido. El volumen percibido para un sonido puede cambiar dependiendo del <a href="audio_emitter_falloff.htm">valor de caída</a> y de la posición que tenga con respecto al <i>oyente</i>,
+    pero al ajustar la ganancia con esta función, el volumen total nunca superará el valor de ganancia especificado. La imagen siguiente ilustra cómo la ganancia afecta al volumen del emisor cuando el fall-off es mayor que 0:</p>
+  <p><img alt="Audio Gain Diagram" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Audio_Gain.png">Esta función cambiará el volumen del sonido mientras se está reproduciendo, así como todos los sonidos posteriores reproducidos
+    a través del emisor dado. Tenga en cuenta que en algunas plataformas puede tener una ganancia mayor que 1, aunque un valor de 1 se considera &quot;volumen completo&quot; y cualquier cosa mayor puede introducir recortes de audio o distorsión.</p>
+  <p class="note"><b>NOTA: </b>el volumen final también se verá influenciado por la ganancia de audio global que se haya establecido mediante la función <span style="font-size:1px;"><a href="../audio_master_gain.htm"><tt style="font-size: 14px">audio_master_gain()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">audio_emitter_gain(emisor, ganancia);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>emisor</td>
+        <td>El índice del emisor a cambiar.</td>
+      </tr>
+      <tr>
+        <td>ganar</td>
+        <td>La ganancia máxima (por defecto 1).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si up<br> {
+    <br> ganancia += 0.05;<br> si ganancia &gt;= 1 up = false;<br> }
+    <br> si no
+    <br> {
+    <br> gain += 0.05;<br> if gain &lt;= 0 up = true;<br> }
+    <br> audio_emitter_gain(s_emit, gain);</p>
+  <p>El código anterior establece la variable &quot;gain&quot; a diferentes valores y luego utiliza esa misma variable para establecer la ganancia del emisor indexado en la variable &quot;s_emit&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Audio_Emitters.htm">Emisores de audio</a></div>
+        <div style="float:right">Siguiente: <a href="audio_emitter_pitch.htm">audio_emisor_tono</a></div>
+        <div style="float:right"> </div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_emitter_gain
+-->
+  <!-- TAGS
+audio_emitter_gain
+-->
+</body>
+</html>

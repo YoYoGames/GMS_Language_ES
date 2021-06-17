@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_replace</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_replace" />
+  <meta name="rh-index-keywords" content="font_replace" />
+  <meta name="search-keywords" content="" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_replace</h1>
+  <p>Esta función se puede utilizar para reemplazar una fuente a su juego de las fuentes que están instaladas en el sistema en el que se está ejecutando. Tenga en cuenta que la fuente que se reemplaza <em>no puede</em> ser una fuente del Navegador de Activos, y debe ser una fuente que fue añadida previamente
+    utilizando la función <a href="font_add.htm"><span class="inline">font_add()</span></a>.</p>
+  <p>Al reemplazar una fuente de esta manera, puede definir el tamaño de la fuente (en puntos), así como si la fuente debe estar en <b>negrita</b> o <i>en cursiva</i>, y también puede definir el rango de caracteres a incluir. Si la función falla, entonces fallará
+    silenciosamente y la fuente dada no será reemplazada.</p>
+  <p>Para el módulo de destino de HTML5, esta función <b>sólo puede usarse para reemplazar <i>las fuentes web</i></b>, y sólo funcionará si WebGL <b>no</b> está habilitado - si WebGL está habilitado, debe usar un recurso de fuente general (es decir, usando <a href="../../Drawing/Text/draw_set_font.htm"><tt>draw_set_font()</tt></a>    junto con una fuente del navegador de activos) o fuentes de mapa de bits (véase <a href="font_add_sprite.htm"><tt>font_add_sprite()</tt></a>).</p>
+  <p class="note"><b>IMPORTANTE!</b> Cuando se dirige a HTML5, el texto en cursiva y en negrita sólo se admite si el activo de la fuente o la propia fuente web tiene estos caracteres incluidos. No se sintetizarán a partir de la fuente base.</p>
+  <p>La siguiente tabla muestra las fuentes que son estándar en todos los navegadores y que deberían estar disponibles para su uso sin problemas. Cualquier otro tipo de letra puede existir o no en el ordenador o dispositivo que ejecuta el juego, por lo que el uso de esta función
+    debe limitarse a estas fuentes estándar:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la fuente de<span class="notranslate">Windows</span> </th>
+        <th>Nombre de la fuente Mac</th>
+        <th>Familia de fuentes</th>
+      </tr>
+      <tr>
+        <td>Arial</td>
+        <td>Arial / Helvetica</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Arial Negro</td>
+        <td>Arial Black / Gadget</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Comic Sans MS</td>
+        <td>Comic Sans MS</td>
+        <td>cursiva</td>
+      </tr>
+      <tr>
+        <td>Correo Nuevo</td>
+        <td>Correo Nuevo</td>
+        <td>monoespacio</td>
+      </tr>
+      <tr>
+        <td>Georgia</td>
+        <td>Georgia</td>
+        <td>serif</td>
+      </tr>
+      <tr>
+        <td>Impacto</td>
+        <td>Impacto / Carbón</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Consola Lucida</td>
+        <td>Mónaco</td>
+        <td>monoespacio</td>
+      </tr>
+      <tr>
+        <td>Lucida Sans Unicode</td>
+        <td>Lucida Grande</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Palatino Linotype / Book Antiqua</td>
+        <td>Palatino</td>
+        <td>serif</td>
+      </tr>
+      <tr>
+        <td>Tahoma</td>
+        <td>Ginebra</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Times New Roman</td>
+        <td>Times New Roman / Times</td>
+        <td>serif</td>
+      </tr>
+      <tr>
+        <td>Trebuchet MS</td>
+        <td>Trebuchet MS</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Verdana</td>
+        <td>Verdana / Ginebra</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>Georgia</td>
+        <td>Georgia</td>
+        <td>serif</td>
+      </tr>
+      <tr>
+        <td>Símbolo</td>
+        <td>Símbolo</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Webdings</td>
+        <td>Webdings</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Wingdings</td>
+        <td>Zapf Dingbats</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>MS Sans Serif</td>
+        <td>Ginebra</td>
+        <td>sans-serif</td>
+      </tr>
+      <tr>
+        <td>MS Serif</td>
+        <td>Nueva York</td>
+        <td>sans-serif</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br>
+    <br> En todos los demás objetivos (no web), puede utilizar esta función para sustituir una fuente de un archivo. El archivo <b>debe incluirse en el paquete del juego</b> mediante la función <a href="../../../../Settings/Included_Files.htm">Archivos incluidos</a> de <span class="notranslate">GameMaker</span>
+    Studio 2, y debe ser un archivo de fuente en formato <tt>*.ttf</tt> o <tt>*.otf</tt>, útil para añadir fuentes no estándar como las asiáticas o las árabes.</p>
+  <p class="note"><b>ADVERTENCIA </b>Si incluye un archivo de fuentes de este tipo con un juego, <b>debe tener una licencia</b> para su distribución con el juego.</p>
+  <p>Cuando se carga una fuente desde un archivo de esta manera, el <i>tamaño</i> de la fuente está en <b>píxeles</b> y los valores <i>primero</i> y <i>último</i> se ignoran, lo que significa que se añadirán todos los glifos de la fuente. Las fuentes añadidas de esta manera se asignan a su propia textura
+    por lo que hay que tener cuidado al utilizar esta función, ya que incrementará el número de intercambios de texturas al dibujar. También hay que tener en cuenta que las fuentes pueden aparecer ligeramente más grandes cuando se dibujan, ya que los glifos pueden tener partes que se dibujan fuera del
+    de la caja definida para la fuente. También debes tener en cuenta que hay una limitación de alrededor de 200 glifos que pueden ser renderizados en un solo cuadro para una fuente en particular.</p>
+  <p class="note"><b>NOTA: </b>Cuando cargues una fuente en <span class="notranslate">GameMaker Studio 2</span>: Studio debes recordar eliminarla de nuevo (con <span style="font-size:1px;"><a href="font_delete.htm"><tt style="font-size: 14px">font_delete()</tt></a></span>) cuando ya no la necesites, de lo contrario
+    existe el riesgo de una fuga de memoria que ralentizará y eventualmente bloqueará su juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">font_replace(ind, name, size, bold, italic, first, last);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice de la fuente (previamente añadida) que se va a sustituir.</td>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre de la fuente que se va a utilizar (por ejemplo, "Arial"), o la ruta del archivo si la fuente es un <tt> archivo</tt> incluido en <tt></tt>*. ttf o *<tt>.otf</tt> <tt>.</tt> </td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño de la fuente: puntos para las fuentes web, píxeles para las fuentes de archivo.</td>
+      </tr>
+      <tr>
+        <td>negrita</td>
+        <td>Si la fuente está en negrita (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>cursiva</td>
+        <td>Si la fuente es cursiva (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>primero</td>
+        <td>El primer carácter que debe incluirse (si no está seguro, opte por el 32).</td>
+      </tr>
+      <tr>
+        <td>último</td>
+        <td>El último carácter que debe incluirse (si no está seguro, opte por el 128).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">font_replace(myfont, &quot;Arial&quot;, 24, true, true, 32, 128);</p>
+  <p>Esto reemplazará la fuente indexada en la variable &quot;myfont&quot; con una nueva fuente que tiene un tamaño de 24pt, utiliza &quot;Arial&quot; y que está en negrita y cursiva. El rango de fuentes incluye letras mayúsculas y minúsculas, números y toda la puntuación común.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fonts.htm">Fuentes</a></div>
+        <div style="float:right">Siguiente: <a href="font_replace_sprite.htm">font_replace_sprite</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_replace_sprite
+-->
+  <!-- TAGS
+font_replace_sprite
+-->
+</body>
+</html>

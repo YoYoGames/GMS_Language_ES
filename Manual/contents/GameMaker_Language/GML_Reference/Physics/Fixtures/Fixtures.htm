@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Accesorios</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for Physics Fixture functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Fixtures,Density,Friction,Linear Damping,Angular Damping,Restitution" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Accesorios</h1>
+  <p>Antes de que una instancia en <span class="notranslate">GameMaker Studio 2</span> pueda tener propiedades físicas, debe tener un accesorio asignado. Un fixture vincula una forma o figura a la instancia y esto añade propiedades de material como la densidad, la fricción
+    y la restitución. Las fijaciones pueden ser cajas, círculos, polígonos o cualquier otra forma simple que desee como <span class="notranslate">GameMaker Studio 2</span> proporciona funciones que le permiten definir su propia forma punto por punto, y luego una vez que tenga
+    una vez que tengas tu forma, puedes seguir adelante y definir sus propiedades físicas también. Estas propiedades son las que rigen la forma en que la instancia con el accesorio asignado reaccionará con otras instancias en el mundo de la física y se enumeran a continuación:</p>
+  <ul class="colour">
+    <li><b>Densidad:</b> La densidad de un material se define como su masa por unidad de volumen. Es, esencialmente, una medida de la densidad de la materia. Si desea que su accesorio sea <i>estático</i> (es decir
+      inamovible), entonces la densidad debe establecerse en 0, esencialmente haciéndola infinitamente densa. Los objetos <i>cinemáticos</i> que se mueven con velocidad constante y no se ven afectados físicamente por las colisiones también se definen utilizando una densidad
+      de 0.</li>
+    <li><b>Fricción:</b> La fricción es la fuerza que se opone al movimiento relativo de las superficies sólidas, las capas de fluidos y los elementos materiales que se deslizan entre sí.</li>
+    <li><b>Amortiguación lineal:</b> Es la fuerza generalizada que hace que un objeto en movimiento pierda impulso. En el &quot;mundo real&quot; las cosas no suelen ser eternas. Por ejemplo, un avión de papel volará durante un tiempo, pero finalmente
+      caerá debido a la fricción del aire que actúa sobre él haciendo que disminuya su velocidad. En el mundo de la física que creamos, este tipo de cosas son difíciles de modelar, por lo que a cada aparato se le da su propia amortiguación lineal para simular este tipo de &quot;fricción generalizada&quot;.
+      rozamiento generalizado&quot;.</li>
+    <li><b>Amortiguación angular:</b> Como en el caso anterior, se trata de una fuerza generalizada que se aplica a un objeto para que deje de girar eternamente.</li>
+    <li><b>Restitución:</b> En física, la restitución se define como &quot;el retorno de un objeto o sistema a su estado original después de la deformación elástica&quot;, pero como los accesorios en el GameMaker <span class="notranslate">Studio 2 son</span> 
+      cuerpos rígidos y no pueden ser deformados, piense en esto como básicamente cómo &quot;rebote&quot; el accesorio es.</li>
+  </ul>
+  <p>Así que, como puedes ver, con unas pocas funciones sencillas, <span class="notranslate">GameMaker Studio 2</span> puede ayudarte a crear complejos sistemas e interacciones que darán a tus juegos una sensación de realismo sin precedentes.</p>
+  <p class="note"><b>NOTA: </b>Puedes definir un fixture y tenerlo vinculado a múltiples instancias (piensa en una mesa de billar, donde todas las bolas tienen las mismas propiedades físicas, pero cada una es una entidad discreta). También puede vincular varios dispositivos a una
+    También puede vincular varios dispositivos a una sola instancia y combinar las propiedades físicas (por ejemplo, utilizando dos dispositivos poligonales triangulares para crear una estrella).</p>
+  <p>Las siguientes funciones sirven para crear, vincular, establecer colisiones y luego borrar accesorios:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_create.htm">physics_fixture_create</a></li>
+    <li><a href="physics_fixture_bind.htm">physics_fixture_bind</a></li>
+    <li><a href="physics_fixture_bind_ext.htm">physics_fixture_bind_ext</a></li>
+    <li><a href="physics_fixture_set_collision_group.htm">physics_fixture_set_collision_group</a></li>
+    <li><a href="physics_fixture_delete.htm">physics_fixture_delete</a></li>
+    <li><a href="physics_remove_fixture.htm">physics_remove_fixture</a></li>
+  </ul>
+  <p> </p>
+  <p>Un accesorio debe tener una forma o de lo contrario no será detectado por el mundo de la física, y esta forma puede ser definida por las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_box_shape.htm">physics_fixture_set_box_shape</a></li>
+    <li><a href="physics_fixture_set_circle_shape.htm">physics_fixture_set_circle_shape</a></li>
+    <li><a href="physics_fixture_set_edge_shape.htm">physics_fixture_set_edge_shape</a></li>
+    <li><a href="physics_fixture_set_chain_shape.htm">physics_fixture_set_chain_shape</a></li>
+    <li><a href="physics_fixture_set_polygon_shape.htm">physics_fixture_set_polygon_shape</a></li>
+    <li><a href="physics_fixture_add_point.htm">physics_fixture_add_point</a></li>
+  </ul>
+  <p> </p>
+  <p>Para que tu instancia habilitada por la física reaccione adecuadamente al mundo que la rodea, los accesorios que utilices deben tener definidas propiedades específicas que le den al accesorio rebote, fricción, masa, etc. Las siguientes funciones se utilizan para establecer estas propiedades
+    del fixture:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_fixture_set_density.htm">physics_fixture_set_density</a></li>
+    <li><a href="physics_fixture_set_friction.htm">physics_fixture_set_friction</a></li>
+    <li><a href="physics_fixture_set_linear_damping.htm">physics_fixture_set_linear_damping</a></li>
+    <li><a href="physics_fixture_set_angular_damping.htm">physics_fixture_set_angular_damping</a></li>
+    <li><a href="physics_fixture_set_restitution.htm">physics_fixture_set_restitution</a></li>
+    <li><a href="physics_fixture_set_sensor.htm">physics_fixture_set_sensor</a></li>
+    <li><a href="physics_fixture_set_kinematic.htm">physics_fixture_set_kinematic</a></li>
+    <li><a href="physics_fixture_set_awake.htm">physics_fixture_set_awake</a></li>
+  </ul>
+  <p> </p>
+  <p>También se pueden establecer ciertas propiedades del fixture <i>después de</i> que se haya vinculado a una instancia. Cuando se vincula el dispositivo &quot;base&quot;, se puede optar por almacenar el índice único de las propiedades físicas vinculadas en una variable.
+    Esto puede ser utilizado en las siguientes funciones para cambiar ciertas propiedades, o para obtener los valores actuales para ellos:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="physics_get_friction.htm">physics_get_friction</a></li>
+    <li><a href="physics_get_density.htm">physics_get_density</a></li>
+    <li><a href="physics_get_restitution.htm">physics_get_restitution</a></li>
+    <li><a href="physics_set_friction.htm">physics_set_friction</a></li>
+    <li><a href="physics_set_density.htm">physics_set_density</a></li>
+    <li><a href="physics_set_restitution.htm">physics_set_restitution</a></li>
+    <li><a href="../physics_mass_properties.htm">physics_mass_properties</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Physics.htm">Física</a></div>
+        <div style="float:right">Siguiente: <a href="../Joints/Joints.htm">Articulaciones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Fixtures
+-->
+  <!-- TAGS
+physics_fixture_functions
+-->
+
+</body></html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_get_uvs</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_get_uvs" />
+  <meta name="rh-index-keywords" content="sprite_get_uvs" />
+  <meta name="search-keywords" content="sprite_get_uvs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_get_uvs</h1>
+  <p>Esta función devuelve un <a href="../../../../GML_Overview/Arrays.htm">array</a> con las coordenadas UV y otros datos de la textura de la subimagen del sprite en la página de textura. La función devuelve un array con los siguientes 8 elementos:</p>
+  <ul class="colour">
+    <li>[0] = izquierda</li>
+    <li>[1] = arriba</li>
+    <li>[2] = derecho</li>
+    <li>[3] = fondo</li>
+    <li>4] = cantidad de píxeles que el compilador de activos ha recortado del lado izquierdo de los sprites</li>
+    <li>5] = cantidad de píxeles que el compilador de activos ha recortado de la parte superior de los sprites</li>
+    <li>6] = porcentaje normalizado de datos de píxeles del ancho original de los sprites que se ha guardado en la página de la textura</li>
+    <li>7] = porcentaje normalizado de datos de píxeles de la altura de los sprites originales que se ha guardado en la página de la textura</li>
+  </ul>
+  <p>Esta matriz puede ser utilizada en otras funciones de dibujo, particularmente cuando se trabaja en 3D o se utilizan las funciones <a href="../../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">primitivas 2D</a>, así como cuando se trabaja con las funciones <a href="../../Shaders/Shaders.htm"><span class="notranslate">Shader</span></a> funciones.</p>
+  <p class="note"><b>NOTA</b>: Esta función <b>no</b> funcionará con sprites vectoriales o sprites de animación de esqueleto.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_get_uvs(sprite, subimagen);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite a utilizar.</td>
+      </tr>
+      <tr>
+        <td>subimagen</td>
+        <td>La sub-imagen del sprite a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">Matriz (1D, 8 elementos)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var tex = sprite_get_uvs(sprite, 0);<br> tex_left = tex[0];<br> tex_top = tex[1];<br> tex_right = tex[2];<br> tex_bottom = tex[3];</p>
+  <p>El código anterior almacenará las coordenadas UV para el sprite dado en un array local y luego asignará los valores a las variables de instancia.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Information.htm">Información sobre el Sprite</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_get_info.htm">sprite_get_info</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_get_uvs
+-->
+  <!-- TAGS
+sprite_get_uvs
+-->
+</body>
+</html>

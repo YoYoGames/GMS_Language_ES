@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ds_grid_copy</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ds_grid_copy" />
+  <meta name="rh-index-keywords" content="ds_grid_copy" />
+  <meta name="search-keywords" content="ds_grid_copy" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ds_grid_copy</h1>
+  <p>Con esta función se puede copiar el contenido de una rejilla en otra. Ambas rejillas deben haber sido creadas previamente con la función <a href="ds_grid_create.htm"><tt>ds_grid_create()</tt></a> función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ds_grid_copy(destino, origen);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>destino</td>
+        <td>Este índice de la cuadrícula a copiar.</td>
+      </tr>
+      <tr>
+        <td>fuente</td>
+        <td>Este índice de la rejilla para copiar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">n_grid = ds_grid_create(ds_grid_width(a_grid), ds_grid_height(a_grid));<br> ds_grid_copy(n_grid, a_grid);<br> ds_grid_clear(a_grid, -1)</p>
+  <p>El código anterior crea una nueva rejilla DS, basada en la anchura y la altura de una rejilla creada anteriormente, y luego copia la información de la rejilla anterior a la nueva. Finalmente, borra la rejilla antigua para que todas las celdas tengan el valor -1.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="DS_Grids.htm">Rejillas DS</a></div>
+        <div style="float:right">Siguiente: <a href="ds_grid_read.htm">ds_grid_read</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ds_grid_copy
+-->
+  <!-- TAGS
+ds_grid_copy
+-->
+
+</body></html>

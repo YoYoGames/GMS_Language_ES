@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_compress</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_compress" />
+  <meta name="rh-index-keywords" content="buffer_compress" />
+  <meta name="search-keywords" content="buffer_compress" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_compress</h1>
+  <p>Con esta función puede comprimir parte (o todo) un buffer utilizando <a href="https://en.wikipedia.org/wiki/Zlib">la compresión zlib</a>. Se suministra el ID del búfer a comprimir (devuelto por <a href="buffer_create.htm"><tt>buffer_create()</tt></a>),
+    el desplazamiento dentro del buffer a utilizar en bytes, y el tamaño de los datos del buffer a comprimir (también en bytes). La función devolverá un nuevo valor de ID de búfer para el búfer comprimido, o un valor menor que 0 si ha fallado por alguna razón. Esta función
+    no alterará el búfer original.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_compress(buffer, offset, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a comprimir.</td>
+      </tr>
+      <tr>
+        <td>offset</td>
+        <td>El desplazamiento dentro del buffer a comprimir (en bytes).</td>
+      </tr>
+      <tr>
+        <td>tamaño</td>
+        <td>El tamaño del área del buffer a comprimir (en bytes).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Int (valor del ID del búfer)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var srcBuff = buffer_create(1024, buffer_grow, 1);<br> buffer_write(srcBuff, global.DataString);<br> var cmpBuff = buffer_compress(srcBuff, 0, buffer_tell(srcBuff));<br> buffer_save(cmpBuff, &quot;Player_Save.sav&quot;);<br> buffer_delete(srcBuff);
+    <br> buffer_delete(cmpBuff);
+  </p>
+  <p>El código anterior creará un búfer y lo llenará con los datos de una cadena. Este búfer se comprime y se guarda, y tanto el búfer de origen como el comprimido se eliminan</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_decompress.htm">buffer_decompress</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_compress
+-->
+  <!-- TAGS
+buffer_compress
+-->
+</body>
+</html>

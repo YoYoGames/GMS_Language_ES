@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>part_type_sprite</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for part_type_sprite" />
+  <meta name="rh-index-keywords" content="part_type_sprite" />
+  <meta name="search-keywords" content="part_type_sprite" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>part_type_sprite</h1>
+  <p>Esta función se puede utilizar para establecer un tipo de partícula para utilizar un sprite personalizado de los activos del juego. Puede seleccionar el sprite y luego decirle a <span class="notranslate">GameMaker Studio</span> 2 que use el sprite y lo anime o no, y si elige animado, entonces también puede elegir
+    que las subimágenes cambien a un intervalo tal que la animación comience y termine al principio y al final del tiempo de vida de cada partícula creada (de modo que si tiene un tiempo de vida establecido en un mínimo de 15 pasos y un máximo de 30 pasos, no importa qué valor tenga el tiempo de vida, la animación será
+    valor que tenga el tiempo de vida, la animación se ajustará, corriendo más rápido para los tiempos de vida más cortos y más lento para los más largos). También se puede elegir una sub-imagen aleatoria para que si el sprite no se anima, se elija una imagen diferente al azar para crear el sprite.
+    al azar para crear el sprite, o si la partícula está animada comenzará la animación en un punto aleatorio.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">part_type_sprite(ind, sprite, animate, stretch, random);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del tipo de partícula a cambiar.</td>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite para establecer el tipo de partícula.</td>
+      </tr>
+      <tr>
+        <td>animar</td>
+        <td>Si se sigue la animación del sprite normalmente (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>estiramiento</td>
+        <td>Si se estira la animación del sprite para que coincida con la duración de las partículas (true) o no (false).</td>
+      </tr>
+      <tr>
+        <td>al azar</td>
+        <td>Si se elige una subimagen aleatoria (true) o no (false).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.p1 = part_type_create();<br> part_type_sprite(global.p1 , spr_Coins, 1, 0, 0);<br> part_type_size(global.p1, 1, 3, 0, 0);<br> part_type_scale(global.p1, 1, 1);<br> part_type_colour1(global.p1, c_white);<br> part_type_alpha2(global.p1, 1,
+    0);<br> part_type_speed(global.p1, 2, 4, 0, 0);<br> part_type_direction(global.p1, 0, 180, 0, 0);<br> part_type_gravity(global.p1, 0.20, 270);<br> part_type_orientation(global.p1, 0, 0, 0, 1);<br> part_type_blend(global.p1, 1);<br> part_type_life(global.p1,
+    15, 60);</p>
+  <p>El código anterior establece el tipo de partícula indexado en la variable global &quot;p1&quot; a la forma del sprite indexado en &quot;spr_Coins&quot;, y luego establece varias otras propiedades de las partículas.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Particle_Types.htm">Tipos de partículas</a></div>
+        <div style="float:right">Siguiente: <a href="part_type_size.htm">part_type_size</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+part_type_sprite
+-->
+  <!-- TAGS
+part_type_sprite
+-->
+</body>
+</html>

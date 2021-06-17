@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>inicio_de_vértices</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference for vertex_begin" />
+  <meta name="rh-index-keywords" content="vertex_begin" />
+  <meta name="search-keywords" content="vertex_begin" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>inicio_de_vértices</h1>
+  <p>Con esta función se inicia la definición de una primitiva personalizada. Se asigna un buffer para escribir la primitiva, y el formato de vértices a utilizar (previamente definido mediante las funciones de formato de vértices). A continuación se definen los puntos necesarios para cada
+    vértice de la primitiva antes de llamar a <a href="vertex_end.htm"><tt>vertex_end()</tt></a> para finalizar la creación de la primitiva.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">vertex_begin(buffer, format);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El búfer en el que se va a escribir.</td>
+      </tr>
+      <tr>
+        <td>formato</td>
+        <td>El formato de vértice a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">vertex_format_begin();<br> vertex_format_add_position();
+    <br> vertex_format_add_colour();
+    <br> vertex_format_add_textcoord();
+    <br> v_format = vertex_format_end();<br> v_buff = vertex_create_buffer();<br> vertex_begin(v_buff, v_format);</p>
+  <p>El código anterior definirá un nuevo formato de vértice, creará un nuevo buffer e iniciará el proceso de definición de una nueva primitiva.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Primitives_And_Vertex_Formats.htm">Primitivas y formatos de vértices</a></div>
+        <div style="float:right">Siguiente: <a href="vertex_colour.htm">vertex_colour</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+vertex_begin
+-->
+  <!-- TAGS
+vertex_begin
+-->
+</body>
+</html>

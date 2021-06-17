@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>game_load_buffer</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function game_load_buffer" />
+  <meta name="rh-index-keywords" content="game_load_buffer" />
+  <meta name="search-keywords" content="game_load_buffer" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>game_load_buffer</h1>
+  <p>Con esta función puedes cargar un estado de juego que haya sido guardado previamente. El juego se carga desde un buffer &quot;grow&quot; creado previamente (ver Buffers) <a href="../Buffers/Buffers.htm">y el</a> buffer debe haber tenido un estado de juego guardado en él
+    utilizando <a href="game_save_buffer.htm"><tt>game_save_buffer()</tt></a> función.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">game_load_buffer(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El identificador del buffer desde el que se va a cargar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check_pressed(ord(&quot;L&quot;))<br> {
+    <br> if global.Checkpoint game_load_buffer(save_buff);<br> }
+  </p>
+  <p>El código anterior cargará un estado de juego previamente guardado desde el buffer indexado en la variable &quot;save_buff&quot;, sólo si la variable global es verdadera, cuando <tt>el</tt> jugador presione la tecla &quot;L&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Game_Control.htm">Control general del juego</a></div>
+        <div style="float:right">Siguiente: <a href="game_save.htm">game_save</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+game_load_buffer
+-->
+  <!-- TAGS
+game_load_buffer
+-->
+</body>
+</html>

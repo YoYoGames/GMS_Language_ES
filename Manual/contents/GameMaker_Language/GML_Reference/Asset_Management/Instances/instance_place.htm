@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>lugar_de_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_place" />
+  <meta name="rh-index-keywords" content="instance_place" />
+  <meta name="search-keywords" content="instance_place" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>lugar_de_instancia</h1>
+  <p>Con esta función puede comprobar una posición para una colisión con otra instancia o todas las instancias de un objeto utilizando la máscara de colisión de la instancia que ejecuta el código para la comprobación. Cuando usted usa esto, está pidiendo a <span class="notranslate">GameMaker Studio 2</span> que mueva la instancia a la nueva posición, compruebe si hay una colisión, vuelva a moverse y le diga si se encontró una colisión o no. Esto funcionará para colisiones precisas, pero sólo si tanto la instancia como el objeto que se está comprobando tienen máscaras de colisión precisas
+    esta función devolverá la instancia única del objeto con el que se ha colisionado, pero no se ha encontrado ninguna colisión. <a href="Instance_Variables/id.htm"><tt>id</tt></a> del objeto con el que se está colisionando, pero si no se necesita es ligeramente más rápido utilizar la función
+    función <a href="../../Movement_And_Collisions/Collisions/place_meeting.htm"><tt>lugar_colisión()</tt></a>. Esta función también acepta las palabras clave especiales <span class="inline"><b>all</b></span> y <span class="inline"><b>other</b></span> y
+    devolverá la <a href="../../../GML_Overview/Instance_Keywords.htm">palabra</a> clave <span class="inline"><b>noone</b></span> si no se produce ninguna colisión, o el valor del ID de la instancia única encontrada si se produce una colisión.</p>
+  <p>Tenga en cuenta que las coordenadas x/y dadas se redondearán al número entero más cercano antes de que se realice la comprobación, por lo que si esto <i>no</i> es lo que usted necesita (o ha estado utilizando un producto <span class="notranslate">GameMaker</span> heredado), deberá <tt>soltar</tt> las coordenadas en el campo
+    comprobación:</p>
+  <p class="code">instance_place_list(floor(x), floor(y), obj_Enemy, list, true).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_place(x, y, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x para comprobar las instancias.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para comprobar las instancias.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que se va a comprobar para las instancias de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (un valor de ID de instancia o la palabra clave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _inst = instance_place(x, y, obj_Enemy);<br> if _inst != noone<br> {
+    <br> hp -= _inst.dmg;<br> instance_destroy(_inst);
+    <br> }
+  </p>
+  <p>El código anterior comprobará si hay una colisión con instancias de &quot;obj_Enemigo&quot; y si la hay, reducirá la variable &quot;hp&quot; en la cantidad almacenada en la variable &quot;dmg&quot; de la instancia que colisiona y luego destruirá la instancia que colisiona
+    la instancia que colisiona.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_place_list.htm">instance_place_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_place
+-->
+  <!-- TAGS
+instance_place
+-->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>secuencia_destrucción</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining function sequence_destroy" />
+  <meta name="rh-index-keywords" content="sequence_destroy" />
+  <meta name="search-keywords" content="sequence_destroy" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>secuencia_destrucción</h1>
+  <p>Con esta función puede destruir un objeto de secuencia que ha sido creado dinámicamente. Se proporciona la estructura del objeto de la secuencia (devuelta por la función <a href="sequence_create.htm"><tt>sequence_create()</tt></a>) o el ID de la secuencia (devuelto por la función
+    por la función <a href="../Rooms/Sequence_Layers/layer_sequence_get_sequence.htm"><tt>layer_sequence_get_sequence()</tt></a> o de la propiedad struct de la instancia de la <tt>secuencia</tt>). Esta función debe utilizarse siempre que una secuencia creada dinámicamente
+    creada dinámicamente para liberar la memoria asociada a ella.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sequence_destroy(sequence_struct_or_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>estructura_secuencia_o_id</td>
+        <td>La estructura o ID del objeto de la secuencia a destruir</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if sequence_exists(my_seq)<br> {
+    <br> sequence_destroy(my_seq);
+    <br> }
+  </p>
+  <p>El código anterior comprueba si el objeto de la secuencia dada existe y si lo hace se destruye.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sequences.htm">Secuencias</a></div>
+        <div style="float:right">Siguiente: <a href="sequence_get.htm">sequence_get</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sequence_destroy
+-->
+  <!-- TAGS
+sequence_destroy
+-->
+</body>
+</html>

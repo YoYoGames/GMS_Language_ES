@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_tell</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_tell" />
+  <meta name="rh-index-keywords" content="buffer_tell" />
+  <meta name="search-keywords" content="buffer_tell" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_tell</h1>
+  <p>Cuando se leen o escriben datos en un búfer utilizando la función <a href="buffer_read.htm"><tt>buffer_read()</tt></a> o <a href="buffer_write.htm"><tt>buffer_write()</tt></a> la posición de &quot;búsqueda&quot; actual es adelantada por los bytes escritos o leídos, y con
+    esta función puedes obtener la posición de &quot;búsqueda&quot; actual para usarla en otras funciones del buffer. Por ejemplo, si la alineación de tu buffer está establecida en 4 bytes y escribes un solo dato que tiene un tamaño de 1 byte, entonces haz un <tt>buffer_tell()</tt>,
+    obtendrá un valor de retorno de 1. Sin embargo, si escribe otra pieza de datos, también de 1 byte de tamaño, y luego hace un buffer_tell( <tt>),</tt> obtendrá un valor de retorno de 5 ya que la alineación ha &quot;rellenado&quot; los datos a esa posición.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_tell(buffer);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>buffer</td>
+        <td>El índice del buffer a utilizar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var pos = buffer_tell(buff); buffer_seek(buff, buffer_seek_start, 0);<br> val[0] = buffer_read(buff, buffer_S16);<br> val[1] = buffer_read(buff, buffer_S16);<br> val[2] = buffer_read(buff, buffer_S16);<br> buffer_seek(buff, buffer_seek_start, pos);</p>
+  <p>El código anterior almacenará la posición de búsqueda actual dentro del buffer indexado en la variable &quot;buff&quot; en la variable local &quot;pos&quot;. La posición de búsqueda del búfer se establecerá entonces en el inicio del búfer, y se leerán tres datos en una matriz, antes de volver a establecer la posición de búsqueda del búfer en el punto en el que se encontraba anteriormente.
+    datos en una matriz, antes de restablecer la posición de búsqueda en el búfer a la posición anterior.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_peek.htm">buffer_peek</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_tell
+-->
+  <!-- TAGS
+buffer_tell
+-->
+</body>
+</html>

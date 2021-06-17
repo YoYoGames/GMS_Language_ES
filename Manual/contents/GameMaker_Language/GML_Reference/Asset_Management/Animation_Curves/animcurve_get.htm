@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>animcurve_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function animcurve_get" />
+  <meta name="rh-index-keywords" content="animcurve_get" />
+  <meta name="search-keywords" content="animcurve_get" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>animcurve_get</h1>
+  <p>Esta función devolverá una <a href="../../../GML_Overview/Structs.htm">estructura</a> que contiene todos los datos de la curva de animación dada. Usted proporciona el ID del activo de la curva de animación (como se define en el Navegador de Activos), y la función devolverá una estructura
+    con las siguientes variables:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la variable</th>
+        <th>Tipo de datos</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>cadena</td>
+        <td>Este es el nombre de la curva de animación.</td>
+      </tr>
+      <tr>
+        <td>canales</td>
+        <td>puntero de matriz</td>
+        <td>Se trata de un array, donde cada elemento del array es una estructura de canal.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> La variable de <tt>canales</tt> en la estructura es un <a href="../../../GML_Overview/Arrays.htm">array</a> donde cada elemento del array es un struct con datos relativos a un canal dentro de la curva. La estructura de canales tendrá las siguientes variables:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la variable</th>
+        <th>Tipo de datos</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>cadena</td>
+        <td>Este es el nombre del canal.</td>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>constante</td>
+        <td>Será una de las constantes <tt><b>animcurvetype_linear</b></tt> para la interpolación lineal entre puntos, o <tt><b>animcurvetype_catmullrom</b></tt> para la interpolación &quot;suave&quot; entre los puntos utilizando la interpolación catmull-rom.</td>
+      </tr>
+      <tr>
+        <td>iteraciones</td>
+        <td>entero</td>
+        <td>Si el canal está utilizando interpolación catmull-rom (&quot;suave&quot;), este valor contiene cuántos puntos se han generado para cada segmento de la curva (tenga en cuenta que estos puntos extra son internos a la función y sólo se utilizan para los <span class="notranslate">cálculos</span> en tiempo de ejecución).
+          Si el canal utiliza la interpolación lineal, este valor seguirá existiendo pero puede ser ignorado ya que no tiene relación con la forma en que se interpola la curva.</td>
+      </tr>
+      <tr>
+        <td>puntos</td>
+        <td>puntero de matriz</td>
+        <td>Se trata de un array, donde cada elemento del array es una estructura de puntos.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Al igual que en el caso de los canales, los puntos de un mismo canal se almacenan como structs en un array, donde cada elemento del array es un struct de puntos. La estructura de puntos tiene las siguientes variables:</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Nombre de la variable</th>
+        <th>Tipo de datos</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>posx</td>
+        <td>real</td>
+        <td>La posición en el tiempo (normalizada de 0 a 1) del punto.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>real</td>
+        <td>El valor del punto.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><br> Tenga en cuenta que si la función falla (es decir, el ID de la Curva de Animación dado no existe) entonces la función devolverá -1.</p>
+  <p> </p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">animcurve_get(curve_id);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>curve_id</td>
+        <td>El ID del navegador de activos (índice) de la curva de animación a obtener.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Estructura o -1</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var _curve = animcurve_get(ac_ButtonTween);<br> var _channel = _curve.channels[0];<br> if _channel.type != animcurvetype_linear<br> {
+    <br> _channel.type = animcurvetype_linear;<br> }
+  </p>
+  <p>El código anterior recupera la estructura de la curva de animación para el activo de la curva &quot;ac_ButtonTween&quot;, luego comprueba el tipo de curva para el primer canal, y si no es lineal lo establece como lineal.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation_Curves.htm">Curvas de animación</a></div>
+        <div style="float:right">Siguiente: <a href="animcurve_get_channel.htm">animcurve_get_channel</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+animcurve_get
+-->
+  <!-- TAGS
+animcurve_get
+-->
+</body>
+</html>

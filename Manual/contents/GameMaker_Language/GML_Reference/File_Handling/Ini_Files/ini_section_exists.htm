@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ini_section_exists</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for ini_section_exists" />
+  <meta name="rh-index-keywords" content="ini_section_exists" />
+  <meta name="search-keywords" content="ini_section_exists" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>ini_section_exists</h1>
+  <p>Esta función comprueba si una sección existe en el ini actualmente abierto y devolverá <tt>true</tt> si existe o <tt>false</tt> en caso contrario. Esta comprobación no es necesaria para evitar errores ya que, cuando una sección no existe, la lectura de una sección inexistente
+    devolverá un valor por defecto, pero puede ser útil para ver si un archivo ini ha guardado datos específicos.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">ini_section_exists(section);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sección</td>
+        <td>La sección en el archivo .ini abierto para comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Booleano</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">ini_open(&quot;savedata.ini&quot;);<br> if !ini_section_exists(&quot;save1&quot;)<br> {
+    <br> global.savegame = &quot;1&quot;;<br> }
+    <br> ini_close();
+  </p>
+  <p>Esto pondrá la variable global.savegame en &quot;1&quot; si NO se encuentra &quot;save1&quot;. Con un bucle for, esto podría ser utilizado como una forma básica de calcular cuántas partidas guardadas hay para un juego (es decir, la creación de un sistema para múltiples partidas guardadas simultáneas para un juego).
+    simultáneos para un juego).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Ini_Files.htm">Ini Files</a></div>
+        <div style="float:right">Siguiente: <a href="ini_key_delete.htm">ini_key_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+ini_section_exists
+-->
+  <!-- TAGS
+ini_section_exists
+-->
+</body>
+</html>

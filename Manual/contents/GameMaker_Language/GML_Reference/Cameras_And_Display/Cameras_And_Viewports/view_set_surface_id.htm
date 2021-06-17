@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>view_set_surface_id</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for view_set_surface_id" />
+  <meta name="rh-index-keywords" content="view_set_surface_id" />
+  <meta name="search-keywords" content="view_set_surface_id" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>view_set_surface_id</h1>
+  <p>Con esta variable se puede establecer el contenido de un puerto de vista para dibujar a una superficie. Cuando se trabaja con superficies, a menudo se requiere que se capture <i>toda</i> la región visible de la pantalla a la superficie, por lo que se asignaría a un puerto de vista utilizando
+    esta función. Esto significa que todo lo que se muestra en el puerto de vista elegido se dibujará ahora a la superficie asignada y el contenido de ese puerto de vista ya no se mostrará, lo que significa que tendrá que</p>
+  <ul class="colour">
+    <li>Habilitar una nueva vista y dibujar la superficie sólo en esa vista (usando <a href="view_current.htm"><tt>vista_actual</tt></a> para comprobar qué vista se está dibujando)</li>
+    <li>Dibuja la superficie en el evento Draw GUI de una instancia, ya que la capa GUI es independiente de las vistas.</li>
+  </ul>
+  <p>Cuando se utiliza esta función se da el índice del puerto de la vista (de 0 a 7) y un índice de superficie (ya sea el <a href="../../Drawing/Surfaces/application_surface.htm"><tt>superficie_aplicación</tt></a> o el valor del índice único devuelto por la función <a href="../../Drawing/Surfaces/surface_create.htm"><tt>surface_create()</tt></a>)
+    o, si se ha asignado previamente una superficie y se desea eliminarla, un valor de -1. Para más información sobre la asignación del puerto de vista a una superficie, véase también la variable <a href="view_surface_id.htm"><tt>view_surface_id</tt></a>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">view_set_surface_id(view_port, surf)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ver_puerto</td>
+        <td>El puerto de visualización al que se dirige (0 - 7)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si view_get_surface_id(0) == -1<br> {
+    <br> view_set_surface_id(0, global.vSurf);<br> }
+  </p>
+  <p>El código anterior comprobará si se ha asignado una superficie al puerto de la vista[0] y, si no lo ha hecho, se asignará una.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Cameras_And_View_Ports.htm">Cámaras y puertos de visualización</a></div>
+        <div style="float:right">Siguiente: <a href="camera_create.htm">camera_create</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+view_set_surface_id
+-->
+  <!-- TAGS
+view_set_surface_id
+-->
+</body>
+</html>

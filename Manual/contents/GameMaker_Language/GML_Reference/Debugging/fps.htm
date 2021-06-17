@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>fps</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for fps" />
+  <meta name="rh-index-keywords" content="fps" />
+  <meta name="search-keywords" content="fps" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>fps</h1>
+  <p>En <span class="notranslate">GameMaker Studio</span> 2 hay dos formas principales de indicar la velocidad a la que se ejecuta el juego. El <a href="../General_Game_Control/game_get_speed.htm"><tt>velocidad del juego</tt></a> (como se especifica en las Opciones de Juego) y los <tt>fps</tt> (fotogramas por segundo). Estos valores se confunden a menudo, pero básicamente uno es el número de pasos del juego que <span class="notranslate">GameMaker Studio 2</span> se supone que está completando en un segundo, mientras que el otro (el fps) es el número de pasos de la CPU que <span class="notranslate">GameMaker Studio</span> 2 está realmente completando en un segundo <i>hasta un valor máximo de la velocidad de la sala en sí</i>. Para obtener los verdaderos fps, es decir, el número real de pasos de la CPU por paso de juego, utilice la variable <a href="fps_real.htm"><tt>fps_real</tt></a> variable</p>
+  <p>Esta variable <b>de sólo lectura</b> devuelve los fps actuales como un valor entero. Tenga en cuenta que la función sólo se actualizará una vez cada paso de su juego y por lo tanto puede parecer que &quot;salta&quot; de un valor a otro, pero esto es bastante normal.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">fps</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">si debug_mode<br> {
+    <br> draw_text(32, 32, &quot;FPS = &quot; + string(fps));<br> }
+  </p>
+  <p>El código anterior comprobará si el juego está en modo de depuración y si lo está mostrará los fps actuales en la pantalla.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Debugging.htm">Depuración</a></div>
+        <div style="float:right">Siguiente: <a href="fps_real.htm">fps_real</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+fps
+-->
+  <!-- TAGS
+fps
+-->
+</body>
+</html>

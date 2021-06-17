@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Herramientas externas de fusión/diferencia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers Source Control merge and diff tools" />
+  <meta name="rh-index-keywords" content="Source Control - Esternal Merge/Dif Tools" />
+  <meta name="search-keywords" content="merge,diff,external tools" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Herramientas externas de fusión/diferencia</h1>
+  <p>Cuando trabajas en un proyecto con otras personas, siempre existe la posibilidad de que haya un conflicto, ya que varias personas editan el mismo archivo y la mayoría de los sistemas de control de fuentes pueden hacer un buen intento de fusionar cualquier archivo en conflicto, pero cuando hay cambios
+    en el mismo lugar, se requiere un poco de ayuda para saber qué hacer - aquí es donde una <strong>herramienta de fusión </strong>viene a mostrar los cambios, y le permiten decidir.</p>
+  <p>Como cada herramienta de fusión es diferente, hay cuatro macros que se pueden utilizar para ayudar a especificar los archivos a la misma que se pueden configurar desde la ventana de <strong>Conflictos </strong>haciendo clic en el botón etiquetado como <strong>Elegir herramienta de fusión</strong><strong></strong>:</p>
+  <p><img alt="Source Control Conflict Window" class="center" src="../../assets/Images/IDE Tools/SCM_ConflictsWindow.png" /></p>
+  <p>Al hacer clic en ese botón se abrirá la ventana de <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Preferencias</a> en el plugin <span class="notranslate">Git</span>:</p>
+  <p><img alt="Source Control Choose Merge Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseMergeTool.png">Aquí se proporciona una ruta de acceso a la herramienta de fusión elegida y, a continuación, una macro (o macros) de <strong>Opciones de la herramienta de fusión</strong> que se utilizará para decidir
+    qué hacer, con las siguientes opciones disponibles:</p>
+  <ul class="colour">
+    <li><span class="inline">${scm_mine}</span>: ruta de acceso a su versión</li>
+    <li><span class="inline">${scm_thers}</span>: ruta de acceso a su versión</li>
+    <li><span class="inline">${scm_base}</span>: ruta a la versión anterior a los cambios conflictivos</li>
+    <li><span class="inline">${scm_merged}</span>: ruta en la que la herramienta de fusión debe guardar</li>
+  </ul>
+  <p>Como ayuda a la configuración, cuando das una ruta a ciertas herramientas de fusión, <span class="notranslate">GameMaker Studio 2</span> rellenará algunos valores por defecto para empezar, dependiendo de la herramienta elegida:</p>
+  <ul class="colour">
+    <li><strong>KDiff3</strong>: <span class="inline">${scm_theirs} ${scm_mine} -o ${scm_merged}</span></li>
+    <li><strong>Fusión</strong>: <span class="inline">${scm_mine} ${scm_merged} ${scm_theirs}</span></li>
+    <li><strong>Notepadd++</strong>: <span class="inline">${scm_merged}</span></li>
+    <li><strong>TortoiseMerge</strong>: <span class="inline">/base:${scm_base} /theirs:${scm_theirs} /mine:${scm_mine} /merged:${scm_merged}</span></li>
+  </ul>
+  <p>Tenga en cuenta que si no tiene (o no quiere usar) una herramienta de fusión, puede abrir el script en el IDE e intentar arreglarlo desde allí.</p>
+  <p>Así que, volviendo a nuestro ejemplo de Conflicto como se indica en la sección de <a href="Conflicts.htm">Conflictos</a>... Hemos hecho un pull desde el master y uno de los ficheros está en conflicto. Esto abre la ventana de <strong>Conflictos de </strong>Control de Fuentes, donde puede
+    hacer clic en el script en conflicto, y ahora hacer clic en <strong>Fusionar</strong>, ya que ha configurado su herramienta de fusión. Al hacer clic en fusionar se abrirá la herramienta donde puede tratar el conflicto y luego usar la(s) macro(s) suministrada(s) para hacer los cambios requeridos.
+    cambios necesarios. Una vez que haya terminado y cerrado la herramienta de fusión, el IDE de <span class="notranslate">GameMaker Studio 2</span> mostrará la siguiente ventana de confirmación:</p>
+  <p><img alt="Source Control Merge Confirm" class="center" src="../../assets/Images/IDE Tools/SCM_MergeConfirm.png">Simplemente responda &quot;Sí&quot; a esta pregunta, ya que acaba de hacerlo usted mismo utilizando la herramienta de fusión, y luego necesita confirmar este
+    para indicar el final de la operación de fusión<strong>(Source Control </strong>&gt; <strong>Commit Changes).</strong> La ventana de Confirmación mostrará ahora que la fusión está en curso, así como algunos archivos sin procesar:</p>
+  <p><img alt="Source Control Merge In Progress" class="center" src="../../assets/Images/IDE Tools/SCM_MergeInProgress.png">Estos archivos no escalonados son nuestro archivo de script con la adición de <span class="inline">.base</span>, <span class="inline">.ours</span> y <span class="inline">.theirs</span>. Podemos eliminar todos ellos con seguridad, así que haz clic en <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20"> en la parte superior y luego en <img alt="Shift Icon" class="icon" height="20" src="../../assets/Images/Icons/Icon_Shift.png" width="55"> + <img alt="LMB Icon" class="icon" height="22" src="../../assets/Images/Icons/Icon_LMB.png" style="cursor: nwse-resize;" width="20"> en la parte inferior para seleccionarlos todos.
+    para seleccionarlos todos. A continuación, hacemos clic con el botón derecho en los archivos seleccionados y elegimos <strong>Eliminar ruta</strong> para eliminarlos. También hay un mensaje de confirmación pre-llenado para nosotros, indicando que se trata de una fusión, y que había un conflicto (podemos añadir a este
+    o editarlo como queramos).</p>
+  <p>Ahora podemos hacer clic en <strong>"Commit" </strong>.</p>
+  <p>Debido al hecho de que puede tener problemas con otros archivos, significa que su flujo de trabajo al utilizar repositorios remotos o compartidos debe ser el siguiente:</p>
+  <p class="code">Hacer cambios &gt; Guardar &gt; Confirmar &gt; Tirar &gt; Fusionar &gt; Empujar</p>
+  <p>También debería configurar una <strong>herramienta de diferencias</strong> para usarla cuando haga confirmaciones en un repositorio. Esto se configura desde las <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm">Preferencias</a>, igual que la herramienta de Fusión:</p>
+  <p><img alt="Source Control Choose Diff Tool" class="center" src="../../assets/Images/IDE Tools/SCM_ChooseDiffTool.png">La herramienta Diff se configura de manera muy similar a la herramienta Merge, pero sólo utiliza las opciones <span class="inline">${scm_base}</span> y
+    <span class="inline">${scm_theirs}</span> - en este caso, <span class="inline">${scm_base}</span> representa el archivo no modificado mientras que <span class="inline">${scm_theirs}</span> representa el estado actual del archivo. Las opciones de la herramienta deberían
+    ser pre-pobladas con las opciones por defecto para <strong>Meld</strong>, <strong>KDiff3 </strong>y <strong>TortoiseMerge</strong>, tal como lo fueron para la herramienta Merge. Tenga en cuenta que <span class="notranslate">GameMaker Studio 2</span> <em>no </em>admite la salida de parches de diferencia de un solo archivo.
+    archivo, por lo que no hay ninguna opción por defecto para <strong>Notepad++</strong>.</p>
+  <p>Para ver los cambios entre las revisiones actuales y las anteriores utilizando la herramienta Diff, simplemente abra la ventana Commit y luego haga doble clic en un archivo. Si la herramienta se ha configurado correctamente, se lanzará y podrá ver los cambios
+    entre los archivos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Source_Control.htm">Control de la fuente</a></div>
+        <div style="float:right">Siguiente: <a href="Setting_Up_Git_Plugin.htm">Configuración del plugin <span class="notranslate">GIT</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Source Control External Tools
+Source Control Diff
+Source Control Merge
+Merge
+Diff
+-->
+  <!-- TAGS
+source_control_tools
+-->
+</body>
+</html>

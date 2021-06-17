@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>datos_del_esqueleto_de_la_ranura</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_slot_data" />
+  <meta name="rh-index-keywords" content="skeleton_slot_data" />
+  <meta name="search-keywords" content="skeleton_slot_data" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>datos_del_esqueleto_de_la_ranura</h1>
+  <p>Con esta función se puede rellenar una <a href="../../../../Data_Structures/DS_Lists/DS_Lists.htm">lista DS</a> (pre-creada) con los datos de cada una de las ranuras de adjuntos disponibles que contiene una animación. Estos datos se devuelven en el foro de un <a href="../../../../Data_Structures/DS_Maps/DS_Maps.htm">mapa</a> DS que contiene los siguientes pares clave/valor:</p>
+  <ul class="colour">
+    <li><b>&quot;nombre&quot;:</b> El nombre de la ranura.</li>
+    <li><b>&quot;hueso&quot;:</b> El nombre del hueso.</li>
+    <li><b>&quot;adjunto&quot;:</b> El nombre del adjunto si se utiliza uno o &quot;(ninguno)&quot; si no hay ninguno asignado.</li>
+  </ul>
+  <p>Los valores de cada clave serán cadenas y podrán ser utilizados en las otras funciones de fijación del esqueleto para estos tipos de sprite. Tenga en cuenta que los mapas DS creados <i>no</i> se destruyen, por lo que tendrá que hacer un bucle a través de la lista de DS y destruir cada uno de
+    los mapas creados.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_slot_data(sprite, list);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>sprite</td>
+        <td>El índice del sprite de la animación del esqueleto de la columna vertebral para obtener los datos.</td>
+      </tr>
+      <tr>
+        <td>lista</td>
+        <td>El ID de la lista de DS a rellenar con los mapas de DS.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var list = ds_list_create();<br> var open = true;<br> slot_name = &quot;&quot;;<br> skeleton_slot_data(sprite_index, list);<br> for (var i = 0; i &lt; ds_list_size(list); i++;) <br> {
+    <br> var map = list[| i];<br> if open<br> {
+    <br> if map[? &quot;attachment&quot;] == &quot;(none)&quot;<br> {
+    <br> open = false;<br> slot_name = map[? &quot;name&quot;];<br> }
+    <br> }
+    <br> ds_map_destroy(map);
+    <br> }
+    <br> ds_list_destroy(list);
+  </p>
+  <p>El código anterior crea una lista de DS y luego la rellena con los datos de las ranuras para el sprite de la instancia. Estos datos se analizan para extraer los mapas DS individuales con los datos de las ranuras. A continuación se comprueba si hay una ranura vacía, y si es así se asigna a la variable
+    &quot;slot_name&quot; se le asigna el nombre de la ranura vacía antes de destruir el mapa DS. Finalmente, destruimos la lista de DS porque ya no es necesaria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Slots.htm">Ranuras</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_slot_data_instance.htm">skeleton_slot_data_instance</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_slot_data
+-->
+  <!-- TAGS
+skeleton_slot_data
+-->
+</body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Creación de un tutorial</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining how to make a Marketplace tutorial package" />
+  <meta name="rh-index-keywords" content="Marketplace - Creating A Tutorial" />
+  <meta name="search-keywords" content="Marketplace,upload,tutorial" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tutorial de creación de un <span class="notranslate">mercado</span> </h1>
+  <p>La creación de un tutorial es similar a la <a href="Creating_A_Marketplace_Asset.htm">creación de un paquete normal</a> de activos <a href="Creating_A_Marketplace_Asset.htm"> <span class="notranslate">del</span></a> Mercado, sólo que ahora tiene que añadir archivos específicos incluidos, así como incluir una página inicial del tutorial (y una página de vídeo opcional).
+    El espacio de trabajo del tutorial se verá así:<img alt="Marketplace Tutorial Package" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_CreateTutorial.png">Como se explicó anteriormente para los activos generales <span class="notranslate">del</span> Mercado, debe
+    seleccionar un editor y luego dar a su tutorial un nombre y un ID único (formato de URL inverso), y luego en el desplegable &quot;tipo&quot; seleccionar Tutorial. Esto le dará opciones adicionales para añadir un archivo HTML de base para iniciar el tutorial, así como
+    así como un archivo de vídeo (opcional) y una URL. El archivo de vídeo debe utilizar la plantilla suministrada desde el <span class="notranslate">Marketplace</span> - al igual que el resto del tutorial - que puede obtener <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">aquí</a>,
+    y cuando el usuario cargue el tutorial, el vídeo se cargará en un marco separado dentro del IDE. Tenga en cuenta que las páginas que da para la página de inicio y la página de vídeo son rutas relativas dentro de los Archivos Incluidos, y puede abrir un explorador para elegir
+    algo distinto a los predeterminados con los que <span class="notranslate">GameMaker Studio 2</span> rellena los campos.</p>
+  <p>En realidad, la creación de su tutorial requerirá que añada <a href="../../Settings/Included_Files.htm">archivos incluidos</a> en su proyecto de tutorial, y estos tienen que ser añadidos de una manera muy específica para que el IDE detecte correctamente qué archivos se van a utilizar para el tutorial.
+    para el tutorial. La estructura básica de carpetas se muestra en la imagen siguiente:<img alt="Marketplace Tutorial Files" class="center" src="../../assets/Images/Introduction/Tools_Marketplace_TutorialFiles.png"></p>
+  <p>Así, tenemos dos carpetas principales:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>TutorialContent</strong>: Todos los archivos de su tutorial <span class="inline">HTML</span>, el <span class="inline">CSS</span> para estilizarlos, y las imágenes requeridas para ellos (no las imágenes requeridas para los recursos, sino las que se mostrarán
+      dentro del tutorial), así como la plantilla de vídeo si es necesario, van aquí. También puede tener subcarpetas si desea dividir el tutorial en capítulos, por ejemplo, pero debe tener al menos un archivo base <span class="inline">HTML</span> 
+      que se utilizará como página de inicio del tutorial.</li>
+    <li class="dropspot"><strong>TutorialResources</strong>: Esta carpeta tiene otras dos subcarpetas para <strong>imágenes </strong>y recursos de <strong>sonido </strong>. Si su tutorial requiere que el usuario añada un sprite (por ejemplo) y quiere incluirlo en el tutorial
+      entonces usted colocaría el recurso de imagen en la carpeta Images. Estas carpetas se importan en el proyecto del tutorial y cuando el usuario abre el editor de sprites y va a añadir una imagen, la ruta por defecto de la ventana del explorador será a esta ubicación,
+      haciendo más fácil para el usuario encontrar los recursos necesarios.</li>
+  </ul>
+  <p>Para que su tutorial funcione dentro del IDE <strong>debe tener esta estructura de carpetas</strong> así como tener una página de inicio base <span class="inline">HTML</span> con un archivo <span class="inline">CSS</span> para el estilo. Hay una serie de enlaces especiales
+    que pueden ser utilizados dentro de sus proyectos de tutoriales que saltarán a partes de un video, o abrirán el manual en una sección o función específica, y todos estos se dan en las plantillas oficiales de Tutoriales del <span class="notranslate">Mercado</span>.</p>
+  <p class="note"><strong>IMPORTANTE!</strong> Le recomendamos encarecidamente que <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">descargue las plantillas de tutoriales del <span class="notranslate">mercado</span></a> antes de intentar crear sus propios tutoriales. Contienen
+    ejemplos de todas las partes importantes del HTML, así como CSS e imágenes para recrear botones y menús dentro del tutorial, dejándote libre para preocuparte por el contenido en lugar de cómo mostrarlo.</p>
+  <p>Una vez que haya configurado los archivos incluidos y suministrado la información requerida, puede hacer clic en <em>Okay</em> y el tutorial se cargará en el <span class="notranslate">Marketplace</span>, abriendo un espacio de trabajo en el listado de activos cuando haya terminado para que pueda editarlo y añadir iconos,
+    texto, capturas de pantalla, etc. Una vez que el activo del tutorial ha sido publicado, los usuarios podrán encontrarlo dentro de la sección de <strong>Tutoriales </strong>de la <a href="../The_Start_Page.htm">Página de</a> Inicio, donde puede ser descargado e instalado.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../The_Marketplace.htm">El <span class="notranslate">mercado</span></a></div>
+        <div style="float:right">Siguiente: <a href="Listing_A_Service.htm">Listado de un servicio</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Marketplace</span> - Creating A Tutorial
+Creating Tutorials
+-->
+  <!-- TAGS
+marketplace_tutorial
+-->
+</body>
+</html>

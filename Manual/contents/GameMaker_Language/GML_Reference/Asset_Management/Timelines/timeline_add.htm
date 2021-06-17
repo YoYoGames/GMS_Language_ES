@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>añadir_temporización</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function timeline_add" />
+  <meta name="rh-index-keywords" content="timeline_add" />
+  <meta name="search-keywords" content="timeline_add" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>añadir_temporización</h1>
+  <p>Con esta función puede añadir una nueva línea de tiempo (vacía) en su juego. La función devuelve el índice de esta nueva línea de tiempo que debe ser almacenada en una variable para su uso en todas las llamadas de función posteriores que involucren esta nueva línea de tiempo. También debe asegurarse de
+    asegurarse de utilizar la función <a href="timeline_delete.htm"><tt>timeline_delete()</tt></a> siempre que no desee utilizar la línea de tiempo (como al final de la sala) para evitar posibles fugas de memoria que podrían ralentizar
+    ralentizar o bloquear el juego. Para añadir momentos a una línea de tiempo creada de esta manera, vea la función <span class="inline"><a href="timeline_moment_add_script.htm">timeline_moment_add_script()</a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">timeline_add();</p>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.tl = timeline_add();</p>
+  <p>El código anterior crea una nueva línea de tiempo y almacena su índice en la variable &quot;global.tl&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Timelines.htm">Líneas de tiempo</a></div>
+        <div style="float:right">Siguiente: <a href="timeline_delete.htm">timeline_delete</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+timeline_add
+-->
+  <!-- TAGS
+timeline_add
+-->
+</body>
+</html>

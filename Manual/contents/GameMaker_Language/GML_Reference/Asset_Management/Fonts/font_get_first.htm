@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>font_get_first</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function font_get_first" />
+  <meta name="rh-index-keywords" content="font_get_first" />
+  <meta name="search-keywords" content="font_get_first" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>font_get_first (obsoleto)</h1>
+  <p>Al definir una fuente en <span class="notranslate">GameMaker Studio 2</span>, puedes definir un rango de caracteres para incluir. Esto se debe a que la fuente en sí no se incluye con su juego (por razones legales), pero una <i>imagen</i> de
+    la fuente se incluye en una página de textura y eso es lo que su juego va a utilizar (al igual que cualquier otro activo gráfico). Esto significa que querrás mantener el número de caracteres que utilizas al mínimo y especificar sólo el rango de caracteres que
+    su juego necesitará para mantener la memoria de la textura tan optimizada como sea posible. Esta función se puede utilizar para encontrar el carácter inicial (como un valor ASCII) que se utilizó cuando su activo de fuente se añadió a su juego.</p>
+  <p class="note"><b>NOTA: </b>Debido a los cambios en la forma de manejar las fuentes, esta función <b>siempre</b> devolverá 32, ya que <span class="notranslate">GameMaker Studio 2</span> impone el carácter de espacio (32) en la fuente y no
+    permite caracteres con códigos inferiores a 32. En una futura actualización se añadirán nuevas funciones para realizar tareas similares.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">font_get_first(ind);</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>Índice de la fuente a comprobar.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">num = font_get_first(fnt_Main);</p>
+  <p>El código anterior almacenará el valor ASCII de la primera letra del rango de fuentes para la fuente indexada en &quot;fnt_Main&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Fonts.htm">Fuentes</a></div>
+        <div style="float:right">Siguiente: <a href="font_get_last.htm">font_get_last</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+font_get_first
+-->
+  <!-- TAGS
+font_get_first
+-->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>variable_instance_set</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function variable_instance_set" />
+  <meta name="rh-index-keywords" content="variable_instance_set" />
+  <meta name="search-keywords" content="variable_instance_set" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>variable_instance_set</h1>
+  <p>Con esta función puede establecer el valor de una variable dada en una instancia. Se suministra el valor único del ID de la instancia (que se puede encontrar en las <a href="../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Propiedades de la Instancia</a> en el
+    editor de salas, o se devuelve cuando se llama a la función <a href="../Asset_Management/Instances/instance_create_layer.htm"><tt>instance_create_layer()</tt></a>), así como el nombre de la variable para establecer el valor <i>como una cadena</i> (ver el ejemplo
+    más abajo), y finalmente el valor a establecer (puede ser cualquier <a href="../../GML_Overview/Data_Types.htm">tipo de dato</a> válido). Si la variable no existe ya en la instancia, se creará y se le asignará el valor.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">variable_instance_set(instance_id, name, val);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>instance_id</td>
+        <td>El valor de identificación único de la instancia a utilizar</td>
+      </tr>
+      <tr>
+        <td>nombre</td>
+        <td>El nombre de la variable a establecer (como una cadena)</td>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El valor al que debe ajustarse la variable</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if !variable_instance_exists(id, &quot;shields&quot;)<br> {
+    <br> variable_instance_set(id, &quot;shields&quot;, 0);<br> }
+  </p>
+  <p>El código anterior comprobará si existe una variable de instancia en la instancia de llamada y, si no existe, se crea y se pone a 0.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Variable_Functions.htm">Funciones variables</a></div>
+        <div style="float:right">Siguiente: <a href="variable_global_exists.htm">variable_global_exists</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+variable_instance_set
+-->
+  <!-- TAGS
+variable_instance_set
+-->
+</body>
+</html>

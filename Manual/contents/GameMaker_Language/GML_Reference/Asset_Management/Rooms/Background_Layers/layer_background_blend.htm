@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mezcla_de_fondo_de_capas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_background_blend" />
+  <meta name="rh-index-keywords" content="layer_background_blend" />
+  <meta name="search-keywords" content="layer_background_blend" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>mezcla_de_fondo_de_capas</h1>
+  <p>Esta función controla la mezcla (o &quot;tintado&quot;) del sprite de fondo y el valor por defecto es -1 (que representa la constante c_white, <tt>que</tt> también puede utilizarse). Cualquier otro valor (incluyendo las constantes de color internas como <tt>c_red</tt>,
+    o <tt>c_aqua</tt>) mezclará el color especificado con el sprite original. Le das el ID del elemento de fondo (que obtienes cuando creas un elemento de fondo usando <a href="layer_background_create.htm"><tt>layer_background_create()</tt></a>    o al utilizar la función <a href="layer_background_get_id.htm"><tt>layer_background_get_id()</tt></a>), y luego establece el color de mezcla a utilizar. A continuación puedes ver un ejemplo de un sprite que ha sido mezclado con diferentes colores:</p>
+  <p><img alt="Colour blend example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Rooms/blend_image.png">Tenga en cuenta que debe intentar limitar la mezcla en la plataforma <b>HTML5</b> (a menos que utilice WebGL), ya que cada
+    sprite mezclado tiene que ser almacenado en caché por separado y, por lo tanto, tener muchos sprites mezclados puede afectar negativamente al rendimiento (también se puede establecer el tamaño de la caché utilizando la función <a href="../../Sprites/Sprite_Manipulation/sprite_set_cache_size.htm"><tt>sprite_set_cache_size()</tt></a>).</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_background_blend(background_element_id, blend);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>background_element_id</td>
+        <td>El valor de identificación único del elemento de fondo que se va a cambiar</td>
+      </tr>
+      <tr>
+        <td>mezcla</td>
+        <td>El color a mezclar con el sprite de fondo (por defecto es <tt>c_white</tt>)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var lay_id = layer_get_id(&quot;Background_sky&quot;);<br> var back_id = layer_background_get_id(lay_id);<br> layer_background_blend(back_id, c_aqua);</p>
+  <p>El código anterior obtiene el valor del ID del fondo asignado a la capa &quot;Background_sky&quot; y luego lo tiñe de un color.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Background_Layers.htm">Capas de fondo</a></div>
+        <div style="float:right">Siguiente: <a href="layer_background_alpha.htm">layer_background_alpha</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_background_blend
+-->
+  <!-- TAGS
+layer_background_blend
+-->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>buffer_async_group_option</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for buffer_async_group_option" />
+  <meta name="rh-index-keywords" content="buffer_async_group_option" />
+  <meta name="search-keywords" content="buffer_async_group_option" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>buffer_async_group_option</h1>
+  <p>Con esta función puede establecer algunas opciones específicas de la plataforma para el grupo de búferes que se está guardando. Las opciones disponibles son las siguientes:</p>
+  <ul class="colour">
+    <li>&quot;subtítulo&quot;<b>o &quot;</b>slottitle&quot; -<b>El valor</b> de esta opción sería una cadena, que se mostrará al usuario cuando gestione sus datos guardados en el SO. Esto sólo es importante cuando se guardan los datos, no cuando se cargan de nuevo.</li>
+    <li>&quot; showdialog<b>&quot; -</b> El valor de esta opción es un booleano verdadero o <tt>falso.</tt> Si se establece en <tt>verdadero</tt>, cuando se guarda <i>o</i> carga <span class="notranslate">GameMaker Studio 2</span> mostrará la interfaz de usuario del sistema, de lo contrario se hará un quicksave/quickload
+      sin mostrar la interfaz de usuario. Normalmente sólo se necesita esto si usted está apoyando múltiples ranuras de guardar para permitir al usuario elegir una ranura, pero si sólo admite una ranura por usuario, establecer esto a <tt>falso.</tt></li>
+    <li>&quot;savepadindex<b>&quot; -</b> Para esta opción se especificaría el índice <i>del</i> pad del jugador que está guardando o cargando y el sistema escribirá datos en la carpeta de guardado de este jugador y los leerá.</li>
+    <li>&quot; saveslotsize<b>&quot; -</b> Esta opción requiere que se especifique el tamaño real en bytes que se quiere guardar (para poder hacer un <a href="buffer_seek.htm"><tt>buffer_seek()</tt></a> y <a href="buffer_tell.htm"><tt>buffer_tell()</tt></a> para obtener
+      eso, por ejemplo). Tenga en cuenta que no es obligatorio suministrar este valor, ya que todos los guardados tienen preasignado un espacio mínimo, que normalmente es de unos 10MB.</li>
+  </ul>
+  <p class="note"><b>IMPORTANTE!</b> Esta función sólo es válida actualmente para los módulos de destino PSVita, PS4 y <span class="notranslate">XBox One</span>. En todos los demás objetivos no hará nada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">buffer_async_group_option(opción, valor);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>opción</td>
+        <td>La opción de fijar.</td>
+      </tr>
+      <tr>
+        <td>valor</td>
+        <td>El valor a establecer (puede ser una cadena o un real, dependiendo de la opción).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p>N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">buffer_async_group_begin(&quot;save_folder_name&quot;);<br> buffer_async_group_option(&quot;showdialog&quot;, false);<br> buffer_async_group_option(&quot;slottitle&quot;, &quot;Catch The Haggis Save&quot;);<br> buffer_async_group_option(&quot;subtitle&quot;,
+    &quot;¡Todos tus haggis están guardados aquí!&quot;);<br> save = buffer_save_async(buff, &quot;Player_Save.sav&quot;, 0, 16384);<br> buffer_async_group_end();
+  </p>
+  <p>El código anterior inicia un grupo de búferes y luego establece las opciones del grupo antes de establecer 4 archivos para guardar asincrónicamente. A continuación, se finaliza la definición del grupo (momento en el que comenzará el guardado).</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Buffers.htm">Buffers</a></div>
+        <div style="float:right">Siguiente: <a href="buffer_async_group_end.htm">buffer_async_group_end</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+buffer_async_group_option
+-->
+  <!-- TAGS
+buffer_async_group_option
+-->
+</body>
+</html>

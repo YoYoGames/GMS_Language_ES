@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_set_offset</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_set_offset" />
+  <meta name="rh-index-keywords" content="sprite_set_offset" />
+  <meta name="search-keywords" content="sprite_set_offset" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_set_offset</h1>
+  <p>Esta función se puede utilizar para establecer el origen x e y de un sprite, y toma valores relativos basados en que la posición (0,0) es la esquina superior izquierda del sprite. La siguiente imagen lo ilustra:</p>
+  <p><img alt="X/Y Offset Example" class="center" src="../../../../../assets/Images/Scripting_Reference/GML/Reference/Sprites/spr_xyoffset.png" /></p>
+  <p class="note"><b>NOTA:</b> Esta función afecta al <b>activo </b>del sprite para que todas las instancias posteriores con este sprite tengan el mismo desplazamiento.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_set_offset(ind, xoff, yoff);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>ind</td>
+        <td>El índice del sprite para cambiar el desplazamiento.</td>
+      </tr>
+      <tr>
+        <td>xoff</td>
+        <td>La posición x del origen.</td>
+      </tr>
+      <tr>
+        <td>yoff</td>
+        <td>La posición y del origen.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">sprite_assign(spr_Custom, spr_Base);<br> sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base));</p>
+  <p>El código anterior asigna el sprite indexado en &quot;spr_Base&quot; al sprite indexado en &quot;spr_Custom&quot; y luego utiliza los valores de desplazamiento x e y de &quot;spr_Base&quot; para establecer el origen del nuevo sprite.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_set_bbox_mode.htm">sprite_set_bbox_mode</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_set_offset
+-->
+  <!-- TAGS
+sprite_set_offset
+-->
+</body>
+</html>

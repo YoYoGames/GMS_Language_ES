@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_apply_local_impulse</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_apply_local_impulse" />
+  <meta name="rh-index-keywords" content="physics_apply_local_impulse" />
+  <meta name="search-keywords" content="physics_apply_local_impulse" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_apply_local_impulse</h1>
+  <p>No sólo puedes aplicar fuerza y gravedad a un objeto con la física en <span class="notranslate">GameMaker Studio 2</span>, sino que también puedes aplicar un impulso. Esto es ligeramente diferente a una fuerza en que cuando se aplica afectará <i>inmediatamente</i> a la velocidad, y,
+    potencialmente el par (o &quot;spin&quot;) del objeto, particularmente si el punto elegido para aplicar el impulso tiene un vector que no está alineado con el centro de masa (nota: ¡el centro de masa no es <i>necesariamente el mismo</i> que el origen!).
+    Esta función aplica un impulso <i>localmente</i> a una instancia. Esto significa que la fuerza y la dirección del impulso se calculan basándose en el origen (o la posición si no tiene sprite) de la instancia, sin tener en cuenta
+    la dirección o rotación que pueda tener en la sala de juego o en el mundo de la física. He aquí una ilustración:</p>
+  <p><img alt="Apply local physics impulse illustration" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Physics/physics_apply_local_impulse_image.png">Como puedes ver, la rana de la imagen recibe un impulso desde abajo para
+    hacerla &quot;saltar&quot;. El impulso exacto está definido por el vector que obtenemos de las componentes ximpulso/yimpulso en relación con las coordenadas xpos/ypos -lo que significa simplemente que el impulso se calcula como la distancia de xpos/ypos a ximpulso/yimpulso
+    en Newtons, y la dirección es el ángulo que obtenemos de xpos/ypos a ximpulso/yimpulso.</p>
+  <p class="note"><b>NOTA</b>: El mundo de la física utiliza metros para todos sus cálculos, y la proporción de píxeles por metro se define en el editor de salas o utilizando <span style="font-size:1px;"><a href="../The_Physics_World/physics_world_create.htm"><tt style="font-size: 14px">physics_world_create()</tt></a></span>.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_apply_local_impulse(xpos, ypos, ximpulse, yimpulse)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>xpos</td>
+        <td>La coordenada x <i>relativa al origen</i> donde se aplicará el impulso</td>
+      </tr>
+      <tr>
+        <td>ypos</td>
+        <td>La coordenada y <i>relativa al origen</i> donde se aplicará el impulso</td>
+      </tr>
+      <tr>
+        <td>ximpulse</td>
+        <td>el componente x del vector impulso (relativo a la coordenada xpos)</td>
+      </tr>
+      <tr>
+        <td>yimpulse</td>
+        <td>el componente y del vector impulso (relativo a la coordenada ypos)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if jump<br> {<br> physics_apply_local_impulse(0, 20, 0, 50);<br> }</p>
+  <p>El código anterior aplicará un impulso con una fuerza de 30 Newtons y una dirección que va de abajo a arriba <i>respecto</i> al origen de la instancia si la variable &quot;salto&quot; es verdadera.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Forces.htm">Fuerzas</a></div>
+        <div style="float:right">Siguiente: <a href="physics_apply_torque.htm">physics_apply_torque</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_apply_local_impulse
+-->
+  <!-- TAGS
+physics_apply_local_impulse
+-->
+</body>
+</html>

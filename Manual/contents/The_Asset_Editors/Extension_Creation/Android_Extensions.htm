@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Extensiones de Android</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how Android extensions work" />
+  <meta name="rh-index-keywords" content="Extensions - Creating Android Extensions" />
+  <meta name="search-keywords" content="Android extensions" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Extensiones de<span class="notranslate">Android</span> </h1>
+  <p>Para crear una extensión para <span class="notranslate">Android</span> hay que hacerlo en dos partes. La primera parte sería añadir la extensión en sí, junto con los archivos necesarios, etc... y la segunda es crear las funciones y macros/constantes que la extensión requiere.
+    Las funciones y constantes se añaden utilizando archivos de <strong>marcadores de posición </strong>para agruparlos, por lo que añadirías un marcador de posición y luego definirías las funciones y macros como se explica en la sección anterior. Sin embargo, para añadir el resto de los archivos
+    necesita marcar primero la casilla <em><span class="notranslate">Android</span> </em>en la sección <strong>Características adicionales</strong> del editor:</p>
+  <p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p>
+  <p>Aquí se dan los siguientes datos:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Nombre de la</strong> clase: Tu extensión puede tener varias clases, y cada clase tiene sus propias funciones y constantes, por lo que debes darle un nombre que refleje su propósito.</li>
+    <li class="dropspot"><strong>Permisos</strong> de<strong><span class="notranslate">Android</span></strong>: Aquí puedes añadir cualquier permiso extra que requiera tu extensión. Cuáles son estos permisos dependerá totalmente del uso que tenga la extensión, por lo que debe <a href="https://developer.android.com/reference/android/Manifest.permission.html">consultar la documentación suministrada por Google</a> para la plataforma <span class="notranslate">Android</span>, o, si está utilizando un SDK de terceros, la documentación que viene con el SDK. Para añadir un nuevo permiso es necesario hacer clic en el botón <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18"> para añadir un permiso de marcador de posición, y luego hacer un lento clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> para editarlo a lo que se requiere. Puedes eliminar permisos usando el botón <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png">.</li>
+    <li class="dropspot"><strong>Inyectar a</strong> las dependencias de Gradle: Aquí puedes añadir cualquier código extra que necesite ser inyectado (añadido) en las dependencias de construcción de Gradle.</li>
+    <li class="dropspot"><strong>Inyectar al</strong> Manifiesto<strong> <span class="notranslate">AndroidManifest</span></strong>.xml: Aquí estableces cualquier código extra que se inyectará (añadirá) al archivo XML de Manifiesto de <span class="notranslate">Android</span> cuando tu juego se construya para pruebas o lanzamiento final. Asegúrate de revisar esto (y tus permisos) cuidadosamente
+      antes de enviar cualquier juego a la tienda, ya que una configuración incorrecta hará que su juego no sea enviado.</li>
+    <li class="dropspot"><strong>Inyectar a la aplicación <span class="notranslate">AndroidManifest</span></strong>.xml: Aquí estableces cualquier código extra que se inyectará (añadirá) al archivo XML de Manifiesto de <span class="notranslate">Android</span> bajo el encabezado Aplicación cuando tu juego se construya para pruebas o lanzamiento final. Asegúrese de revisar
+      esto (y sus permisos) cuidadosamente antes de enviar cualquier juego a la tienda, ya que una configuración incorrecta hará que su juego no sea enviado.</li>
+    <li class="dropspot"><strong>Inyectar a <span class="notranslate">AndroidManifest</span></strong>.xml RunnerActivity: Aquí estableces cualquier código extra que se inyectará (añadirá) al archivo XML <span class="notranslate">Android</span> Manifest bajo el encabezado RunnerActivity cuando tu juego se construya para pruebas o para su lanzamiento final. Asegúrese de
+      revise esto (y sus permisos) cuidadosamente antes de enviar cualquier juego a la tienda, ya que una configuración incorrecta hará que su juego no sea enviado.</li>
+  </ul>
+  <p>Una vez que haya configurado esto correctamente, tendrá que añadir los archivos necesarios para que su paquete de extensión funcione. Para ello, debe hacer clic en los botones de la parte inferior, ya sea <em>Add SDK</em> o <em>Add Source</em> y, a continuación, busque los archivos que desea añadir.
+    que desea añadir. Los archivos añadidos se almacenarán en el directorio <span class="inline"><span class="notranslate">Android</span>Source junto con su extensión. Puedes abrir esta ubicación en cualquier momento haciendo clic con el botón derecho del ratón en <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png"> sobre la extensión y seleccionando <em>Abrir directorio de extensión</em>.</p>
+  <p>Para más información sobre la creación de extensiones <span class="notranslate">para Android</span>, consulta la <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension">base de conocimientos</a> de <a href="https://help.yoyogames.com/hc/en-us/articles/360012504971-iOS-and-Android-Creating-A-Simple-Extension"><span class="notranslate">YoYo Games</span></a>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Extensions.htm">El editor de extensiones</a></div>
+        <div style="float:right">Siguiente: <a href="iOS_Extensions.htm">Extensiones de<span class="notranslate">iOS</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">Android</span> Extensions
+-->
+  <!-- TAGS
+extensions_android
+-->
+</body>
+</html>

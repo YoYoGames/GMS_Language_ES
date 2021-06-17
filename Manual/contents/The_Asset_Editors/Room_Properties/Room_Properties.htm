@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Propiedades de las habitaciones</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the different room properties" />
+  <meta name="rh-index-keywords" content="Rooms - Room Settings" />
+  <meta name="search-keywords" content="room settings,cameras,viewports,room size,room properties,view cameras" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Propiedades de las habitaciones</h1>
+  <p><img alt="Room Editor Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomSettings.png">En la sección de propiedades de la sala se puede establecer la alternancia de la herencia para los ajustes, así como el nombre de la sala y si es
+    es <strong>persistente </strong>o no. Normalmente, cuando dejas una sala y vuelves a ella más tarde, esa sala se restablece a su configuración inicial. Esto suele estar bien para la mayoría de los juegos, pero puede no ser lo que quieres en, por ejemplo, un RPG o cualquier
+    juego no lineal, en el que quieras ir y venir entre habitaciones y que éstas estén como las dejaste la última vez. Marcar la casilla " <strong>Persistente </strong>" hará exactamente eso. El estado de la habitación será recordado y cuando vuelvas a
+    cuando vuelvas a ella, estará exactamente igual que la dejaste, y sólo se restablecerá el estado inicial cuando se reinicie el juego. Ten en cuenta que hay <em>una </em>excepción a esto - si marcaste ciertos objetos como persistentes, las instancias de este
+   <em>no </em>permanecerán en la sala, sino que se moverán a la siguiente.</p>
+  <p>Después tiene la opción de <strong>Borrar la</strong> memoria intermedia de la pantalla. Esta opción, cuando está marcada, rellena el <a class="glossterm" data-glossterm="búfer de visualización" href="#">buffer</a> de visualización con un color. Si sabe que las vistas van a estar
+    cubriendo toda la pantalla en todo momento o que tienes un fondo a pantalla completa dibujado, entonces puedes desmarcar esto (lo que ahorra un redibujado y así ayuda a optimizar tu juego), pero si tienes vistas superpuestas que, cuando están en la pantalla dejan espacios abiertos,
+    o su fondo tiene alguna transparencia, debería marcar esto para que esas áreas donde no hay vista se rellenen con el color de dibujo que usted elija. Actualmente este color sólo se puede establecer a través de código usando <a href="../../GameMaker_Language/GML_Reference/Cameras_And_Display/The_Game_Window/window_set_colour.htm"><span class="inline">window_set_colour()</span></a>.</p>
+  <p class="note"><strong>NOTA</strong>: Si está utilizando la corrección automática de la relación de aspecto (como se establece en las <a href="../../Settings/Game_Options.htm">Opciones de Juego</a>), entonces <strong>siempre </strong>debe tener esta opción marcada, de lo contrario puede obtener efectos extraños sobre el
+    &quot;letterbox&quot; que su juego se dibuja en. Si no utilizas esta opción, puedes desmarcarla y conseguir un pequeño aumento del rendimiento de tus juegos (especialmente notable en <span class="notranslate">Android</span> y otras plataformas móviles).</p>
+  <p>Una habitación tiene que tener un tamaño y esto se define por los valores que se introducen para su anchura y altura en píxeles, y una vez que se ha establecido se puede pasar a añadir <strong>el código</strong> de creación, si lo necesita. El código de creación se añade desde el botón
+    en la parte inferior (junto con el botón de heredar para decir si la habitación debe heredar su código de creación o no), y si hace clic en él se abrirá un editor de código o DnD™. Este editor le permite introducir funciones/acciones y código que se ejecutará al inicio de la sala.
+    se ejecutarán al <em>inicio </em>de la sala, después del evento de creación de todas las instancias pero antes de su evento de inicio de la sala (para más información sobre el orden de los eventos, por favor vea <a href="../Object_Properties/Event_Order.htm">aquí</a>). Este código se ejecutará cada
+    cada vez que se entre en la sala, a menos que la sala esté marcada como persistente, en cuyo caso sólo se ejecutará una vez cuando se entre en la sala por primera vez, pero no en las siguientes visitas a la sala.</p>
+  <p>El último botón de las propiedades de la sala permite abrir la ventana de <strong>orden de creación de instancias</strong>:</p>
+  <p><img alt="Instance Creation Order Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_CreationOrder.png">Esta ventana enumera todas las instancias de la sala en el orden en que serán creadas (de arriba a abajo). En caso de que
+    Si necesita que una instancia específica se cree antes que otra, puede simplemente hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> y arrastrarla a la posición que necesite. Tenga en cuenta que las instancias se crearán en el
+    de arriba a abajo de la lista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <h1>Cámaras y miradores</h1>
+  <p>El siguiente conjunto de propiedades para la sala que puede definir son las relativas a la <strong>cámara</strong> de la sala y <strong>las</strong> vistas. Las vistas de cámara ofrecen un mecanismo para dibujar diferentes partes de su sala en diferentes lugares de la pantalla,
+    o para dibujar sólo una parte de la habitación para cubrir toda la pantalla. Por ejemplo, en la mayoría de los juegos de plataformas, la vista de la cámara sigue al personaje principal, ya que, si se pudiera ver todo el nivel en la pantalla, el personaje sería demasiado pequeño para verlo y no habría
+    no habría sorpresas para el jugador. Las vistas de cámara también pueden utilizarse en juegos multijugador o cooperativos, ya que permiten crear una configuración de pantalla dividida en la que en una parte de la pantalla se ve a un jugador y en otra parte se ve al otro
+    jugador. Todo esto se puede conseguir fácilmente en <span class="notranslate">GameMaker Studio 2</span> utilizando las vistas de cámara.</p>
+  <p><img alt="Camera And Viewport Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomViews.png">En la parte superior de las propiedades de las vistas puedes activar o desactivar la herencia de vistas, luego hay una casilla etiquetada como <strong>Enable Viewports</strong>.
+    Esto <em>debe ser marcado</em> antes de que cualquiera de las vistas de la cámara pueda estar activa en tu juego.</p>
+  <p class="note"><strong>NOTA</strong>: Puede activar o desactivar la herencia para los tres ajustes principales del puerto de vista, y luego activar o desactivar la herencia para cada vista de cámara individual.</p>
+  <p>La siguiente casilla es la que dice <strong>Clear Viewport Background</strong>, que limpia la <a class="glossterm" data-glossterm="superficie de aplicación" href="#">superficie de la aplicación</a> con el color de la ventana, y puede ser desmarcada si sabes que
+    que estás dibujando para cubrir toda la superficie.</p>
+  <p>Una vista de cámara está definida por dos conjuntos de valores diferentes, la propia vista de cámara y el puerto en la pantalla donde se va a dibujar esta vista. Esto a veces puede causar confusión, así que vamos a explicar esto un poco antes de explicar cómo definimos cada uno de ellos:</p>
+  <ul class="colour">
+    <li><strong>La Cámara</strong>: Un punto dentro de la habitación que se utilizará para establecer cómo se muestra la habitación en la pantalla (este es un pionero abstracto en el editor de la habitación y su posición se establece automáticamente sobre la base de la vista y la configuración del puerto de vista)</li>
+    <li><strong>La vista</strong>: Lo que ve la cámara, en función de la posición, la proyección y la rotación de la cámara</li>
+    <li><strong>El puerto de visualización</strong>: El área de la pantalla física donde se mostrará la vista de la cámara</li>
+  </ul>
+  <p><img alt="Camera View Example" class="center" src="../../assets/Images/Asset_Editors/Camera_Example.png">Así, por ejemplo, esto significa que usted puede tener una vista de cámara de 640x480 en su habitación, y luego establecer el puerto a 320x240, que mostrará la vista
+    a ese tamaño de puerto en la pantalla, y también puedes hacer lo mismo y establecer la vista a un valor más pequeño y el puerto a uno más grande haciendo que la imagen se escale para ajustarse al tamaño del puerto y se muestre en la pantalla más grande de lo que es. De esta manera se puede
+    mantener un tamaño de pantalla (puerto) mientras se cambia la vista de la cámara para mostrar más o menos de la habitación en la misma área de la pantalla.</p>
+  <p>La vista de la cámara siempre se define como un área rectangular en la habitación, donde se especifica la posición de la esquina superior izquierda, la anchura y la altura de esta área. A continuación, debe especificar dónde se muestra esta área en la ventana de la pantalla definiendo
+    el puerto de vista, donde de nuevo se especifica la posición de la esquina superior izquierda y el tamaño (tenga en cuenta que cualquier cosa que no sea 0,0 para la esquina superior izquierda puede dar resultados extraños). Puede tener más de un puerto y pueden superponerse, en cuyo caso
+    se dibujan en el orden indicado, uno encima del otro.</p>
+  <p>Tenga en cuenta que el área total de la pantalla <em>siempre se define como un área rectangular</em>, por lo que sus puertos, incluso cuando están desplazados, formarán un rectángulo, con cualquier espacio vacío que se rellena con el color de la ventana del <a class="glossterm" data-glossterm="búfer de visualización" href="#">búfer de visualización</a>, lo que significa que en estas circunstancias siempre debe tener marcado <strong>Borrar Búfer de Visualización</strong> o de lo contrario obtendrá artefactos extraños dibujados en los espacios entre los puertos. La imagen de abajo ilustra esto, donde hay
+    hay dos puertos de vista desplazados visibles, pero forman una ventana cuadrada, y &quot;debajo&quot; hay líneas que se dibujan en la memoria intermedia de la pantalla:</p>
+  <p><img alt="Object Editor Post Draw" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_PostDraw.png">Las cámaras también tienen la opción de <strong>seguimiento de objetos </strong>. Esto es para cuando usted quiere que la cámara &quot;siga&quot; (es decir, mantener
+    la vista enfocada en) un determinado objeto. Para ello debe hacer clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en el icono del menú y seleccionar un objeto de la lista que aparece (si hay varias instancias de
+    este objeto en la habitación, sólo uno de ellos es seguido por la cámara).</p>
+  <p>El comportamiento normal de una cámara es que sólo se mueva cuando la instancia que se está siguiendo se acerca demasiado a una zona de &quot;amortiguación&quot; que hace un límite invisible alrededor del borde de la vista. Esta zona puede ser definida por usted usando los valores de Borde <strong>Horizontal </strong>y
+   <strong>Vertical Border </strong>, por lo que, por ejemplo, si se establecen estos valores a 64, la vista no empezará a moverse y a seguir al personaje hasta que llegue a 64 píxeles del borde de la vista.</p>
+  <p>Por último, puede indicar la <strong>velocidad </strong> <strong>horizontal</strong> y <strong>vertical </strong>a la que se mueve la cámara cuando el personaje ha alcanzado la zona de amortiguación, y esto tiene un valor por defecto de -1. Este valor por defecto es básicamente &quot;instantáneo&quot;
+    y significa que en el momento en que la instancia de seguimiento esté fuera de la zona de amortiguación del borde horizontal o del borde vertical, la vista saltará a su posición actual. Ahora bien, esto no es siempre lo que se desea, por lo que se puede establecer la velocidad de desplazamiento vertical y horizontal
+    para la cámara estableciendo los valores a algo distinto de -1. Tenga en cuenta que un valor de 0 hará que la vista no se mueva en absoluto, y cualquier otro valor positivo es el número de píxeles que se moverá en cualquier fotograma, por lo que establecer la velocidad horizontal a 5 hará que
+    la vista seguirá el objeto a 5 píxeles por cuadro horizontalmente.</p>
+  <p> </p>
+  <p> </p>
+  <h1>Física de la sala</h1>
+  <p>Antes de poder utilizar las funciones de física incorporadas en sus juegos, debe indicar a <span class="notranslate">GameMaker Studio 2</span> que la sala es una sala de física. Para ello, debe marcar la opción de <strong>Habilitar Física </strong>en la parte superior de la sección Física de <em>la</em> sala
+    (también puedes alternar la herencia de esta sección independientemente del resto de la configuración de la sala). Una vez hecho esto, puede continuar para configurar las propiedades del mundo de la física, que son algunas propiedades básicas que debe tener predefinidas
+    antes de que su sala permita que las instancias de física funcionen como tales. Para un control más preciso sobre el mundo puedes utilizar código (ver las <a href="../../GameMaker_Language/GML_Reference/Physics/Physics.htm">Funciones de Física</a> para más información).</p>
+  <p><img alt="Room Physics Properties" class="center" src="../../assets/Images/Asset_Editors/Editor_Room_RoomPhysics.png">Lo siguiente que debes hacer es establecer la <strong>gravedad </strong>del mundo. La fuerza y dirección de ésta se calcula
+    como un <a class="glossterm" data-glossterm="vector" href="#">vector</a> de la posición x/y que estableces alrededor de un punto (0, 0). Así, una x de 0 y una y de 1 establecerá la dirección de la gravedad como <em>hacia abajo </em>con una fuerza de 1 metro por segundo (para
+    una explicación más detallada ver - <a href="../../GameMaker_Language/GML_Reference/Physics/The_Physics_World/The_Physics_World.htm">El Mundo de la Física</a>).</p>
+  <p>Por último hay que establecer la relación de<strong> Píxeles a Metros</strong> para que <span class="notranslate">GameMaker Studio 2</span> la utilice como base para todos sus cálculos de física. Esto se debe a que las funciones de física trabajan en medidas del mundo real, por lo que debemos establecer este valor,
+    y usted querrá ajustar esta configuración hasta que el tamaño promedio de los píxeles de los objetos que está utilizando se traduce aproximadamente en objetos de física simulada de un tamaño adecuado.</p>
+  <p>Hay que tener en cuenta que habilitar la física en una sala significa que todas las instancias de la sala <em>deben utilizar las funciones y variables de la física para moverse</em>. Básicamente, tienes el movimiento &quot;tradicional&quot;, donde puedes establecer la posición X/Y de una instancia
+    o establecer su velocidad y dirección, y luego tienes el movimiento &quot;físico&quot;, que requiere fuerzas e impulsos físicos para moverse. Estos sistemas son <strong>mutuamente excluyentes</strong>, y no se puede mover una instancia física utilizando funciones no físicas
+    y no puedes mover una instancia no física usando las funciones de la física.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Rooms.htm">El editor de la sala</a></div>
+        <div style="float:right">Siguiente: <a href="Room_Inheritance.htm">Herencia de habitaciones</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Room Properties
+View Ports
+View Cameras
+-->
+  <!-- TAGS
+rooms_properties
+-->
+
+</body></html>

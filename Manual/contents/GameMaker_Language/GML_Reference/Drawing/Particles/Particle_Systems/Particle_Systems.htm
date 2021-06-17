@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Sistemas de partículas</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Particle System functions and variables" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Particle Systems" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Sistemas de partículas</h1>
+  <p>Antes de que puedas crear partículas necesitas crear un sistema de partículas. Se trata de un &quot;contenedor&quot; en el que colocas tus partículas y emisores (si los necesitas) listos para su uso, y puedes poner tantas o tan pocas partículas en cualquier sistema como
+    que creas necesario, y puedes tener tantos sistemas como creas necesario también. Sin embargo, siempre es mejor mantener este número tan pequeño como sea posible debido al hecho de que cada sistema, emisor y partícula ocupa memoria y tener demasiados de ellos
+    puede ralentizar el juego o causar problemas. Por ejemplo, si necesita que algunos efectos aparezcan por encima de las instancias, y otros efectos aparezcan por debajo de las instancias, crearía dos sistemas y establecería sus profundidades para obtener el efecto deseado, con todas las partículas
+    que se añaden a cada sistema se dibujan en la profundidad que se especifica.</p>
+  <p>Dado que un sistema de partículas es un recurso creado dinámicamente, debes crearlo y almacenar el índice devuelto en una variable para referenciar el sistema en todas las llamadas de función posteriores, y es muy importante que también destruyas el sistema cuando ya no se necesite
+    o tendrás una fuga de memoria que ralentizará y eventualmente bloqueará tu juego. También vale la pena señalar que los sistemas de partículas vivirán para siempre después de ser creados, incluso si el índice ya no se almacena. Así que incluso si usted cambia
+    sala o reinicie el juego, los sistemas y las partículas permanecerán, y serán visibles, en todas las salas posteriores, así que será mejor que se asegure de destruirlos una vez que ya no los necesite.</p>
+  <p>A continuación se enumeran las funciones básicas para configurar un sistema de partículas:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_system_exists.htm">part_system_exists</a></li>
+    <li><a href="part_system_create.htm">part_system_create</a></li>
+    <li><a href="part_system_create_layer.htm">part_system_create_layer</a></li>
+    <li><a href="part_system_get_layer.htm">part_system_get_layer</a></li>
+    <li><a href="part_system_layer.htm">capa_sistema_parte</a></li>
+    <li><a href="part_system_depth.htm">profundidad_sistema_parte</a></li>
+    <li><a href="part_system_position.htm">posición_sistema_parte</a></li>
+    <li><a href="part_system_clear.htm">part_system_clear</a></li>
+    <li><a href="part_system_destroy.htm">part_system_destroy</a></li>
+    <li><a href="part_particles_clear.htm">part_particles_clear</a></li>
+    <li><a href="part_particles_count.htm">conteo_de_partículas_de_parte</a></li>
+  </ul>
+  <p> </p>
+  <p>Una vez que las partículas se añaden a un sistema de partículas y luego estallan o se introducen en la sala, normalmente se actualizan automáticamente a cada paso y se dibujan en función de los parámetros que se han utilizado para definirlas. Sin embargo, a veces puede ser necesario controlar
+    cuándo y cómo se actualiza el sistema, así como la forma en que el sistema debe ser dibujado, y para que <span class="notranslate">GameMaker Studio 2</span> proporciona las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_system_automatic_update.htm">part_system_automatic_update</a></li>
+    <li><a href="part_system_automatic_draw.htm">part_system_automatic_draw</a></li>
+    <li><a href="part_system_update.htm">part_system_update</a></li>
+    <li><a href="part_system_drawit.htm">sistema_parcial_drawit</a></li>
+    <li><a href="part_system_draw_order.htm">part_system_draw_order</a></li>
+  </ul>
+  <p> </p>
+  <p>Puedes usar <a href="../Particle_Emitters/Particle_Emitters.htm">emisores de</a> partículas para hacer estallar o arrojar partículas desde un área, pero en muchos casos no son necesarios y en realidad es mejor crear las partículas
+    directamente usando las siguientes funciones:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="part_particles_create.htm">part_particles_create</a></li>
+    <li><a href="part_particles_create_colour.htm">part_particles_create_colour</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Particles.htm">Partículas</a></div>
+        <div style="float:right">Siguiente: <a href="../Particle_Types/Particle_Types.htm">Tipos de partículas</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Particle Systems
+-->
+  <!-- TAGS
+particle_system_functions
+-->
+</body>
+</html>

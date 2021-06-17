@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>sprite_flush_multi</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function sprite_flush_multi" />
+  <meta name="rh-index-keywords" content="sprite_flush_multi" />
+  <meta name="search-keywords" content="sprite_flush_multi" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>sprite_flush_multi</h1>
+  <p>Con esta función puedes eliminar de la memoria de textura cualquier número de páginas de textura para los sprites dados. Se suministran los índices de los sprites como una matriz y las páginas de textura a las que están asignadas se eliminarán de la memoria de textura. Tenga en cuenta que si una de
+    las páginas de textura se utiliza en otra parte de la sala (por otro sprite de instancia o un fondo, etc...) se puede obtener un pequeño impacto en el rendimiento ya que la página se vuelve a cargar inmediatamente en la memoria, por lo que se debe tener cuidado al utilizar esta función.
+    Tenga en cuenta que la función devolverá <tt>-1</tt> si la descarga no es compatible con los recursos elegidos, o devolverá <tt>0</tt> si todo ha funcionado correctamente.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">sprite_flush_multi(array);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>matriz</td>
+        <td>Matriz con los índices de los sprites que se van a descargar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Int (-1 o 0)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">spr_a[0] = spr_Player_Aura1;<br> spr_a[1] = spr_Player_Aura2;<br> spr_a[2] = spr_Player_Aura3;<br> spr_a[3] = spr_Player_Aura4;<br> sprite_flush_multi(spr_a);
+  </p>
+  <p>El código anterior crea un array donde cada elemento contiene un índice de sprite. Este array se utiliza para borrar las texturas de los sprites de la memoria.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Sprite_Manipulation.htm">Manipulación de sprites</a></div>
+        <div style="float:right">Siguiente: <a href="sprite_prefetch.htm">sprite_prefetch</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+sprite_flush_multi
+-->
+  <!-- TAGS
+sprite_flush_multi
+-->
+</body>
+</html>

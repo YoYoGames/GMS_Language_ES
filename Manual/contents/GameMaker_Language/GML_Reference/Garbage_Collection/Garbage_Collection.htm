@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Recogida de basura</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Garbage Collection functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Garbage Collection" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Recogida de basura</h1>
+  <p>El <strong>recolector de basura</strong> de <span class="notranslate">GameMaker Studio 2</span> existe porque los métodos pueden pasarse a la pila y dejarse sin referencia, al igual que los structs y algunas otras cosas, que a su vez causarían una fuga de memoria si no se &quot;limpian&quot;
+    de alguna manera. Aquí es donde entra en juego el recolector de basura, que se ejecutará en el fondo del juego, recogiendo cualquier cosa que haya sido desreferenciada y manteniendo un uso óptimo de la memoria. Cuando hablamos de algo que ha sido desreferenciado, nos referimos
+    generalmente nos referimos a cualquier estructura o función que no esté conectada (no tiene que ser directamente, sino a través de una cadena de otras variables) a una <strong>variable </strong>global o a una <strong>variable de instancia de</strong> objeto <strong>.</strong> También hay que tener en cuenta que
+    las funciones definidas en los scripts en el IDE tampoco se recogen, ya que se convierten implícitamente en globales.</p>
+  <p class="note"><b>NOTA</b>: Ten en cuenta que cosas como las superficies, las estructuras de datos, los búferes y otros recursos dinámicos <b>no</b> son recolectados por la basura y tienen sus propias funciones de <tt>destrucción</tt> para limpiar la memoria asociada a ellos. Como regla general
+    si cualquier cosa que crees en tiempo de ejecución tiene una función de <tt>destrucción</tt>, entonces no se recogerá de la basura y tendrás que ocuparte de ello en el código. Las excepciones a esto son las secuencias, las curvas de animación y las instancias, que también requieren
+    el recolector de basura, <b>pero todavía necesitan tener su función de destrucción llamada</b>.</p>
+  <p>La recolección de basura que utiliza <span class="notranslate">GameMaker Studio 2</span> es &quot;generacional&quot;. Esto significa que, para reducir el trabajo que debe realizarse en cada fotograma, los objetos se dividen en &quot;generaciones&quot;. Los nuevos objetos se crean en la generación 0 y
+    se trasladan a las generaciones anteriores a medida que envejecen. La idea general es que los objetos que permanecen durante un tiempo no necesitan ser comprobados continuamente para ver si deben ser eliminados, sino que pueden ser comprobados con menos frecuencia (nótese que &quot;objetos&quot;
+    aquí se refiere a cualquier cosa que pueda ser recolectada por la basura y <i>no</i> a las instancias generales de los objetos como se definen en el Navegador de Activos). Tenga en cuenta que, aunque el sistema de comprobación es generacional, las comprobaciones reales se realizan de forma &quot;incremental&quot;, de modo que
+    que en lugar de limpiar potencialmente miles de objetos de una generación en un solo fotograma - causando un gran pico en el uso de la CPU y potencialmente afectando a la jugabilidad - cada generación se comprobará y si es necesario la limpieza se extenderá
+    a lo largo de varios fotogramas, de modo que el recolector de basura se ejecuta con más frecuencia pero hace menos trabajo en cada fotograma que recolecta (puedes establecer el tiempo objetivo que el recolector de basura debe pasar en cada fotograma utilizando la función <span class="inline"><a href="gc_target_frame_time.htm">gc_target_frame_time()</a></span>).</p>
+  <p>En general, nunca debería ser necesario interactuar con el sistema de recolección de basura de <span class="notranslate">GameMaker Studio 2</span> y normalmente los resultados de su operación no son visibles, pero algunos comandos <span class="notranslate">GML</span> están disponibles para obtener información sobre lo que el recolector está haciendo y
+    para influir en su comportamiento en un grado limitado.</p>
+  <p class="note"><b>IMPORTANTE!</b> Tenga en cuenta que en la plataforma de destino HTML5 la recolección de basura es manejada por el motor JavaScript y por lo tanto ninguna de las funciones listadas a continuación afectará su operación y la función <tt>gc_get_stats()</tt> devolverá 0 para todos los
+    los campos.</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="gc_enable.htm">gc_enable</a></li>
+    <li><a href="gc_is_enabled.htm">gc_is_enabled</a></li>
+    <li><a href="gc_collect.htm">gc_collect</a></li>
+    <li><a href="gc_target_frame_time.htm">gc_target_frame_time</a></li>
+    <li><a href="gc_get_target_frame_time.htm"><span>gc_get_target_frame_time</span></a></li>
+    <li><a href="gc_get_stats.htm">gc_get_stats</a></li>
+  </ul>
+  <p> </p>
+  <p>Para ayudar a decidir qué necesita ser recolectado por la basura y cuándo, también tienes unas cuantas funciones que pueden ser usadas para crear y comprobar las <strong>referencias</strong> débiles a los structs. Una referencia débil es una referencia que no protege al objeto referenciado de la recolección
+    por un recolector de basura, y por lo tanto se puede utilizar para comprobar si una estructura sigue &quot;viva&quot; (referenciada) o no en algún lugar del juego. Las funciones disponibles para la referenciación débil son:</p>
+  <p> </p>
+  <ul class="colour">
+    <li><a href="weak_ref_create.htm">weak_ref_create</a></li>
+    <li><a href="weak_ref_alive.htm">weak_ref_alive</a></li>
+    <li><a href="weak_ref_any_alive.htm">weak_ref_any_alive</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../GML_Reference.htm">Referencia<span class="notranslate">GML</span></a></div>
+        <div style="float:right">Siguiente: <a href="../Variable_Functions/Variable_Functions.htm">Funciones variables</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+<span class="notranslate">GML</span> Reference
+-->
+  <!-- TAGS
+gml_reference
+-->
+</body>
+</html>

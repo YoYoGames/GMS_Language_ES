@@ -9,7 +9,7 @@
     El argumento "size" de las funciones del buffer siempre se refiere al tamaño en bytes del buffer.
     Los búferes deDnD™siempre están alineados a 1 byte. La "alineación" se refiere a cómo se almacenan los datos dentro de un búfer y se utiliza cuando se usan las Funciones de búfer GML , pero
       para Drag And Drop, no es relevante.
-    Los datos en los búferes se leen y escriben de manera secuencial (es decir, se llama a la acción Escribir Búfer tres veces, entonces se escribirá el primer dato, se avanzará, se leerá el segundo dato, se avanzará y luego se escribirá
+    Los datos en los búferes se leen y escriben de manera secuencial (es decir, se llama a la acción Escribir Búfer tres veces, entonces se escribirá el primer dato, se avanzará, a la derecha el segundo dato, se avanzará y luego se escribirá
       el último dato), con algo llamado valor de "búsqueda" para indicarle en qué parte del buffer tendrá lugar la siguiente lectura/escritura.
     Todos los datos se escriben en el búfer y se devuelven desde el búfer como una cadena, por lo que si ha almacenado algún número real tendrá que utilizar una de las acciones de tipo de datos para convertirlo de la cadena
       al valor.

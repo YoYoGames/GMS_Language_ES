@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Variables del objeto</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing object variables" />
+  <meta name="rh-index-keywords" content="Objects - Variables" />
+  <meta name="search-keywords" content="object variables,instance variables" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Variables del objeto</h1>
+  <p>Al hacer clic en el botón de <strong>Variables </strong>se abrirá la ventana de <strong>Variables del Objeto </strong>, que puede utilizar para generar cualquier número de variables <em>antes </em>del Evento Crear del objeto:</p>
+  <p><img alt="Object Editor Variables Window" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_Variables.png">En esta ventana puede hacer clic en el botón <strong>Add </strong>para añadir una nueva variable a la lista. A continuación, puede <strong>nombrar </strong>la
+    variable, así como establecer su <strong>tipo </strong>y ajustar sus <strong>propiedades</strong>:</p>
+  <p><img alt="Object Editor New Variable" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_NewVariable.png">El nombre de la variable debe empezar por una letra y sólo puede contener letras, números y el símbolo de subrayado '_' con
+    con una longitud máxima de 64 símbolos. Por lo tanto, las variables válidas son cosas como <span class="inline">fish</span>, <span class="inline">foo_bar</span>, <span class="inline">num1</span>, y las <em>no válidas</em> serían <span class="inline">6fish</span>,
+    <span class="inline">foo bar</span> , o <span class="inline">*num</span>. Una vez que hayas dado el nombre de la variable, tienes que establecer su tipo, que puede ser cualquiera de los siguientes: <img alt="Object Editor Variable Types" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_VariableTypes.png"> Vale la pena señalar que esta característica es particularmente útil cuando se trabaja con instancias padre/hijo - ya que puede tener un objeto padre con un conjunto de variables definidas y luego simplemente modificarlas en el objeto hijo (ver la sección <strong>Variables de Objeto y Objetos Hijos</strong> más adelante para más detalles) - y para cuando se agregan instancias en el <a href="../Rooms.htm">Editor de Salas</a> (ver la sección <strong>Capas </strong>&gt; <strong>Capa de Instancia),</strong> ya que también puede modificar estas variables para instancias individuales
+    que se han colocado en la sala.</p>
+  <p>A continuación se enumeran los diferentes tipos de variables que se pueden crear:</p>
+  <ul class="colour">
+    <li><strong>Real</strong>: Un número real es cualquier número que no es un entero y puede ser positivo o negativo. Así, <span class="inline">124.5</span>, <span class="inline">45639.566546456</span>, <span class="inline">0.9</span>, <span class="inline">-45.5</span> etc... son todos ejemplos de números reales. Todos los números reales se almacenan como valores de <a class="glossterm" data-glossterm="punto flotante" href="#">coma flotante</a> de 64 bits (dobles). Los tipos de datos <strong>reales </strong>(y <strong>enteros</strong>)<strong> </strong>
+      tienen una opción para establecer un rango de valores a la que se puede acceder haciendo clic en el botón <strong>Opciones</strong> <img alt="Variable Options Icon" class="icon" src="../../assets/Images/Icons/Icon_VariableOptions.png">:<img alt="Object Editor Real Variable Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_RealOptions.png">Cuando marque esta opción puede introducir un valor inicial y un valor final y en lugar de tener un valor fijo mostrado para la variable en la ventana de Variables de Objeto,
+      tendrá un deslizador que se ajusta a estos valores:<br>
+      <img alt="Object Editor Variable Range" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_VariableRange.png"></li>
+    <li><strong>Número</strong> entero: Un entero es un número entero y puede ser positivo o negativo, por ejemplo <span class="inline">30004</span>, <span class="inline">19</span>, <span class="inline">0</span>, <span class="inline">-300</span>. Tenga en cuenta que puede
+      establecer un rango de valores para el entero de salida, como se explicó anteriormente para los números reales.</li>
+    <li><strong>Cadena</strong>: Una cadena es cualquier cosa que se haya colocado entre comillas dobles, por ejemplo &quot;pez&quot;, &quot;Hola Mundo&quot; o &quot;12345&quot;.</li>
+    <li><strong>Booleano</strong>: Un booleano es un valor que es verdadero o falso. En la ventana de Variables del Editor de Objetos, esto se muestra simplemente como una casilla que se marca para verdadero y se desmarca para falso.</li>
+    <li><strong>Expresión</strong>: Una expresión es una frase matemática que puede contener números ordinarios, variables, cadenas o funciones <span class="notranslate">GML</span>, así como uno o más operadores. Por ejemplo, <span class="inline">sqrt(85 * 6) + 5.5</span> es una expresión.</li>
+    <li><strong>Recurso</strong>: Un recurso es simplemente cualquiera de los recursos que ha definido en el Navegador de Activos. Cuando selecciona este tipo de recurso, puede hacer clic en el botón <strong>Abrir el Explorador </strong>de Activos<img alt="Open Asset Explorer Icon" class="icon" height="24" src="../../assets/Images/Icons/Icon_OpenAssetExplorer.png" width="24"> para abrir el Explorador de Activos y seleccionar el recurso que necesita.</li>
+    <li><strong>Lista</strong>: Seleccionar un tipo de entrada de lista significa que puede crear una selección de valores (pueden ser cadenas, reales, expresiones, etc.) de los cuales puede elegir uno o más para que la variable los devuelva. Para definir los elementos que
+      Para definir los elementos que van en la lista, primero debe añadirlos en las <strong>Opciones</strong> (haga clic en el botón <img alt="Variable Options Icon" class="icon" src="../../assets/Images/Icons/Icon_VariableOptions.png"> ):<br>
+      <img alt="List Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListOptions.png">Podrá elegir el elemento como valor predeterminado para la variable en la ventana principal desde el menú desplegable:<br>
+      <img alt="Object Editor List Menu" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListType.png">Tenga en cuenta que si tiene marcada la opción <strong>Multiselección</strong> en las Opciones de la lista, la variable se convertirá en una matriz de todas las
+      opciones seleccionadas:<br>
+      <img alt="List Array Options" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ListArray.png"></li>
+    <li><strong>Color</strong>: El tipo de color sirve para definir un valor de color que se almacenará en la variable. Puede introducir un número real (de 0 a 16777216, que tendrá un valor alfa de 255), o un valor hexadecimal (en el formato de $RRGGBBAA), o puede
+      puede hacer doble clic en <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png"> en la muestra de color para abrir el <strong>selector de color</strong> y definir el color allí.</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1>Variables de objetos y objetos hijos</h1>
+  <p>Una característica importante de las Variables de Objeto es que son <em>heredadas </em>por cualquier objeto hijo que tenga en el Navegador de Activos (vea la sección sobre <a href="Parent_Objects.htm">Objetos Padre</a> para más información), lo que significa que usted
+    lo que significa que usted puede elegir anular o cambiar alguna o todas ellas si lo desea.</p>
+  <p>Cuando se crea un objeto hijo de otro recurso objeto que tiene Variables definidas para él, éstas se mostrarán en la ventana de Variables de Objeto de esta manera:</p>
+  <p><img alt="Object Editor Variable In A Child Object" class="center" src="../../assets/Images/Asset_Editors/Editor_Object_ChildVariables.png">Puede ver en la imagen superior que el objeto Padre tiene cuatro Variables de Objeto y en la imagen inferior estas
+    también se muestran, sólo que &quot;atenuadas&quot; y con el icono Heredado<strong> del Padre</strong> <img alt="Inherited From Parent Icon" class="icon" src="../../assets/Images/Icons/Icon_InheritedVariable.png"> para indicar que han sido heredadas.
+    Estas variables heredadas pueden ser editadas si hace clic en el botón <strong>Anular Variable</strong> <img alt="Override Variable Icon" class="icon" src="../../assets/Images/Icons/Icon_OverrideVariable.png">, de modo que puede ajustar el deslizador de rango
+    o los valores, o seleccionar diferentes elementos de las listas, etc. Tenga en cuenta que cuando edita una variable padre <em>sólo puede cambiar el valor definido</em> pero no el nombre, ni puede cambiar las opciones de la variable. Tenga en cuenta también que puede añadir nuevas variables de objeto
+    a los objetos hijos también (y en la imagen de ejemplo de arriba puede ver que &quot;Tipo de Carácter&quot; es una nueva Variable de Objeto sólo para el objeto hijo).</p>
+  <p>Si ha editado una Variable de Objeto heredada, puede hacer clic en el botón Borrar <img alt="Delete Variable Icon" class="icon" src="../../assets/Images/Icons/Icon_DeleteVariable.png"> para eliminar la edición, pero no la variable. La variable
+    La variable seguirá siendo heredada del padre, pero utilizará de nuevo el valor por defecto del padre. Si necesita eliminar completamente la variable, entonces debe hacerlo desde el objeto padre.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="../Objects.htm">El editor de objetos</a></div>
+        <div style="float:right">Siguiente: <a href="Object_Events.htm">Eventos de objetos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Variables
+-->
+  <!-- TAGS
+object_variables
+-->
+
+</body></html>

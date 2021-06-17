@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Generador de imágenes de proyectos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Section that covers the Project Image Generator" />
+  <meta name="rh-index-keywords" content="Project Image Generator" />
+  <meta name="search-keywords" content="Project Image Generator,image generator,icons,backgrounds" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Generador de imágenes de proyectos</h1>
+  <p><img alt="Generate Project Images" class="center" src="../assets/Images/IDE Tools/Project_Image_Generator.png">El <strong>generador de imágenes del</strong> proyecto se accede desde el <a href="../IDE_Navigation/Menus/The_Tools_Menu.htm">menú Herramientas</a> en
+    en la parte superior del IDE de <span class="notranslate">GameMaker Studio 2</span>. Esta herramienta está diseñada para crear rápidamente todas las diferentes pantallas de bienvenida, imágenes de promoción e iconos que son requeridos por todas las diferentes plataformas de destino a partir de un único conjunto de imágenes. Se suministra la imagen base
+    y el icono base y luego haces clic en el botón <strong>Generar </strong>, y tus <a href="../Settings/Game_Options.htm">Opciones de Juego</a> para cada plataforma se actualizarán con las nuevas imágenes.</p>
+  <p>Para que esto funcione correctamente es necesario proporcionar una pantalla de inicio de alta resolución y una imagen de icono de alta resolución. Los tamaños recomendados serían:</p>
+  <ul class="colour">
+    <li><strong>Pantalla de inicio</strong>: al menos 1920x1080px, o 1080x1920px para retrato, y con autoría de 24bit <span class="inline">*.png</span> sin transparencias.</li>
+    <li><strong>Iconos</strong>: al menos 1024x1024px (que es el tamaño del icono más grande que se requiere), y con autoría de 24bit <span class="inline">*.png</span> que puede tener transparencias</li>
+  </ul>
+  <p>Una vez que haya suministrado estas imágenes, se mostrarán en las <strong> <span class="notranslate">ventanas de</span></strong> vista previa y podrá establecer el tipo de &quot;ajuste&quot; que se utilizará al aplicarlas a las diferentes plataformas. Puede elegir entre los siguientes:</p>
+  <ul class="colour">
+    <li><strong>Mantener relación de aspecto</strong> - esto escalará la imagen para que se ajuste manteniendo la relación de aspecto y añadiendo un color de fondo para rellenar los lados si el ajuste no es 1:1</li>
+    <li><strong>Estirar para ajustar</strong> - esto estirará las imágenes para que se ajusten al tamaño completo de la imagen/icono.</li>
+    <li><strong>Recortar para ajustar</strong> - esto tomará la imagen base y la hará encajar mejor a lo largo del eje horizontal o vertical y luego recortará el resto. Por ejemplo, si usted tiene una imagen de 640x480 que tiene que ser utilizado como una pantalla de inicio para 480x800,
+      entonces la imagen se <em>escalará</em> para ajustarse al eje vertical (480 -&gt; 800) y el resto de la imagen se recortará. Del mismo modo, si tiene una imagen de 1080x1920 que tiene que ajustarse a 800x800, la imagen se reducirá para ajustarse al eje horizontal y el resto se recortará.
+      y el resto se recortará.</li>
+  </ul>
+  <p>También puede establecer el <strong>color de fondo</strong> tanto para los iconos como para las imágenes. Este color se utilizará para &quot;rellenar&quot; la imagen cuando se escale con la relación de aspecto. La siguiente imagen muestra el aspecto que tendrá una vez que se haya configurado todo:</p>
+  <p><img alt="Generate Project Images Example" class="center" src="../assets/Images/IDE Tools/Project_Image_Generator_Example.png">Ahora todo lo que tiene que hacer es hacer clic en <strong>Generar </strong>y <span class="notranslate">GameMaker Studio 2</span> rellenará todas las opciones de juego <strong>Imagen </strong>e
+   <strong>Icono </strong>con imágenes para cada plataforma.</p>
+  <p class="note"><strong>NOTA</strong>: La excepción a la afirmación anterior son <a href="../Settings/Game_Options/Android.htm">los iconos adaptativos<span class="notranslate">de Android</span></a>. Estos <strong>no se generarán</strong> con esta herramienta debido a la forma en que están estructurados.</p>
+  <p class="note"><strong>IMPORTANTE! </strong>Aunque esta herramienta generará todas las imágenes que necesites, ¡no significa que sea perfecta! Intentará hacer todo lo posible para que las imágenes se adapten a los diferentes tamaños y resoluciones de cada plataforma, pero a veces esto puede no
+    pero a veces puede que no se vea como usted quiere, ya que no hay una solución única para todos. Por lo tanto, después de ejecutar esta herramienta, le recomendamos que revise todas las imágenes en las Opciones de Juego de cada plataforma y modifique las que no se vean exactamente como usted quiere.
+    como quieres manualmente.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Additional_IDE_Tools.htm">Herramientas adicionales del IDE</a></div>
+        <div style="float:right">Siguiente: <a href="Sound_Mixer.htm">Mezclador de sonido</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Project Image Generator
+Icons
+Backgrounds
+Image Generator
+-->
+  <!-- TAGS
+project_image_generator
+-->
+</body>
+</html>

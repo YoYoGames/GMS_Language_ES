@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>formato_de_cadena</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for string_format" />
+  <meta name="rh-index-keywords" content="string_format" />
+  <meta name="search-keywords" content="string_format" />
+</head>
+
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>formato_de_cadena</h1>
+  <p>Convierte un número real en una cadena utilizando su propio formato, donde puede elegir cuántos &quot;lugares&quot; se guardan en la cadena y cuántos decimales se guardan también. Ambos pueden ser muy útiles, algunos juegos prefieren mostrar una puntuación como un número determinado
+    de dígitos, mientras que el control sobre los decimales puede ser bueno para una alta precisión que los dos decimales de <a href="string.htm"><tt>cadena()</tt></a> no pueden proporcionar. Si el número de lugares especificado es mayor que el valor a mostrar y/o el número
+    más los lugares decimales que se han especificado es menor que el total de lugares, entonces se añadirán espacios antes del valor para compensar la diferencia (véase el ejemplo siguiente). Se añadirán ceros a la derecha del punto decimal si el valor dado
+    es menor que el total y el número de decimales a incluir. El formato por defecto es sin espacios extra a la izquierda, y sólo dos decimales a la derecha, por ejemplo &quot;265,73&quot;.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">string_format(val, tot, dec);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>val</td>
+        <td>El número real que se convertirá en una cadena.</td>
+      </tr>
+      <tr>
+        <td>tot</td>
+        <td>El número total de posiciones del número principal a mostrar. Se insertarán ceros o espacios para que coincida con esto.</td>
+      </tr>
+      <tr>
+        <td>dec</td>
+        <td>El número de decimales a incluir.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">str1 = string_format(1234, 8, 0);<br> str2 = string_format(pi, 1, 10);<br> str3 = string_format(pi, 5, 5);</p>
+  <p>Esto establecerá <tt>str1</tt> como &quot; 1234&quot;, str2 como &quot;3 <tt>.1415926535</tt> &quot; y str3 como &quot; 3.14159 <tt>&quot;.</tt> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Strings.htm">Cuerdas</a></div>
+        <div style="float:right">Siguiente: <a href="string_insert.htm">string_insert</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+string_format
+-->
+  <!-- TAGS
+string_format
+-->
+
+</body></html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>skeleton_animation_get_frame</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_get_frame" />
+  <meta name="rh-index-keywords" content="skeleton_animation_get_frame" />
+  <meta name="search-keywords" content="skeleton_animation_get_frame" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>skeleton_animation_get_frame</h1>
+  <p>Esta función devolverá el número de fotograma de la animación en la pista de animación especificada. La función devolverá -1 si no hay ninguna animación asignada a la pista específica dada.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">skeleton_animation_get_frame(track);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>pista</td>
+        <td>La pista de animación de la que obtener el fotograma.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Entero</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var frame = skeleton_animation_get_frame(0);<br> if frame &gt; 0 &amp;&amp; frame &lt; 2<br> {
+    <br> var box = skeleton_get_minmax();<br> var ww = (box[2] - box[0]) / 2;<br> var hh = (box[3] - box[1]) / 2;<br> part_particles_create(global.p_sys, box[0] + ww, box[1] + hh, global.Stars, 10);<br> }
+  </p>
+  <p>El código anterior comprobará el fotograma actual de la animación asignada a la pista 0 y luego hará estallar algunas partículas desde un punto en el centro de la caja delimitadora total para el sprite.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Animation.htm">Animación</a></div>
+        <div style="float:right">Siguiente: <a href="skeleton_animation_set_frame.htm">skeleton_animation_set_frame</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_get_frame
+-->
+  <!-- TAGS
+skeleton_animation_get_frame
+-->
+</body>
+</html>

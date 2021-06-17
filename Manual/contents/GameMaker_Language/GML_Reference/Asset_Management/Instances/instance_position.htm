@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>posición_de_instancia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_position" />
+  <meta name="rh-index-keywords" content="instance_position" />
+  <meta name="search-keywords" content="instance_position" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>posición_de_instancia</h1>
+  <p>Con esta función puede comprobar una posición para una colisión con otra instancia o con todas las instancias de un objeto. Cuando se utiliza esta función, se comprueba un único punto de la sala para una instancia o un objeto. Esta comprobación se hará contra el cuadro delimitador de la instancia o contra la máscara de la instancia.
+    de la instancia o contra la máscara de la instancia si esa instancia tiene colisiones precisas comprobadas y devolverá la instancia única <a href="Instance_Variables/id.htm"><tt>id</tt></a>. Si no necesita el identificador de la instancia que colisiona, debería
+    debería considerar el uso de <a href="../../Movement_And_Collisions/Collisions/position_meeting.htm"><tt>posición_encuentro()</tt></a> en su lugar. Esta función también acepta las <a href="../../../GML_Overview/Instance_Keywords.htm">palabras clave</a>especiales
+    <span class="inline"><b>todos</b></span> y <span class="inline"><b>other</b></span> y devolverá la palabra clave <span class="inline"><b>noone</b></span> si no se produce ninguna colisión o el valor de ID único de la instancia encontrada si se produce una colisión.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">instance_position( x, y, obj );</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x para comprobar las instancias.</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y para comprobar las instancias.</td>
+      </tr>
+      <tr>
+        <td>obj</td>
+        <td>El objeto que se va a comprobar para las instancias de.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real (un valor de ID de instancia o la palabra clave <tt>noone</tt>)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var inst;<br> inst = instance_position(mouse_x, mouse_y, obj_Pause_Button);<br> if (inst != noone)<br> {
+    <br> with (inst) image_index=1;<br> instance_create_layer(room_width / 2, 0, &quot;Controllers&quot;, obj_Menu);<br> }
+  </p>
+  <p>El código anterior comprobará si hay una colisión con una instancia de &quot;obj_Pause_Button&quot; en la posición del ratón, y si la hay utilizará el id devuelto para establecer su image_index a un nuevo valor antes de crear una nueva instancia del objeto
+    &quot;obj_Menú&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Volver: <a href="Instances.htm">Instancias</a></div>
+        <div style="float:right">Siguiente: <a href="instance_position_list.htm">instance_position_list</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_position
+-->
+  <!-- TAGS
+instance_position
+-->
+</body>
+</html>

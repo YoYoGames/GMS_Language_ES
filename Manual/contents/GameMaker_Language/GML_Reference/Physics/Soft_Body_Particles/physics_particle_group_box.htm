@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>physics_particle_group_box</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for physics_particle_group_box" />
+  <meta name="rh-index-keywords" content="physics_particle_group_box" />
+  <meta name="search-keywords" content="physics_particle_group_box" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>physics_particle_group_box</h1>
+  <p>Esta función establecerá la forma del grupo de partículas que se está creando. Primero debe haber comenzado la definición del grupo usando la función <a href="physics_particle_group_begin.htm"><tt>physics_particle_group_begin()</tt></a>y luego
+    utilizar esta función para establecer la mitad aproximada de la anchura y la mitad de la altura del grupo en píxeles - aproximada porque la anchura y la altura exactas dependerán del tamaño de las partículas base, definidas por la función <a href="physics_particle_set_radius.htm"><tt>physics_particle_set_radius()</tt></a>    ya que la simulación física intenta &quot;encajar&quot; tantas partículas como sea posible en la forma definida. Por último, hay que llamar a <a href="physics_particle_group_end.htm"><tt>physics_particle_group_end()</tt></a> para crear el grupo
+    de partículas en la sala.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">physics_particle_group_box(halfWidth, halfHeight)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>halfWidth</td>
+        <td>La <i>mitad de</i> la anchura de la caja.</td>
+      </tr>
+      <tr>
+        <td>halfHeight</td>
+        <td>La <i>media</i> altura de la caja.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;<br> var groupflags = phy_particle_group_flag_solid; <br> physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);<br> physics_particle_group_box(100, 100);<br> mLastGroup = physics_particle_group_end();</p>
+  <p>El código anterior almacena las banderas para el tipo de partícula y las propiedades del grupo de partículas en variables y luego las utiliza para crear un grupo de partículas rectangular con lados de 200px en la posición del ratón.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Soft_Body_Particles.htm">Partículas de cuerpo blando</a></div>
+        <div style="float:right">Siguiente: <a href="physics_particle_group_polygon.htm">physics_particle_group_polygon</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+physics_particle_group_box
+-->
+  <!-- TAGS
+physics_particle_group_box
+-->
+</body>
+</html>

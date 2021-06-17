@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>red_crear_servidor</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_server" />
+  <meta name="rh-index-keywords" content="network_create_server,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+  <meta name="search-keywords" content="network_create_server,network_socket_tcp,network_socket_udp,network_socket_ws,network_socket_bluetooth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>red_crear_servidor</h1>
+  <p>Esta función se utiliza para crear un nuevo servidor de red para su juego, utilizando uno de los protocolos de conexión permitidos (ver las constantes listadas abajo). Usted suministra el tipo de servidor, luego le da un puerto para usar, y finalmente el número de conexiones máximas
+    que deben permitirse en cualquier momento al servidor (tenga en cuenta que este número depende de usted, pero demasiados clientes conectados saturarán la red o la CPU del dispositivo no podrá manejar el procesamiento de ese número de jugadores, así que úselo con
+    cuidado). La función devuelve un <i>id</i> único que debe ser usado almacenado en una variable y utilizado para identificar el servidor en todas las funciones de red posteriores, o un valor menor que 0 si la conexión falla.</p>
+  <p> </p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>network_socket_tcp</td>
+        <td>Crear un socket usando TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_udp</td>
+        <td>Crear un socket usando UDP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_ws</td>
+        <td>Crear un socket web<i>(sólo</i> para conectarse <i>a</i> proyectos HTML5), utilizando TCP.</td>
+      </tr>
+      <tr>
+        <td>network_socket_bluetooth</td>
+        <td>Crear una toma Bluetooth<i>(¡actualmente no disponible!</i>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">network_create_server(type, port, max_client);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de servidor que se va a crear (ver las constantes que se indican a continuación).</td>
+      </tr>
+      <tr>
+        <td>puerto</td>
+        <td>El puerto que utilizará el servidor.</td>
+      </tr>
+      <tr>
+        <td>max_cliente</td>
+        <td>El número máximo de clientes que pueden conectarse a la vez.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Real</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var port = 6510;<br> server = network_create_server(network_socket_tcp, port, 32);<br> while (server &lt; 0 &amp;&amp; port &lt; 65535)<br> {
+    <br> puerto++
+    <br> server = network_create_server(network_socket_tcp, port, 32);<br> }
+  </p>
+  <p>El código anterior intentará crear un servidor usando TCP a través del puerto 6510. Si ese puerto no está disponible, entonces hará un bucle a través de los puertos para encontrar uno que sí lo esté.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Networking.htm">Red</a></div>
+        <div style="float:right">Siguiente: <a href="network_create_server_raw.htm">network_create_server_raw</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_server
+network_socket_tcp
+network_socket_udp
+network_socket_ws
+network_socket_bluetooth
+-->
+  <!-- TAGS
+network_create_server
+-->
+</body>
+</html>

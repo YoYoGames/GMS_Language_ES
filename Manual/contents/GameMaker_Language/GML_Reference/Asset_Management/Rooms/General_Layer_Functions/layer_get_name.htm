@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>nombre_de_capa</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_get_name" />
+  <meta name="rh-index-keywords" content="layer_get_name" />
+  <meta name="search-keywords" content="layer_get_name" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>nombre_de_capa</h1>
+  <p>Puede utilizar esta función para obtener el <i>nombre</i> de la capa dada. Usted suministra el valor único del ID de la capa y si la capa es una de las capas con nombre creadas en el editor de salas, entonces la función devolverá una cadena con el nombre de la capa. Si la capa
+    no es una de las creadas por el editor de salas (es decir, fue creada con <a href="layer_create.htm"><tt>layer_create()</tt></a>) entonces se devolverá una cadena vacía.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_get_name(layer_id)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa para obtener el nombre de</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Cadena</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">var a = layer_get_all();<br> var layer_list = ds_list_create(); for (var i = 0; i Alt; array_length(a); i++;) <br> {
+    <br> if layer_get_name(a[i]) != &quot;&quot;<br> {
+    <br> ds_list_add(layer_list, a[i])<br> }
+    <br> }
+  </p>
+  <p>El código anterior obtiene los IDs de todas las capas de la sala y luego hace un bucle para comprobar si alguna es una capa con nombre. Si lo son, su ID se añade a una lista.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="General_Layer_Functions.htm">Funciones generales de la capa</a></div>
+        <div style="float:right">Siguiente: <a href="layer_get_all.htm">layer_get_all</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_get_name
+-->
+  <!-- TAGS
+layer_get_name
+-->
+</body>
+</html>

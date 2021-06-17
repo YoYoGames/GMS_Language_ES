@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>matrix_get</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for matrix_get" />
+  <meta name="rh-index-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world" />
+  <meta name="search-keywords" content="matrix_get,matrix_view,matrix_projection,matrix_world" />
+</head>
+
+<body>
+
+
+
+
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>matrix_get</h1>
+  <p>Esta función devuelve un <a href="../../../GML_Overview/Arrays.htm">array</a> de 16 valores, correspondientes al tipo de matriz 4x4 dado, donde la fila 1 son los elementos [0 - 3], la fila 2 son los elementos [4 -7], etc... (ver la imagen en la <a href="Matrix_Functions.htm">página principal</a>).
+    Las matrices disponibles son la <i>vista</i>, la <i>proyección</i> y <i>el mundo</i>, para las que se utilizaría una de las siguientes constantes:</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Constante</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>vista_de_matriz</td>
+        <td>La matriz de vista actual</td>
+      </tr>
+      <tr>
+        <td>proyección_de_matriz</td>
+        <td>La matriz de proyección actual</td>
+      </tr>
+      <tr>
+        <td>matrix_world</td>
+        <td>La matriz mundial actual</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">matrix_get(type);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>tipo</td>
+        <td>El tipo de matriz para obtener los valores de (ver las <i>constantes</i> listadas arriba)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">Matriz (16 elementos)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">v_array = matrix_get(matrix_view);</p>
+  <p>El código anterior obtendrá los valores de la matriz de la vista actual y rellenará el array &quot;v_array&quot; con ellos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Matrix_Functions.htm">Funciones de la matriz</a></div>
+        <div style="float:right">Siguiente: <a href="matrix_set.htm">matrix_set</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+matrix_get
+matrix_view
+matrix_projection
+matrix_world
+-->
+  <!-- TAGS
+matrix_get
+-->
+
+</body></html>

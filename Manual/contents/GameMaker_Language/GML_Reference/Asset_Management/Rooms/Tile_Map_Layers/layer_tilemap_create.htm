@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>layer_tilemap_create</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function layer_tilemap_create" />
+  <meta name="rh-index-keywords" content="layer_tilemap_create" />
+  <meta name="search-keywords" content="layer_tilemap_create" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>layer_tilemap_create</h1>
+  <p>Con esta función puede asignar un recurso de conjunto de azulejos a una capa que se utilizará como mapa de azulejos en su proyecto. Se suministra el ID de la capa (que se obtiene al crear la capa con <a href="../General_Layer_Functions/layer_create.htm"><tt>layer_create()</tt></a>)
+    o el nombre de la capa (como una cadena - esto tendrá un impacto en el rendimiento) y luego una posición inicial (x, y) para añadir el mapa de azulejos a la habitación, el recurso de conjunto de azulejos a utilizar, y luego el ancho y la altura del mapa de azulejos en <i>celdas</i> (es decir: un ancho de
+    20 y una altura de 10 creará un mapa de azulejos con 200 celdas que tiene 20 celdas de ancho y 10 celdas de alto), con el tamaño de las propias celdas definido por el conjunto de azulejos elegido. Hay que tener en cuenta que no se pueden colocar baldosas en posiciones negativas
+    dentro del mapa de azulejos, por lo que todos los azulejos deben colocarse dentro de los espacios de las celdas de 0 a ancho - 1, 0 a alto - 1.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">layer_tilemap_create(layer_id, x, y, tile set, width, height)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>layer_id</td>
+        <td>El valor de identificación único de la capa a la que se dirige (o el nombre de la capa como cadena)</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>La posición x del mapa de azulejos en la sala</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>La posición y del mapa de azulejos en la sala</td>
+      </tr>
+      <tr>
+        <td>juego de baldosas</td>
+        <td>El índice del conjunto de azulejos que se utilizará</td>
+      </tr>
+      <tr>
+        <td>ancho</td>
+        <td>El mapa de azulejos de ancho (en celdas)</td>
+      </tr>
+      <tr>
+        <td>altura</td>
+        <td>La altura del mapa de azulejos (en celdas)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">ID del elemento del mapa de azulejos (Real)</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">global.back_layer = layer_create(10000);<br> global.back_tiles = layer_tilemap_create(global.back_layer, 0, 0, tmap_Trees, 16, 32);</p>
+  <p>El código anterior crea una nueva capa y luego añade un nuevo elemento de mapa de azulejos a la misma, estableciendo la posición del mapa de azulejos a (0,0), así como el conjunto de azulejos a utilizar y la anchura y altura del mapa de azulejos.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Map_Layers.htm">Capas del mapa de azulejos</a></div>
+        <div style="float:right">Siguiente: <a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+layer_tilemap_create
+-->
+  <!-- TAGS
+layer_tilemap_create
+-->
+</body>
+</html>

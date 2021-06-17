@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Establecer la transformación de los datos de los azulejos</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that explains the Set Tile Data Transform action" />
+  <meta name="rh-index-keywords" content="DnD™ Action - Set Tile Data Transform" />
+  <meta name="search-keywords" content="Set Tile Data Transform" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1><img alt="Set Tile Data Transform Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/i_Tiles_Set_Tile_Data_Transform.png"> Set Tile Data Transform</h1>
+  <p>Con esta acción puede cambiar una de las tres transformaciones de la baldosa en los datos de la baldosa. Usted suministra la variable que contiene los datos de la baldosa, y luego selecciona la transformación a cambiar. Al hacer clic en la casilla &quot;Aplicar&quot; se aplicará esa transformación y
+    desmarcarla la eliminará. Los datos del mosaico son simplemente un valor que refleja el índice del mosaico junto con las transformaciones aplicadas, así como cualquier máscara de mosaico personalizada que haya utilizado, y esta acción le permite cambiar tres de esos valores:
+    Voltear, reflejar y rotar. Tenga en cuenta que normalmente querrá obtener primero los datos del mosaico utilizando <a href="Get_Tile_Data_In_Cell.htm">Obtener datos del mosaico en la celda</a> o <a href="Get_Tile_Data_At_Pixel.htm">Obtener datos del mosaico en el píxel</a>, luego aplicar la(s) transformación(es) requerida(s) y luego establecer la
+    y, a continuación, establecer el azulejo en el mapa de azulejos de nuevo utilizando <a href="Set_Tile_Data_In_Cell.htm">Establecer</a> datos de azulejos en la celda o <a href="Set_Tile_Data_At_Pixel.htm">Establecer datos de azulejos</a> en el píxel, ya que esta acción <i>sólo establece un valor, pero no lo aplica al azulejo del que se tomó</i>.
+    Para obtener más información sobre los datos de mosaico, consulte la sección <span class="notranslate">GML</span> sobre <a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">las funciones del</a> mapa de mosaico.</p>
+  <p> </p>
+  <h4>Sintaxis de la acción:</h4>
+  <p><img alt="Set Tile Data Transform Action" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/a_Tiles_Set_Tile_Data_Transform.png" /></p>
+  <h4>Argumentos:</h4>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>Azulejos</td>
+        <td>Los datos de la baldosa que hay que cambiar</td>
+      </tr>
+      <tr>
+        <td>Transformar</td>
+        <td>La transformación a aplicar/eliminar</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p><img alt="Set Tile Data Transform Example" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Tiles/e_Tiles_Set_Tile_Data_Transform.png">El código del bloque de acción anterior obtiene los datos del azulejo en la posición del ratón y luego
+    comprueba si el azulejo ha tenido una transformación de rotación aplicada. Si lo ha hecho, la transformación se restablece y los datos del azulejo vuelven a colocarlo en su posición.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Tile_Actions.htm">Acciones de la baldosa</a></div>
+        <div style="float:right">Siguiente: <a href="Get_Tile_Data_Transform.htm">Obtener la transformación de los datos de los azulejos</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+Action - Set Tile Data Transform
+-->
+  <!-- TAGS
+action_tile_set_transform
+-->
+</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>move_random</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="This page outlines the function move_random" />
+  <meta name="rh-index-keywords" content="move_random" />
+  <meta name="search-keywords" content="move_random" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>move_random</h1>
+  <p>Con esta función puedes establecer la instancia en una posición en cualquier lugar de la habitación, pero alineada a una cuadrícula &quot;invisible&quot;. Así que un valor de 32 para el hsnap y el vsnap establecerá la instancia a una posición aleatoria que está alineada a una cuadrícula de 32x32 cuadrados.
+    puedes establecer estos valores a 1 para obtener una posición en cualquier lugar de la habitación.</p>
+  <p class="note"><b>NOTA</b>: Esta función se ajustará a las mismas posiciones cada vez que el juego se ejecute de nuevo debido a que <span class="notranslate">GameMaker Studio 2</span> genera la misma semilla aleatoria inicial cada vez para hacer que la depuración del código sea una tarea mucho más fácil. Para evitar este comportamiento
+    utilice <span style="font-size:1px;"><a href="../../Maths_And_Numbers/Number_Functions/randomise.htm"><tt style="font-size: 14px">aleatorizar()</tt></a></span> al inicio de su juego. Esto sólo es cierto cuando las pruebas y la depuración del juego, como el final
+    paquete ejecutable no mostrará este comportamiento y será aleatorio cada juego.</p>
+  <p> </p>
+  <h4>Sintaxis:</h4>
+  <p class="code">move_random(hsnap, vsnap);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argumento</th>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>hsnap</td>
+        <td>El ajuste horizontal (el tamaño en píxeles entre "celdas").</td>
+      </tr>
+      <tr>
+        <td>vsnap</td>
+        <td>El ajuste vertical (el tamaño en píxeles entre "celdas").</td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Devuelve:</h4>
+  <p class="code">N/A</p>
+  <p> </p>
+  <h4>Ejemplo:</h4>
+  <p class="code">if keyboard_check(vk_space)<br> {<br> move_random(1,1);<br> }</p>
+  <p>Esto moverá la instancia a una posición aleatoria en cualquier parte de la habitación cuando se pulse la tecla espacio.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Atrás: <a href="Movement.htm">Movimiento</a></div>
+        <div style="float:right">Siguiente: <a href="move_snap.htm">move_snap</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Todos los derechos reservados</span></h5>
+  </div>
+  <!-- KEYWORDS
+move_random
+-->
+  <!-- TAGS
+move_random
+-->
+</body>
+</html>
